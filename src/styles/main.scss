@@ -1,0 +1,143 @@
+@import "normalize";
+
+html {
+   height: 100%;
+}
+
+body {
+  // background-color: #fbc547;
+  height: 100%;
+}
+
+nav {
+   align-self: flex-start;
+   height: 5vh;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+
+   a {
+      margin: 1em;
+   }
+}
+
+.site {
+   background: #f9f9f9;
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+}
+
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 90vh;
+   flex-direction: column;
+   overflow: auto;
+}
+
+li {
+   list-style-type: none;
+}
+
+// ##################################
+// this is index specific css
+.index-icon {
+  width: 5em;
+  margin: 0em 1em;
+}
+
+#icon-dock {
+   margin: auto;
+   // height: 100%;
+   // width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+// ##################################
+// this is facebook page specific css
+#general-text {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   p {
+      text-align: center;
+   }
+}
+
+.fb-container {
+   display: flex;
+   align-items: center;
+   height: 90vh;
+   flex-direction: column;
+   overflow: auto;
+}
+
+#btn-container {
+   display: flex;
+   justify-content: center;
+}
+
+.report-btn {
+   background-color: white;
+   border: 2px solid #7cd6fd;
+   color: black;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 0vh 5vh;
+   transition-duration: 0.4s;
+   -webkit-transition-duration: 0.4s; /* Safari */
+}
+
+.report-btn:hover {
+  background-color: #7cd6fd;
+  color: white;
+}
+
+// this is still facebook but filepicker specific
+.file-picker {
+}
+
+.file-picker-form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+#report {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 80%;
+}
+
+// this is still facebook but graph specific
+.graphs-container {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+}
+
+.graph-wrapper {
+   display: flex;
+   flex-direction: column;
+   border-style: solid;
+   border-color: #ebebeb;
+   background: #fff;
+   margin: 2.5vh 10vh;
+}
+
+.graph {
+   width: 600px;
+   height: 600px;
+   margin: 50px;
+   justify-content: center;
+}
+
