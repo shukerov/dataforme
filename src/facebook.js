@@ -9,11 +9,51 @@ import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from './old_js/clock_graph.js';
 
 
+
+// INSTRUCTION LOADING:
+const images = require.context('./images/fb-instructions', true);
+const imagePath = (name) => images(name, true);
+const instructions = [
+      {
+         image: imagePath('./1.jpg'),
+         instruction: 'do this now'
+      },
+      {
+         image: imagePath('./2.jpg'),
+         instruction: 'do this then'
+      },
+      {
+         image: imagePath('./3.png'),
+         instruction: 'do this when'
+      },
+      {
+         image: imagePath('./4.jpg'),
+         instruction: 'do this how'
+      },
+]
+
+var instructionsContainer = document.getElementById("fb-insns");
+
+for (var i = 0; i < instructions.length; i++) {
+   var step = document.createElement('div');
+   step.className = 'ins-step';
+   var img = new Image();
+   var ins = document.createElement('p');
+   ins.innerHTML = instructions[i].instruction;
+   img.src = instructions[i].image;
+
+   step.appendChild(img);
+   step.appendChild(ins);
+   instructionsContainer.appendChild(step);
+}
+
 var reportContainer = document.getElementById("report");
 var reportAlert = document.getElementById("report-alert");
 var msgGraphCont = document.getElementById("graphs-container");
 var msgTextCont = document.getElementById("text-container");
 var genTextRep = document.getElementById("general-text");
+
+
 // TODO: this SHOULD NOT BE HERE
    var msgReportStats = {
       "groupChatThreads": [],
