@@ -127,6 +127,8 @@ function showReportBtns() {
    msgReportBtn.addEventListener("click", genAggMsgReport);
 
    // gets the interactions report data
+   var msgInterBtn = document.getElementById('interaction-report-btn');
+   msgInterBtn.disabled = true;
 }
 
 function genAggMsgReport() {
