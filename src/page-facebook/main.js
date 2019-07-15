@@ -2,51 +2,49 @@ import '../styles/main.scss';
 import { InflaterJS } from '../js/zip-js-modified/inflate.js';
 import { Zip } from '../js/zip-js-modified/zip.js';
 import { ZipFS } from '../js/zip-js-modified/zip-fs.js';
-// import * as zip from 'zip-js-wepback/src-min/zip.js';
-// import * as zip from 'zip-js-webpack';
-// import { createWriter, BlobWriter, BlobReader } from 'zip-js-webpack';
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from '../js/clock-chart/clock_graph.js';
-// import { ClockChart } from './old_js/clock_graph.js';
-
-
+import { DAYS, MONTHS } from '../js/constants.js';
 
 // INSTRUCTION LOADING:
-const images = require.context('../images/fb-instructions', true);
-const imagePath = (name) => images(name, true);
-const instructions = [
-      {
-         image: imagePath('./1.jpg'),
-         instruction: 'do this now'
-      },
-      {
-         image: imagePath('./2.jpg'),
-         instruction: 'do this then'
-      },
-      {
-         image: imagePath('./3.png'),
-         instruction: 'do this when'
-      },
-      {
-         image: imagePath('./4.jpg'),
-         instruction: 'do this how'
-      },
-]
+function dataInstructionsRender() {
+   const images = require.context('../images/fb-instructions', true);
+   const imagePath = (name) => images(name, true);
+   const instructions = [
+         {
+            image: imagePath('./1.jpg'),
+            instruction: 'do this now'
+         },
+         {
+            image: imagePath('./2.jpg'),
+            instruction: 'do this then'
+         },
+         {
+            image: imagePath('./3.png'),
+            instruction: 'do this when'
+         },
+         {
+            image: imagePath('./4.jpg'),
+            instruction: 'do this how'
+         },
+   ]
 
-var instructionsContainer = document.getElementById("fb-insns");
+   var instructionsContainer = document.getElementById("fb-insns");
 
-for (var i = 0; i < instructions.length; i++) {
-   var step = document.createElement('div');
-   step.className = 'ins-step';
-   var img = new Image();
-   var ins = document.createElement('p');
-   ins.innerHTML = instructions[i].instruction;
-   img.src = instructions[i].image;
+   for (var i = 0; i < instructions.length; i++) {
+      var step = document.createElement('div');
+      step.className = 'ins-step';
+      var img = new Image();
+      var ins = document.createElement('p');
+      ins.innerHTML = instructions[i].instruction;
+      img.src = instructions[i].image;
 
-   step.appendChild(img);
-   step.appendChild(ins);
-   instructionsContainer.appendChild(step);
+      step.appendChild(img);
+      step.appendChild(ins);
+      instructionsContainer.appendChild(step);
+   }
 }
+// dataInstructionsRender();
 
 var reportContainer = document.getElementById("report");
 var reportAlert = document.getElementById("report-alert");
@@ -56,84 +54,69 @@ var genTextRep = document.getElementById("general-text");
 
 
 // TODO: this SHOULD NOT BE HERE
-   var msgReportStats = {
-      "groupChatThreads": [],
-      "regThreads": {},
-      "numPictures": {"gifs": 0, "other": 0},
-      "timeStats": {
-         "hourly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-         "weekly": [0, 0, 0, 0, 0, 0, 0],
-         "monthly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-         "yearly": {}
-      }
-   };
-   // average sent number of messages per day (on days that you did message)
-   // average received -"-
-   // total calls that you have initiated
-   // total calls that you have received
-   // total call time
-   // average call time
-
-// CONSTANTS
-var MONTHS  = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-var DAYS  = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+var msgReportStats = {
+   "groupChatThreads": [],
+   "regThreads": {},
+   "numPictures": {"gifs": 0, "other": 0},
+   "timeStats": {
+      "hourly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "weekly": [0, 0, 0, 0, 0, 0, 0],
+      "monthly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "yearly": {}
+   }
+};
+// average sent number of messages per day (on days that you did message)
+// average received -"-
+// total calls that you have initiated
+// total calls that you have received
+// total call time
+// average call time
 
 // TODO: delete this. just testing for a future loading bar
 var counter = document.createElement("p");
 msgTextCont.appendChild(counter);
-// this should  be a global object used by all reports
+// TODO: this should  be a global object used by all reports
 var name = undefined;
 
-// window.zip.workerScriptsPath = "/javascripts/";
-// var fs = new zip.fs.FS();
 var zip = new Zip(window);
 var fs = new ZipFS(window.zip);
 var inflate = new InflaterJS(window);
 fs = window.zip.fs.FS();
-// var fs = new ZipFS(window.zip).fs.FS();
-// fs = g
-// debugger
-
-// window.zip.workerScriptsPath = "/old_js/";
-// var fs = new zip.fs.FS();
 
 // event specifying that file was uploaded
 var file = document.getElementById("file-picker-input");
 file.onchange = startReport;
 
+// NOTES: right now the code flow is the following:
+// on file uploaded the report is kickstarted with the startReport fn.
+//    the file is imported as a blob, and the profile_info.json parsed first (SCEN1: directly from json files)
+//    the buttons are displayed and functions are added to them.
+//       more data is crunched on btn pressed and msgReportStats is created (SCEN2: data is crunched)
+//       the creation of msgReportStats triggers the rest of the report.
+
+function procProfInfo(text) {
+   let profileInfoJSON = JSON.parse(text);
+   // TODO: check if profile.name.full_name is defined
+   name = profileInfoJSON.profile.name.full_name;
+   let joinedDate = new Date(profileInfoJSON.profile.registration_timestamp * 1000);
+   genTextRep.appendChild(makeCoolText1("My name is", `${name}!`));
+   genTextRep.appendChild(makeCoolText1("I joined Facebook on", `${joinedDate.toDateString()}!`));
+
+   let startReporting = document.createElement("p");
+   startReporting.innerHTML = "Lets do something more interesting. Click below.";
+   genTextRep.appendChild(startReporting);
+}
+
 function startReport() {
    fs.importBlob(file.files[0], function() {
-      // TODO: make sure you check if those two exist before proceeding... 
+      // TODO: extract this in a helper that can check if the directories exist or not. should fail GRACEFULLY
       let profInfo = fs.root.getChildByName("profile_information").getChildByName("profile_information.json");
       // get generic profile info. Used for greeting. Pull this out in a function
-      profInfo.getText(function(text) {
-         let profileInfoJSON = JSON.parse(text);
-         // TODO: check if profile.name.full_name is defined
-         name = profileInfoJSON.profile.name.full_name;
-         let joinedDate = new Date(profileInfoJSON.profile.registration_timestamp * 1000);
-         genTextRep.appendChild(makeCoolText1("My name is", `${name}!`));
-         genTextRep.appendChild(makeCoolText1("I joined Facebook on", `${joinedDate.toDateString()}!`));
-
-         let startReporting = document.createElement("p");
-         startReporting.innerHTML = "Lets do something more interesting. Click below.";
-         genTextRep.appendChild(startReporting);
-      });
+      profInfo.getText(procProfInfo);
       // generate message report container
       showReportBtns();
    });
 };
-
-function filesToConsole(file) {
-   // this will unzip the file and print out the name of each file in the console
-   zip.workerScriptsPath = "/javascripts/";
-   zip.createReader(new zip.BlobReader(file), function(zipReader) {
-      zipReader.getEntries(function(entries) {
-         entries.map(function(e) {
-            return console.log(e.filename);
-         });
-      });
-   });
-}
 
 function showReportBtns() {
    var fbBtns = document.getElementById("btn-container");
@@ -146,19 +129,9 @@ function showReportBtns() {
    // gets the interactions report data
 }
 
-var counter = 0;
-function updateCounter(progressBar, max) {
-   progressBar.innerHTML = `${counter}/${max}`;
-   counter++;
-}
-
 function genAggMsgReport() {
    // TODO this can break in 15 different places...
    var msgDirs = fs.root.getChildByName("messages").getChildByName("inbox").children; // gets the messages directory from zip
-
-   // create a loading bar
-   // var
-   // TODO: a check if actual messages were found needs to be added here
 
    // regular attempt
    var msgThreadsProcessed = 0;
@@ -167,11 +140,7 @@ function genAggMsgReport() {
    reportContainer.appendChild(progressBar);
    
    console.log(numDirs);
-   // msgDirs.forEach(function(msgDir) {
    msgDirs.map((msgDir) => {
-      // for(var z = 0; z < numDirs; z++) {
-      // console.log(z);
-      // var msgDir = msgDirs[z];
       var msgThread = msgDir.getChildByName("message_1.json");
       //todo: intiliaze an analyzer
 
@@ -228,7 +197,8 @@ function genAggMsgReport() {
             }, msgReportStats);
          }
 
-         updateCounter(progressBar, numDirs);
+         // TODO: current progress bar. kind of suck
+         progressBar.innerHTML = `${msgThreadsProcessed}/${numDirs}`;
          // counts stuff
          msgThreadsProcessed++;
 
