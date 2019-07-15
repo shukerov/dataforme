@@ -1,7 +1,7 @@
 import '../styles/main.scss';
-import { InflaterJS } from '../old_js/inflate.js';
-import { Zip } from '../old_js/zip.js';
-import { ZipFS } from '../old_js/zip-fs.js';
+import { InflaterJS } from '../js/zip-js-modified/inflate.js';
+import { Zip } from '../js/zip-js-modified/zip.js';
+import { ZipFS } from '../js/zip-js-modified/zip-fs.js';
 // import * as zip from 'zip-js-wepback/src-min/zip.js';
 // import * as zip from 'zip-js-webpack';
 // import { createWriter, BlobWriter, BlobReader } from 'zip-js-webpack';
