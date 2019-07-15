@@ -5,6 +5,16 @@ import { ZipFS } from '../js/zip-js-modified/zip-fs.js';
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from '../js/clock-chart/clock_graph.js';
 import { DAYS, MONTHS } from '../js/constants.js';
+import { LoadBar } from '../js/components/loadBar.js'
+
+
+// THIS IS FOR DEBUG MODE ONLY
+if (DEBUG_MODE) {
+   var profInfoJSON = require('../data/profile_info.json');
+   var msgStatsPrecompiled = require('../data/dev-data.json');
+}
+// import profInfoJSON from '../data/profile_info.json';
+// import msgStatsPrecompiled from '../data/dev-data.json';
 
 // INSTRUCTION LOADING:
 function dataInstructionsRender() {
@@ -72,9 +82,6 @@ var msgReportStats = {
 // total call time
 // average call time
 
-// TODO: delete this. just testing for a future loading bar
-var counter = document.createElement("p");
-msgTextCont.appendChild(counter);
 // TODO: this should  be a global object used by all reports
 var name = undefined;
 
@@ -83,9 +90,7 @@ var fs = new ZipFS(window.zip);
 var inflate = new InflaterJS(window);
 fs = window.zip.fs.FS();
 
-// event specifying that file was uploaded
-var file = document.getElementById("file-picker-input");
-file.onchange = startReport;
+kickStartReport();
 
 // NOTES: right now the code flow is the following:
 // on file uploaded the report is kickstarted with the startReport fn.
@@ -94,8 +99,13 @@ file.onchange = startReport;
 //       more data is crunched on btn pressed and msgReportStats is created (SCEN2: data is crunched)
 //       the creation of msgReportStats triggers the rest of the report.
 
+// could be more generic, like JSON parse text first and then do the rest the same
 function procProfInfo(text) {
    let profileInfoJSON = JSON.parse(text);
+   renderMainInfo(profileInfoJSON);
+}
+
+function renderMainInfo(profileInfoJSON) {
    // TODO: check if profile.name.full_name is defined
    name = profileInfoJSON.profile.name.full_name;
    let joinedDate = new Date(profileInfoJSON.profile.registration_timestamp * 1000);
@@ -107,7 +117,19 @@ function procProfInfo(text) {
    genTextRep.appendChild(startReporting);
 }
 
-function startReport() {
+function kickStartReport() {
+   if (!DEBUG_MODE) {
+      // event specifying that file was uploaded
+      var file = document.getElementById("file-picker-input");
+      file.onchange = startReport.bind(this, file);
+   }
+   else {
+      renderMainInfo(profInfoJSON);
+      showReportBtns();
+   }
+}
+
+function startReport(file) {
    fs.importBlob(file.files[0], function() {
       // TODO: extract this in a helper that can check if the directories exist or not. should fail GRACEFULLY
       let profInfo = fs.root.getChildByName("profile_information").getChildByName("profile_information.json");
@@ -124,11 +146,22 @@ function showReportBtns() {
 
    // gets all the message report data
    var msgReportBtn = document.getElementById("message-report-btn");
-   msgReportBtn.addEventListener("click", genAggMsgReport);
+   msgReportBtn.addEventListener("click", renderMsgReport);
 
    // gets the interactions report data
    var msgInterBtn = document.getElementById('interaction-report-btn');
    msgInterBtn.disabled = true;
+}
+
+function renderMsgReport() {
+   if (!DEBUG_MODE) {
+      // should pass in the progress component
+      genAggMsgReport();
+   }
+   else {
+      msgReportStats = msgStatsPrecompiled;
+      displayAggMsgReport();
+   }
 }
 
 function genAggMsgReport() {
@@ -138,8 +171,8 @@ function genAggMsgReport() {
    // regular attempt
    var msgThreadsProcessed = 0;
    var numDirs = msgDirs.length;
-   var progressBar = document.createElement("p");
-   reportContainer.appendChild(progressBar);
+   var progress = new LoadBar(msgThreadsProcessed, numDirs);
+   progress.show();
    
    console.log(numDirs);
    msgDirs.map((msgDir) => {
@@ -200,12 +233,14 @@ function genAggMsgReport() {
          }
 
          // TODO: current progress bar. kind of suck
-         progressBar.innerHTML = `${msgThreadsProcessed}/${numDirs}`;
+         // should be a function on progress component
+        progress.updatePercentage(msgThreadsProcessed); 
          // counts stuff
          msgThreadsProcessed++;
 
          // triggers callback once all msgThreads are analyzed
          if (msgThreadsProcessed == numDirs) {
+            progress.hide();
             displayAggMsgReport();
          }
       });

@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const buildPath = path.resolve(__dirname, 'dist');
 
 module.exports = env => {
-  const DEBUG_MODE = process.env.DEBUG || false;
+  const DEBUG_MODE = env.DEBUG || false;
 
   return {
      entry: {

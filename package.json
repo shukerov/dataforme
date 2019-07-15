@@ -25,7 +25,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --env",
     "dev-looks": "webpack-dev-server --env.DEBUG=true",
     "preview": "npm run build && http-server dist",
     "build": "webpack"
