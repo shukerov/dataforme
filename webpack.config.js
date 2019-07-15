@@ -6,9 +6,9 @@ const buildPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
   entry: {
-     index: './src/index.js',
-     facebook: './src/facebook.js',
-     spotify: './src/spotify.js'
+     index: './src/page-index/main.js',
+     facebook: './src/page-facebook/main.js',
+     spotify: './src/page-spotify/main.js'
   },
   mode: 'development',
   module: {
@@ -25,7 +25,10 @@ module.exports = {
            use: [
               {
                  loader: "html-loader",
-                 options: { minimize: true }
+                 options: { 
+                    interpolate: true,
+                    minimize: true
+                 }
               }
            ]
         },
@@ -48,17 +51,17 @@ module.exports = {
   plugins: [
      new CleanWebpackPlugin(),
      new HtmlWebPackPlugin({
-        template: "./src/index.html",
+        template: "./src/page-index/index.html",
         chunks: ['index'],
         filename: "./index.html"
      }),
      new HtmlWebPackPlugin({
-        template: "./src/facebook.html",
+        template: "./src/page-facebook/facebook.html",
         chunks: ['facebook'],
         filename: "./facebook.html"
      }),
      new HtmlWebPackPlugin({
-        template: "./src/spotify.html",
+        template: "./src/page-spotify/spotify.html",
         chunks: ['spotify'],
         filename: "./spotify.html"
      }),
@@ -67,9 +70,4 @@ module.exports = {
         chunkFilename: "[id].css"
      })
   ]
-  // ,
-  // output: {
-  //   filename: 'main.js',
-  //   path: buildPath 
-  // }
 };

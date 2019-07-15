@@ -1,17 +1,18 @@
-import './styles/main.scss';
-import { InflaterJS } from './old_js/inflate.js';
-import { Zip } from './old_js/zip.js';
-import { ZipFS } from './old_js/zip-fs.js';
+import '../styles/main.scss';
+import { InflaterJS } from '../old_js/inflate.js';
+import { Zip } from '../old_js/zip.js';
+import { ZipFS } from '../old_js/zip-fs.js';
 // import * as zip from 'zip-js-wepback/src-min/zip.js';
 // import * as zip from 'zip-js-webpack';
 // import { createWriter, BlobWriter, BlobReader } from 'zip-js-webpack';
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
-import { ClockChart } from './old_js/clock_graph.js';
+import { ClockChart } from '../js/clock-chart/clock_graph.js';
+// import { ClockChart } from './old_js/clock_graph.js';
 
 
 
 // INSTRUCTION LOADING:
-const images = require.context('./images/fb-instructions', true);
+const images = require.context('../images/fb-instructions', true);
 const imagePath = (name) => images(name, true);
 const instructions = [
       {

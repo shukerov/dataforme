@@ -2,9 +2,9 @@
 // import { Chart } from 'frappe-charts'; why doesn this work??
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 // TODO: import all from directory?
-import facebook from './images/icons/facebook.svg';
-import spotify from './images/icons/spotify.svg';
-import './styles/main.scss';
+import facebook from '../images/icons/facebook.svg';
+import spotify from '../images/icons/spotify.svg';
+import '../styles/main.scss';
 
 renderContent();
 
@@ -20,7 +20,6 @@ function renderIcons() {
       'spotify': spotify
    };
 
-   // for (var i = 0; i < websites.length; i++) {
    Object.keys(routes).forEach((key) => {
       var icon = createIcon(routes[key], key);
       iconDock.appendChild(icon);
