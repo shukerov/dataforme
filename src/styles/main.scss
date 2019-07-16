@@ -4,9 +4,16 @@ html {
    height: 100%;
 }
 
+@font-face {
+   font-family: 'Fira';
+   src:  url('./fonts/FiraSans-Regular.ttf') format('ttf');
+   font-weight: 600;
+   font-style: normal;
+}
+
 body {
-  // background-color: #fbc547;
   height: 100%;
+  font-family: Fira;//, Camphor, Open Sans, Segoe UI, sans-serif;
 }
 
 nav {
