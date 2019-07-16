@@ -1,5 +1,5 @@
 import { ANGLE_RATIO, CLK_COLOR_DEF, BAR_COLOR_DEF, BG_COLOR_DEF } from './constants.js';
-import { createSVG, createSVGLoaded } from './draw-utils.js';
+import { createSVG, createSVGLoaded, createLegendWrapper } from './draw-utils.js';
 
 // TODO: calculate the size from parent element?
 class ClockChart {
@@ -16,8 +16,15 @@ class ClockChart {
       middleY = height / 2;
       parent.appendChild(svg);
 
-      // NOTE: data is an array and has to be a size of 24... need a check here!
-      return getClockGraph(svg, graphData, height, parent);
+      // TODO: data is an array and has to be a size of 24... need a check here!
+      if (options.addLegend) {
+         var graph = getClockGraph(svg, graphData, height);
+         var wrapper = createLegendWrapper(graphData, graph); 
+         parent.appendChild(wrapper);
+      }
+      else {
+         return getClockGraph(svg, graphData, height, parent);
+      }
    }
 }
 
@@ -70,7 +77,12 @@ function getClockGraph(svg1, graphData, height, parent) {
       });
    }
 
-   return svg1;
+   if (parent) {
+      parent.appendChild(svg1);
+   }
+   else {
+      return svg1;
+   }
 }
 
 // TODO: make this one group, and break the components within into groups too

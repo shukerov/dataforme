@@ -5,62 +5,26 @@ import { ZipFS } from '../js/zip-js-modified/zip-fs.js';
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from '../js/clock-chart/clock_graph.js';
 import { DAYS, MONTHS } from '../js/constants.js';
-import { LoadBar } from '../js/components/loadBar.js'
+import { LoadBar } from '../js/components/loadBar.js';
+import { insFactory } from '../js/components/insFactory.js';
 
 
+// TODO: extract this in its own component...
 // THIS IS FOR DEBUG MODE ONLY
 if (DEBUG_MODE) {
    var profInfoJSON = require('../data/profile_info.json');
    var msgStatsPrecompiled = require('../data/dev-data.json');
 }
-// import profInfoJSON from '../data/profile_info.json';
-// import msgStatsPrecompiled from '../data/dev-data.json';
-
-// INSTRUCTION LOADING:
-function dataInstructionsRender() {
-   const images = require.context('../images/fb-instructions', true);
-   const imagePath = (name) => images(name, true);
-   const instructions = [
-         {
-            image: imagePath('./1.jpg'),
-            instruction: 'do this now'
-         },
-         {
-            image: imagePath('./2.jpg'),
-            instruction: 'do this then'
-         },
-         {
-            image: imagePath('./3.png'),
-            instruction: 'do this when'
-         },
-         {
-            image: imagePath('./4.jpg'),
-            instruction: 'do this how'
-         },
-   ]
-
-   var instructionsContainer = document.getElementById("fb-insns");
-
-   for (var i = 0; i < instructions.length; i++) {
-      var step = document.createElement('div');
-      step.className = 'ins-step';
-      var img = new Image();
-      var ins = document.createElement('p');
-      ins.innerHTML = instructions[i].instruction;
-      img.src = instructions[i].image;
-
-      step.appendChild(img);
-      step.appendChild(ins);
-      instructionsContainer.appendChild(step);
-   }
-}
-// dataInstructionsRender();
 
 var reportContainer = document.getElementById("report");
 var reportAlert = document.getElementById("report-alert");
 var msgGraphCont = document.getElementById("graphs-container");
 var msgTextCont = document.getElementById("text-container");
 var genTextRep = document.getElementById("general-text");
+
+// NOTE: CODE FOR MAKING INSTRUCTIONS BELOW
+// var ins = new insFactory('facebook', reportContainer);
+// ins.createInstructions();
 
 
 // TODO: this SHOULD NOT BE HERE
@@ -262,7 +226,9 @@ function displayAggMsgReport() {
    msgGraphCont.appendChild(msgAggCont);
 
    // new graph stuff
-   msgAggCont.appendChild(makeCustomClockChart(msgReportStats["timeStats"]["hourly"]));
+   var testinggg = new ClockChart(msgReportStats['timeStats']['hourly'], 600, msgAggCont, {'addLegend': true});
+   // var graph = new ClockChart(data, 600, mainContainer);
+   // msgAggCont.appendChild(makeCustomClockChart(msgReportStats["timeStats"]["hourly"]));
    // new graph stuff end
 
    makeFrappeChart(
@@ -374,73 +340,6 @@ function makeFrappeChart(cont, chartId, chartName, data, labels, type, colors) {
       colors: colors,
       maxSlices: 24
    })
-}
-
-// TODO: could be paired with function below?
-function getTimerangeString(data) {
-   // gets the maximum from the fake data
-   var maxVal = 0;
-   var maxIndex = -1;
-
-   for (var i = 0; i < data.length; i++) {
-      if (maxVal <= data[i]) {
-         maxVal = data[i];
-         maxIndex = i;
-      }
-   }
-
-   return `You have messaged the most from ${getTime(maxIndex)} to ${getTime(maxIndex + 1)}.`;
-}
-
-function getTime(index) {
-   var postfix = 'am';
-   var time = index % 12;
-
-   if (index >= 12) {
-      postfix = 'pm'
-   }
-
-   if (time == 0) {
-      return `12:00 ${postfix}`;
-   }
-
-   return `${time}:00 ${postfix}`;
-}
-
-function setAttributesCustom(el, options) {
-   Object.keys(options).forEach((key) => {
-      el.style[key] = options[key];
-   });
-}
-
-function makeCustomClockChart(data) {
-   var mainContainer = document.createElement("div");
-   var title = document.createElement("h3");
-   var conclusion = document.createElement('p');
-   conclusion.innerHTML = getTimerangeString(data);
-   title.innerHTML = "Messaging Clock";
-   mainContainer.setAttribute("id", "clock-graph-container");
-
-   setAttributesCustom(conclusion, {
-      'text-align': 'center'
-   });
-
-   setAttributesCustom(title, {
-      'text-align': 'center',
-      'margin-bottom': '18px'
-   });
-
-   setAttributesCustom(mainContainer, {
-      'width': '800px',
-      'display': 'flex',
-      'flex-direction': 'column',
-      'justify-content': 'center'
-   });
-
-   mainContainer.appendChild(title);
-   var graph = new ClockChart(data, 600, mainContainer);
-   mainContainer.appendChild(conclusion);
-   return mainContainer;
 }
 
 function makeCoolText1(p1, stat) {
