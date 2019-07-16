@@ -17,7 +17,7 @@ class ClockChart {
       parent.appendChild(svg);
 
       // TODO: data is an array and has to be a size of 24... need a check here!
-      if (options.addLegend) {
+      if (options && options.addLegend) {
          var graph = getClockGraph(svg, graphData, height);
          var wrapper = createLegendWrapper(graphData, graph); 
          parent.appendChild(wrapper);

@@ -22,11 +22,6 @@ var msgGraphCont = document.getElementById("graphs-container");
 var msgTextCont = document.getElementById("text-container");
 var genTextRep = document.getElementById("general-text");
 
-// NOTE: CODE FOR MAKING INSTRUCTIONS BELOW
-// var ins = new insFactory('facebook', reportContainer);
-// ins.createInstructions();
-
-
 // TODO: this SHOULD NOT BE HERE
 var msgReportStats = {
    "groupChatThreads": [],
