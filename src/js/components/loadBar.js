@@ -1,3 +1,5 @@
+import '../../styles/components/loadBar.scss';
+
 class LoadBar {
    constructor(current, max) {
       this.current = current; // current value of the progress
