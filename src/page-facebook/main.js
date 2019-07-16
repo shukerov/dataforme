@@ -6,6 +6,7 @@ import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from '../js/clock-chart/clock_graph.js';
 import { DAYS, MONTHS } from '../js/constants.js';
 import { LoadBar } from '../js/components/loadBar.js';
+import { renderDecoratedText } from '../js/helpers.js';
 // import { insFactory } from '../js/components/insFactory.js';
 
 
@@ -67,8 +68,8 @@ function renderMainInfo(profileInfoJSON) {
    // TODO: check if profile.name.full_name is defined
    name = profileInfoJSON.profile.name.full_name;
    let joinedDate = new Date(profileInfoJSON.profile.registration_timestamp * 1000);
-   genTextRep.appendChild(makeCoolText1("My name is", `${name}!`));
-   genTextRep.appendChild(makeCoolText1("I joined Facebook on", `${joinedDate.toDateString()}!`));
+   renderDecoratedText(name, 'My name is', '!', genTextRep);
+   renderDecoratedText(joinedDate.toDateString(), "Joined FB on:", null, genTextRep);
 
    let startReporting = document.createElement("p");
    startReporting.innerHTML = "Lets do something more interesting. Click below.";
@@ -206,24 +207,23 @@ function genAggMsgReport() {
 }
 
 function displayAggMsgReport() {
-   msgTextCont.appendChild(makeCoolText2(
-      "I have talked to",
-      Object.keys(msgReportStats["regThreads"]).length,
-      "people!"));
-   msgTextCont.appendChild(makeCoolText2(
-      "I have participated in",
-      msgReportStats["groupChatThreads"].length,
-      "group chats!"));
+   var numChats = Object.keys(msgReportStats['regThreads']).length;
+   var numGrChats = msgReportStats['groupChatThreads'].length;
+   renderDecoratedText(numChats, 'I have talked to', 'people!', msgTextCont);
+   renderDecoratedText(numGrChats, 'I have been in ', 'group chats!', msgTextCont);
 
    var msgAggCont = document.createElement("div");
    msgAggCont.classList.add("graph-wrapper");
    msgGraphCont.appendChild(msgAggCont);
 
    // new graph stuff
-   var testinggg = new ClockChart(msgReportStats['timeStats']['hourly'], 600, msgAggCont, {'addLegend': true});
-   // var graph = new ClockChart(data, 600, mainContainer);
-   // msgAggCont.appendChild(makeCustomClockChart(msgReportStats["timeStats"]["hourly"]));
-   // new graph stuff end
+   var testinggg = new ClockChart(
+      msgReportStats['timeStats']['hourly'],
+      600,
+      msgAggCont, {
+         'addLegend':
+         true
+      });
 
    makeFrappeChart(
       msgAggCont,
@@ -334,32 +334,4 @@ function makeFrappeChart(cont, chartId, chartName, data, labels, type, colors) {
       colors: colors,
       maxSlices: 24
    })
-}
-
-function makeCoolText1(p1, stat) {
-   var convStat = document.createElement('p');
-   var convStatPar1 = document.createElement('span');
-   var convStatPar2 = document.createElement('strong');
-
-   convStatPar1.innerHTML = p1 + " ";
-   convStatPar2.innerHTML = stat;
-
-   convStat.appendChild(convStatPar1);
-   convStat.appendChild(convStatPar2);
-   return convStat;
-}
-
-function makeCoolText2(p1, stat, p2) {
-   var convStat = document.createElement('p');
-   var convStatPar1 = document.createElement('span');
-   var convStatPar2 = document.createElement('strong');
-   var convStatPar3 = document.createElement('span');
-   convStatPar1.innerHTML = p1 + " ";
-   convStatPar2.innerHTML = stat;
-   convStatPar3.innerHTML = " " + p2;
-
-   convStat.appendChild(convStatPar1);
-   convStat.appendChild(convStatPar2);
-   convStat.appendChild(convStatPar3);
-   return convStat;
 }

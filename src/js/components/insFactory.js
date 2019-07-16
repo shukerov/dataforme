@@ -2,6 +2,7 @@ import '../../styles/components/instructions.scss';
 import WEBSITES from '../constants.js';
 
 // locations and data for the instructions
+// TODO: check if this bundles all images
 const FB_INS_PATH = '../images/fb-instructions';
 const insns = {
    'facebook': [
