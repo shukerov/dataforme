@@ -16,6 +16,8 @@ class ClockChart {
       middleY = height / 2;
       parent.appendChild(svg);
 
+      window.addEventListener('resize', updateDimensions.bind(this, parent, svg));
+
       // TODO: data is an array and has to be a size of 24... need a check here!
       if (options && options.addLegend) {
          var graph = getClockGraph(svg, graphData, height);
@@ -41,6 +43,30 @@ var createSVGboundParent;
 const clockFaceColor = CLK_COLOR_DEF;
 const barColor = BAR_COLOR_DEF;
 const backgroundCircleColor = BG_COLOR_DEF;
+
+// trying out resizing
+function updateDimensions(parent, svg) {
+   var buffer = 100;
+   var height = getElementContentWidth(parent);
+   // if its less than the original width added
+   if (height < middleX * 2) {
+      svg.setAttribute("height", `${height - buffer}`);
+      svg.setAttribute("width", `${height - buffer}`);
+   }
+   else if (height >= middleX * 2) {
+      svg.setAttribute("height", middleX * 2);
+      svg.setAttribute("width", middleX * 2);
+   }
+}
+
+// copied from frappe-chart utils
+function getElementContentWidth(element) {
+	var styles = window.getComputedStyle(element);
+	var padding = parseFloat(styles.paddingLeft) +
+		parseFloat(styles.paddingRight);
+
+	return element.clientWidth - padding;
+}
 
 function getClockGraph(svg1, graphData, height, parent) {
 
