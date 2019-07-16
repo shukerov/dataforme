@@ -6,7 +6,7 @@ import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from '../js/clock-chart/clock_graph.js';
 import { DAYS, MONTHS } from '../js/constants.js';
 import { LoadBar } from '../js/components/loadBar.js';
-import { insFactory } from '../js/components/insFactory.js';
+// import { insFactory } from '../js/components/insFactory.js';
 
 
 // TODO: extract this in its own component...
@@ -17,7 +17,6 @@ if (DEBUG_MODE) {
 }
 
 var reportContainer = document.getElementById("report");
-var reportAlert = document.getElementById("report-alert");
 var msgGraphCont = document.getElementById("graphs-container");
 var msgTextCont = document.getElementById("text-container");
 var genTextRep = document.getElementById("general-text");

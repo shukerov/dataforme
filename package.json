@@ -28,7 +28,7 @@
     "dev": "webpack-dev-server --env",
     "dev-looks": "webpack-dev-server --env.DEBUG=true",
     "preview": "npm run build && http-server dist",
-    "build": "webpack"
+    "build": "webpack --env"
   },
   "keywords": [],
   "author": "",

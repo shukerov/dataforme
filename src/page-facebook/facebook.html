@@ -12,12 +12,12 @@
     <div class="site">
       ${require('../partials/nav.html')}
       <!-- facebook stuff -->
-      <div id='fb-insns' class='instructions'>
-        <p>First get your data <a href='https://www.facebook.com/help/1701730696756992?helpref=hc_global_nav'>here</a> gayboy. Make sure its in JSON format.
-        </p>
-        <p>Then come back here and drag and drop it below</p>
-        <p><strong>NOTE</strong>: Only the message report works for now.</p>
-      </div>
+      <!-- <div id='fb-insns' class='instructions'> -->
+      <!--   <p>First get your data <a href='https://www.facebook.com/help/1701730696756992?helpref=hc_global_nav'>here</a> gayboy. Make sure its in JSON format. -->
+      <!--   </p> -->
+      <!--   <p>Then come back here and drag and drop it below</p> -->
+      <!--   <p><strong>NOTE</strong>: Only the message report works for now.</p> -->
+      <!-- </div> -->
       <div class="fb-container">
         <div class="file-picker">
           <form class="file-picker-form">
@@ -27,8 +27,8 @@
         </div>
 
         <div id="report">
-          <span id="report-alert"></span>
           <div id="general-text"></div>
+          <!-- needs to be created on the fly with js -->
           <div id="btn-container" style="visibility: hidden">
             <button id="message-report-btn", class="report-btn">My message report</button>
             <button id="interaction-report-btn", class="report-btn">My interactions report</button>
