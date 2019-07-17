@@ -1,14 +1,39 @@
 @import "normalize";
 
+@font-face {
+   font-family: 'Fira';
+   src:  url('./fonts/FiraSans-Regular.ttf') format('ttf'),
+         url('./fonts/FiraSans-Bold.ttf') format('ttf'),
+}
+
 html {
    height: 100%;
 }
 
-@font-face {
-   font-family: 'Fira';
-   src:  url('./fonts/FiraSans-Regular.ttf') format('ttf');
-   font-weight: 600;
-   font-style: normal;
+
+// nav css
+ul {
+   padding: 0;
+   list-style-type: none;
+}
+
+#nav-root {
+   display: flex;
+   align-items: center;
+}
+
+.nav-items {
+   // margin-right: auto;
+   margin: 0 auto;
+   a {
+      text-decoration: none;
+   }
+}
+
+#nav-logo {
+   font-weight: bold;
+   font-size: 40px;
+   // margin: 0 8vh;
 }
 
 body {
@@ -16,23 +41,13 @@ body {
   font-family: Fira;//, Camphor, Open Sans, Segoe UI, sans-serif;
 }
 
-nav {
-   align-self: flex-start;
-   height: 5vh;
-   display: flex;
-   flex-flow: row wrap;
-   justify-content: center;
-
-   a {
-      margin: 1em;
-   }
-}
 
 .site {
    background: #f9f9f9;
    display: flex;
    min-height: 100vh;
    flex-direction: column;
+   overflow: auto;
 }
 
 .container {
@@ -44,9 +59,6 @@ nav {
    overflow: auto;
 }
 
-li {
-   list-style-type: none;
-}
 
 // ##################################
 // this is index specific css
