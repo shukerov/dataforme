@@ -2,11 +2,14 @@ import '../styles/main.scss';
 import { InflaterJS } from '../js/zip-js-modified/inflate.js';
 import { Zip } from '../js/zip-js-modified/zip.js';
 import { ZipFS } from '../js/zip-js-modified/zip-fs.js';
-import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
-import { ClockChart } from '../js/clock-chart/clock_graph.js';
 import { DAYS, MONTHS } from '../js/constants.js';
 import { LoadBar } from '../js/components/loadBar.js';
 import { renderDecoratedText } from '../js/helpers.js';
+
+// import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
+// import { ClockChart } from '../js/clock-chart/clock_graph.js';
+
+import { chartFactory } from '../js/helpers.js';
 // import { insFactory } from '../js/components/insFactory.js';
 
 
@@ -85,6 +88,7 @@ function kickStartReport() {
    else {
       renderMainInfo(profInfoJSON);
       showReportBtns();
+      renderMsgReport();
    }
 }
 
@@ -212,92 +216,78 @@ function displayAggMsgReport() {
    renderDecoratedText(numChats, 'I have talked to', 'people!', msgTextCont);
    renderDecoratedText(numGrChats, 'I have been in ', 'group chats!', msgTextCont);
 
-   var msgAggCont = document.createElement("div");
-   msgAggCont.classList.add("graph-wrapper");
-   msgGraphCont.appendChild(msgAggCont);
+   var graphCont = [];
 
-   // new graph stuff
-   var testinggg = new ClockChart(
-      msgReportStats['timeStats']['hourly'],
-      600,
-      msgAggCont, {
-         'addLegend':
-         true
-      });
-
-   makeFrappeChart(
-      msgAggCont,
-      "chart1",
-      "When do I usually message people (weekly)?",
-      msgReportStats["timeStats"]["weekly"],
-      DAYS,
-      'bar',
-      ['light-blue', 'blue', 'violet',
-         'red', 'orange', 'yellow', 
-         'green', 'light-green', 'purple',
-         'magenta', 'light-grey', 'dark-grey',
-         '#5D76CB', '#F0E891', '#FC2847',
-         '#FFA343', '#1DACD6', '#FDDB6D',
-         '#F75394', '#EDEDED', '#7366BD',
-         '#F780A1', '#C5E384', '#FF5349']);
-
-   makeFrappeChart(
-      msgAggCont,
-      "chart2",
-      "When do I usally message people (monthly)?",
-      msgReportStats["timeStats"]["monthly"],
-      MONTHS,
-      'bar',
-      ['blue']);
-
-   makeFrappeChart(
-      msgAggCont,
-      "chart3",
-      "When do I usally message people (yearly)?",
-      Object.values(msgReportStats["timeStats"]["yearly"]),
-      Object.keys(msgReportStats["timeStats"]["yearly"]),
-      'bar',
-      ['light-blue']);
-
-   // make a graph for top messaged people
-   let topMessagers = newTopMessagers(msgReportStats.regThreads, 10).map((t) => { return t[1]; });
-   //.filter((thread) => {return thread[1];})
-   let data = {
-      labels:  topMessagers,
-      datasets: [
-         {
-            name: "Me",
-            values: topMessagers.reduce(function(acc, msger) {
-               let cnt1 = msgReportStats.regThreads[msger]["msgByUser"];
-               acc.push(cnt1);
-               return acc;
-            }, []),
-            chartType: 'bar'
-         },
-         {
-            name: "Other",
-            values: topMessagers.reduce(function(acc, msger) {
-               let cnt1 = msgReportStats.regThreads[msger]["other"];
-               acc.push(cnt1);
-               return acc;
-            }, []),
-            chartType: 'bar'
-         }
-      ]
+   for (var i = 0; i < 5; i++) {
+      var gcontainer = document.createElement('div');
+      gcontainer.classList.add('graph-wrapper');
+      msgGraphCont.appendChild(gcontainer);
+      graphCont.push(gcontainer);
    }
 
-   var graphWrapper = document.createElement('div');
-   var frappeChart = document.createElement('div');
-   graphWrapper.classList.add('graph-wrapper');
-   graphWrapper.appendChild(frappeChart);
-   msgGraphCont.appendChild(graphWrapper);
-   const chart = new Chart(frappeChart, {  // or a DOM element,
-      title: "People I chatted with the most.",
-      data: data,
-      type: "axis-mixed", // or 'bar', 'line', 'scatter', 'pie', 'percentage'
-      height: 250
-   })
+   const charFac = new chartFactory('blue');
+   var chartHorly = charFac.getChart({
+      type: 'clock',
+      parent: graphCont[0],
+      data: msgReportStats.timeStats.hourly,
+      title: 'Messages by Day of Week',
+      colorscheme: 'blue',
+      name: 'chart1',
+      size: 'medium'
+   });
 
+   var chartDaily = charFac.getChart({
+      type: 'bar',
+      parent: graphCont[1],
+      data: msgReportStats.timeStats.weekly,
+      labels: DAYS,
+      title: 'Messages by Day of Week',
+      colorscheme: 'blue',
+      name: 'chart2',
+      size: 'medium'
+   });
+
+   var chartMonthly = charFac.getChart({
+      type: 'bar',
+      parent: graphCont[2],
+      name: 'chart3',
+      title: 'Messages by Month',
+      data: msgReportStats.timeStats.monthly,
+      labels: MONTHS
+   });
+
+   var chartYearly = charFac.getChart({
+      type: 'bar',
+      parent: graphCont[3],
+      name: 'chart4',
+      title: 'Messages by Year',
+      data: Object.values(msgReportStats.timeStats.yearly),
+      labels: Object.keys(msgReportStats.timeStats.yearly)
+   });
+
+   // make a graph for top messaged people
+   let topMessagers = newTopMessagers(msgReportStats.regThreads, 20).map((t) => { return t[1]; });
+   let msgSent = topMessagers.reduce(function(acc, msger) {
+      let cnt1 = msgReportStats.regThreads[msger]["msgByUser"];
+      acc.push(cnt1);
+      return acc;
+   }, []);
+
+   let msgReceived = topMessagers.reduce(function(acc, msger) {
+      let cnt1 = msgReportStats.regThreads[msger]["other"];
+      acc.push(cnt1);
+      return acc;
+   }, []);
+
+   var chartTopMessegers = charFac.getChart({
+      type: 'axis-mixed',
+      parent: graphCont[4],
+      name: 'chart5',
+      title: 'Top Messegers',
+      labels: topMessagers,
+      data: [msgSent, msgReceived, [`${name}`, 'Friend']],
+      size: 'medium'
+   });
    console.log("should happen once!");
 }
 
@@ -312,26 +302,4 @@ function newTopMessagers(threads, n) {
    // sort the results
    topMessagers.sort( (a, b) => { return a[0] - b[0]; } );
    return topMessagers.slice(topMessagers.length - n);
-}
-
-function makeFrappeChart(cont, chartId, chartName, data, labels, type, colors) {
-   // construct the data variable that frappe requires
-   const chartData = {
-      labels: labels,
-      datasets: [ { values: data } ]
-   }
-
-   // generate the needed divs
-   var frappeChart = document.createElement('div');
-   frappeChart.id = chartId;
-   cont.appendChild(frappeChart);
-
-   const chart = new Chart(`#${chartId}`, {  // or a DOM element,
-      title: chartName,
-      data: chartData,
-      type: type, // or 'bar', 'line', 'scatter', 'pie', 'percentage'
-      height: 250,
-      colors: colors,
-      maxSlices: 24
-   })
 }

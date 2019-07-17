@@ -143,29 +143,33 @@ li {
    display: flex;
    flex-direction: column;
    justify-content: center;
-   width: 80%;
-}
-
-// this is still facebook but graph specific
-.graphs-container {
-   display: flex;
-   flex-direction: row;
    width: 100%;
 }
 
-.graph-wrapper {
+// this is still facebook but graph specific
+#graphs-container {
    display: flex;
    flex-direction: column;
+   justify-content: center;
+   width: 80%;
+   margin: 0 auto;
+}
+
+.graph-wrapper {
+   // display: flex;
+   // flex-direction: column;
    border-style: solid;
    border-color: #ebebeb;
    background: #fff;
-   margin: 2.5vh 10vh;
+   margin: 5vh 0vh;
+   // margin: 2.5vh 10vh;
+   width: 100%
 }
 
-.graph {
-   width: 600px;
-   height: 600px;
-   margin: 50px;
-   justify-content: center;
-}
+// .graph {
+//    width: 600px;
+//    height: 600px;
+//    margin: 50px;
+//    justify-content: center;
+// }
 
