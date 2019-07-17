@@ -20,9 +20,6 @@ function createSVG(tag, attributes, parent) {
       }
    });
    
-   svg.setAttribute("viewBox", "0 0 600 600");
-   // svg.style = "margin: 0 auto;"      
-
    // append to parent if specified
    if (parent) parent.appendChild(svg);
 

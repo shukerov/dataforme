@@ -6,9 +6,6 @@ import { DAYS, MONTHS } from '../js/constants.js';
 import { LoadBar } from '../js/components/loadBar.js';
 import { renderDecoratedText } from '../js/helpers.js';
 
-// import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
-// import { ClockChart } from '../js/clock-chart/clock_graph.js';
-
 import { chartFactory } from '../js/helpers.js';
 // import { insFactory } from '../js/components/insFactory.js';
 

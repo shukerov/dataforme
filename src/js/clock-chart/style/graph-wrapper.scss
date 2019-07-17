@@ -1,5 +1,11 @@
 .clock-graph-container {
    text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   width: 100%;
 }
 
 .clock-graph-conclusion {
@@ -9,7 +15,4 @@
 
 .clock-graph-title {
    width: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
 }
