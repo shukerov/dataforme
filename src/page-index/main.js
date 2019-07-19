@@ -4,37 +4,51 @@ import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 // TODO: import all from directory?
 import facebook from '../images/icons/facebook.svg';
 import spotify from '../images/icons/spotify.svg';
+import tinder from '../images/icons/tinder.svg';
+import '../styles/index.scss';
 import '../styles/main.scss';
 
 renderContent();
 
 function renderContent() {
-   renderIcons()
+   loadWebsites();
+   // renderIcons()
 }
 
-function renderIcons() {
-   var iconDock = document.getElementById('icon-dock');
-   var websites = [facebook, spotify];
-   var routes = {
+function loadWebsites() {
+   let websiteCount = 1;
+   let globalContainer = document.getElementById('site');
+   let websites = [facebook, spotify];
+   let routes = {
       'facebook': facebook,
-      'spotify': spotify
+      'spotify': spotify,
+      'tinder': tinder
    };
 
    Object.keys(routes).forEach((key) => {
-      var icon = createIcon(routes[key], key);
-      iconDock.appendChild(icon);
+      let link = createLink(key);
+      let icon = createIcon(routes[key], key);
+
+      let imgContainer = document.createElement('div');
+      imgContainer.appendChild(icon);
+      link.appendChild(imgContainer);
+      globalContainer.appendChild(link);
+      websiteCount++;
    });
 }
 
-function createIcon(iconName, link) {
-   var linkWrap = document.createElement('a');
-   var img = new Image();
-   
-   linkWrap.href = `./${link}.html`;
-   linkWrap.className = 'index-icon';
-   img.src = iconName;
+function createLink(to) {
+   let linkWrap = document.createElement('a');
 
-   linkWrap.appendChild(img);
+   linkWrap.classList.add('website-item');
+   linkWrap.id = to;
+   linkWrap.href = `./${to}.html`;
 
    return linkWrap;
+}
+
+function createIcon(iconName) {
+   var img = new Image();
+   img.src = iconName;
+   return img;
 }
