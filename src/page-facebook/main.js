@@ -1,18 +1,32 @@
 import '../styles/main.scss';
-import { InflaterJS } from '../js/zip-js-modified/inflate.js';
-import { Zip } from '../js/zip-js-modified/zip.js';
-import { ZipFS } from '../js/zip-js-modified/zip-fs.js';
 import { DAYS, MONTHS } from '../js/constants.js';
 import { LoadBar } from '../js/components/loadBar.js';
 import { renderDecoratedText } from '../js/helpers.js';
 
 import { chartFactory } from '../js/helpers.js';
+import { BaseAnalyzer } from '../js/analyzers/baseAnalyzer.js';
+import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
+
 // import { insFactory } from '../js/components/insFactory.js';
 
-
-// TODO: extract this in its own component...
+var data = {
+   'name': null,
+   'joined': null,
+   'msgStats': {
+      "groupChatThreads": [],
+      "regThreads": {},
+      "numPictures": {"gifs": 0, "other": 0},
+      "timeStats": {
+         "hourly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "weekly": [0, 0, 0, 0, 0, 0, 0],
+         "monthly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "yearly": {}
+      }
+   }
+};
 // THIS IS FOR DEBUG MODE ONLY
 if (DEBUG_MODE) {
+   data = require('../data/fb_precompiled.json');
    var profInfoJSON = require('../data/profile_info.json');
    var msgStatsPrecompiled = require('../data/dev-data.json');
 }
@@ -21,6 +35,7 @@ var reportContainer = document.getElementById("report");
 var msgGraphCont = document.getElementById("graphs-container");
 var msgTextCont = document.getElementById("text-container");
 var genTextRep = document.getElementById("general-text");
+
 
 // TODO: this SHOULD NOT BE HERE
 var msgReportStats = {
@@ -34,6 +49,9 @@ var msgReportStats = {
       "yearly": {}
    }
 };
+
+
+// average words per message
 // average sent number of messages per day (on days that you did message)
 // average received -"-
 // total calls that you have initiated
@@ -43,30 +61,60 @@ var msgReportStats = {
 
 // TODO: this should  be a global object used by all reports
 var name = undefined;
+var analyzer = undefined;
 
-var zip = new Zip(window);
-var fs = new ZipFS(window.zip);
-var inflate = new InflaterJS(window);
-fs = window.zip.fs.FS();
+// var analyzer = new FBAnalyzer();
+// var analyzer = new BaseAnalyzer();
 
 kickStartReport();
 
-// NOTES: right now the code flow is the following:
-// on file uploaded the report is kickstarted with the startReport fn.
-//    the file is imported as a blob, and the profile_info.json parsed first (SCEN1: directly from json files)
-//    the buttons are displayed and functions are added to them.
-//       more data is crunched on btn pressed and msgReportStats is created (SCEN2: data is crunched)
-//       the creation of msgReportStats triggers the rest of the report.
+function kickStartReport() {
+   if (!DEBUG_MODE) {
+      // event specifying that file was uploaded
+      var file = document.getElementById("file-picker-input");
+      file.onchange = report.bind(this, file, data);
+      // file.onchange = startReport.bind(this, file);
+   }
+   else {
+      renderMainInfoNew(data);
+      // renderMainInfo(profInfoJSON);
+      // showReportBtns();
+      renderMsgReport(data);
+   }
+}
 
-// could be more generic, like JSON parse text first and then do the rest the same
-function procProfInfo(text) {
-   let profileInfoJSON = JSON.parse(text);
-   renderMainInfo(profileInfoJSON);
+function report(file, data) {
+   // console.log(file.files[0]);
+   analyzer = new FBAnalyzer(file.files[0], data, renderMainInfoNew.bind(this, data));
+   // renderMainInfoNew(data);
+}
+
+function startReport(file) {
+   analyzer.importFile(file.files[0], function() {
+      let profInfo = analyzer.getJSONFile('profile_information/profile_information.json');
+
+      // get generic profile info
+      profInfo.getText(procProfInfo);
+
+      // render the different report buttons
+      showReportBtns();
+   });
+};
+
+function renderMainInfoNew(data) {
+   renderDecoratedText(data.name, 'My name is', '!', genTextRep);
+   renderDecoratedText(data.joined, "Joined FB on:", null, genTextRep);
+
+   let startReporting = document.createElement("p");
+   startReporting.innerHTML = "Lets do something more interesting. Click below.";
+   genTextRep.appendChild(startReporting);
+   showReportBtns();
 }
 
 function renderMainInfo(profileInfoJSON) {
    // TODO: check if profile.name.full_name is defined
    name = profileInfoJSON.profile.name.full_name;
+   //TODO: needs to be coming from data
    let joinedDate = new Date(profileInfoJSON.profile.registration_timestamp * 1000);
    renderDecoratedText(name, 'My name is', '!', genTextRep);
    renderDecoratedText(joinedDate.toDateString(), "Joined FB on:", null, genTextRep);
@@ -76,29 +124,23 @@ function renderMainInfo(profileInfoJSON) {
    genTextRep.appendChild(startReporting);
 }
 
-function kickStartReport() {
+function renderMsgReport() {
+   // ZIP FILE MODE
    if (!DEBUG_MODE) {
-      // event specifying that file was uploaded
-      var file = document.getElementById("file-picker-input");
-      file.onchange = startReport.bind(this, file);
+      analyzer.analyzeMsgThreads(data.msgStats, displayAggMsgReport.bind(this, data.msgStats));
+      // genAggMsgReport();
    }
    else {
-      renderMainInfo(profInfoJSON);
-      showReportBtns();
-      renderMsgReport();
+      // msgReportStats = msgStatsPrecompiled;
+      displayAggMsgReport(msgStatsPrecompiled);
    }
 }
 
-function startReport(file) {
-   fs.importBlob(file.files[0], function() {
-      // TODO: extract this in a helper that can check if the directories exist or not. should fail GRACEFULLY
-      let profInfo = fs.root.getChildByName("profile_information").getChildByName("profile_information.json");
-      // get generic profile info. Used for greeting. Pull this out in a function
-      profInfo.getText(procProfInfo);
-      // generate message report container
-      showReportBtns();
-   });
-};
+// could be more generic, like JSON parse text first and then do the rest the same
+function procProfInfo(text) {
+   let profileInfoJSON = JSON.parse(text);
+   renderMainInfo(profileInfoJSON);
+}
 
 function showReportBtns() {
    var fbBtns = document.getElementById("btn-container");
@@ -113,101 +155,86 @@ function showReportBtns() {
    msgInterBtn.disabled = true;
 }
 
-function renderMsgReport() {
-   if (!DEBUG_MODE) {
-      // should pass in the progress component
-      genAggMsgReport();
-   }
-   else {
-      msgReportStats = msgStatsPrecompiled;
-      displayAggMsgReport();
-   }
-}
 
-function genAggMsgReport() {
-   // TODO this can break in 15 different places...
-   var msgDirs = fs.root.getChildByName("messages").getChildByName("inbox").children; // gets the messages directory from zip
+// function genAggMsgReport() {
+//    // TODO this can break in 15 different places...
+//    var msgDirs = analyzer.getDirChildren('messages/inbox');
 
-   // regular attempt
-   var msgThreadsProcessed = 0;
-   var numDirs = msgDirs.length;
-   var progress = new LoadBar(msgThreadsProcessed, numDirs);
-   progress.show();
+//    // regular attempt
+//    var msgThreadsProcessed = 0;
+//    var numDirs = msgDirs.length;
+//    var progress = new LoadBar(msgThreadsProcessed, numDirs);
+//    progress.show();
    
-   console.log(numDirs);
-   msgDirs.map((msgDir) => {
-      var msgThread = msgDir.getChildByName("message_1.json");
-      //todo: intiliaze an analyzer
+//    console.log(numDirs);
+//    msgDirs.map((msgDir) => {
+//       var msgThread = msgDir.getChildByName("message_1.json");
 
-      // gets pictures statistics
-      //TODO:
+//       // message thread was not found in the given directory
+//       if (!msgThread) {
+//          msgThreadsProcessed++;
+//          return;
+//       }
 
-      // message thread was not found in the given directory
-      if (!msgThread) {
-         msgThreadsProcessed++;
-         return;
-      }
+//       // gets thread text, and analyzes it
+//       // msgThread.getText(analyzer.analyzeMessage.bind(analyzer, msgReportStats));
+//       msgThread.getText(function(text) {
+//          var text_json = JSON.parse(text);
+//          let participants = text_json.participants // all participants in the current chat thread
+//          let group = true;                         // remains true if the chat is a groupchat
 
+//          if (participants && participants.length > 2) {
+//             msgReportStats["groupChatThreads"].push(msgDir.name);
+//          }
+//          else if(participants) {
+//             let participantStat = {
+//                "dirName": msgDir.name,
+//                "msgByUser": 0,
+//                "other": 0
+//             };
+//             msgReportStats["regThreads"][participants[0].name] = participantStat; 
+//             group = false;
+//          }
 
-      // gets thread text, and analyzes it
-      msgThread.getText(function(text) {
-         var text_json = JSON.parse(text);
-         let participants = text_json.participants // all participants in the current chat thread
-         let group = true;                         // remains true if the chat is a groupchat
+//          if (text_json.messages && text_json.messages.length > 1) {
+//             // pull this function out and make sure you can reuse it in individual thread analysis
+//             text_json.messages.reduce(function(acc, msg) {
+//                if (!group) {
+//                   if (msg.sender_name == name) {
+//                      acc["regThreads"][participants[0].name]["msgByUser"]++; 
+//                   }
+//                   else
+//                   {
+//                      acc["regThreads"][participants[0].name]["other"]++; 
+//                   }
+//                }
 
-         if (participants && participants.length > 2) {
-            msgReportStats["groupChatThreads"].push(msgDir.name);
-         }
-         else if(participants) {
-            let participantStat = {
-               "dirName": msgDir.name,
-               "msgByUser": 0,
-               "other": 0
-            };
-            msgReportStats["regThreads"][participants[0].name] = participantStat; 
-            group = false;
-         }
+//                if (msg.sender_name == name) {
+//                   let d = new Date(msg.timestamp_ms);
+//                   acc.timeStats.weekly[d.getDay()]++;
+//                   acc["timeStats"]["hourly"][d.getHours()]++;
+//                   acc["timeStats"]["monthly"][d.getMonth()]++;
+//                   acc["timeStats"]["yearly"][d.getFullYear()] = (acc["timeStats"]["yearly"][d.getFullYear()] || 0) + 1;
+//                }
+//                return acc;
+//             }, msgReportStats);
+//          }
 
-         if (text_json.messages && text_json.messages.length > 1) {
-            // pull this function out and make sure you can reuse it in individual thread analysis
-            text_json.messages.reduce(function(acc, msg) {
-               if (!group) {
-                  if (msg.sender_name == name) {
-                     acc["regThreads"][participants[0].name]["msgByUser"]++; 
-                  }
-                  else
-                  {
-                     acc["regThreads"][participants[0].name]["other"]++; 
-                  }
-               }
+//          // progress bar
+//         progress.updatePercentage(msgThreadsProcessed); 
+//          // counts stuff
+//          msgThreadsProcessed++;
 
-               if (msg.sender_name == name) {
-                  let d = new Date(msg.timestamp_ms);
-                  acc.timeStats.weekly[d.getDay()]++;
-                  acc["timeStats"]["hourly"][d.getHours()]++;
-                  acc["timeStats"]["monthly"][d.getMonth()]++;
-                  acc["timeStats"]["yearly"][d.getFullYear()] = (acc["timeStats"]["yearly"][d.getFullYear()] || 0) + 1;
-               }
-               return acc;
-            }, msgReportStats);
-         }
+//          // triggers callback once all msgThreads are analyzed
+//          if (msgThreadsProcessed == numDirs) {
+//             progress.hide();
+//             displayAggMsgReport();
+//          }
+//       });
+//    });
+// }
 
-         // TODO: current progress bar. kind of suck
-         // should be a function on progress component
-        progress.updatePercentage(msgThreadsProcessed); 
-         // counts stuff
-         msgThreadsProcessed++;
-
-         // triggers callback once all msgThreads are analyzed
-         if (msgThreadsProcessed == numDirs) {
-            progress.hide();
-            displayAggMsgReport();
-         }
-      });
-   });
-}
-
-function displayAggMsgReport() {
+function displayAggMsgReport(msgReportStats) {
    var numChats = Object.keys(msgReportStats['regThreads']).length;
    var numGrChats = msgReportStats['groupChatThreads'].length;
    renderDecoratedText(numChats, 'I have talked to', 'people!', msgTextCont);

@@ -1,8 +1,8 @@
 import '../../styles/components/loadBar.scss';
 
 class LoadBar {
-   constructor(current, max) {
-      this.current = current; // current value of the progress
+   constructor(max) {
+      this.current = 0; // current value of the progress
       this.max = max;         // maximum value that the progress can reach
 
       // the html elements
@@ -17,8 +17,8 @@ class LoadBar {
    }
 
    // updates progress bar
-   updatePercentage(val) {
-      this.current = val;
+   updatePercentage() {
+      this.current++;
       this.text.innerHTML = this.toPercent() ;
    }
 
