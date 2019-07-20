@@ -1,0 +1,51 @@
+// nav css
+nav { 
+   position: absolute;
+   top: 0;
+   width: 100%;
+   // background: black;
+}
+ul {
+   padding: 0;
+   list-style-type: none;
+}
+
+#nav-root {
+   poistion: absolute;
+   display: flex;
+   align-items: center;
+}
+
+.nav-items {
+   font-family: BigNoodleTitling;
+   margin: 0 auto;
+   a {
+      text-decoration: none;
+   }
+}
+
+#nav-logo {
+   margin: 0 3vh;
+   width: 15%;
+   svg {
+      fill: white;
+      font-size: 4;
+      font-family: BigNoodleTitling;
+   }
+}
+
+// trying to create something similar to stripe
+#test {
+   background: black;
+   // background: linear-gradient(150deg,#53f 15%,#05d5ff 70%,#a6ffcb 94%);
+   position: absolute;
+   top:0;
+   // z-index: -1;
+   // display: block;
+   width: 100%;
+   height: 24%;
+   transform-origin: 0;
+   // transform: skewY(-15deg);
+   transform: skewY(-2deg);
+   overflow: hidden;
+}

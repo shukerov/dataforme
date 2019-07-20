@@ -1,6 +1,5 @@
 //TODO: use babel instead?
 // import { Chart } from 'frappe-charts'; why doesn this work??
-import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 // TODO: import all from directory?
 import facebook from '../images/icons/facebook.svg';
 import spotify from '../images/icons/spotify.svg';
@@ -16,9 +15,7 @@ function renderContent() {
 }
 
 function loadWebsites() {
-   let websiteCount = 1;
    let globalContainer = document.getElementById('site');
-   let websites = [facebook, spotify];
    let routes = {
       'facebook': facebook,
       'spotify': spotify,
@@ -33,7 +30,6 @@ function loadWebsites() {
       imgContainer.appendChild(icon);
       link.appendChild(imgContainer);
       globalContainer.appendChild(link);
-      websiteCount++;
    });
 }
 

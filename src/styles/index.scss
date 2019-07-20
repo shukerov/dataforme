@@ -1,3 +1,8 @@
+@font-face {
+   font-family: 'BigNoodleTitling';
+   src:  url('./fonts/BigNoodleTitling.ttf') format('ttf');
+}
+
 #website {
    height: 100vh;
    display: flex;
@@ -17,7 +22,6 @@
 }
 
 .website-item:hover {
-   // transform: scale(1.1);
    flex: 1.1;
 
    img {
@@ -29,14 +33,10 @@
 .website-item > * {
    margin: 0;
    width: 100%;
-   // flex: 1 0 auto;
    display: flex;
    justify-content: center;
    align-items: center;
    flex: 1 0 auto;
-  // img {
-  //    width: 100px;
-  // }
 }
  #facebook {
     background: #3b5998;
@@ -49,50 +49,3 @@
  #tinder {
  }
 
-// nav css
-nav { 
-   position: absolute;
-   top: 0;
-   width: 100%;
-   // background: black;
-}
-ul {
-   padding: 0;
-   list-style-type: none;
-}
-
-#nav-root {
-   poistion: absolute;
-   display: flex;
-   align-items: center;
-}
-
-.nav-items {
-   // margin-right: auto;
-   margin: 0 auto;
-   a {
-      text-decoration: none;
-   }
-}
-
-#nav-logo {
-   font-weight: bold;
-   font-size: 40px;
-   // margin: 0 8vh;
-}
-
-// trying to create something similar to stripe
-#test {
-   background: black;
-   // background: linear-gradient(150deg,#53f 15%,#05d5ff 70%,#a6ffcb 94%);
-   position: absolute;
-   top:0;
-   // z-index: -1;
-   // display: block;
-   width: 100%;
-   height: 14%;
-   transform-origin: 0;
-   // transform: skewY(-15deg);
-   transform: skewY(-3deg);
-   overflow: hidden;
-}

@@ -1,10 +1,8 @@
 import '../styles/main.scss';
 import { DAYS, MONTHS } from '../js/constants.js';
-import { LoadBar } from '../js/components/loadBar.js';
 import { renderDecoratedText } from '../js/helpers.js';
 
 import { chartFactory } from '../js/helpers.js';
-import { BaseAnalyzer } from '../js/analyzers/baseAnalyzer.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 
 // import { insFactory } from '../js/components/insFactory.js';
