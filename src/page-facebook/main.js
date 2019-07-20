@@ -5,6 +5,7 @@ import { renderDecoratedText } from '../js/helpers.js';
 import { chartFactory } from '../js/helpers.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 
+import { NavBar } from '../js/components/navBar.js';
 // import { insFactory } from '../js/components/insFactory.js';
 
 var data = {
@@ -64,6 +65,8 @@ var analyzer = undefined;
 // var analyzer = new FBAnalyzer();
 // var analyzer = new BaseAnalyzer();
 
+// new NavBar(document.getElementById('site');
+new NavBar(document.getElementsByClassName('site')[0]);
 kickStartReport();
 
 function kickStartReport() {

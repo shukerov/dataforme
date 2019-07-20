@@ -4,18 +4,21 @@
 import facebook from '../images/icons/facebook.svg';
 import spotify from '../images/icons/spotify.svg';
 import tinder from '../images/icons/tinder.svg';
+import { createImage } from '../js/helpers.js';
+import { NavBar } from '../js/components/navBar.js';
 import '../styles/index.scss';
 import '../styles/main.scss';
 
 renderContent();
 
 function renderContent() {
-   loadWebsites();
+   let globalContainer = document.getElementById('site');
+   new NavBar(document.body);
+   loadWebsites(globalContainer);
    // renderIcons()
 }
 
-function loadWebsites() {
-   let globalContainer = document.getElementById('site');
+function loadWebsites(globalContainer) {
    let routes = {
       'facebook': facebook,
       'spotify': spotify,
@@ -24,7 +27,7 @@ function loadWebsites() {
 
    Object.keys(routes).forEach((key) => {
       let link = createLink(key);
-      let icon = createIcon(routes[key], key);
+      let icon = createImage(routes[key]);
 
       let imgContainer = document.createElement('div');
       imgContainer.appendChild(icon);
@@ -41,10 +44,4 @@ function createLink(to) {
    linkWrap.href = `./${to}.html`;
 
    return linkWrap;
-}
-
-function createIcon(iconName) {
-   var img = new Image();
-   img.src = iconName;
-   return img;
 }

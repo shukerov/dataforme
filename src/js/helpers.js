@@ -22,6 +22,11 @@ export function renderDecoratedText(decorate, prefix, postfix, parent) {
    return (parent ? parent.appendChild(container) : container);
 }
 
+export function createImage(imgSrc) {
+   var img = new Image();
+   img.src = imgSrc;
+   return img;
+}
 
 class chartFactory {
    
