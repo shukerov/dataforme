@@ -33,10 +33,7 @@ class FBAnalyzer extends BaseAnalyzer {
       this.username = profInfoJSON.profile.name.full_name;
 
       data.name = this.username;
-      // PULL THIS OUT store as seconds since epoch
-      let dateJoined = new Date(profInfoJSON.profile.registration_timestamp * 1000);
-      data.joined = dateJoined.toDateString();
-      console.log(this.username);
+      data.joined = profInfoJSON.profile.registration_timestamp * 1000;
 
       // NOPE
       this.callback();

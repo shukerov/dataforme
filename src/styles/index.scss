@@ -3,6 +3,14 @@
    src:  url('./fonts/BigNoodleTitling.ttf') format('ttf');
 }
 
+// upper half of the page
+#website-cnt {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
 #website {
    height: 100vh;
    display: flex;
@@ -49,5 +57,10 @@
 
 #tinder {
    background: linear-gradient(262deg, #ff7854, #fd267d);
+}
+
+// about page
+#about {
+   height: 100vh;
 }
 

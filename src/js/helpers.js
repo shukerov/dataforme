@@ -1,24 +1,30 @@
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from '../js/clock-chart/clock_graph.js';
 
-export function renderDecoratedText(decorate, prefix, postfix, parent) {
-   var container = document.createElement('p');       // holds all elements
-   var pretext = document.createElement('span');      // prefix text
-   var dtext = document.createElement('strong');      // decorated text
+export function formatNum(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
 
-   pretext.innerHTML = prefix + " ";
-   dtext.innerHTML = `${decorate}`;
+export function renderText(text, highlight, parent) {
+   let container = document.createElement('p');
+   let textA = text.split('*');
 
-   container.appendChild(pretext);
-   container.appendChild(dtext);
+   textA.forEach((item) => {
+      let span = document.createElement('span');
+      span.innerHTML = item;
+      container.appendChild(span);
+   });
 
-   if (postfix) {
-      var potext = document.createElement('span');     // postfix text
-      potext.innerHTML = ' ' + postfix;
-      container.appendChild(potext);
-   }
+   let pos = 1;
+   highlight.forEach((item) => {
+      let highlighted = document.createElement('strong');
 
-   // should it not always return the container
+      highlighted.innerHTML = item;
+      container.insertBefore(highlighted, container.children[pos]);
+
+      pos +=2;
+   });
+
    return (parent ? parent.appendChild(container) : container);
 }
 

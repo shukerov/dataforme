@@ -1,4 +1,4 @@
-// @import 'fonts';
+// @import '../fonts';
 // duplication
 @font-face {
    font-family: 'BigNoodleTitling';
@@ -30,12 +30,24 @@ ul {
    padding-right: 5vh;
    padding-left: 2vh;
    transform: translateX(-1vh);
+   // transform: skew(30deg, 20deg);
    // flex: 1;
    // height: 100%;
 }
 
+// #nav-bg {
+//    position: absolute;
+//    left: -3vh;
+//       width: 270px;
+//       height: 150px;
+//       transform: skew(-20deg);
+//       background: black;
+// }
+
 #nav-logo {
-   
+   // height: 100%;
+   // width: 100%;
+   width: 271px;
 }
 
 // nav css

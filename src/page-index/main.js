@@ -4,7 +4,7 @@
 import facebook from '../images/icons/facebook.svg';
 import spotify from '../images/icons/spotify.svg';
 import tinder from '../images/icons/tinder.svg';
-import { createImage } from '../js/helpers.js';
+import { createImage, setScrolling } from '../js/helpers.js';
 import { NavBar } from '../js/components/navBar.js';
 import '../styles/index.scss';
 import '../styles/main.scss';
@@ -13,9 +13,22 @@ renderContent();
 
 function renderContent() {
    let globalContainer = document.getElementById('site');
+   let websiteContainer = document.getElementById('website-cnt');
+   let aboutContainer = document.getElementById('about');
+
    new NavBar(document.body);
-   loadWebsites(globalContainer);
+   // loadWebsites(globalContainer);
+   loadWebsites(websiteContainer); // globalContainer);
+   loadAbout(aboutContainer);
    // renderIcons()
+}
+
+function loadAbout(parent) {
+   // parent.scrollIntoView({behavior: 'smooth'});
+   let aboutParagraph = document.createElement('p');
+   aboutParagraph.innerHTML = 'A website I build for myself.';
+
+   parent.appendChild(aboutParagraph);
 }
 
 function loadWebsites(globalContainer) {

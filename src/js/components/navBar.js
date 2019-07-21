@@ -13,6 +13,7 @@ class NavBar {
    }
 
    setup() {
+      let background = document.createElement('div');
       let root = document.createElement('ul');
 
       // all for logo
@@ -23,9 +24,11 @@ class NavBar {
       // styles
       this.self.id = 'nav';
       root.id = 'nav-root';
+      background.id = 'nav-bg';
 
       // add to self
       root.appendChild(logoItem);
+      this.self.appendChild(background);
       this.self.appendChild(root);
    }
 
@@ -43,10 +46,11 @@ class NavBar {
       logoCont.href = '/';
       logoCont.id = 'nav-logo';
 
-      logoCont.appendChild(logoImage);
-      logoItem.appendChild(logoCont);
+      logoItem.appendChild(logoImage);
+      logoCont.appendChild(logoItem);
+      // logoItem.appendChild(logoCont);
 
-      return logoItem;
+      return logoCont;
    }
 
    // show() {
