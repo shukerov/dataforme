@@ -1,6 +1,54 @@
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from '../js/clock-chart/clock_graph.js';
 
+export class scrollManager {
+   constructor() {
+      this.navbar = document.getElementById('nav-logo');
+      this.website = document.getElementById('site');
+
+      this.navbarHeight = this.navbar.scrollHeight;
+      this.scrolled = false;
+      this.lastScroll = 0;
+      this.delta = 5;
+   }
+
+   hasScrolled() {
+      let curPos = window.scrollY;
+      if(Math.abs(this.lastScroll - curPos) <= this.delta)
+         return;
+
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      if (curPos > this.lastScroll && curPos > this.navbarHeight){
+         // Scroll Down
+         this.navbar.classList.add('nav-aside');
+         this.navbar.classList.remove('nav-up');
+      } else {
+         // Scroll Up
+         if(curPos + window.outerHeight < document.body.scrollHeight ) {
+            this.navbar.classList.remove('nav-aside');
+            this.navbar.classList.add('nav-up');
+         }
+      }
+
+      this.lastScroll = curPos;
+   }
+
+   setScrolling(){
+
+      setInterval(function() {
+         if (this.scrolled) {
+            this.hasScrolled();
+            this.scrolled = false;
+         }
+      }.bind(this), 250);
+
+      window.addEventListener('scroll', function(e) {
+         this.scrolled = true;
+      }.bind(this));
+   }
+
+}
+
 export function formatNum(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }

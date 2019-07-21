@@ -4,12 +4,14 @@
 import facebook from '../images/icons/facebook.svg';
 import spotify from '../images/icons/spotify.svg';
 import tinder from '../images/icons/tinder.svg';
-import { createImage, setScrolling } from '../js/helpers.js';
+import { createImage, scrollManager } from '../js/helpers.js';
 import { NavBar } from '../js/components/navBar.js';
 import '../styles/index.scss';
 import '../styles/main.scss';
 
 renderContent();
+let smng = new scrollManager();
+smng.setScrolling();
 
 function renderContent() {
    let globalContainer = document.getElementById('site');
