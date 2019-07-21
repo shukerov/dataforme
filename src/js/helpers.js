@@ -1,9 +1,13 @@
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from '../js/clock-chart/clock_graph.js';
 
+// TODO: this should be called or even part of navBar.js
 export class scrollManager {
    constructor() {
-      this.navbar = document.getElementById('nav-logo');
+      this.navbar = document.getElementById('nav-root');
+      this.navbarItems = document.getElementsByClassName('nav-item');
+      // console.log(this.navbarItems[0]);
+      // console.log(this.navbarItems[1]);
       this.website = document.getElementById('site');
 
       this.navbarHeight = this.navbar.scrollHeight;
@@ -19,14 +23,25 @@ export class scrollManager {
 
       // If they scrolled down and are past the navbar, add class .nav-up.
       if (curPos > this.lastScroll && curPos > this.navbarHeight){
+
+         for (var i = 0, len = this.navbarItems.length; i < len; i++) {
+            this.navbarItems[i].classList.add('nav-aside');
+            this.navbarItems[i].classList.remove('nav-up');
+         }
+
          // Scroll Down
-         this.navbar.classList.add('nav-aside');
-         this.navbar.classList.remove('nav-up');
+         // this.navbar.classList.add('nav-aside');
+         // this.navbar.classList.remove('nav-up');
       } else {
          // Scroll Up
          if(curPos + window.outerHeight < document.body.scrollHeight ) {
-            this.navbar.classList.remove('nav-aside');
-            this.navbar.classList.add('nav-up');
+            for (var i = 0, len = this.navbarItems.length; i < len; i++) {
+               this.navbarItems[i].classList.remove('nav-aside');
+               this.navbarItems[i].classList.add('nav-up');
+            }
+
+            // this.navbar.classList.remove('nav-aside');
+            // this.navbar.classList.add('nav-up');
          }
       }
 

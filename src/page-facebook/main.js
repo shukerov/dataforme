@@ -2,7 +2,7 @@ import '../styles/main.scss';
 import { DAYS, MONTHS, MS_IN_DAY } from '../js/constants.js';
 import { renderText, formatNum } from '../js/helpers.js';
 
-import { chartFactory } from '../js/helpers.js';
+import { chartFactory, scrollManager } from '../js/helpers.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 
 import { NavBar } from '../js/components/navBar.js';
@@ -47,8 +47,10 @@ var analyzer = undefined;
 // var analyzer = new FBAnalyzer();
 // var analyzer = new BaseAnalyzer();
 
-// new NavBar(document.getElementById('site');
-new NavBar(document.getElementsByClassName('site')[0]);
+new NavBar(document.getElementById('site'));
+let smng = new scrollManager();
+smng.setScrolling();
+// new NavBar(document.getElementsByClassName('site')[0]);
 kickStartReport();
 
 function kickStartReport() {

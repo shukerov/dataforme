@@ -18,7 +18,7 @@ function renderContent() {
    let websiteContainer = document.getElementById('website-cnt');
    let aboutContainer = document.getElementById('about');
 
-   new NavBar(document.body);
+   new NavBar(globalContainer, true);
    // loadWebsites(globalContainer);
    loadWebsites(websiteContainer); // globalContainer);
    loadAbout(aboutContainer);
