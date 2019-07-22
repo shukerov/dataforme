@@ -1,4 +1,5 @@
 import '../styles/main.scss';
+import '../styles/facebook.scss';
 import { DAYS, MONTHS, MS_IN_DAY } from '../js/constants.js';
 import { renderText, formatNum } from '../js/helpers.js';
 

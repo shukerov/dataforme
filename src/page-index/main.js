@@ -16,10 +16,8 @@ function renderContent() {
    let aboutContainer = document.getElementById('about');
 
    new NavBar(globalContainer, true);
-   // loadWebsites(globalContainer);
    loadWebsites(websiteContainer); // globalContainer);
    loadAbout(aboutContainer);
-   // renderIcons()
 }
 
 function loadAbout(parent) {
@@ -29,6 +27,7 @@ function loadAbout(parent) {
    textContainer.classList.add('about-content-container');
 
    // website content. Might be wise to store this in a json file?
+   // TODO: even better idea just dump it in the html and hide the element.
    textContainer.innerHTML = "\
       <h1>About DataForMe:</h1>\
       <p>\
@@ -66,7 +65,7 @@ function loadAbout(parent) {
       </p>\
       <h2>Why I built this:</h2>\
       <p>\
-         I am a college student studying abroad, who got genuenly excited about his\
+         I am a college student studying abroad, who got genuinely excited about his\
          right of access to data. I also needed a senior project so I can graduate,\
          and this is it! I hope you find this somewhat useful. The code is\
          open-source and you can look through it or contribute here.\
