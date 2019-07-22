@@ -1,14 +1,18 @@
-.fb-container {
+// .fb-container {
+//    display: flex;
+//    flex-direction: column;
+//    margin: 0 auto;
+//    max-width: 80%;
+//    align-items: center;
+// }
+
+#instructions-container {
    display: flex;
    flex-direction: column;
    margin: 0 auto;
-   max-width: 80%;
-   align-items: center;
-}
-
-#instructions-container {
+   max-width: 60%;
+   // align-items: center;
    height: 100vh;
-   max-width: 75%;
 }
 
 #report {
