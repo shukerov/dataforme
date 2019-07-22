@@ -1,6 +1,3 @@
-//TODO: use babel instead?
-// import { Chart } from 'frappe-charts'; why doesn this work??
-// TODO: import all from directory?
 import facebook from '../images/icons/facebook.svg';
 import spotify from '../images/icons/spotify.svg';
 import tinder from '../images/icons/tinder.svg';
@@ -26,11 +23,57 @@ function renderContent() {
 }
 
 function loadAbout(parent) {
-   // parent.scrollIntoView({behavior: 'smooth'});
-   let aboutParagraph = document.createElement('p');
-   aboutParagraph.innerHTML = 'A website I build for myself.';
+   let textContainer = document.createElement('div');
 
-   parent.appendChild(aboutParagraph);
+   // styles
+   textContainer.classList.add('about-content-container');
+
+   // website content. Might be wise to store this in a json file?
+   textContainer.innerHTML = "\
+      <h1>About DataForMe:</h1>\
+      <p>\
+         <strong>TLDR</strong>: A website that teaches you how to practice\
+         your Right of Access, and optionally analyzes your data offline.\
+      </p>\
+      <p>\
+         Since the GDPR was passed in 2016, software providers need to\
+         accommodate the 'Right of Access' for their users.\
+         What does this mean? It means that <strong>YOU</strong>\
+         can get a copy of the data that you generate.\
+      </p>\
+      <p>\
+         The goal of this website is to serve as a wiki of how to download\
+         your data from different web service providers. Click on one of the\
+         tiles above to learn how to do so.\
+      </p>\
+      <p>\
+         Once you request a copy, you might have to wait up to a\
+         few days to receive that copy.\
+      </p>\
+      <p>\
+         Afterwards, you can analyze your data here, and hopefully gain some\
+         insight about how you interact with these web services. By now you\
+         are probably thinking: 'Why would I ever upload my information to the\
+         web?'\
+      </p>\
+      <p>\
+         If you didn't ask yourself that question then you are surfing the web\
+         a tad bit carelessly. Anyway rest assured. This website is client side\
+         only, this means that it can work offline once you have loaded this\
+         page. Your data won't ever leave your computer, and will be analyzed\
+         inside your browser. Still don't trust it? Good. Disconnect from the\
+         internet when you add your file to be analyzed.\
+      </p>\
+      <h2>Why I built this:</h2>\
+      <p>\
+         I am a college student studying abroad, who got genuenly excited about his\
+         right of access to data. I also needed a senior project so I can graduate,\
+         and this is it! I hope you find this somewhat useful. The code is\
+         open-source and you can look through it or contribute here.\
+      </p>";
+
+   parent.appendChild(textContainer);
+
 }
 
 function loadWebsites(globalContainer) {

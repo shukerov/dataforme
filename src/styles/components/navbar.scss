@@ -4,6 +4,9 @@
    font-family: 'BigNoodleTitling';
    src:  url('../fonts/BigNoodleTitling.ttf') format('truetype');
 }
+$facebook: #3b5998;
+$spotify: #1cd95e;
+$tinder: #ff7854;
 
 
 @media only screen and (max-width: 960px) {
@@ -55,14 +58,12 @@ nav {
    font-family: 'BigNoodleTitling';
 
    a {
-      background: black;
       font-weight: bold;
       text-decoration: none;
-      color: white;
       text-align: right;
       padding: 1.5vh 2vh;
       // padding-right: 1vh;
-      margin-top: 1vh;
+      margin-top: 2.5vh;
    }
 }
 
@@ -72,11 +73,16 @@ ul {
 }
 
 .nav-item {
+   // box-shadow: 20px 20px 10px white;
+   box-shadow: none;
+   background: black;
+   color: white;
    transform: translate(-10%);
 }
 
 .nav-item:hover {
    // background: transparent;
+   box-shadow: 5px 0px $facebook, 10px 0px $spotify, 15px 0px $tinder;
    color: black;
    background: white;
 }
@@ -88,7 +94,7 @@ ul {
 }
 
 .nav-aside {
-   transform: translateX(-100%);
+   transform: translateX(-110%);
 }
 
 .nav-sub-item {

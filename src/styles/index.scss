@@ -3,6 +3,10 @@
    src:  url('./fonts/BigNoodleTitling.ttf') format('ttf');
 }
 
+$facebook: #3b5998;
+$spotify: #1cd95e;
+$tinder: linear-gradient(262deg, #ff7854, #fd267d);
+
 // upper half of the page
 #website-cnt {
    height: 100vh;
@@ -48,19 +52,36 @@
 }
 
 #facebook {
-   background: #3b5998;
+   background: $facebook;
 }
 
 #spotify {
-   background: #1cd95e;
+   background: $spotify;
 }
 
 #tinder {
-   background: linear-gradient(262deg, #ff7854, #fd267d);
+   background: $tinder;
 }
+
+// spacer
+.spacer {
+   width: 100%;
+   height: 5%;
+   background: black;
+}
+
 
 // about page
 #about {
+   font-size: 1.1em;
+   line-height: 1.9;
    height: 100vh;
+}
+
+.about-content-container {
+   display: flex;
+   flex-direction: column;
+   max-width: 50%;
+   margin: 0 auto;
 }
 
