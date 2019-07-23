@@ -1,6 +1,6 @@
 // import { createImage } from '../helpers.js';
-// import '../../styles/components/navbar.scss';
 // import logo from '../../images/icons/logo.svg';
+import '../../styles/components/navbar.scss';
 
 // TODO: needs a refactor. Create About and CreateLogo are pretty much identical
 class NavBar {
