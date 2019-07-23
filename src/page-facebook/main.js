@@ -2,6 +2,14 @@
 import '../styles/main.scss';
 import '../styles/facebook.scss';
 
+// Assets imports:
+import icalendar from '../images/report-icons/calendar.svg';
+import itext from '../images/report-icons/file-text.svg';
+import icake from '../images/report-icons/cake.svg';
+import isearch from '../images/report-icons/search.svg';
+import iuser from '../images/report-icons/user.svg';
+import iusers from '../images/report-icons/users.svg';
+
 // JS imports:
 import { DAYS, MONTHS, MS_IN_DAY } from '../js/constants.js';
 import { renderText, formatNum } from '../js/helpers.js';
@@ -38,10 +46,10 @@ if (DEBUG_MODE) {
    data = require('../data/fb_precompiled.json');
 }
 
-var reportContainer = document.getElementById("report");
-var msgGraphCont = document.getElementById("graphs-container");
-var msgTextCont = document.getElementById("text-container");
-var genTextRep = document.getElementById("general-text");
+var reportContainer = document.getElementById('report');
+var msgGraphCont = document.getElementById('graphs-container');
+var msgTextCont = document.getElementById('text-container');
+var genTextRep = document.getElementById('general-text');
 
 // TODO: this should  be a global object used by all reports
 var analyzer = undefined;
@@ -58,11 +66,12 @@ kickStartReport();
 function kickStartReport() {
    if (!DEBUG_MODE) {
       // event specifying that file was uploaded
-      var file = document.getElementById("file-picker-input");
+      var file = document.getElementById('file-picker-input');
       file.onchange = report.bind(this, file, data);
       // file.onchange = startReport.bind(this, file);
    }
    else {
+      renderReportHeading(data, reportContainer);
       renderMainInfoNew(data);
       // renderMainInfo(profInfoJSON);
       // showReportBtns();
@@ -73,6 +82,81 @@ function kickStartReport() {
 function report(file, data) {
    analyzer = new FBAnalyzer(file.files[0], data, renderMainInfoNew.bind(this, data));
    // renderMainInfoNew(data);
+}
+
+function renderReportHeading(data, parent) {
+   let reportHeading = document.createElement('div');
+   reportHeading.id = 'report-heading';
+
+   reportHeading.innerHTML = `\
+      <div id='report-heading-title'>\
+         <h2 id='report-heading-user-name'>${data.name}</h2>\
+         <div id='report-heading-user-picture'></div>\
+      </div>\
+      <div id='report-heading-content'></div>\
+      <div id='report-controls'>\
+         <button id='msg-report' class='report-button'>Message Report</button>\
+         <button id='post-report' class='report-button'>Post Report</button>\
+         <button id='search-report' class='report-button'>Search Report</button>\
+      </div>\
+      `
+   parent.appendChild(reportHeading);
+
+   // data crunching
+   // TODO: helper
+   let dateRange = new Date(Date.now());
+   let dateStart = new Date(data.joined);
+   // TODO: helper
+   let numDays = Math.round((dateRange-dateStart)/MS_IN_DAY);
+
+   let reportItemContainer = document.getElementById('report-heading-content');
+
+   renderHeadingItem(icalendar, 'Data Range: ',
+      renderText(`* - * (${numDays} days)`, [dateStart.toDateString(),
+         dateRange.toDateString()]),
+      reportItemContainer);
+   renderHeadingItem(itext, 'Num Posts: ',
+      renderText('*', [data.num_posts]),
+      reportItemContainer);
+   renderHeadingItem(isearch, 'Num Searches: ',
+      renderText('*', [data.num_searches]),
+      reportItemContainer);
+   // still need to pull from data...
+   renderHeadingItem(icake, 'Birthday: ',
+      renderText('*', ['Wed Mar 24 1995']),
+      reportItemContainer);
+   renderHeadingItem(iuser, 'Last Profile Update: ',
+      renderText('*', ['Wed Mar 24 1995']),
+      reportItemContainer);
+   renderHeadingItem(iusers, 'Family members: ',
+      renderText('*', ['3']),
+      reportItemContainer);
+   renderHeadingItem(iusers, 'Friend Peer Group: ',
+      renderText('*', ['3']),
+      reportItemContainer);
+}
+
+function renderHeadingItem(iconPath, label, headingText, parent) {
+   // element creation
+   let headingItem = document.createElement('div');
+   let headingIcon = new Image();
+   let headingLabel = document.createElement('p');
+   
+   // appending elements
+   headingItem.appendChild(headingIcon);
+   headingItem.appendChild(headingLabel);
+   headingItem.appendChild(headingText);
+   parent.appendChild(headingItem);
+
+   // adding content
+   headingIcon.src = iconPath;
+   headingLabel.innerHTML = label;
+
+   // styles
+   headingIcon.classList.add('heading-content-icon');
+   headingLabel.classList.add('heading-content-label');
+   headingText.classList.add('heading-content-text');
+   headingItem.classList.add('heading-content-item');
 }
 
 function renderMainInfoNew(data) {

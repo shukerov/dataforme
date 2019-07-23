@@ -20,7 +20,7 @@
 #report-heading {
    display: flex;
    flex-wrap: wrap;
-   width: 60%;
+   width: 80%;
    margin: 0 auto;
 }
 
@@ -28,7 +28,7 @@
    display: flex;
    flex-direction: row;
    width: 100%;
-   margin: 1vh;
+   border-bottom: 1px solid black;
 }
 
 #report-heading-title > * {
@@ -42,13 +42,36 @@
 #report-heading-user-picture {
    height: 100px;
    width: 100px;
-   background: url('../images/icons/facebook.svg');
+   background: $facebook;
+   // background: url('../images/icons/facebook.svg');
 }
 
 #report-heading-content {
    display: flex;
    flex-direction: column;
    flex-basis: 60%;
+}
+
+.heading-content-item {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+
+.heading-content-icon {
+   width: 24px;
+   height: 24px;
+   flex: 0.1;
+}
+
+.heading-content-label {
+   flex: 0.2;
+}
+
+.heading-content-text {
+   flex: 0.7;
+   text-align: left;
+   margin: 0 1vh;
 }
 
 #report-controls {
@@ -65,7 +88,6 @@
    border: none;
    transition: all .2s ease-in-out;
    font-family: 'BigNoodleTitling';
-   // box-shadow: 5px 0px $facebook, 10px 0px $spotify, 15px 0px $tinder;
    font-size: 3vh;
    font-weight: bold;
    margin: 0.1vh 0vh;
@@ -76,8 +98,8 @@
    background: white;
    color: black;
 }
-
 // END NEW
+
 #report {
    display: flex;
    flex-direction: column;

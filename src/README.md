@@ -13,3 +13,8 @@ To Do:
 ----------------
 * Make an analyzer class.
 * Extend it by individual website analyzers.
+
+# Data location
+## Facebook
+* last profile update: profile_information/profile_update_history.json{profile_updates[0].timestamp}
+
