@@ -1,13 +1,11 @@
 // @import '../fonts';
+@import '../globalvariables';
+
 // duplication
 @font-face {
    font-family: 'BigNoodleTitling';
    src:  url('../fonts/BigNoodleTitling.ttf') format('truetype');
 }
-$facebook: #3b5998;
-$spotify: #1cd95e;
-$tinder: #ff7854;
-
 
 @media only screen and (max-width: 960px) {
    nav {
@@ -82,7 +80,7 @@ ul {
 
 .nav-item:hover {
    // background: transparent;
-   box-shadow: 5px 0px $facebook, 10px 0px $spotify, 15px 0px $tinder;
+   box-shadow: 5px 0px $facebook, 10px 0px $spotify, 15px 0px $tinder-static;
    color: black;
    background: white;
 }

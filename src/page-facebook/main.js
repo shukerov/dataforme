@@ -1,11 +1,12 @@
+// Style imports:
 import '../styles/main.scss';
 import '../styles/facebook.scss';
+
+// JS imports:
 import { DAYS, MONTHS, MS_IN_DAY } from '../js/constants.js';
 import { renderText, formatNum } from '../js/helpers.js';
-
 import { chartFactory, scrollManager } from '../js/helpers.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
-
 import { NavBar } from '../js/components/navBar.js';
 // import { insFactory } from '../js/components/insFactory.js';
 

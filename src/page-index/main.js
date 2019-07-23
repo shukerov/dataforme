@@ -1,10 +1,15 @@
+// Style imports:
+import '../styles/main.scss';
+import '../styles/index.scss';
+
+// Assets:
 import facebook from '../images/icons/facebook.svg';
 import spotify from '../images/icons/spotify.svg';
 import tinder from '../images/icons/tinder.svg';
+
+// JS imports:
 import { createImage, scrollManager } from '../js/helpers.js';
 import { NavBar } from '../js/components/navBar.js';
-import '../styles/index.scss';
-import '../styles/main.scss';
 
 renderContent();
 let smng = new scrollManager();

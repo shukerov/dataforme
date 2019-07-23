@@ -58,7 +58,7 @@ class NavBar {
          });
       }
       else {
-         itemCont.href = '/#about';
+         itemCont.href = '#about';
       }
       // let itemCont = document.createElement('a');
 
@@ -75,7 +75,7 @@ class NavBar {
 
    createLogo() {
       // let logoItem = this.createNavItem();
-      let logoCont = this.createNavItem('dataforme', '/#', 'site');
+      let logoCont = this.createNavItem('dataforme', '#', 'site');
       if (this.index)
       {
          logoCont.addEventListener('click', () => {

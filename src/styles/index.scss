@@ -1,11 +1,9 @@
+@import './globalvariables';
+
 @font-face {
    font-family: 'BigNoodleTitling';
    src:  url('./fonts/BigNoodleTitling.ttf') format('ttf');
 }
-
-$facebook: #3b5998;
-$spotify: #1cd95e;
-$tinder: linear-gradient(262deg, #ff7854, #fd267d);
 
 // upper half of the page
 #website-cnt {

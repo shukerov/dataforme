@@ -9,8 +9,7 @@
     <title>Data for Me</title>
   </head>
   <body>
-    <div id="site">
-      <div class="fb-container">
+    <div id="site" data-page='facebook'>
         <div id='instructions-container'>
           <h1>Instructions</h1> 
           <h2 id='how'>How to get to your Facebook data</h2> 
@@ -29,14 +28,30 @@
             message reporting works for now.
           </p>
         </div>
+        <div class='spacer'></div>
         <div class="file-picker">
           <form class="file-picker-form">
             <label for="file-picker-input">Add your file here</label>
             <input type="file" accept=".zip" id="file-picker-input">
           </form>
         </div>
-
         <div id="report">
+          <div id='report-heading'>
+            <div id='report-heading-title'>
+              <h2 id='report-heading-user-name'>Stoyan Shukerov</h2>
+              <div id='report-heading-user-picture'></div>
+            </div>
+            <div id='report-heading-content'>
+              <div id='heading-content-item'>Data Range:</div>
+              <div id='heading-content-item'>Number Posts:</div>
+              <div id='heading-content-item'>Number Comments:</div>
+            </div>
+            <div id='report-controls'>
+              <button id='msg-report' class='report-button'>Message Report</button>
+              <button id='post-report' class='report-button'>Post Report</button>
+              <button id='search-report' class='report-button'>Search Report</button>
+            </div>
+          </div>
           <div id="general-text"></div>
           <!-- needs to be created on the fly with js -->
           <div id="btn-container" style="visibility: hidden">
@@ -46,7 +61,6 @@
           <div id="text-container"></div>
           <div id="graphs-container"></div>
         </div>
-      </div>
     </div>
   </body>
 </html>
