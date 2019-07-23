@@ -19,6 +19,7 @@
 // new CSS
 #report-heading {
    display: flex;
+   flex-direction: column;
    flex-wrap: wrap;
    width: 80%;
    margin: 0 auto;
@@ -42,7 +43,7 @@
 #report-heading-user-picture {
    height: 100px;
    width: 100px;
-   background: $facebook;
+   // background: $facebook;
    // background: url('../images/icons/facebook.svg');
 }
 
@@ -76,7 +77,7 @@
 
 #report-controls {
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
    flex-basis: 40%;
 }
 
@@ -94,7 +95,7 @@
 }
 
 .report-button:hover {
-   box-shadow: -5px 0px $facebook, -10px 0px $spotify, -15px 0px $tinder-static;
+   box-shadow: 0px 5px $facebook, 0px 10px $spotify, 0px 15px $tinder-static;
    background: white;
    color: black;
 }

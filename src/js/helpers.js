@@ -17,32 +17,28 @@ export class scrollManager {
    }
 
    hasScrolled() {
-      let curPos = window.scrollY;
+      let curPos = this.website.scrollTop;
+
       if(Math.abs(this.lastScroll - curPos) <= this.delta)
          return;
 
       // If they scrolled down and are past the navbar, add class .nav-up.
       if (curPos > this.lastScroll && curPos > this.navbarHeight){
-
+         // Scroll Down
          for (var i = 0, len = this.navbarItems.length; i < len; i++) {
             this.navbarItems[i].classList.add('nav-aside');
             this.navbarItems[i].classList.remove('nav-up');
          }
-
-         // Scroll Down
-         // this.navbar.classList.add('nav-aside');
-         // this.navbar.classList.remove('nav-up');
       } else {
          // Scroll Up
-         if(curPos + window.outerHeight < document.body.scrollHeight ) {
+         // check is there incase the user scolls past the documents heigh??
+         // apparently possible on a mac
+         // if(curPos + window.outerHeight < document.body.scrollHeight ) {
             for (var i = 0, len = this.navbarItems.length; i < len; i++) {
                this.navbarItems[i].classList.remove('nav-aside');
                this.navbarItems[i].classList.add('nav-up');
             }
-
-            // this.navbar.classList.remove('nav-aside');
-            // this.navbar.classList.add('nav-up');
-         }
+         // }
       }
 
       this.lastScroll = curPos;
@@ -57,7 +53,7 @@ export class scrollManager {
          }
       }.bind(this), 250);
 
-      window.addEventListener('scroll', function(e) {
+      this.website.addEventListener('scroll', function(e) {
          this.scrolled = true;
       }.bind(this));
    }

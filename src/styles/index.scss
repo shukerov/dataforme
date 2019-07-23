@@ -63,7 +63,9 @@
 
 // about page
 #about {
-   height: 100vh;
+   overflow: auto;
+   height: auto;
+   // height: 100vh;
 }
 
 .about-content-container {

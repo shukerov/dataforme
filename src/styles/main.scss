@@ -6,16 +6,28 @@ html {
    font-size: 1.1em;
    line-height: 1.9;
    font-family: 'Fira', Camphor, Open Sans, Segoe UI, sans-serif;
+  // overflow: auto;
 }
 
 body {
-  height: 100%;
+  // min-height: 100%;
+  // height: auto;
+  overflow: auto;
 }
 
 #site {
    height: 100vh;
    background: #f9f9f9;
-   // overflow: auto;
+   overflow: auto;
+}
+
+#footer {
+   // position: absolute;
+   // bottom: 0;
+   height: 60px; /* Height of the footer */
+   width: 100%;
+   text-align: center;
+   margin-top: 10vh;
 }
 
 // spacer
