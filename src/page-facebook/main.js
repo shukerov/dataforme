@@ -13,7 +13,7 @@ import iusers from '../images/report-icons/users.svg';
 // JS imports:
 import { DAYS, MONTHS, MS_IN_DAY } from '../js/constants.js';
 import { renderText, formatNum } from '../js/helpers.js';
-import { chartFactory, scrollManager } from '../js/helpers.js';
+import { chartFactory } from '../js/helpers.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 // import { insFactory } from '../js/components/insFactory.js';
@@ -53,14 +53,11 @@ var genTextRep = document.getElementById('general-text');
 
 // TODO: this should  be a global object used by all reports
 var analyzer = undefined;
-
 // var analyzer = new FBAnalyzer();
 // var analyzer = new BaseAnalyzer();
 
 new NavBar(document.getElementById('site'));
-let smng = new scrollManager();
-smng.setScrolling();
-// new NavBar(document.getElementsByClassName('site')[0]);
+
 kickStartReport();
 
 function kickStartReport() {

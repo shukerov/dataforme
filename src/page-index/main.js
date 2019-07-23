@@ -8,12 +8,10 @@ import spotify from '../images/icons/spotify.svg';
 import tinder from '../images/icons/tinder.svg';
 
 // JS imports:
-import { createImage, scrollManager } from '../js/helpers.js';
+import { createImage } from '../js/helpers.js';
 import { NavBar } from '../js/components/navBar.js';
 
 renderContent();
-let smng = new scrollManager();
-smng.setScrolling();
 
 function renderContent() {
    let globalContainer = document.getElementById('site');

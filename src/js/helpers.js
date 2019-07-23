@@ -1,65 +1,6 @@
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from '../js/clock-chart/clock_graph.js';
 
-// TODO: this should be called or even part of navBar.js
-export class scrollManager {
-   constructor() {
-      this.navbar = document.getElementById('nav-root');
-      this.navbarItems = document.getElementsByClassName('nav-item');
-      // console.log(this.navbarItems[0]);
-      // console.log(this.navbarItems[1]);
-      this.website = document.getElementById('site');
-
-      this.navbarHeight = this.navbar.scrollHeight;
-      this.scrolled = false;
-      this.lastScroll = 0;
-      this.delta = 5;
-   }
-
-   hasScrolled() {
-      let curPos = this.website.scrollTop;
-
-      if(Math.abs(this.lastScroll - curPos) <= this.delta)
-         return;
-
-      // If they scrolled down and are past the navbar, add class .nav-up.
-      if (curPos > this.lastScroll && curPos > this.navbarHeight){
-         // Scroll Down
-         for (var i = 0, len = this.navbarItems.length; i < len; i++) {
-            this.navbarItems[i].classList.add('nav-aside');
-            this.navbarItems[i].classList.remove('nav-up');
-         }
-      } else {
-         // Scroll Up
-         // check is there incase the user scolls past the documents heigh??
-         // apparently possible on a mac
-         // if(curPos + window.outerHeight < document.body.scrollHeight ) {
-            for (var i = 0, len = this.navbarItems.length; i < len; i++) {
-               this.navbarItems[i].classList.remove('nav-aside');
-               this.navbarItems[i].classList.add('nav-up');
-            }
-         // }
-      }
-
-      this.lastScroll = curPos;
-   }
-
-   setScrolling(){
-
-      setInterval(function() {
-         if (this.scrolled) {
-            this.hasScrolled();
-            this.scrolled = false;
-         }
-      }.bind(this), 250);
-
-      this.website.addEventListener('scroll', function(e) {
-         this.scrolled = true;
-      }.bind(this));
-   }
-
-}
-
 export function formatNum(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
