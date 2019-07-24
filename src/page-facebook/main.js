@@ -248,36 +248,16 @@ function showReportBtns() {
 }
 
 function displayAggMsgReport(msgReportStats) {
+   // RENDERS HEADING
    renderMsgHeading(msgReportStats, reportContainer);
 
    var msgGraphCont = document.createElement('div');
    msgGraphCont.id = 'graphs-container';
    reportContainer.appendChild(msgGraphCont);
-   // TODO: helper
-
-   // OLD MESSAGE STATS
-   // let totMsgSent = 0
-   // Object.keys(msgReportStats.regThreads).forEach((key) => {
-   //    totMsgSent += msgReportStats.regThreads[key].msgByUser;
-   // });
-
-   // let totMsgReceived = 0
-   // Object.keys(msgReportStats.regThreads).forEach((key) => {
-   //    totMsgReceived += msgReportStats.regThreads[key].other;
-   // });
-
-   // console.log(totMsgSent);
-   // console.log(totMsgReceived);
-   // let numChats = Object.keys(msgReportStats['regThreads']).length;
-   // let numGrChats = msgReportStats['groupChatThreads'].length;
-   // renderText('Messages sent: *', [formatNum(totMsgSent)], msgTextCont);
-   // renderText('Messages received: *', [formatNum(totMsgReceived)], msgTextCont);
-   // renderText('I have talked to * people!', [numChats], msgTextCont);
-   // renderText('I have been in * group chats!', [numGrChats], msgTextCont);
 
    var graphCont = [];
 
-   for (var i = 0; i < 5; i++) {
+   for (var i = 0; i < 6; i++) {
       var gcontainer = document.createElement('div');
       gcontainer.classList.add('graph-wrapper');
       msgGraphCont.appendChild(gcontainer);
@@ -317,7 +297,7 @@ function displayAggMsgReport(msgReportStats) {
    });
 
    var chartYearly = charFac.getChart({
-      type: 'line',
+      type: 'bar',
       parent: graphCont[3],
       name: 'chart4',
       title: 'Messages by Year',
@@ -326,6 +306,24 @@ function displayAggMsgReport(msgReportStats) {
       size: 'small'
    });
 
+   // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED
+   // THIS IS NOT FUNCTIONAL?
+   let sum = 0;
+   let msgCumulative = Object.keys(msgReportStats.timeStats.yearly).reduce((acc, dp) => {
+      sum += msgReportStats.timeStats.yearly[dp];
+      acc[dp] = sum;
+      return acc;
+   }, {});
+
+   var chartYearlyCum = charFac.getChart({
+      type: 'line',
+      parent: graphCont[4],
+      name: 'chart5',
+      title: 'Cumulative Messages over Years',
+      data: Object.values(msgCumulative),
+      labels: Object.keys(msgCumulative),
+      size: 'small'
+   });
    // make a graph for top messaged people
    let topMessagers = newTopMessagers(msgReportStats.regThreads, 20).map((t) => { return t[1]; });
    let msgSent = topMessagers.reduce(function(acc, msger) {
@@ -342,9 +340,9 @@ function displayAggMsgReport(msgReportStats) {
 
    var chartTopMessegers = charFac.getChart({
       type: 'axis-mixed',
-      parent: graphCont[4],
-      name: 'chart5',
-      title: 'Top Messegers',
+      parent: graphCont[5],
+      name: 'chart6',
+      title: 'Top Messagers',
       labels: topMessagers,
       data: [msgSent, msgReceived, [`${data.name}`, 'Friend']],
       size: 'medium'
