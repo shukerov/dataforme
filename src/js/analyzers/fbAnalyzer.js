@@ -104,18 +104,34 @@ class FBAnalyzer extends BaseAnalyzer {
             if (msg.sender_name == this.username) {
                let d = new Date(msg.timestamp_ms);
                let y = d.getFullYear(); // message years
-               acc.timeStats.hourly[d.getHours()]++;
+               acc.timeStats.hourly.sent[d.getHours()]++;
                acc.timeStats.weekly.sent[d.getDay()]++;
-               acc.timeStats.monthly[d.getMonth()]++;
-               acc.timeStats.yearly[y] = (acc.timeStats.yearly[y] || 0) + 1;
+               acc.timeStats.monthly.sent[d.getMonth()]++;
+               if (acc.timeStats.yearly[y]) {
+                  acc.timeStats.yearly[y].sent++;
+               }
+               else {
+                  acc.timeStats.yearly[y] = {
+                     'sent': 0,
+                     'received': 0
+                  }
+               }
             }
             else if (msg.sender_name == participants[0].name) {
                let d = new Date(msg.timestamp_ms);
                let y = d.getFullYear(); // message years
-               // acc.timeStats.hourly[d.getHours()]++;
+               acc.timeStats.hourly.received[d.getHours()]++;
                acc.timeStats.weekly.received[d.getDay()]++;
-               // acc.timeStats.monthly[d.getMonth()]++;
-               // acc.timeStats.yearly[y] = (acc.timeStats.yearly[y] || 0) + 1;
+               acc.timeStats.monthly.received[d.getMonth()]++;
+               if (acc.timeStats.yearly[y]) {
+                  acc.timeStats.yearly[y].received++;
+               }
+               else {
+                  acc.timeStats.yearly[y] = {
+                     'sent': 0,
+                     'received': 0
+                  }
+               }
             }
 
             return acc;

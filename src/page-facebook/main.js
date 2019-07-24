@@ -30,12 +30,18 @@ var data = {
       "regThreads": {},
       "numPictures": {"gifs": 0, "other": 0},
       "timeStats": {
-         "hourly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "hourly": {
+            "sent": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "received": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+         },
          "weekly": {
             "sent": [0, 0, 0, 0, 0, 0, 0],
             "received": [0, 0, 0, 0, 0, 0, 0]
          },
-         "monthly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "monthly": {
+            "sent": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "received": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+         },
          "yearly": {}
       }
    }
@@ -260,6 +266,7 @@ function displayAggMsgReport(msgReportStats) {
 
    var graphCont = [];
 
+   // TODO: this has gotta be temporary solution
    for (var i = 0; i < 6; i++) {
       var gcontainer = document.createElement('div');
       gcontainer.classList.add('graph-wrapper');
@@ -267,54 +274,71 @@ function displayAggMsgReport(msgReportStats) {
       graphCont.push(gcontainer);
    }
 
+   // INTIALIZE chartFactory
    const charFac = new chartFactory('blue');
-   var chartHorly = charFac.getChart({
+
+   var chartHourly = charFac.getChart({
       type: 'clock',
       parent: graphCont[0],
-      data: msgReportStats.timeStats.hourly,
+      data: msgReportStats.timeStats.hourly.sent,
       title: 'Messages by Day of Week',
       colorscheme: 'blue',
       name: 'chart1',
       size: 'medium'
    });
 
-   console.log(msgReportStats.timeStats.weekly);
-   // var chartDaily = charFac.getChart({
-   //    type: 'bar',
-   //    parent: graphCont[1],
-   //    data: msgReportStats.timeStats.weekly,
-   //    labels: DAYS,
-   //    title: 'Messages by Day of Week',
-   //    colorscheme: 'blue',
-   //    name: 'chart2',
-   //    size: 'small'
-   // });
+   // improved other graphs
+   let msgSentDaily = msgReportStats.timeStats.weekly.sent;
+   let msgReceivedDaily = msgReportStats.timeStats.weekly.received;
+   // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+   msgSentDaily.push(0);
+   var chartWeekly = charFac.getChart({
+      type: 'axis-mixed',
+      parent: graphCont[1],
+      name: 'chart2',
+      title: 'Messages by Day of the Week',
+      labels: DAYS,
+      data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],
+      size: 'medium'
+   });
 
+   let msgSentMonthly = msgReportStats.timeStats.monthly.sent;
+   let msgReceivedMonthly = msgReportStats.timeStats.monthly.received;
+   // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+   // msgSentMonthly.push(0);
    var chartMonthly = charFac.getChart({
-      type: 'bar',
+      type: 'axis-mixed',
       parent: graphCont[2],
       name: 'chart3',
       title: 'Messages by Month',
-      data: msgReportStats.timeStats.monthly,
       labels: MONTHS,
-      size: 'small'
+      data: [msgSentMonthly, msgReceivedMonthly, ['Sent', 'Received']],
+      size: 'medium'
    });
 
+   let msgSentYearly = Object.keys(msgReportStats.timeStats.yearly).map((y) => {
+      return msgReportStats.timeStats.yearly[y].sent
+   });
+   let msgReceivedYearly= Object.keys(msgReportStats.timeStats.yearly).map((y) => {
+      return msgReportStats.timeStats.yearly[y].received
+   });
+   // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+   // msgSentYearly.push(0);
    var chartYearly = charFac.getChart({
-      type: 'bar',
+      type: 'axis-mixed',
       parent: graphCont[3],
       name: 'chart4',
       title: 'Messages by Year',
-      data: Object.values(msgReportStats.timeStats.yearly),
       labels: Object.keys(msgReportStats.timeStats.yearly),
-      size: 'small'
+      data: [msgSentYearly, msgReceivedYearly, ['Sent', 'Received']],
+      size: 'medium'
    });
 
    // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED
    // THIS IS NOT FUNCTIONAL?
    let sum = 0;
    let msgCumulative = Object.keys(msgReportStats.timeStats.yearly).reduce((acc, dp) => {
-      sum += msgReportStats.timeStats.yearly[dp];
+      sum += msgReportStats.timeStats.yearly[dp].sent + msgReportStats.timeStats.yearly[dp].received;
       acc[dp] = sum;
       return acc;
    }, {});
@@ -350,20 +374,6 @@ function displayAggMsgReport(msgReportStats) {
       title: 'Top Messagers',
       labels: topMessagers,
       data: [msgSent, msgReceived, [`${data.name}`, 'Friend']],
-      size: 'medium'
-   });
-
-   // improved other graphs
-   let msgSentDaily = msgReportStats.timeStats.weekly.sent;
-   let msgReceivedDaily = msgReportStats.timeStats.weekly.received;
-
-   var chartWeekly = charFac.getChart({
-      type: 'axis-mixed',
-      parent: graphCont[1],
-      name: 'chart2',
-      title: 'Messages by Day of the Week',
-      labels: DAYS,
-      data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],
       size: 'medium'
    });
 }

@@ -48,7 +48,8 @@ class chartFactory {
 
    setColorScheme(cscheme) {
       const schemes = {
-         blue: ['light-blue', 'blue', 'violet']
+         blue: ['light-blue', 'blue', 'violet', '#41B3A3', '#85DCB'],
+         red: ['#1A1A1D', '#4E4E50', '#6F2232', '#950740', '#C3073F']
       }
 
       return schemes[cscheme];
@@ -56,11 +57,10 @@ class chartFactory {
 
    // TODO: need to make sure that unique colors are chosen
    getColor(n=1) {
-      let colors = [];
-      for( var i = 0; i < n; i++) {
-         colors.push(this.cscheme[Math.floor(Math.random()*this.cscheme.length)]);
-      }
-      return colors;
+      n = this.numDatasets;
+      let randomIndex = Math.floor(Math.random() * (this.cscheme.length - n));
+      // console.log(this.cscheme.slice(randomIndex, randomIndex + n));
+      return this.cscheme.slice(randomIndex, randomIndex + n);
    }
 
    getSize(size) {
@@ -81,6 +81,7 @@ class chartFactory {
       let data;
 
       if (args.type == 'axis-mixed') {
+         this.numDatasets = 2;
          // TODO: not handling more than two datasets
          data = {
             labels:  args.labels,
@@ -99,6 +100,7 @@ class chartFactory {
          }
       }
       else if (args.labels) {
+         this.numDatasets = 1;
          data = {
             labels: args.labels,
             datasets: [{ values: args.data }],
