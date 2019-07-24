@@ -81,7 +81,7 @@ function kickStartReport() {
 }
 
 function report(file, data) {
-   analyzer = new FBAnalyzer(file.files[0], data, renderMainInfoNew.bind(this, data));
+   analyzer = new FBAnalyzer(file.files[0], data, renderReportHeading.bind(this, data, reportContainer));
    // renderMainInfoNew(data);
 }
 
@@ -146,6 +146,9 @@ function renderReportHeading(data, parent) {
       </div>\
       `
    parent.appendChild(reportHeading);
+   // button actions
+   let msgRBtn = document.getElementById('msg-report');
+   msgRBtn.addEventListener("click", renderMsgReport);
 
    // data crunching
    // TODO: helper
