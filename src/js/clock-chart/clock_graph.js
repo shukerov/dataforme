@@ -28,6 +28,9 @@ class ClockChart {
          var graph = getClockGraph(svg, graphData, height);
          var wrapper = createLegendWrapper(graphData, graph); 
          parent.appendChild(wrapper);
+
+         // trying to fix dimensions
+         updateDimensions.call(this, parent, svg);
       }
       else {
          return getClockGraph(svg, graphData, height, parent);
