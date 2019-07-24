@@ -52,8 +52,8 @@ if (DEBUG_MODE) {
 
 var reportContainer = document.getElementById('report');
 // var msgGraphCont = document.getElementById('graphs-container');
-var msgTextCont = document.getElementById('text-container');
-var genTextRep = document.getElementById('general-text');
+// var msgTextCont = document.getElementById('text-container');
+// var genTextRep = document.getElementById('general-text');
 
 // TODO: this should  be a global object used by all reports
 var analyzer = undefined;
@@ -303,7 +303,7 @@ function displayAggMsgReport(msgReportStats) {
       title: 'Messages by Day of Week',
       colorscheme: 'blue',
       name: 'chart2',
-      size: 'medium'
+      size: 'small'
    });
 
    var chartMonthly = charFac.getChart({
@@ -312,7 +312,8 @@ function displayAggMsgReport(msgReportStats) {
       name: 'chart3',
       title: 'Messages by Month',
       data: msgReportStats.timeStats.monthly,
-      labels: MONTHS
+      labels: MONTHS,
+      size: 'small'
    });
 
    var chartYearly = charFac.getChart({
@@ -321,7 +322,8 @@ function displayAggMsgReport(msgReportStats) {
       name: 'chart4',
       title: 'Messages by Year',
       data: Object.values(msgReportStats.timeStats.yearly),
-      labels: Object.keys(msgReportStats.timeStats.yearly)
+      labels: Object.keys(msgReportStats.timeStats.yearly),
+      size: 'small'
    });
 
    // make a graph for top messaged people

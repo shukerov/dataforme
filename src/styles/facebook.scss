@@ -13,7 +13,20 @@
    margin: 0 auto;
    max-width: 60%;
    // align-items: center;
-   height: 100vh;
+   min-height: 100vh;
+   // height: auto;
+}
+
+#instructions-text {
+   min-height: 90vh;
+}
+
+// links to start of report on instructions page
+#report-btn {
+   // height: 10%;
+   // height: 10%;
+   text-align: center;
+   // margin-top: 36vh;
 }
 
 // new CSS
@@ -23,22 +36,28 @@
    flex-wrap: wrap;
    width: 80%;
    margin: 10vh auto;
+   background: white;
+
+   // not sure about this
+   -moz-box-shadow: 0 0 3px #ccc;
+   -webkit-box-shadow: 0 0 3px #ccc;
+   box-shadow: 0 0 3px #ccc;
 }
 
 .report-heading-title {
    display: flex;
    flex-direction: row;
    width: 100%;
-   border-bottom: 1px solid black;
 }
 
 .report-heading-title > * {
    flex: 1;
 }
 
-// #report-heading-user-name {
-//    // width: 80%
-// }
+.report-heading-user-name {
+   border-bottom: 1px solid $facebook;
+   padding-left: 3vh;
+}
 
 .report-heading-user-picture {
    height: 100px;
@@ -79,13 +98,6 @@
    display: flex;
    flex-direction: row;
    flex-basis: 40%;
-}
-
-// links to start of report on instructions page
-#report-btn {
-   // height: 10%;
-   text-align: center;
-   // margin-top: 36vh;
 }
 
 .report-button {
@@ -200,7 +212,7 @@
    border-color: #ebebeb;
    background: #fff;
    margin: 5vh 5vh;
-   width: 40%;
+   width: 70%;
    // margin: 2.5vh 10vh;
    // width: 25%
 }

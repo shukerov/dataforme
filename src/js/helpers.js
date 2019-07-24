@@ -1,6 +1,10 @@
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from '../js/clock-chart/clock_graph.js';
 
+export let isMobile = function() {
+   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 export function formatNum(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
@@ -64,8 +68,13 @@ class chartFactory {
          return this.DEFAULT_CHART_SIZE;
       }
 
-      if (size === 'medium') return 600;
-      if (size === 'small')  return 250;
+      if (isMobile) {
+         return 250;
+      }
+      else {
+         if (size === 'medium') return 600;
+         if (size === 'small')  return 250;
+      }
    }
 
    prepData(args) {
@@ -133,7 +142,7 @@ class chartFactory {
          })
       }
       else if (args.type == 'clock') {
-         return new ClockChart(data, size, args.parent, {
+         return new ClockChart(data, 600, args.parent, {
             'addLegend':
             true
          });

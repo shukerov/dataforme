@@ -11,22 +11,24 @@
   <body>
     <div id="site" data-page='facebook'>
         <div id='instructions-container'>
-          <h1>Instructions</h1> 
-          <h2 id='how'>How to get to your Facebook data</h2> 
-          <p>Official instructions 
-            <a href='https://www.facebook.com/help/1701730696756992?helpref=hc_global_nav'>here</a>.
-          </p>
-          <p>Processing time: <strong>1</strong> to <strong>2</strong> hours</p>
-          <p>
-            Facebook has some of the best tools on hand to explore your data.
-            I strongly recommend you explore them yourself. Read more about it by
-            following the link above.
-          </p>
-          <p>
-          <strong>NOTE</strong>: Download your data in <strong>JSON</strong> format if you
-            plan to analayze it here. The media quality doesn't matter. Only
-            message reporting works for now.
-          </p>
+          <div id='instructions-text'>
+            <h1>Instructions</h1> 
+            <h2 id='how'>How to get to your Facebook data</h2> 
+            <p>Official instructions 
+              <a href='https://www.facebook.com/help/1701730696756992?helpref=hc_global_nav'>here</a>.
+            </p>
+            <p>Processing time: <strong>1</strong> to <strong>2</strong> hours</p>
+            <p>
+              Facebook has some of the best tools on hand to explore your data.
+              I strongly recommend you explore them yourself. Read more about it by
+              following the link above.
+            </p>
+            <p>
+            <strong>NOTE</strong>: Download your data in <strong>JSON</strong> format if you
+              plan to analayze it here. The media quality doesn't matter. Only
+              message reporting works for now.
+            </p>
+          </div>
           <a id='report-btn' class='report-button' href='#report'>Start Report</a>
         </div>
         <div class='spacer'></div>
@@ -37,29 +39,11 @@
             <input type="file" accept=".zip" id="file-picker-input">
           </form>
         </div>
-          <!-- <div id='report-heading'> -->
-          <!--   <div id='report-heading-title'> -->
-          <!--     <h2 id='report-heading-user-name'>Stoyan Shukerov</h2> -->
-          <!--     <div id='report-heading-user-picture'></div> -->
-          <!--   </div> -->
-          <!--   <div id='report-heading-content'> -->
-          <!--     <div id='heading-content-item'>Data Range:</div> -->
-          <!--     <div id='heading-content-item'>Number Posts:</div> -->
-          <!--     <div id='heading-content-item'>Number Comments:</div> -->
-          <!--   </div> -->
-          <!--   <div id='report-controls'> -->
-          <!--     <button id='msg-report' class='report-button'>Message Report</button> -->
-          <!--     <button id='post-report' class='report-button'>Post Report</button> -->
-          <!--     <button id='search-report' class='report-button'>Search Report</button> -->
-          <!--   </div> -->
+          <!-- <div id="btn-container" style="visibility: hidden"> -->
+          <!--   <button id="message-report-btn", class="report-btn">My message report</button> -->
+          <!--   <button id="interaction-report-btn", class="report-btn">My interactions report</button> -->
           <!-- </div> -->
-          <!-- <div id="general-text"></div> -->
-          <!-- needs to be created on the fly with js -->
-          <div id="btn-container" style="visibility: hidden">
-            <button id="message-report-btn", class="report-btn">My message report</button>
-            <button id="interaction-report-btn", class="report-btn">My interactions report</button>
-          </div>
-          <div id="text-container"></div>
+          <!-- <div id="text-container"></div> -->
           <div id="graphs-container"></div>
         </div>
       ${require('../partials/footer.html')}
