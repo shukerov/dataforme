@@ -17,22 +17,22 @@
 }
 
 // new CSS
-#report-heading {
+.report-heading {
    display: flex;
    flex-direction: column;
    flex-wrap: wrap;
    width: 80%;
-   margin: 0 auto;
+   margin: 10vh auto;
 }
 
-#report-heading-title {
+.report-heading-title {
    display: flex;
    flex-direction: row;
    width: 100%;
    border-bottom: 1px solid black;
 }
 
-#report-heading-title > * {
+.report-heading-title > * {
    flex: 1;
 }
 
@@ -40,14 +40,14 @@
 //    // width: 80%
 // }
 
-#report-heading-user-picture {
+.report-heading-user-picture {
    height: 100px;
    width: 100px;
    // background: $facebook;
    // background: url('../images/icons/facebook.svg');
 }
 
-#report-heading-content {
+.report-heading-content {
    display: flex;
    flex-direction: column;
    flex-basis: 60%;
@@ -75,7 +75,7 @@
    margin: 0 1vh;
 }
 
-#report-controls {
+.report-controls {
    display: flex;
    flex-direction: row;
    flex-basis: 40%;
@@ -179,7 +179,8 @@
 // this is still facebook but graph specific
 #graphs-container {
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
+   flex-wrap: wrap;
    justify-content: center;
    width: 80%;
    margin: 0 auto;
@@ -191,7 +192,8 @@
    border-style: solid;
    border-color: #ebebeb;
    background: #fff;
-   margin: 5vh 0vh;
+   margin: 5vh 5vh;
+   width: 40%;
    // margin: 2.5vh 10vh;
    // width: 25%
 }

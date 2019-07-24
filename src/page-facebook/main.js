@@ -9,6 +9,10 @@ import icake from '../images/report-icons/cake.svg';
 import isearch from '../images/report-icons/search.svg';
 import iuser from '../images/report-icons/user.svg';
 import iusers from '../images/report-icons/users.svg';
+import imsg from '../images/report-icons/message-square.svg';
+import imsgcir from '../images/report-icons/message-circle.svg';
+import isend from '../images/report-icons/send.svg';
+import iinbox from '../images/report-icons/inbox.svg';
 
 // JS imports:
 import { DAYS, MONTHS, MS_IN_DAY } from '../js/constants.js';
@@ -47,7 +51,7 @@ if (DEBUG_MODE) {
 }
 
 var reportContainer = document.getElementById('report');
-var msgGraphCont = document.getElementById('graphs-container');
+// var msgGraphCont = document.getElementById('graphs-container');
 var msgTextCont = document.getElementById('text-container');
 var genTextRep = document.getElementById('general-text');
 
@@ -69,7 +73,7 @@ function kickStartReport() {
    }
    else {
       renderReportHeading(data, reportContainer);
-      renderMainInfoNew(data);
+      // renderMainInfoNew(data);
       // renderMainInfo(profInfoJSON);
       // showReportBtns();
       renderMsgReport(data);
@@ -81,17 +85,61 @@ function report(file, data) {
    // renderMainInfoNew(data);
 }
 
-function renderReportHeading(data, parent) {
+function renderMsgHeading(data, parent) {
+   // data crunching
+   // TODO pull out of here maybe
+   let totMsgSent = 0
+   let numChats = Object.keys(data['regThreads']).length;
+   let numGrChats = data['groupChatThreads'].length;
+   let totMsgReceived = 0
+
+   Object.keys(data.regThreads).forEach((key) => {
+      totMsgSent += data.regThreads[key].msgByUser;
+   });
+
+   Object.keys(data.regThreads).forEach((key) => {
+      totMsgReceived += data.regThreads[key].other;
+   });
+
    let reportHeading = document.createElement('div');
-   reportHeading.id = 'report-heading';
+   reportHeading.classList.add('report-heading');
 
    reportHeading.innerHTML = `\
-      <div id='report-heading-title'>\
-         <h2 id='report-heading-user-name'>${data.name}</h2>\
-         <div id='report-heading-user-picture'></div>\
+      <div class='report-heading-title'>\
+         <h2 class='report-heading-user-name'>Message Report</h2>\
+         <div class='report-heading-user-picture'></div>\
       </div>\
-      <div id='report-heading-content'></div>\
-      <div id='report-controls'>\
+      <div class='report-heading-content'></div>\
+      `
+   parent.appendChild(reportHeading);
+   // BAD BAD
+   let reportItemContainer = document.getElementsByClassName('report-heading-content')[1];
+
+   renderHeadingItem(isend, 'Messages sent:',
+      renderText('*', [formatNum(totMsgSent)]),
+      reportItemContainer);
+   renderHeadingItem(iinbox, 'Messages received:',
+      renderText('*', [formatNum(totMsgReceived)]),
+      reportItemContainer);
+   renderHeadingItem(imsg, 'People messaged:',
+      renderText('*', [numChats]),
+      reportItemContainer);
+   renderHeadingItem(imsgcir, 'Group chats:',
+      renderText('*', [numGrChats]),
+      reportItemContainer);
+}
+
+function renderReportHeading(data, parent) {
+   let reportHeading = document.createElement('div');
+   reportHeading.classList.add('report-heading');
+
+   reportHeading.innerHTML = `\
+      <div class='report-heading-title'>\
+         <h2 class='report-heading-user-name'>${data.name}</h2>\
+         <div class='report-heading-user-picture'></div>\
+      </div>\
+      <div class='report-heading-content'></div>\
+      <div class='report-controls'>\
          <button id='msg-report' class='report-button'>Message Report</button>\
          <button id='post-report' class='report-button'>Post Report</button>\
          <button id='search-report' class='report-button'>Search Report</button>\
@@ -106,7 +154,8 @@ function renderReportHeading(data, parent) {
    // TODO: helper
    let numDays = Math.round((dateRange-dateStart)/MS_IN_DAY);
 
-   let reportItemContainer = document.getElementById('report-heading-content');
+   // let reportItemContainer = document.getElementById('report-heading-content');
+   let reportItemContainer = document.getElementsByClassName('report-heading-content')[0];
 
    renderHeadingItem(icalendar, 'Data Range: ',
       renderText(`* - * (${numDays} days)`, [dateStart.toDateString(),
@@ -196,26 +245,32 @@ function showReportBtns() {
 }
 
 function displayAggMsgReport(msgReportStats) {
+   renderMsgHeading(msgReportStats, reportContainer);
+
+   var msgGraphCont = document.createElement('div');
+   msgGraphCont.id = 'graphs-container';
+   reportContainer.appendChild(msgGraphCont);
    // TODO: helper
 
-   let totMsgSent = 0
-   Object.keys(msgReportStats.regThreads).forEach((key) => {
-      totMsgSent += msgReportStats.regThreads[key].msgByUser;
-   });
+   // OLD MESSAGE STATS
+   // let totMsgSent = 0
+   // Object.keys(msgReportStats.regThreads).forEach((key) => {
+   //    totMsgSent += msgReportStats.regThreads[key].msgByUser;
+   // });
 
-   let totMsgReceived = 0
-   Object.keys(msgReportStats.regThreads).forEach((key) => {
-      totMsgReceived += msgReportStats.regThreads[key].other;
-   });
+   // let totMsgReceived = 0
+   // Object.keys(msgReportStats.regThreads).forEach((key) => {
+   //    totMsgReceived += msgReportStats.regThreads[key].other;
+   // });
 
-   console.log(totMsgSent);
-   console.log(totMsgReceived);
-   let numChats = Object.keys(msgReportStats['regThreads']).length;
-   let numGrChats = msgReportStats['groupChatThreads'].length;
-   renderText('Messages sent: *', [formatNum(totMsgSent)], msgTextCont);
-   renderText('Messages received: *', [formatNum(totMsgReceived)], msgTextCont);
-   renderText('I have talked to * people!', [numChats], msgTextCont);
-   renderText('I have been in * group chats!', [numGrChats], msgTextCont);
+   // console.log(totMsgSent);
+   // console.log(totMsgReceived);
+   // let numChats = Object.keys(msgReportStats['regThreads']).length;
+   // let numGrChats = msgReportStats['groupChatThreads'].length;
+   // renderText('Messages sent: *', [formatNum(totMsgSent)], msgTextCont);
+   // renderText('Messages received: *', [formatNum(totMsgReceived)], msgTextCont);
+   // renderText('I have talked to * people!', [numChats], msgTextCont);
+   // renderText('I have been in * group chats!', [numGrChats], msgTextCont);
 
    var graphCont = [];
 
@@ -258,7 +313,7 @@ function displayAggMsgReport(msgReportStats) {
    });
 
    var chartYearly = charFac.getChart({
-      type: 'bar',
+      type: 'line',
       parent: graphCont[3],
       name: 'chart4',
       title: 'Messages by Year',

@@ -126,6 +126,9 @@ class chartFactory {
                spaceRatio: 0.3,
                stacked: 0
             },
+            lineOptions: {
+               regionFill: 1
+            }
             // maxSlices: 24
          })
       }
