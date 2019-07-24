@@ -104,11 +104,20 @@ class FBAnalyzer extends BaseAnalyzer {
             if (msg.sender_name == this.username) {
                let d = new Date(msg.timestamp_ms);
                let y = d.getFullYear(); // message years
-               acc.timeStats.weekly[d.getDay()]++;
                acc.timeStats.hourly[d.getHours()]++;
+               acc.timeStats.weekly.sent[d.getDay()]++;
                acc.timeStats.monthly[d.getMonth()]++;
                acc.timeStats.yearly[y] = (acc.timeStats.yearly[y] || 0) + 1;
             }
+            else if (msg.sender_name == participants[0].name) {
+               let d = new Date(msg.timestamp_ms);
+               let y = d.getFullYear(); // message years
+               // acc.timeStats.hourly[d.getHours()]++;
+               acc.timeStats.weekly.received[d.getDay()]++;
+               // acc.timeStats.monthly[d.getMonth()]++;
+               // acc.timeStats.yearly[y] = (acc.timeStats.yearly[y] || 0) + 1;
+            }
+
             return acc;
          }.bind(this), msgData);
       }

@@ -6,6 +6,15 @@
 //    max-width: 80%;
 //    align-items: center;
 // }
+// #report * > {
+//    // not sure about this
+//    box-shadow: 0 0 3px #ccc;
+//    -moz-box-shadow: 0 0 3px #ccc;
+//    -webkit-box-shadow: 0 0 3px #ccc;
+// }
+#report {
+   min-height: 100vh;
+}
 
 #instructions-container {
    display: flex;
@@ -37,11 +46,9 @@
    width: 80%;
    margin: 10vh auto;
    background: white;
-
-   // not sure about this
+   box-shadow: 0 0 3px #ccc;
    -moz-box-shadow: 0 0 3px #ccc;
    -webkit-box-shadow: 0 0 3px #ccc;
-   box-shadow: 0 0 3px #ccc;
 }
 
 .report-heading-title {
@@ -208,11 +215,14 @@
 .graph-wrapper {
    // display: flex;
    // flex-direction: column;
-   border-style: solid;
-   border-color: #ebebeb;
+   // border-style: solid;
+   // border-color: #ebebeb;
    background: #fff;
    margin: 5vh 5vh;
    width: 70%;
+   box-shadow: 0 0 3px #ccc;
+   -moz-box-shadow: 0 0 3px #ccc;
+   -webkit-box-shadow: 0 0 3px #ccc;
    // margin: 2.5vh 10vh;
    // width: 25%
 }

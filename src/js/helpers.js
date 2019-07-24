@@ -73,7 +73,7 @@ class chartFactory {
       }
       else {
          if (size === 'medium') return 600;
-         if (size === 'small')  return 250;
+         if (size === 'small')  return 350;
       }
    }
 

@@ -31,7 +31,10 @@ var data = {
       "numPictures": {"gifs": 0, "other": 0},
       "timeStats": {
          "hourly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-         "weekly": [0, 0, 0, 0, 0, 0, 0],
+         "weekly": {
+            "sent": [0, 0, 0, 0, 0, 0, 0],
+            "received": [0, 0, 0, 0, 0, 0, 0]
+         },
          "monthly": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "yearly": {}
       }
@@ -275,16 +278,17 @@ function displayAggMsgReport(msgReportStats) {
       size: 'medium'
    });
 
-   var chartDaily = charFac.getChart({
-      type: 'bar',
-      parent: graphCont[1],
-      data: msgReportStats.timeStats.weekly,
-      labels: DAYS,
-      title: 'Messages by Day of Week',
-      colorscheme: 'blue',
-      name: 'chart2',
-      size: 'small'
-   });
+   console.log(msgReportStats.timeStats.weekly);
+   // var chartDaily = charFac.getChart({
+   //    type: 'bar',
+   //    parent: graphCont[1],
+   //    data: msgReportStats.timeStats.weekly,
+   //    labels: DAYS,
+   //    title: 'Messages by Day of Week',
+   //    colorscheme: 'blue',
+   //    name: 'chart2',
+   //    size: 'small'
+   // });
 
    var chartMonthly = charFac.getChart({
       type: 'bar',
@@ -324,6 +328,7 @@ function displayAggMsgReport(msgReportStats) {
       labels: Object.keys(msgCumulative),
       size: 'small'
    });
+
    // make a graph for top messaged people
    let topMessagers = newTopMessagers(msgReportStats.regThreads, 20).map((t) => { return t[1]; });
    let msgSent = topMessagers.reduce(function(acc, msger) {
@@ -347,7 +352,20 @@ function displayAggMsgReport(msgReportStats) {
       data: [msgSent, msgReceived, [`${data.name}`, 'Friend']],
       size: 'medium'
    });
-   console.log("should happen once!");
+
+   // improved other graphs
+   let msgSentDaily = msgReportStats.timeStats.weekly.sent;
+   let msgReceivedDaily = msgReportStats.timeStats.weekly.received;
+
+   var chartWeekly = charFac.getChart({
+      type: 'axis-mixed',
+      parent: graphCont[1],
+      name: 'chart2',
+      title: 'Messages by Day of the Week',
+      labels: DAYS,
+      data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],
+      size: 'medium'
+   });
 }
 
 // gets the top messagers sorts them and returns the last n ones
