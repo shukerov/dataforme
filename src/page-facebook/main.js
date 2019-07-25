@@ -23,8 +23,9 @@ import { NavBar } from '../js/components/navBar.js';
 // import { insFactory } from '../js/components/insFactory.js';
 
 var data = {
-   'name': null,
+   'name': 'unknown',
    'joined': null,
+   'brithday': 'unknown',
    'msgStats': {
       "groupChatThreads": [],
       "regThreads": {},
@@ -93,6 +94,17 @@ function report(file, data) {
    analyzer = new FBAnalyzer(file.files[0], data, renderReportHeading.bind(this, data, reportContainer));
    // renderMainInfoNew(data);
 }
+
+function renderMsgReport() {
+   // ZIP FILE MODE
+   if (!DEBUG_MODE) {
+      analyzer.analyzeMsgThreads(data.msgStats, displayAggMsgReport.bind(this, data.msgStats));
+   }
+   else {
+      displayAggMsgReport(data.msgStats);
+   }
+}
+
 
 function renderMsgHeading(data, parent) {
    // data crunching
@@ -181,7 +193,7 @@ function renderReportHeading(data, parent) {
       reportItemContainer);
    // still need to pull from data...
    renderHeadingItem(icake, 'Birthday: ',
-      renderText('*', ['Wed Mar 24 1995']),
+      renderText('*', [(data.birthday ?  new Date(data.birthday).toDateString() : 'unknown' )]),
       reportItemContainer);
    renderHeadingItem(iuser, 'Last Profile Update: ',
       renderText('*', ['Wed Mar 24 1995']),
@@ -231,16 +243,6 @@ function renderMainInfoNew(data) {
    startReporting.innerHTML = "Lets do something more interesting. Click below.";
    genTextRep.appendChild(startReporting);
    showReportBtns();
-}
-
-function renderMsgReport() {
-   // ZIP FILE MODE
-   if (!DEBUG_MODE) {
-      analyzer.analyzeMsgThreads(data.msgStats, displayAggMsgReport.bind(this, data.msgStats));
-   }
-   else {
-      displayAggMsgReport(data.msgStats);
-   }
 }
 
 function showReportBtns() {

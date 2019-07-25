@@ -34,6 +34,14 @@ class FBAnalyzer extends BaseAnalyzer {
 
       data.name = this.username;
       data.joined = profInfoJSON.profile.registration_timestamp * 1000;
+      // TODO: need a way to safely access all these variables
+      // a function in the baseAnalyzer that will return unknown if it can't
+      // find the given json attribute
+      data.birthday = new Date(
+         profInfoJSON.profile.birthday.year,
+         profInfoJSON.profile.birthday.month,
+         profInfoJSON.profile.birthday.day
+      );
 
       // NOPE
       this.callback();
