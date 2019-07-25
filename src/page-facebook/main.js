@@ -26,6 +26,8 @@ var data = {
    'name': 'unknown',
    'joined': null,
    'brithday': 'unknown',
+   'num_posts': 'unknown',
+   'num_searches': 'unknown',
    'msgStats': {
       "groupChatThreads": [],
       "regThreads": {},
@@ -176,7 +178,7 @@ function renderReportHeading(data, parent) {
    let dateRange = new Date(Date.now());
    let dateStart = new Date(data.joined);
    // TODO: helper
-   let numDays = Math.round((dateRange-dateStart)/MS_IN_DAY);
+   let numDays = Math.round((dateRange - dateStart) / MS_IN_DAY);
 
    // let reportItemContainer = document.getElementById('report-heading-content');
    let reportItemContainer = document.getElementsByClassName('report-heading-content')[0];

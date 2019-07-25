@@ -4,6 +4,7 @@ import { ZipFS } from '../zip-js-modified/zip-fs.js';
 
 class BaseAnalyzer {
    constructor() {
+      this.callback = null;
       this.zip = new Zip(window);
       this.fs = new ZipFS(window.zip);
 

@@ -1,11 +1,13 @@
 import { BaseAnalyzer } from './baseAnalyzer.js';
 import { LoadBar } from '../components/loadBar.js';
+import { CallbackLoop } from '../callbackLoop.js';
 
 class FBAnalyzer extends BaseAnalyzer {
    constructor(file, data, callback) {
       super();
       this.username = 'Stoyan Shukerov';
-      this.callback = callback;
+      this.callbackLoop = new CallbackLoop('fbMainCallbackLoop', callback);
+      // this.callback = callback;
       this.progress = null;
       this.init(file, data);
 
@@ -13,22 +15,48 @@ class FBAnalyzer extends BaseAnalyzer {
    }
    
    init(file, data) {
-      console.log(file);
       this.fs.importBlob(file, () => {
-         // NEEDED FOR MESSAGES
+         // depends on how many files we are opening
+         this.callbackLoop.setLoopCount(3); // defaults to 1
+
+         // get profiledata
+         let profInfoCallbackLoop = new CallbackLoop('fbProfileInfLoop',
+            this.callbackLoop.call.bind(this.callbackLoop),
+            1);
          let profileInfoFile = this.getJSONFile('profile_information/profile_information.json');
-         profileInfoFile.getText(this.getBaseData.bind(this, data));
+         profileInfoFile.getText(this.getBaseData.bind(this, data, profInfoCallbackLoop));
 
-         // this.getBaseData.bind(this, data);
+         // get search file data
+         let searchCallbackLoop = new CallbackLoop('fbSearchLoop',
+            this.callbackLoop.call.bind(this.callbackLoop),
+            1);
+         let searchHistFile = this.getJSONFile('search_history/your_search_history.json');
+         searchHistFile.getText(this.getSearchData.bind(this, data, searchCallbackLoop));
 
-         // NOT GOOD BECAUSE CALLBACK NEEDS TO BE SET TO NULL AFTER EXECUTE
-         // YOU NEED TO KEEP THE STATE RIGHT
-         // this.callback();
+         // get posts file data
+         let postCallbackLoop = new CallbackLoop('fbPostLoop',
+            this.callbackLoop.call.bind(this.callbackLoop),
+            1);
+         let postsFile = this.getJSONFile('posts/your_posts_1.json');
+         postsFile.getText(this.getPostData.bind(this, data, postCallbackLoop));
       });
    }
+   
+   getPostData(data, callbackLoop, postInfo) {
+      let postInfoJSON = JSON.parse(postInfo);
+      data.num_posts = postInfoJSON.length;
+      callbackLoop.call();
+   }
 
-   getBaseData(data, profInfo) {
+   getSearchData(data, callbackLoop, searchInfo) {
+      let searchInfoJSON = JSON.parse(searchInfo);
+      data.num_searches = searchInfoJSON.searches.length;
+      callbackLoop.call();
+   }
+
+   getBaseData(data, callbackLoop, profInfo) {
       let profInfoJSON = JSON.parse(profInfo);
+      // NEEDED FOR MESSAGES
       // idk about this being here
       this.username = profInfoJSON.profile.name.full_name;
 
@@ -43,25 +71,19 @@ class FBAnalyzer extends BaseAnalyzer {
          profInfoJSON.profile.birthday.day
       );
 
-      // NOPE
-      this.callback();
-   }
-
-   setCurrentCallback(callback) {
-      this.callback = callback;
+      // YUP
+      callbackLoop.call();
    }
 
    analyzeMsgThreads(msgData, callback) {
       var msgDirs = this.getDirChildren('messages/inbox');
-      this.setCurrentCallback(callback)
 
       // regular attempt
       var numDirs = msgDirs.length;
       this.progress = new LoadBar(numDirs);
       this.progress.show();
       
-      // DEBUG
-      console.log(numDirs);
+      this.callbackLoop = new CallbackLoop('display messages', callback, numDirs);
 
       // loop through msg threads
       msgDirs.map((msgDir) => {
@@ -69,6 +91,7 @@ class FBAnalyzer extends BaseAnalyzer {
 
          // message thread was not found in the given directory
          if (!msgThread) {
+            this.callbackLoop.call();
             this.progress.updatePercentage(); 
             return;
          }
@@ -147,13 +170,17 @@ class FBAnalyzer extends BaseAnalyzer {
       }
 
       // progress bar
+      // this.callCallbackLoop();
+      this.callbackLoop.call();
       this.progress.updatePercentage(); 
 
       // triggers callback once all msgThreads are analyzed
       if (this.progress.current == this.progress.max) {
          this.progress.hide();
          this.progress = null;
-         this.callback();
+         this.callbackLoop.call();
+         // this.callCallbackLoop();
+         // this.callback();
       }
    }
 }
