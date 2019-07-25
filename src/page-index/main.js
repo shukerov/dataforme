@@ -14,24 +14,24 @@ import { NavBar } from '../js/components/navBar.js';
 renderContent();
 
 function renderContent() {
-   let globalContainer = document.getElementById('site');
-   let websiteContainer = document.getElementById('website-cnt');
-   let aboutContainer = document.getElementById('about');
+  let globalContainer = document.getElementById('site');
+  let websiteContainer = document.getElementById('website-cnt');
+  let aboutContainer = document.getElementById('about');
 
-   new NavBar(globalContainer, true);
-   loadWebsites(websiteContainer); // globalContainer);
-   loadAbout(aboutContainer);
+  new NavBar(globalContainer, true);
+  loadWebsites(websiteContainer); // globalContainer);
+  loadAbout(aboutContainer);
 }
 
 function loadAbout(parent) {
-   let textContainer = document.createElement('div');
+  let textContainer = document.createElement('div');
 
-   // styles
-   textContainer.classList.add('about-content-container');
+  // styles
+  textContainer.classList.add('about-content-container');
 
-   // website content. Might be wise to store this in a json file?
-   // TODO: even better idea just dump it in the html and hide the element.
-   textContainer.innerHTML = "\
+  // website content. Might be wise to store this in a json file?
+  // TODO: even better idea just dump it in the html and hide the element.
+  textContainer.innerHTML = "\
       <h1>About DataForMe:</h1>\
       <p>\
          <strong>TLDR</strong>: A website that teaches you how to practice\
@@ -74,34 +74,34 @@ function loadAbout(parent) {
          open-source and you can look through it or contribute here.\
       </p>";
 
-   parent.appendChild(textContainer);
+  parent.appendChild(textContainer);
 
 }
 
 function loadWebsites(globalContainer) {
-   let routes = {
-      'facebook': facebook,
-      'spotify': spotify,
-      'tinder': tinder
-   };
+  let routes = {
+    'facebook': facebook,
+    'spotify': spotify,
+    'tinder': tinder
+  };
 
-   Object.keys(routes).forEach((key) => {
-      let link = createLink(key);
-      let icon = createImage(routes[key]);
+  Object.keys(routes).forEach((key) => {
+    let link = createLink(key);
+    let icon = createImage(routes[key]);
 
-      let imgContainer = document.createElement('div');
-      imgContainer.appendChild(icon);
-      link.appendChild(imgContainer);
-      globalContainer.appendChild(link);
-   });
+    let imgContainer = document.createElement('div');
+    imgContainer.appendChild(icon);
+    link.appendChild(imgContainer);
+    globalContainer.appendChild(link);
+  });
 }
 
 function createLink(to) {
-   let linkWrap = document.createElement('a');
+  let linkWrap = document.createElement('a');
 
-   linkWrap.classList.add('website-item');
-   linkWrap.id = to;
-   linkWrap.href = `./${to}.html`;
+  linkWrap.classList.add('website-item');
+  linkWrap.id = to;
+  linkWrap.href = `./${to}.html`;
 
-   return linkWrap;
+  return linkWrap;
 }

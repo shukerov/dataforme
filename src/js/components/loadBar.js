@@ -1,41 +1,41 @@
 import '../../styles/components/loadBar.scss';
 
 class LoadBar {
-   constructor(max) {
-      this.current = 0; // current value of the progress
-      this.max = max;         // maximum value that the progress can reach
+  constructor(max) {
+    this.current = 0; // current value of the progress
+    this.max = max;         // maximum value that the progress can reach
 
-      // the html elements
-      this.text = document.createElement('p');
-      this.progress = document.createElement('div');
+    // the html elements
+    this.text = document.createElement('p');
+    this.progress = document.createElement('div');
 
-      this.text.innerHTML = this.toPercent();
-      this.text.className = 'progress-text';
-      this.progress.className = 'progress';
+    this.text.innerHTML = this.toPercent();
+    this.text.className = 'progress-text';
+    this.progress.className = 'progress';
 
-      this.progress.appendChild(this.text);
-   }
+    this.progress.appendChild(this.text);
+  }
 
-   // updates progress bar
-   updatePercentage() {
-      this.current++;
-      this.text.innerHTML = this.toPercent() ;
-   }
+  // updates progress bar
+  updatePercentage() {
+    this.current++;
+    this.text.innerHTML = this.toPercent() ;
+  }
 
-   // returns current progress as a string
-   toPercent() {
-      return `${Math.round(this.current / this.max * 100)}%`;
-   }
+  // returns current progress as a string
+  toPercent() {
+    return `${Math.round(this.current / this.max * 100)}%`;
+  }
 
-   // show progress bar
-   show() {
-      document.body.appendChild(this.progress);
-   }
+  // show progress bar
+  show() {
+    document.body.appendChild(this.progress);
+  }
 
-   // hides progresss bar
-   hide() {
-      document.body.removeChild(this.progress);
-   }
+  // hides progresss bar
+  hide() {
+    document.body.removeChild(this.progress);
+  }
 }
 
 export { LoadBar };

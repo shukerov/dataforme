@@ -11,6 +11,7 @@
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.0.0",
+    "eslint": "^6.1.0",
     "file-loader": "^4.0.0",
     "frappe-charts": "^1.2.3",
     "html-loader": "^0.5.5",
@@ -34,10 +35,14 @@
     "build": "webpack --env"
   },
   "babel": {
-     "presets": [ "@babel/preset-env" ]
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "jest": {
-     "transform": {".*": "./node_modules/babel-jest"}
+    "transform": {
+      ".*": "./node_modules/babel-jest"
+    }
   },
   "keywords": [],
   "author": "",
