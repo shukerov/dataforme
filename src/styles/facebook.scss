@@ -1,17 +1,5 @@
 @import './_globalvariables.scss';
-// .fb-container {
-//    display: flex;
-//    flex-direction: column;
-//    margin: 0 auto;
-//    max-width: 80%;
-//    align-items: center;
-// }
-// #report * > {
-//    // not sure about this
-//    box-shadow: 0 0 3px #ccc;
-//    -moz-box-shadow: 0 0 3px #ccc;
-//    -webkit-box-shadow: 0 0 3px #ccc;
-// }
+
 #report {
    min-height: 100vh;
 }
@@ -43,74 +31,6 @@
    flex-direction: column;
    justify-content: center;
    width: 100%;
-}
-
-
-#general-text {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-
-   p {
-      text-align: center;
-   }
-}
-
-#btn-container {
-   display: flex;
-   justify-content: center;
-}
-
-.report-btn {
-   background-color: white;
-   border: 2px solid #7cd6fd;
-   color: black;
-   padding: 15px 32px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 16px;
-   margin: 0vh 5vh;
-   transition-duration: 0.4s;
-   -webkit-transition-duration: 0.4s; /* Safari */
-}
-
-.report-btn:hover {
-  background-color: #7cd6fd;
-  color: white;
-}
-
-// this is still facebook but filepicker specific
-.file-picker {
-   width: 50vh;
-   height: 20vh;
-   border: 2px solid black;
-   border-radius: 9px;
-   margin: 0 auto;
-   // background: red;
-
-
-   label {
-      margin: 1vh;
-      text-align: center;
-      // display: none;
-   }
-
-   #file-picker-input {
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      cursor: pointer;
-      align-items: center;
-   }
-}
-
-.file-picker-form {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   width: 100%;
-   height: 100%;
 }
 
 // this is still facebook but graph specific

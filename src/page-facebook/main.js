@@ -4,10 +4,11 @@ import '../styles/facebook.scss';
 
 // JS imports:
 import { DAYS, MONTHS, MS_IN_DAY } from '../js/constants.js';
-import { renderText, formatNum } from '../js/helpers.js';
+import { formatNum } from '../js/helpers.js';
 import { chartFactory } from '../js/helpers.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
+import { FilePicker } from '../js/components/filePicker.js';
 import { reportRenderer } from '../js/components/reportRender.js';
 // import { insFactory } from '../js/components/insFactory.js';
 var data = {
@@ -53,6 +54,7 @@ if (DEBUG_MODE) {
 var reportContainer = document.getElementById('report');
 
 new NavBar(document.getElementById('site'));
+new FilePicker(reportContainer);
 let rRender = new reportRenderer();
 
 kickStartReport();
@@ -73,8 +75,8 @@ function kickStartReport() {
 }
 
 function renderFacebookReport(data, report) {
-    renderReportHeading(data, reportContainer);
-    displayAggMsgReport(data.msgStats);
+  renderReportHeading(data, reportContainer);
+  displayAggMsgReport(data.msgStats);
 }
 
 function renderReportHeading(data, parent) {

@@ -2,7 +2,6 @@
 // import logo from '../../images/icons/logo.svg';
 import '../../styles/components/navbar.scss';
 
-// TODO: needs a refactor. Create About and CreateLogo are pretty much identical
 class NavBar {
   constructor(parent, index=false) {
     // boolean that determines if navbar is loaded on index page
@@ -27,7 +26,6 @@ class NavBar {
   }
 
   setup() {
-    console.log(this.index);
     let background = document.createElement('div');
     this.navbar = document.createElement('div');
 
@@ -63,7 +61,7 @@ class NavBar {
   // TODO: need to test browser compatibility.
   setupSmoothScroll() {
     let anchorElements = document.querySelectorAll('a[href^="#"]');
-    console.log(anchorElements);
+    // console.log(anchorElements);
     anchorElements.forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();

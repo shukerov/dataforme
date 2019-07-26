@@ -55,7 +55,7 @@ export class reportRenderer {
       let icon = this.getIcon(item.icon);
 
       this.renderHeadingItem(
-        this.getIcon(item.icon),
+        icon,
         item.text,
         // THIS VERSION only does one bold? do you really need more
         this.renderText('*', [item.textBold]),
@@ -76,6 +76,7 @@ export class reportRenderer {
   renderHeadingItem(iconPath, label, headingText, parent) {
     // element creation
     let headingItem = document.createElement('div');
+    // TODO: use helper here
     let headingIcon = new Image();
     let headingLabel = document.createElement('p');
 

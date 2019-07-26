@@ -1,15 +1,8 @@
 <!DOCTYPE HTML>
 <html>
   ${require('../partials/head.html')}
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Data for Me</title>
-  </head>
   <body>
-    <div id="site" data-page='facebook'>
+    <div id='site' data-page='facebook'>
         <div id='instructions-container'>
           <div id='instructions-text'>
             <h1>Instructions</h1> 
@@ -32,14 +25,7 @@
           <a id='report-btn' class='report-button' href='#report'>Start Report</a>
         </div>
         <div class='spacer'></div>
-        <div id="report">
-        <div class="file-picker">
-          <form class="file-picker-form">
-            <label for="file-picker-input">Add your file here</label>
-            <input type="file" accept=".zip" id="file-picker-input">
-          </form>
-        </div>
-          <div id="graphs-container"></div>
+        <div id='report'>
         </div>
       ${require('../partials/footer.html')}
     </div>
