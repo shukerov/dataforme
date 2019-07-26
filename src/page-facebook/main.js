@@ -61,8 +61,8 @@ kickStartReport();
 
 function kickStartReport() {
   if (!DEBUG_MODE) {
-    fPicker.onUpload( () => {
-      new FBAnalyzer(fPicker.getFile(), data,
+    fPicker.onUpload( (file) => {
+      new FBAnalyzer(file, data,
             renderFacebookReport.bind(this, data, reportContainer)
         );
     });

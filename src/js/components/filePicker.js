@@ -1,3 +1,4 @@
+// TODO: needs to change style once zipfile is uploaded.
 // Style imports:
 import '../../styles/components/filePicker.scss';
 
@@ -26,10 +27,17 @@ export class FilePicker {
   onUpload(callback) {
     // to attach an action 
     this.input = this.self.children[1];
-    this.input.onchange = callback; 
+    this.input.onchange = this.getFileSafe.bind(this, callback); 
   }
 
-  getFile() {
-    return this.input.files[0];
+  getFileSafe(callback) {
+    // file isn't a zip file. TODO should also check for file size
+    // once the limitations of the script are more clear
+    if (this.input.files[0].name.endsWith('.zip')) {
+      callback(this.input.files[0]);
+    }
+    else {
+      alert('Please upload a zip file');
+    }
   }
 }
