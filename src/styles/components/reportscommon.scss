@@ -1,0 +1,88 @@
+@import '../_globalvariables.scss';
+.report-heading {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   width: 80%;
+   margin: 10vh auto;
+   background: white;
+   box-shadow: 0 0 3px #ccc;
+   -moz-box-shadow: 0 0 3px #ccc;
+   -webkit-box-shadow: 0 0 3px #ccc;
+}
+
+.report-heading-title {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+}
+
+.report-heading-title > * {
+   flex: 1;
+}
+
+.report-heading-user-name {
+   border-bottom: 1px solid $facebook;
+   padding-left: 3vh;
+}
+
+.report-heading-user-picture {
+   height: 100px;
+   width: 100px;
+   // background: $facebook;
+   // background: url('../images/icons/facebook.svg');
+}
+
+.report-heading-content {
+   display: flex;
+   flex-direction: column;
+   flex-basis: 60%;
+}
+
+.heading-content-item {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+
+.heading-content-icon {
+   width: 24px;
+   height: 24px;
+   flex: 0.1;
+}
+
+.heading-content-label {
+   flex: 0.2;
+}
+
+.heading-content-text {
+   flex: 0.7;
+   text-align: left;
+   margin: 0 1vh;
+}
+
+.report-controls {
+   display: flex;
+   flex-direction: row;
+   flex-basis: 40%;
+}
+
+.report-button {
+   flex: 1;
+   background: black;
+   color: white;
+   text-decoration: none;
+   border: none;
+   transition: all .2s ease-in-out;
+   font-family: 'BigNoodleTitling';
+   font-size: 3vh;
+   font-weight: bold;
+   margin: 0.1vh 0vh;
+}
+
+.report-button:hover {
+   box-shadow: 0px 5px $facebook, 0px 10px $spotify, 0px 15px $tinder-static;
+   background: white;
+   color: black;
+}
+// END NEW

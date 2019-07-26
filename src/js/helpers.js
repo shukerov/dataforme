@@ -9,6 +9,7 @@ export function formatNum(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
+// TODOREFACTOR: moving this to reportRenderer
 export function renderText(text, highlight, parent) {
   let container = document.createElement('p');
   let textA = text.split('*');

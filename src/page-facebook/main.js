@@ -20,6 +20,7 @@ import { renderText, formatNum } from '../js/helpers.js';
 import { chartFactory } from '../js/helpers.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
+import { reportRenderer } from '../js/components/reportRender.js';
 // import { insFactory } from '../js/components/insFactory.js';
 var data = {
   'name': 'unknown',
@@ -259,9 +260,55 @@ function showReportBtns() {
   msgInterBtn.disabled = true;
 }
 
+function renderMsgReportHeading(data, parent) {
+  // data crunching
+  // TODO pull out of here maybe
+  let totMsgSent = 0
+  let numChats = Object.keys(data['regThreads']).length;
+  let numGrChats = data['groupChatThreads'].length;
+  let totMsgReceived = 0
+
+  Object.keys(data.regThreads).forEach((key) => {
+    totMsgSent += data.regThreads[key].msgByUser;
+  });
+
+  Object.keys(data.regThreads).forEach((key) => {
+    totMsgReceived += data.regThreads[key].other;
+  });
+
+  // TODO: create this globally
+  let rRender = new reportRenderer();
+  let msgData = [
+    {
+      icon: 'isend',
+      text: 'Messages sent:',
+      textBold:  formatNum(totMsgSent)
+    },
+    {
+      icon: 'iinbox',
+      text: 'Messages received:',
+      textBold: formatNum(totMsgReceived)
+    },
+    {
+      icon: 'imsg',
+      text: 'People messaged:',
+      textBold: numChats
+    },
+    {
+      icon: 'imsgcir',
+      text: 'Group chats:',
+      textBold: numGrChats
+    }
+  ];
+
+  rRender.renderSubReport('Message Report', parent, msgData);
+}
+
 function displayAggMsgReport(msgReportStats) {
   // RENDERS HEADING
-  renderMsgHeading(msgReportStats, reportContainer);
+
+  renderMsgReportHeading(msgReportStats, reportContainer);
+  // renderMsgHeading(msgReportStats, reportContainer);
 
   var msgGraphCont = document.createElement('div');
   msgGraphCont.id = 'graphs-container';
