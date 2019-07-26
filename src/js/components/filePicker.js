@@ -1,9 +1,6 @@
 // Style imports:
 import '../../styles/components/filePicker.scss';
 
-// JS imports
-import { createImage } from '../helpers.js';
-
 // Icon imports TODO: DOES THIS DOUBLE IMPORT?
 import iupload from '../../images/report-icons/file-plus_inline.svg';
 
@@ -18,13 +15,21 @@ export class FilePicker {
           </label>\
           <input id='file-upload' type='file'/>\
           `;
+
     // get icon from the above html
     let iconContainer = this.self.children[0].children[0];
     iconContainer.innerHTML = iupload;
-    // let uploadIcon = createImage(iupload);
-    // iconContainer.appendChild(uploadIcon);
-    console.log(iconContainer);
+    parent.appendChild(this.self);
+    // return parent ? (parent.appendChild(this.self)) : (this.self);
+  }
 
-    return parent ? (parent.appendChild(this.self)) : (this.self);
+  onUpload(callback) {
+    // to attach an action 
+    this.input = this.self.children[1];
+    this.input.onchange = callback; 
+  }
+
+  getFile() {
+    return this.input.files[0];
   }
 }

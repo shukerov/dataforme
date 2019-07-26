@@ -54,20 +54,18 @@ if (DEBUG_MODE) {
 var reportContainer = document.getElementById('report');
 
 new NavBar(document.getElementById('site'));
-new FilePicker(reportContainer);
+let fPicker = new FilePicker(reportContainer);
 let rRender = new reportRenderer();
 
 kickStartReport();
 
 function kickStartReport() {
   if (!DEBUG_MODE) {
-    // event specifying that file was uploaded
-    var file = document.getElementById('file-picker-input');
-    file.onchange = () => {
-      new FBAnalyzer(file.files[0], data,
+    fPicker.onUpload( () => {
+      new FBAnalyzer(fPicker.getFile(), data,
             renderFacebookReport.bind(this, data, reportContainer)
         );
-    }
+    });
   }
   else {
     renderFacebookReport(data, report);
