@@ -2,18 +2,6 @@
 import '../styles/main.scss';
 import '../styles/facebook.scss';
 
-// Assets imports:
-import icalendar from '../images/report-icons/calendar.svg';
-import itext from '../images/report-icons/file-text.svg';
-import icake from '../images/report-icons/cake.svg';
-import isearch from '../images/report-icons/search.svg';
-import iuser from '../images/report-icons/user.svg';
-import iusers from '../images/report-icons/users.svg';
-import imsg from '../images/report-icons/message-square.svg';
-import imsgcir from '../images/report-icons/message-circle.svg';
-import isend from '../images/report-icons/send.svg';
-import iinbox from '../images/report-icons/inbox.svg';
-
 // JS imports:
 import { DAYS, MONTHS, MS_IN_DAY } from '../js/constants.js';
 import { renderText, formatNum } from '../js/helpers.js';
@@ -63,14 +51,6 @@ if (DEBUG_MODE) {
 }
 
 var reportContainer = document.getElementById('report');
-// var msgGraphCont = document.getElementById('graphs-container');
-// var msgTextCont = document.getElementById('text-container');
-// var genTextRep = document.getElementById('general-text');
-
-// TODO: this should  be a global object used by all reports
-var analyzer = undefined;
-// var analyzer = new FBAnalyzer();
-// var analyzer = new BaseAnalyzer();
 
 new NavBar(document.getElementById('site'));
 let rRender = new reportRenderer();
@@ -81,27 +61,20 @@ function kickStartReport() {
   if (!DEBUG_MODE) {
     // event specifying that file was uploaded
     var file = document.getElementById('file-picker-input');
-    file.onchange = report.bind(this, file, data);
+    file.onchange = () => {
+      new FBAnalyzer(file.files[0], data,
+            renderFacebookReport.bind(this, data, reportContainer)
+        );
+    }
   }
   else {
+    renderFacebookReport(data, report);
+  }
+}
+
+function renderFacebookReport(data, report) {
     renderReportHeading(data, reportContainer);
-    renderMsgReport(data);
-  }
-}
-
-function report(file, data) {
-  analyzer = new FBAnalyzer(file.files[0], data, renderReportHeading.bind(this, data, reportContainer));
-  // renderMainInfoNew(data);
-}
-
-function renderMsgReport() {
-  // ZIP FILE MODE
-  if (!DEBUG_MODE) {
-    analyzer.analyzeMsgThreads(data.msgStats, displayAggMsgReport.bind(this, data.msgStats));
-  }
-  else {
     displayAggMsgReport(data.msgStats);
-  }
 }
 
 function renderReportHeading(data, parent) {
@@ -253,7 +226,7 @@ function displayAggMsgReport(msgReportStats) {
   let msgSentMonthly = msgReportStats.timeStats.monthly.sent;
   let msgReceivedMonthly = msgReportStats.timeStats.monthly.received;
   // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
-  // msgSentMonthly.push(0);
+  msgSentMonthly.push(0);
   var chartMonthly = charFac.getChart({
     type: 'axis-mixed',
     parent: graphCont[3],
@@ -271,7 +244,7 @@ function displayAggMsgReport(msgReportStats) {
     return msgReportStats.timeStats.yearly[y].received
   });
   // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
-  // msgSentYearly.push(0);
+  msgSentYearly.push(0);
   var chartYearly = charFac.getChart({
     type: 'axis-mixed',
     parent: graphCont[4],

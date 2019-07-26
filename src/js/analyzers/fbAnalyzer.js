@@ -14,7 +14,7 @@ class FBAnalyzer extends BaseAnalyzer {
   init(file, data) {
     this.fs.importBlob(file, () => {
       // depends on how many files we are opening
-      this.callbackLoop.setLoopCount(3); // defaults to 1
+      this.callbackLoop.setLoopCount(4); // defaults to 1
 
       // TODO: IMPORTANT need to have a backup plan in case loopback fails
       // currently that can happen if file is not found for example.
@@ -40,6 +40,13 @@ class FBAnalyzer extends BaseAnalyzer {
         1);
       let postsFile = this.getJSONFile('posts/your_posts_1.json');
       postsFile.getText(this.getPostData.bind(this, data, postCallbackLoop));
+
+      let msgCallbackLoop = new CallbackLoop('fbMsgLoop',
+        this.callbackLoop.call.bind(this.callbackLoop),
+        1);
+      this.analyzeMsgThreads(data.msgStats, msgCallbackLoop);
+      // let postsFile = this.getJSONFile('posts/your_posts_1.json');
+      // postsFile.getText(this.getPostData.bind(this, data, postCallbackLoop));
     });
   }
 
@@ -84,7 +91,8 @@ class FBAnalyzer extends BaseAnalyzer {
     this.progress = new LoadBar(numDirs);
     this.progress.show();
 
-    this.callbackLoop = new CallbackLoop('display messages', callback, numDirs);
+    // CARE
+    let internalCallbackLoop = new CallbackLoop('display messages', callback.call.bind(callback), numDirs);
 
     // loop through msg threads
     msgDirs.map((msgDir) => {
@@ -92,16 +100,18 @@ class FBAnalyzer extends BaseAnalyzer {
 
       // message thread was not found in the given directory
       if (!msgThread) {
-        this.callbackLoop.call();
+        // CARE
+        // this.callbackLoop.call();
+        internalCallbackLoop.call();
         this.progress.updatePercentage(); 
         return;
       }
 
-      msgThread.getText(this.analyzeMessageThread.bind(this, msgDir.name, msgData));
+      msgThread.getText(this.analyzeMessageThread.bind(this, msgDir.name, msgData, internalCallbackLoop));
     });
   }
 
-  analyzeMessageThread(threadName, msgData, msg) {
+  analyzeMessageThread(threadName, msgData, callback, msg) {
     // console.log(msg);
     let msgJSON = JSON.parse(msg);
     let participants = msgJSON.participants // all participants in the current chat thread
@@ -171,14 +181,17 @@ class FBAnalyzer extends BaseAnalyzer {
     }
 
     // progress bar
-    this.callbackLoop.call();
+    // CARE
+    // this.callbackLoop.call();
+    callback.call();
     this.progress.updatePercentage(); 
 
     // triggers callback once all msgThreads are analyzed
     if (this.progress.current == this.progress.max) {
       this.progress.hide();
       this.progress = null;
-      this.callbackLoop.call();
+      // CARE
+      callback.call();
     }
   }
 }
