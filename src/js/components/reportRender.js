@@ -30,7 +30,7 @@ export class reportRenderer {
     this.subreports = [];
   }
 
-  renderSubReport(title, parent, reportItems, controls) {
+  renderSubReport(title, parent, reportItems) {
     // create and append to parent
     let reportHeading = document.createElement('div');
     parent.appendChild(reportHeading);

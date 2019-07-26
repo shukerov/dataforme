@@ -73,6 +73,7 @@ var analyzer = undefined;
 // var analyzer = new BaseAnalyzer();
 
 new NavBar(document.getElementById('site'));
+let rRender = new reportRenderer();
 
 kickStartReport();
 
@@ -81,13 +82,9 @@ function kickStartReport() {
     // event specifying that file was uploaded
     var file = document.getElementById('file-picker-input');
     file.onchange = report.bind(this, file, data);
-    // file.onchange = startReport.bind(this, file);
   }
   else {
     renderReportHeading(data, reportContainer);
-    // renderMainInfoNew(data);
-    // renderMainInfo(profInfoJSON);
-    // showReportBtns();
     renderMsgReport(data);
   }
 }
@@ -107,72 +104,7 @@ function renderMsgReport() {
   }
 }
 
-
-function renderMsgHeading(data, parent) {
-  // data crunching
-  // TODO pull out of here maybe
-  let totMsgSent = 0
-  let numChats = Object.keys(data['regThreads']).length;
-  let numGrChats = data['groupChatThreads'].length;
-  let totMsgReceived = 0
-
-  Object.keys(data.regThreads).forEach((key) => {
-    totMsgSent += data.regThreads[key].msgByUser;
-  });
-
-  Object.keys(data.regThreads).forEach((key) => {
-    totMsgReceived += data.regThreads[key].other;
-  });
-
-  let reportHeading = document.createElement('div');
-  reportHeading.classList.add('report-heading');
-
-  reportHeading.innerHTML = `\
-      <div class='report-heading-title'>\
-         <h2 class='report-heading-user-name'>Message Report</h2>\
-         <div class='report-heading-user-picture'></div>\
-      </div>\
-      <div class='report-heading-content'></div>\
-      `
-  parent.appendChild(reportHeading);
-  // BAD BAD
-  let reportItemContainer = document.getElementsByClassName('report-heading-content')[1];
-
-  renderHeadingItem(isend, 'Messages sent:',
-    renderText('*', [formatNum(totMsgSent)]),
-    reportItemContainer);
-  renderHeadingItem(iinbox, 'Messages received:',
-    renderText('*', [formatNum(totMsgReceived)]),
-    reportItemContainer);
-  renderHeadingItem(imsg, 'People messaged:',
-    renderText('*', [numChats]),
-    reportItemContainer);
-  renderHeadingItem(imsgcir, 'Group chats:',
-    renderText('*', [numGrChats]),
-    reportItemContainer);
-}
-
 function renderReportHeading(data, parent) {
-  let reportHeading = document.createElement('div');
-  reportHeading.classList.add('report-heading');
-
-  reportHeading.innerHTML = `\
-      <div class='report-heading-title'>\
-         <h2 class='report-heading-user-name'>${data.name}</h2>\
-         <div class='report-heading-user-picture'></div>\
-      </div>\
-      <div class='report-heading-content'></div>\
-      <div class='report-controls'>\
-         <button id='msg-report' class='report-button'>Message Report</button>\
-         <button id='post-report' class='report-button'>Post Report</button>\
-         <button id='search-report' class='report-button'>Search Report</button>\
-      </div>\
-      `
-  parent.appendChild(reportHeading);
-  // button actions
-  let msgRBtn = document.getElementById('msg-report');
-  msgRBtn.addEventListener("click", renderMsgReport);
-
   // data crunching
   // TODO: helper
   let dateRange = new Date(Date.now());
@@ -180,84 +112,45 @@ function renderReportHeading(data, parent) {
   // TODO: helper
   let numDays = Math.round((dateRange - dateStart) / MS_IN_DAY);
 
-  // let reportItemContainer = document.getElementById('report-heading-content');
-  let reportItemContainer = document.getElementsByClassName('report-heading-content')[0];
+  let reportItems = [
+    {
+      icon: 'icalendar',
+      text: 'Date Joined: ',
+      textBold: dateStart.toDateString()
+    },
+    {
+      icon: 'itext',
+      text: 'Num Posts: ',
+      textBold: data.num_posts
+    },
+    {
+      icon: 'isearch',
+      text: 'Num Searches: ',
+      textBold: data.num_searches,
+    },
+    {
+      icon: 'icake',
+      text: 'Birthday: ',
+      textBold: new Date(data.birthday).toDateString()
+    },
+    {
+      icon: 'iuser',
+      text: 'Last Profile Update: ',
+      textBold: 'test'
+    },
+    {
+      icon: 'iusers',
+      text: 'Family members: ',
+      textBold: 'whatev'
+    },
+    {
+      icon: 'iusers',
+      text: 'Friend Peer Group: ',
+      textBold: 'whatev1'
+    }
+    ]
+  rRender.renderSubReport(data.name, reportContainer, reportItems);
 
-  renderHeadingItem(icalendar, 'Data Range: ',
-    renderText(`* - * (${numDays} days)`, [dateStart.toDateString(),
-      dateRange.toDateString()]),
-    reportItemContainer);
-  renderHeadingItem(itext, 'Num Posts: ',
-    renderText('*', [data.num_posts]),
-    reportItemContainer);
-  renderHeadingItem(isearch, 'Num Searches: ',
-    renderText('*', [data.num_searches]),
-    reportItemContainer);
-  // still need to pull from data...
-  renderHeadingItem(icake, 'Birthday: ',
-    renderText('*', [(data.birthday ?  new Date(data.birthday).toDateString() : 'unknown' )]),
-    reportItemContainer);
-  renderHeadingItem(iuser, 'Last Profile Update: ',
-    renderText('*', ['Wed Mar 24 1995']),
-    reportItemContainer);
-  renderHeadingItem(iusers, 'Family members: ',
-    renderText('*', ['3']),
-    reportItemContainer);
-  renderHeadingItem(iusers, 'Friend Peer Group: ',
-    renderText('*', ['3']),
-    reportItemContainer);
-}
-
-function renderHeadingItem(iconPath, label, headingText, parent) {
-  // element creation
-  let headingItem = document.createElement('div');
-  let headingIcon = new Image();
-  let headingLabel = document.createElement('p');
-
-  // appending elements
-  headingItem.appendChild(headingIcon);
-  headingItem.appendChild(headingLabel);
-  headingItem.appendChild(headingText);
-  parent.appendChild(headingItem);
-
-  // adding content
-  headingIcon.src = iconPath;
-  headingLabel.innerHTML = label;
-
-  // styles
-  headingIcon.classList.add('heading-content-icon');
-  headingLabel.classList.add('heading-content-label');
-  headingText.classList.add('heading-content-text');
-  headingItem.classList.add('heading-content-item');
-}
-
-function renderMainInfoNew(data) {
-  // quick experiments
-  let dateRange = new Date(Date.now());
-  let dateStart = new Date(data.joined);
-  //TODO: helper
-  let numDays = Math.round((dateRange-dateStart)/MS_IN_DAY);
-  renderText('My name is *. :)', [data.name], genTextRep);
-  renderText(`Data from * to *. (${numDays} days).`,
-    [dateStart.toDateString(), dateRange.toDateString()], genTextRep);
-
-  let startReporting = document.createElement("p");
-  startReporting.innerHTML = "Lets do something more interesting. Click below.";
-  genTextRep.appendChild(startReporting);
-  showReportBtns();
-}
-
-function showReportBtns() {
-  var fbBtns = document.getElementById("btn-container");
-  fbBtns.style.visibility = "visible";
-
-  // gets all the message report data
-  var msgReportBtn = document.getElementById("message-report-btn");
-  msgReportBtn.addEventListener("click", renderMsgReport);
-
-  // gets the interactions report data
-  var msgInterBtn = document.getElementById('interaction-report-btn');
-  msgInterBtn.disabled = true;
 }
 
 function renderMsgReportHeading(data, parent) {
@@ -276,8 +169,6 @@ function renderMsgReportHeading(data, parent) {
     totMsgReceived += data.regThreads[key].other;
   });
 
-  // TODO: create this globally
-  let rRender = new reportRenderer();
   let msgData = [
     {
       icon: 'isend',
@@ -306,9 +197,7 @@ function renderMsgReportHeading(data, parent) {
 
 function displayAggMsgReport(msgReportStats) {
   // RENDERS HEADING
-
   renderMsgReportHeading(msgReportStats, reportContainer);
-  // renderMsgHeading(msgReportStats, reportContainer);
 
   var msgGraphCont = document.createElement('div');
   msgGraphCont.id = 'graphs-container';
