@@ -3,12 +3,11 @@ import '../styles/main.scss';
 import '../styles/index.scss';
 
 // Assets:
-import facebook from '../images/icons/facebook.svg';
-import spotify from '../images/icons/spotify.svg';
-import tinder from '../images/icons/tinder.svg';
+import facebook from '../images/icons/facebook_inline.svg';
+import spotify from '../images/icons/spotify_inline.svg';
+import tinder from '../images/icons/tinder_inline.svg';
 
 // JS imports:
-import { createImage } from '../js/helpers.js';
 import { NavBar } from '../js/components/navBar.js';
 
 renderContent();
@@ -87,11 +86,10 @@ function loadWebsites(globalContainer) {
 
   Object.keys(routes).forEach((key) => {
     let link = createLink(key);
-    let icon = createImage(routes[key]);
 
-    let imgContainer = document.createElement('div');
-    imgContainer.appendChild(icon);
-    link.appendChild(imgContainer);
+    let iconContainer = document.createElement('div');
+    iconContainer.innerHTML = routes[key];
+    link.appendChild(iconContainer);
     globalContainer.appendChild(link);
   });
 }

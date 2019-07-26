@@ -9,87 +9,97 @@ module.exports = env => {
   const DEBUG_MODE = env.DEBUG || false;
 
   return {
-     entry: {
-        index: './src/page-index/main.js',
-        facebook: './src/page-facebook/main.js',
-        spotify: './src/page-spotify/main.js'
-     },
-     mode: 'development',
-     module: {
-        rules: [
-           {
-              test: /\.js$/,
-              exclude: /node_modules/,
-              use: {
-                 loader: "babel-loader"
+    entry: {
+      index: './src/page-index/main.js',
+      facebook: './src/page-facebook/main.js',
+      spotify: './src/page-spotify/main.js'
+    },
+    mode: 'development',
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader"
+          }
+        },
+        {
+          test:/\.html$/,
+          use: [
+            {
+              loader: "html-loader",
+              options: { 
+                interpolate: true,
+                minimize: true
               }
-           },
-           {
-              test:/\.html$/,
-              use: [
-                 {
-                    loader: "html-loader",
-                    options: { 
-                       interpolate: true,
-                       minimize: true
-                    }
-                 }
-              ]
-           },
-           {
-              test: /\.(png|svg|jpg|gif)$/,
-              use: [
-                 'file-loader'
-              ]
-           },
-           {
-              test: /\.scss$/,
-              use: [
-                 "style-loader",
-                 "css-loader",
-                 "sass-loader"
-              ]
-           },
-           {
-              test: /\.(ttf|eot|woff|woff2)$/,
-              use: {
-                 loader: "file-loader",
-                 options: {
-                    name: "fonts/[name].[ext]",
-                 },
-              },
-           },
-           // {
-           //    test: /\.svg$/,
-           //    loader: 'svg-inline-loader'
-           // },
-        ]
-     },
-     plugins: [
-        new CleanWebpackPlugin(),
-        // defines environmental variables
-        new DefinePlugin({
-           DEBUG_MODE: DEBUG_MODE
-        }),
-        new HtmlWebPackPlugin({
-           template: "./src/page-index/index.html",
-           chunks: ['index'],
-           filename: "./index.html"
-        }),
-        new HtmlWebPackPlugin({
-           template: "./src/page-facebook/facebook.html",
-           chunks: ['facebook'],
-           filename: "./facebook.html"
-        }),
-        new HtmlWebPackPlugin({
-           template: "./src/page-spotify/spotify.html",
-           chunks: ['spotify'],
-           filename: "./spotify.html"
-        }),
-        new MiniCssExtractPlugin({
-           filename: "[name].css",
-           chunkFilename: "[id].css"
-        })
-     ]
+            }
+          ]
+        },
+        {
+          test: /\.(png|jpg|gif)$/,
+          use: [
+            'file-loader'
+          ]
+        },
+        // gets inline svgs
+        {
+          test: /inline\.svg$/,
+          loader: 'svg-inline-loader'
+        },
+        // gets svg source
+        {
+          test: /\.svg$/,
+          exclude: /(inline)/,
+          use: [
+            'file-loader'
+          ]
+        },
+        {
+          test: /\.scss$/,
+          use: [
+            "style-loader",
+            "css-loader",
+            "sass-loader"
+          ]
+        },
+        {
+          test: /\.(ttf|eot|woff|woff2)$/,
+          use: {
+            loader: "file-loader",
+            options: {
+              name: "fonts/[name].[ext]",
+            },
+          },
+        },
+      ]
+      // 
+    },
+    plugins: [
+      new CleanWebpackPlugin(),
+      // defines environmental variables
+      new DefinePlugin({
+        DEBUG_MODE: DEBUG_MODE
+      }),
+      new HtmlWebPackPlugin({
+        template: "./src/page-index/index.html",
+        chunks: ['index'],
+        filename: "./index.html"
+      }),
+      new HtmlWebPackPlugin({
+        template: "./src/page-facebook/facebook.html",
+        chunks: ['facebook'],
+        filename: "./facebook.html"
+      }),
+      new HtmlWebPackPlugin({
+        template: "./src/page-spotify/spotify.html",
+        chunks: ['spotify'],
+        filename: "./spotify.html"
+      }),
+      new MiniCssExtractPlugin({
+        filename: "[name].css",
+        chunkFilename: "[id].css"
+      })
+    ]
   }
 };
