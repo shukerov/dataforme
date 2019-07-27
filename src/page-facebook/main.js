@@ -177,11 +177,13 @@ function displayAggMsgReport(msgReportStats) {
   reportContainer.appendChild(msgGraphCont);
 
   var graphCont = [];
+  
 
   // TODO: this has gotta be temporary solution
   for (var i = 0; i < 7; i++) {
     var gcontainer = document.createElement('div');
     gcontainer.classList.add('graph-wrapper');
+    gcontainer.id = `g${i}`;
     msgGraphCont.appendChild(gcontainer);
     graphCont.push(gcontainer);
   }
