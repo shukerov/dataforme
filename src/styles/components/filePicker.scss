@@ -19,19 +19,44 @@ input[type='file'] {
 
     cursor: pointer;
     border: 1px dashed #BDBDBD;
+    transition: all .2s ease-in-out;
 
     svg {
       height: 60px;
     }
 }
 
-.file-upload-field:hover {
+.fp-text {
+  margin: 0.5vh auto;
+  font-size: 15px;
+  // font-weight: 800;
+}
+.fp-strong {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.file-upload-field-hover {
   background: white;
-    svg {
-      color: $accent_color1;
+
+  svg {
+      animation: rotateIcon .8s linear 1;
     }
 }
 
 .filepicker-wrapper {
   margin: 5vh auto;
 }
+
+@keyframes rotateIcon {
+  0% {
+    transform: rotateY(0deg) scale3d(1, 1, 1);
+  }
+  50% {
+    transform: rotateY(180deg) scale3d(1.2, 1.2, 1.2);
+  }
+  100% {
+    transform: rotateY(0deg) scale3d(1, 1, 1);
+  }
+}
+
