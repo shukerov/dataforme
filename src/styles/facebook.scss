@@ -18,67 +18,47 @@
    min-height: 90vh;
 }
 
-// links to start of report on instructions page
-#report-btn {
-   // height: 10%;
-   // height: 10%;
-   text-align: center;
-   // margin-top: 36vh;
-}
-
 #report {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
+   display: grid;
    width: 100%;
 }
-
-// this is still facebook but graph specific
-// #graphs-container {
-//    display: flex;
-//    flex-direction: row;
-//    flex-wrap: wrap;
-//    justify-content: center;
-//    width: 80%;
-//    margin: 0 auto;
-
-//    @media only screen and (max-width: 1000px) {
-//       width: 95%;
-//    }
-// }
-
-// .graph-wrapper {
-//    background: #fff;
-//    margin: 5vh 5vh;
-//    width: 70%;
-//    box-shadow: 0 0 3px #ccc;
-//    -moz-box-shadow: 0 0 3px #ccc;
-//    -webkit-box-shadow: 0 0 3px #ccc;
-
-//    @media only screen and (max-width: 1000px) {
-//       width: 90%;
-//    }
-// }
 
 // new graph experiments
 #graphs-container {
    margin: 0 5vh;
    display: grid;
-   // align-items: center;
-   // justify-items: center;
    grid-gap: 10px;
-   grid-template-columns: repeat(3, 1fr);
+   grid-template-columns: repeat(3, minmax(150px, 1fr));
+   // grid-template-columns: repeat(3, 1fr);
    grid-template-rows: repeat(3, 1fr);
    grid-template-areas:
-   'weekly monthly yearly'
-   'clk-sent cumulative clk-rec'
-   'top-msgers top-msgers top-msgers'
-    // 'clk-sent weekly'
-    // 'clk-sent weekly'
-    // 'clk-sent monthly'
-    // 'clk-rec monthly'
-    // 'clk-rec yearly'
-    // 'clk-rec yearly'
+     'weekly monthly yearly'
+     'clk-sent cumulative clk-rec'
+     'top-msgers top-msgers top-msgers'
+}
+
+@media only screen and (max-width: 1224px) {
+  #graphs-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    'clk-sent clk-rec'
+    'weekly monthly'
+    'yearly cumulative'
+    'top-msgers top-msgers'
+  }
+}
+@media only screen and (max-width: 900px) {
+  #graphs-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'clk-sent'
+      'clk-rec'
+      'weekly'
+      'monthly'
+      'yearly'
+      'cumulative'
+      'top-msgers'
+  }
 }
 
 #g0 {
@@ -114,6 +94,8 @@
   height: 100%;
   display: grid;
   grid-template-rows: 0.1fr 0.9fr;
+  grid-template-columns: 1fr;
+  // grid-template-rows: autofill;
 }
 .graph-title {
   font-size: 15px;
