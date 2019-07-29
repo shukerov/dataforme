@@ -153,7 +153,13 @@ class chartFactory {
       })
     }
     else if (args.type == 'clock') {
-      return new ClockChart(data, 300, args.parent);
+      let clckGraph =  new ClockChart(data, 300, args.parent, {
+        units: 'messages'
+      });
+      let gConclusion = document.createElement('h2');
+      gConclusion.classList.add('graph-conclusion');
+      gConclusion.innerHTML = clckGraph.getConclusion(data, 'walked');
+      args.parent.appendChild(gConclusion);
     }
   }
 }
