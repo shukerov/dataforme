@@ -31,6 +31,7 @@ export class reportRenderer {
   }
 
   renderSubReport(title, parent, reportItems) {
+    // TODO: report heading is a terrible name. its a subreport look at the id ffs
     // create and append to parent
     let reportHeading = document.createElement('div');
     parent.appendChild(reportHeading);
@@ -44,7 +45,6 @@ export class reportRenderer {
     reportHeading.innerHTML = `\
         <div class='report-heading-title'>\
            <h2 class='report-heading-user-name'>${title}</h2>\
-           <div class='report-heading-user-picture'></div>\
         </div>\
         <div class='report-heading-content'></div>\
         `
@@ -61,6 +61,8 @@ export class reportRenderer {
         this.renderText('*', [item.textBold]),
         subItemContainer);
     });
+
+    return reportHeading;
   }
 
   getIcon(iconString) {

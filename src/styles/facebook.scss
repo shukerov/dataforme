@@ -64,16 +64,21 @@
 #graphs-container {
    margin: 0 5vh;
    display: grid;
-   grid-gap: 40px;
-   grid-template-columns: 1fr 1fr;
-   grid-template-rows: repeat(6, 1fr);
+   // align-items: center;
+   // justify-items: center;
+   grid-gap: 10px;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(3, 1fr);
    grid-template-areas:
-    'clk-sent weekly'
-    'clk-sent weekly'
-    'clk-sent monthly'
-    'clk-rec monthly'
-    'clk-rec yearly'
-    'clk-rec yearly'
+   'weekly monthly yearly'
+   'clk-sent cumulative clk-rec'
+   'top-msgers top-msgers top-msgers'
+    // 'clk-sent weekly'
+    // 'clk-sent weekly'
+    // 'clk-sent monthly'
+    // 'clk-rec monthly'
+    // 'clk-rec yearly'
+    // 'clk-rec yearly'
 }
 
 #g0 {
@@ -96,14 +101,21 @@
   grid-area: yearly;
 }
 
+#g5 {
+  grid-area: cumulative;
+}
+
+#g6 {
+  grid-area: top-msgers;
+}
+
 .graph-wrapper {
   width: 100%;
   height: 100%;
-  // display: flex;
-  // align-items: center;
-  // width: 600px;
-   background: #fff;
-   box-shadow: 0 0 3px #ccc;
-   -moz-box-shadow: 0 0 3px #ccc;
-   -webkit-box-shadow: 0 0 3px #ccc;
+  display: grid;
+  grid-template-rows: 0.1fr 0.9fr;
+}
+.graph-title {
+  font-size: 15px;
+  text-align: center;
 }

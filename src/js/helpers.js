@@ -72,7 +72,7 @@ class chartFactory {
       return 250;
     }
     else {
-      if (size === 'medium') return 600;
+      if (size === 'medium') return 300;
       if (size === 'small')  return 350;
     }
   }
@@ -121,13 +121,21 @@ class chartFactory {
     const size = this.getSize(args.size);
     var data = this.prepData(args);
 
+    // add title
+    if (args.title) {
+      let gTitle = document.createElement('h2');
+      gTitle.classList.add('graph-title');
+      gTitle.innerHTML = args.title;
+      args.parent.appendChild(gTitle);
+    }
+
     if (/^(bar|line|scatter|pie|percentage|axis-mixed)$/.test(args.type)) {
       var chart = document.createElement('div');
       chart.id = args.name;
       args.parent.appendChild(chart);
 
       new Chart(`#${args.name}`, {  // or a DOM element,
-        title: args.title,
+        // title: args.title,
         data: data,
         type: args.type, // or 'bar', 'line', 'scatter', 'pie', 'percentage'
         height: size,
@@ -144,11 +152,7 @@ class chartFactory {
       })
     }
     else if (args.type == 'clock') {
-      return new ClockChart(data, 600, args.parent, {
-        'addLegend': true,
-        'title': args.title,
-        'units': 'messages'
-      });
+      return new ClockChart(data, 300, args.parent);
     }
   }
 }

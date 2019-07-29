@@ -165,23 +165,28 @@ function renderMsgReportHeading(data, parent) {
     }
   ];
 
-  rRender.renderSubReport('Message Report', parent, msgData);
+  return rRender.renderSubReport('Message Report', parent, msgData);
 }
 
-function displayAggMsgReport(msgReportStats) {
-  // RENDERS HEADING
-  renderMsgReportHeading(msgReportStats, reportContainer);
+function truncateYears(years) {
+  let yearsTruncated = years.map((year) => {
+    return year.slice(-2);
+  });
 
-  var msgGraphCont = document.createElement('div');
+  return yearsTruncated;
+}
+
+function renderMsgGraphs(msgReportStats, parent) {
+  let msgGraphCont = document.createElement('div');
   msgGraphCont.id = 'graphs-container';
-  reportContainer.appendChild(msgGraphCont);
+  parent.appendChild(msgGraphCont);
 
-  var graphCont = [];
+  let graphCont = [];
   
 
   // TODO: this has gotta be temporary solution
-  for (var i = 0; i < 7; i++) {
-    var gcontainer = document.createElement('div');
+  for (let i = 0; i < 7; i++) {
+    let gcontainer = document.createElement('div');
     gcontainer.classList.add('graph-wrapper');
     gcontainer.id = `g${i}`;
     msgGraphCont.appendChild(gcontainer);
@@ -191,7 +196,8 @@ function displayAggMsgReport(msgReportStats) {
   // INTIALIZE chartFactory
   const charFac = new chartFactory('blue');
 
-  var chartHourlySent = charFac.getChart({
+  // let chartHourlySent = 
+  charFac.getChart({
     type: 'clock',
     parent: graphCont[0],
     data: msgReportStats.timeStats.hourly.sent,
@@ -200,7 +206,8 @@ function displayAggMsgReport(msgReportStats) {
     name: 'chart1',
     size: 'medium'
   });
-  var chartHourly = charFac.getChart({
+  // let chartHourly = 
+  charFac.getChart({
     type: 'clock',
     parent: graphCont[1],
     data: msgReportStats.timeStats.hourly.received,
@@ -215,7 +222,8 @@ function displayAggMsgReport(msgReportStats) {
   let msgReceivedDaily = msgReportStats.timeStats.weekly.received;
   // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
   msgSentDaily.push(0);
-  var chartWeekly = charFac.getChart({
+  // let chartWeekly = 
+  charFac.getChart({
     type: 'axis-mixed',
     parent: graphCont[2],
     name: 'chart3',
@@ -229,7 +237,8 @@ function displayAggMsgReport(msgReportStats) {
   let msgReceivedMonthly = msgReportStats.timeStats.monthly.received;
   // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
   msgSentMonthly.push(0);
-  var chartMonthly = charFac.getChart({
+  // let chartMonthly = 
+  charFac.getChart({
     type: 'axis-mixed',
     parent: graphCont[3],
     name: 'chart4',
@@ -247,12 +256,13 @@ function displayAggMsgReport(msgReportStats) {
   });
   // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
   msgSentYearly.push(0);
-  var chartYearly = charFac.getChart({
+  // let chartYearly = 
+  charFac.getChart({
     type: 'axis-mixed',
     parent: graphCont[4],
     name: 'chart5',
     title: 'Messages by Year',
-    labels: Object.keys(msgReportStats.timeStats.yearly),
+    labels: truncateYears(Object.keys(msgReportStats.timeStats.yearly)),
     data: [msgSentYearly, msgReceivedYearly, ['Sent', 'Received']],
     size: 'medium'
   });
@@ -266,18 +276,19 @@ function displayAggMsgReport(msgReportStats) {
     return acc;
   }, {});
 
-  var chartYearlyCum = charFac.getChart({
+  // let chartYearlyCum = 
+  charFac.getChart({
     type: 'line',
     parent: graphCont[5],
     name: 'chart6',
     title: 'Cumulative Messages over Years',
     data: Object.values(msgCumulative),
     labels: Object.keys(msgCumulative),
-    size: 'small'
+    size: 'medium'
   });
 
   // make a graph for top messaged people
-  let topMessagers = newTopMessagers(msgReportStats.regThreads, 20).map((t) => { return t[1]; });
+  let topMessagers = newTopMessagers(msgReportStats.regThreads, 15).map((t) => { return t[1]; });
   let msgSent = topMessagers.reduce(function(acc, msger) {
     let cnt1 = msgReportStats.regThreads[msger]["msgByUser"];
     acc.push(cnt1);
@@ -290,7 +301,8 @@ function displayAggMsgReport(msgReportStats) {
     return acc;
   }, []);
 
-  var chartTopMessegers = charFac.getChart({
+  // let chartTopMessegers = 
+  charFac.getChart({
     type: 'axis-mixed',
     parent: graphCont[6],
     name: 'chart7',
@@ -299,6 +311,139 @@ function displayAggMsgReport(msgReportStats) {
     data: [msgSent, msgReceived, [`${data.name}`, 'Friend']],
     size: 'medium'
   });
+}
+
+function displayAggMsgReport(msgReportStats) {
+  // RENDERS HEADING
+  let msgReport = renderMsgReportHeading(msgReportStats, reportContainer);
+  renderMsgGraphs(msgReportStats, msgReport);
+  // var msgGraphCont = document.createElement('div');
+  // msgGraphCont.id = 'graphs-container';
+  // reportContainer.appendChild(msgGraphCont);
+
+  // var graphCont = [];
+  
+
+  // // TODO: this has gotta be temporary solution
+  // for (var i = 0; i < 7; i++) {
+  //   var gcontainer = document.createElement('div');
+  //   gcontainer.classList.add('graph-wrapper');
+  //   gcontainer.id = `g${i}`;
+  //   msgGraphCont.appendChild(gcontainer);
+  //   graphCont.push(gcontainer);
+  // }
+
+  // // INTIALIZE chartFactory
+  // const charFac = new chartFactory('blue');
+
+  // var chartHourlySent = charFac.getChart({
+  //   type: 'clock',
+  //   parent: graphCont[0],
+  //   data: msgReportStats.timeStats.hourly.sent,
+  //   title: 'Messages by Hour of Day - Sent',
+  //   colorscheme: 'blue',
+  //   name: 'chart1',
+  //   size: 'medium'
+  // });
+  // var chartHourly = charFac.getChart({
+  //   type: 'clock',
+  //   parent: graphCont[1],
+  //   data: msgReportStats.timeStats.hourly.received,
+  //   title: 'Messages by Hour of Day - Received',
+  //   colorscheme: 'blue',
+  //   name: 'chart2',
+  //   size: 'medium'
+  // });
+
+  // // improved other graphs
+  // let msgSentDaily = msgReportStats.timeStats.weekly.sent;
+  // let msgReceivedDaily = msgReportStats.timeStats.weekly.received;
+  // // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  // msgSentDaily.push(0);
+  // var chartWeekly = charFac.getChart({
+  //   type: 'axis-mixed',
+  //   parent: graphCont[2],
+  //   name: 'chart3',
+  //   title: 'Messages by Day of the Week',
+  //   labels: DAYS,
+  //   data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],
+  //   size: 'medium'
+  // });
+
+  // let msgSentMonthly = msgReportStats.timeStats.monthly.sent;
+  // let msgReceivedMonthly = msgReportStats.timeStats.monthly.received;
+  // // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  // msgSentMonthly.push(0);
+  // var chartMonthly = charFac.getChart({
+  //   type: 'axis-mixed',
+  //   parent: graphCont[3],
+  //   name: 'chart4',
+  //   title: 'Messages by Month',
+  //   labels: MONTHS,
+  //   data: [msgSentMonthly, msgReceivedMonthly, ['Sent', 'Received']],
+  //   size: 'medium'
+  // });
+
+  // let msgSentYearly = Object.keys(msgReportStats.timeStats.yearly).map((y) => {
+  //   return msgReportStats.timeStats.yearly[y].sent
+  // });
+  // let msgReceivedYearly= Object.keys(msgReportStats.timeStats.yearly).map((y) => {
+  //   return msgReportStats.timeStats.yearly[y].received
+  // });
+  // // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  // msgSentYearly.push(0);
+  // var chartYearly = charFac.getChart({
+  //   type: 'axis-mixed',
+  //   parent: graphCont[4],
+  //   name: 'chart5',
+  //   title: 'Messages by Year',
+  //   labels: Object.keys(msgReportStats.timeStats.yearly),
+  //   data: [msgSentYearly, msgReceivedYearly, ['Sent', 'Received']],
+  //   size: 'medium'
+  // });
+
+  // // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED
+  // // THIS IS NOT FUNCTIONAL?
+  // let sum = 0;
+  // let msgCumulative = Object.keys(msgReportStats.timeStats.yearly).reduce((acc, dp) => {
+  //   sum += msgReportStats.timeStats.yearly[dp].sent + msgReportStats.timeStats.yearly[dp].received;
+  //   acc[dp] = sum;
+  //   return acc;
+  // }, {});
+
+  // var chartYearlyCum = charFac.getChart({
+  //   type: 'line',
+  //   parent: graphCont[5],
+  //   name: 'chart6',
+  //   title: 'Cumulative Messages over Years',
+  //   data: Object.values(msgCumulative),
+  //   labels: Object.keys(msgCumulative),
+  //   size: 'small'
+  // });
+
+  // // make a graph for top messaged people
+  // let topMessagers = newTopMessagers(msgReportStats.regThreads, 20).map((t) => { return t[1]; });
+  // let msgSent = topMessagers.reduce(function(acc, msger) {
+  //   let cnt1 = msgReportStats.regThreads[msger]["msgByUser"];
+  //   acc.push(cnt1);
+  //   return acc;
+  // }, []);
+
+  // let msgReceived = topMessagers.reduce(function(acc, msger) {
+  //   let cnt1 = msgReportStats.regThreads[msger]["other"];
+  //   acc.push(cnt1);
+  //   return acc;
+  // }, []);
+
+  // var chartTopMessegers = charFac.getChart({
+  //   type: 'axis-mixed',
+  //   parent: graphCont[6],
+  //   name: 'chart7',
+  //   title: 'Top Messagers',
+  //   labels: topMessagers,
+  //   data: [msgSent, msgReceived, [`${data.name}`, 'Friend']],
+  //   size: 'medium'
+  // });
 }
 
 // gets the top messagers sorts them and returns the last n ones

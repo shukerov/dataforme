@@ -1,3 +1,4 @@
+// TODO: tear this whole file up please
 import { ANGLE_RATIO, CLK_COLOR_DEF, BAR_COLOR_DEF, BG_COLOR_DEF } from './constants.js';
 import { createSVG, createSVGLoaded, createLegendWrapper } from './draw-utils.js';
 
@@ -16,7 +17,7 @@ class ClockChart {
     // set up dimensions
     middleX = height / 2;
     middleY = height / 2;
-    svg.setAttribute('viewBox', '0 0 600 600');
+    // svg.setAttribute('viewBox', `0 0 400 400`);
     svg.style.margin = '0 auto';
 
     parent.appendChild(svg);
@@ -38,14 +39,18 @@ class ClockChart {
   }
 }
 
-var middleX = 400;
-var middleY = 400;
-const outerR = 100;
-const barHeight = 200;
-const radiusBig = outerR + barHeight;
-
+// WHAT EVEN?
+var middleX;
+var middleY;
 // function helpers
 var createSVGboundParent;
+
+const outerR = 50;
+const barHeight = 100;
+const radiusBig = outerR + barHeight;
+let innerClockRadius = 20;
+let innerClockArrowsLen = 15;
+
 
 // color constants. Maybe add a functionality to change those from outside?
 const clockFaceColor = CLK_COLOR_DEF;
@@ -135,7 +140,7 @@ function createClockFace() {
   createSVGboundParent('circle', {
     'cx': middleX,
     'cy': middleY,
-    'r': 25,
+    'r': innerClockRadius,
     'styles': {
       'fill': 'white',
       'stroke': clockFaceColor,
@@ -148,7 +153,7 @@ function createClockFace() {
     'x1': middleX,
     'x2': middleX,
     'y1': middleY,
-    'y2': middleY - 20,
+    'y2': middleY - innerClockArrowsLen,
     'styles': {
       'stroke': clockFaceColor,
       'stroke-linecap': 'round',
@@ -160,7 +165,7 @@ function createClockFace() {
     'x1': middleX,
     'x2': middleX,
     'y1': middleY,
-    'y2': middleY - 20,
+    'y2': middleY - innerClockArrowsLen,
     'transform': `rotate(135, ${middleX}, ${middleY})`,
     'styles': {
       'stroke': clockFaceColor,
@@ -251,9 +256,9 @@ function createSVGBarLevel(height, deg) {
 // create clock numbers
 // TODO: font-size passed from outside maybe?
 function createClockNumbers() {
-  const distanceFromMid = 70;
-  const textSize = 22.25 / 2;
-  const fontSize = '20px';
+  const distanceFromMid = 30;
+  const textSize = 11.25 / 2;
+  const fontSize = '10px';
 
   var clockNumberFactory = function(innerHTML, x, y) {
     return createSVGboundParent('text', {
