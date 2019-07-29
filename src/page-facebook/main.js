@@ -11,6 +11,7 @@ import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
 import { reportRenderer } from '../js/components/reportRender.js';
 // import { insFactory } from '../js/components/insFactory.js';
+
 var data = {
   'name': 'unknown',
   'joined': null,

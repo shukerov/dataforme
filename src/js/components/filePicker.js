@@ -23,6 +23,12 @@ export class FilePicker {
     let iconContainer = this.selfVisual.children[0];
     iconContainer.innerHTML = iupload;
     parent.appendChild(this.self);
+
+    // eventlisteners for styling
+    this.selfVisual.addEventListener('mouseenter', this.fileDragHover, false);
+    this.selfVisual.addEventListener('mouseleave', this.fileDragHover, false);
+    this.selfVisual.addEventListener('dragover', this.fileDragHover, false);
+    this.selfVisual.addEventListener('dragleave', this.fileDragHover, false);
   }
 
   onUpload(callback) {
@@ -31,11 +37,7 @@ export class FilePicker {
     let fileSelectHandler = this.getFileSafe.bind(this, callback); 
 
     this.input.addEventListener('change', fileSelectHandler, false); 
-    this.selfVisual.addEventListener('mouseenter', this.fileDragHover, false);
-    this.selfVisual.addEventListener('mouseleave', this.fileDragHover, false);
     this.selfVisual.addEventListener('drop', fileSelectHandler, false);
-    this.selfVisual.addEventListener('dragover', this.fileDragHover, false);
-    this.selfVisual.addEventListener('dragleave', this.fileDragHover, false);
   }
 
   //TODO: maybe a helper if used elsewhere

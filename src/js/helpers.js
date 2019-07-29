@@ -131,6 +131,7 @@ class chartFactory {
 
     if (/^(bar|line|scatter|pie|percentage|axis-mixed)$/.test(args.type)) {
       var chart = document.createElement('div');
+      // chart.classList.add('frappe-chart-wrap');
       chart.id = args.name;
       args.parent.appendChild(chart);
 

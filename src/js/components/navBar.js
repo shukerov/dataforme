@@ -32,7 +32,7 @@ class NavBar {
     // create buttons
     if (this.index) {
       this.createNavButton('dataforme', '#website-cnt');
-      this.createNavButton('about', '#about');
+      this.createNavButton('about', '#about', true);
     }
     else {
       this.createNavButton('dataforme', '/');
