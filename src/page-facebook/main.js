@@ -53,7 +53,7 @@ if (DEBUG_MODE) {
 
 var reportContainer = document.getElementById('report');
 
-new NavBar(document.getElementById('site'));
+let nBar = new NavBar(document.getElementById('site'));
 let fPicker = new FilePicker(reportContainer);
 let rRender = new reportRenderer();
 

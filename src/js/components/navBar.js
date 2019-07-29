@@ -36,14 +36,14 @@ class NavBar {
     }
     else {
       this.createNavButton('dataforme', '/');
-      this.createNavButton('about', '/#about');
+      this.createNavButton('about', '/#about', true);
+      this.createNavButton('report', '#report', true);
     }
 
     // styles
     this.self.id = 'nav';
     this.navbar.id = 'nav-root';
     this.navbarBtns[0].id = 'nav-logo';
-    this.navbarBtns[1].classList.add('nav-sub-item');
     background.id = 'nav-bg';
 
     // append btns to navbar
@@ -115,11 +115,15 @@ class NavBar {
     this.lastScroll = curPos;
   }
 
-  createNavButton(text, link) {
+  createNavButton(text, link, subitem) {
     let item = document.createElement('a');
     item.classList.add('nav-item');
     item.innerHTML = text;
     item.href = link;
+
+    if (subitem) {
+      item.classList.add('nav-sub-item');
+    }
 
     this.navbarBtns.push(item);
     return item;
