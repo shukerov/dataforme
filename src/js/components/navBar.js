@@ -19,6 +19,7 @@ class NavBar {
     this.self = document.createElement('nav');
 
     this.setup();
+
     this.setScrolling();
 
     parent.appendChild(this.self);
@@ -26,31 +27,62 @@ class NavBar {
   }
 
   setup() {
-    let background = document.createElement('div');
+    // let background = document.createElement('div');
     this.navbar = document.createElement('div');
 
     // create buttons
     if (this.index) {
-      this.createNavButton('dataforme', '#website-cnt');
-      this.createNavButton('about', '#about', true);
+      this.logoRootUrl = this.createNavButton('dataforme', '#website-cnt');
+      this.logoRootUrl.classList.remove('nav-item');
+      this.createNavButton('about', '#about', {
+        subitem: true,
+        navbtn: true
+      });
     }
     else {
-      this.createNavButton('dataforme', '/');
-      this.createNavButton('about', '/#about', true);
-      this.createNavButton('report', '#report', true);
+      this.logoRootUrl = this.createNavButton('dataforme', '/');
+      this.logoRootUrl.classList.remove('nav-item');
+      this.createNavButton('about', '/#about', {
+        subitem: true,
+        navbtn: true
+      });
+      this.createNavButton('report', '#report', {
+        subitem: true,
+        navbtn: true
+      });
     }
 
     // styles
     this.self.id = 'nav';
     this.navbar.id = 'nav-root';
-    this.navbarBtns[0].id = 'nav-logo';
-    background.id = 'nav-bg';
+    this.logoCont = document.createElement('div');
+    this.logoCont.id = 'nav-logo';
+
+    // add menu button
+    this.menuBtn = document.createElement('div');
+    this.menuBtn.innerHTML = '.xyz';
+    this.menuBtn.id = 'btn-logo';
+    this.menuBtn.role = 'button';
+    this.menuBtn.addEventListener('click', function() {
+      for(let i = 0; i < this.navbarBtns.length; i++) {
+        this.navbarBtns[i].classList.remove('nav-hidden');
+        this.navbarBtns[i].classList.remove('nav-normal');
+        this.navbarBtns[i].classList.add('nav-expand');
+      } 
+      this.logoCont.classList.add('nav-expand');
+    }.bind(this));
+
+    this.logoCont.appendChild(this.logoRootUrl);
+    this.logoCont.appendChild(this.menuBtn);
+    this.navbar.appendChild(this.logoCont);
+    
+    this.logoCont.classList.add('nav-normal');
 
     // append btns to navbar
     this.navbarBtns.forEach((btn) => {
+      btn.classList.add('nav-hidden');
       this.navbar.appendChild(btn);
     });
-    this.self.appendChild(background);
     this.self.appendChild(this.navbar);
 
     // setup class variables
@@ -96,36 +128,48 @@ class NavBar {
     // If they scrolled down and are past the navbar, add class .nav-up.
     if (curPos > this.lastScroll && curPos > this.navbarHeight){
       // Scroll Down
-      for (var i = 0, len = this.navbarBtns.length; i < len; i++) {
-        this.navbarBtns[i].classList.add('nav-aside');
-        this.navbarBtns[i].classList.remove('nav-up');
-      }
+      // for (var i = 0, len = this.navbarBtns.length; i < len; i++) {
+      //   this.navbarBtns[i].classList.add('nav-aside');
+      //   this.navbarBtns[i].classList.remove('nav-up');
+      // }
+      this.navbarBtns.forEach((btn) => {
+        btn.classList.add('nav-hidden');
+      });
+      this.logoCont.classList.remove('nav-normal');
+      this.logoCont.classList.remove('nav-expand');
+      this.logoCont.classList.add('nav-hidden');
+      // this.self.classList.remove('nav-up');
     } else {
       // Scroll Up
       // check is there incase the user scolls past the documents heigh??
       // apparently possible on a mac
       // if(curPos + window.outerHeight < document.body.scrollHeight ) {
-      for (var i = 0, len = this.navbarBtns.length; i < len; i++) {
-        this.navbarBtns[i].classList.remove('nav-aside');
-        this.navbarBtns[i].classList.add('nav-up');
-      }
+      // for (var i = 0, len = this.navbarBtns.length; i < len; i++) {
+      //   this.navbarBtns[i].classList.remove('nav-aside');
+      //   this.navbarBtns[i].classList.add('nav-up');
       // }
+      // }
+      this.logoCont.classList.remove('nav-hidden');
+      this.logoCont.classList.add('nav-normal');
+      // this.logoCont.classList.remove('nav-half-aside');
+      // this.self.classList.add('nav-up');
     }
 
     this.lastScroll = curPos;
   }
 
-  createNavButton(text, link, subitem) {
+  createNavButton(text, link, options) {
     let item = document.createElement('a');
     item.classList.add('nav-item');
+    item.classList.add('nav-link');
     item.innerHTML = text;
     item.href = link;
 
-    if (subitem) {
-      item.classList.add('nav-sub-item');
+    if (options) {
+      if (options.subitem) item.classList.add('nav-sub-item');
+      if (options.navbtn) this.navbarBtns.push(item);
     }
 
-    this.navbarBtns.push(item);
     return item;
   }
 }
