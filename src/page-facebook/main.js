@@ -3,14 +3,14 @@ import '../styles/main.scss';
 import '../styles/facebook.scss';
 
 // JS imports:
-import { DAYS, MONTHS, MS_IN_DAY } from '../js/constants.js';
+import { DAYS, MONTHS } from '../js/constants.js';
 import { formatNum } from '../js/helpers.js';
 import { chartFactory } from '../js/helpers.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
 import { reportRenderer } from '../js/components/reportRender.js';
-// import { insFactory } from '../js/components/insFactory.js';
+import { getTopMessagers, truncateYears, getCurrentDate, getNumDays } from '../js/analyzers/analyzerHelpers.js';
 
 var data = {
   'name': 'unknown',
@@ -24,16 +24,16 @@ var data = {
     'numPictures': {'gifs': 0, 'other': 0},
     'timeStats': {
       'hourly': {
-        'sent': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        'received': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        'sent': Array(24).fill(0),
+        'received': Array(24).fill(0)
       },
       'weekly': {
-        'sent': [0, 0, 0, 0, 0, 0, 0],
-        'received': [0, 0, 0, 0, 0, 0, 0]
+        'sent': Array(7).fill(0),
+        'received': Array(7).fill(0)
       },
       'monthly': {
-        'sent': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        'received': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        'sent': Array(12).fill(0),
+        'received': Array(12).fill(0)
       },
       'yearly': {}
     }
@@ -52,8 +52,7 @@ if (DEBUG_MODE) {
   data = require('../data/fb_precompiled.json');
 }
 
-var reportContainer = document.getElementById('report');
-
+let reportContainer = document.getElementById('report');
 let nBar = new NavBar(document.getElementById('site'));
 let fPicker = new FilePicker(reportContainer);
 let rRender = new reportRenderer();
@@ -73,18 +72,21 @@ function kickStartReport() {
   }
 }
 
-function renderFacebookReport(data, report) {
+function renderFacebookReport(data) {
   renderReportHeading(data, reportContainer);
-  displayAggMsgReport(data.msgStats);
+
+  // renders message report
+  let msgReport = renderMsgReportHeading(data.msgStats, reportContainer);
+  renderMsgGraphs(data.msgStats, msgReport);
 }
 
 function renderReportHeading(data, parent) {
   // data crunching
   // TODO: helper
-  let dateRange = new Date(Date.now());
+  let dateRange = getCurrentDate();
   let dateStart = new Date(data.joined);
   // TODO: helper
-  let numDays = Math.round((dateRange - dateStart) / MS_IN_DAY);
+  let numDays = getNumDays(dateStart, dateRange);
 
   let reportItems = [
     {
@@ -122,9 +124,8 @@ function renderReportHeading(data, parent) {
       text: 'Friend Peer Group: ',
       textBold: 'whatev1'
     }
-    ]
+  ]
   rRender.renderSubReport(data.name, reportContainer, reportItems);
-
 }
 
 function renderMsgReportHeading(data, parent) {
@@ -169,14 +170,6 @@ function renderMsgReportHeading(data, parent) {
   return rRender.renderSubReport('Message Report', parent, msgData);
 }
 
-function truncateYears(years) {
-  let yearsTruncated = years.map((year) => {
-    return year.slice(-2);
-  });
-
-  return yearsTruncated;
-}
-
 function renderMsgGraphs(msgReportStats, parent) {
   let msgGraphCont = document.createElement('div');
   msgGraphCont.id = 'graphs-container';
@@ -197,7 +190,7 @@ function renderMsgGraphs(msgReportStats, parent) {
   // INTIALIZE chartFactory
   const charFac = new chartFactory('blue');
 
-  // let chartHourlySent = 
+  // hoourly messages chart
   charFac.getChart({
     type: 'clock',
     parent: graphCont[0],
@@ -207,7 +200,7 @@ function renderMsgGraphs(msgReportStats, parent) {
     name: 'chart1',
     size: 'medium'
   });
-  // let chartHourly = 
+
   charFac.getChart({
     type: 'clock',
     parent: graphCont[1],
@@ -218,12 +211,11 @@ function renderMsgGraphs(msgReportStats, parent) {
     size: 'medium'
   });
 
-  // improved other graphs
+  // daily messages chart
   let msgSentDaily = msgReportStats.timeStats.weekly.sent;
   let msgReceivedDaily = msgReportStats.timeStats.weekly.received;
   // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
   msgSentDaily.push(0);
-  // let chartWeekly = 
   charFac.getChart({
     type: 'axis-mixed',
     parent: graphCont[2],
@@ -234,11 +226,11 @@ function renderMsgGraphs(msgReportStats, parent) {
     size: 'medium'
   });
 
+  // monthly messages chart
   let msgSentMonthly = msgReportStats.timeStats.monthly.sent;
   let msgReceivedMonthly = msgReportStats.timeStats.monthly.received;
   // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
   msgSentMonthly.push(0);
-  // let chartMonthly = 
   charFac.getChart({
     type: 'axis-mixed',
     parent: graphCont[3],
@@ -249,6 +241,7 @@ function renderMsgGraphs(msgReportStats, parent) {
     size: 'medium'
   });
 
+  // yearly messagages chart
   let msgSentYearly = Object.keys(msgReportStats.timeStats.yearly).map((y) => {
     return msgReportStats.timeStats.yearly[y].sent
   });
@@ -257,7 +250,7 @@ function renderMsgGraphs(msgReportStats, parent) {
   });
   // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
   msgSentYearly.push(0);
-  // let chartYearly = 
+
   charFac.getChart({
     type: 'axis-mixed',
     parent: graphCont[4],
@@ -277,7 +270,6 @@ function renderMsgGraphs(msgReportStats, parent) {
     return acc;
   }, {});
 
-  // let chartYearlyCum = 
   charFac.getChart({
     type: 'line',
     parent: graphCont[5],
@@ -288,8 +280,8 @@ function renderMsgGraphs(msgReportStats, parent) {
     size: 'medium'
   });
 
-  // make a graph for top messaged people
-  let topMessagers = newTopMessagers(msgReportStats.regThreads, 15).map((t) => { return t[1]; });
+  // top messegers chart 
+  let topMessagers = getTopMessagers(msgReportStats.regThreads, 15)
   let msgSent = topMessagers.reduce(function(acc, msger) {
     let cnt1 = msgReportStats.regThreads[msger]["msgByUser"];
     acc.push(cnt1);
@@ -302,7 +294,6 @@ function renderMsgGraphs(msgReportStats, parent) {
     return acc;
   }, []);
 
-  // let chartTopMessegers = 
   charFac.getChart({
     type: 'axis-mixed',
     parent: graphCont[6],
@@ -312,150 +303,4 @@ function renderMsgGraphs(msgReportStats, parent) {
     data: [msgSent, msgReceived, [`${data.name}`, 'Friend']],
     size: 'medium'
   });
-}
-
-function displayAggMsgReport(msgReportStats) {
-  // RENDERS HEADING
-  let msgReport = renderMsgReportHeading(msgReportStats, reportContainer);
-  renderMsgGraphs(msgReportStats, msgReport);
-  // var msgGraphCont = document.createElement('div');
-  // msgGraphCont.id = 'graphs-container';
-  // reportContainer.appendChild(msgGraphCont);
-
-  // var graphCont = [];
-  
-
-  // // TODO: this has gotta be temporary solution
-  // for (var i = 0; i < 7; i++) {
-  //   var gcontainer = document.createElement('div');
-  //   gcontainer.classList.add('graph-wrapper');
-  //   gcontainer.id = `g${i}`;
-  //   msgGraphCont.appendChild(gcontainer);
-  //   graphCont.push(gcontainer);
-  // }
-
-  // // INTIALIZE chartFactory
-  // const charFac = new chartFactory('blue');
-
-  // var chartHourlySent = charFac.getChart({
-  //   type: 'clock',
-  //   parent: graphCont[0],
-  //   data: msgReportStats.timeStats.hourly.sent,
-  //   title: 'Messages by Hour of Day - Sent',
-  //   colorscheme: 'blue',
-  //   name: 'chart1',
-  //   size: 'medium'
-  // });
-  // var chartHourly = charFac.getChart({
-  //   type: 'clock',
-  //   parent: graphCont[1],
-  //   data: msgReportStats.timeStats.hourly.received,
-  //   title: 'Messages by Hour of Day - Received',
-  //   colorscheme: 'blue',
-  //   name: 'chart2',
-  //   size: 'medium'
-  // });
-
-  // // improved other graphs
-  // let msgSentDaily = msgReportStats.timeStats.weekly.sent;
-  // let msgReceivedDaily = msgReportStats.timeStats.weekly.received;
-  // // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
-  // msgSentDaily.push(0);
-  // var chartWeekly = charFac.getChart({
-  //   type: 'axis-mixed',
-  //   parent: graphCont[2],
-  //   name: 'chart3',
-  //   title: 'Messages by Day of the Week',
-  //   labels: DAYS,
-  //   data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],
-  //   size: 'medium'
-  // });
-
-  // let msgSentMonthly = msgReportStats.timeStats.monthly.sent;
-  // let msgReceivedMonthly = msgReportStats.timeStats.monthly.received;
-  // // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
-  // msgSentMonthly.push(0);
-  // var chartMonthly = charFac.getChart({
-  //   type: 'axis-mixed',
-  //   parent: graphCont[3],
-  //   name: 'chart4',
-  //   title: 'Messages by Month',
-  //   labels: MONTHS,
-  //   data: [msgSentMonthly, msgReceivedMonthly, ['Sent', 'Received']],
-  //   size: 'medium'
-  // });
-
-  // let msgSentYearly = Object.keys(msgReportStats.timeStats.yearly).map((y) => {
-  //   return msgReportStats.timeStats.yearly[y].sent
-  // });
-  // let msgReceivedYearly= Object.keys(msgReportStats.timeStats.yearly).map((y) => {
-  //   return msgReportStats.timeStats.yearly[y].received
-  // });
-  // // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
-  // msgSentYearly.push(0);
-  // var chartYearly = charFac.getChart({
-  //   type: 'axis-mixed',
-  //   parent: graphCont[4],
-  //   name: 'chart5',
-  //   title: 'Messages by Year',
-  //   labels: Object.keys(msgReportStats.timeStats.yearly),
-  //   data: [msgSentYearly, msgReceivedYearly, ['Sent', 'Received']],
-  //   size: 'medium'
-  // });
-
-  // // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED
-  // // THIS IS NOT FUNCTIONAL?
-  // let sum = 0;
-  // let msgCumulative = Object.keys(msgReportStats.timeStats.yearly).reduce((acc, dp) => {
-  //   sum += msgReportStats.timeStats.yearly[dp].sent + msgReportStats.timeStats.yearly[dp].received;
-  //   acc[dp] = sum;
-  //   return acc;
-  // }, {});
-
-  // var chartYearlyCum = charFac.getChart({
-  //   type: 'line',
-  //   parent: graphCont[5],
-  //   name: 'chart6',
-  //   title: 'Cumulative Messages over Years',
-  //   data: Object.values(msgCumulative),
-  //   labels: Object.keys(msgCumulative),
-  //   size: 'small'
-  // });
-
-  // // make a graph for top messaged people
-  // let topMessagers = newTopMessagers(msgReportStats.regThreads, 20).map((t) => { return t[1]; });
-  // let msgSent = topMessagers.reduce(function(acc, msger) {
-  //   let cnt1 = msgReportStats.regThreads[msger]["msgByUser"];
-  //   acc.push(cnt1);
-  //   return acc;
-  // }, []);
-
-  // let msgReceived = topMessagers.reduce(function(acc, msger) {
-  //   let cnt1 = msgReportStats.regThreads[msger]["other"];
-  //   acc.push(cnt1);
-  //   return acc;
-  // }, []);
-
-  // var chartTopMessegers = charFac.getChart({
-  //   type: 'axis-mixed',
-  //   parent: graphCont[6],
-  //   name: 'chart7',
-  //   title: 'Top Messagers',
-  //   labels: topMessagers,
-  //   data: [msgSent, msgReceived, [`${data.name}`, 'Friend']],
-  //   size: 'medium'
-  // });
-}
-
-// gets the top messagers sorts them and returns the last n ones
-function newTopMessagers(threads, n) {
-  var topMessagers = []
-  Object.keys(threads).forEach((p) => {
-    var cnt = threads[p].msgByUser + threads[p].other;
-    topMessagers.push([cnt, p]);
-  });
-
-  // sort the results
-  topMessagers.sort( (a, b) => { return a[0] - b[0]; } );
-  return topMessagers.slice(topMessagers.length - n);
 }

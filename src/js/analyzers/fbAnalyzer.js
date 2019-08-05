@@ -5,7 +5,7 @@ import { CallbackLoop } from '../callbackLoop.js';
 class FBAnalyzer extends BaseAnalyzer {
   constructor(file, data, callback) {
     super();
-    this.username = 'Stoyan Shukerov';
+    this.username = 'unknown';
     this.callbackLoop = new CallbackLoop('fbMainCallbackLoop', callback);
     this.progress = null;
     this.init(file, data);
