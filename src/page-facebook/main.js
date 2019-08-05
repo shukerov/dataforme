@@ -10,9 +10,9 @@ import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
 import { reportRenderer } from '../js/components/reportRender.js';
-import { getTopMessagers, truncateYears, getCurrentDate, getNumDays } from '../js/analyzers/analyzerHelpers.js';
+import { getTopMessagers, truncateYears, getCurrentDate, getNumDays, formatDate } from '../js/analyzers/analyzerHelpers.js';
 
-var data = {
+let data = {
   'name': 'unknown',
   'joined': null,
   'brithday': 'unknown',
@@ -39,13 +39,6 @@ var data = {
     }
   }
 };
-// average words per message
-// average sent number of messages per day (on days that you did message)
-// average received -"-
-// total calls that you have initiated
-// total calls that you have received
-// total call time
-// average call time
 
 // THIS IS FOR DEBUG MODE ONLY
 if (DEBUG_MODE) {
@@ -107,7 +100,8 @@ function renderReportHeading(data, parent) {
     {
       icon: 'icake',
       text: 'Birthday: ',
-      textBold: new Date(data.birthday).toDateString()
+      textBold: formatDate(data.birthday)
+      // textBold: new Date(data.birthday).toDateString()
     },
     {
       icon: 'iuser',
@@ -116,13 +110,8 @@ function renderReportHeading(data, parent) {
     },
     {
       icon: 'iusers',
-      text: 'Family members: ',
-      textBold: 'whatev'
-    },
-    {
-      icon: 'iusers',
       text: 'Friend Peer Group: ',
-      textBold: 'whatev1'
+      textBold: 'starting ADULT life'
     }
   ]
   rRender.renderSubReport(data.name, reportContainer, reportItems);

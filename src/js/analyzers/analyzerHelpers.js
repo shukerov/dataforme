@@ -38,3 +38,9 @@ export function getCurrentDate() {
 export function getNumDays(dateStart, dateEnd) {
   return Math.round((dateEnd - dateStart) / MS_IN_DAY);
 }
+
+// out: a formated date string.
+// in:  number of seconds since beginning of time 
+export function formatDate(date) {
+  return new Date(date).toDateString();
+}
