@@ -17,17 +17,20 @@ Dev Ops:
         Move to github.
 
 General:
+        Work out how to deal with UNICODE characters
         Add tooltips to report.
         Make the analyzer fail safe. Right now it will crash and burn if attribute or file is not found
         Make the clock chart interactive, it should display both sent and received messages.
         Make subreports accesible via navbar.
         Make filepicker change on a valid file upload, and also disable input
         Fix the progress bar. It is not really accurate right now...
+        Instructions need to be loaded with JS. Also they need like a lot of work...
 
 General Looks:
         Nav bar is ugly. Needs the animated logo.
         Fix the looks of the progress bar
         Add a 404 page.
+        Add a cool spacer between the data instructions and the report
 
 Facebook report specific TODOs:
         Expand the general report:
@@ -62,6 +65,11 @@ Facebook report specific TODOs:
                 total number of <whatever the other ones are>
                 number of reactions throughtout the years
                 time of the day you usually react
+
+        Create an ad report:
+                number of interests.
+                giant list of interests
+                number of interactions if available
 
 
 # Data location

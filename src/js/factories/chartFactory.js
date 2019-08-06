@@ -1,6 +1,6 @@
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm';
 import { ClockChart } from '../clock-chart/clock_graph.js';
-import isMobile from '../helpers.js';
+import { isMobile } from '../helpers.js';
 
 class chartFactory {
 
