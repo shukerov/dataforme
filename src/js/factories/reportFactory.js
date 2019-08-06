@@ -11,8 +11,9 @@ import imsg from '../../images/report-icons/message-square.svg';
 import imsgcir from '../../images/report-icons/message-circle.svg';
 import isend from '../../images/report-icons/send.svg';
 import iinbox from '../../images/report-icons/inbox.svg';
+import iactivity from '../../images/report-icons/activity.svg';
 
-export class reportRenderer {
+export class reportFactory {
   constructor() {
     this.icons = {
       'icalendar': icalendar,
@@ -25,6 +26,7 @@ export class reportRenderer {
       'imsgcir': imsgcir,
       'isend': isend,
       'iinbox': iinbox,
+      'iactivity': iactivity,
     }
 
     this.subreports = [];

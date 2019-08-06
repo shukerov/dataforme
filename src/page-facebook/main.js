@@ -5,12 +5,12 @@ import '../styles/facebook.scss';
 // JS imports:
 import { DAYS, MONTHS } from '../js/constants.js';
 import { formatNum } from '../js/helpers.js';
-import { chartFactory } from '../js/helpers.js';
+import { getTopMessagers, truncateYears, getCurrentDate, getNumDays, formatDate } from '../js/analyzers/analyzerHelpers.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
-import { reportRenderer } from '../js/components/reportRender.js';
-import { getTopMessagers, truncateYears, getCurrentDate, getNumDays, formatDate } from '../js/analyzers/analyzerHelpers.js';
+import { reportFactory } from '../js/factories/reportFactory.js';
+import { chartFactory } from '../js/factories/chartFactory.js';
 
 let data = {
   'name': 'unknown',
@@ -48,7 +48,7 @@ if (DEBUG_MODE) {
 let reportContainer = document.getElementById('report');
 let nBar = new NavBar(document.getElementById('site'));
 let fPicker = new FilePicker(reportContainer);
-let rRender = new reportRenderer();
+let rRender = new reportFactory();
 
 kickStartReport();
 
@@ -75,10 +75,8 @@ function renderFacebookReport(data) {
 
 function renderReportHeading(data, parent) {
   // data crunching
-  // TODO: helper
   let dateRange = getCurrentDate();
   let dateStart = new Date(data.joined);
-  // TODO: helper
   let numDays = getNumDays(dateStart, dateRange);
 
   let reportItems = [
@@ -86,6 +84,11 @@ function renderReportHeading(data, parent) {
       icon: 'icalendar',
       text: 'Date Joined: ',
       textBold: dateStart.toDateString()
+    },
+    {
+      icon: 'iactivity',
+      text: 'Data Range: ',
+      textBold: `${numDays} days`
     },
     {
       icon: 'itext',
@@ -101,7 +104,6 @@ function renderReportHeading(data, parent) {
       icon: 'icake',
       text: 'Birthday: ',
       textBold: formatDate(data.birthday)
-      // textBold: new Date(data.birthday).toDateString()
     },
     {
       icon: 'iuser',
