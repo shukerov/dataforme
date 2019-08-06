@@ -46,7 +46,7 @@ class NavBar {
         subitem: true,
         navbtn: true
       });
-      this.createNavButton('report', '#report', {
+      this.createNavButton('analyze', '#report', {
         subitem: true,
         navbtn: true
       });

@@ -1,13 +1,39 @@
-.instructions {
-   width: 50%;
+.slideshow-container {
+   width: 100%;
+   position: relative;
+   height: auto;
    margin: auto;
+
    img {
       width: 100%;
       height: auto;
    }
 }
 
-.ins-step {
-   background: blue;
+.slide-item {
+  display: none;
 }
 
+.slide-text {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background: white;
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  cursor: pointer;
+  font-weight: bold;
+  top: 50%;
+}
+
+.next-btn {
+  right: 0;
+  padding-right: 1em;
+}
+
+.prev-btn {
+  padding-left: 1em;
+}

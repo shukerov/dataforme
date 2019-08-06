@@ -24,7 +24,8 @@ General:
         Make subreports accesible via navbar.
         Make filepicker change on a valid file upload, and also disable input
         Fix the progress bar. It is not really accurate right now...
-        Instructions need to be loaded with JS. Also they need like a lot of work...
+        Instructions need to be loaded with JS.
+        Instructions need step by step pictures.
 
 General Looks:
         Nav bar is ugly. Needs the animated logo.

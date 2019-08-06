@@ -11,6 +11,7 @@ import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
 import { reportFactory } from '../js/factories/reportFactory.js';
 import { chartFactory } from '../js/factories/chartFactory.js';
+import { insFactory } from '../js/factories/insFactory.js';
 
 let data = {
   'name': 'unknown',
@@ -44,6 +45,10 @@ let data = {
 if (DEBUG_MODE) {
   data = require('../data/fb_precompiled.json');
 }
+
+// this is instructions loading. Should stay here only temporarily during development
+let test = new insFactory('facebook', document.getElementById('instructions-container'));
+test.createInstructions();
 
 let reportContainer = document.getElementById('report');
 let nBar = new NavBar(document.getElementById('site'));
