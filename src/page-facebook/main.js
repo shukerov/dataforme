@@ -48,7 +48,7 @@ if (DEBUG_MODE) {
 
 // this is instructions loading. Should stay here only temporarily during development
 let test = new insFactory('facebook', document.getElementById('instructions-container'));
-test.createInstructions();
+// test.createInstructions();
 
 let reportContainer = document.getElementById('report');
 let nBar = new NavBar(document.getElementById('site'));

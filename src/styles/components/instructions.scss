@@ -1,8 +1,23 @@
-.slideshow-container {
+.instruction-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+
+.slide-card-container {
+   // this repeats many places. Might be smart to refactor
+   box-shadow: 0 0 3px #ccc;
+   -moz-box-shadow: 0 0 3px #ccc;
+   -webkit-box-shadow: 0 0 3px #ccc;
+
    width: 100%;
-   position: relative;
-   height: auto;
-   margin: auto;
 
    img {
       width: 100%;
@@ -10,30 +25,49 @@
    }
 }
 
-.slide-item {
+.slide-card {
   display: none;
 }
 
-.slide-text {
+.slide-card-text {
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  height: 10%;
   text-align: center;
   background: white;
+  font-size: 25px;
 }
 
 .prev-btn, .next-btn {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  font-weight: bold;
-  top: 50%;
+  // font-weight: bold;
+  width: 5%;
+  transition: all 0.3s ease-in-out;
 }
 
-.next-btn {
-  right: 0;
-  padding-right: 1em;
+.prev-btn:hover, .next-btn:hover {
+  img {
+    transform: scale(1.5);
+  }
 }
 
-.prev-btn {
-  padding-left: 1em;
+.slide-dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.slide-dot-active, .slide-dot:hover {
+  background-color: #717171;
+}
+
+.dot-container { 
+  margin-top: 1vh;
 }

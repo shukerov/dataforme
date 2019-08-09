@@ -1,5 +1,6 @@
 // Style imports:
 import '../../styles/components/reportscommon.scss';
+
 // Import assets
 import icalendar from '../../images/report-icons/calendar.svg';
 import itext from '../../images/report-icons/file-text.svg';
@@ -89,7 +90,6 @@ export class reportFactory {
     headingItem.appendChild(headingLabel);
     headingItem.appendChild(headingText);
     parent.appendChild(headingItem);
-
     // adding content
     headingIcon.src = iconPath;
     headingLabel.innerHTML = label;
