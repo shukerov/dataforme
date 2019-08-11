@@ -16,6 +16,10 @@ Dev Ops:
         Make it live under the domain name you bought.
         Move to github.
 
+Problems:
+        HTML in subreports is too complex. You have a div with a span inside it with a strong inside it....
+        Bug in navbar. It stops you from scrolling on the main page report. Quite alwful
+
 General:
         Work out how to deal with UNICODE characters
         Add tooltips to report.
@@ -29,7 +33,6 @@ General:
 
 General Looks:
         Nav bar is ugly. Needs the animated logo.
-        Fix the looks of the progress bar
         Add a 404 page.
         Add a cool spacer between the data instructions and the report
 

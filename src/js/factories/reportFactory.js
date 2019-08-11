@@ -14,6 +14,10 @@ import isend from '../../images/report-icons/send.svg';
 import iinbox from '../../images/report-icons/inbox.svg';
 import iactivity from '../../images/report-icons/activity.svg';
 
+// Import js
+import { ToolTip } from '../components/toolTip.js';
+// import itooltip from '../../images/components/help-circle.svg';
+
 export class reportFactory {
   constructor() {
     this.icons = {
@@ -62,6 +66,7 @@ export class reportFactory {
         item.text,
         // THIS VERSION only does one bold? do you really need more
         this.renderText('*', [item.textBold]),
+        item.tooltip,
         subItemContainer);
     });
 
@@ -78,17 +83,19 @@ export class reportFactory {
     }
   }
 
-  renderHeadingItem(iconPath, label, headingText, parent) {
+  renderHeadingItem(iconPath, label, headingText, tooltip, parent) {
     // element creation
     let headingItem = document.createElement('div');
     // TODO: use helper here
     let headingIcon = new Image();
     let headingLabel = document.createElement('p');
+    let headingToolTip = new ToolTip(tooltip);
 
     // appending elements
     headingItem.appendChild(headingIcon);
     headingItem.appendChild(headingLabel);
     headingItem.appendChild(headingText);
+    headingItem.appendChild(headingToolTip);
     parent.appendChild(headingItem);
     // adding content
     headingIcon.src = iconPath;

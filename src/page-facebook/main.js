@@ -88,37 +88,44 @@ function renderReportHeading(data, parent) {
     {
       icon: 'icalendar',
       text: 'Date Joined: ',
-      textBold: dateStart.toDateString()
+      textBold: dateStart.toDateString(),
+      tooltip: 'Date when you started your Facebook account.'
     },
     {
       icon: 'iactivity',
       text: 'Data Range: ',
-      textBold: `${numDays} days`
+      textBold: `${numDays} days`,
+      tooltip: 'The number of days you have had your Facebook account for.'
     },
     {
       icon: 'itext',
       text: 'Num Posts: ',
-      textBold: data.num_posts
+      textBold: data.num_posts,
+      tooltip: 'The number of posts on your Facebook timeline.'
     },
     {
       icon: 'isearch',
       text: 'Num Searches: ',
       textBold: data.num_searches,
+      tooltip: 'The number of searches in the Facebook search bar.'
     },
     {
       icon: 'icake',
       text: 'Birthday: ',
-      textBold: formatDate(data.birthday)
+      textBold: formatDate(data.birthday),
+      tooltip: 'This one is pretty self explanatory. (:'
     },
     {
       icon: 'iuser',
       text: 'Last Profile Update: ',
-      textBold: 'test'
+      textBold: 'test',
+      tooltip: 'Last time you updated your Facebook profile.'
     },
     {
       icon: 'iusers',
       text: 'Friend Peer Group: ',
-      textBold: 'starting ADULT life'
+      textBold: 'starting ADULT life',
+      tooltip: 'How Facebook classifies your friends.'
     }
   ]
   rRender.renderSubReport(data.name, reportContainer, reportItems);
@@ -144,22 +151,26 @@ function renderMsgReportHeading(data, parent) {
     {
       icon: 'isend',
       text: 'Messages sent:',
-      textBold:  formatNum(totMsgSent)
+      textBold:  formatNum(totMsgSent),
+      tooltip: 'The total number of messages you have sent on Facebook.'
     },
     {
       icon: 'iinbox',
       text: 'Messages received:',
-      textBold: formatNum(totMsgReceived)
+      textBold: formatNum(totMsgReceived),
+      tooltip: 'The total number of messages you have received on Facebook.'
     },
     {
       icon: 'imsg',
       text: 'People messaged:',
-      textBold: numChats
+      textBold: numChats,
+      tooltip: 'The total number of people you have messaged on Facebook.'
     },
     {
       icon: 'imsgcir',
       text: 'Group chats:',
-      textBold: numGrChats
+      textBold: numGrChats,
+      tooltip: 'The total number of group chats you have participated in.'
     }
   ];
 

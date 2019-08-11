@@ -148,7 +148,6 @@ class insFactory {
     nextBtn.onclick = this.renderSlide.bind(this, 'next');
 
     // arrow left and right should switch between slides
-    // TODO: this eats all other keyboard events ... :( very bad
     document.addEventListener('keydown', this.arrowKeyHandler.bind(this));
 
     return [prevBtn, nextBtn];

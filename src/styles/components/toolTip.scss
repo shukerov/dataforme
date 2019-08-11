@@ -1,0 +1,30 @@
+// old tooltip color
+// #646464
+
+.tooltip {    
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius:4px;
+  padding: 6px 12px;
+  font-family: arial;
+  font-size: 15px;
+  text-shadow: 0px 1px 1px #000;
+  color: white;
+}
+
+.tooltip:before {
+  content : " ";
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: -10px;
+  left: 5px;
+}
+
+.tooltip-icon {
+  cursor: pointer;
+  margin-left: 0.3vw;
+}
