@@ -2,6 +2,9 @@
 // import logo from '../../images/icons/logo.svg';
 import '../../styles/components/navbar.scss';
 
+// TODO: Bug when trying to scroll and the navbar is hidden.
+// None of the buttons are also selectable with vimium, which means
+// that the navbar is not very accessible
 class NavBar {
   constructor(parent, index=false) {
     // boolean that determines if navbar is loaded on index page
@@ -27,7 +30,6 @@ class NavBar {
   }
 
   setup() {
-    // let background = document.createElement('div');
     this.navbar = document.createElement('div');
 
     // create buttons
@@ -128,31 +130,16 @@ class NavBar {
     // If they scrolled down and are past the navbar, add class .nav-up.
     if (curPos > this.lastScroll && curPos > this.navbarHeight){
       // Scroll Down
-      // for (var i = 0, len = this.navbarBtns.length; i < len; i++) {
-      //   this.navbarBtns[i].classList.add('nav-aside');
-      //   this.navbarBtns[i].classList.remove('nav-up');
-      // }
       this.navbarBtns.forEach((btn) => {
         btn.classList.add('nav-hidden');
       });
       this.logoCont.classList.remove('nav-normal');
       this.logoCont.classList.remove('nav-expand');
       this.logoCont.classList.add('nav-hidden');
-      // this.self.classList.remove('nav-up');
     } else {
       // Scroll Up
-      // check is there incase the user scolls past the documents heigh??
-      // apparently possible on a mac
-      // if(curPos + window.outerHeight < document.body.scrollHeight ) {
-      // for (var i = 0, len = this.navbarBtns.length; i < len; i++) {
-      //   this.navbarBtns[i].classList.remove('nav-aside');
-      //   this.navbarBtns[i].classList.add('nav-up');
-      // }
-      // }
       this.logoCont.classList.remove('nav-hidden');
       this.logoCont.classList.add('nav-normal');
-      // this.logoCont.classList.remove('nav-half-aside');
-      // this.self.classList.add('nav-up');
     }
 
     this.lastScroll = curPos;

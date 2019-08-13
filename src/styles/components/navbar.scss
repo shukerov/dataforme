@@ -44,32 +44,23 @@ nav {
    -ms-user-select: none;
    user-select: none;
 
-   // display
-   // display: grid;
-   // grid-template-columns: 0.9fr 0.1fr;
    position: fixed;
    top: 0;
    width: 20vw;
-   height: 10vh;
+   // height: 10vh;
    font-family: 'BigNoodleTitling';
 
-   .nav-link,.nav-link:visited {
+   .nav-link, .nav-link:visited {
       font-weight: bold;
       text-decoration: none;
       text-align: right;
-      padding: 1.5vh 0vh;
-      // padding-right: 1vh;
    }
-   // transform: translateX(-20vw);
-   transition: all .2s ease-in-out;
 }
 
 .nav-item {
-   // box-shadow: 20px 20px 10px white;
    box-shadow: none;
    background: black;
    color: white;
-   // transform: translate(-10%);
 }
 
 .nav-item:hover,#nav-logo:hover {
@@ -99,6 +90,7 @@ nav {
    transition: all .2s ease-in-out;
    background: black;
    text-decoration: none;
+   transition: all .2s ease-in-out;
 }
 
 .nav-link {
@@ -111,7 +103,6 @@ nav {
   // copy from a tag in nav
   font-weight: bold;
   text-align: left;
-  padding: 1.5vh 0vh;
 }
 
 // only the menu button shows
@@ -133,20 +124,3 @@ nav {
    margin-right: 7vw;
    transition: all .3s ease-in-out;
 }
-
-
-// trying to create something similar to stripe
-// #test {
-//    background: black;
-//    // background: linear-gradient(150deg,#53f 15%,#05d5ff 70%,#a6ffcb 94%);
-//    position: absolute;
-//    top:0;
-//    // z-index: -1;
-//    // display: block;
-//    width: 100%;
-//    height: 24%;
-//    transform-origin: 0;
-//    // transform: skewY(-15deg);
-//    transform: skewY(-2deg);
-//    overflow: hidden;
-// }
