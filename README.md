@@ -22,7 +22,7 @@ Problems:
 
 General:
         Work out how to deal with UNICODE characters
-        Add tooltips to report.
+        DONE: Add tooltips to report.
         Make the analyzer fail safe. Right now it will crash and burn if attribute or file is not found
         Make the clock chart interactive, it should display both sent and received messages.
         Make subreports accesible via navbar.

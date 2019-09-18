@@ -19,6 +19,7 @@ let data = {
   'brithday': 'unknown',
   'num_posts': 'unknown',
   'num_searches': 'unknown',
+  'friend_peer_group': 'unknown',
   'msgStats': {
     'groupChatThreads': [],
     'regThreads': {},
@@ -124,7 +125,7 @@ function renderReportHeading(data, parent) {
     {
       icon: 'iusers',
       text: 'Friend Peer Group: ',
-      textBold: 'starting ADULT life',
+      textBold: data.friend_peer_group,
       tooltip: 'How Facebook classifies your friends.'
     }
   ]
