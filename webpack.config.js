@@ -77,7 +77,7 @@ module.exports = env => {
     },
     plugins: [
       new CleanWebpackPlugin({
-        cleanOnceBeforeBuildPatterns: ['**/*', '!.git']
+        cleanOnceBeforeBuildPatterns: ['**/*', '!.git', '!CNAME']
       }),
       // defines environmental variables
       new DefinePlugin({
