@@ -20,12 +20,10 @@ class FBAnalyzer extends BaseAnalyzer {
       // currently that can happen if file is not found for example.
       // This will make your script fail miserably right now...
 
-      // this.callbackLoop.addToChain(this.getBaseData.bind(this, data), 'profile_information/profile_information.json');
-
       let fns = [
         ['profile_information/profile_information.json', this.getBaseData.bind(this, data)],
         ['about_you/friend_peer_group.json',this.getFriendPeerGroup.bind(this, data)],
-        ['posts/your_posts_1.json', this.getPostData.bind(this, data,)],
+        ['posts/your_posts_1.json', this.getPostData.bind(this, data)],
         ['search_history/your_search_history.json', this.getSearchData.bind(this, data)]
       ]
 
@@ -33,11 +31,10 @@ class FBAnalyzer extends BaseAnalyzer {
         this.analyzeFile(fns[i][0], fns[i][1]);
       }
 
-      this.callbackLoop.setLoopCount();
-      let msgCallbackLoop = new CallbackLoop('fbMsgLoop',
-        this.callbackLoop.call.bind(this.callbackLoop),
-        1);
-      this.analyzeMsgThreads(data.msgStats, msgCallbackLoop);
+      // analyze each message thread
+      this.analyzeDir.call(this,
+        'messages/inbox', 'message_1.json',
+        data.msgStats, this.analyzeMessageThread); 
 
       this.callbackLoop.initialized();
     });
@@ -183,12 +180,13 @@ class FBAnalyzer extends BaseAnalyzer {
     // CARE
     // this.callbackLoop.call();
     callback.call();
-    this.progress.updatePercentage(); 
+    // this.progress.updatePercentage(); 
 
     // triggers callback once all msgThreads are analyzed
-    if (this.progress.current == this.progress.max) {
-      this.progress.hide();
-      this.progress = null;
+    // if (this.progress.current == this.progress.max) {
+    if (callback.callbackLoopCount == 0) {
+      // this.progress.hide();
+      // this.progress = null;
       // CARE
       callback.call();
     }

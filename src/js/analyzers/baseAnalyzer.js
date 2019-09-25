@@ -8,7 +8,7 @@ class BaseAnalyzer {
     this.callback = null;
     this.zip = new Zip(window);
     this.fs = new ZipFS(window.zip);
-    this.callbackLoop = new CallbackLoop('fbMainCallbackLoop', callback);
+    this.callbackLoop = new CallbackLoop(callback.name, callback);
 
     // need to end up in the global object for things to work
     this.inflate = new InflaterJS(window);
@@ -26,7 +26,35 @@ class BaseAnalyzer {
     file.getText(analyzerFunction.bind(this, internalCallback)); 
   }
 
-  //why json in the name..?
+  analyzeDir(dirName, filePattern, msgData, analyzerFunction) {
+    var directories = this.getDirChildren(dirName);
+    var numDirs = directories.length;
+    // increments callbackloop count
+    this.callbackLoop.setLoopCount();
+    let internalCallbackLoop = new CallbackLoop(
+      'display messages',
+      this.callbackLoop.call.bind(this.callbackLoop),
+      numDirs);
+
+    // loop through directories
+    directories.map((dir) => {
+      var file = dir.getChildByName(filePattern);
+
+      // pattern was not found in the given directory
+      if (!file) {
+        internalCallbackLoop.call();
+        // this.progress.updatePercentage(); 
+        return;
+      }
+
+      file.getText(analyzerFunction.bind(this,
+        dir.name,
+        msgData,
+        internalCallbackLoop));
+    });
+  }
+
+  // why json in the name..?
   getJSONFile(path) {
     var pathSplit = path.split('/');
     var curDir = this.fs.root;
