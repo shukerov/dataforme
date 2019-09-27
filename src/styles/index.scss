@@ -7,6 +7,14 @@ $tranSpeed: 0.75s;
    src:  url('./fonts/BigNoodleTitling.ttf') format('ttf');
 }
 
+// move to variables files
+// media query variables
+$screen-xs-min: 320px;    // landscape phones
+$screen-sm-min: 576px;    // landscape phones
+$screen-md-min: 768px;    // tablets
+$screen-lg-min: 992px;    // desktops
+$screen-xl-min: 1200px;   // large desktops
+
 // upper half of the page
 #website-cnt {
    height: 100vh;
@@ -108,9 +116,49 @@ $tranSpeed: 0.75s;
 .about-content-container {
    display: flex;
    flex-direction: column;
-   max-width: 50%;
-   margin: 0 auto;
 }
+
+.about-content-heading {
+  margin-top: 3em;
+  background: black;
+  color: white;
+  max-width: 50%;
+  text-align: right;
+  padding-right: 1em;
+  font-family: 'BigNoodleTitling';
+  height: 4rem;
+
+  // pseduo element
+  position: relative;
+
+  @media only screen and (min-width: $screen-md-min) {
+    max-width: 30%;
+  }
+}
+
+.about-content-heading::after {
+  position: absolute;
+  bottom: 0;
+  right: -0.9rem;
+  content: "";
+  border-right: 1rem solid transparent;
+  border-top: 2rem solid black;
+  border-bottom: 2rem solid black;
+}
+
+.about-content {
+  max-width: 80%;
+  margin: 0 auto;
+
+  @media only screen and (min-width: $screen-md-min) {
+    max-width: 70%;
+  }
+
+  @media only screen and (min-width: $screen-lg-min) {
+    max-width: 60%;
+  }
+}
+
 
 @media only screen and (max-width: 900px) {
   #website-cnt {
@@ -120,8 +168,5 @@ $tranSpeed: 0.75s;
   .website-item {
     width: 100%;
   }
-
-  .about-content-container {
-     max-width: 80%;
-  }
 }
+

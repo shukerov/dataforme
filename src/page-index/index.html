@@ -9,48 +9,50 @@
       <div class='spacer'></div>
       <div id='about'>
         <div class='about-content-container'>
-          <h1>About DataForMe:</h1>
-          <p>
-          <strong>TLDR</strong>: A website that teaches you how to practice
-          your Right of Access, and optionally analyzes your data offline.
-          </p>
-          <p>
-          Since the GDPR was passed in 2016, software providers need to
-          accommodate the 'Right of Access' for their users.
-          What does this mean? It means that <strong>YOU</strong>
-          can get a copy of the data that you generate.
-          </p>
-          <p>
-          The goal of this website is to serve as a wiki of how to download
-          your data from different web service providers. Click on one of the
-          tiles above to learn how to do so.
-          </p>
-          <p>
-          Once you request a copy, you might have to wait up to a
-          few days to receive that copy.
-          </p>
-          <p>
-          Afterwards, you can analyze your data here, and hopefully gain some
-          insight about how you interact with these web services. By now you
-          are probably thinking: 'Why would I ever upload my information to the
-          web?'
-          </p>
-          <p>
-          If you didn't ask yourself that question then you are surfing the web
-          a tad bit carelessly. Anyway rest assured. This website is client side
-          only, this means that it can work offline once you have loaded this
-          page. Your data won't ever leave your computer, and will be analyzed
-          inside your browser. Still don't trust it? Good. Disconnect from the
-          internet when you add your file to be analyzed.
-          </p>
-          <h2>Why I built this:</h2>
-          <p>
-          I am a college student studying abroad, who got genuinely excited about his
-          right of access to data. I also needed a senior project so I can graduate,
-          and this is it! I hope you find this somewhat useful. The code is
-          open-source and you can look through it or contribute here.
+          <h1 class='about-content-heading'>What is this website?</h1>
+          <div class='about-content'>
+            <p class='index-important'>Dataforme is a safe space built for <em>you</em>.</p>
+            <p>
+            Here you can learn how to download and interpret the data that you generate online.
+            Hopefully by the time you leave this page
+            you will know how to practice your <em>Right of Access</em>.
+            </p>
+          </div>
+        <h1 class='about-content-heading'>My right of access?</h1>
+        <div class='about-content'>
+          <p>You know those messages you send? Your Google searches? Instagram likes, or the music that you stream ...</p>
+          <p>Most of that is stored in a database somewhere, and it is very likely that someone is profiting heavily from it. But this is <em>your</em> data, and it is my belief that <em>you</em> should have control over it.</p>
+          <p>Practicing your right of access is as simple as requesting a copy of that information.
+          Since the <a href='https://eugdpr.org/'>GDPR</a> went into effect in 2018, you can actually take advantage of that right. Most big web services provide a way for you to get a copy of your digital identity.
           </p>
         </div>
+        <h1 class='about-content-heading'>Is my data safe here?</h1>
+        <div class='about-content'>
+          <p>Dataforme never obtains a copy of your data. Your data is therefore as safe as you keep it. Be careful where you store your data backup.</p>
+          <p><em>You</em> are the one who will have to request a copy of your data, <em>you</em> will also have to download it afterwards.</p>
+          <p>This website won't automate anything for you. The reason for that is that it leaves <em>you</em> in control.</p>
+        </div>
+        <h1 class='about-content-heading'>So I can analyze my data here?</h1>
+        <div class='about-content'>
+          <p>That is correct! The analytics part of this website is designed to work <em>offline</em>. I can guarantee that your data copy is never transferred over the internet.</p>
+          <p>
+          The beauty of this website however is that you don't need to trust me - just turn off your internet when you attach your file in your browser. By doing so you can rest assured that it is not being uploaded anywhere.</p>
+          <p>Click on one of the tiles above to get started. You can learn more about your right of access for each web service there.</p>
+        </div>
+        <h1 class='about-content-heading'>Full Transparency</h1>
+        <div class='about-content'>
+          <p>This website is Open Source. This means you can view, modify or run a completely local copy of the website if you want. Find the source code <a href='https://github.com/shukerov/dataforme/'>here</a>.</p>
+          <p>This website is still under development. It is my senior project so things will be changing frequently, if this didn't work for you you can let me know <a>here</a>.</p>
+          <p>Your visit to this website was tracked with <a>Google Analytics</a>, which runs on most of the websites you frequently visit. On my to-do list is figuring out a way to make that data public.</p>
+        </div>
+        <h1 class='about-content-heading'>Why does this website exists?</h1>
+        <div class='about-content'>
+          <p>It exists because I downloaded a copy of my information, and got genuinely excited about my Right of Access.</p>
+          <p>I wrote a few Ruby scripts that provided me with some interesting insights about myself. One of the more obvious things I learned is that I give too much attention to social media.</p>
+          <p>I think that everyone should be able to gain insights based on their own data, and more importantly should at least know how to get a copy of their information</p>
+          <p>I had this idea a while back, but I recently made it my senior project!</p>
+        </div>
+      </div>
       </div>
       ${require('../partials/footer.html')}
     </div>
