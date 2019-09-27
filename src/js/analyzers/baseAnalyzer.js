@@ -1,14 +1,14 @@
 import { InflaterJS } from '../zip-js-modified/inflate.js';
 import { Zip } from '../zip-js-modified/zip.js';
 import { ZipFS } from '../zip-js-modified/zip-fs.js';
-import { CallbackLoop } from '../callbackLoop.js';
+import { CallbackLoop, cbRootChain } from '../callbackLoop.js';
 
 class BaseAnalyzer {
   constructor(callback) {
     this.callback = null;
     this.zip = new Zip(window);
     this.fs = new ZipFS(window.zip);
-    this.callbackLoop = new CallbackLoop(callback.name, callback);
+    this.callbackLoop = new cbRootChain(callback.name, callback);
 
     // need to end up in the global object for things to work
     this.inflate = new InflaterJS(window);

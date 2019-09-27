@@ -1,21 +1,15 @@
 import { BaseAnalyzer } from './baseAnalyzer.js';
-import { LoadBar } from '../components/loadBar.js';
-import { CallbackLoop } from '../callbackLoop.js';
+// import { CallbackLoop } from '../callbackLoop.js';
 
 class FBAnalyzer extends BaseAnalyzer {
   constructor(file, data, callback) {
     super(callback);
     this.username = 'unknown';
-    // this.callbackLoop = new CallbackLoop('fbMainCallbackLoop', callback);
-    this.progress = null;
     this.init(file, data);
   }
 
   init(file, data) {
     this.fs.importBlob(file, () => {
-      // depends on how many files we are opening
-      // this.callbackLoop.setLoopCount(5); // defaults to 1
-
       // TODO: IMPORTANT need to have a backup plan in case loopback fails
       // currently that can happen if file is not found for example.
       // This will make your script fail miserably right now...
@@ -37,6 +31,7 @@ class FBAnalyzer extends BaseAnalyzer {
         data.msgStats, this.analyzeMessageThread); 
 
       this.callbackLoop.initialized();
+
     });
   }
 
@@ -79,33 +74,33 @@ class FBAnalyzer extends BaseAnalyzer {
     callbackLoop.call();
   }
 
-  analyzeMsgThreads(msgData, callback) {
-    var msgDirs = this.getDirChildren('messages/inbox');
+  // analyzeMsgThreads(msgData, callback) {
+  //   var msgDirs = this.getDirChildren('messages/inbox');
 
-    // regular attempt
-    var numDirs = msgDirs.length;
-    this.progress = new LoadBar(numDirs);
-    this.progress.show();
+  //   // regular attempt
+  //   var numDirs = msgDirs.length;
+  //   this.progress = new LoadBar(numDirs);
+  //   this.progress.show();
 
-    // CARE
-    let internalCallbackLoop = new CallbackLoop('display messages', callback.call.bind(callback), numDirs);
+  //   // CARE
+  //   let internalCallbackLoop = new CallbackLoop('display messages', callback.call.bind(callback), numDirs);
 
-    // loop through msg threads
-    msgDirs.map((msgDir) => {
-      var msgThread = msgDir.getChildByName("message_1.json");
+  //   // loop through msg threads
+  //   msgDirs.map((msgDir) => {
+  //     var msgThread = msgDir.getChildByName("message_1.json");
 
-      // message thread was not found in the given directory
-      if (!msgThread) {
-        // CARE
-        // this.callbackLoop.call();
-        internalCallbackLoop.call();
-        this.progress.updatePercentage(); 
-        return;
-      }
+  //     // message thread was not found in the given directory
+  //     if (!msgThread) {
+  //       // CARE
+  //       // this.callbackLoop.call();
+  //       internalCallbackLoop.call();
+  //       this.progress.updatePercentage(); 
+  //       return;
+  //     }
 
-      msgThread.getText(this.analyzeMessageThread.bind(this, msgDir.name, msgData, internalCallbackLoop));
-    });
-  }
+  //     msgThread.getText(this.analyzeMessageThread.bind(this, msgDir.name, msgData, internalCallbackLoop));
+  //   });
+  // }
 
   analyzeMessageThread(threadName, msgData, callback, msg) {
     // console.log(msg);
