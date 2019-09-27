@@ -34,6 +34,7 @@
     "dev": "webpack-dev-server --env",
     "dev-looks": "webpack-dev-server --env.DEBUG=true",
     "preview": "npm run build && http-server dist",
+    "deploy": "yarn run webpack --env && cd dist && git add . && git commit -m \"Deploy at $(date)\" && git push origin gh-pages",
     "build": "webpack --env"
   },
   "babel": {
