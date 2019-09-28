@@ -1,41 +1,25 @@
 @import './globalvariables';
+@import 'fonts';
 
 $tranSpeed: 0.75s;
-
-@font-face {
-   font-family: 'BigNoodleTitling';
-   src:  url('./fonts/BigNoodleTitling.ttf') format('ttf');
-}
-
-// move to variables files
-// media query variables
-$screen-xs-min: 320px;    // landscape phones
-$screen-sm-min: 576px;    // landscape phones
-$screen-md-min: 768px;    // tablets
-$screen-lg-min: 992px;    // desktops
-$screen-xl-min: 1200px;   // large desktops
 
 // upper half of the page
 #website-cnt {
    height: 100vh;
    display: flex;
-   flex-direction: row;
+  flex-direction: column;
    justify-content: center;
    align-items: center;
-}
 
-// #website {
-//    height: 100vh;
-//    display: flex;
-//    justify-content: center;
-//    align-items: center;
-//    overflow: hidden;
-// }
+  @media only screen and (min-width: $screen-lg-min) {
+    flex-direction: row;
+  }
+}
 
 .website-item {
    flex: 1;
    height: 100%;
-   // width: 100%;
+   width: 100%;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -113,26 +97,27 @@ $screen-xl-min: 1200px;   // large desktops
    // height: 100vh;
 }
 
-.about-content-container {
-   display: flex;
-   flex-direction: column;
-}
-
 .about-content-heading {
-  margin-top: 3em;
-  background: black;
+  display: inline-block;
+  margin: 4em 0 2em 0;
+  background: $bg-color;
   color: white;
-  max-width: 50%;
-  text-align: right;
+  text-align: left;
   padding-right: 1em;
   font-family: 'BigNoodleTitling';
   height: 4rem;
+  padding-left: 10%;
 
   // pseduo element
   position: relative;
 
   @media only screen and (min-width: $screen-md-min) {
-    max-width: 30%;
+    // max-width: 30%;
+    padding-left: 15%;
+  }
+
+  @media only screen and (min-width: $screen-lg-min) {
+    padding-left: 20%;
   }
 }
 
@@ -142,8 +127,8 @@ $screen-xl-min: 1200px;   // large desktops
   right: -0.9rem;
   content: "";
   border-right: 1rem solid transparent;
-  border-top: 2rem solid black;
-  border-bottom: 2rem solid black;
+  border-top: 2rem solid $bg-color;
+  border-bottom: 2rem solid $bg-color;
 }
 
 .about-content {
@@ -158,15 +143,3 @@ $screen-xl-min: 1200px;   // large desktops
     max-width: 60%;
   }
 }
-
-
-@media only screen and (max-width: 900px) {
-  #website-cnt {
-    flex-direction: column;
-  }
-
-  .website-item {
-    width: 100%;
-  }
-}
-

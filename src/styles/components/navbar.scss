@@ -59,16 +59,16 @@ nav {
 
 .nav-item {
    box-shadow: none;
-   background: black;
+   background: $bg-color;
    color: white;
 }
 
 .nav-item:hover,#nav-logo:hover {
    // background: transparent;
    box-shadow: 5px 0px $facebook, 10px 0px $spotify, 15px 0px $tinder-static;
-   color: black;
+   color: $bg-color;
    a {
-     color: black;
+     color: $bg-color;
    }
    background: white;
 }
@@ -88,7 +88,7 @@ nav {
    justify-content: flex-end;
    color: white;
    transition: all .2s ease-in-out;
-   background: black;
+   background: $bg-color;
    text-decoration: none;
    transition: all .2s ease-in-out;
 }
