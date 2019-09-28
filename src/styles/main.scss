@@ -1,6 +1,5 @@
 @import 'normalize';
 @import './globalvariables';
-@import 'fonts';
 
 html {
    height: 100%;
@@ -16,19 +15,18 @@ body {
   overflow: auto;
 }
 
+a, a:visited {
+  text-decoration: none;
+  color: $text-color;
+}
+
+@import 'fonts';
+@import 'components/footer.scss';
+
 #site {
    height: 100vh;
    background: #f9f9f9;
    overflow: auto;
-}
-
-#footer {
-   // position: absolute;
-   // bottom: 0;
-   height: 60px; /* Height of the footer */
-   width: 100%;
-   text-align: center;
-   margin-top: 10vh;
 }
 
 // spacer
