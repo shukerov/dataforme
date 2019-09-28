@@ -1,5 +1,4 @@
 // Style imports:
-import '../styles/main.scss';
 import '../styles/facebook.scss';
 
 // JS imports:
@@ -52,7 +51,7 @@ let test = new insFactory('facebook', document.getElementById('instructions-cont
 // test.createInstructions();
 
 let reportContainer = document.getElementById('report');
-let nBar = new NavBar(document.getElementById('site'));
+let nBar = new NavBar();
 let fPicker = new FilePicker(reportContainer);
 let rRender = new reportFactory();
 

@@ -1,5 +1,4 @@
 // Style imports:
-import '../styles/main.scss';
 import '../styles/index.scss';
 
 // Assets:
@@ -17,7 +16,7 @@ function renderContent() {
   let websiteContainer = document.getElementById('website-cnt');
   let aboutContainer = document.getElementById('about');
 
-  new NavBar(globalContainer, true);
+  new NavBar(true);
   loadWebsites(websiteContainer); // globalContainer);
 }
 

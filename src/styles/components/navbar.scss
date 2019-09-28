@@ -1,126 +1,75 @@
-// @import '../fonts';
+@import '../fonts';
 @import '../globalvariables';
 
-// duplication
-@font-face {
-   font-family: 'BigNoodleTitling';
-   src:  url('../fonts/BigNoodleTitling.ttf') format('truetype');
-}
-
-// TODO: these media queries need to be done better
-@media only screen and (max-width: 960px) {
-      .nav-item {
-         font-size: 4vh;
-      }
-   #nav-logo {
-      font-size: 4.5vh;
-   }
-}
-
-@media only screen and (min-width: 960px) {
-      .nav-item {
-         font-size: 5vh;
-      }
-   #nav-logo {
-      font-size: 5.5vh;
-   }
-}
-@media only screen and (max-width: 700px) {
-      .nav-item {
-         font-size: 2.5vh;
-      }
-   #nav-logo {
-      font-size: 2.7vh;
-   }
+header {
+  // position: relative;
 }
 
 nav {
-   // make them unselectable
-   -webkit-tap-highlight-color: transparent;
-   -webkit-touch-callout: none;
-   -webkit-user-select: none;
-   -khtml-user-select: none;
-   -moz-user-select: none;
-   -ms-user-select: none;
-   user-select: none;
+  // make nav unselectable. Not sure if needed
+  // -webkit-tap-highlight-color: transparent;
+  // -webkit-touch-callout: none;
+  // -webkit-user-select: none;
+  // -khtml-user-select: none;
+  // -moz-user-select: none;
+  // -ms-user-select: none;
+  // user-select: none;
 
-   position: fixed;
-   top: 0;
-   width: 20vw;
-   // height: 10vh;
-   font-family: 'BigNoodleTitling';
+  // width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-   .nav-link, .nav-link:visited {
-      font-weight: bold;
-      text-decoration: none;
-      text-align: right;
-   }
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+  right: 0;
+  top: 1em;
+  padding-left: 1em;
 }
 
 .nav-item {
-   box-shadow: none;
-   background: $bg-color;
-   color: white;
-}
-
-.nav-item:hover,#nav-logo:hover {
-   // background: transparent;
-   box-shadow: 5px 0px $facebook, 10px 0px $spotify, 15px 0px $tinder-static;
-   color: $bg-color;
-   a {
-     color: $bg-color;
-   }
-   background: white;
-}
-
-#nav-root {
-   display: flex;
-   flex-direction: column;
-}
-
-#nav-root > * {
-  margin-top: 2.5vh;
-  padding-right: 2vw;
-}
-
-#nav-logo {
-   display: flex;
-   justify-content: flex-end;
-   color: white;
-   transition: all .2s ease-in-out;
-   background: $bg-color;
-   text-decoration: none;
-   transition: all .2s ease-in-out;
-}
-
-.nav-link {
+  pointer-events: all;
+  background: $bg-color;
   color: white;
-}
-
-
-#btn-logo {
-  width: 5vw;
-  // copy from a tag in nav
-  font-weight: bold;
-  text-align: left;
-}
-
-// only the menu button shows
-.nav-normal {
-   transform: translateX(-13vw);
-}
-
-// all of nav is opened, triggered by click
-.nav-expand {
-  transform: translateX(0vw);
-}
-
-// whole nav bar is off to the side
-.nav-hidden {
-  transform: translateX(-20vw);
+  width: auto;
+  z-index: 9;
+  font-family: 'BigNoodleTitling';
+  padding-left: 0.5em;
+  padding-right: 1em;
+  font-size: 2em;
+  transition: all .3s ease-in-out;
 }
 
 .nav-sub-item {
-   margin-right: 7vw;
-   transition: all .3s ease-in-out;
+  margin-top: 0.5em;
+  min-width: 150px;
+  max-width: 250px;
+  color: white;
+}
+
+.nav-logo {
+  font-size: 3em;
+  max-width: 330px;
+}
+
+.nav-item:hover {
+   background: white;
+   color: $bg-color;
+   box-shadow: -5px 0px $tinder-static, -10px 0px $spotify, -15px 0px $facebook;
+}
+
+// // only the menu button shows
+// .nav-normal {
+//    transform: translateX(13vw);
+// }
+
+// // all of nav is opened, triggered by click
+// .nav-expand {
+//   transform: translateX(0vw);
+// }
+
+// whole nav bar is off to the side
+.nav-hidden {
+  transform: translateX(100%);
 }
