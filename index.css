@@ -368,10 +368,8 @@ html {
   height: 100%;
   font-size: 1.1em;
   line-height: 1.9;
-  font-family: 'Fira', Camphor, Open Sans, Segoe UI, sans-serif; }
-
-body {
-  overflow: auto; }
+  font-family: 'Fira', Camphor, Open Sans, Segoe UI, sans-serif;
+  scroll-behavior: smooth; }
 
 a, a:visited {
   text-decoration: none; }
@@ -392,6 +390,14 @@ a, a:visited {
   font-family: 'BigNoodleTitling';
   src: url(fonts/BigNoodleTitling.ttf) format("truetype"); }
 
+header {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0; }
+
 nav {
   display: flex;
   flex-direction: column;
@@ -408,12 +414,11 @@ nav {
   background: #050404;
   color: white;
   width: auto;
-  z-index: 9;
   font-family: 'BigNoodleTitling';
   padding-left: 0.5em;
   padding-right: 1em;
   font-size: 2em;
-  transition: all .3s ease-in-out; }
+  transition: all .5s ease-in-out; }
 
 .nav-sub-item {
   margin-top: 0.5em;
@@ -423,12 +428,25 @@ nav {
 
 .nav-logo {
   font-size: 3em;
-  max-width: 330px; }
+  width: 330px; }
+
+#logo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  fill: white; }
 
 .nav-item:hover {
-  background: white;
-  color: #050404;
-  box-shadow: -5px 0px #ff7854, -10px 0px #1cd95e, -15px 0px #3b5998; }
+  background: rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000; }
+
+.nav-discrete {
+  transform: translateX(320px); }
+
+.nav-expanded {
+  transform: translateX(0vw); }
 
 .nav-hidden {
   transform: translateX(100%); }
@@ -443,14 +461,13 @@ nav {
   margin-top: 10vh; }
 
 #site {
-  height: 100vh;
+  min-height: 100vh;
   background: #f9f9f9;
-  overflow: auto;
-  scroll-behavior: smooth; }
+  overflow: auto; }
 
 .spacer {
   width: 100%;
-  height: 5%;
+  height: 5vh;
   background: #050404; }
 
 @font-face {
