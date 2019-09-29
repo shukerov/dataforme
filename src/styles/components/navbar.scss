@@ -2,7 +2,12 @@
 @import '../globalvariables';
 
 header {
-  // position: relative;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0;
 }
 
 nav {
@@ -33,16 +38,21 @@ nav {
   background: $bg-color;
   color: white;
   width: auto;
-  z-index: 9;
+  // z-index: 9;
   font-family: 'BigNoodleTitling';
-  padding-left: 0.5em;
-  padding-right: 1em;
-  font-size: 2em;
-  transition: all .3s ease-in-out;
+  padding-left: 10px;
+  padding-right: 20px;
+  transition: all .5s ease-in-out;
+
+  font-size: 1em;
+  @media screen and (min-width: $screen-lg-min) {
+    font-size: 2em;
+  }
 }
 
 .nav-sub-item {
   margin-top: 0.5em;
+  padding-right: 0;
   min-width: 150px;
   max-width: 250px;
   color: white;
@@ -50,24 +60,43 @@ nav {
 
 .nav-logo {
   font-size: 3em;
-  max-width: 330px;
+  width: 175px;
+
+  @media screen and (min-width: $screen-lg-min) {
+    width: 330px;
+  }
+}
+
+#logo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  fill: white;
 }
 
 .nav-item:hover {
-   background: white;
-   color: $bg-color;
-   box-shadow: -5px 0px $tinder-static, -10px 0px $spotify, -15px 0px $facebook;
+  // background: lighten($bg-color, 20%);
+  background: fade-out($color: #000000, $amount: 0.5);
+  -moz-box-shadow: 0 0 3px #000;
+  -webkit-box-shadow: 0 0 3px #000;
+  box-shadow: 0 0 3px #000;
+  //  color: $bg-color;
+  //  box-shadow: -5px 0px $tinder-static, -10px 0px $spotify, -15px 0px $facebook;
 }
 
 // // only the menu button shows
-// .nav-normal {
-//    transform: translateX(13vw);
-// }
+.nav-discrete {
+  transform: translateX(167px);
+
+  @media screen and (min-width: $screen-lg-min) {
+    transform: translateX(285px);
+  }
+}
 
 // // all of nav is opened, triggered by click
-// .nav-expand {
-//   transform: translateX(0vw);
-// }
+.nav-expanded {
+  transform: translateX(0vw);
+}
 
 // whole nav bar is off to the side
 .nav-hidden {

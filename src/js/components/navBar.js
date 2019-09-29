@@ -1,3 +1,5 @@
+import bodymovin from '../lottie.min.js';
+
 class NavBar {
   constructor(index=false) {
     // boolean that determines if navbar is loaded on index page
@@ -21,6 +23,22 @@ class NavBar {
   }
 
   setup() {
+    // TODO: refactor in a function
+    let logoContainer = document.getElementById('logo');
+    let animationData = {
+            container: logoContainer,
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: './logo-animation.json'
+        };
+
+    this.direction = 1;
+    this.navState = 'discrete';
+    this.logoAnim = bodymovin.loadAnimation(animationData);
+    this.logoBtn = document.getElementById('nav-logoo');
+    this.logoBtn.onclick= this.logoClickHandler.bind(this);
+
     this.navbar = document.getElementById('nav');
 
     // create buttons
@@ -36,6 +54,27 @@ class NavBar {
     this.navBtns = document.getElementsByClassName('nav-item');
   }
 
+  logoClickHandler() {
+    if (this.navState == 'discrete') {
+      this.logoAnim.setDirection(1);
+      this.logoAnim.play();
+      this.showNavBtns();
+      this.navState = 'open';
+    }
+    else {
+      this.hideNavBtns();
+      if(this.index) {
+        document.querySelector(this.logoBtn.getAttribute('data-scroll')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+      else {
+        window.location='/';
+      }
+    }
+
+  }
+
   setScrolling() {
 
     setInterval(function() {
@@ -45,13 +84,42 @@ class NavBar {
       }
     }.bind(this), 250);
 
-    this.website.addEventListener('scroll', function(e) {
+    window.addEventListener('scroll', function(e) {
       this.scrolled = true;
     }.bind(this));
   }
 
+  hideNavBtns() {
+    if (this.navState == 'open') {
+      this.logoAnim.setDirection(-1);
+      this.logoAnim.play();
+      this.navState = 'discrete';
+      for (let i = 0; i < this.navBtns.length; i++) {
+        this.navBtns[i].classList.add('nav-discrete');
+      }
+    }
+  }
+
+  showNavBtns() {
+    this.navState = 'open';
+
+    for (let i = 0; i < this.navBtns.length; i++) {
+      this.navBtns[i].classList.remove('nav-discrete');
+    }
+  }
+
+  // navScrlUp() {
+  //   this.navState = 'discrete';
+  //   this.logoAnim.setDirection(-1);
+  //   this.logoAnim.play();
+
+  //   for (let i = 0; i < this.navBtns.length; i++) {
+  //     this.navBtns[i].classList.add('nav-discrete');
+  //   }
+  // }
+
   scrollingEvent() {
-    let curPos = this.website.scrollTop;
+    let curPos = pageYOffset;
 
     if(Math.abs(this.lastScroll - curPos) <= this.delta)
       return;
@@ -59,19 +127,10 @@ class NavBar {
     // If they scrolled down and are past the navbar, add class .nav-up.
     if (curPos > this.lastScroll && curPos > this.navbarHeight){
       // Scroll Down
-      for(let i = 0; i < this.navBtns.length; i++) {
-        this.navBtns[i].classList.add('nav-hidden');
-      }
-      // this.logoCont.classList.remove('nav-normal');
-      // this.logoCont.classList.remove('nav-expand');
-      // this.logoCont.classList.add('nav-hidden');
+      this.hideNavBtns();
     } else {
       // Scroll Up
-      for(let i = 0; i < this.navBtns.length; i++) {
-        this.navBtns[i].classList.remove('nav-hidden');
-      }
-      // this.logoCont.classList.remove('nav-hidden');
-      // this.logoCont.classList.add('nav-normal');
+      this.hideNavBtns();
     }
 
     this.lastScroll = curPos;
@@ -80,15 +139,14 @@ class NavBar {
   createNavButton(text, link, options) {
     let item = document.createElement('a');
     item.classList.add('nav-item');
-    // item.classList.add('nav-link');
     item.innerHTML = text;
     item.href = link;
 
     if (options) {
       if (options.subitem) item.classList.add('nav-sub-item');
     }
+    item.classList.add('nav-discrete');
     this.self.appendChild(item);
-
   }
 }
 

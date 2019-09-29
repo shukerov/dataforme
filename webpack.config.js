@@ -3,6 +3,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const buildPath = path.resolve(__dirname, 'dist');
 
 module.exports = env => {
@@ -88,6 +89,9 @@ module.exports = env => {
       new DefinePlugin({
         DEBUG_MODE: DEBUG_MODE
       }),
+      new CopyPlugin([
+        { from: './src/assets/animations', to: '.' }
+      ]),
       new HtmlWebPackPlugin({
         template: "./src/page-index/index.html",
         chunks: ['index'],
