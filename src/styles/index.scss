@@ -133,6 +133,7 @@ $tranSpeed: 0.75s;
 }
 
 .about-content {
+  font-size: 19px; // TODO: possibly global?
   max-width: 80%;
   margin: 0 auto;
 
@@ -143,4 +144,15 @@ $tranSpeed: 0.75s;
   @media only screen and (min-width: $screen-lg-min) {
     max-width: 60%;
   }
+}
+
+.index-important {
+  font-size: 30px;
+  color: $text-important;
+  font-weight: bold;
+}
+
+em {
+  text-transform: uppercase;
+  font-style: normal;
 }
