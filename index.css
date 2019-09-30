@@ -415,20 +415,27 @@ nav {
   color: white;
   width: auto;
   font-family: 'BigNoodleTitling';
-  padding-left: 0.5em;
-  padding-right: 1em;
-  font-size: 2em;
-  transition: all .5s ease-in-out; }
+  padding-left: 10px;
+  padding-right: 20px;
+  transition: all .5s ease-in-out;
+  font-size: 1em; }
+  @media screen and (min-width: 992px) {
+    .nav-item {
+      font-size: 2em; } }
 
 .nav-sub-item {
   margin-top: 0.5em;
+  padding-right: 0;
   min-width: 150px;
   max-width: 250px;
   color: white; }
 
 .nav-logo {
   font-size: 3em;
-  width: 330px; }
+  width: 175px; }
+  @media screen and (min-width: 992px) {
+    .nav-logo {
+      width: 330px; } }
 
 #logo {
   width: 100%;
@@ -443,7 +450,10 @@ nav {
   box-shadow: 0 0 3px #000; }
 
 .nav-discrete {
-  transform: translateX(320px); }
+  transform: translateX(167px); }
+  @media screen and (min-width: 992px) {
+    .nav-discrete {
+      transform: translateX(285px); } }
 
 .nav-expanded {
   transform: translateX(0vw); }
@@ -539,30 +549,39 @@ nav {
 
 .about-content-heading {
   display: inline-block;
-  margin: 4em 0 2em 0;
   background: #050404;
   color: white;
   text-align: left;
-  padding-right: 1em;
   font-family: 'BigNoodleTitling';
-  height: 4rem;
+  margin: 4em 0 2em 0;
   padding-left: 10%;
+  padding-right: 1em;
+  height: 3rem;
+  font-size: 1.5em;
   position: relative; }
   @media only screen and (min-width: 768px) {
     .about-content-heading {
       padding-left: 15%; } }
   @media only screen and (min-width: 992px) {
     .about-content-heading {
-      padding-left: 20%; } }
+      padding-left: 20%;
+      height: 4rem;
+      font-size: 2em; } }
 
 .about-content-heading::after {
   position: absolute;
   bottom: 0;
-  right: -0.9rem;
   content: "";
-  border-right: 1rem solid transparent;
-  border-top: 2rem solid #050404;
-  border-bottom: 2rem solid #050404; }
+  right: -0.5rem;
+  border-right: 0.5rem solid transparent;
+  border-top: 1.5rem solid #050404;
+  border-bottom: 1.5rem solid #050404; }
+  @media only screen and (min-width: 992px) {
+    .about-content-heading::after {
+      right: -0.9rem;
+      border-right: 1rem solid transparent;
+      border-top: 2rem solid #050404;
+      border-bottom: 2rem solid #050404; } }
 
 .about-content {
   font-size: 19px;
@@ -576,9 +595,15 @@ nav {
       max-width: 60%; } }
 
 .index-important {
-  font-size: 30px;
+  font-size: 1.2em;
   color: #D81159;
   font-weight: bold; }
+  @media only screen and (min-width: 768px) {
+    .index-important {
+      font-size: 1.5em; } }
+  @media only screen and (min-width: 992px) {
+    .index-important {
+      font-size: 1.75em; } }
 
 em {
   text-transform: uppercase;

@@ -415,20 +415,27 @@ nav {
   color: white;
   width: auto;
   font-family: 'BigNoodleTitling';
-  padding-left: 0.5em;
-  padding-right: 1em;
-  font-size: 2em;
-  transition: all .5s ease-in-out; }
+  padding-left: 10px;
+  padding-right: 20px;
+  transition: all .5s ease-in-out;
+  font-size: 1em; }
+  @media screen and (min-width: 992px) {
+    .nav-item {
+      font-size: 2em; } }
 
 .nav-sub-item {
   margin-top: 0.5em;
+  padding-right: 0;
   min-width: 150px;
   max-width: 250px;
   color: white; }
 
 .nav-logo {
   font-size: 3em;
-  width: 330px; }
+  width: 175px; }
+  @media screen and (min-width: 992px) {
+    .nav-logo {
+      width: 330px; } }
 
 #logo {
   width: 100%;
@@ -443,7 +450,10 @@ nav {
   box-shadow: 0 0 3px #000; }
 
 .nav-discrete {
-  transform: translateX(320px); }
+  transform: translateX(167px); }
+  @media screen and (min-width: 992px) {
+    .nav-discrete {
+      transform: translateX(285px); } }
 
 .nav-expanded {
   transform: translateX(0vw); }
