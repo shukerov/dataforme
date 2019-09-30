@@ -26,10 +26,14 @@ export class ToolTip {
 
     // calculate the and add the position of the tip
     const padding = 10;
-    let linkProps = this.toolTipIcon.getBoundingClientRect();
+    let iconTop = this.toolTipIcon.offsetTop;
+    let iconLeft = this.toolTipIcon.offsetLeft;
     let toolTipProps = this.self.getBoundingClientRect();
-    let topPos = linkProps.top - (toolTipProps.height + padding);
-    this.self.setAttribute('style', `top: ${topPos}px; left: ${linkProps.left}px;`);
+
+    // top position of the tooltip bubble
+    let topPos = iconTop - (toolTipProps.height + padding);
+
+    this.self.setAttribute('style', `top: ${topPos}px; left: ${iconLeft}px;`);
   }
 
   hideTip() {
