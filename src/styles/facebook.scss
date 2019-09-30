@@ -6,15 +6,65 @@
 }
 
 #instructions-container {
-   display: flex;
-   flex-direction: column;
-   margin: 0 auto;
-   max-width: 60%;
-   min-height: 100vh;
+  //  display: flex;
+  //  flex-direction: column;
+  //  margin: 0 auto;
+  //  max-width: 60%;
+  //  min-height: 100vh;
 }
 
 #instructions-text {
    // min-height: 90vh;
+}
+
+.facebook-content {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.facebook-heading {
+  display: inline-block;
+  background: $bg-color;
+  color: white;
+  text-align: left;
+  font-family: 'BigNoodleTitling';
+
+  margin: 4em 0 2em 0;
+  padding-left: 10%;
+  padding-right: 1em;
+  height: 2.6rem;
+  font-size: 1.3em;
+
+  // pseduo element
+  position: relative;
+
+  @media only screen and (min-width: $screen-md-min) {
+    // max-width: 30%;
+    padding-left: 15%;
+  }
+
+  @media only screen and (min-width: $screen-lg-min) {
+    padding-left: 20%;
+    height: 4rem;
+    font-size: 2em;
+  }
+}
+
+.facebook-heading::after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  right: -0.5rem;
+  border-right: 0.5rem solid transparent;
+  border-top: 1.3rem solid $bg-color;
+  border-bottom: 1.3rem solid $bg-color;
+
+  @media only screen and (min-width: $screen-lg-min) {
+    right: -0.9rem;
+    border-right: 1rem solid transparent;
+    border-top: 2rem solid $bg-color;
+    border-bottom: 2rem solid $bg-color;
+  }
 }
 
 #report {

@@ -11,20 +11,28 @@ const FB_INS_PATH = '../images/fb-instructions';
 const insns = {
   'facebook': [
     {
-      image: './1.png',
-      ins: 'Click on Settings'
+      image: './step1-web.jpg',
+      ins: "Open your browser of choice, and enter 'facebook.com' in the address bar."
     },
     {
-      image: './2.jpg',
-      ins: 'do this then'
+      image: './step2-web.jpg',
+      ins: 'Click in the upper right corner, and open settings.'
     },
     {
-      image: './3.png',
-      ins: 'do this when'
+      image: './step3-web.jpg',
+      ins: "Click on 'Your Facebook information' in the side bar menu."
     },
     {
-      image: './4.jpg',
-      ins: 'do this how'
+      image: './step4-web.jpg',
+      ins: "Click on 'View' under the 'Download your information' tab."
+    },
+    {
+      image: './step5-web.jpg',
+      ins: "1. Select JSON for data format.<br> 2. Select media quality (recommended low if you want a small filesize).<br> 3. Finally click 'Create File'."
+    },
+    {
+      image: './step6-web.jpg',
+      ins: "In a couple of hours check your Facebook notifications, and save your file. Store it somewhere safe."
     }
   ]
 }
@@ -113,11 +121,7 @@ class insFactory {
 
       // create the image
       let slideImg = new Image();
-      let slideText = document.createElement('div');
-      slideText.classList.add('slide-card-text');
-
-      // add image source and instruction text
-      slideText.innerHTML = `Step ${i+1}/${this.instructions.length}: ${this.instructions[i].ins}`;
+      let slideText = this.createInstructionsText(i);
       slideImg.src = this.instructions[i].image;
 
       slide.appendChild(slideImg);
@@ -130,6 +134,22 @@ class insFactory {
     insWrapper.appendChild(cardContainer);
     insWrapper.appendChild(buttons[1]);
     this.insContainer.appendChild(insWrapper);
+  }
+
+  createInstructionsText(insNum) {
+    let textContainer = document.createElement('div');
+    textContainer.classList.add('slide-card-text');
+
+    let insStepIndicator = document.createElement('div');
+    insStepIndicator.classList.add('step-indicator');
+    insStepIndicator.innerHTML = `Step ${insNum+1}/${this.instructions.length}`;
+
+    let insText = document.createElement('p');
+    insText.innerHTML = this.instructions[insNum].ins;
+
+    textContainer.appendChild(insStepIndicator);
+    textContainer.appendChild(insText);
+    return textContainer;
   }
 
   // creates the buttons for next and previous buttons
