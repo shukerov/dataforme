@@ -43,6 +43,12 @@ class NavBar {
 
     // create buttons
     if (!this.index) {
+      this.createNavButton('preview', '#report', {
+        subitem: true,
+        navbtn: true,
+        preview: true
+      });
+
       this.createNavButton('analyze', '#report', {
         subitem: true,
         navbtn: true
@@ -144,6 +150,7 @@ class NavBar {
 
     if (options) {
       if (options.subitem) item.classList.add('nav-sub-item');
+      if (options.preview) item.id = 'nav-preview-item';
     }
     item.classList.add('nav-discrete');
     this.self.appendChild(item);

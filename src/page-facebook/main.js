@@ -42,9 +42,9 @@ let data = {
 };
 
 // THIS IS FOR DEBUG MODE ONLY
-if (DEBUG_MODE) {
-  data = require('../data/fb_precompiled.json');
-}
+// if (DEBUG_MODE) {
+let fakeData = require('../assets/fake_data/fb_precompiled.json');
+// }
 
 // this is instructions loading. Should stay here only temporarily during development
 let test = new insFactory('facebook', document.getElementById('instructions-container'));
@@ -54,6 +54,14 @@ let reportContainer = document.getElementById('report');
 let nBar = new NavBar();
 let fPicker = new FilePicker(reportContainer);
 let rRender = new reportFactory();
+
+// TODO: refactor as helper
+let previewBtn = document.getElementById('nav-preview-item');
+previewBtn.onclick = () => {
+  renderFacebookReport(fakeData, report);
+};
+
+
 
 kickStartReport();
 
