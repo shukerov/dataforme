@@ -100,14 +100,16 @@ $tranSpeed: 0.75s;
 
 .about-content-heading {
   display: inline-block;
-  margin: 4em 0 2em 0;
   background: $bg-color;
   color: white;
   text-align: left;
-  padding-right: 1em;
   font-family: 'BigNoodleTitling';
-  height: 4rem;
+
+  margin: 4em 0 2em 0;
   padding-left: 10%;
+  padding-right: 1em;
+  height: 3rem;
+  font-size: 1.5em;
 
   // pseduo element
   position: relative;
@@ -119,17 +121,26 @@ $tranSpeed: 0.75s;
 
   @media only screen and (min-width: $screen-lg-min) {
     padding-left: 20%;
+    height: 4rem;
+    font-size: 2em;
   }
 }
 
 .about-content-heading::after {
   position: absolute;
   bottom: 0;
-  right: -0.9rem;
   content: "";
-  border-right: 1rem solid transparent;
-  border-top: 2rem solid $bg-color;
-  border-bottom: 2rem solid $bg-color;
+  right: -0.5rem;
+  border-right: 0.5rem solid transparent;
+  border-top: 1.5rem solid $bg-color;
+  border-bottom: 1.5rem solid $bg-color;
+
+  @media only screen and (min-width: $screen-lg-min) {
+    right: -0.9rem;
+    border-right: 1rem solid transparent;
+    border-top: 2rem solid $bg-color;
+    border-bottom: 2rem solid $bg-color;
+  }
 }
 
 .about-content {
@@ -147,9 +158,18 @@ $tranSpeed: 0.75s;
 }
 
 .index-important {
-  font-size: 30px;
+  font-size: 1.2em;
   color: $text-important;
   font-weight: bold;
+
+  // TODO: should not be media queries... just em and then change the font-size globally with a media query
+  @media only screen and (min-width: $screen-md-min) {
+    font-size: 1.5em;
+  }
+
+  @media only screen and (min-width: $screen-lg-min) {
+    font-size: 1.75em;
+  }
 }
 
 em {
