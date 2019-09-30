@@ -483,6 +483,9 @@ nav {
 #report {
   min-height: 100vh; }
 
+#nav-preview-item {
+  background: #3b5998; }
+
 .facebook-content {
   max-width: 95%;
   margin: 0 auto; }
