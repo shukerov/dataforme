@@ -1,22 +1,23 @@
 <!DOCTYPE HTML>
 <html>
-  <!-- Loads head tag. See partials/head.html. -->
   ${require('../partials/head.html')}
   <body>
-    <div class="site">
-      <!-- ${require('../partials/nav.html')} -->
-      <div id="svg-testing"> </div>
+    <header>
+      ${require('../partials/nav.html')}
+    </header>
+    <div id='site' data-page='spotify'>
+      <h1 class='service-heading'>How to Get to Your Spotify Data</h1>
+      <div class='service-content'>
+        <p>Official Spotify instructions -
+          <a href=''>don't exist</a>.
+        </p>
+        <p>Usually it takes about <strong>?</strong> to <strong>?</strong> hours to receive your copy.</p>
+        <p>Below you can find visual instructions, showing you how to obtain a copy of your data.</p>
+        <div id='instructions-container'></div>
+      </div>
+      <div id='report'></div>
+      ${require('../partials/footer.html')}
+    </div>
   </body>
 </html>
 
-<style>
- .title {
-    text-align: center;
-    margin-bottom: 18px;
-  }
-
-  p {
-    text-align: center;
-  }
-
-</style>
