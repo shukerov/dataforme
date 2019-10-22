@@ -16,6 +16,7 @@ import isend from '../../images/report-icons/send.svg';
 import iinbox from '../../images/report-icons/inbox.svg';
 import iactivity from '../../images/report-icons/activity.svg';
 import ismile from '../../images/report-icons/smile.svg';
+import iheart from '../../images/report-icons/heart.svg';
 
 // Import js
 import { ToolTip } from '../components/toolTip.js';
@@ -36,6 +37,7 @@ export class reportFactory {
       'iinbox': iinbox,
       'iactivity': iactivity,
       'ismile': ismile,
+      'iheart': iheart,
     }
 
     this.subreports = [];

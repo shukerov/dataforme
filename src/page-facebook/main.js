@@ -18,6 +18,8 @@ let data = {
   'brithday': 'unknown',
   'num_posts': 'unknown',
   'num_searches': 'unknown',
+  "relationship_count": null,
+  "relationship_status": "unknown",
   'last_profile_update': 'unknown',
   'friend_peer_group': 'unknown',
   'msgStats': {
@@ -119,10 +121,22 @@ function renderReportHeading(data, parent) {
       tooltip: 'The number of searches in the Facebook search bar.'
     },
     {
-      icon: 'icake',
-      text: 'Birthday: ',
-      textBold: formatDate(data.birthday),
-      tooltip: 'This one is pretty self explanatory. (:'
+      icon: 'iheart',
+      text: 'Relationship Count: ',
+      textBold: data.relationship_count,
+      tooltip: 'Number of Facebook relationships you have had.'
+    },
+    {
+      icon: 'iheart',
+      text: 'Relationship Status: ',
+      textBold: data.relationship_status,
+      tooltip: 'Your Facebook relationship status.'
+    },
+    {
+      icon: 'isearch',
+      text: 'Num Searches: ',
+      textBold: data.num_searches,
+      tooltip: 'The number of searches in the Facebook search bar.'
     },
     {
       icon: 'iuser',

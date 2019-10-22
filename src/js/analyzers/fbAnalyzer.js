@@ -85,6 +85,9 @@ class FBAnalyzer extends BaseAnalyzer {
       profInfoJSON.profile.birthday.day
     );
 
+    data.relationship_count = profInfoJSON.profile.previous_relationships.length
+    data.relationship_status = profInfoJSON.profile.relationship.status
+
     cbChain.call();
   }
 
