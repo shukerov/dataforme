@@ -18,6 +18,7 @@ let data = {
   'brithday': 'unknown',
   'num_posts': 'unknown',
   'num_searches': 'unknown',
+  'last_profile_update': 'unknown',
   'friend_peer_group': 'unknown',
   'msgStats': {
     'groupChatThreads': [],
@@ -126,7 +127,7 @@ function renderReportHeading(data, parent) {
     {
       icon: 'iuser',
       text: 'Last Profile Update: ',
-      textBold: 'test',
+      textBold: formatDate(data.last_profile_update),
       tooltip: 'Last time you updated your Facebook profile.'
     },
     {

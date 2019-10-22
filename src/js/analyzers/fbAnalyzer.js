@@ -1,3 +1,4 @@
+// TODO: add comments for each getter. showing where the data is coming from and what it does
 import { BaseAnalyzer } from './baseAnalyzer.js';
 
 class FBAnalyzer extends BaseAnalyzer {
@@ -17,6 +18,7 @@ class FBAnalyzer extends BaseAnalyzer {
         ['profile_information/profile_information.json', this.getBaseData.bind(this, data)],
         ['about_you/friend_peer_group.json',this.getFriendPeerGroup.bind(this, data)],
         ['about_you/face_recognition.json',this.getFaceRecognitionData.bind(this, data)],
+        ['profile_information/profile_update_history.json', this.getProfileUpdateData.bind(this, data)],
         ['posts/your_posts_1.json', this.getPostData.bind(this, data)],
         ['search_history/your_search_history.json', this.getSearchData.bind(this, data)]
       ]
@@ -38,6 +40,12 @@ class FBAnalyzer extends BaseAnalyzer {
   getPostData(data, cbChain, postInfo) {
     let postInfoJSON = JSON.parse(postInfo);
     data.num_posts = postInfoJSON.length;
+    cbChain.call();
+  }
+
+  getProfileUpdateData(data, cbChain, profileUpdateInfo) {
+    let profileUpdateJSON = JSON.parse(profileUpdateInfo);
+    data.last_profile_update = profileUpdateJSON.profile_updates[0].timestamp * 1000;
     cbChain.call();
   }
 
