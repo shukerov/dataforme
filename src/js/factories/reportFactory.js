@@ -1,3 +1,5 @@
+// TODO: this whole factory needs a refactor.
+// names are awful, loading of icon assets is awful, css naming is crap too
 // Style imports:
 import '../../styles/components/reportscommon.scss';
 
@@ -13,6 +15,7 @@ import imsgcir from '../../images/report-icons/message-circle.svg';
 import isend from '../../images/report-icons/send.svg';
 import iinbox from '../../images/report-icons/inbox.svg';
 import iactivity from '../../images/report-icons/activity.svg';
+import ismile from '../../images/report-icons/smile.svg';
 
 // Import js
 import { ToolTip } from '../components/toolTip.js';
@@ -32,6 +35,7 @@ export class reportFactory {
       'isend': isend,
       'iinbox': iinbox,
       'iactivity': iactivity,
+      'ismile': ismile,
     }
 
     this.subreports = [];
@@ -60,6 +64,7 @@ export class reportFactory {
 
     reportItems.forEach((item) => {
       let icon = this.getIcon(item.icon);
+      let options = item.options ? item.options : null;
 
       this.renderHeadingItem(
         icon,
@@ -67,7 +72,8 @@ export class reportFactory {
         // THIS VERSION only does one bold? do you really need more
         this.renderText('*', [item.textBold]),
         item.tooltip,
-        subItemContainer);
+        subItemContainer,
+        options);
     });
 
     return reportHeading;
@@ -83,18 +89,33 @@ export class reportFactory {
     }
   }
 
-  renderHeadingItem(iconPath, label, headingText, tooltip, parent) {
+  renderHeadingItem(iconPath, label, headingText, tooltip, parent, options) {
     // element creation
     let headingItem = document.createElement('div');
     // TODO: use helper here
     let headingIcon = new Image();
     let headingLabel = document.createElement('p');
     let headingToolTip = new ToolTip(tooltip);
+    
+      let preOption = document.createElement('pre');
+      preOption.classList.add('heading-item-raw');
+    if (options && options.raw) {
+      // let preOption = document.createElement('pre');
+      // preOption.classList.add('heading-item-raw');
+    }
 
     // appending elements
     headingItem.appendChild(headingIcon);
     headingItem.appendChild(headingLabel);
-    headingItem.appendChild(headingText);
+
+    if (options && options.raw) {
+      preOption.appendChild(headingText);
+      headingItem.appendChild(preOption);
+    }
+    else {
+      headingItem.appendChild(headingText);
+    }
+
     headingItem.appendChild(headingToolTip);
     parent.appendChild(headingItem);
     // adding content

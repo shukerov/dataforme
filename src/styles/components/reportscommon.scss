@@ -45,7 +45,9 @@
   padding-left: 1rem;
 }
 
-.heading-content-text {
+.heading-item-raw {
+  overflow: auto;
+  max-width: 50%;
 }
 
 .report-controls {

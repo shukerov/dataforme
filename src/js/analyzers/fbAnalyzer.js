@@ -16,6 +16,7 @@ class FBAnalyzer extends BaseAnalyzer {
       let fns = [
         ['profile_information/profile_information.json', this.getBaseData.bind(this, data)],
         ['about_you/friend_peer_group.json',this.getFriendPeerGroup.bind(this, data)],
+        ['about_you/face_recognition.json',this.getFaceRecognitionData.bind(this, data)],
         ['posts/your_posts_1.json', this.getPostData.bind(this, data)],
         ['search_history/your_search_history.json', this.getSearchData.bind(this, data)]
       ]
@@ -43,6 +44,13 @@ class FBAnalyzer extends BaseAnalyzer {
   getFriendPeerGroup(data, cbChain, friendPeerInfo) {
     let friendPeerInfoJSON = JSON.parse(friendPeerInfo);
     data.friend_peer_group = friendPeerInfoJSON.friend_peer_group;
+    cbChain.call();
+  }
+
+  getFaceRecognitionData(data, cbChain, faceRecInfo) {
+    let faceRecInfoJSON = JSON.parse(faceRecInfo);
+    data.face_example_count = faceRecInfoJSON.facial_data.example_count;
+    data.my_face = faceRecInfoJSON.facial_data.raw_data;
     cbChain.call();
   }
 

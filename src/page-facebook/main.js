@@ -134,7 +134,21 @@ function renderReportHeading(data, parent) {
       text: 'Friend Peer Group: ',
       textBold: data.friend_peer_group,
       tooltip: 'How Facebook classifies your friends.'
+    },
+    {
+      icon: 'ismile',
+      text: 'Face Count: ',
+      textBold: data.face_example_count,
+      tooltip: 'Number of pictures of your face Facebook has.'
+    },
+    {
+      icon: 'ismile',
+      text: 'Face: ',
+      textBold: data.my_face,
+      tooltip: 'A code representation of your face.',
+      options: {raw: true}
     }
+
   ]
   rRender.renderSubReport(data.name, reportContainer, reportItems);
 }
