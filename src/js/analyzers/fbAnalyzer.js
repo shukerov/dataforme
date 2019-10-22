@@ -81,7 +81,7 @@ class FBAnalyzer extends BaseAnalyzer {
     // find the given json attribute
     data.birthday = new Date(
       profInfoJSON.profile.birthday.year,
-      profInfoJSON.profile.birthday.month,
+      profInfoJSON.profile.birthday.month - 1, // months start at 0
       profInfoJSON.profile.birthday.day
     );
 
