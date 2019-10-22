@@ -1,5 +1,4 @@
 import { BaseAnalyzer } from './baseAnalyzer.js';
-// import { CbChain } from '../cbChain.js';
 
 class FBAnalyzer extends BaseAnalyzer {
   constructor(file, data, callback) {
@@ -70,37 +69,8 @@ class FBAnalyzer extends BaseAnalyzer {
       profInfoJSON.profile.birthday.day
     );
 
-    // YUP
     cbChain.call();
   }
-
-  // analyzeMsgThreads(msgData, callback) {
-  //   var msgDirs = this.getDirChildren('messages/inbox');
-
-  //   // regular attempt
-  //   var numDirs = msgDirs.length;
-  //   this.progress = new LoadBar(numDirs);
-  //   this.progress.show();
-
-  //   // CARE
-  //   let internalCbChain = new CbChain('display messages', callback.call.bind(callback), numDirs);
-
-  //   // loop through msg threads
-  //   msgDirs.map((msgDir) => {
-  //     var msgThread = msgDir.getChildByName("message_1.json");
-
-  //     // message thread was not found in the given directory
-  //     if (!msgThread) {
-  //       // CARE
-  //       // this.cbChain.call();
-  //       internalCbChain.call();
-  //       this.progress.updatePercentage(); 
-  //       return;
-  //     }
-
-  //     msgThread.getText(this.analyzeMessageThread.bind(this, msgDir.name, msgData, internalCbChain));
-  //   });
-  // }
 
   analyzeMessageThread(threadName, msgData, callback, msg) {
     // console.log(msg);
@@ -171,18 +141,9 @@ class FBAnalyzer extends BaseAnalyzer {
       }.bind(this), msgData);
     }
 
-    // progress bar
-    // CARE
-    // this.cbChain.call();
     callback.call();
-    // this.progress.updatePercentage(); 
 
-    // triggers callback once all msgThreads are analyzed
-    // if (this.progress.current == this.progress.max) {
     if (callback.cbChainCount == 0) {
-      // this.progress.hide();
-      // this.progress = null;
-      // CARE
       callback.call();
     }
   }
