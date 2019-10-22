@@ -1,15 +1,15 @@
 import '../../styles/components/loadBar.scss';
 
 class LoadBar {
-  constructor(max) {
+  constructor(max = null) {
     this.current = 0; // current value of the progress
-    this.max = max;         // maximum value that the progress can reach
+    this.max = max;   // maximum value that the progress can reach
 
     // the html elements
     this.text = document.createElement('p');
     this.progress = document.createElement('div');
 
-    this.text.innerHTML = this.toPercent();
+    this.text.innerHTML = 'Initializing...';
     this.text.className = 'progress-text';
     this.progress.className = 'progress';
 
@@ -18,8 +18,14 @@ class LoadBar {
 
   // updates progress bar
   updatePercentage() {
-    this.current++;
-    this.text.innerHTML = this.toPercent() ;
+    if (this.max == null) {
+      this.text.innerHTML = 'Initializing...';
+    }
+    else
+    {
+      this.current++;
+      this.text.innerHTML = this.toPercent() ;
+    }
   }
 
   // returns current progress as a string
@@ -35,6 +41,11 @@ class LoadBar {
   // hides progresss bar
   hide() {
     document.body.removeChild(this.progress);
+  }
+
+  // set maximum value the loadbar can reach
+  setMax(max) {
+    this.max = max;
   }
 }
 

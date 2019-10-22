@@ -1,79 +1,58 @@
 import { BaseAnalyzer } from './baseAnalyzer.js';
-import { LoadBar } from '../components/loadBar.js';
-import { CallbackLoop } from '../callbackLoop.js';
 
 class FBAnalyzer extends BaseAnalyzer {
   constructor(file, data, callback) {
-    super();
+    super(callback);
     this.username = 'unknown';
-    this.callbackLoop = new CallbackLoop('fbMainCallbackLoop', callback);
-    this.progress = null;
     this.init(file, data);
   }
 
   init(file, data) {
     this.fs.importBlob(file, () => {
-      // depends on how many files we are opening
-      this.callbackLoop.setLoopCount(5); // defaults to 1
-
       // TODO: IMPORTANT need to have a backup plan in case loopback fails
       // currently that can happen if file is not found for example.
       // This will make your script fail miserably right now...
 
-      // get profiledata
-      let profInfoCallbackLoop = new CallbackLoop('fbProfileInfLoop',
-        this.callbackLoop.call.bind(this.callbackLoop),
-        1);
-      let profileInfoFile = this.getJSONFile('profile_information/profile_information.json');
-      profileInfoFile.getText(this.getBaseData.bind(this, data, profInfoCallbackLoop));
+      let fns = [
+        ['profile_information/profile_information.json', this.getBaseData.bind(this, data)],
+        ['about_you/friend_peer_group.json',this.getFriendPeerGroup.bind(this, data)],
+        ['posts/your_posts_1.json', this.getPostData.bind(this, data)],
+        ['search_history/your_search_history.json', this.getSearchData.bind(this, data)]
+      ]
 
-      // get friendPeerGroup
-      let friendPeerGroupLoop = new CallbackLoop('fbPeerGroupInfo',
-        this.callbackLoop.call.bind(this.callbackLoop),
-          1);
-      let friendPeerGroupFile = this.getJSONFile('about_you/friend_peer_group.json');
-      friendPeerGroupFile.getText(this.getFriendPeerGroup.bind(this, data, friendPeerGroupLoop));
+      for(let i = 0; i < fns.length; i++) {
+        this.analyzeFile(fns[i][0], fns[i][1]);
+      }
 
-      // get search file data
-      let searchCallbackLoop = new CallbackLoop('fbSearchLoop',
-        this.callbackLoop.call.bind(this.callbackLoop),
-        1);
-      let searchHistFile = this.getJSONFile('search_history/your_search_history.json');
-      searchHistFile.getText(this.getSearchData.bind(this, data, searchCallbackLoop));
+      // analyze each message thread
+      this.analyzeDir.call(this,
+        'messages/inbox', 'message_1.json',
+        data.msgStats, this.analyzeMessageThread); 
 
-      // get posts file data
-      let postCallbackLoop = new CallbackLoop('fbPostLoop',
-        this.callbackLoop.call.bind(this.callbackLoop),
-        1);
-      let postsFile = this.getJSONFile('posts/your_posts_1.json');
-      postsFile.getText(this.getPostData.bind(this, data, postCallbackLoop));
+      this.cbChain.initialized();
 
-      let msgCallbackLoop = new CallbackLoop('fbMsgLoop',
-        this.callbackLoop.call.bind(this.callbackLoop),
-        1);
-      this.analyzeMsgThreads(data.msgStats, msgCallbackLoop);
     });
   }
 
-  getPostData(data, callbackLoop, postInfo) {
+  getPostData(data, cbChain, postInfo) {
     let postInfoJSON = JSON.parse(postInfo);
     data.num_posts = postInfoJSON.length;
-    callbackLoop.call();
+    cbChain.call();
   }
 
-  getFriendPeerGroup(data, callbackLoop, friendPeerInfo) {
+  getFriendPeerGroup(data, cbChain, friendPeerInfo) {
     let friendPeerInfoJSON = JSON.parse(friendPeerInfo);
     data.friend_peer_group = friendPeerInfoJSON.friend_peer_group;
-    callbackLoop.call();
+    cbChain.call();
   }
 
-  getSearchData(data, callbackLoop, searchInfo) {
+  getSearchData(data, cbChain, searchInfo) {
     let searchInfoJSON = JSON.parse(searchInfo);
     data.num_searches = searchInfoJSON.searches.length;
-    callbackLoop.call();
+    cbChain.call();
   }
 
-  getBaseData(data, callbackLoop, profInfo) {
+  getBaseData(data, cbChain, profInfo) {
     let profInfoJSON = JSON.parse(profInfo);
     // NEEDED FOR MESSAGES
     // idk about this being here
@@ -90,36 +69,7 @@ class FBAnalyzer extends BaseAnalyzer {
       profInfoJSON.profile.birthday.day
     );
 
-    // YUP
-    callbackLoop.call();
-  }
-
-  analyzeMsgThreads(msgData, callback) {
-    var msgDirs = this.getDirChildren('messages/inbox');
-
-    // regular attempt
-    var numDirs = msgDirs.length;
-    this.progress = new LoadBar(numDirs);
-    this.progress.show();
-
-    // CARE
-    let internalCallbackLoop = new CallbackLoop('display messages', callback.call.bind(callback), numDirs);
-
-    // loop through msg threads
-    msgDirs.map((msgDir) => {
-      var msgThread = msgDir.getChildByName("message_1.json");
-
-      // message thread was not found in the given directory
-      if (!msgThread) {
-        // CARE
-        // this.callbackLoop.call();
-        internalCallbackLoop.call();
-        this.progress.updatePercentage(); 
-        return;
-      }
-
-      msgThread.getText(this.analyzeMessageThread.bind(this, msgDir.name, msgData, internalCallbackLoop));
-    });
+    cbChain.call();
   }
 
   analyzeMessageThread(threadName, msgData, callback, msg) {
@@ -191,17 +141,9 @@ class FBAnalyzer extends BaseAnalyzer {
       }.bind(this), msgData);
     }
 
-    // progress bar
-    // CARE
-    // this.callbackLoop.call();
     callback.call();
-    this.progress.updatePercentage(); 
 
-    // triggers callback once all msgThreads are analyzed
-    if (this.progress.current == this.progress.max) {
-      this.progress.hide();
-      this.progress = null;
-      // CARE
+    if (callback.cbChainCount == 0) {
       callback.call();
     }
   }
