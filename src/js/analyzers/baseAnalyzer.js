@@ -1,14 +1,14 @@
 import { InflaterJS } from '../zip-js-modified/inflate.js';
 import { Zip } from '../zip-js-modified/zip.js';
 import { ZipFS } from '../zip-js-modified/zip-fs.js';
-import { CallbackLoop, cbRootChain } from '../callbackLoop.js';
+import { CbChain, cbRootChain } from '../cbChain.js';
 
 class BaseAnalyzer {
   constructor(callback) {
     this.callback = null;
     this.zip = new Zip(window);
     this.fs = new ZipFS(window.zip);
-    this.callbackLoop = new cbRootChain(callback.name, callback);
+    this.cbChain = new cbRootChain(callback.name, callback);
 
     // need to end up in the global object for things to work
     this.inflate = new InflaterJS(window);
@@ -20,8 +20,8 @@ class BaseAnalyzer {
   analyzeFile(fileName, analyzerFunction) {
 
   // addToChain(funcName, fileName) {
-    this.callbackLoop.setLoopCount(); // increment the callbackloop count
-    const internalCallback = new CallbackLoop(`${analyzerFunction.name}`, this.callbackLoop.call.bind(this.callbackLoop), 1);
+    this.cbChain.setLoopCount(); // increment the callbackloop count
+    const internalCallback = new CbChain(`${analyzerFunction.name}`, this.cbChain.call.bind(this.cbChain), 1);
     const file = this.getJSONFile(fileName); 
     file.getText(analyzerFunction.bind(this, internalCallback)); 
   }
@@ -30,10 +30,10 @@ class BaseAnalyzer {
     var directories = this.getDirChildren(dirName);
     var numDirs = directories.length;
     // increments callbackloop count
-    this.callbackLoop.setLoopCount();
-    let internalCallbackLoop = new CallbackLoop(
+    this.cbChain.setLoopCount();
+    let internalCbChain = new CbChain(
       'display messages',
-      this.callbackLoop.call.bind(this.callbackLoop),
+      this.cbChain.call.bind(this.cbChain),
       numDirs);
 
     // loop through directories
@@ -42,7 +42,7 @@ class BaseAnalyzer {
 
       // pattern was not found in the given directory
       if (!file) {
-        internalCallbackLoop.call();
+        internalCbChain.call();
         // this.progress.updatePercentage(); 
         return;
       }
@@ -50,7 +50,7 @@ class BaseAnalyzer {
       file.getText(analyzerFunction.bind(this,
         dir.name,
         msgData,
-        internalCallbackLoop));
+        internalCbChain));
     });
   }
 

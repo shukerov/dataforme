@@ -1,13 +1,13 @@
 import { LoadBar } from './components/loadBar.js';
 
-export class CallbackLoop {
+export class CbChain {
   constructor(name, finalCallback, numCallbacks) {
     this.name = name;
     this.populated = false;
-    this.callbackLoopCount = 0;
+    this.cbChainCount = 0;
 
     if (numCallbacks) {
-      this.callbackLoopCount = numCallbacks;
+      this.cbChainCount = numCallbacks;
       this.populated = true;
     }
 
@@ -15,29 +15,29 @@ export class CallbackLoop {
 
     // DEBUG
     console.log(`Init ${this.name}: 
-       callback cnt: ${this.callbackLoopCount},
+       callback cnt: ${this.cbChainCount},
        callback fn: ${this.callback.toString()}
     `);
   }
 
   setLoopCount(n=1) {
     if (n > 1) {
-      this.callbackLoopCount = n
+      this.cbChainCount = n
     }
     else {
-      this.callbackLoopCount += 1;
+      this.cbChainCount += 1;
     }
 
     // DEBUG
-    console.log(`${this.name}: callback cnt is now ${this.callbackLoopCount}`);
+    console.log(`${this.name}: callback cnt is now ${this.cbChainCount}`);
   }
 
   call() {
-    this.callbackLoopCount -= 1;
+    this.cbChainCount -= 1;
     // DEBUG
-    console.log(`${this.name} chain status: C:${this.callbackLoopCount} | I:${this.populated}`);
+    console.log(`${this.name} chain status: C:${this.cbChainCount} | I:${this.populated}`);
 
-    if (this.callbackLoopCount == 0 && this.populated) {
+    if (this.cbChainCount == 0 && this.populated) {
       // DEBUG
       console.log(`${this.name} callback chain exited`);
 
@@ -53,7 +53,7 @@ export class CallbackLoop {
 
 // callback root chain
 // this is primarily used to update the progress bar
-export class cbRootChain extends CallbackLoop {
+export class cbRootChain extends CbChain {
 
   constructor(name, finalCallback, numCallbacks) {
     super(name, finalCallback, numCallbacks);
@@ -62,13 +62,13 @@ export class cbRootChain extends CallbackLoop {
   }
 
   call() {
-    this.callbackLoopCount -= 1;
+    this.cbChainCount -= 1;
     this.progress.updatePercentage();
 
     // DEBUG
-    console.log(`${this.name} chain status: C:${this.callbackLoopCount} | I:${this.populated}`);
+    console.log(`${this.name} chain status: C:${this.cbChainCount} | I:${this.populated}`);
 
-    if (this.callbackLoopCount == 0 && this.populated) {
+    if (this.cbChainCount == 0 && this.populated) {
 
       // DEBUG
       console.log(`Main callback chain exited`);
@@ -79,7 +79,7 @@ export class cbRootChain extends CallbackLoop {
   }
 
   initialized() {
-    this.progress.setMax(this.callbackLoopCount);
+    this.progress.setMax(this.cbChainCount);
     this.populated = true;
 
     // DEBUG

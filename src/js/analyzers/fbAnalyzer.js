@@ -1,5 +1,5 @@
 import { BaseAnalyzer } from './baseAnalyzer.js';
-// import { CallbackLoop } from '../callbackLoop.js';
+// import { CbChain } from '../cbChain.js';
 
 class FBAnalyzer extends BaseAnalyzer {
   constructor(file, data, callback) {
@@ -30,30 +30,30 @@ class FBAnalyzer extends BaseAnalyzer {
         'messages/inbox', 'message_1.json',
         data.msgStats, this.analyzeMessageThread); 
 
-      this.callbackLoop.initialized();
+      this.cbChain.initialized();
 
     });
   }
 
-  getPostData(data, callbackLoop, postInfo) {
+  getPostData(data, cbChain, postInfo) {
     let postInfoJSON = JSON.parse(postInfo);
     data.num_posts = postInfoJSON.length;
-    callbackLoop.call();
+    cbChain.call();
   }
 
-  getFriendPeerGroup(data, callbackLoop, friendPeerInfo) {
+  getFriendPeerGroup(data, cbChain, friendPeerInfo) {
     let friendPeerInfoJSON = JSON.parse(friendPeerInfo);
     data.friend_peer_group = friendPeerInfoJSON.friend_peer_group;
-    callbackLoop.call();
+    cbChain.call();
   }
 
-  getSearchData(data, callbackLoop, searchInfo) {
+  getSearchData(data, cbChain, searchInfo) {
     let searchInfoJSON = JSON.parse(searchInfo);
     data.num_searches = searchInfoJSON.searches.length;
-    callbackLoop.call();
+    cbChain.call();
   }
 
-  getBaseData(data, callbackLoop, profInfo) {
+  getBaseData(data, cbChain, profInfo) {
     let profInfoJSON = JSON.parse(profInfo);
     // NEEDED FOR MESSAGES
     // idk about this being here
@@ -71,7 +71,7 @@ class FBAnalyzer extends BaseAnalyzer {
     );
 
     // YUP
-    callbackLoop.call();
+    cbChain.call();
   }
 
   // analyzeMsgThreads(msgData, callback) {
@@ -83,7 +83,7 @@ class FBAnalyzer extends BaseAnalyzer {
   //   this.progress.show();
 
   //   // CARE
-  //   let internalCallbackLoop = new CallbackLoop('display messages', callback.call.bind(callback), numDirs);
+  //   let internalCbChain = new CbChain('display messages', callback.call.bind(callback), numDirs);
 
   //   // loop through msg threads
   //   msgDirs.map((msgDir) => {
@@ -92,13 +92,13 @@ class FBAnalyzer extends BaseAnalyzer {
   //     // message thread was not found in the given directory
   //     if (!msgThread) {
   //       // CARE
-  //       // this.callbackLoop.call();
-  //       internalCallbackLoop.call();
+  //       // this.cbChain.call();
+  //       internalCbChain.call();
   //       this.progress.updatePercentage(); 
   //       return;
   //     }
 
-  //     msgThread.getText(this.analyzeMessageThread.bind(this, msgDir.name, msgData, internalCallbackLoop));
+  //     msgThread.getText(this.analyzeMessageThread.bind(this, msgDir.name, msgData, internalCbChain));
   //   });
   // }
 
@@ -173,13 +173,13 @@ class FBAnalyzer extends BaseAnalyzer {
 
     // progress bar
     // CARE
-    // this.callbackLoop.call();
+    // this.cbChain.call();
     callback.call();
     // this.progress.updatePercentage(); 
 
     // triggers callback once all msgThreads are analyzed
     // if (this.progress.current == this.progress.max) {
-    if (callback.callbackLoopCount == 0) {
+    if (callback.cbChainCount == 0) {
       // this.progress.hide();
       // this.progress = null;
       // CARE
