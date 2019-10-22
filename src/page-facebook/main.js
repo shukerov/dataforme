@@ -286,7 +286,7 @@ function renderMsgGraphs(msgReportStats, parent) {
     parent: graphCont[4],
     name: 'chart5',
     title: 'Messages by Year',
-    labels: truncateYears(Object.keys(msgReportStats.timeStats.yearly)),
+    labels: Object.keys(msgReportStats.timeStats.yearly),
     data: [msgSentYearly, msgReceivedYearly, ['Sent', 'Received']],
     size: 'medium'
   });
