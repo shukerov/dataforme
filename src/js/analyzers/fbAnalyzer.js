@@ -37,9 +37,15 @@ class FBAnalyzer extends BaseAnalyzer {
     });
   }
 
+  // safely gets the attribute of an object
+  get(path, object) {
+    return path.reduce((xs, x) =>
+      (xs && xs[x]) ? xs[x] : 'not found', object)
+  }
+
   getPostData(data, cbChain, postInfo) {
     let postInfoJSON = JSON.parse(postInfo);
-    data.num_posts = postInfoJSON.length;
+    data.num_posts = this.get(['length'], postInfoJSON);
     cbChain.call();
   }
 
