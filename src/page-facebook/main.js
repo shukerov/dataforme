@@ -13,15 +13,15 @@ import { chartFactory } from '../js/factories/chartFactory.js';
 import { insFactory } from '../js/factories/insFactory.js';
 
 let data = {
-  'name': 'unknown',
+  'name': null,
   'joined': null,
-  'brithday': 'unknown',
-  'num_posts': 'unknown',
-  'num_searches': 'unknown',
-  "relationship_count": null,
-  "relationship_status": "unknown",
-  'last_profile_update': 'unknown',
-  'friend_peer_group': 'unknown',
+  'brithday': null,
+  'num_posts': null,
+  'num_searches': null,
+  'relationship_count': null,
+  'relationship_status': null,
+  'last_profile_update': null,
+  'friend_peer_group': null,
   'msgStats': {
     'groupChatThreads': [],
     'regThreads': {},
