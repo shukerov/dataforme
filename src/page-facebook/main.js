@@ -12,6 +12,7 @@ import { reportFactory } from '../js/factories/reportFactory.js';
 import { chartFactory } from '../js/factories/chartFactory.js';
 import { insFactory } from '../js/factories/insFactory.js';
 
+// move data crunching to fbAnalyzer
 let data = {
   'name': null,
   'joined': null,
@@ -26,6 +27,14 @@ let data = {
     'groupChatThreads': [],
     'regThreads': {},
     'numPictures': {'gifs': 0, 'other': 0},
+    'days_msged': {
+      "sent": 0,
+      "received": 0
+    },
+    'total_words': {
+      'sent': 0,
+      'received': 0,
+    },
     'timeStats': {
       'hourly': {
         'sent': Array(24).fill(0),
@@ -172,9 +181,9 @@ function renderMsgReportHeading(data, parent) {
   // data crunching
   // TODO pull out of here maybe
   let totMsgSent = 0
+  let totMsgReceived = 0
   let numChats = Object.keys(data['regThreads']).length;
   let numGrChats = data['groupChatThreads'].length;
-  let totMsgReceived = 0
 
   Object.keys(data.regThreads).forEach((key) => {
     totMsgSent += data.regThreads[key].msgByUser;
@@ -184,6 +193,11 @@ function renderMsgReportHeading(data, parent) {
     totMsgReceived += data.regThreads[key].other;
   });
 
+  let avgWordsPerMsgSent = data.total_words.sent / totMsgSent;
+  let avgWordsPerMsgReceived = data.total_words.received / totMsgReceived;
+  let avgMsgPerDaySent =  totMsgSent / data.days_msged.sent;
+  let avgMsgPerDayReceived = totMsgReceived / data.days_msged.received;
+
   let msgData = [
     {
       icon: 'isend',
@@ -192,10 +206,34 @@ function renderMsgReportHeading(data, parent) {
       tooltip: 'The total number of messages you have sent on Facebook.'
     },
     {
+      icon: 'imsgcir',
+      text: 'Sent messages per day',
+      textBold: avgMsgPerDaySent.toFixed(2),
+      tooltip: 'Average number of messages sent every day.'
+    },
+    {
+      icon: 'imsgcir',
+      text: 'Words per message sent',
+      textBold: avgWordsPerMsgSent.toFixed(2),
+      tooltip: 'The average number of words in your messages.'
+    },
+    {
       icon: 'iinbox',
       text: 'Messages received:',
       textBold: formatNum(totMsgReceived),
       tooltip: 'The total number of messages you have received on Facebook.'
+    },
+    {
+      icon: 'imsgcir',
+      text: 'Received Messages per day',
+      textBold: avgMsgPerDayReceived.toFixed(2),
+      tooltip: 'Average number of messages received every day.'
+    },
+    {
+      icon: 'imsgcir',
+      text: 'Words per message received',
+      textBold: avgWordsPerMsgReceived.toFixed(2),
+      tooltip: 'The average number of words in messages you have received.'
     },
     {
       icon: 'imsg',

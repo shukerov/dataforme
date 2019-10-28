@@ -1672,7 +1672,16 @@
                     "sent": 4855
                 }
             }
+        },
+        "days_msged": {
+                "sent": 2003,
+                "received": 2000
+        },
+        "total_words": {
+                "sent": 550000,
+                "received": 550000
         }
+
     },
     "name": "Your Name Here",
     "birthday": 798609800000,

@@ -117,6 +117,7 @@ class FBAnalyzer extends BaseAnalyzer {
     }
 
     if (msgJSON.messages && msgJSON.messages.length > 1) {
+      let curDay = null;
       // pull this function out and make sure you can reuse it in individual thread analysis
       msgJSON.messages.reduce(function(acc, msg) {
         if (!group) {
@@ -129,7 +130,14 @@ class FBAnalyzer extends BaseAnalyzer {
           }
         }
 
-        if (msg.sender_name == this.username) {
+        // initalize the day (0-6) that a message was sent
+        if (!curDay) {
+          const firstDate = new Date(msg.timestamp_ms);
+          curDay = firstDate.getDay();
+        }
+
+        if (msg.sender_name == this.username && msg.content) {
+          // get time statistics
           let d = new Date(msg.timestamp_ms);
           let y = d.getFullYear(); // message years
           acc.timeStats.hourly.sent[d.getHours()]++;
@@ -144,8 +152,20 @@ class FBAnalyzer extends BaseAnalyzer {
               'received': 0
             }
           }
+
+          // get msg statistics
+          if (msg.content) {
+            acc.total_words.sent += msg.content.split(' ').length;
+
+            // gets number of days that messages happened
+            // TODO: counts wrong since people can message a week apart from each other, you need to compare years and months too...
+            if (d.getDay() != curDay) {
+              acc.days_msged.sent += 1;
+              curDay = d.getDay();
+            }
+          }
         }
-        else if (msg.sender_name == participants[0].name) {
+        else if (msg.sender_name == participants[0].name && msg.content) {
           let d = new Date(msg.timestamp_ms);
           let y = d.getFullYear(); // message years
           acc.timeStats.hourly.received[d.getHours()]++;
@@ -158,6 +178,17 @@ class FBAnalyzer extends BaseAnalyzer {
             acc.timeStats.yearly[y] = {
               'sent': 0,
               'received': 0
+            }
+          }
+
+          // get msg statistics
+          if (msg.content) {
+            acc.total_words.received += msg.content.split(' ').length;
+
+            // gets number of days that messages happened
+            if (d.getDay() != curDay) {
+              acc.days_msged.received += 1;
+              curDay = d.getDay();
             }
           }
         }
