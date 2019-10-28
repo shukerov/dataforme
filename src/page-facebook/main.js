@@ -35,6 +35,12 @@ let data = {
       'sent': 0,
       'received': 0,
     },
+    'callStats': {
+      'num_calls': {
+        'initiated': 0,
+        'received': 0
+      }
+    },
     'timeStats': {
       'hourly': {
         'sent': Array(24).fill(0),
@@ -246,6 +252,18 @@ function renderMsgReportHeading(data, parent) {
       text: 'Group chats:',
       textBold: numGrChats,
       tooltip: 'The total number of group chats you have participated in.'
+    },
+    {
+      icon: 'imsg',
+        text: 'Calls started:',
+        textBold: data.callStats.num_calls.initiated,
+        tooltip: 'The total number of calls you have started on Facebook.'
+    },
+    {
+      icon: 'imsg',
+        text: 'Calls received:',
+        textBold: data.callStats.num_calls.received,
+        tooltip: 'The total number of calls you have received on Facebook.'
     }
   ];
 

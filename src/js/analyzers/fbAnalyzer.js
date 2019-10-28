@@ -136,6 +136,7 @@ class FBAnalyzer extends BaseAnalyzer {
           curDay = firstDate.getDay();
         }
 
+
         if (msg.sender_name == this.username && msg.content) {
           // get time statistics
           let d = new Date(msg.timestamp_ms);
@@ -154,7 +155,7 @@ class FBAnalyzer extends BaseAnalyzer {
           }
 
           // get msg statistics
-          if (msg.content) {
+          if (msg.content && msg.type != 'Call') {
             acc.total_words.sent += msg.content.split(' ').length;
 
             // gets number of days that messages happened
@@ -163,6 +164,10 @@ class FBAnalyzer extends BaseAnalyzer {
               acc.days_msged.sent += 1;
               curDay = d.getDay();
             }
+          }
+          // get call statistics
+          else if (msg.type == 'Call' && msg.call_duration > 0) {
+            acc.callStats.num_calls.initiated += 1;
           }
         }
         else if (msg.sender_name == participants[0].name && msg.content) {
@@ -182,7 +187,7 @@ class FBAnalyzer extends BaseAnalyzer {
           }
 
           // get msg statistics
-          if (msg.content) {
+          if (msg.content && msg.type != 'Call') {
             acc.total_words.received += msg.content.split(' ').length;
 
             // gets number of days that messages happened
@@ -190,6 +195,10 @@ class FBAnalyzer extends BaseAnalyzer {
               acc.days_msged.received += 1;
               curDay = d.getDay();
             }
+          }
+          // get call statistics
+          else if (msg.type == 'Call' && msg.call_duration > 0) {
+            acc.callStats.num_calls.received += 1;
           }
         }
 

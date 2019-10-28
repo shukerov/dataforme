@@ -1673,6 +1673,12 @@
                 }
             }
         },
+        "callStats": {
+                "num_calls": {
+                        "initiated": 15,
+                        "received": 3
+                }
+        },
         "days_msged": {
                 "sent": 2003,
                 "received": 2000
