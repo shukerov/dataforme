@@ -3,7 +3,7 @@ import '../styles/facebook.scss';
 
 // JS imports:
 import { DAYS, MONTHS } from '../js/constants.js';
-import { formatNum } from '../js/helpers.js';
+import { formatNum, secondsToHms } from '../js/helpers.js';
 import { getTopMessagers, truncateYears, getCurrentDate, getNumDays, formatDate } from '../js/analyzers/analyzerHelpers.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
@@ -39,7 +39,8 @@ let data = {
       'num_calls': {
         'initiated': 0,
         'received': 0
-      }
+      },
+      'total_duration': 9000
     },
     'timeStats': {
       'hourly': {
@@ -203,6 +204,7 @@ function renderMsgReportHeading(data, parent) {
   let avgWordsPerMsgReceived = data.total_words.received / totMsgReceived;
   let avgMsgPerDaySent =  totMsgSent / data.days_msged.sent;
   let avgMsgPerDayReceived = totMsgReceived / data.days_msged.received;
+  let avgCallDuration = data.callStats.total_duration / (data.callStats.num_calls.initiated + data.callStats.num_calls.received);
 
   let msgData = [
     {
@@ -264,6 +266,19 @@ function renderMsgReportHeading(data, parent) {
         text: 'Calls received:',
         textBold: data.callStats.num_calls.received,
         tooltip: 'The total number of calls you have received on Facebook.'
+    },
+    {
+      icon: 'imsg',
+        text: 'Time spent in calls:',
+        // textBold: data.callStats.total_duration,
+        textBold: secondsToHms(data.callStats.total_duration),
+        tooltip: 'The total time you have spent on a Facebook call'
+    },
+    {
+      icon: 'imsg',
+        text: 'Call duration:',
+        textBold: secondsToHms(avgCallDuration),
+        tooltip: 'The average duration of your calls.'
     }
   ];
 

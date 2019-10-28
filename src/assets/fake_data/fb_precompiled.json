@@ -1677,7 +1677,8 @@
                 "num_calls": {
                         "initiated": 15,
                         "received": 3
-                }
+                },
+                "total_duration": 2423
         },
         "days_msged": {
                 "sent": 2003,

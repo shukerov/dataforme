@@ -14,10 +14,10 @@ export class CbChain {
     this.callback = finalCallback
 
     // DEBUG
-    console.log(`Init ${this.name}: 
-       callback cnt: ${this.cbChainCount},
-       callback fn: ${this.callback.toString()}
-    `);
+    // console.log(`Init ${this.name}: 
+    //    callback cnt: ${this.cbChainCount},
+    //    callback fn: ${this.callback.toString()}
+    // `);
   }
 
   setLoopCount(n=1) {
@@ -29,17 +29,17 @@ export class CbChain {
     }
 
     // DEBUG
-    console.log(`${this.name}: callback cnt is now ${this.cbChainCount}`);
+    // console.log(`${this.name}: callback cnt is now ${this.cbChainCount}`);
   }
 
   call() {
     this.cbChainCount -= 1;
     // DEBUG
-    console.log(`${this.name} chain status: C:${this.cbChainCount} | I:${this.populated}`);
+    // console.log(`${this.name} chain status: C:${this.cbChainCount} | I:${this.populated}`);
 
     if (this.cbChainCount == 0 && this.populated) {
       // DEBUG
-      console.log(`${this.name} callback chain exited`);
+      // console.log(`${this.name} callback chain exited`);
 
       this.callback();
     }
@@ -66,12 +66,12 @@ export class cbRootChain extends CbChain {
     this.progress.updatePercentage();
 
     // DEBUG
-    console.log(`${this.name} chain status: C:${this.cbChainCount} | I:${this.populated}`);
+    // console.log(`${this.name} chain status: C:${this.cbChainCount} | I:${this.populated}`);
 
     if (this.cbChainCount == 0 && this.populated) {
 
       // DEBUG
-      console.log(`Main callback chain exited`);
+      // console.log(`Main callback chain exited`);
 
       this.callback();
       this.progress.hide();
@@ -83,6 +83,6 @@ export class cbRootChain extends CbChain {
     this.populated = true;
 
     // DEBUG
-    console.log("Main CallBack Chain initialized.");
+    // console.log("Main CallBack Chain initialized.");
   }
 }

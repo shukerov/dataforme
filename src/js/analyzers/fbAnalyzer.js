@@ -102,6 +102,7 @@ class FBAnalyzer extends BaseAnalyzer {
     let msgJSON = JSON.parse(msg);
     let participants = msgJSON.participants // all participants in the current chat thread
     let group = true;                         // remains true if the chat is a groupchat
+    // let longestCallTest = 0;
 
     if (participants && participants.length > 2) {
       msgData.groupChatThreads.push(threadName);
@@ -159,6 +160,7 @@ class FBAnalyzer extends BaseAnalyzer {
             acc.total_words.sent += msg.content.split(' ').length;
 
             // gets number of days that messages happened
+            // TODO: very broken would double count days as it is...
             // TODO: counts wrong since people can message a week apart from each other, you need to compare years and months too...
             if (d.getDay() != curDay) {
               acc.days_msged.sent += 1;
@@ -166,8 +168,10 @@ class FBAnalyzer extends BaseAnalyzer {
             }
           }
           // get call statistics
-          else if (msg.type == 'Call' && msg.call_duration > 0) {
+          else if (msg.type == 'Call' && msg.call_duration > 0 && msg.call_duration < 18000) {
+            // if (msg.call_duration > longestCallTest) {longestCallTest = msg.call_duration;};
             acc.callStats.num_calls.initiated += 1;
+            acc.callStats.total_duration += msg.call_duration;
           }
         }
         else if (msg.sender_name == participants[0].name && msg.content) {
@@ -197,8 +201,11 @@ class FBAnalyzer extends BaseAnalyzer {
             }
           }
           // get call statistics
-          else if (msg.type == 'Call' && msg.call_duration > 0) {
+          // NOTE: skipping calls longer than 5h cause Facebook data has some problems
+          else if (msg.type == 'Call' && msg.call_duration > 0 && msg.call_duration < 18000) {
+            // if (msg.call_duration > longestCallTest) {longestCallTest = msg.call_duration;};
             acc.callStats.num_calls.received += 1;
+            acc.callStats.total_duration += msg.call_duration;
           }
         }
 
@@ -206,6 +213,7 @@ class FBAnalyzer extends BaseAnalyzer {
       }.bind(this), msgData);
     }
 
+    // console.log(participants[0].name + ' longest call is ' + longestCallTest);
     callback.call();
 
     if (callback.cbChainCount == 0) {

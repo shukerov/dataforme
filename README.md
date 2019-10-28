@@ -25,3 +25,7 @@ npm run build
 * https://feathericons.com/
 * https://frappe.io/charts
 * https://gildas-lormeau.github.io/zip.js/
+
+
+# Data problems
+Facebook has extremely long calls 1835678
