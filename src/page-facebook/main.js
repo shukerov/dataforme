@@ -4,7 +4,7 @@ import '../styles/facebook.scss';
 // JS imports:
 import { DAYS, MONTHS } from '../js/constants.js';
 import { formatNum, secondsToHms } from '../js/helpers.js';
-import { getTopMessagers, truncateYears, getCurrentDate, getNumDays, formatDate } from '../js/analyzers/analyzerHelpers.js';
+import { getTopMessagers, getTopSearches, truncateYears, getCurrentDate, getNumDays, formatDate } from '../js/analyzers/analyzerHelpers.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
@@ -18,11 +18,14 @@ let data = {
   'joined': null,
   'brithday': null,
   'num_posts': null,
-  'num_searches': null,
   'relationship_count': null,
   'relationship_status': null,
   'last_profile_update': null,
   'friend_peer_group': null,
+  'searchStats': {
+    'num_searches': null,
+    'searches': {}
+  },
   'msgStats': {
     'groupChatThreads': [],
     'regThreads': {},
@@ -98,11 +101,37 @@ function kickStartReport() {
 }
 
 function renderFacebookReport(data) {
+  //TODO: needs to scroll to report once done
   renderReportHeading(data, reportContainer);
 
   // renders message report
   let msgReport = renderMsgReportHeading(data.msgStats, reportContainer);
   renderMsgGraphs(data.msgStats, msgReport);
+
+  // renders search report
+  let searchReport = renderSearchReportHeading(data.searchStats, reportContainer);
+}
+
+function renderSearchReportHeading(data, parent) {
+
+  let topSearches = getTopSearches(data.searches, 20);
+  let reportItems = [
+    {
+      icon: 'isearch',
+      text: 'Num Searches: ',
+      textBold: data.num_searches,
+      tooltip: 'The number of searches in the Facebook search bar.'
+    },
+    {
+      icon: 'ismile',
+      text: 'Top Searches: ',
+      textBold: topSearches,
+      tooltip: 'What you search for the most.',
+      options: {raw: true}
+    }
+  ]
+
+  rRender.renderSubReport('Search Report', reportContainer, reportItems);
 }
 
 function renderReportHeading(data, parent) {
@@ -131,12 +160,6 @@ function renderReportHeading(data, parent) {
       tooltip: 'The number of posts on your Facebook timeline.'
     },
     {
-      icon: 'isearch',
-      text: 'Num Searches: ',
-      textBold: data.num_searches,
-      tooltip: 'The number of searches in the Facebook search bar.'
-    },
-    {
       icon: 'iheart',
       text: 'Relationship Count: ',
       textBold: data.relationship_count,
@@ -149,10 +172,10 @@ function renderReportHeading(data, parent) {
       tooltip: 'Your Facebook relationship status.'
     },
     {
-      icon: 'isearch',
-      text: 'Num Searches: ',
-      textBold: data.num_searches,
-      tooltip: 'The number of searches in the Facebook search bar.'
+      icon: 'icake',
+      text: 'Yoour Birthday: ',
+      textBold: formatDate(data.birthday),
+      tooltip: 'This one is pretty self-explanatory. (:'
     },
     {
       icon: 'iuser',

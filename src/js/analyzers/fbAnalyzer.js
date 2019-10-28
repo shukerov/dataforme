@@ -70,7 +70,24 @@ class FBAnalyzer extends BaseAnalyzer {
 
   getSearchData(data, cbChain, searchInfo) {
     let searchInfoJSON = JSON.parse(searchInfo);
-    data.num_searches = searchInfoJSON.searches.length;
+    data.searchStats.num_searches = searchInfoJSON.searches.length;
+    searchInfoJSON.searches.reduce(function(acc, search) {
+      // skip empty searches
+      if (!search.data) {
+        return acc;
+      }
+
+      // TODO: use this.get
+      let search_key = search.data[0].text.toLowerCase();
+      if (acc.searches[search_key]) {
+        acc.searches[search_key] += 1;
+      }
+      else {
+        acc.searches[search_key] = 1;
+      }
+
+      return acc;
+    }, data.searchStats);
     cbChain.call();
   }
 

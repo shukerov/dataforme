@@ -9,7 +9,7 @@ export function sum(array) {
 
 // returns the names of the top n messagers
 export function getTopMessagers(threads, n) {
-    var topMessagers = []
+    var topMessagers = [];
     Object.keys(threads).forEach((p) => {
       var cnt = threads[p].msgByUser + threads[p].other;
       topMessagers.push([cnt, p]);
@@ -18,6 +18,16 @@ export function getTopMessagers(threads, n) {
     // sort the results
     topMessagers.sort( (a, b) => { return a[0] - b[0]; } );
     return topMessagers.slice(topMessagers.length - n).map((t) => { return t[1]; });;
+}
+
+export function getTopSearches(searches, n) {
+  let topSearches = [];
+  Object.keys(searches).forEach((s) => {
+    topSearches.push([searches[s], s]);
+  });
+
+  topSearches.sort( (a, b) => { return a[0] - b[0]; } );
+  return topSearches.slice(topSearches.length - n);
 }
 
 // truncates a string and returns just the last two characters
