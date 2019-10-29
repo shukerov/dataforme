@@ -17,11 +17,29 @@ let data = {
   'name': null,
   'joined': null,
   'brithday': null,
-  'num_posts': null,
   'relationship_count': null,
   'relationship_status': null,
   'last_profile_update': null,
   'friend_peer_group': null,
+  'postStats': {
+    'num_posts_sent': null,
+    'num_posts_received': null,
+    'timeStats': {
+      'hourly': {
+        'sent': Array(24).fill(0),
+        'received': Array(24).fill(0)
+      },
+      'weekly': {
+        'sent': Array(7).fill(0),
+        'received': Array(7).fill(0)
+      },
+      'monthly': {
+        'sent': Array(12).fill(0),
+        'received': Array(12).fill(0)
+      },
+      'yearly': {}
+    }
+  },
   'searchStats': {
     'num_searches': null,
     'searches': {},
@@ -115,6 +133,31 @@ function renderFacebookReport(data) {
   // renders search report
   let searchReport = renderSearchReportHeading(data.searchStats, reportContainer);
   renderSearchGraphs(data.searchStats, searchReport);
+
+  // renders post report
+  let postReport = renderPostReportHeading(data.postStats, reportContainer);
+  renderPostGraphs(data.postStats, postReport);
+
+}
+
+function renderPostReportHeading(data, parent) {
+
+  let reportItems = [
+    {
+      icon: 'itext',
+      text: 'Number of posts: ',
+      textBold: data.num_posts_sent,
+      tooltip: 'The number of posts you have made on Facebook. This includes Groups and Pages posts'
+    },
+    {
+      icon: 'itext',
+      text: 'Num Posts on your Timeline: ',
+      textBold: data.num_posts_received,
+      tooltip: 'The number of posts people and entities have made on your Facebook timeline.'
+    }
+  ]
+
+  return rRender.renderSubReport('Post Report', reportContainer, reportItems);
 }
 
 function renderSearchReportHeading(data, parent) {
@@ -157,12 +200,6 @@ function renderReportHeading(data, parent) {
       text: 'Data Range: ',
       textBold: `${numDays} days`,
       tooltip: 'The number of days you have had your Facebook account for.'
-    },
-    {
-      icon: 'itext',
-      text: 'Num Posts: ',
-      textBold: data.num_posts,
-      tooltip: 'The number of posts on your Facebook timeline.'
     },
     {
       icon: 'iheart',
@@ -492,4 +529,140 @@ function renderMsgGraphs(msgReportStats, parent) {
     data: [msgSent, msgReceived, [`${data.name}`, 'Friend']],
     size: 'medium'
   });
+}
+
+function renderPostGraphs(postReportStats, parent) {
+  let postGraphCont = document.createElement('div');
+  postGraphCont.id = 'graphs-container-posts';
+  parent.appendChild(postGraphCont);
+
+  let graphCont = [];
+  
+  // TODO: this has gotta be temporary solution
+  for (let i = 0; i < 6; i++) {
+    let gcontainer = document.createElement('div');
+    gcontainer.classList.add('graph-wrapper');
+    gcontainer.id = `pg${i}`;
+    postGraphCont.appendChild(gcontainer);
+    graphCont.push(gcontainer);
+  }
+
+  // INTILIZE chartFactory
+  const charFac = new chartFactory('blue');
+
+  // hoourly posts chart
+  charFac.getChart({
+    type: 'clock',
+    parent: graphCont[0],
+    data: postReportStats.timeStats.hourly.sent,
+    title: 'Posts by Hour of Day - Sent',
+    colorscheme: 'blue',
+    name: 'post-chart1',
+    clock_labels: 'post',
+    size: 'medium'
+  });
+
+  charFac.getChart({
+    type: 'clock',
+    parent: graphCont[1],
+    data: postReportStats.timeStats.hourly.received,
+    title: 'Posts by Hour of Day - Received',
+    colorscheme: 'blue',
+    name: 'post-chart2',
+    clock_labels: 'post',
+    size: 'medium'
+  });
+
+  // daily posts chart
+  let postSentDaily = postReportStats.timeStats.weekly.sent;
+  let postReceivedDaily = postReportStats.timeStats.weekly.received;
+  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  postSentDaily.push(0);
+  charFac.getChart({
+    type: 'axis-mixed',
+    parent: graphCont[2],
+    name: 'post-chart3',
+    title: 'Posts by Day of the Week',
+    labels: DAYS,
+    data: [postSentDaily, postReceivedDaily, ['Posted', 'Posted by others on Timeline']],
+    size: 'medium'
+  });
+
+  // monthly posts chart
+  let postSentMonthly = postReportStats.timeStats.monthly.sent;
+  let postReceivedMonthly = postReportStats.timeStats.monthly.received;
+  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  postSentMonthly.push(0);
+  charFac.getChart({
+    type: 'axis-mixed',
+    parent: graphCont[3],
+    name: 'post-chart4',
+    title: 'Posts by Month',
+    labels: MONTHS,
+    data: [postSentMonthly, postReceivedMonthly, ['Posted', 'Posted by others on Timeline']],
+    size: 'medium'
+  });
+
+  // yearly messagages chart
+  let postSentYearly = Object.keys(postReportStats.timeStats.yearly).map((y) => {
+    return postReportStats.timeStats.yearly[y].sent
+  });
+  let postReceivedYearly= Object.keys(postReportStats.timeStats.yearly).map((y) => {
+    return postReportStats.timeStats.yearly[y].received
+  });
+  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  postSentYearly.push(0);
+
+  charFac.getChart({
+    type: 'axis-mixed',
+    parent: graphCont[4],
+    name: 'post-chart5',
+    title: 'Posts by Year',
+    labels: Object.keys(postReportStats.timeStats.yearly),
+    data: [postSentYearly, postReceivedYearly, ['Posted', 'Posted by others on Timeline']],
+    size: 'medium'
+  });
+
+  // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED
+  // THIS IS NOT FUNCTIONAL?
+  let sum = 0;
+  let postCumulative = Object.keys(postReportStats.timeStats.yearly).reduce((acc, dp) => {
+    sum += postReportStats.timeStats.yearly[dp].sent + postReportStats.timeStats.yearly[dp].received;
+    acc[dp] = sum;
+    return acc;
+  }, {});
+
+  charFac.getChart({
+    type: 'line',
+    parent: graphCont[5],
+    name: 'post-chart6',
+    title: 'Cumulative Posts over Years',
+    data: Object.values(postCumulative),
+    labels: Object.keys(postCumulative),
+    size: 'medium'
+  });
+
+  // top messegers chart 
+  // let topMessagers = getTopMessagers(postReportStats.regThreads, 15)
+  // let postSent = topMessagers.reduce(function(acc, poster) {
+  //   let cnt1 = postReportStats.regThreads[poster]["postByUser"];
+  //   acc.push(cnt1);
+  //   return acc;
+  // }, []);
+
+  // let postReceived = topMessagers.reduce(function(acc, poster) {
+  //   let cnt1 = postReportStats.regThreads[poster]["other"];
+  //   acc.push(cnt1);
+  //   return acc;
+  // }, []);
+
+  // charFac.getChart({
+  //   type: 'axis-mixed',
+  //   parent: graphCont[6],
+  //   name: 'post-chart7',
+  //   title: 'Top Messagers',
+  //   labels: topMessagers,
+  //   data: [postSent, postReceived, [`${data.name}`, 'Friend']],
+  //   size: 'medium'
+  // });
 }

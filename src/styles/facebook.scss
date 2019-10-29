@@ -52,33 +52,54 @@
   grid-area: yearly;
 }
 
-#graphs-container-messages {
-   margin: 0 5vh;
-   display: grid;
-   grid-gap: 10px;
-   grid-template-columns: repeat(3, minmax(150px, 1fr));
-   grid-template-rows: repeat(3, 1fr);
-   grid-template-areas:
-     'weekly monthly yearly'
-     'clk-sent cumulative clk-rec'
-     'top-msgers top-msgers top-msgers'
+#graphs-container-messages, #graphs-container-posts {
+  @media only screen and (max-width: 1224px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+
+  margin: 0 5vh;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
 }
 
-// TODO: move under the id above
-@media only screen and (max-width: 1224px) {
-  #graphs-container-messages {
-    grid-template-columns: 1fr 1fr;
+#graphs-container-posts  {
+  @media only screen and (max-width: 1224px) {
     grid-template-areas:
-    'clk-sent clk-rec'
-    'weekly monthly'
-    'yearly cumulative'
-    'top-msgers top-msgers'
+      'clk-sent clk-rec'
+      'weekly monthly'
+      'yearly cumulative'
   }
+
+  @media only screen and (max-width: 900px) {
+    grid-template-areas:
+      'clk-sent'
+      'clk-rec'
+      'weekly'
+      'monthly'
+      'yearly'
+      'cumulative'
+  }
+
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'weekly monthly yearly'
+    'clk-sent cumulative clk-rec'
 }
-// TODO: move under the id above
-@media only screen and (max-width: 900px) {
-  #graphs-container-messages {
-    grid-template-columns: 1fr;
+
+#graphs-container-messages {
+  @media only screen and (max-width: 1224px) {
+    grid-template-areas:
+      'clk-sent clk-rec'
+      'weekly monthly'
+      'yearly cumulative'
+  }
+
+  @media only screen and (max-width: 900px) {
     grid-template-areas:
       'clk-sent'
       'clk-rec'
@@ -88,7 +109,14 @@
       'cumulative'
       'top-msgers'
   }
+
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    'weekly monthly yearly'
+    'clk-sent cumulative clk-rec'
+    'top-msgers top-msgers top-msgers'
 }
+
 
 #g0 {
   grid-area: clk-sent;

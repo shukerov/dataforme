@@ -19,7 +19,8 @@ class FBAnalyzer extends BaseAnalyzer {
         ['about_you/friend_peer_group.json',this.getFriendPeerGroup.bind(this, data)],
         ['about_you/face_recognition.json',this.getFaceRecognitionData.bind(this, data)],
         ['profile_information/profile_update_history.json', this.getProfileUpdateData.bind(this, data)],
-        ['posts/your_posts_1.json', this.getPostData.bind(this, data)],
+        ['posts/your_posts_1.json', this.getPostDataSent.bind(this, data)],
+        ['posts/other_people\'s_posts_to_your_timeline.json', this.getPostDataReceived.bind(this, data)],
         ['search_history/your_search_history.json', this.getSearchData.bind(this, data)]
       ]
 
@@ -43,9 +44,53 @@ class FBAnalyzer extends BaseAnalyzer {
       (xs && xs[x]) ? xs[x] : 'not found', object)
   }
 
-  getPostData(data, cbChain, postInfo) {
+  getPostDataSent(data, cbChain, postInfo) {
     let postInfoJSON = JSON.parse(postInfo);
-    data.num_posts = this.get(['length'], postInfoJSON);
+    data.postStats.num_posts_sent = postInfoJSON.length;
+
+    postInfoJSON.reduce((acc, post) => {
+      let d = new Date(post.timestamp * 1000);
+      let y = d.getFullYear(); // message years
+      acc.timeStats.hourly.sent[d.getHours()]++;
+      acc.timeStats.weekly.sent[d.getDay()]++;
+      acc.timeStats.monthly.sent[d.getMonth()]++;
+      if (acc.timeStats.yearly[y]) {
+        acc.timeStats.yearly[y].sent++;
+      }
+      else {
+        acc.timeStats.yearly[y] = {
+          'sent': 0,
+          'received': 0
+        }
+      }
+      return acc;
+    }, data.postStats);
+    cbChain.call();
+  }
+
+  getPostDataReceived(data, cbChain, postInfo) {
+    let postInfoJSON = JSON.parse(postInfo);
+    data.postStats.num_posts_received = postInfoJSON.wall_posts_sent_to_you.activity_log_data.length;
+
+    // TODO: very bad big NONO 
+    postInfoJSON.wall_posts_sent_to_you.activity_log_data.reduce((acc, post) => {
+      let d = new Date(post.timestamp * 1000);
+      let y = d.getFullYear(); // message years
+      acc.timeStats.hourly.received[d.getHours()]++;
+      acc.timeStats.weekly.received[d.getDay()]++;
+      acc.timeStats.monthly.received[d.getMonth()]++;
+      if (acc.timeStats.yearly[y]) {
+        acc.timeStats.yearly[y].received++;
+      }
+      else {
+        acc.timeStats.yearly[y] = {
+          'sent': 0,
+          'received': 0
+        }
+      }
+
+      return acc;
+    }, data.postStats);
     cbChain.call();
   }
 
