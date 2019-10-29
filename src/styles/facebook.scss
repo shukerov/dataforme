@@ -27,7 +27,7 @@
 }
 
 // new graph experiments
-#graphs-container-searches {
+#graphs-container-searches, #graphs-container-reactions {
    @media only screen and (max-width: 900px) {
        grid-template-columns: 1fr;
        grid-template-areas:
@@ -44,11 +44,11 @@
      'hourly yearly'
 }
 
-#gs0 {
+#gs0, #gr0 {
   grid-area: hourly;
 }
 
-#gs1 {
+#gs1, #gr1 {
   grid-area: yearly;
 }
 

@@ -21,6 +21,7 @@ class FBAnalyzer extends BaseAnalyzer {
         ['profile_information/profile_update_history.json', this.getProfileUpdateData.bind(this, data)],
         ['posts/your_posts_1.json', this.getPostDataSent.bind(this, data)],
         ['posts/other_people\'s_posts_to_your_timeline.json', this.getPostDataReceived.bind(this, data)],
+        ['likes_and_reactions/posts_and_comments.json', this.getReactionData.bind(this, data)],
         ['search_history/your_search_history.json', this.getSearchData.bind(this, data)]
       ]
 
@@ -149,6 +150,45 @@ class FBAnalyzer extends BaseAnalyzer {
 
       return acc;
     }, data.searchStats);
+    cbChain.call();
+  }
+
+  getReactionData(data, cbChain, reactionInfo) {
+    let reactionInfoJSON = JSON.parse(reactionInfo);
+    data.reactionStats.num_reactions = reactionInfoJSON.reactions.length;
+    reactionInfoJSON.reactions.reduce(function(acc, reaction) {
+      // skip empty reactions
+      if (!reaction.data) {
+        return acc;
+      }
+
+      // TODO: use this.get
+      // gets all of the reactions you made with a count next to them
+      let reaction_key = reaction.data[0].reaction.reaction //TODO: BADBADBABDA
+      if (acc.reactions[reaction_key]) {
+        acc.reactions[reaction_key] += 1;
+      }
+      else {
+        acc.reactions[reaction_key] = 1;
+      }
+
+      // gets time statistics
+      let d = new Date(reaction.timestamp * 1000);
+      let y = d.getFullYear();
+
+      // hourly stats
+      acc.timeStats.hourly[d.getHours()]++;
+
+      // yearly stats
+      if (acc.timeStats.yearly[y]) {
+        acc.timeStats.yearly[y] += 1;
+      }
+      else {
+        acc.timeStats.yearly[y] = 1;
+      }
+
+      return acc;
+    }, data.reactionStats);
     cbChain.call();
   }
 

@@ -21,6 +21,20 @@ let data = {
   'relationship_status': null,
   'last_profile_update': null,
   'friend_peer_group': null,
+  'reactionStats': {
+    'reactions': {
+      'HAHA': 0,
+      'WOW': 0,
+      'LIKE': 0,
+      'SORRY': 0,
+      'ANGER': 0,
+      'LOVE': 0
+    },
+    'timeStats': {
+      'yearly': {},
+      'hourly': Array(24).fill(0)
+    }
+  },
   'postStats': {
     'num_posts_sent': null,
     'num_posts_received': null,
@@ -105,8 +119,6 @@ previewBtn.onclick = () => {
   renderFacebookReport(fakeData, report);
 };
 
-
-
 kickStartReport();
 
 function kickStartReport() {
@@ -138,6 +150,54 @@ function renderFacebookReport(data) {
   let postReport = renderPostReportHeading(data.postStats, reportContainer);
   renderPostGraphs(data.postStats, postReport);
 
+  // renders reaction report
+  let reactionReport = renderReactionReportHeading(data.reactionStats, reportContainer);
+  renderReactionGraphs(data.reactionStats, reactionReport);
+}
+
+function renderReactionReportHeading(data, parent) {
+
+  let reportItems = [
+    {
+      icon: 'ismile',
+      text: 'Num Likes: ',
+      textBold: data.reactions.LIKE,
+      tooltip: 'The number of Like reactions you have gifted people on Facebook.'
+    },
+    {
+      icon: 'ismile',
+      text: 'Num Loves: ',
+      textBold: data.reactions.LOVE,
+      tooltip: 'The number of Love reactions you have gifted people on Facebook.'
+    },
+    {
+      icon: 'ismile',
+      text: 'Num Sorries: ',
+      textBold: data.reactions.SORRY,
+      tooltip: 'The number of Sorry reactions you have gifted people on Facebook.'
+    },
+    {
+      icon: 'ismile',
+      text: 'Num WOWs: ',
+      textBold: data.reactions.WOW,
+      tooltip: 'The number of WOW reactions you have gifted people on Facebook.'
+    },
+    {
+      icon: 'ismile',
+      text: 'Num Angers: ',
+      textBold: data.reactions.ANGER,
+      tooltip: 'The number of Anger reactions you have gifted people on Facebook.'
+    },
+    {
+      icon: 'ismile',
+      text: 'Num HaHas: ',
+      textBold: data.reactions.HAHA,
+      tooltip: 'The number of HaHa reactions you have gifted people on Facebook.'
+    }
+  ];
+  console.log(data);
+
+  return rRender.renderSubReport('Search Report', reportContainer, reportItems);
 }
 
 function renderPostReportHeading(data, parent) {
@@ -155,7 +215,7 @@ function renderPostReportHeading(data, parent) {
       textBold: data.num_posts_received,
       tooltip: 'The number of posts people and entities have made on your Facebook timeline.'
     }
-  ]
+  ];
 
   return rRender.renderSubReport('Post Report', reportContainer, reportItems);
 }
@@ -177,7 +237,7 @@ function renderSearchReportHeading(data, parent) {
       tooltip: 'What you search for the most.',
       options: {raw: true}
     }
-  ]
+  ];
 
   return rRender.renderSubReport('Search Report', reportContainer, reportItems);
 }
@@ -244,8 +304,7 @@ function renderReportHeading(data, parent) {
       tooltip: 'A code representation of your face.',
       options: {raw: true}
     }
-
-  ]
+  ];
 
   return rRender.renderSubReport(data.name, reportContainer, reportItems);
 }
@@ -391,6 +450,50 @@ function renderSearchGraphs(searchStats, parent) {
     title: 'Searches by Year',
     labels: Object.keys(searchStats.timeStats.yearly),
     data: Object.values(searchStats.timeStats.yearly),
+    size: 'medium'
+  });
+}
+
+function renderReactionGraphs(reactionStats, parent) {
+  let reactionGraphCont = document.createElement('div');
+  reactionGraphCont.id = 'graphs-container-reactions';
+  parent.appendChild(reactionGraphCont);
+
+  let graphCont = [];
+  
+  // TODO: this has gotta be temporary solution
+  for (let i = 0; i < 2; i++) {
+    let gcontainer = document.createElement('div');
+    gcontainer.classList.add('graph-wrapper');
+    gcontainer.id = `gr${i}`;
+    reactionGraphCont.appendChild(gcontainer);
+    graphCont.push(gcontainer);
+  }
+
+  // INTILIZE chartFactory
+  const charFac = new chartFactory('blue');
+  // console.log(reactionStats.timeStats);
+
+  // hourly reactions chart
+  charFac.getChart({
+    type: 'clock',
+    parent: graphCont[0],
+    data: reactionStats.timeStats.hourly,
+    title: 'Reactions by Hour of Day',
+    colorscheme: 'blue',
+    name: 'reaction-chart1',
+    clock_labels: 'reaction',
+    size: 'medium'
+  });
+
+  // yearly reactions chart
+  charFac.getChart({
+    type: 'bar',
+    parent: graphCont[1],
+    name: 'reaction-chart2',
+    title: 'Reactions by Year',
+    labels: Object.keys(reactionStats.timeStats.yearly),
+    data: Object.values(reactionStats.timeStats.yearly),
     size: 'medium'
   });
 }
