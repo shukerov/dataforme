@@ -27,7 +27,32 @@
 }
 
 // new graph experiments
-#graphs-container {
+#graphs-container-searches {
+   @media only screen and (max-width: 900px) {
+       grid-template-columns: 1fr;
+       grid-template-areas:
+       'hourly'
+       'yearly'
+   }
+
+   margin: 0 5vh;
+   display: grid;
+   grid-gap: 10px;
+   grid-area: graphs;
+   grid-template-columns: repeat(2, minmax(150px, 1fr));
+   grid-template-areas:
+     'hourly yearly'
+}
+
+#gs0 {
+  grid-area: hourly;
+}
+
+#gs1 {
+  grid-area: yearly;
+}
+
+#graphs-container-messages {
    margin: 0 5vh;
    display: grid;
    grid-gap: 10px;
@@ -39,8 +64,9 @@
      'top-msgers top-msgers top-msgers'
 }
 
+// TODO: move under the id above
 @media only screen and (max-width: 1224px) {
-  #graphs-container {
+  #graphs-container-messages {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     'clk-sent clk-rec'
@@ -49,8 +75,9 @@
     'top-msgers top-msgers'
   }
 }
+// TODO: move under the id above
 @media only screen and (max-width: 900px) {
-  #graphs-container {
+  #graphs-container-messages {
     grid-template-columns: 1fr;
     grid-template-areas:
       'clk-sent'

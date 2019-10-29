@@ -78,12 +78,28 @@ class FBAnalyzer extends BaseAnalyzer {
       }
 
       // TODO: use this.get
+      // gets all of the searches you made with a count next to them
       let search_key = search.data[0].text.toLowerCase();
       if (acc.searches[search_key]) {
         acc.searches[search_key] += 1;
       }
       else {
         acc.searches[search_key] = 1;
+      }
+
+      // gets time statistics
+      let d = new Date(search.timestamp * 1000);
+      let y = d.getFullYear();
+
+      // hourly stats
+      acc.timeStats.hourly[d.getHours()]++;
+
+      // yearly stats
+      if (acc.timeStats.yearly[y]) {
+        acc.timeStats.yearly[y] += 1;
+      }
+      else {
+        acc.timeStats.yearly[y] = 1;
       }
 
       return acc;

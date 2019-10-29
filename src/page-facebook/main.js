@@ -24,7 +24,11 @@ let data = {
   'friend_peer_group': null,
   'searchStats': {
     'num_searches': null,
-    'searches': {}
+    'searches': {},
+    'timeStats': {
+      'yearly': {},
+      'hourly': Array(24).fill(0)
+    }
   },
   'msgStats': {
     'groupChatThreads': [],
@@ -110,6 +114,7 @@ function renderFacebookReport(data) {
 
   // renders search report
   let searchReport = renderSearchReportHeading(data.searchStats, reportContainer);
+  renderSearchGraphs(data.searchStats, searchReport);
 }
 
 function renderSearchReportHeading(data, parent) {
@@ -131,7 +136,7 @@ function renderSearchReportHeading(data, parent) {
     }
   ]
 
-  rRender.renderSubReport('Search Report', reportContainer, reportItems);
+  return rRender.renderSubReport('Search Report', reportContainer, reportItems);
 }
 
 function renderReportHeading(data, parent) {
@@ -204,7 +209,8 @@ function renderReportHeading(data, parent) {
     }
 
   ]
-  rRender.renderSubReport(data.name, reportContainer, reportItems);
+
+  return rRender.renderSubReport(data.name, reportContainer, reportItems);
 }
 
 function renderMsgReportHeading(data, parent) {
@@ -308,14 +314,56 @@ function renderMsgReportHeading(data, parent) {
   return rRender.renderSubReport('Message Report', parent, msgData);
 }
 
+function renderSearchGraphs(searchStats, parent) {
+  let searchGraphCont = document.createElement('div');
+  searchGraphCont.id = 'graphs-container-searches';
+  parent.appendChild(searchGraphCont);
+
+  let graphCont = [];
+  
+  // TODO: this has gotta be temporary solution
+  for (let i = 0; i < 2; i++) {
+    let gcontainer = document.createElement('div');
+    gcontainer.classList.add('graph-wrapper');
+    gcontainer.id = `gs${i}`;
+    searchGraphCont.appendChild(gcontainer);
+    graphCont.push(gcontainer);
+  }
+
+  // INTILIZE chartFactory
+  const charFac = new chartFactory('blue');
+  // console.log(searchStats.timeStats);
+
+  // hoourly messages chart
+  charFac.getChart({
+    type: 'clock',
+    parent: graphCont[0],
+    data: searchStats.timeStats.hourly,
+    title: 'Searches by Hour of Day',
+    colorscheme: 'blue',
+    name: 'search-chart1',
+    size: 'medium'
+  });
+
+  // yearly messagages chart
+  charFac.getChart({
+    type: 'bar',
+    parent: graphCont[1],
+    name: 'search-chart2',
+    title: 'Searches by Year',
+    labels: Object.keys(searchStats.timeStats.yearly),
+    data: Object.values(searchStats.timeStats.yearly),
+    size: 'medium'
+  });
+}
+
 function renderMsgGraphs(msgReportStats, parent) {
   let msgGraphCont = document.createElement('div');
-  msgGraphCont.id = 'graphs-container';
+  msgGraphCont.id = 'graphs-container-messages';
   parent.appendChild(msgGraphCont);
 
   let graphCont = [];
   
-
   // TODO: this has gotta be temporary solution
   for (let i = 0; i < 7; i++) {
     let gcontainer = document.createElement('div');
@@ -325,7 +373,7 @@ function renderMsgGraphs(msgReportStats, parent) {
     graphCont.push(gcontainer);
   }
 
-  // INTIALIZE chartFactory
+  // INTILIZE chartFactory
   const charFac = new chartFactory('blue');
 
   // hoourly messages chart
