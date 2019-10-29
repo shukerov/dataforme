@@ -81,31 +81,31 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/page-spotify/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/page-tinder/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/page-spotify/main.js":
-/*!**********************************!*\
-  !*** ./src/page-spotify/main.js ***!
-  \**********************************/
+/***/ "./src/page-tinder/main.js":
+/*!*********************************!*\
+  !*** ./src/page-tinder/main.js ***!
+  \*********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_spotify_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/spotify.scss */ \"./src/styles/spotify.scss\");\n/* harmony import */ var _styles_spotify_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_spotify_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./src/page-spotify/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_tinder_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/tinder.scss */ \"./src/styles/tinder.scss\");\n/* harmony import */ var _styles_tinder_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_tinder_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./src/page-tinder/main.js?");
 
 /***/ }),
 
-/***/ "./src/styles/spotify.scss":
-/*!*********************************!*\
-  !*** ./src/styles/spotify.scss ***!
-  \*********************************/
+/***/ "./src/styles/tinder.scss":
+/*!********************************!*\
+  !*** ./src/styles/tinder.scss ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/styles/spotify.scss?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/styles/tinder.scss?");
 
 /***/ })
 

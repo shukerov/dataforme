@@ -480,17 +480,11 @@ nav {
   height: 5vh;
   background: #050404; }
 
-#report {
-  min-height: 100vh; }
-
-#nav-preview-item {
-  background: #3b5998; }
-
-.facebook-content {
+.service-content {
   max-width: 95%;
   margin: 0 auto; }
 
-.facebook-heading {
+.service-heading {
   display: inline-block;
   background: #050404;
   color: white;
@@ -503,15 +497,15 @@ nav {
   font-size: 1.3em;
   position: relative; }
   @media only screen and (min-width: 768px) {
-    .facebook-heading {
+    .service-heading {
       padding-left: 15%; } }
   @media only screen and (min-width: 992px) {
-    .facebook-heading {
+    .service-heading {
       padding-left: 20%;
       height: 4rem;
       font-size: 2em; } }
 
-.facebook-heading::after {
+.service-heading::after {
   position: absolute;
   bottom: 0;
   content: "";
@@ -520,33 +514,71 @@ nav {
   border-top: 1.3rem solid #050404;
   border-bottom: 1.3rem solid #050404; }
   @media only screen and (min-width: 992px) {
-    .facebook-heading::after {
+    .service-heading::after {
       right: -0.9rem;
       border-right: 1rem solid transparent;
       border-top: 2rem solid #050404;
       border-bottom: 2rem solid #050404; } }
 
 #report {
+  min-height: 100vh; }
+
+#nav-preview-item {
+  background: #3b5998; }
+
+#report {
   display: grid;
   width: 100%; }
 
-#graphs-container {
+#graphs-container-searches, #graphs-container-reactions {
   margin: 0 5vh;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  grid-area: graphs;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-template-areas: 'hourly yearly'; }
+  @media only screen and (max-width: 900px) {
+    #graphs-container-searches, #graphs-container-reactions {
+      grid-template-columns: 1fr;
+      grid-template-areas: 'hourly' 'yearly'; } }
+
+#gs0, #gr0 {
+  grid-area: hourly; }
+
+#gs1, #gr1 {
+  grid-area: yearly; }
+
+#graphs-container-messages, #graphs-container-posts {
+  margin: 0 5vh;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(150px, 1fr)); }
+  @media only screen and (max-width: 1224px) {
+    #graphs-container-messages, #graphs-container-posts {
+      grid-template-columns: 1fr 1fr; } }
+  @media only screen and (max-width: 900px) {
+    #graphs-container-messages, #graphs-container-posts {
+      grid-template-columns: 1fr; } }
+
+#graphs-container-posts {
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 'weekly monthly yearly' 'clk-sent cumulative clk-rec'; }
+  @media only screen and (max-width: 1224px) {
+    #graphs-container-posts {
+      grid-template-areas: 'clk-sent clk-rec' 'weekly monthly' 'yearly cumulative'; } }
+  @media only screen and (max-width: 900px) {
+    #graphs-container-posts {
+      grid-template-areas: 'clk-sent' 'clk-rec' 'weekly' 'monthly' 'yearly' 'cumulative'; } }
+
+#graphs-container-messages {
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas: 'weekly monthly yearly' 'clk-sent cumulative clk-rec' 'top-msgers top-msgers top-msgers'; }
-
-@media only screen and (max-width: 1224px) {
-  #graphs-container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 'clk-sent clk-rec' 'weekly monthly' 'yearly cumulative' 'top-msgers top-msgers'; } }
-
-@media only screen and (max-width: 900px) {
-  #graphs-container {
-    grid-template-columns: 1fr;
-    grid-template-areas: 'clk-sent' 'clk-rec' 'weekly' 'monthly' 'yearly' 'cumulative' 'top-msgers'; } }
+  @media only screen and (max-width: 1224px) {
+    #graphs-container-messages {
+      grid-template-areas: 'clk-sent clk-rec' 'weekly monthly' 'yearly cumulative'; } }
+  @media only screen and (max-width: 900px) {
+    #graphs-container-messages {
+      grid-template-areas: 'clk-sent' 'clk-rec' 'weekly' 'monthly' 'yearly' 'cumulative' 'top-msgers'; } }
 
 #g0 {
   grid-area: clk-sent; }
@@ -656,7 +688,7 @@ input[type='file'] {
   -moz-box-shadow: 0 0 3px #ccc;
   -webkit-box-shadow: 0 0 3px #ccc;
   display: grid;
-  grid-template-areas: 'heading heading' 'content content'; }
+  grid-template-areas: 'heading heading' 'content content' 'graphs graphs'; }
 
 .report-heading-title {
   grid-area: heading;
@@ -682,6 +714,10 @@ input[type='file'] {
 
 .heading-content-label {
   padding-left: 1rem; }
+
+.heading-item-raw {
+  overflow: auto;
+  max-width: 50%; }
 
 .report-controls {
   display: flex;
