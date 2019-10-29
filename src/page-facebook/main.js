@@ -334,7 +334,7 @@ function renderSearchGraphs(searchStats, parent) {
   const charFac = new chartFactory('blue');
   // console.log(searchStats.timeStats);
 
-  // hoourly messages chart
+  // hourly searches chart
   charFac.getChart({
     type: 'clock',
     parent: graphCont[0],
@@ -342,10 +342,11 @@ function renderSearchGraphs(searchStats, parent) {
     title: 'Searches by Hour of Day',
     colorscheme: 'blue',
     name: 'search-chart1',
+    clock_labels: 'search',
     size: 'medium'
   });
 
-  // yearly messagages chart
+  // yearly searches chart
   charFac.getChart({
     type: 'bar',
     parent: graphCont[1],
@@ -384,6 +385,7 @@ function renderMsgGraphs(msgReportStats, parent) {
     title: 'Messages by Hour of Day - Sent',
     colorscheme: 'blue',
     name: 'chart1',
+    clock_labels: 'messag',
     size: 'medium'
   });
 
@@ -394,6 +396,7 @@ function renderMsgGraphs(msgReportStats, parent) {
     title: 'Messages by Hour of Day - Received',
     colorscheme: 'blue',
     name: 'chart2',
+    clock_labels: 'messag',
     size: 'medium'
   });
 
