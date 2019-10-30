@@ -21,6 +21,10 @@ let data = {
   'relationship_status': null,
   'last_profile_update': null,
   'friend_peer_group': null,
+  'adStats': {
+    'topics': [],
+    'interactions': []
+  },
   'reactionStats': {
     'reactions': {
       'HAHA': 0,
@@ -153,6 +157,28 @@ function renderFacebookReport(data) {
   // renders reaction report
   let reactionReport = renderReactionReportHeading(data.reactionStats, reportContainer);
   renderReactionGraphs(data.reactionStats, reactionReport);
+
+  // renders ad report
+  let adReport = renderAdReport(data.adStats, reportContainer);
+}
+
+function renderAdReport(data, parent) {
+  let reportItems = [
+    {
+      icon: 'ismile',
+      text: 'Ad Interests Num: ',
+      textBold: data.topics.length,
+      tooltip: 'How many interests you have according to Facebook.'
+    },
+    {
+      icon: 'ismile',
+      text: 'Ad Interests: ',
+      textBold: data.topics,
+      tooltip: 'What Facebook thinks you are interested in.',
+      options: {raw: true}
+    }
+  ]
+  return rRender.renderSubReport('Ad Report', reportContainer, reportItems);
 }
 
 function renderReactionReportHeading(data, parent) {
@@ -195,7 +221,6 @@ function renderReactionReportHeading(data, parent) {
       tooltip: 'The number of HaHa reactions you have gifted people on Facebook.'
     }
   ];
-  console.log(data);
 
   return rRender.renderSubReport('Search Report', reportContainer, reportItems);
 }

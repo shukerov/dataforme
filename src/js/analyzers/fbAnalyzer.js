@@ -22,6 +22,7 @@ class FBAnalyzer extends BaseAnalyzer {
         ['posts/your_posts_1.json', this.getPostDataSent.bind(this, data)],
         ['posts/other_people\'s_posts_to_your_timeline.json', this.getPostDataReceived.bind(this, data)],
         ['likes_and_reactions/posts_and_comments.json', this.getReactionData.bind(this, data)],
+        ['ads/ads_interests.json', this.getAdData.bind(this, data)],
         ['search_history/your_search_history.json', this.getSearchData.bind(this, data)]
       ]
 
@@ -43,6 +44,12 @@ class FBAnalyzer extends BaseAnalyzer {
   get(path, object) {
     return path.reduce((xs, x) =>
       (xs && xs[x]) ? xs[x] : 'not found', object)
+  }
+
+  getAdData(data, cbChain, adInfo) {
+    let adInfoJSON = JSON.parse(adInfo);
+    data.adStats.topics = adInfoJSON.topics;
+    cbChain.call();
   }
 
   getPostDataSent(data, cbChain, postInfo) {

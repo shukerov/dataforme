@@ -87,7 +87,7 @@ export class reportFactory {
       return icon;
     }
     else {
-      throw `Invalid incon '${iconString}'`;
+      throw `Invalid icon '${iconString}'`;
     }
   }
 

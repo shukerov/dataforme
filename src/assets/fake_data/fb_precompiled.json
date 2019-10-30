@@ -1873,6 +1873,10 @@
                     "yearly": {"2012": 54, "2013": 282, "2014": 236, "2015": 207, "2016": 99, "2017": 154, "2018": 147, "2019": 127}
             }
     },
+    "adStats": {
+        "topics": ["cats", "cats", "cat.", "kittens"],
+        "interactions": ["whatever"]
+    },
     "name": "Your Name Here",
     "birthday": 798609800000,
     "joined": 1242379050000,
