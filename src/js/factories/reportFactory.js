@@ -44,22 +44,21 @@ export class reportFactory {
   }
 
   renderSubReport(title, parent, reportItems) {
-    // TODO: report heading is a terrible name. its a subreport look at the id ffs
     // create and append to parent
-    let reportHeading = document.createElement('div');
-    parent.appendChild(reportHeading);
-    this.subreports.push(reportHeading);
+    let subreport = document.createElement('div');
+    parent.appendChild(subreport);
+    this.subreports.push(subreport);
 
     // add style
     let id = `subreport-${this.subreports.length}`;
-    reportHeading.id = id; 
-    reportHeading.classList.add('report-heading');
+    subreport.id = id; 
+    subreport.classList.add('subreport');
 
-    reportHeading.innerHTML = `\
-        <div class='report-heading-title'>\
-           <h2 class='report-heading-user-name'>${title}</h2>\
+    subreport.innerHTML = `\
+        <div class='subreport-title'>\
+           <h2 class='subreport-title-text'>${title}</h2>\
         </div>\
-        <div class='report-heading-content'></div>\
+        <div class='report-content'></div>\
         `
 
     let subItemContainer = document.getElementById(id).children[1];
@@ -68,17 +67,21 @@ export class reportFactory {
       let icon = this.getIcon(item.icon);
       let options = item.options ? item.options : null;
 
-      this.renderHeadingItem(
+      // should be able to render
+      //   long lists of items
+      //   side by side comparison of items
+      //   single big stats with an icon under them
+      //   top searches??
+      this.renderReportItem(
         icon,
         item.text,
-        // THIS VERSION only does one bold? do you really need more
-        this.renderText('*', [item.textBold]),
+        this.renderText(item.textBold),
         item.tooltip,
         subItemContainer,
         options);
     });
 
-    return reportHeading;
+    return subreport;
   }
 
   getIcon(iconString) {
@@ -91,7 +94,7 @@ export class reportFactory {
     }
   }
 
-  renderHeadingItem(iconPath, label, headingText, tooltip, parent, options) {
+  renderReportItem(iconPath, label, headingText, tooltip, parent, options) {
     // element creation
     let headingItem = document.createElement('div');
     // TODO: use helper here
@@ -125,32 +128,15 @@ export class reportFactory {
     headingLabel.innerHTML = label;
 
     // styles
-    headingIcon.classList.add('heading-content-icon');
-    headingLabel.classList.add('heading-content-label');
-    headingText.classList.add('heading-content-text');
-    headingItem.classList.add('heading-content-item');
+    headingIcon.classList.add('report-item-icon');
+    headingLabel.classList.add('report-item-label');
+    headingItem.classList.add('report-item');
   }
   
-  renderText(text, highlight, parent) {
+  renderText(highlight) {
     let container = document.createElement('p');
-    let textA = text.split('*');
-
-    textA.forEach((item) => {
-      let span = document.createElement('span');
-      span.innerHTML = item;
-      container.appendChild(span);
-    });
-
-    let pos = 1;
-    highlight.forEach((item) => {
-      let highlighted = document.createElement('strong');
-
-      highlighted.innerHTML = item;
-      container.insertBefore(highlighted, container.children[pos]);
-
-      pos +=2;
-    });
-
-    return (parent ? parent.appendChild(container) : container);
+    container.classList.add('report-item-text');
+    container.innerHTML = highlight;
+    return container;
   }
 }

@@ -1,6 +1,6 @@
 @import '../_globalvariables.scss';
 
-.report-heading {
+.subreport {
    width: 90%;
    margin: 5vh auto;
    background: white;
@@ -14,35 +14,39 @@
     'graphs graphs'
 }
 
-.report-heading-title {
+.subreport-title {
   grid-area: heading;
   padding: 0 1rem;
 }
 
 
-.report-heading-user-name {
-   border-bottom: 1px solid $facebook;
+.subreport-title-text {
+   border-bottom: 1px solid #151515;
    padding-left: 3vh;
 }
 
-.report-heading-content {
+.report-content {
   grid-area: content;
   margin-bottom: 3vh;
 }
 
-.heading-content-item {
+.report-item-text {
+  font-weight: 700;
+}
+
+.report-item {
   display: grid;
   grid-template-columns: auto 0.5fr auto 1fr;
   align-items: center;
 }
 
-.heading-content-icon {
+.report-item-icon {
    width: 24px;
    height: 24px;
    padding-left: 3rem;
 }
 
-.heading-content-label {
+.report-item-label {
   padding-left: 1rem;
 }
 
