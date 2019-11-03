@@ -166,13 +166,13 @@ function renderFacebookReport(data) {
 function renderAdReport(data, parent) {
   let reportItems = [
     {
-      icon: 'ismile',
+      icon: 'target',
       text: 'Ad Interests Num: ',
       textBold: data.topics.length,
       tooltip: 'How many interests you have according to Facebook.'
     },
     {
-      icon: 'ismile',
+      icon: 'shopping-bag',
       text: 'Ad Interests: ',
       type: 'list',
       listData: data.topics,
@@ -186,37 +186,37 @@ function renderReactionReportHeading(data, parent) {
 
   let reportItems = [
     {
-      icon: 'ismile',
+      icon: 'thumbs-up',
       text: 'Num Likes: ',
       textBold: data.reactions.LIKE,
       tooltip: 'The number of Like reactions you have gifted people on Facebook.'
     },
     {
-      icon: 'ismile',
+      icon: 'heart',
       text: 'Num Loves: ',
       textBold: data.reactions.LOVE,
       tooltip: 'The number of Love reactions you have gifted people on Facebook.'
     },
     {
-      icon: 'ismile',
+      icon: 'frown',
       text: 'Num Sorries: ',
       textBold: data.reactions.SORRY,
       tooltip: 'The number of Sorry reactions you have gifted people on Facebook.'
     },
     {
-      icon: 'ismile',
+      icon: 'smile',
       text: 'Num WOWs: ',
       textBold: data.reactions.WOW,
       tooltip: 'The number of WOW reactions you have gifted people on Facebook.'
     },
     {
-      icon: 'ismile',
+      icon: 'smile',
       text: 'Num Angers: ',
       textBold: data.reactions.ANGER,
       tooltip: 'The number of Anger reactions you have gifted people on Facebook.'
     },
     {
-      icon: 'ismile',
+      icon: 'smile',
       text: 'Num HaHas: ',
       textBold: data.reactions.HAHA,
       tooltip: 'The number of HaHa reactions you have gifted people on Facebook.'
@@ -230,13 +230,13 @@ function renderPostReportHeading(data, parent) {
 
   let reportItems = [
     {
-      icon: 'itext',
+      icon: 'file-text',
       text: 'Number of posts: ',
       textBold: data.num_posts_sent,
       tooltip: 'The number of posts you have made on Facebook. This includes Groups and Pages posts'
     },
     {
-      icon: 'itext',
+      icon: 'file-text',
       text: 'Num Posts on your Timeline: ',
       textBold: data.num_posts_received,
       tooltip: 'The number of posts people and entities have made on your Facebook timeline.'
@@ -251,13 +251,13 @@ function renderSearchReportHeading(data, parent) {
   let topSearches = getTopSearches(data.searches, 20);
   let reportItems = [
     {
-      icon: 'isearch',
+      icon: 'search',
       text: 'Num Searches: ',
       textBold: data.num_searches,
       tooltip: 'The number of searches in the Facebook search bar.'
     },
     {
-      icon: 'ismile',
+      icon: 'smile',
       text: 'Top Searches: ',
       textBold: topSearches,
       tooltip: 'What you search for the most.',
@@ -276,55 +276,55 @@ function renderReportHeading(data, parent) {
 
   let reportItems = [
     {
-      icon: 'icalendar',
+      icon: 'calendar',
       text: 'Date Joined: ',
       textBold: dateStart.toDateString(),
       tooltip: 'Date when you started your Facebook account.'
     },
     {
-      icon: 'iactivity',
+      icon: 'activity',
       text: 'Data Range: ',
       textBold: `${numDays} days`,
       tooltip: 'The number of days you have had your Facebook account for.'
     },
     {
-      icon: 'iheart',
+      icon: 'heart',
       text: 'Relationship Count: ',
       textBold: data.relationship_count,
       tooltip: 'Number of Facebook relationships you have had.'
     },
     {
-      icon: 'iheart',
+      icon: 'heart',
       text: 'Relationship Status: ',
       textBold: data.relationship_status,
       tooltip: 'Your Facebook relationship status.'
     },
     {
-      icon: 'icake',
+      icon: 'cake',
       text: 'Birthday: ',
       textBold: formatDate(data.birthday),
       tooltip: 'This one is pretty self-explanatory. (:'
     },
     {
-      icon: 'iuser',
+      icon: 'user',
       text: 'Last Profile Update: ',
       textBold: formatDate(data.last_profile_update),
       tooltip: 'Last time you updated your Facebook profile.'
     },
     {
-      icon: 'iusers',
+      icon: 'users',
       text: 'Friend Peer Group: ',
       textBold: data.friend_peer_group,
       tooltip: 'How Facebook classifies your friends.'
     },
     {
-      icon: 'ismile',
+      icon: 'smile',
       text: 'Face Count: ',
       textBold: data.face_example_count,
       tooltip: 'Number of pictures of your face Facebook has.'
     },
     {
-      icon: 'ismile',
+      icon: 'smile',
       text: 'Face: ',
       textBold: data.my_face,
       tooltip: 'A code representation of your face.',
@@ -359,77 +359,77 @@ function renderMsgReportHeading(data, parent) {
 
   let msgData = [
     {
-      icon: 'isend',
+      icon: 'send',
       text: 'Messages sent:',
       textBold:  formatNum(totMsgSent),
       tooltip: 'The total number of messages you have sent on Facebook.'
     },
     {
-      icon: 'imsgcir',
+      icon: 'message-circle',
       text: 'Sent messages per day',
       textBold: avgMsgPerDaySent.toFixed(2),
       tooltip: 'Average number of messages sent every day.'
     },
     {
-      icon: 'imsgcir',
+      icon: 'message-circle',
       text: 'Words per message sent',
       textBold: avgWordsPerMsgSent.toFixed(2),
       tooltip: 'The average number of words in your messages.'
     },
     {
-      icon: 'iinbox',
+      icon: 'inbox',
       text: 'Messages received:',
       textBold: formatNum(totMsgReceived),
       tooltip: 'The total number of messages you have received on Facebook.'
     },
     {
-      icon: 'imsgcir',
+      icon: 'message-circle',
       text: 'Received Messages per day',
       textBold: avgMsgPerDayReceived.toFixed(2),
       tooltip: 'Average number of messages received every day.'
     },
     {
-      icon: 'imsgcir',
+      icon: 'message-circle',
       text: 'Words per message received',
       textBold: avgWordsPerMsgReceived.toFixed(2),
       tooltip: 'The average number of words in messages you have received.'
     },
     {
-      icon: 'imsg',
+      icon: 'message-square',
       text: 'People messaged:',
       textBold: numChats,
       tooltip: 'The total number of people you have messaged on Facebook.'
     },
     {
-      icon: 'imsgcir',
+      icon: 'message-circle',
       text: 'Group chats:',
       textBold: numGrChats,
       tooltip: 'The total number of group chats you have participated in.'
     },
     {
-      icon: 'imsg',
-        text: 'Calls started:',
-        textBold: data.callStats.num_calls.initiated,
-        tooltip: 'The total number of calls you have started on Facebook.'
+      icon: 'message-square',
+      text: 'Calls started:',
+      textBold: data.callStats.num_calls.initiated,
+      tooltip: 'The total number of calls you have started on Facebook.'
     },
     {
-      icon: 'imsg',
-        text: 'Calls received:',
-        textBold: data.callStats.num_calls.received,
-        tooltip: 'The total number of calls you have received on Facebook.'
+      icon: 'message-square',
+      text: 'Calls received:',
+      textBold: data.callStats.num_calls.received,
+      tooltip: 'The total number of calls you have received on Facebook.'
     },
     {
-      icon: 'imsg',
-        text: 'Time spent in calls:',
-        // textBold: data.callStats.total_duration,
-        textBold: secondsToHms(data.callStats.total_duration),
-        tooltip: 'The total time you have spent on a Facebook call'
+      icon: 'message-square',
+      text: 'Time spent in calls:',
+      // textBold: data.callStats.total_duration,
+      textBold: secondsToHms(data.callStats.total_duration),
+      tooltip: 'The total time you have spent on a Facebook call'
     },
     {
-      icon: 'imsg',
-        text: 'Call duration:',
-        textBold: secondsToHms(avgCallDuration),
-        tooltip: 'The average duration of your calls.'
+      icon: 'message-square',
+      text: 'Call duration:',
+      textBold: secondsToHms(avgCallDuration),
+      tooltip: 'The average duration of your calls.'
     }
   ];
 

@@ -3,43 +3,15 @@
 // Style imports:
 import '../../styles/components/reportscommon.scss';
 
-// Import assets
-import icalendar from '../../images/report-icons/calendar.svg';
-import itext from '../../images/report-icons/file-text.svg';
-import icake from '../../images/report-icons/cake.svg';
-import isearch from '../../images/report-icons/search.svg';
-import iuser from '../../images/report-icons/user.svg';
-import iusers from '../../images/report-icons/users.svg';
-import imsg from '../../images/report-icons/message-square.svg';
-import imsgcir from '../../images/report-icons/message-circle.svg';
-import isend from '../../images/report-icons/send.svg';
-import iinbox from '../../images/report-icons/inbox.svg';
-import iactivity from '../../images/report-icons/activity.svg';
-import ismile from '../../images/report-icons/smile.svg';
-import iheart from '../../images/report-icons/heart.svg';
-
 // Import js
 import { ToolTip } from '../components/toolTip.js';
-// import itooltip from '../../images/components/help-circle.svg';
+import { importAll } from '../helpers.js';
+
+const icons = importAll(require.context('../../images/report-icons', false, /\.svg$/));
 
 export class reportFactory {
   constructor() {
-    this.icons = {
-      'icalendar': icalendar,
-      'itext': itext,
-      'icake': icake,
-      'isearch': isearch,
-      'iuser': iuser,
-      'iusers': iusers,
-      'imsg': imsg,
-      'imsgcir': imsgcir,
-      'isend': isend,
-      'iinbox': iinbox,
-      'iactivity': iactivity,
-      'ismile': ismile,
-      'iheart': iheart,
-    }
-
+    this.icons = icons;
     this.subreports = [];
   }
 
@@ -68,7 +40,6 @@ export class reportFactory {
       let options = item.options ? item.options : null;
 
       // should be able to render
-      //   long lists of items
       //   side by side comparison of items
       //   single big stats with an icon under them
       //   top searches??
