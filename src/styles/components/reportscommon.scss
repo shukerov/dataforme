@@ -28,13 +28,27 @@
 .report-content {
   grid-area: content;
   margin-bottom: 3vh;
+  padding-left: 3rem;
 }
 
 .report-item-text {
   font-weight: 700;
 }
 
-.report-item {
+.report-item-list {
+  display: grid;
+  grid-template-columns: 0.01fr 0.99fr;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+
+  .report-list {
+    columns: 4;
+    grid-column: 1 / -1;
+    align-self: start;
+  }
+}
+
+.report-item-grid {
   display: grid;
   grid-template-columns: auto 0.5fr auto 1fr;
   align-items: center;
@@ -43,7 +57,6 @@
 .report-item-icon {
    width: 24px;
    height: 24px;
-   padding-left: 3rem;
 }
 
 .report-item-label {

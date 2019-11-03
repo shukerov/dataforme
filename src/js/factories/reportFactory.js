@@ -72,13 +72,18 @@ export class reportFactory {
       //   side by side comparison of items
       //   single big stats with an icon under them
       //   top searches??
-      this.renderReportItem(
-        icon,
-        item.text,
-        this.renderText(item.textBold),
-        item.tooltip,
-        subItemContainer,
-        options);
+      if (item.type == 'list') {
+        this.renderReportList(icon, item.text, item.listData, item.tooltip, subItemContainer);
+      }
+      else {
+        this.renderReportItem(
+          icon,
+          item.text,
+          this.renderText(item.textBold),
+          item.tooltip,
+          subItemContainer,
+          options);
+      }
     });
 
     return subreport;
@@ -92,6 +97,33 @@ export class reportFactory {
     else {
       throw `Invalid icon '${iconString}'`;
     }
+  }
+
+  renderReportList(iconPath, label, listData, tooltip, parent) {
+    const reportItem = document.createElement('div');
+    const itemIcon = new Image();
+    const itemLabel = document.createElement('p');
+    const reportList = document.createElement('ul');
+
+    listData.forEach((listItemText) => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = listItemText;
+      reportList.appendChild(listItem);
+    });
+
+    // adding content
+    itemIcon.src = iconPath;
+    itemLabel.innerHTML = label;
+
+    reportList.classList.add('report-list');
+    itemIcon.classList.add('report-item-icon');
+    itemLabel.classList.add('report-item-label');
+    reportItem.classList.add('report-item-list');
+
+    reportItem.appendChild(itemIcon);
+    reportItem.appendChild(itemLabel);
+    reportItem.appendChild(reportList);
+    parent.appendChild(reportItem);
   }
 
   renderReportItem(iconPath, label, headingText, tooltip, parent, options) {
@@ -130,7 +162,7 @@ export class reportFactory {
     // styles
     headingIcon.classList.add('report-item-icon');
     headingLabel.classList.add('report-item-label');
-    headingItem.classList.add('report-item');
+    headingItem.classList.add('report-item-grid');
   }
   
   renderText(highlight) {

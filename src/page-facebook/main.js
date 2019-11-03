@@ -134,6 +134,7 @@ function kickStartReport() {
     });
   }
   else {
+    data = fakeData;
     renderFacebookReport(data, report);
   }
 }
@@ -173,9 +174,9 @@ function renderAdReport(data, parent) {
     {
       icon: 'ismile',
       text: 'Ad Interests: ',
-      textBold: data.topics,
-      tooltip: 'What Facebook thinks you are interested in.',
-      options: {raw: true}
+      type: 'list',
+      listData: data.topics,
+      tooltip: 'What Facebook thinks you are interested in.'
     }
   ]
   return rRender.renderSubReport('Ad Report', reportContainer, reportItems);
@@ -300,7 +301,7 @@ function renderReportHeading(data, parent) {
     },
     {
       icon: 'icake',
-      text: 'Yoour Birthday: ',
+      text: 'Birthday: ',
       textBold: formatDate(data.birthday),
       tooltip: 'This one is pretty self-explanatory. (:'
     },
