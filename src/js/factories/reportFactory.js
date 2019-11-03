@@ -15,6 +15,14 @@ export class reportFactory {
     this.subreports = [];
   }
 
+  // renderSubReport returns report content
+  // renderReportList should append to the subreport a list
+  // renderItemsVerticall should append to the report a list of items
+  // renderItemsHorizontal should append to the report a list of items
+  // renderItemRaw should append a pre element with raw data inside
+  // renderComparison should render items side by side (eg. sent vs received)
+
+  // should just return the report content
   renderSubReport(title, parent, reportItems) {
     // create and append to parent
     let subreport = document.createElement('div');
