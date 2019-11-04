@@ -17,7 +17,6 @@ export class reportFactory {
   // renderItemsVerticall should append to the report a list of items
   // renderComparison should render items side by side (eg. sent vs received)
 
-
   // Descr: gets the number of subreports in the report
   getNumberSubreports() {
     return Object.keys(this.subreports).length;

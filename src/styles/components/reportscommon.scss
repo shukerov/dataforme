@@ -19,7 +19,6 @@
   padding: 0 1rem;
 }
 
-
 .subreport-title-text {
    border-bottom: 1px solid #151515;
    padding-left: 3vh;
@@ -38,14 +37,17 @@
 .report-raw {
     grid-column: 1 / -1;
     align-self: start;
-    width: 50%;
+    width: 90%;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
-
     background: grey;
+
+    @media screen and (min-width: $screen-md-min) {
+      width: 80%;
+    }
 }
 
 .report-item-above {
@@ -56,9 +58,17 @@
 }
 
 .report-list {
-  columns: 4;
+  columns: 2;
   grid-column: 1 / -1;
   align-self: start;
+
+  @media screen and (min-width: $screen-md-min) {
+    columns: 3;
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    columns: 4;
+  }
 }
 
 .report-item-grid {

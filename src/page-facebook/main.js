@@ -217,8 +217,7 @@ function renderReportHeading(data) {
       icon: 'smile',
       text: 'Face: ',
       rawData: data.my_face,
-      tooltip: 'A code representation of your face.',
-      options: {raw: true}
+      tooltip: 'A code representation of your face.'
     }];
 
   const subreport = rRender.getSubreport(data.name);
@@ -312,7 +311,6 @@ function renderMsgReportHeading(data) {
     {
       icon: 'message-square',
       text: 'Time spent in calls:',
-      // textBold: data.callStats.total_duration,
       textBold: secondsToHms(data.callStats.total_duration),
       tooltip: 'The total time you have spent on a Facebook call'
     },
@@ -338,13 +336,6 @@ function renderSearchReportHeading(data, parent) {
       textBold: data.num_searches,
       tooltip: 'The number of searches in the Facebook search bar.'
     }
-    // {
-    //   icon: 'smile',
-    //   text: 'Top Searches: ',
-    //   textBold: topSearches,
-    //   tooltip: 'What you search for the most.',
-    //   options: {raw: true}
-    // }
   ];
 
   const subreport = rRender.getSubreport('Search Report');
@@ -560,7 +551,7 @@ function renderMsgGraphs(msgReportStats, parent) {
   // INTILIZE chartFactory
   const charFac = new chartFactory('blue');
 
-  // hoourly messages chart
+  // hourly messages chart
   charFac.getChart({
     type: 'clock',
     parent: graphCont[0],
@@ -787,28 +778,4 @@ function renderPostGraphs(postReportStats, parent) {
     labels: Object.keys(postCumulative),
     size: 'medium'
   });
-
-  // top messegers chart 
-  // let topMessagers = getTopMessagers(postReportStats.regThreads, 15)
-  // let postSent = topMessagers.reduce(function(acc, poster) {
-  //   let cnt1 = postReportStats.regThreads[poster]["postByUser"];
-  //   acc.push(cnt1);
-  //   return acc;
-  // }, []);
-
-  // let postReceived = topMessagers.reduce(function(acc, poster) {
-  //   let cnt1 = postReportStats.regThreads[poster]["other"];
-  //   acc.push(cnt1);
-  //   return acc;
-  // }, []);
-
-  // charFac.getChart({
-  //   type: 'axis-mixed',
-  //   parent: graphCont[6],
-  //   name: 'post-chart7',
-  //   title: 'Top Messagers',
-  //   labels: topMessagers,
-  //   data: [postSent, postReceived, [`${data.name}`, 'Friend']],
-  //   size: 'medium'
-  // });
 }
