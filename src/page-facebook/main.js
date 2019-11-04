@@ -144,24 +144,96 @@ function renderFacebookReport(data) {
   renderReportHeading(data, reportContainer);
 
   // renders message report
-  let msgReport = renderMsgReportHeading(data.msgStats, reportContainer);
-  renderMsgGraphs(data.msgStats, msgReport);
+  // let msgReport = renderMsgReportHeading(data.msgStats, reportContainer);
+  // renderMsgGraphs(data.msgStats, msgReport);
 
   // renders search report
-  let searchReport = renderSearchReportHeading(data.searchStats, reportContainer);
-  renderSearchGraphs(data.searchStats, searchReport);
+  // let searchReport = renderSearchReportHeading(data.searchStats, reportContainer);
+  // renderSearchGraphs(data.searchStats, searchReport);
 
   // renders post report
-  let postReport = renderPostReportHeading(data.postStats, reportContainer);
-  renderPostGraphs(data.postStats, postReport);
+  // let postReport = renderPostReportHeading(data.postStats, reportContainer);
+  // renderPostGraphs(data.postStats, postReport);
 
   // renders reaction report
-  let reactionReport = renderReactionReportHeading(data.reactionStats, reportContainer);
-  renderReactionGraphs(data.reactionStats, reactionReport);
+  // let reactionReport = renderReactionReportHeading(data.reactionStats, reportContainer);
+  // renderReactionGraphs(data.reactionStats, reactionReport);
 
   // renders ad report
   let adReport = renderAdReport(data.adStats, reportContainer);
 }
+
+function renderReportHeading(data, parent) {
+  // data crunching
+  let dateRange = getCurrentDate();
+  let dateStart = new Date(data.joined);
+  let numDays = getNumDays(dateStart, dateRange);
+
+  let reportItems = [
+    {
+      icon: 'calendar',
+      text: 'Date Joined: ',
+      textBold: dateStart.toDateString(),
+      tooltip: 'Date when you started your Facebook account.'
+    },
+    {
+      icon: 'activity',
+      text: 'Data Range: ',
+      textBold: `${numDays} days`,
+      tooltip: 'The number of days you have had your Facebook account for.'
+    },
+    {
+      icon: 'heart',
+      text: 'Relationship Count: ',
+      textBold: data.relationship_count,
+      tooltip: 'Number of Facebook relationships you have had.'
+    },
+    {
+      icon: 'heart',
+      text: 'Relationship Status: ',
+      textBold: data.relationship_status,
+      tooltip: 'Your Facebook relationship status.'
+    },
+    {
+      icon: 'cake',
+      text: 'Birthday: ',
+      textBold: formatDate(data.birthday),
+      tooltip: 'This one is pretty self-explanatory. (:'
+    },
+    {
+      icon: 'user',
+      text: 'Last Profile Update: ',
+      textBold: formatDate(data.last_profile_update),
+      tooltip: 'Last time you updated your Facebook profile.'
+    },
+    {
+      icon: 'users',
+      text: 'Friend Peer Group: ',
+      textBold: data.friend_peer_group,
+      tooltip: 'How Facebook classifies your friends.'
+    },
+    {
+      icon: 'smile',
+      text: 'Face Count: ',
+      textBold: data.face_example_count,
+      tooltip: 'Number of pictures of your face Facebook has.'
+    },
+    {
+      icon: 'smile',
+      text: 'Face: ',
+      textBold: data.my_face,
+      tooltip: 'A code representation of your face.',
+      options: {raw: true}
+    }
+  ];
+
+  // return rRender.renderSubReport(data.name, reportContainer, reportItems);
+  const subreport = rRender.getSubreport(data.name);
+  rRender.add(reportItems, 'icon-list', subreport);
+  // TODO: should be class
+  reportContainer.appendChild(subreport.top);
+}
+
 
 function renderAdReport(data, parent) {
   let reportItems = [
@@ -170,8 +242,10 @@ function renderAdReport(data, parent) {
       text: 'Ad Interests Num: ',
       textBold: data.topics.length,
       tooltip: 'How many interests you have according to Facebook.'
-    },
-    {
+    }
+  ]
+
+  let adInterests = [{
       icon: 'shopping-bag',
       text: 'Ad Interests: ',
       type: 'list',
@@ -179,7 +253,11 @@ function renderAdReport(data, parent) {
       tooltip: 'What Facebook thinks you are interested in.'
     }
   ]
-  return rRender.renderSubReport('Ad Report', reportContainer, reportItems);
+  // return rRender.renderSubReport('Ad Report', reportContainer, reportItems);
+  const subreport = rRender.getSubreport('Ad Report');
+  rRender.add(reportItems, 'icon-list', subreport);
+  rRender.add(adInterests, 'list', subreport);
+  reportContainer.appendChild(subreport.top);
 }
 
 function renderReactionReportHeading(data, parent) {
@@ -266,73 +344,6 @@ function renderSearchReportHeading(data, parent) {
   ];
 
   return rRender.renderSubReport('Search Report', reportContainer, reportItems);
-}
-
-function renderReportHeading(data, parent) {
-  // data crunching
-  let dateRange = getCurrentDate();
-  let dateStart = new Date(data.joined);
-  let numDays = getNumDays(dateStart, dateRange);
-
-  let reportItems = [
-    {
-      icon: 'calendar',
-      text: 'Date Joined: ',
-      textBold: dateStart.toDateString(),
-      tooltip: 'Date when you started your Facebook account.'
-    },
-    {
-      icon: 'activity',
-      text: 'Data Range: ',
-      textBold: `${numDays} days`,
-      tooltip: 'The number of days you have had your Facebook account for.'
-    },
-    {
-      icon: 'heart',
-      text: 'Relationship Count: ',
-      textBold: data.relationship_count,
-      tooltip: 'Number of Facebook relationships you have had.'
-    },
-    {
-      icon: 'heart',
-      text: 'Relationship Status: ',
-      textBold: data.relationship_status,
-      tooltip: 'Your Facebook relationship status.'
-    },
-    {
-      icon: 'cake',
-      text: 'Birthday: ',
-      textBold: formatDate(data.birthday),
-      tooltip: 'This one is pretty self-explanatory. (:'
-    },
-    {
-      icon: 'user',
-      text: 'Last Profile Update: ',
-      textBold: formatDate(data.last_profile_update),
-      tooltip: 'Last time you updated your Facebook profile.'
-    },
-    {
-      icon: 'users',
-      text: 'Friend Peer Group: ',
-      textBold: data.friend_peer_group,
-      tooltip: 'How Facebook classifies your friends.'
-    },
-    {
-      icon: 'smile',
-      text: 'Face Count: ',
-      textBold: data.face_example_count,
-      tooltip: 'Number of pictures of your face Facebook has.'
-    },
-    {
-      icon: 'smile',
-      text: 'Face: ',
-      textBold: data.my_face,
-      tooltip: 'A code representation of your face.',
-      options: {raw: true}
-    }
-  ];
-
-  return rRender.renderSubReport(data.name, reportContainer, reportItems);
 }
 
 function renderMsgReportHeading(data, parent) {

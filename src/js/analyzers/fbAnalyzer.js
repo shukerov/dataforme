@@ -19,11 +19,11 @@ class FBAnalyzer extends BaseAnalyzer {
         ['about_you/friend_peer_group.json',this.getFriendPeerGroup.bind(this, data)],
         ['about_you/face_recognition.json',this.getFaceRecognitionData.bind(this, data)],
         ['profile_information/profile_update_history.json', this.getProfileUpdateData.bind(this, data)],
-        ['posts/your_posts_1.json', this.getPostDataSent.bind(this, data)],
-        ['posts/other_people\'s_posts_to_your_timeline.json', this.getPostDataReceived.bind(this, data)],
-        ['likes_and_reactions/posts_and_comments.json', this.getReactionData.bind(this, data)],
-        ['ads/ads_interests.json', this.getAdData.bind(this, data)],
-        ['search_history/your_search_history.json', this.getSearchData.bind(this, data)]
+        // ['posts/your_posts_1.json', this.getPostDataSent.bind(this, data)],
+        // ['posts/other_people\'s_posts_to_your_timeline.json', this.getPostDataReceived.bind(this, data)],
+        // ['likes_and_reactions/posts_and_comments.json', this.getReactionData.bind(this, data)],
+        // ['search_history/your_search_history.json', this.getSearchData.bind(this, data)],
+        ['ads/ads_interests.json', this.getAdData.bind(this, data)]
       ]
 
       for(let i = 0; i < fns.length; i++) {
