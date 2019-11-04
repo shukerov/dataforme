@@ -44,7 +44,9 @@
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
-    background: grey;
+    padding: 1em;
+    background: #eff0f1;
+    border-radius: 3px;
 
     @media screen and (min-width: $screen-md-min) {
       width: 80%;

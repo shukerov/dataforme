@@ -36,6 +36,7 @@
        'yearly'
    }
 
+   margin-top: 2em;
    display: grid;
    grid-gap: 10px;
    grid-area: graphs;
@@ -54,6 +55,7 @@
        'yearly'
    }
 
+   margin-top: 2em;
    display: grid;
    grid-gap: 10px;
    grid-area: graphs;
@@ -90,6 +92,7 @@
     grid-template-columns: 1fr;
   }
 
+  margin-top: 2em;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
