@@ -369,38 +369,36 @@ function renderReactionReport(data) {
 
   let reactionData = [
     {
-      icon: 'thumbs-up',
+      icon: 'thumbs-up-fa',
       text: 'Num Likes: ',
       textBold: data.reactions.LIKE,
       tooltip: 'The number of Like reactions you have gifted people on Facebook.'
     },
     {
-      icon: 'heart',
-      text: 'Num Loves: ',
+      icon: 'heart-solid-fa',
       textBold: data.reactions.LOVE,
       tooltip: 'The number of Love reactions you have gifted people on Facebook.'
     },
     {
-      icon: 'frown',
+      icon: 'cry-fa',
       text: 'Num Sorries: ',
       textBold: data.reactions.SORRY,
       tooltip: 'The number of Sorry reactions you have gifted people on Facebook.'
     },
     {
-      icon: 'smile',
+      icon: 'smile-fa',
       text: 'Num WOWs: ',
       textBold: data.reactions.WOW,
       tooltip: 'The number of WOW reactions you have gifted people on Facebook.'
     },
     {
-      icon: 'smile',
+      icon: 'angry-fa',
       text: 'Num Angers: ',
       textBold: data.reactions.ANGER,
       tooltip: 'The number of Anger reactions you have gifted people on Facebook.'
     },
     {
-      icon: 'smile',
-      text: 'Num HaHas: ',
+      icon: 'laugh-fa',
       textBold: data.reactions.HAHA,
       tooltip: 'The number of HaHa reactions you have gifted people on Facebook.'
     }

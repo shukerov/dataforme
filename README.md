@@ -25,6 +25,7 @@ npm run build
 * https://feathericons.com/
 * https://frappe.io/charts
 * https://gildas-lormeau.github.io/zip.js/
+* https://fontawesome.com Link to their license [https://fontawesome.com/license](here)
 
 
 # Data problems
