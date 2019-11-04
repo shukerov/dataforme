@@ -150,7 +150,7 @@ function renderFacebookReport(data) {
   let postReport = renderPostReportHeading(data.postStats);
 
   // renders reaction report
-  let reactionReport = renderReactionReportHeading(data.reactionStats);
+  let reactionReport = renderReactionReport(data.reactionStats);
 
   // renders ad report
   let adReport = renderAdReport(data.adStats);
@@ -365,7 +365,7 @@ function renderPostReportHeading(data, parent) {
   renderPostGraphs(data, subreport.content);
 }
 
-function renderReactionReportHeading(data, parent) {
+function renderReactionReport(data) {
 
   let reactionData = [
     {
@@ -407,7 +407,7 @@ function renderReactionReportHeading(data, parent) {
   ];
 
   const subreport = rRender.getSubreport('Reaction Report');
-  rRender.add(reactionData, 'icon-list', subreport);
+  rRender.add(reactionData, 'big-icon-list', subreport);
   renderReactionGraphs(data, subreport.content);
 }
 

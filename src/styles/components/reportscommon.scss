@@ -28,6 +28,7 @@
   grid-area: content;
   margin-bottom: 3vh;
   padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .report-item-text {
@@ -75,6 +76,49 @@
   display: grid;
   grid-template-columns: auto 0.5fr auto 1fr;
   align-items: center;
+}
+
+.report-item-big-icon-list {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+
+  @media screen and (min-width: $screen-md-min) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.report-item-big-icon {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 50%;
+  grid-template-areas: 
+    'icon icon'
+    'text tooltip'
+}
+
+.report-item-icon-big {
+   width: 66px;
+   height: 66px;
+   grid-area: icon;
+}
+
+.tooltip-start {
+  grid-area: tooltip;
+  justify-self: start;
+  padding-left: 0.5em;
+}
+
+.report-item-text-icon-big {
+  grid-area: text;
+  justify-self: end;
 }
 
 .report-item-icon {

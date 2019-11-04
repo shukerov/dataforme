@@ -83,10 +83,59 @@ export class reportFactory {
     else if (type == 'list') {
       this.addList(reportItems, subreport);
     }
+    // big icons smaller numbers
+    else if (type == 'big-icon-list') {
+      this.addBigIconList(reportItems, subreport);
+    }
     // display raw data
     else if (type == 'raw') {
       this.addRaw(reportItems, subreport);
     }
+  }
+
+
+  // Descr: adds a report item/s to a subreport that have big icons and a smal text underneath
+  // --------------------------------------
+  // Input:
+  //   *  reportItems - array of report items. DS example below
+  //   *  subreport - the DOM element that will contain the report item/items
+  // --------------------------------------
+  // Data Structure example of a list item:
+  // {
+  //   icon: 'thumbs-up',
+  //   text: 'Num Likes: ',
+  //   textBold: 32,
+  //   tooltip: 'Text that will display in tooltip'
+  // },
+  addBigIconList(reportItems, subreport) {
+    let reportItemContainer = document.createElement('div');
+    reportItemContainer.classList.add('report-item-big-icon-list');
+
+    // loop through report Items, create and append them to subreport
+    reportItems.forEach((item) => {
+
+      // element creation
+      let itemIcon = new Image();
+      let reportItem = document.createElement('div');
+      let reportItemText = this.renderText(item.textBold);
+      let itemToolTip = new ToolTip(item.tooltip);
+      
+      // appending elements
+      reportItem.appendChild(itemIcon);
+      reportItem.appendChild(reportItemText);
+      reportItem.appendChild(itemToolTip);
+
+      // adding content
+      itemIcon.src = this.getIcon(item.icon);
+
+      // styles
+      itemIcon.classList.add('report-item-icon-big');
+      itemToolTip.classList.add('tooltip-start');
+      reportItemText.classList.add('report-item-text-icon-big');
+      reportItem.classList.add('report-item-big-icon');
+      reportItemContainer.appendChild(reportItem);
+    });
+    subreport.content.appendChild(reportItemContainer);
   }
 
 
@@ -141,7 +190,6 @@ export class reportFactory {
       // append to subreport
       subreport.content.appendChild(reportItem);
     });
-
   }
 
 
@@ -207,6 +255,7 @@ export class reportFactory {
   //   textBold: 15,
   //   tooltip: 'This text will be displayed in the tooltip.'
   // }
+  // TODO: change names internally
   addIconList(reportItems, subreport) {
     // loop through reportItems and create each report item
     reportItems.forEach((item) => {
