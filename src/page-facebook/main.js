@@ -110,164 +110,53 @@ let fakeData = require('../assets/fake_data/fb_precompiled.json');
 
 // this is instructions loading. Should stay here only temporarily during development
 let test = new insFactory('facebook', document.getElementById('instructions-container'));
-// test.createInstructions();
-
-let reportContainer = document.getElementById('report');
-let nBar = new NavBar();
-let fPicker = new FilePicker(reportContainer);
 let rRender = new reportFactory();
+let nBar = new NavBar();
+let fPicker = new FilePicker(rRender.reportContainer);
 
 // TODO: refactor as helper
 let previewBtn = document.getElementById('nav-preview-item');
 previewBtn.onclick = () => {
-  renderFacebookReport(fakeData, report);
+  renderFacebookReport(fakeData);
 };
 
 kickStartReport();
 
 function kickStartReport() {
   if (!DEBUG_MODE) {
-    fPicker.onUpload( (file) => {
+    fPicker.onUpload((file) => {
       new FBAnalyzer(file, data,
-            renderFacebookReport.bind(this, data, reportContainer)
+            renderFacebookReport.bind(this, data)
         );
     });
   }
   else {
+    data = fakeData;
     renderFacebookReport(data, report);
   }
 }
 
 function renderFacebookReport(data) {
   //TODO: needs to scroll to report once done
-  renderReportHeading(data, reportContainer);
+  renderReportHeading(data);
 
   // renders message report
-  let msgReport = renderMsgReportHeading(data.msgStats, reportContainer);
-  renderMsgGraphs(data.msgStats, msgReport);
+  let msgReport = renderMsgReportHeading(data.msgStats);
 
   // renders search report
-  let searchReport = renderSearchReportHeading(data.searchStats, reportContainer);
-  renderSearchGraphs(data.searchStats, searchReport);
+  let searchReport = renderSearchReportHeading(data.searchStats);
 
   // renders post report
-  let postReport = renderPostReportHeading(data.postStats, reportContainer);
-  renderPostGraphs(data.postStats, postReport);
+  let postReport = renderPostReportHeading(data.postStats);
 
   // renders reaction report
-  let reactionReport = renderReactionReportHeading(data.reactionStats, reportContainer);
-  renderReactionGraphs(data.reactionStats, reactionReport);
+  let reactionReport = renderReactionReport(data.reactionStats);
 
   // renders ad report
-  let adReport = renderAdReport(data.adStats, reportContainer);
+  let adReport = renderAdReport(data.adStats);
 }
 
-function renderAdReport(data, parent) {
-  let reportItems = [
-    {
-      icon: 'ismile',
-      text: 'Ad Interests Num: ',
-      textBold: data.topics.length,
-      tooltip: 'How many interests you have according to Facebook.'
-    },
-    {
-      icon: 'ismile',
-      text: 'Ad Interests: ',
-      textBold: data.topics,
-      tooltip: 'What Facebook thinks you are interested in.',
-      options: {raw: true}
-    }
-  ]
-  return rRender.renderSubReport('Ad Report', reportContainer, reportItems);
-}
-
-function renderReactionReportHeading(data, parent) {
-
-  let reportItems = [
-    {
-      icon: 'ismile',
-      text: 'Num Likes: ',
-      textBold: data.reactions.LIKE,
-      tooltip: 'The number of Like reactions you have gifted people on Facebook.'
-    },
-    {
-      icon: 'ismile',
-      text: 'Num Loves: ',
-      textBold: data.reactions.LOVE,
-      tooltip: 'The number of Love reactions you have gifted people on Facebook.'
-    },
-    {
-      icon: 'ismile',
-      text: 'Num Sorries: ',
-      textBold: data.reactions.SORRY,
-      tooltip: 'The number of Sorry reactions you have gifted people on Facebook.'
-    },
-    {
-      icon: 'ismile',
-      text: 'Num WOWs: ',
-      textBold: data.reactions.WOW,
-      tooltip: 'The number of WOW reactions you have gifted people on Facebook.'
-    },
-    {
-      icon: 'ismile',
-      text: 'Num Angers: ',
-      textBold: data.reactions.ANGER,
-      tooltip: 'The number of Anger reactions you have gifted people on Facebook.'
-    },
-    {
-      icon: 'ismile',
-      text: 'Num HaHas: ',
-      textBold: data.reactions.HAHA,
-      tooltip: 'The number of HaHa reactions you have gifted people on Facebook.'
-    }
-  ];
-
-  return rRender.renderSubReport('Search Report', reportContainer, reportItems);
-}
-
-function renderPostReportHeading(data, parent) {
-
-  let reportItems = [
-    {
-      icon: 'itext',
-      text: 'Number of posts: ',
-      textBold: data.num_posts_sent,
-      tooltip: 'The number of posts you have made on Facebook. This includes Groups and Pages posts'
-    },
-    {
-      icon: 'itext',
-      text: 'Num Posts on your Timeline: ',
-      textBold: data.num_posts_received,
-      tooltip: 'The number of posts people and entities have made on your Facebook timeline.'
-    }
-  ];
-
-  return rRender.renderSubReport('Post Report', reportContainer, reportItems);
-}
-
-function renderSearchReportHeading(data, parent) {
-
-  let topSearches = getTopSearches(data.searches, 20);
-  let reportItems = [
-    {
-      icon: 'isearch',
-      text: 'Num Searches: ',
-      textBold: data.num_searches,
-      tooltip: 'The number of searches in the Facebook search bar.'
-    },
-    {
-      icon: 'ismile',
-      text: 'Top Searches: ',
-      textBold: topSearches,
-      tooltip: 'What you search for the most.',
-      options: {raw: true}
-    }
-  ];
-
-  return rRender.renderSubReport('Search Report', reportContainer, reportItems);
-}
-
-function renderReportHeading(data, parent) {
+function renderReportHeading(data) {
   // data crunching
   let dateRange = getCurrentDate();
   let dateStart = new Date(data.joined);
@@ -275,66 +164,68 @@ function renderReportHeading(data, parent) {
 
   let reportItems = [
     {
-      icon: 'icalendar',
+      icon: 'calendar',
       text: 'Date Joined: ',
       textBold: dateStart.toDateString(),
       tooltip: 'Date when you started your Facebook account.'
     },
     {
-      icon: 'iactivity',
+      icon: 'activity',
       text: 'Data Range: ',
       textBold: `${numDays} days`,
       tooltip: 'The number of days you have had your Facebook account for.'
     },
     {
-      icon: 'iheart',
+      icon: 'heart',
       text: 'Relationship Count: ',
       textBold: data.relationship_count,
       tooltip: 'Number of Facebook relationships you have had.'
     },
     {
-      icon: 'iheart',
+      icon: 'heart',
       text: 'Relationship Status: ',
       textBold: data.relationship_status,
       tooltip: 'Your Facebook relationship status.'
     },
     {
-      icon: 'icake',
-      text: 'Yoour Birthday: ',
+      icon: 'cake',
+      text: 'Birthday: ',
       textBold: formatDate(data.birthday),
       tooltip: 'This one is pretty self-explanatory. (:'
     },
     {
-      icon: 'iuser',
+      icon: 'user',
       text: 'Last Profile Update: ',
       textBold: formatDate(data.last_profile_update),
       tooltip: 'Last time you updated your Facebook profile.'
     },
     {
-      icon: 'iusers',
+      icon: 'users',
       text: 'Friend Peer Group: ',
       textBold: data.friend_peer_group,
       tooltip: 'How Facebook classifies your friends.'
     },
     {
-      icon: 'ismile',
+      icon: 'smile',
       text: 'Face Count: ',
       textBold: data.face_example_count,
       tooltip: 'Number of pictures of your face Facebook has.'
-    },
-    {
-      icon: 'ismile',
-      text: 'Face: ',
-      textBold: data.my_face,
-      tooltip: 'A code representation of your face.',
-      options: {raw: true}
     }
   ];
 
-  return rRender.renderSubReport(data.name, reportContainer, reportItems);
+  let faceData = [{
+      icon: 'smile',
+      text: 'Face: ',
+      rawData: data.my_face,
+      tooltip: 'A code representation of your face.'
+    }];
+
+  const subreport = rRender.getSubreport(data.name);
+  rRender.add(reportItems, 'icon-list', subreport);
+  rRender.add(faceData, 'raw', subreport);
 }
 
-function renderMsgReportHeading(data, parent) {
+function renderMsgReportHeading(data) {
   // data crunching
   // TODO pull out of here maybe
   let totMsgSent = 0
@@ -358,92 +249,200 @@ function renderMsgReportHeading(data, parent) {
 
   let msgData = [
     {
-      icon: 'isend',
+      icon: 'send',
       text: 'Messages sent:',
       textBold:  formatNum(totMsgSent),
       tooltip: 'The total number of messages you have sent on Facebook.'
     },
     {
-      icon: 'imsgcir',
+      icon: 'message-circle',
       text: 'Sent messages per day',
       textBold: avgMsgPerDaySent.toFixed(2),
       tooltip: 'Average number of messages sent every day.'
     },
     {
-      icon: 'imsgcir',
+      icon: 'message-circle',
       text: 'Words per message sent',
       textBold: avgWordsPerMsgSent.toFixed(2),
       tooltip: 'The average number of words in your messages.'
     },
     {
-      icon: 'iinbox',
+      icon: 'inbox',
       text: 'Messages received:',
       textBold: formatNum(totMsgReceived),
       tooltip: 'The total number of messages you have received on Facebook.'
     },
     {
-      icon: 'imsgcir',
+      icon: 'message-circle',
       text: 'Received Messages per day',
       textBold: avgMsgPerDayReceived.toFixed(2),
       tooltip: 'Average number of messages received every day.'
     },
     {
-      icon: 'imsgcir',
+      icon: 'message-circle',
       text: 'Words per message received',
       textBold: avgWordsPerMsgReceived.toFixed(2),
       tooltip: 'The average number of words in messages you have received.'
     },
     {
-      icon: 'imsg',
+      icon: 'message-square',
       text: 'People messaged:',
       textBold: numChats,
       tooltip: 'The total number of people you have messaged on Facebook.'
     },
     {
-      icon: 'imsgcir',
+      icon: 'message-circle',
       text: 'Group chats:',
       textBold: numGrChats,
       tooltip: 'The total number of group chats you have participated in.'
     },
     {
-      icon: 'imsg',
-        text: 'Calls started:',
-        textBold: data.callStats.num_calls.initiated,
-        tooltip: 'The total number of calls you have started on Facebook.'
+      icon: 'message-square',
+      text: 'Calls started:',
+      textBold: data.callStats.num_calls.initiated,
+      tooltip: 'The total number of calls you have started on Facebook.'
     },
     {
-      icon: 'imsg',
-        text: 'Calls received:',
-        textBold: data.callStats.num_calls.received,
-        tooltip: 'The total number of calls you have received on Facebook.'
+      icon: 'message-square',
+      text: 'Calls received:',
+      textBold: data.callStats.num_calls.received,
+      tooltip: 'The total number of calls you have received on Facebook.'
     },
     {
-      icon: 'imsg',
-        text: 'Time spent in calls:',
-        // textBold: data.callStats.total_duration,
-        textBold: secondsToHms(data.callStats.total_duration),
-        tooltip: 'The total time you have spent on a Facebook call'
+      icon: 'message-square',
+      text: 'Time spent in calls:',
+      textBold: secondsToHms(data.callStats.total_duration),
+      tooltip: 'The total time you have spent on a Facebook call'
     },
     {
-      icon: 'imsg',
-        text: 'Call duration:',
-        textBold: secondsToHms(avgCallDuration),
-        tooltip: 'The average duration of your calls.'
+      icon: 'message-square',
+      text: 'Call duration:',
+      textBold: secondsToHms(avgCallDuration),
+      tooltip: 'The average duration of your calls.'
     }
   ];
 
-  return rRender.renderSubReport('Message Report', parent, msgData);
+  const subreport = rRender.getSubreport('Message Report');
+  rRender.add(msgData, 'icon-list', subreport);
+  renderMsgGraphs(data, subreport.content);
+}
+
+function renderSearchReportHeading(data, parent) {
+
+  let searchData = [
+    {
+      icon: 'search',
+      text: 'Num Searches: ',
+      textBold: data.num_searches,
+      tooltip: 'The number of searches in the Facebook search bar.'
+    }
+  ];
+
+  const subreport = rRender.getSubreport('Search Report');
+  rRender.add(searchData, 'icon-list', subreport);
+  renderSearchGraphs(data, subreport.content);
+}
+
+function renderPostReportHeading(data, parent) {
+
+  let postData = [
+    {
+      icon: 'file-text',
+      text: 'Number of posts: ',
+      textBold: data.num_posts_sent,
+      tooltip: 'The number of posts you have made on Facebook. This includes Groups and Pages posts'
+    },
+    {
+      icon: 'file-text',
+      text: 'Num Posts on your Timeline: ',
+      textBold: data.num_posts_received,
+      tooltip: 'The number of posts people and entities have made on your Facebook timeline.'
+    }
+  ];
+
+  const subreport = rRender.getSubreport('Post Report');
+  rRender.add(postData, 'icon-list', subreport);
+  renderPostGraphs(data, subreport.content);
+}
+
+function renderReactionReport(data) {
+
+  let reactionData = [
+    {
+      icon: 'thumbs-up-fa',
+      text: 'Num Likes: ',
+      textBold: data.reactions.LIKE,
+      tooltip: 'The number of Like reactions you have gifted people on Facebook.'
+    },
+    {
+      icon: 'heart-solid-fa',
+      textBold: data.reactions.LOVE,
+      tooltip: 'The number of Love reactions you have gifted people on Facebook.'
+    },
+    {
+      icon: 'cry-fa',
+      text: 'Num Sorries: ',
+      textBold: data.reactions.SORRY,
+      tooltip: 'The number of Sorry reactions you have gifted people on Facebook.'
+    },
+    {
+      icon: 'smile-fa',
+      text: 'Num WOWs: ',
+      textBold: data.reactions.WOW,
+      tooltip: 'The number of WOW reactions you have gifted people on Facebook.'
+    },
+    {
+      icon: 'angry-fa',
+      text: 'Num Angers: ',
+      textBold: data.reactions.ANGER,
+      tooltip: 'The number of Anger reactions you have gifted people on Facebook.'
+    },
+    {
+      icon: 'laugh-fa',
+      textBold: data.reactions.HAHA,
+      tooltip: 'The number of HaHa reactions you have gifted people on Facebook.'
+    }
+  ];
+
+  const subreport = rRender.getSubreport('Reaction Report');
+  rRender.add(reactionData, 'big-icon-list', subreport);
+  renderReactionGraphs(data, subreport.content);
+}
+
+function renderAdReport(data) {
+  let reportItems = [
+    {
+      icon: 'target',
+      text: 'Ad Interests Num: ',
+      textBold: data.topics.length,
+      tooltip: 'How many interests you have according to Facebook.'
+    }
+  ]
+
+  let adInterests = [{
+      icon: 'shopping-bag',
+      text: 'Ad Interests: ',
+      type: 'list',
+      listData: data.topics,
+      tooltip: 'What Facebook thinks you are interested in.'
+    }
+  ]
+
+  const subreport = rRender.getSubreport('Ad Report');
+  rRender.add(reportItems, 'icon-list', subreport);
+  rRender.add(adInterests, 'list', subreport);
 }
 
 function renderSearchGraphs(searchStats, parent) {
   let searchGraphCont = document.createElement('div');
+  let topSearches = getTopSearches(searchStats.searches, 20);
   searchGraphCont.id = 'graphs-container-searches';
   parent.appendChild(searchGraphCont);
 
   let graphCont = [];
   
   // TODO: this has gotta be temporary solution
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 3; i++) {
     let gcontainer = document.createElement('div');
     gcontainer.classList.add('graph-wrapper');
     gcontainer.id = `gs${i}`;
@@ -453,16 +452,25 @@ function renderSearchGraphs(searchStats, parent) {
 
   // INTILIZE chartFactory
   const charFac = new chartFactory('blue');
-  // console.log(searchStats.timeStats);
+
+  charFac.getChart({
+    type: 'bar',
+    parent: graphCont[0],
+    name: 'search-chart1',
+    title: 'Top Searches',
+    labels: Object.keys(topSearches),
+    data: Object.values(topSearches),
+    size: 'medium'
+  });
 
   // hourly searches chart
   charFac.getChart({
     type: 'clock',
-    parent: graphCont[0],
+    parent: graphCont[1],
     data: searchStats.timeStats.hourly,
     title: 'Searches by Hour of Day',
     colorscheme: 'blue',
-    name: 'search-chart1',
+    name: 'search-chart2',
     clock_labels: 'search',
     size: 'medium'
   });
@@ -470,8 +478,8 @@ function renderSearchGraphs(searchStats, parent) {
   // yearly searches chart
   charFac.getChart({
     type: 'bar',
-    parent: graphCont[1],
-    name: 'search-chart2',
+    parent: graphCont[2],
+    name: 'search-chart3',
     title: 'Searches by Year',
     labels: Object.keys(searchStats.timeStats.yearly),
     data: Object.values(searchStats.timeStats.yearly),
@@ -497,7 +505,6 @@ function renderReactionGraphs(reactionStats, parent) {
 
   // INTILIZE chartFactory
   const charFac = new chartFactory('blue');
-  // console.log(reactionStats.timeStats);
 
   // hourly reactions chart
   charFac.getChart({
@@ -542,7 +549,7 @@ function renderMsgGraphs(msgReportStats, parent) {
   // INTILIZE chartFactory
   const charFac = new chartFactory('blue');
 
-  // hoourly messages chart
+  // hourly messages chart
   charFac.getChart({
     type: 'clock',
     parent: graphCont[0],
@@ -769,28 +776,4 @@ function renderPostGraphs(postReportStats, parent) {
     labels: Object.keys(postCumulative),
     size: 'medium'
   });
-
-  // top messegers chart 
-  // let topMessagers = getTopMessagers(postReportStats.regThreads, 15)
-  // let postSent = topMessagers.reduce(function(acc, poster) {
-  //   let cnt1 = postReportStats.regThreads[poster]["postByUser"];
-  //   acc.push(cnt1);
-  //   return acc;
-  // }, []);
-
-  // let postReceived = topMessagers.reduce(function(acc, poster) {
-  //   let cnt1 = postReportStats.regThreads[poster]["other"];
-  //   acc.push(cnt1);
-  //   return acc;
-  // }, []);
-
-  // charFac.getChart({
-  //   type: 'axis-mixed',
-  //   parent: graphCont[6],
-  //   name: 'post-chart7',
-  //   title: 'Top Messagers',
-  //   labels: topMessagers,
-  //   data: [postSent, postReceived, [`${data.name}`, 'Friend']],
-  //   size: 'medium'
-  // });
 }

@@ -1,6 +1,6 @@
 @import '../_globalvariables.scss';
 
-.report-heading {
+.subreport {
    width: 90%;
    margin: 5vh auto;
    background: white;
@@ -14,35 +14,121 @@
     'graphs graphs'
 }
 
-.report-heading-title {
+.subreport-title {
   grid-area: heading;
   padding: 0 1rem;
 }
 
-
-.report-heading-user-name {
-   border-bottom: 1px solid $facebook;
+.subreport-title-text {
+   border-bottom: 1px solid #151515;
    padding-left: 3vh;
 }
 
-.report-heading-content {
+.subreport-content {
   grid-area: content;
   margin-bottom: 3vh;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
-.heading-content-item {
+.report-item-text {
+  font-weight: 700;
+}
+
+.report-raw {
+    grid-column: 1 / -1;
+    align-self: start;
+    width: 90%;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    padding: 1em;
+    background: #eff0f1;
+    border-radius: 3px;
+
+    @media screen and (min-width: $screen-md-min) {
+      width: 80%;
+    }
+}
+
+.report-item-above {
+  display: grid;
+  grid-template-columns: auto 0.5fr 1fr;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+}
+
+.report-list {
+  columns: 2;
+  grid-column: 1 / -1;
+  align-self: start;
+
+  @media screen and (min-width: $screen-md-min) {
+    columns: 3;
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    columns: 4;
+  }
+}
+
+.report-item-grid {
   display: grid;
   grid-template-columns: auto 0.5fr auto 1fr;
   align-items: center;
 }
 
-.heading-content-icon {
-   width: 24px;
-   height: 24px;
-   padding-left: 3rem;
+.report-item-big-icon-list {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+
+  @media screen and (min-width: $screen-md-min) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
-.heading-content-label {
+.report-item-big-icon {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 50%;
+  grid-template-areas: 
+    'icon icon'
+    'text tooltip'
+}
+
+.report-item-icon-big {
+   width: 66px;
+   height: 66px;
+   grid-area: icon;
+}
+
+.tooltip-start {
+  grid-area: tooltip;
+  justify-self: start;
+  padding-left: 0.5em;
+}
+
+.report-item-text-icon-big {
+  grid-area: text;
+  justify-self: end;
+}
+
+.report-item-icon {
+   width: 24px;
+   height: 24px;
+}
+
+.report-item-label {
   padding-left: 1rem;
 }
 

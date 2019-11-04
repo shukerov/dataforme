@@ -1874,7 +1874,7 @@
             }
     },
     "adStats": {
-        "topics": ["cats", "cats", "cat.", "kittens"],
+        "topics": ["cats", "cats", "cat.", "kittens", "cats", "cats", "cat.", "kittens"],
         "interactions": ["whatever"]
     },
     "name": "Your Name Here",

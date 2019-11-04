@@ -22,8 +22,8 @@ class FBAnalyzer extends BaseAnalyzer {
         ['posts/your_posts_1.json', this.getPostDataSent.bind(this, data)],
         ['posts/other_people\'s_posts_to_your_timeline.json', this.getPostDataReceived.bind(this, data)],
         ['likes_and_reactions/posts_and_comments.json', this.getReactionData.bind(this, data)],
-        ['ads/ads_interests.json', this.getAdData.bind(this, data)],
-        ['search_history/your_search_history.json', this.getSearchData.bind(this, data)]
+        ['search_history/your_search_history.json', this.getSearchData.bind(this, data)],
+        ['ads/ads_interests.json', this.getAdData.bind(this, data)]
       ]
 
       for(let i = 0; i < fns.length; i++) {
@@ -223,7 +223,6 @@ class FBAnalyzer extends BaseAnalyzer {
   }
 
   analyzeMessageThread(threadName, msgData, callback, msg) {
-    // console.log(msg);
     let msgJSON = JSON.parse(msg);
     let participants = msgJSON.participants // all participants in the current chat thread
     let group = true;                         // remains true if the chat is a groupchat
@@ -328,7 +327,6 @@ class FBAnalyzer extends BaseAnalyzer {
           // get call statistics
           // NOTE: skipping calls longer than 5h cause Facebook data has some problems
           else if (msg.type == 'Call' && msg.call_duration > 0 && msg.call_duration < 18000) {
-            // if (msg.call_duration > longestCallTest) {longestCallTest = msg.call_duration;};
             acc.callStats.num_calls.received += 1;
             acc.callStats.total_duration += msg.call_duration;
           }
@@ -338,7 +336,6 @@ class FBAnalyzer extends BaseAnalyzer {
       }.bind(this), msgData);
     }
 
-    // console.log(participants[0].name + ' longest call is ' + longestCallTest);
     callback.call();
 
     if (callback.cbChainCount == 0) {

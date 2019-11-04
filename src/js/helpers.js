@@ -22,3 +22,12 @@ export function secondsToHms(d) {
 
   return res;
 }
+
+export function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => {
+    let key = item.replace('./', '');
+    key = key.replace('.svg', '');
+    images[key] = r(item); });
+  return images;
+}

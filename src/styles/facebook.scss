@@ -27,7 +27,27 @@
 }
 
 // new graph experiments
-#graphs-container-searches, #graphs-container-reactions {
+#graphs-container-searches {
+   @media only screen and (max-width: 900px) {
+       grid-template-columns: 1fr;
+       grid-template-areas:
+       'top-searches'
+       'hourly'
+       'yearly'
+   }
+
+   margin-top: 2em;
+   display: grid;
+   grid-gap: 10px;
+   grid-area: graphs;
+   grid-template-rows: repeat(2, 1fr);
+   grid-template-columns: repeat(2, minmax(150px, 1fr));
+   grid-template-areas:
+     'top-searches top-searches'
+     'hourly yearly'
+}
+
+#graphs-container-reactions {
    @media only screen and (max-width: 900px) {
        grid-template-columns: 1fr;
        grid-template-areas:
@@ -35,7 +55,7 @@
        'yearly'
    }
 
-   margin: 0 5vh;
+   margin-top: 2em;
    display: grid;
    grid-gap: 10px;
    grid-area: graphs;
@@ -43,12 +63,23 @@
    grid-template-areas:
      'hourly yearly'
 }
+#gs0 {
+  grid-area: top-searches;
+}
 
-#gs0, #gr0 {
+#gs1 {
   grid-area: hourly;
 }
 
-#gs1, #gr1 {
+#gs2 {
+  grid-area: yearly;
+}
+
+#gr0 {
+  grid-area: hourly;
+}
+
+#gr1 {
   grid-area: yearly;
 }
 
@@ -61,7 +92,7 @@
     grid-template-columns: 1fr;
   }
 
-  margin: 0 5vh;
+  margin-top: 2em;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
@@ -97,6 +128,7 @@
       'clk-sent clk-rec'
       'weekly monthly'
       'yearly cumulative'
+      'top-msgers top-msgers'
   }
 
   @media only screen and (max-width: 900px) {
