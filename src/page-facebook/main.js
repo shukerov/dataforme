@@ -137,7 +137,6 @@ function kickStartReport() {
 }
 
 function renderFacebookReport(data) {
-  console.log(data);
   //TODO: needs to scroll to report once done
   renderReportHeading(data);
 
@@ -464,7 +463,6 @@ function renderSearchGraphs(searchStats, parent) {
 
   // INTILIZE chartFactory
   const charFac = new chartFactory('blue');
-  // console.log(searchStats.timeStats);
 
   charFac.getChart({
     type: 'bar',
@@ -518,7 +516,6 @@ function renderReactionGraphs(reactionStats, parent) {
 
   // INTILIZE chartFactory
   const charFac = new chartFactory('blue');
-  // console.log(reactionStats.timeStats);
 
   // hourly reactions chart
   charFac.getChart({
@@ -681,7 +678,6 @@ function renderMsgGraphs(msgReportStats, parent) {
 }
 
 function renderPostGraphs(postReportStats, parent) {
-  console.log(postReportStats);
   let postGraphCont = document.createElement('div');
   postGraphCont.id = 'graphs-container-posts';
   parent.appendChild(postGraphCont);

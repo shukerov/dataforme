@@ -1,5 +1,3 @@
-// TODO: this whole factory needs a refactor.
-// names are awful, loading of icon assets is awful, css naming is crap too
 // Style imports:
 import '../../styles/components/reportscommon.scss';
 
@@ -19,12 +17,17 @@ export class reportFactory {
   // renderItemsVerticall should append to the report a list of items
   // renderComparison should render items side by side (eg. sent vs received)
 
+
+  // Descr: gets the number of subreports in the report
   getNumberSubreports() {
     return Object.keys(this.subreports).length;
   }
 
-  // fetches a subreport given a title.
-  // if subreport doesn't exist it creates one with the given title
+
+  // Descr: fetches a subreport given a title. If subreport doesn't exist it creates one. 
+  // --------------------------------------
+  // Input:
+  //   *  title - string representing the title of the subreport
   getSubreport(title) {
     if (this.subreports[title]) {
       return this.subreports[title];
@@ -64,6 +67,13 @@ export class reportFactory {
     return result;
   }
 
+
+  // Descr: adds a report item to a subreport
+  // --------------------------------------
+  // Input:
+  //   *  reportItems - array of report items. For DS look at report below.
+  //   *  type - a string representing the type of report item to be rendered
+  //   *  subreport - the DOM element that will contain the report item/items
   add(reportItems, type, subreport) {
 
     // vertical items, with an individual icon
@@ -78,18 +88,35 @@ export class reportFactory {
     else if (type == 'raw') {
       this.addRaw(reportItems, subreport);
     }
-        
   }
 
-  // TODO: needs comments
+
+  // Descr: adds a report item/s to a subreport that look like a list.
+  //        think typical ul HTML elements. 
+  // --------------------------------------
+  // Input:
+  //   *  lists - array of report items. DS example below
+  //   *  subreport - the DOM element that will contain the report item/items
+  // --------------------------------------
+  // Data Structure example of a list item:
+  // {
+  //   icon: 'shopping-bag',
+  //   text: 'Ad Interests: ',
+  //   type: 'list',
+  //   listData: ['some item', 'another item', 'more items'],
+  //   tooltip: 'Text that will display in tooltip'
+  // }
   addList(lists, subreport) {
+    // loop through lists and create all list report items
     lists.forEach((item) => {
-      const reportItem = document.createElement('div');
+      // element creation
       const itemIcon = new Image();
+      const reportItem = document.createElement('div');
       const itemLabel = document.createElement('p');
       const reportList = document.createElement('ul');
       let itemToolTip = new ToolTip(item.tooltip);
 
+      // create individual list items
       item.listData.forEach((listItemText) => {
         const listItem = document.createElement('li');
         listItem.innerHTML = listItemText;
@@ -100,67 +127,94 @@ export class reportFactory {
       itemIcon.src = this.getIcon(item.icon);
       itemLabel.innerHTML = item.text;
 
+      // add styles
       reportList.classList.add('report-list');
       itemIcon.classList.add('report-item-icon');
       itemLabel.classList.add('report-item-label');
       reportItem.classList.add('report-item-above');
 
+      // appending elements
       reportItem.appendChild(itemIcon);
       reportItem.appendChild(itemLabel);
       reportItem.appendChild(itemToolTip);
       reportItem.appendChild(reportList);
 
+      // append to subreport
       subreport.content.appendChild(reportItem);
     });
 
   }
 
-  // TODO: needs comments
+
+  // Descr: adds a report item/s to a subreport that has raw data
+  //        Think a long json file. Content is wrapped in a pre tag 
+  // --------------------------------------
+  // Input:
+  //   *  rawItems - array of raw report items. DS example below
+  //   *  subreport - the DOM element that will contain the report item/items
+  // --------------------------------------
+  // Data Structure example of a list item:
+  // {
+  //   icon: 'smile',
+  //   text: 'Face: ',
+  //   rawData: 'slkdajsldkjiewjlksajdlkjsldknaslkdlqkjeqwkejlansd',
+  //   tooltip: 'Text that will display in tooltip.'
+  // }
   addRaw(rawItems, subreport) {
+    // loop through rawItems and create all raw report items
     rawItems.forEach((item) => {
-      const reportItem = document.createElement('div');
+
+      // element creation
       const itemIcon = new Image();
+      const reportItem = document.createElement('div');
       const itemLabel = document.createElement('p');
       const itemRaw = document.createElement('pre');
       let itemToolTip = new ToolTip(item.tooltip);
 
-      itemRaw.innerHTML = item.rawData;
-
       // adding content
       itemIcon.src = this.getIcon(item.icon);
       itemLabel.innerHTML = item.text;
+      itemRaw.innerHTML = item.rawData;
 
+      // add styles
       itemRaw.classList.add('report-raw');
       itemIcon.classList.add('report-item-icon');
       itemLabel.classList.add('report-item-label');
       reportItem.classList.add('report-item-above');
 
+      // appending elements
       reportItem.appendChild(itemIcon);
       reportItem.appendChild(itemLabel);
       reportItem.appendChild(itemToolTip);
       reportItem.appendChild(itemRaw);
 
+      // append to subreport
       subreport.content.appendChild(reportItem);
     });
   }
 
-  // takes an array of items and displays them vertically in order.
-  // 
-  // example format is:
+
+  // Descr: adds a report item/s to a subreport. Every item will have
+  //        an individual icon, tooltip and label. All items are displayed in a row.
+  // --------------------------------------
+  // Input:
+  //   *  reportItems - array of report items. DS example below
+  //   *  subreport - the DOM element that will contain the report item/items
+  // --------------------------------------
+  // Data Structure example of a list item:
   // {
   //   icon: 'smile',
   //   text: 'Face Count: ',
-  //   textBold: data.face_example_count,
-  //   tooltip: 'Number of pictures of your face Facebook has.'
+  //   textBold: 15,
+  //   tooltip: 'This text will be displayed in the tooltip.'
   // }
   addIconList(reportItems, subreport) {
-    // loop through icons and create them
+    // loop through reportItems and create each report item
     reportItems.forEach((item) => {
 
       // element creation
-      let headingItem = document.createElement('div');
-      // TODO: use helper here
       let headingIcon = new Image();
+      let headingItem = document.createElement('div');
       let headingLabel = document.createElement('p');
       let headingToolTip = new ToolTip(item.tooltip);
       
@@ -184,6 +238,14 @@ export class reportFactory {
     });
   }
 
+
+  // Descr: fetches an icon path given an icon name
+  // --------------------------------------
+  // Input:
+  //   *  iconString - string representing the name of the icon
+  // Return:
+  //   *  the icon path of the searched icon. 
+  //   *  throws an error if icon doesn't exist? TODO: Maybe should default to an icon?
   getIcon(iconString) {
     let icon = this.icons[iconString];
     if (icon) {
@@ -194,10 +256,16 @@ export class reportFactory {
     }
   }
 
-  renderText(highlight) {
+  // Descr:  creates a paragraph element
+  // --------------------------------------
+  // Input:
+  //   *  text - string which is the innerHTML of the p tag
+  // Return:
+  //   * the p tag element
+  renderText(text) {
     let container = document.createElement('p');
     container.classList.add('report-item-text');
-    container.innerHTML = highlight;
+    container.innerHTML = text;
     return container;
   }
 }
