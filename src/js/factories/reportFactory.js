@@ -13,14 +13,10 @@ export class reportFactory {
   constructor() {
     this.icons = icons;
     this.subreports = {};
-    // this.subreports = [];
+    this.reportContainer = document.getElementById('report');
   }
 
-  // renderSubReport returns report content
-  // renderReportList should append to the subreport a list
   // renderItemsVerticall should append to the report a list of items
-  // renderItemsHorizontal should append to the report a list of items
-  // renderItemRaw should append a pre element with raw data inside
   // renderComparison should render items side by side (eg. sent vs received)
 
   getNumberSubreports() {
@@ -61,6 +57,9 @@ export class reportFactory {
       content: subreportContent
     }
 
+    // append to report
+    this.reportContainer.appendChild(subreport);
+
     this.subreports[title] = result;
     return result;
   }
@@ -83,7 +82,6 @@ export class reportFactory {
   }
 
   // TODO: needs comments
-  // TODO: needs tooltip
   addList(lists, subreport) {
     lists.forEach((item) => {
       const reportItem = document.createElement('div');
@@ -117,6 +115,7 @@ export class reportFactory {
 
   }
 
+  // TODO: needs comments
   addRaw(rawItems, subreport) {
     rawItems.forEach((item) => {
       const reportItem = document.createElement('div');
