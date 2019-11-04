@@ -35,17 +35,30 @@
   font-weight: 700;
 }
 
-.report-item-list {
-  display: grid;
-  grid-template-columns: 0.01fr 0.99fr;
-  grid-template-rows: 1fr auto;
-  align-items: center;
-
-  .report-list {
-    columns: 4;
+.report-raw {
     grid-column: 1 / -1;
     align-self: start;
-  }
+    width: 50%;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+
+    background: grey;
+}
+
+.report-item-above {
+  display: grid;
+  grid-template-columns: auto 0.5fr 1fr;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+}
+
+.report-list {
+  columns: 4;
+  grid-column: 1 / -1;
+  align-self: start;
 }
 
 .report-item-grid {

@@ -217,19 +217,21 @@ function renderReportHeading(data, parent) {
       text: 'Face Count: ',
       textBold: data.face_example_count,
       tooltip: 'Number of pictures of your face Facebook has.'
-    },
-    {
-      icon: 'smile',
-      text: 'Face: ',
-      textBold: data.my_face,
-      tooltip: 'A code representation of your face.',
-      options: {raw: true}
     }
   ];
+
+  let faceData = [{
+      icon: 'smile',
+      text: 'Face: ',
+      rawData: data.my_face,
+      tooltip: 'A code representation of your face.',
+      options: {raw: true}
+    }];
 
   // return rRender.renderSubReport(data.name, reportContainer, reportItems);
   const subreport = rRender.getSubreport(data.name);
   rRender.add(reportItems, 'icon-list', subreport);
+  rRender.add(faceData, 'raw', subreport);
   // TODO: should be class
   reportContainer.appendChild(subreport.top);
 }
