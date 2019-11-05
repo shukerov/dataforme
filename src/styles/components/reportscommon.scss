@@ -1,9 +1,11 @@
 @import '../_globalvariables.scss';
+$report-bg-color: white;
 
 .subreport {
    width: 90%;
    margin: 5vh auto;
    background: white;
+   // make a mixin
    box-shadow: 0 0 3px #ccc;
    -moz-box-shadow: 0 0 3px #ccc;
    -webkit-box-shadow: 0 0 3px #ccc;
@@ -60,6 +62,59 @@
   align-items: center;
 }
 
+// type: list-headings
+.report-list-with-headings {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-gap: 20px;
+
+  @media screen and (min-width: $screen-md-min) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.report-list-heading {
+  grid-column: 1 / -1;
+  justify-self: center;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+}
+
+.report-list-item {
+  background: darken($report-bg-color, 5);
+  padding: 0.2em;
+  box-shadow: 0 0 3px #ccc;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+}
+
+.report-list-subitem-label {
+  display: inline-block;
+  font-size: 0.85em;
+  margin-bottom: 0.5em;
+  position: relative; 
+}
+.report-list-subitem-label::after {
+  position: absolute; 
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 110%;
+  height: 1.5px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.report-list-subitem-text {
+  font-weight: bold;
+}
+
+// type: list
 .report-list {
   columns: 2;
   grid-column: 1 / -1;

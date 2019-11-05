@@ -83,6 +83,10 @@ export class reportFactory {
     else if (type == 'list') {
       this.addList(reportItems, subreport);
     }
+    // one icon big list of items separated by heading
+    else if (type == 'list-headings') {
+      this.addListHeading(reportItems, subreport);
+    }
     // big icons smaller numbers
     else if (type == 'big-icon-list') {
       this.addBigIconList(reportItems, subreport);
@@ -136,6 +140,97 @@ export class reportFactory {
       reportItemContainer.appendChild(reportItem);
     });
     subreport.content.appendChild(reportItemContainer);
+  }
+
+
+  // Descr: adds a report item to a subreport
+  // It is a list with headings for individual items 
+  // --------------------------------------
+  // Input:
+  //   *  reportItem - an object in the example shown below:
+  //   *  subreport - the DOM element that will contain the report item/items
+  // --------------------------------------
+  // Example:
+  // {
+  //   icon: 'shopping-bag',
+  //   text: 'Ad Interests: ',
+  //   type: 'list',
+  //   listData: {
+  //             "interactions": {
+  //                "Clicked ad": [
+  //                  {
+  //                    "title": "Are you read?",
+  //                    "date": "Sun Sep 08 2019"
+  //                  },
+  //                ],
+  //                  "Closed ad": [
+  //                    {
+  //                      "title": "Epic idle RPG",
+  //                      "date": "Thu Aug 08 2019"
+  //                    }
+  //                  ]
+  //                },
+  //   tooltip: 'Text that will display in tooltip'
+  // }
+  addListHeading(reportItem, subreport) {
+    const itemIcon = new Image();
+    const item = document.createElement('div');
+    const itemLabel = document.createElement('p');
+    const itemToolTip = new ToolTip(reportItem.tooltip);
+
+    // adding content
+    itemIcon.src = this.getIcon(reportItem.icon);
+    itemLabel.innerHTML = reportItem.text;
+
+    // add styles
+    itemIcon.classList.add('report-item-icon');
+    itemLabel.classList.add('report-item-label');
+    item.classList.add('report-item-above');
+
+    // appending elements
+    item.appendChild(itemIcon);
+    item.appendChild(itemLabel);
+    item.appendChild(itemToolTip);
+
+    // loop through lists and create all list report items
+    Object.keys(reportItem.listData).forEach((item_key) => {
+      // create and append subheading and ul element
+      const reportListSubheading = document.createElement('h4');
+      const reportHeadingList = document.createElement('div');
+      reportListSubheading.innerHTML = item_key;
+
+      // styles
+      reportHeadingList.classList.add('report-list-with-headings');
+      reportListSubheading.classList.add('report-list-heading');
+      item.appendChild(reportListSubheading);
+      item.appendChild(reportHeadingList);
+
+      // create individual list items
+      reportItem.listData[item_key].forEach((subitem) => {
+        const subitemElementContainer = document.createElement('div');
+        subitemElementContainer.classList.add('report-list-item');
+        Object.keys(subitem).forEach((subitem_key) => {
+          const subitemElement = document.createElement('div');
+          const subitemLabel = document.createElement('div');
+          const subitemText = document.createElement('div');
+
+          subitemElement.classList.add('report-list-subitem');
+          subitemLabel.classList.add('report-list-subitem-label');
+          subitemText.classList.add('report-list-subitem-text');
+
+          subitemLabel.innerHTML = subitem_key;
+          subitemText.innerHTML = subitem[subitem_key];
+          
+          subitemElement.appendChild(subitemLabel);
+          subitemElement.appendChild(subitemText);
+          subitemElementContainer.appendChild(subitemElement);
+        });
+        reportHeadingList.appendChild(subitemElementContainer);
+      });
+
+      // append to subreport
+      subreport.content.appendChild(item);
+    });
   }
 
 

@@ -23,7 +23,8 @@ class FBAnalyzer extends BaseAnalyzer {
         ['posts/other_people\'s_posts_to_your_timeline.json', this.getPostDataReceived.bind(this, data)],
         ['likes_and_reactions/posts_and_comments.json', this.getReactionData.bind(this, data)],
         ['search_history/your_search_history.json', this.getSearchData.bind(this, data)],
-        ['ads/ads_interests.json', this.getAdData.bind(this, data)]
+        ['ads/ads_interests.json', this.getAdData.bind(this, data)],
+        ['ads/advertisers_you\'ve_interacted_with.json', this.getAdInteractionData.bind(this, data)]
       ]
 
       for(let i = 0; i < fns.length; i++) {
@@ -44,6 +45,31 @@ class FBAnalyzer extends BaseAnalyzer {
   get(path, object) {
     return path.reduce((xs, x) =>
       (xs && xs[x]) ? xs[x] : 'not found', object)
+  }
+
+  getAdInteractionData(data, cbChain, adInteractionInfo) {
+    let adInteractionInfoJSON = JSON.parse(adInteractionInfo);
+    let interactions =  {};
+
+    // TODO: use safe get
+    adInteractionInfoJSON.history.reduce((acc, interaction) => {
+      const date = new Date(interaction.timestamp * 1000);
+
+      if (acc[interaction.action]) {
+        acc[interaction.action].push({
+          'Ad': interaction.title,
+          'Interaction Date': date.toDateString()
+        });
+      }
+      else {
+        acc[interaction.action] = [];
+      }
+
+      return acc;
+    }, interactions);
+
+    data.adStats.interactions = interactions;
+    cbChain.call();
   }
 
   getAdData(data, cbChain, adInfo) {

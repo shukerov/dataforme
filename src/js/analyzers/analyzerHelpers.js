@@ -30,7 +30,6 @@ export function getTopSearches(searches, n) {
   // return topSearches.slice(topSearches.length - n);
   let result = topSearches.slice(topSearches.length - n);
   result = result.reduce((acc, s) => { acc[s[1]] = s[0]; return acc;}, {});
-  console.log(result);
   return result;
 }
 

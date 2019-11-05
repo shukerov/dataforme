@@ -428,9 +428,17 @@ function renderAdReport(data) {
     }
   ]
 
+  let adInteractions = {
+      icon: 'mouse-pointer',
+      text: 'Ad Interactions: ',
+      listData: data.interactions,
+      tooltip: 'Ads you have interacted with on Facebook'
+  };
+
   const subreport = rRender.getSubreport('Ad Report');
   rRender.add(reportItems, 'icon-list', subreport);
   rRender.add(adInterests, 'list', subreport);
+  rRender.add(adInteractions, 'list-headings', subreport);
 }
 
 function renderSearchGraphs(searchStats, parent) {
