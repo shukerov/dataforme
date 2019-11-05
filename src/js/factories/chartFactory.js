@@ -111,8 +111,8 @@ class chartFactory {
         },
         lineOptions: {
           regionFill: 1
-        }
-        // maxSlices: 24
+        },
+        maxSlices: 24
       })
     }
     else if (args.type == 'clock') {

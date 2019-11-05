@@ -350,34 +350,33 @@ export class reportFactory {
   //   textBold: 15,
   //   tooltip: 'This text will be displayed in the tooltip.'
   // }
-  // TODO: change names internally
   addIconList(reportItems, subreport) {
     // loop through reportItems and create each report item
     reportItems.forEach((item) => {
 
       // element creation
-      let headingIcon = new Image();
-      let headingItem = document.createElement('div');
-      let headingLabel = document.createElement('p');
-      let headingToolTip = new ToolTip(item.tooltip);
+      let itemIcon = new Image();
+      let reportItem = document.createElement('div');
+      let itemLabel = document.createElement('p');
+      let itemToolTip = new ToolTip(item.tooltip);
       
       // appending elements
-      headingItem.appendChild(headingIcon);
-      headingItem.appendChild(headingLabel);
-      headingItem.appendChild(this.renderText(item.textBold));
-      headingItem.appendChild(headingToolTip);
+      reportItem.appendChild(itemIcon);
+      reportItem.appendChild(itemLabel);
+      reportItem.appendChild(this.renderText(item.textBold));
+      reportItem.appendChild(itemToolTip);
 
       // adding content
-      headingIcon.src = this.getIcon(item.icon);
-      headingLabel.innerHTML = item.text;
+      itemIcon.src = this.getIcon(item.icon);
+      itemLabel.innerHTML = item.text;
 
       // styles
-      headingIcon.classList.add('report-item-icon');
-      headingLabel.classList.add('report-item-label');
-      headingItem.classList.add('report-item-grid');
+      itemIcon.classList.add('report-item-icon');
+      itemLabel.classList.add('report-item-label');
+      reportItem.classList.add('report-item-grid');
 
       // add to subreport
-      subreport.content.appendChild(headingItem);
+      subreport.content.appendChild(reportItem);
     });
   }
 
