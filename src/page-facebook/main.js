@@ -9,7 +9,6 @@ import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
 import { reportFactory } from '../js/factories/reportFactory.js';
-import { chartFactory } from '../js/factories/chartFactory.js';
 import { insFactory } from '../js/factories/insFactory.js';
 
 // move data crunching to fbAnalyzer
@@ -110,7 +109,7 @@ let fakeData = require('../assets/fake_data/fb_precompiled.json');
 
 // this is instructions loading. Should stay here only temporarily during development
 let test = new insFactory('facebook', document.getElementById('instructions-container'));
-let rRender = new reportFactory();
+let rRender = new reportFactory('blue');
 let nBar = new NavBar();
 let fPicker = new FilePicker(rRender.reportContainer);
 
@@ -149,10 +148,10 @@ function renderFacebookReport(data) {
   // renders post report
   let postReport = renderPostReport(data.postStats);
 
-  // renders reaction report
+  // // renders reaction report
   let reactionReport = renderReactionReport(data.reactionStats);
 
-  // renders ad report
+  // // renders ad report
   let adReport = renderAdReport(data.adStats);
 }
 
@@ -324,8 +323,119 @@ function renderMsgReport(data) {
 
   const subreport = rRender.getSubreport('Message Report');
   rRender.add(msgData, 'icon-list', subreport);
-  renderMsgGraphs(data, subreport.content);
+  renderMsgGraphs(data, subreport);
 }
+
+function renderMsgGraphs(data, subreport) {
+  rRender.getSubreportGraphContainer('graphs-container-messages', subreport);
+
+  rRender.addGraph(subreport, {
+    type: 'clock',
+    title: 'Messages by Hour of Day - Sent',
+    data: data.timeStats.hourly.sent,
+    css_label: 'msg-graph',
+    clock_labels: 'messag',
+    size: 'medium'
+  });
+
+  rRender.addGraph(subreport, {
+    type: 'clock',
+    title: 'Messages by Hour of Day - Received',
+    data: data.timeStats.hourly.received,
+    css_label: 'msg-graph',
+    clock_labels: 'messag',
+    size: 'medium'
+  });
+
+  // daily messages chart
+  let msgSentDaily = data.timeStats.weekly.sent;
+  let msgReceivedDaily = data.timeStats.weekly.received;
+  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  msgSentDaily.push(0);
+  rRender.addGraph(subreport, {
+    type: 'axis-mixed',
+    title: 'Messages by Day of the Week',
+    data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],
+    labels: DAYS,
+    css_label: 'msg-graph',
+    size: 'medium'
+  });
+
+  // monthly messages chart
+  let msgSentMonthly = data.timeStats.monthly.sent;
+  let msgReceivedMonthly = data.timeStats.monthly.received;
+  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  msgSentMonthly.push(0);
+  rRender.addGraph(subreport, {
+    type: 'axis-mixed',
+    title: 'Messages by Month',
+    data: [msgSentMonthly, msgReceivedMonthly, ['Sent', 'Received']],
+    labels: MONTHS,
+    css_label: 'msg-graph',
+    size: 'medium'
+  });
+
+  // yearly messagages chart
+  let msgSentYearly = Object.keys(data.timeStats.yearly).map((y) => {
+    return data.timeStats.yearly[y].sent
+  });
+  let msgReceivedYearly= Object.keys(data.timeStats.yearly).map((y) => {
+    return data.timeStats.yearly[y].received
+  });
+  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  msgSentYearly.push(0);
+
+  rRender.addGraph(subreport, {
+    type: 'axis-mixed',
+    title: 'Messages by Year',
+    data: [msgSentYearly, msgReceivedYearly, ['Sent', 'Received']],
+    labels: Object.keys(data.timeStats.yearly),
+    css_label: 'msg-graph',
+    size: 'medium'
+  });
+
+  // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED
+  // THIS IS NOT FUNCTIONAL?
+  let sum = 0;
+  let msgCumulative = Object.keys(data.timeStats.yearly).reduce((acc, dp) => {
+    sum += data.timeStats.yearly[dp].sent + data.timeStats.yearly[dp].received;
+    acc[dp] = sum;
+    return acc;
+  }, {});
+
+  rRender.addGraph(subreport, {
+    type: 'line',
+    title: 'Cumulative Messages over Years',
+    data: Object.values(msgCumulative),
+    labels: Object.keys(msgCumulative),
+    css_label: 'msg-graph',
+    size: 'medium'
+  });
+
+  // top messegers chart 
+  let topMessagers = getTopMessagers(data.regThreads, 15)
+  let msgSent = topMessagers.reduce(function(acc, msger) {
+    let cnt1 = data.regThreads[msger]["msgByUser"];
+    acc.push(cnt1);
+    return acc;
+  }, []);
+
+  let msgReceived = topMessagers.reduce(function(acc, msger) {
+    let cnt1 = data.regThreads[msger]["other"];
+    acc.push(cnt1);
+    return acc;
+  }, []);
+
+  rRender.addGraph(subreport, {
+    type: 'axis-mixed',
+    title: 'Top Messagers',
+    data: [msgSent, msgReceived, [`${data.name}`, 'Friend']],
+    labels: topMessagers,
+    css_label: 'msg-graph',
+    size: 'medium'
+  });
+}
+
 
 function renderSearchReport(data, parent) {
 
@@ -340,8 +450,41 @@ function renderSearchReport(data, parent) {
 
   const subreport = rRender.getSubreport('Search Report');
   rRender.add(searchData, 'icon-list', subreport);
-  renderSearchGraphs(data, subreport.content);
+  
+  // render graphs
+  rRender.getSubreportGraphContainer('graphs-container-searches', subreport);
+
+  let topSearches = getTopSearches(data.searches, 20);
+  rRender.addGraph(subreport, {
+    type: 'bar',
+    title: 'Top Searches',
+    data: Object.values(topSearches),
+    labels: Object.keys(topSearches),
+    css_label: 'search-graph',
+    size: 'medium'
+  });
+
+  // hourly searches chart
+  rRender.addGraph(subreport, {
+    type: 'clock',
+    data: data.timeStats.hourly,
+    title: 'Searches by Hour of Day',
+    clock_labels: 'search',
+    css_label: 'search-graph',
+    size: 'medium'
+  });
+
+  // yearly searches chart
+  rRender.addGraph(subreport, {
+    type: 'bar',
+    title: 'Searches by Year',
+    data: Object.values(data.timeStats.yearly),
+    labels: Object.keys(data.timeStats.yearly),
+    css_label: 'search-graph',
+    size: 'medium'
+  });
 }
+
 
 function renderPostReport(data, parent) {
 
@@ -362,8 +505,97 @@ function renderPostReport(data, parent) {
 
   const subreport = rRender.getSubreport('Post Report');
   rRender.add(postData, 'icon-list', subreport);
-  renderPostGraphs(data, subreport.content);
+  renderPostGraphs(data, subreport);
 }
+
+
+function renderPostGraphs(data, subreport) {
+  rRender.getSubreportGraphContainer('graphs-container-posts', subreport);
+
+  // hourly posts chart
+  rRender.addGraph(subreport, {
+    type: 'clock',
+    title: 'Posts by Hour of Day - Sent',
+    data: data.timeStats.hourly.sent,
+    clock_labels: 'post',
+    css_label: 'post-graph',
+    size: 'medium'
+  });
+
+  rRender.addGraph(subreport, {
+    type: 'clock',
+    data: data.timeStats.hourly.received,
+    title: 'Posts by Hour of Day - Received',
+    clock_labels: 'post',
+    css_label: 'post-graph',
+    size: 'medium'
+  });
+
+  // daily posts chart
+  let postSentDaily = data.timeStats.weekly.sent;
+  let postReceivedDaily = data.timeStats.weekly.received;
+  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  postSentDaily.push(0);
+  rRender.addGraph(subreport, {
+    type: 'axis-mixed',
+    title: 'Posts by Day of the Week',
+    data: [postSentDaily, postReceivedDaily, ['Posted', 'Posted by others on Timeline']],
+    labels: DAYS,
+    css_label: 'post-graph',
+    size: 'medium'
+  });
+
+  // monthly posts chart
+  let postSentMonthly = data.timeStats.monthly.sent;
+  let postReceivedMonthly = data.timeStats.monthly.received;
+  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  postSentMonthly.push(0);
+  rRender.addGraph(subreport, {
+    type: 'axis-mixed',
+    title: 'Posts by Month',
+    data: [postSentMonthly, postReceivedMonthly, ['Posted', 'Posted by others on Timeline']],
+    labels: MONTHS,
+    css_label: 'post-graph',
+    size: 'medium'
+  });
+
+  // yearly messagages chart
+  let postSentYearly = Object.keys(data.timeStats.yearly).map((y) => {
+    return data.timeStats.yearly[y].sent
+  });
+  let postReceivedYearly= Object.keys(data.timeStats.yearly).map((y) => {
+    return data.timeStats.yearly[y].received
+  });
+  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
+  postSentYearly.push(0);
+  rRender.addGraph(subreport, {
+    type: 'axis-mixed',
+    title: 'Posts by Year',
+    labels: Object.keys(data.timeStats.yearly),
+    data: [postSentYearly, postReceivedYearly, ['Posted', 'Posted by others on Timeline']],
+    css_label: 'post-graph',
+    size: 'medium'
+  });
+
+  // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED
+  // THIS IS NOT FUNCTIONAL?
+  let sum = 0;
+  let postCumulative = Object.keys(data.timeStats.yearly).reduce((acc, dp) => {
+    sum += data.timeStats.yearly[dp].sent + data.timeStats.yearly[dp].received;
+    acc[dp] = sum;
+    return acc;
+  }, {});
+
+  rRender.addGraph(subreport, {
+    type: 'line',
+    data: Object.values(postCumulative),
+    title: 'Cumulative Posts over Years',
+    labels: Object.keys(postCumulative),
+    css_label: 'post-graph',
+    size: 'medium'
+  });
+}
+
 
 function renderReactionReport(data) {
 
@@ -406,7 +638,29 @@ function renderReactionReport(data) {
 
   const subreport = rRender.getSubreport('Reaction Report');
   rRender.add(reactionData, 'big-icon-list', subreport);
-  renderReactionGraphs(data, subreport.content);
+  
+  // render graphs
+  rRender.getSubreportGraphContainer('graphs-container-reactions', subreport);
+
+  // hourly reactions chart
+  rRender.addGraph(subreport, {
+    type: 'clock',
+    data: data.timeStats.hourly,
+    title: 'Reactions by Hour of Day',
+    clock_labels: 'reaction',
+    css_label: 'reaction-graph',
+    size: 'medium'
+  });
+
+  // yearly reactions chart
+  rRender.addGraph(subreport, {
+    type: 'bar',
+    title: 'Reactions by Year',
+    labels: Object.keys(data.timeStats.yearly),
+    data: Object.values(data.timeStats.yearly),
+    css_label: 'reaction-graph',
+    size: 'medium'
+  });
 }
 
 function renderAdReport(data) {
@@ -439,349 +693,4 @@ function renderAdReport(data) {
   rRender.add(reportItems, 'icon-list', subreport);
   rRender.add(adInterests, 'list', subreport);
   rRender.add(adInteractions, 'list-headings', subreport);
-}
-
-function renderSearchGraphs(searchStats, parent) {
-  let searchGraphCont = document.createElement('div');
-  let topSearches = getTopSearches(searchStats.searches, 20);
-  searchGraphCont.id = 'graphs-container-searches';
-  parent.appendChild(searchGraphCont);
-
-  let graphCont = [];
-  
-  // TODO: this has gotta be temporary solution
-  for (let i = 0; i < 3; i++) {
-    let gcontainer = document.createElement('div');
-    gcontainer.classList.add('graph-wrapper');
-    gcontainer.id = `gs${i}`;
-    searchGraphCont.appendChild(gcontainer);
-    graphCont.push(gcontainer);
-  }
-
-  // INTILIZE chartFactory
-  const charFac = new chartFactory('blue');
-
-  charFac.getChart({
-    type: 'bar',
-    parent: graphCont[0],
-    name: 'search-chart1',
-    title: 'Top Searches',
-    labels: Object.keys(topSearches),
-    data: Object.values(topSearches),
-    size: 'medium'
-  });
-
-  // hourly searches chart
-  charFac.getChart({
-    type: 'clock',
-    parent: graphCont[1],
-    data: searchStats.timeStats.hourly,
-    title: 'Searches by Hour of Day',
-    colorscheme: 'blue',
-    name: 'search-chart2',
-    clock_labels: 'search',
-    size: 'medium'
-  });
-
-  // yearly searches chart
-  charFac.getChart({
-    type: 'bar',
-    parent: graphCont[2],
-    name: 'search-chart3',
-    title: 'Searches by Year',
-    labels: Object.keys(searchStats.timeStats.yearly),
-    data: Object.values(searchStats.timeStats.yearly),
-    size: 'medium'
-  });
-}
-
-function renderReactionGraphs(reactionStats, parent) {
-  let reactionGraphCont = document.createElement('div');
-  reactionGraphCont.id = 'graphs-container-reactions';
-  parent.appendChild(reactionGraphCont);
-
-  let graphCont = [];
-  
-  // TODO: this has gotta be temporary solution
-  for (let i = 0; i < 2; i++) {
-    let gcontainer = document.createElement('div');
-    gcontainer.classList.add('graph-wrapper');
-    gcontainer.id = `gr${i}`;
-    reactionGraphCont.appendChild(gcontainer);
-    graphCont.push(gcontainer);
-  }
-
-  // INTILIZE chartFactory
-  const charFac = new chartFactory('blue');
-
-  // hourly reactions chart
-  charFac.getChart({
-    type: 'clock',
-    parent: graphCont[0],
-    data: reactionStats.timeStats.hourly,
-    title: 'Reactions by Hour of Day',
-    colorscheme: 'blue',
-    name: 'reaction-chart1',
-    clock_labels: 'reaction',
-    size: 'medium'
-  });
-
-  // yearly reactions chart
-  charFac.getChart({
-    type: 'bar',
-    parent: graphCont[1],
-    name: 'reaction-chart2',
-    title: 'Reactions by Year',
-    labels: Object.keys(reactionStats.timeStats.yearly),
-    data: Object.values(reactionStats.timeStats.yearly),
-    size: 'medium'
-  });
-}
-
-function renderMsgGraphs(msgReportStats, parent) {
-  let msgGraphCont = document.createElement('div');
-  msgGraphCont.id = 'graphs-container-messages';
-  parent.appendChild(msgGraphCont);
-
-  let graphCont = [];
-  
-  // TODO: this has gotta be temporary solution
-  for (let i = 0; i < 7; i++) {
-    let gcontainer = document.createElement('div');
-    gcontainer.classList.add('graph-wrapper');
-    gcontainer.id = `g${i}`;
-    msgGraphCont.appendChild(gcontainer);
-    graphCont.push(gcontainer);
-  }
-
-  // INTILIZE chartFactory
-  const charFac = new chartFactory('blue');
-
-  // hourly messages chart
-  charFac.getChart({
-    type: 'clock',
-    parent: graphCont[0],
-    data: msgReportStats.timeStats.hourly.sent,
-    title: 'Messages by Hour of Day - Sent',
-    colorscheme: 'blue',
-    name: 'chart1',
-    clock_labels: 'messag',
-    size: 'medium'
-  });
-
-  charFac.getChart({
-    type: 'clock',
-    parent: graphCont[1],
-    data: msgReportStats.timeStats.hourly.received,
-    title: 'Messages by Hour of Day - Received',
-    colorscheme: 'blue',
-    name: 'chart2',
-    clock_labels: 'messag',
-    size: 'medium'
-  });
-
-  // daily messages chart
-  let msgSentDaily = msgReportStats.timeStats.weekly.sent;
-  let msgReceivedDaily = msgReportStats.timeStats.weekly.received;
-  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
-  msgSentDaily.push(0);
-  charFac.getChart({
-    type: 'axis-mixed',
-    parent: graphCont[2],
-    name: 'chart3',
-    title: 'Messages by Day of the Week',
-    labels: DAYS,
-    data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],
-    size: 'medium'
-  });
-
-  // monthly messages chart
-  let msgSentMonthly = msgReportStats.timeStats.monthly.sent;
-  let msgReceivedMonthly = msgReportStats.timeStats.monthly.received;
-  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
-  msgSentMonthly.push(0);
-  charFac.getChart({
-    type: 'axis-mixed',
-    parent: graphCont[3],
-    name: 'chart4',
-    title: 'Messages by Month',
-    labels: MONTHS,
-    data: [msgSentMonthly, msgReceivedMonthly, ['Sent', 'Received']],
-    size: 'medium'
-  });
-
-  // yearly messagages chart
-  let msgSentYearly = Object.keys(msgReportStats.timeStats.yearly).map((y) => {
-    return msgReportStats.timeStats.yearly[y].sent
-  });
-  let msgReceivedYearly= Object.keys(msgReportStats.timeStats.yearly).map((y) => {
-    return msgReportStats.timeStats.yearly[y].received
-  });
-  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
-  msgSentYearly.push(0);
-
-  charFac.getChart({
-    type: 'axis-mixed',
-    parent: graphCont[4],
-    name: 'chart5',
-    title: 'Messages by Year',
-    labels: Object.keys(msgReportStats.timeStats.yearly),
-    data: [msgSentYearly, msgReceivedYearly, ['Sent', 'Received']],
-    size: 'medium'
-  });
-
-  // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED
-  // THIS IS NOT FUNCTIONAL?
-  let sum = 0;
-  let msgCumulative = Object.keys(msgReportStats.timeStats.yearly).reduce((acc, dp) => {
-    sum += msgReportStats.timeStats.yearly[dp].sent + msgReportStats.timeStats.yearly[dp].received;
-    acc[dp] = sum;
-    return acc;
-  }, {});
-
-  charFac.getChart({
-    type: 'line',
-    parent: graphCont[5],
-    name: 'chart6',
-    title: 'Cumulative Messages over Years',
-    data: Object.values(msgCumulative),
-    labels: Object.keys(msgCumulative),
-    size: 'medium'
-  });
-
-  // top messegers chart 
-  let topMessagers = getTopMessagers(msgReportStats.regThreads, 15)
-  let msgSent = topMessagers.reduce(function(acc, msger) {
-    let cnt1 = msgReportStats.regThreads[msger]["msgByUser"];
-    acc.push(cnt1);
-    return acc;
-  }, []);
-
-  let msgReceived = topMessagers.reduce(function(acc, msger) {
-    let cnt1 = msgReportStats.regThreads[msger]["other"];
-    acc.push(cnt1);
-    return acc;
-  }, []);
-
-  charFac.getChart({
-    type: 'axis-mixed',
-    parent: graphCont[6],
-    name: 'chart7',
-    title: 'Top Messagers',
-    labels: topMessagers,
-    data: [msgSent, msgReceived, [`${data.name}`, 'Friend']],
-    size: 'medium'
-  });
-}
-
-function renderPostGraphs(postReportStats, parent) {
-  let postGraphCont = document.createElement('div');
-  postGraphCont.id = 'graphs-container-posts';
-  parent.appendChild(postGraphCont);
-
-  let graphCont = [];
-  
-  // TODO: this has gotta be temporary solution
-  for (let i = 0; i < 6; i++) {
-    let gcontainer = document.createElement('div');
-    gcontainer.classList.add('graph-wrapper');
-    gcontainer.id = `pg${i}`;
-    postGraphCont.appendChild(gcontainer);
-    graphCont.push(gcontainer);
-  }
-
-  // INTILIZE chartFactory
-  const charFac = new chartFactory('blue');
-
-  // hoourly posts chart
-  charFac.getChart({
-    type: 'clock',
-    parent: graphCont[0],
-    data: postReportStats.timeStats.hourly.sent,
-    title: 'Posts by Hour of Day - Sent',
-    colorscheme: 'blue',
-    name: 'post-chart1',
-    clock_labels: 'post',
-    size: 'medium'
-  });
-
-  charFac.getChart({
-    type: 'clock',
-    parent: graphCont[1],
-    data: postReportStats.timeStats.hourly.received,
-    title: 'Posts by Hour of Day - Received',
-    colorscheme: 'blue',
-    name: 'post-chart2',
-    clock_labels: 'post',
-    size: 'medium'
-  });
-
-  // daily posts chart
-  let postSentDaily = postReportStats.timeStats.weekly.sent;
-  let postReceivedDaily = postReportStats.timeStats.weekly.received;
-  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
-  postSentDaily.push(0);
-  charFac.getChart({
-    type: 'axis-mixed',
-    parent: graphCont[2],
-    name: 'post-chart3',
-    title: 'Posts by Day of the Week',
-    labels: DAYS,
-    data: [postSentDaily, postReceivedDaily, ['Posted', 'Posted by others on Timeline']],
-    size: 'medium'
-  });
-
-  // monthly posts chart
-  let postSentMonthly = postReportStats.timeStats.monthly.sent;
-  let postReceivedMonthly = postReportStats.timeStats.monthly.received;
-  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
-  postSentMonthly.push(0);
-  charFac.getChart({
-    type: 'axis-mixed',
-    parent: graphCont[3],
-    name: 'post-chart4',
-    title: 'Posts by Month',
-    labels: MONTHS,
-    data: [postSentMonthly, postReceivedMonthly, ['Posted', 'Posted by others on Timeline']],
-    size: 'medium'
-  });
-
-  // yearly messagages chart
-  let postSentYearly = Object.keys(postReportStats.timeStats.yearly).map((y) => {
-    return postReportStats.timeStats.yearly[y].sent
-  });
-  let postReceivedYearly= Object.keys(postReportStats.timeStats.yearly).map((y) => {
-    return postReportStats.timeStats.yearly[y].received
-  });
-  // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((
-  postSentYearly.push(0);
-
-  charFac.getChart({
-    type: 'axis-mixed',
-    parent: graphCont[4],
-    name: 'post-chart5',
-    title: 'Posts by Year',
-    labels: Object.keys(postReportStats.timeStats.yearly),
-    data: [postSentYearly, postReceivedYearly, ['Posted', 'Posted by others on Timeline']],
-    size: 'medium'
-  });
-
-  // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED
-  // THIS IS NOT FUNCTIONAL?
-  let sum = 0;
-  let postCumulative = Object.keys(postReportStats.timeStats.yearly).reduce((acc, dp) => {
-    sum += postReportStats.timeStats.yearly[dp].sent + postReportStats.timeStats.yearly[dp].received;
-    acc[dp] = sum;
-    return acc;
-  }, {});
-
-  charFac.getChart({
-    type: 'line',
-    parent: graphCont[5],
-    name: 'post-chart6',
-    title: 'Cumulative Posts over Years',
-    data: Object.values(postCumulative),
-    labels: Object.keys(postCumulative),
-    size: 'medium'
-  });
 }

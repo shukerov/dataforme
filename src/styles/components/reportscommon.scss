@@ -216,3 +216,23 @@ $report-bg-color: white;
    background: white;
    color: black;
 }
+
+
+// graph css
+.graph-wrapper {
+  max-width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 0.1fr 0.9fr;
+  grid-template-columns: 1fr;
+}
+
+.graph-title {
+  font-size: 15px;
+  text-align: center;
+}
+
+.graph-conclusion {
+  font-size: 14px;
+  text-align: center;
+}

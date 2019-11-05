@@ -84,24 +84,14 @@ class chartFactory {
     const size = this.getSize(args.size);
     var data = this.prepData(args);
 
-    // add title
-    if (args.title) {
-      let gTitle = document.createElement('h2');
-      gTitle.classList.add('graph-title');
-      gTitle.innerHTML = args.title;
-      args.parent.appendChild(gTitle);
-    }
-
     if (/^(bar|line|scatter|pie|percentage|axis-mixed)$/.test(args.type)) {
       var chart = document.createElement('div');
-      // chart.classList.add('frappe-chart-wrap');
       chart.id = args.name;
       args.parent.appendChild(chart);
 
       new Chart(`#${args.name}`, {  // or a DOM element,
-        // title: args.title,
         data: data,
-        type: args.type, // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+        type: args.type,
         height: size,
         colors: this.getColor(),
         valuesOverPoints: 0,
@@ -119,6 +109,8 @@ class chartFactory {
       let clckGraph =  new ClockChart(data, 300, args.parent, {
         units: args.clock_labels + 'es'
       });
+
+      // add conclusion?
       let gConclusion = document.createElement('h2');
       gConclusion.classList.add('graph-conclusion');
       gConclusion.innerHTML = clckGraph.getConclusion(data, args.clock_labels + 'ed');

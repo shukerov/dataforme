@@ -4,14 +4,16 @@ import '../../styles/components/reportscommon.scss';
 // Import js
 import { ToolTip } from '../components/toolTip.js';
 import { importAll } from '../helpers.js';
+import { chartFactory } from './chartFactory.js';
 
 const icons = importAll(require.context('../../images/report-icons', false, /\.svg$/));
 
 export class reportFactory {
-  constructor() {
+  constructor(color) {
     this.icons = icons;
     this.subreports = {};
     this.reportContainer = document.getElementById('report');
+    this.chartFactory = new chartFactory(color);
   }
 
   // renderItemsVerticall should append to the report a list of items
@@ -22,6 +24,75 @@ export class reportFactory {
     return Object.keys(this.subreports).length;
   }
 
+
+  // Descr: fetches a subreport's graph container.
+  // If subreport graph container doesn't exist it creates one. 
+  // --------------------------------------
+  // Input:
+  //   *  name - string representing the id of the graph container (used for styling)
+  //   *  subreport - the subreport the graph container belongs to
+  getSubreportGraphContainer(name, subreport) {
+    if (subreport.graphs) {
+      return this.subreport.graphs;
+    }
+
+    let subreportGraphContainer = document.createElement('div');
+    subreportGraphContainer.id = name;
+    subreport.content.appendChild(subreportGraphContainer);
+
+    subreport.graphs = subreportGraphContainer;
+    subreport.graph_num = 0;
+
+    return subreport.graphs;
+  }
+
+
+  // Descr: creates a graph wrapper, with heading and conclusion
+  // adds it to the subreport
+  // --------------------------------------
+  // Input:
+  //   *  subreport - subreport where graph should be added
+  //   *  graphArgs - the graph arguments needed to build the graph. Check Example.
+  // --------------------------------------
+  // Example:
+  // {
+  //   type: 'axis-mixed',
+  //   parent: graphCont[2],
+  //   name: 'chart3',
+  //   title: 'Messages by Day of the Week',
+  //   labels: DAYS,
+  //   data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],
+  //   size: 'medium'
+  // }
+  addGraph(subreport, graphArgs) {
+    subreport.graph_num += 1;
+    let gContainer = document.createElement('div');
+    gContainer.classList.add('graph-wrapper');
+    gContainer.id = `${graphArgs.css_label}${subreport.graph_num}`;
+    subreport.graphs.appendChild(gContainer);
+
+    // add title
+    if (graphArgs.title) {
+      let gTitle = document.createElement('h2');
+      gTitle.classList.add('graph-title');
+      gTitle.innerHTML = graphArgs.title;
+      gContainer.appendChild(gTitle);
+    }
+
+    // create chart
+    let chartFactArgs = {
+      parent: gContainer,
+      name: `${graphArgs.css_label}-${subreport.graph_num}`,
+    }
+
+    Object.keys(graphArgs).forEach((ga_key) => {
+      chartFactArgs[ga_key] = graphArgs[ga_key];
+    });
+
+    this.chartFactory.getChart(chartFactArgs);
+    // add conclusion
+    // ???
+  }
 
   // Descr: fetches a subreport given a title. If subreport doesn't exist it creates one. 
   // --------------------------------------
