@@ -12,131 +12,35 @@ import { reportFactory } from '../js/factories/reportFactory.js';
 import { insFactory } from '../js/factories/insFactory.js';
 
 // move data crunching to fbAnalyzer
-let data = {
-  'name': null,
-  'joined': null,
-  'brithday': null,
-  'relationship_count': null,
-  'relationship_status': null,
-  'last_profile_update': null,
-  'friend_peer_group': null,
-  'adStats': {
-    'topics': [],
-    'interactions': []
-  },
-  'reactionStats': {
-    'reactions': {
-      'HAHA': 0,
-      'WOW': 0,
-      'LIKE': 0,
-      'SORRY': 0,
-      'ANGER': 0,
-      'LOVE': 0
-    },
-    'timeStats': {
-      'yearly': {},
-      'hourly': Array(24).fill(0)
-    }
-  },
-  'postStats': {
-    'num_posts_sent': null,
-    'num_posts_received': null,
-    'timeStats': {
-      'hourly': {
-        'sent': Array(24).fill(0),
-        'received': Array(24).fill(0)
-      },
-      'weekly': {
-        'sent': Array(7).fill(0),
-        'received': Array(7).fill(0)
-      },
-      'monthly': {
-        'sent': Array(12).fill(0),
-        'received': Array(12).fill(0)
-      },
-      'yearly': {}
-    }
-  },
-  'searchStats': {
-    'num_searches': null,
-    'searches': {},
-    'timeStats': {
-      'yearly': {},
-      'hourly': Array(24).fill(0)
-    }
-  },
-  'msgStats': {
-    'groupChatThreads': [],
-    'regThreads': {},
-    'numPictures': {'gifs': 0, 'other': 0},
-    'days_msged': {
-      "sent": 0,
-      "received": 0
-    },
-    'total_words': {
-      'sent': 0,
-      'received': 0,
-    },
-    'callStats': {
-      'num_calls': {
-        'initiated': 0,
-        'received': 0
-      },
-      'total_duration': 9000
-    },
-    'timeStats': {
-      'hourly': {
-        'sent': Array(24).fill(0),
-        'received': Array(24).fill(0)
-      },
-      'weekly': {
-        'sent': Array(7).fill(0),
-        'received': Array(7).fill(0)
-      },
-      'monthly': {
-        'sent': Array(12).fill(0),
-        'received': Array(12).fill(0)
-      },
-      'yearly': {}
-    }
-  }
-};
-
-// THIS IS FOR DEBUG MODE ONLY
-// if (DEBUG_MODE) {
-let fakeData = require('../assets/fake_data/fb_precompiled.json');
-// }
+// let fakeData = require('../assets/fake_data/fb_precompiled.json');
 
 // this is instructions loading. Should stay here only temporarily during development
 let test = new insFactory('facebook', document.getElementById('instructions-container'));
 let rRender = new reportFactory('blue');
 let nBar = new NavBar();
 let fPicker = new FilePicker(rRender.reportContainer);
+let analyzer = new FBAnalyzer(renderFacebookReport);
 
 // TODO: refactor as helper
 let previewBtn = document.getElementById('nav-preview-item');
 previewBtn.onclick = () => {
-  renderFacebookReport(fakeData);
+  renderFacebookReport(true);
 };
 
 kickStartReport();
 
 function kickStartReport() {
   if (!DEBUG_MODE) {
-    fPicker.onUpload((file) => {
-      new FBAnalyzer(file, data,
-            renderFacebookReport.bind(this, data)
-        );
-    });
+    fPicker.onUpload((file) => { analyzer.init(file) });
   }
   else {
-    data = fakeData;
-    renderFacebookReport(data, report);
+    renderFacebookReport(true);
   }
 }
 
-function renderFacebookReport(data) {
+function renderFacebookReport(fakeData) {
   //TODO: needs to scroll to report once done
+  const data = analyzer.getData(fakeData);
   renderReportHeading(data);
 
   // renders message report
@@ -226,7 +130,6 @@ function renderReportHeading(data) {
 
 function renderMsgReport(data) {
   // data crunching
-  // TODO pull out of here maybe
   let totMsgSent = 0
   let totMsgReceived = 0
   let numChats = Object.keys(data['regThreads']).length;

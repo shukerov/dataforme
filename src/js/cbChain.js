@@ -58,7 +58,6 @@ export class cbRootChain extends CbChain {
   constructor(name, finalCallback, numCallbacks) {
     super(name, finalCallback, numCallbacks);
     this.progress = new LoadBar();
-    this.progress.show();
   }
 
   call() {

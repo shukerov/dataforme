@@ -12,21 +12,22 @@ class BaseAnalyzer {
 
     // need to end up in the global object for things to work
     this.inflate = new InflaterJS(window);
-    // TODO: do you need the deflator too?
-
     this.fs = window.zip.fs.FS();
+  }
+
+  showLoadScreen() {
+    this.cbChain.progress.show();
   }
 
   analyzeFile(fileName, analyzerFunction) {
 
-  // addToChain(funcName, fileName) {
     this.cbChain.setLoopCount(); // increment the callbackloop count
     const internalCallback = new CbChain(`${analyzerFunction.name}`, this.cbChain.call.bind(this.cbChain), 1);
     const file = this.getJSONFile(fileName); 
     file.getText(analyzerFunction.bind(this, internalCallback)); 
   }
 
-  analyzeDir(dirName, filePattern, msgData, analyzerFunction) {
+  analyzeDir(dirName, filePattern, analyzerFunction) {
     var directories = this.getDirChildren(dirName);
     var numDirs = directories.length;
     // increments callbackloop count
@@ -49,7 +50,6 @@ class BaseAnalyzer {
 
       file.getText(analyzerFunction.bind(this,
         dir.name,
-        msgData,
         internalCbChain));
     });
   }
