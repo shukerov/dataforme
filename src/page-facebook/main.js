@@ -141,13 +141,13 @@ function renderFacebookReport(data) {
   renderReportHeading(data);
 
   // renders message report
-  let msgReport = renderMsgReportHeading(data.msgStats);
+  let msgReport = renderMsgReport(data.msgStats);
 
   // renders search report
-  let searchReport = renderSearchReportHeading(data.searchStats);
+  let searchReport = renderSearchReport(data.searchStats);
 
   // renders post report
-  let postReport = renderPostReportHeading(data.postStats);
+  let postReport = renderPostReport(data.postStats);
 
   // renders reaction report
   let reactionReport = renderReactionReport(data.reactionStats);
@@ -225,7 +225,7 @@ function renderReportHeading(data) {
   rRender.add(faceData, 'raw', subreport);
 }
 
-function renderMsgReportHeading(data) {
+function renderMsgReport(data) {
   // data crunching
   // TODO pull out of here maybe
   let totMsgSent = 0
@@ -327,7 +327,7 @@ function renderMsgReportHeading(data) {
   renderMsgGraphs(data, subreport.content);
 }
 
-function renderSearchReportHeading(data, parent) {
+function renderSearchReport(data, parent) {
 
   let searchData = [
     {
@@ -343,7 +343,7 @@ function renderSearchReportHeading(data, parent) {
   renderSearchGraphs(data, subreport.content);
 }
 
-function renderPostReportHeading(data, parent) {
+function renderPostReport(data, parent) {
 
   let postData = [
     {
