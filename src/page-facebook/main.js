@@ -43,20 +43,20 @@ function renderFacebookReport(fakeData) {
   const data = analyzer.getData(fakeData);
   renderReportHeading(data);
 
-  // renders message report
-  let msgReport = renderMsgReport(data.msgStats);
+  // renders ad report
+  let adReport = renderAdReport(data.adStats);
 
   // renders search report
   let searchReport = renderSearchReport(data.searchStats);
 
-  // renders post report
-  let postReport = renderPostReport(data.postStats);
+  // renders message report
+  let msgReport = renderMsgReport(data.msgStats);
 
-  // // renders reaction report
+  // renders reaction report
   let reactionReport = renderReactionReport(data.reactionStats);
 
-  // // renders ad report
-  let adReport = renderAdReport(data.adStats);
+  // renders post report
+  let postReport = renderPostReport(data.postStats);
 }
 
 function renderReportHeading(data) {
