@@ -177,6 +177,7 @@ class FBAnalyzer extends BaseAnalyzer {
 
   // safely gets the attribute of an object
   // TODO: move to baseAnalyzer
+  // TODO: in debug mode it should report to console what wasn't found...
   get(path, object) {
     return path.reduce((xs, x) =>
       (xs && xs[x]) ? xs[x] : 'not found', object)
@@ -214,18 +215,35 @@ class FBAnalyzer extends BaseAnalyzer {
     cbChain.call();
   }
 
+
   getAdData(cbChain, adInfo) {
     let adInfoJSON = JSON.parse(adInfo);
-    this.data.adStats.topics = adInfoJSON.topics;
+
+    // extract data
+    const ad_interests = this.get(['topics'], adInfoJSON);
+    if (ad_interests != 'not found') {
+      this.data.adStats.topics = ad_interests;
+    }
+
     cbChain.call();
   }
 
+
   getPostDataSent(cbChain, postInfo) {
     let postInfoJSON = JSON.parse(postInfo);
-    this.data.postStats.num_posts_sent = postInfoJSON.length;
+
+    // extract data
+    this.data.postStats.num_posts_sent = this.get(['length'], postInfoJSON);
 
     postInfoJSON.reduce((acc, post) => {
-      let d = new Date(post.timestamp * 1000);
+      const post_date = this.get(['timestamp'], post);
+
+      // no post_date found :(
+      if (post_date == 'not found') {
+        return acc;
+      }
+
+      let d = new Date(post_date * 1000);
       let y = d.getFullYear(); // message years
       acc.timeStats.hourly.sent[d.getHours()]++;
       acc.timeStats.weekly.sent[d.getDay()]++;
@@ -244,31 +262,46 @@ class FBAnalyzer extends BaseAnalyzer {
     cbChain.call();
   }
 
+
   getPostDataReceived(cbChain, postInfo) {
     let postInfoJSON = JSON.parse(postInfo);
-    this.data.postStats.num_posts_received = postInfoJSON.wall_posts_sent_to_you.activity_log_data.length;
 
-    // TODO: very bad big NONO 
-    postInfoJSON.wall_posts_sent_to_you.activity_log_data.reduce((acc, post) => {
-      let d = new Date(post.timestamp * 1000);
-      let y = d.getFullYear(); // message years
-      acc.timeStats.hourly.received[d.getHours()]++;
-      acc.timeStats.weekly.received[d.getDay()]++;
-      acc.timeStats.monthly.received[d.getMonth()]++;
-      if (acc.timeStats.yearly[y]) {
-        acc.timeStats.yearly[y].received++;
-      }
-      else {
-        acc.timeStats.yearly[y] = {
-          'sent': 0,
-          'received': 0
+    // extract data
+    const received_posts = this.get(['wall_posts_sent_to_you', 'activity_log_data'], postInfoJSON);
+
+    if (received_posts != 'not found') {
+      this.data.postStats.num_posts_received = received_posts.length;
+
+      received_posts.reduce((acc, post) => {
+        const post_date = this.get(['timestamp'], post);
+
+        // no post_date found :(
+        if (post_date == 'not found') {
+          return acc;
         }
-      }
 
-      return acc;
-    }, this.data.postStats);
+        let d = new Date(post_date * 1000);
+        let y = d.getFullYear(); // message years
+        acc.timeStats.hourly.received[d.getHours()]++;
+        acc.timeStats.weekly.received[d.getDay()]++;
+        acc.timeStats.monthly.received[d.getMonth()]++;
+        if (acc.timeStats.yearly[y]) {
+          acc.timeStats.yearly[y].received++;
+        }
+        else {
+          acc.timeStats.yearly[y] = {
+            'sent': 0,
+            'received': 0
+          }
+        }
+
+        return acc;
+      }, this.data.postStats);
+    }
+
     cbChain.call();
   }
+
 
   getProfileUpdateData(cbChain, profileUpdateInfo) {
     let profileUpdateJSON = JSON.parse(profileUpdateInfo);
@@ -350,6 +383,7 @@ class FBAnalyzer extends BaseAnalyzer {
     cbChain.call();
   }
 
+
   getReactionData(cbChain, reactionInfo) {
     let reactionInfoJSON = JSON.parse(reactionInfo);
     this.data.reactionStats.num_reactions = reactionInfoJSON.reactions.length;
@@ -389,6 +423,7 @@ class FBAnalyzer extends BaseAnalyzer {
     cbChain.call();
   }
 
+
   getBaseData(cbChain, profInfo) {
     let profInfoJSON = JSON.parse(profInfo);
     
@@ -419,6 +454,7 @@ class FBAnalyzer extends BaseAnalyzer {
 
     cbChain.call();
   }
+
 
   analyzeMessageThread(threadName, callback, msg) {
     let msgData = this.data.msgStats;
