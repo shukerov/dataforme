@@ -161,9 +161,9 @@ class FBAnalyzer extends BaseAnalyzer {
       // execute functions
       for(let i = 0; i < fns.length; i++) {
         this.analyzeFile(fns[i].path, fns[i].func);
-        let why = document.createElement('div');
-        why.innerHTML = fns[i].name;
-        this.cbChain.progress.add(why);
+        // let why = document.createElement('div');
+        // why.innerHTML = fns[i].name;
+        // this.cbChain.progress.add(why);
       }
 
       // analyze each message thread
@@ -175,6 +175,7 @@ class FBAnalyzer extends BaseAnalyzer {
   }
 
   // safely gets the attribute of an object
+  // TODO: move to baseAnalyzer
   get(path, object) {
     return path.reduce((xs, x) =>
       (xs && xs[x]) ? xs[x] : 'not found', object)
@@ -367,23 +368,31 @@ class FBAnalyzer extends BaseAnalyzer {
 
   getBaseData(cbChain, profInfo) {
     let profInfoJSON = JSON.parse(profInfo);
-    // NEEDED FOR MESSAGES
-    // idk about this being here
-    this.username = profInfoJSON.profile.name.full_name;
-
+    
+    // extracting data
+    const username = this.get(['profile', 'name', 'full_name'], profInfoJSON);
+    this.username = username;
     this.data.name = this.username;
-    this.data.joined = profInfoJSON.profile.registration_timestamp * 1000;
-    // TODO: need a way to safely access all these variables
-    // a function in the baseAnalyzer that will return unknown if it can't
-    // find the given json attribute
-    this.data.birthday = new Date(
-      profInfoJSON.profile.birthday.year,
-      profInfoJSON.profile.birthday.month - 1, // months start at 0
-      profInfoJSON.profile.birthday.day
-    );
 
-    this.data.relationship_count = profInfoJSON.profile.previous_relationships.length
-    this.data.relationship_status = profInfoJSON.profile.relationship.status
+    const joined_date = this.get(['profile', 'registration_timestamp'], profInfoJSON);
+    this.data.joined = joined_date * 1000;
+
+    const birthday = this.get(['profile', 'birthday'], profInfoJSON);
+    if (birthday != 'not found' && birthday.year && birthday.month && birthday.day) {
+      this.data.birthday = new Date(
+        birthday.year,
+        birthday.month - 1, // months start at 0
+        birthday.day
+      );
+    }
+    else {
+      this.data.brithday = 'not found';
+    }
+
+    const previous_relationships = this.get(['profile', 'previous_relationships'], profInfoJSON);
+    const relationship_status = this.get(['profile', 'relationship', 'status'], profInfoJSON);
+    this.data.relationship_count = previous_relationships.length;
+    this.data.relationship_status = relationship_status;
 
     cbChain.call();
   }
