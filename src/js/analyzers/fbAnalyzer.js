@@ -194,22 +194,34 @@ class FBAnalyzer extends BaseAnalyzer {
     let adInteractionInfoJSON = JSON.parse(adInteractionInfo);
     let interactions =  {};
 
-    // TODO: use safe get
-    adInteractionInfoJSON.history.reduce((acc, interaction) => {
-      const date = new Date(interaction.timestamp * 1000);
+    // extract data
+    const ad_history = this.get(['history'], adInteractionInfoJSON);
 
-      if (acc[interaction.action]) {
-        acc[interaction.action].push({
-          'Ad': interaction.title,
-          'Interaction Date': date.toDateString()
-        });
-      }
-      else {
-        acc[interaction.action] = [];
-      }
+    if (ad_history != 'not found') {
+      ad_history.reduce((acc, interaction) => {
+        const action = this.get(['action'], interaction);
+        const title = this.get(['title'], interaction);
+        const timestamp = this.get(['timestamp'], interaction);
 
-      return acc;
-    }, interactions);
+        if (timestamp == 'not found' || action == 'not found' ||
+            title == 'not found'
+        ) return acc;
+
+        const date = new Date(timestamp * 1000);
+
+        if (acc[action]) {
+          acc[action].push({
+            'Ad': title,
+            'Interaction Date': date.toDateString()
+          });
+        }
+        else {
+          acc[action] = [];
+        }
+
+        return acc;
+      }, interactions);
+    }
 
     this.data.adStats.interactions = interactions;
     cbChain.call();
@@ -346,80 +358,101 @@ class FBAnalyzer extends BaseAnalyzer {
 
   getSearchData(cbChain, searchInfo) {
     let searchInfoJSON = JSON.parse(searchInfo);
-    this.data.searchStats.num_searches = searchInfoJSON.searches.length;
-    searchInfoJSON.searches.reduce(function(acc, search) {
-      // skip empty searches
-      if (!search.data) {
+
+    // extract data
+    const searches = this.get(['searches'], searchInfoJSON);
+    this.data.searchStats.num_searches = searches.length;
+
+    if (searches != 'not found') {
+      searches.reduce(function(acc, search) {
+        // skip empty searches
+        if (!search.data || !search.data[0]) {
+          return acc;
+        }
+
+        // gets all of the searches you made with a count next to them
+        const search_text = this.get(['text'], search.data[0]);
+        let search_key = search_text.toLowerCase();
+        if (search_key == 'not found') return acc;
+
+        if (acc.searches[search_key]) {
+          acc.searches[search_key] += 1;
+        }
+        else {
+          acc.searches[search_key] = 1;
+        }
+
+        // gets time statistics
+        const timestamp = this.get(['timestamp'], search);
+        if (timestamp == 'not found') return acc;
+
+        let d = new Date(search.timestamp * 1000);
+        let y = d.getFullYear();
+
+        // hourly stats
+        acc.timeStats.hourly[d.getHours()]++;
+
+        // yearly stats
+        if (acc.timeStats.yearly[y]) {
+          acc.timeStats.yearly[y] += 1;
+        }
+        else {
+          acc.timeStats.yearly[y] = 1;
+        }
+
         return acc;
-      }
-
-      // TODO: use this.get
-      // gets all of the searches you made with a count next to them
-      let search_key = search.data[0].text.toLowerCase();
-      if (acc.searches[search_key]) {
-        acc.searches[search_key] += 1;
-      }
-      else {
-        acc.searches[search_key] = 1;
-      }
-
-      // gets time statistics
-      let d = new Date(search.timestamp * 1000);
-      let y = d.getFullYear();
-
-      // hourly stats
-      acc.timeStats.hourly[d.getHours()]++;
-
-      // yearly stats
-      if (acc.timeStats.yearly[y]) {
-        acc.timeStats.yearly[y] += 1;
-      }
-      else {
-        acc.timeStats.yearly[y] = 1;
-      }
-
-      return acc;
-    }, this.data.searchStats);
+      }.bind(this), this.data.searchStats);
+    }
     cbChain.call();
   }
 
 
   getReactionData(cbChain, reactionInfo) {
     let reactionInfoJSON = JSON.parse(reactionInfo);
-    this.data.reactionStats.num_reactions = reactionInfoJSON.reactions.length;
-    reactionInfoJSON.reactions.reduce(function(acc, reaction) {
-      // skip empty reactions
-      if (!reaction.data) {
+
+    // extract data
+    const reactions = this.get(['reactions'], reactionInfoJSON);
+    this.data.reactionStats.num_reactions = this.get(['length'], reactions);
+
+    if (reactions != 'not found') {
+      reactions.reduce(function(acc, reaction) {
+        // skip empty reactions
+        if (!reaction.data || !reaction.data[0]) {
+          return acc;
+        }
+
+        // gets all of the count for every type of reaction the user made
+        let reaction_key = this.get(['reaction', 'reaction'], reaction.data[0]);
+        if (reaction_key == 'not found') return acc;
+
+        if (acc.reactions[reaction_key]) {
+          acc.reactions[reaction_key] += 1;
+        }
+        else {
+          acc.reactions[reaction_key] = 1;
+        }
+
+        // gets time statistics
+        const timestamp = this.get(['timestamp'], reaction);
+        if (timestamp == 'not found') return acc;
+
+        let d = new Date(timestamp * 1000);
+        let y = d.getFullYear();
+
+        // hourly stats
+        acc.timeStats.hourly[d.getHours()]++;
+
+        // yearly stats
+        if (acc.timeStats.yearly[y]) {
+          acc.timeStats.yearly[y] += 1;
+        }
+        else {
+          acc.timeStats.yearly[y] = 1;
+        }
+
         return acc;
-      }
-
-      // TODO: use this.get
-      // gets all of the reactions you made with a count next to them
-      let reaction_key = reaction.data[0].reaction.reaction //TODO: BADBADBABDA
-      if (acc.reactions[reaction_key]) {
-        acc.reactions[reaction_key] += 1;
-      }
-      else {
-        acc.reactions[reaction_key] = 1;
-      }
-
-      // gets time statistics
-      let d = new Date(reaction.timestamp * 1000);
-      let y = d.getFullYear();
-
-      // hourly stats
-      acc.timeStats.hourly[d.getHours()]++;
-
-      // yearly stats
-      if (acc.timeStats.yearly[y]) {
-        acc.timeStats.yearly[y] += 1;
-      }
-      else {
-        acc.timeStats.yearly[y] = 1;
-      }
-
-      return acc;
-    }, this.data.reactionStats);
+      }.bind(this), this.data.reactionStats);
+    }
     cbChain.call();
   }
 
