@@ -106,20 +106,64 @@ class FBAnalyzer extends BaseAnalyzer {
       // This will make your script fail miserably right now...
 
       let fns = [
-        ['profile_information/profile_information.json', this.getBaseData],
-        ['about_you/friend_peer_group.json',this.getFriendPeerGroup],
-        ['about_you/face_recognition.json',this.getFaceRecognitionData],
-        ['profile_information/profile_update_history.json', this.getProfileUpdateData],
-        ['posts/your_posts_1.json', this.getPostDataSent],
-        ['posts/other_people\'s_posts_to_your_timeline.json', this.getPostDataReceived],
-        ['likes_and_reactions/posts_and_comments.json', this.getReactionData],
-        ['search_history/your_search_history.json', this.getSearchData],
-        ['ads/ads_interests.json', this.getAdData],
-        ['ads/advertisers_you\'ve_interacted_with.json', this.getAdInteractionData]
-      ]
+        {
+          path: 'profile_information/profile_information.json',
+          name: 'fetching profile information',
+          func: this.getBaseData
+        },
+        {
+          path: 'about_you/friend_peer_group.json',
+          name: 'fetching who your friends are',
+          func: this.getFriendPeerGroup
+        },
+        {
+          path: 'about_you/face_recognition.json',
+          name: 'fetching face data',
+          func: this.getFaceRecognitionData
+        },
+        {
+          path: 'profile_information/profile_update_history.json',
+          name: 'fetching profile updates data',
+          func: this.getProfileUpdateData
+        },
+        {
+          path: 'posts/your_posts_1.json',
+          name: 'fetching outgoing post data',
+          func: this.getPostDataSent
+        },
+        {
+          path: 'posts/other_people\'s_posts_to_your_timeline.json',
+          name: 'fetching incoming post data',
+          func: this.getPostDataReceived
+        },
+        {
+          path: 'likes_and_reactions/posts_and_comments.json',
+          name: 'fetching reaction data',
+          func: this.getReactionData
+        },
+        {
+          path: 'search_history/your_search_history.json',
+          name: 'fetching search data',
+          func: this.getSearchData
+        },
+        {
+          path: 'ads/ads_interests.json',
+          name: 'fetching ad data',
+          func: this.getAdData
+        },
+        {
+          path: 'ads/advertisers_you\'ve_interacted_with.json',
+          name: 'fetching interaction data',
+          func: this.getAdInteractionData
+        }
+      ];
 
+      // execute functions
       for(let i = 0; i < fns.length; i++) {
-        this.analyzeFile(fns[i][0], fns[i][1]);
+        this.analyzeFile(fns[i].path, fns[i].func);
+        let why = document.createElement('div');
+        why.innerHTML = fns[i].name;
+        this.cbChain.progress.add(why);
       }
 
       // analyze each message thread

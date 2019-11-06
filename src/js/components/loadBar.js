@@ -33,6 +33,11 @@ class LoadBar {
     return `${Math.round(this.current / this.max * 100)}%`;
   }
 
+  // add random things
+  add(text) {
+    this.progress.appendChild(text);
+  }
+
   // show progress bar
   show() {
     document.body.appendChild(this.progress);
