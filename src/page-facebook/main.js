@@ -103,6 +103,12 @@ function renderReportHeading(data) {
       tooltip: 'Last time you updated your Facebook profile.'
     },
     {
+      icon: 'user',
+      text: 'Profile Updates: ',
+      textBold: data.number_profile_updates,
+      tooltip: 'The number of times you have updated your Facebook profile.'
+    },
+    {
       icon: 'users',
       text: 'Friend Peer Group: ',
       textBold: data.friend_peer_group,

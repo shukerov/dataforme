@@ -13,6 +13,7 @@ class FBAnalyzer extends BaseAnalyzer {
       'relationship_count': null,
       'relationship_status': null,
       'last_profile_update': null,
+      'number_profile_updates': null,
       'friend_peer_group': null,
       'adStats': {
         'topics': [],
@@ -271,22 +272,44 @@ class FBAnalyzer extends BaseAnalyzer {
 
   getProfileUpdateData(cbChain, profileUpdateInfo) {
     let profileUpdateJSON = JSON.parse(profileUpdateInfo);
-    this.data.last_profile_update = profileUpdateJSON.profile_updates[0].timestamp * 1000;
+
+    // extract data
+    const profile_updates = this.get(['profile_updates'], profileUpdateJSON);
+
+    if (profile_updates != 'not found' && profile_updates.length > 0) {
+      this.data.last_profile_update = profile_updates[0].timestamp * 1000;
+      this.data.number_profile_updates = profile_updates.length;
+    }
+    else {
+      this.data.last_profile_update = 'not found';
+      this.data.number_profile_updates = 'not found';
+    }
     cbChain.call();
   }
+
 
   getFriendPeerGroup(cbChain, friendPeerInfo) {
     let friendPeerInfoJSON = JSON.parse(friendPeerInfo);
-    this.data.friend_peer_group = friendPeerInfoJSON.friend_peer_group;
+
+    // extract data
+    const friend_peer_group = this.get(['friend_peer_group'], friendPeerInfoJSON);
+    this.data.friend_peer_group = friend_peer_group;
+
     cbChain.call();
   }
 
+
   getFaceRecognitionData(cbChain, faceRecInfo) {
     let faceRecInfoJSON = JSON.parse(faceRecInfo);
-    this.data.face_example_count = faceRecInfoJSON.facial_data.example_count;
-    this.data.my_face = faceRecInfoJSON.facial_data.raw_data;
+
+    // extract data
+    const facial_data = this.get(['facial_data'], faceRecInfoJSON);
+    this.data.face_example_count = this.get(['example_count'], facial_data);
+    this.data.my_face = this.get(['raw_data'], facial_data);
+
     cbChain.call();
   }
+
 
   getSearchData(cbChain, searchInfo) {
     let searchInfoJSON = JSON.parse(searchInfo);
