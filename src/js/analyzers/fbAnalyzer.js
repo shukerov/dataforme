@@ -161,10 +161,7 @@ class FBAnalyzer extends BaseAnalyzer {
 
       // execute functions
       for(let i = 0; i < fns.length; i++) {
-        this.analyzeFile(fns[i].path, fns[i].func);
-        // let why = document.createElement('div');
-        // why.innerHTML = fns[i].name;
-        // this.cbChain.progress.add(why);
+        this.analyzeFile(fns[i]);
       }
 
       // analyze each message thread

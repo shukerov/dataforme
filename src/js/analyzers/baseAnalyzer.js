@@ -19,12 +19,36 @@ class BaseAnalyzer {
     this.cbChain.progress.show();
   }
 
-  analyzeFile(fileName, analyzerFunction) {
+  // input
+  // accepts a js object in the form of
+  // {
+  //   path: <path to file to be analyzed in zip>,
+  //   name: <user message to be displayed>,
+  //   func: <function to be executed>
+  // }
+  analyzeFile(file_data) {
 
     this.cbChain.setLoopCount(); // increment the callbackloop count
-    const internalCallback = new CbChain(`${analyzerFunction.name}`, this.cbChain.call.bind(this.cbChain), 1);
-    const file = this.getJSONFile(fileName); 
-    file.getText(analyzerFunction.bind(this, internalCallback)); 
+    const internalCallback = new CbChain(`${file_data.func.name}`, this.cbChain.call.bind(this.cbChain), 1);
+
+    try {
+      let why = document.createElement('div');
+      why.innerHTML = file_data.name;
+      this.cbChain.progress.add(why);
+      const file = this.getJSONFile(file_data.path); 
+      file.getText(file_data.func.bind(this, internalCallback)); 
+      let why1 = document.createElement('div');
+      why1.innerHTML = 'V';
+      this.cbChain.progress.add(why1);
+    }
+    catch(e) {
+      // TODO: error prevention bad bad
+      console.error(e);
+      let why = document.createElement('div');
+      why.innerHTML = 'X';
+      this.cbChain.progress.add(why);
+      internalCallback.call();
+    }
   }
 
   analyzeDir(dirName, filePattern, analyzerFunction) {
