@@ -11,4 +11,65 @@ let test = new insFactory('tinder', document.getElementById('instructions-contai
 let rRender = new reportFactory('red');
 let nBar = new NavBar();
 let fPicker = new FilePicker(rRender.reportContainer);
-let analyzer = new TinderAnalyzer(renderFacebookReport);
+let analyzer = new TinderAnalyzer(renderReport);
+
+// TODO: refactor as helper
+let previewBtn = document.getElementById('nav-preview-item');
+previewBtn.onclick = () => {
+  renderReport(true);
+};
+
+kickStartReport();
+
+function kickStartReport() {
+  if (!DEBUG_MODE) {
+    fPicker.onUpload((file) => { analyzer.init(file) });
+  }
+  else {
+    renderReport(true);
+  }
+}
+
+function renderReport(fakeData) {
+  //TODO: needs to scroll to report once done
+  const data = analyzer.getData(fakeData);
+  renderReportHeading(data);
+}
+
+function renderReportHeading(data) {
+  let reportItems = [
+    {
+      icon: 'thumbs-up',
+      text: 'Number of Likes: ',
+      textBold: data.num_likes,
+      tooltip: 'The number of likes(right swipes) you have on Tinder.'
+    },
+    {
+      icon: 'thumbs-down',
+      text: 'Number of Passes: ',
+      textBold: data.num_passes,
+      tooltip: 'The number of passes(left swipes) you have on Tinder.'
+    },
+    {
+      icon: 'heart',
+      text: 'Number of Matches: ',
+      textBold: data.num_matches,
+      tooltip: 'The number of matches you have on Tinder.'
+    },
+    {
+      icon: 'send',
+      text: 'Number of Messages Sent: ',
+      textBold: data.num_messages_sent,
+      tooltip: 'The number of messages you have sent on Tinder.'
+    },
+    {
+      icon: 'inbox',
+      text: 'Number of Messages Received: ',
+      textBold: data.num_messages_received,
+      tooltip: 'The number of messages you have received on Tinder.'
+    },
+  ]
+
+  const subreport = rRender.getSubreport(data.name);
+  rRender.add(reportItems, 'icon-list', subreport);
+}
