@@ -11,9 +11,6 @@ import { FilePicker } from '../js/components/filePicker.js';
 import { reportFactory } from '../js/factories/reportFactory.js';
 import { insFactory } from '../js/factories/insFactory.js';
 
-// move data crunching to fbAnalyzer
-// let fakeData = require('../assets/fake_data/fb_precompiled.json');
-
 // this is instructions loading. Should stay here only temporarily during development
 let test = new insFactory('facebook', document.getElementById('instructions-container'));
 let rRender = new reportFactory('blue');

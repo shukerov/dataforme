@@ -1,4 +1,3 @@
-// TODO: add comments for each getter. showing where the data is coming from and what it does
 import { BaseAnalyzer } from './baseAnalyzer.js';
 
 class FBAnalyzer extends BaseAnalyzer {
@@ -102,10 +101,6 @@ class FBAnalyzer extends BaseAnalyzer {
     this.showLoadScreen();
 
     this.fs.importBlob(file, () => {
-      // TODO: IMPORTANT need to have a backup plan in case loopback fails
-      // currently that can happen if file is not found for example.
-      // This will make your script fail miserably right now...
-
       let fns = [
         {
           path: 'profile_information/profile_information.json',
