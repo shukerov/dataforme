@@ -1,6 +1,7 @@
 import '../styles/tinder.scss';
 
 // JS imports:
+import { formatDate } from '../js/analyzers/analyzerHelpers.js';
 import { TinderAnalyzer } from '../js/analyzers/tinderAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
@@ -37,7 +38,7 @@ function renderReport(fakeData) {
 }
 
 function renderReportHeading(data) {
-  let reportItems = [
+  let swipeData = [
     {
       icon: 'thumbs-up',
       text: 'Number of Likes: ',
@@ -55,6 +56,15 @@ function renderReportHeading(data) {
       text: 'Number of Matches: ',
       textBold: data.num_matches,
       tooltip: 'The number of matches you have on Tinder.'
+    }
+  ]
+
+  let reportItems = [
+    {
+      icon: 'calendar',
+      text: 'Date Joined: ',
+      textBold: formatDate(data.date_joined),
+      tooltip: 'The date that you created a Tinder account'
     },
     {
       icon: 'send',
@@ -71,5 +81,6 @@ function renderReportHeading(data) {
   ]
 
   const subreport = rRender.getSubreport(data.name);
+  rRender.add(swipeData, 'big-icon-list', subreport);
   rRender.add(reportItems, 'icon-list', subreport);
 }

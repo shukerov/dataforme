@@ -41,7 +41,9 @@ class TinderAnalyzer extends BaseAnalyzer {
     const username = this.get(['User', 'full_name'], allDataJSON);
     this.username = username;
     this.data.name = this.username;
+    this.data.date_joined = this.get(['User', 'create_date'], allDataJSON);
 
+    // THIS IS PART OF MATCH REPORT
     // TODO: this can all be one sum function ahhheemmm
     const matches = this.get(['Usage', 'matches'], allDataJSON);
     this.data.num_matches = Object.values(matches).reduce((acc, match_count) => {
