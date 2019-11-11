@@ -41,4 +41,3 @@ Read the wiki on how to contribute, and add additional web services.
 * https://frappe.io/charts
 * https://gildas-lormeau.github.io/zip.js/
 * https://fontawesome.com Link to their license [https://fontawesome.com/license](here)
-

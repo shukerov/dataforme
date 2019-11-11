@@ -6,8 +6,6 @@ import ileft from '../../images/components/chevron-left.svg';
 import iright from '../../images/components/chevron-right.svg';
 
 // locations and data for the instructions
-// TODO: check if this bundles all images
-const FB_INS_PATH = '../images/fb-instructions';
 const insns = {
   'facebook': [
     {
@@ -34,6 +32,12 @@ const insns = {
       image: './step6-web.jpg',
       ins: "In a couple of hours check your Facebook notifications, and save your file. Store it somewhere safe."
     }
+  ],
+  'tinder': [ 
+    {
+      image: './step1-web.jpg',
+      ins: "Open your browser of choice, and enter 'tinder.com' in the address bar."
+    }
   ]
 }
 
@@ -50,6 +54,10 @@ class insFactory {
     if (website === 'facebook') {
       this.imagesPath = require.context('../../images/fb-instructions', true);
       this.instructions = insns['facebook'];
+    }
+    else if (website === 'tinder') {
+      this.imagesPath = require.context('../../images/tinder-instructions', true);
+      this.instructions = insns['tinder'];
     }
 
     // sets the correct path for each image
