@@ -16,12 +16,12 @@ let test = new insFactory('facebook', document.getElementById('instructions-cont
 let rRender = new reportFactory('blue');
 let nBar = new NavBar();
 let fPicker = new FilePicker(rRender.reportContainer);
-let analyzer = new FBAnalyzer(renderFacebookReport);
+let analyzer = new FBAnalyzer(renderReport);
 
 // TODO: refactor as helper
 let previewBtn = document.getElementById('nav-preview-item');
 previewBtn.onclick = () => {
-  renderFacebookReport(true);
+  renderReport(true);
 };
 
 kickStartReport();
@@ -31,11 +31,11 @@ function kickStartReport() {
     fPicker.onUpload((file) => { analyzer.init(file) });
   }
   else {
-    renderFacebookReport(true);
+    renderReport(true);
   }
 }
 
-function renderFacebookReport(fakeData) {
+function renderReport(fakeData) {
   //TODO: needs to scroll to report once done
   const data = analyzer.getData(fakeData);
   renderReportHeading(data);

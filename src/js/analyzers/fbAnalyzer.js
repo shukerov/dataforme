@@ -167,21 +167,6 @@ class FBAnalyzer extends BaseAnalyzer {
     });
   }
 
-  // safely gets the attribute of an object
-  // TODO: move to baseAnalyzer
-  // TODO: in debug mode it should report to console what wasn't found...
-  get(path, object) {
-    return path.reduce((xs, x) =>
-      (xs && xs[x]) ? xs[x] : 'not found', object)
-  }
-
-  // returns the data object holding all facebook gathered info
-  // if the fake data flag is present the fake data is returned
-  getData(fakeData) {
-    return fakeData ? this.fakeData : this.data;
-  }
-
-
   getAdInteractionData(cbChain, adInteractionInfo) {
     let adInteractionInfoJSON = JSON.parse(adInteractionInfo);
     let interactions =  {};
