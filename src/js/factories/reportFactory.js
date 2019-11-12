@@ -430,11 +430,24 @@ export class reportFactory {
       let reportItem = document.createElement('div');
       let itemLabel = document.createElement('p');
       let itemToolTip = new ToolTip(item.tooltip);
-      
+
+      // create the report item text
+      let itemText = null;
+      if (item.link) {
+        itemText = document.createElement('a');
+        itemText.innerHTML = item.textBold;
+        itemText.target = 'blank';
+        itemText.href = item.link;
+      }
+      else {
+        itemText = this.renderText(item.textBold); 
+      }
+
+
       // appending elements
       reportItem.appendChild(itemIcon);
       reportItem.appendChild(itemLabel);
-      reportItem.appendChild(this.renderText(item.textBold));
+      reportItem.appendChild(itemText);
       reportItem.appendChild(itemToolTip);
 
       // adding content
