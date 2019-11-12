@@ -84,7 +84,8 @@ class chartFactory {
     const size = this.getSize(args.size);
     var data = this.prepData(args);
 
-    if (/^(bar|line|scatter|pie|percentage|axis-mixed)$/.test(args.type)) {
+    if (/^(bar|heatmap|line|scatter|pie|percentage|axis-mixed)$/.test(args.type)) {
+      console.log('yes');
       var chart = document.createElement('div');
       chart.id = args.name;
       args.parent.appendChild(chart);

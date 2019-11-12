@@ -85,18 +85,6 @@ function renderUserReport(data) {
       textBold: formatDate(data.birthday),
       tooltip: 'Your birthday.'
     },
-    {
-      icon: 'send',
-      text: 'Number of Messages Sent: ',
-      textBold: data.num_messages_sent,
-      tooltip: 'The number of messages you have sent on Tinder.'
-    },
-    {
-      icon: 'inbox',
-      text: 'Number of Messages Received: ',
-      textBold: data.num_messages_received,
-      tooltip: 'The number of messages you have received on Tinder.'
-    },
   ];
 
   const subreport = rRender.getSubreport(data.name);
@@ -169,9 +157,38 @@ function renderUsageReport(data) {
 
   const subreport = rRender.getSubreport('Usage Report');
   rRender.add(reportItems, 'icon-list', subreport);
+
+  // render graphs
+  rRender.getSubreportGraphContainer('graphs-container-usage', subreport);
+
+  // usage graphs by year chart
+  Object.keys(data.app_opens_by_date).forEach((year) => {
+    rRender.addGraph(subreport, {
+      type: 'heatmap',
+      data: data.app_opens_by_date[year],
+      title: `Tinder Usage ${year}`,
+      css_label: 'usage-graph',
+      size: 'medium'
+    });
+  });
 }
 
 function renderMessageReport(data) {
+  const messageStats = [ 
+    {
+      icon: 'send',
+      text: 'Number of Messages Sent: ',
+      textBold: data.num_messages_sent,
+      tooltip: 'The number of messages you have sent on Tinder.'
+    },
+    {
+      icon: 'inbox',
+      text: 'Number of Messages Received: ',
+      textBold: data.num_messages_received,
+      tooltip: 'The number of messages you have received on Tinder.'
+    }
+  ];
+
   const messages = {
       icon: 'message-circle',
       text: 'Messages: ',
@@ -180,5 +197,6 @@ function renderMessageReport(data) {
   };
 
   const subreport = rRender.getSubreport('Message Report');
+  rRender.add(messageStats, 'icon-list', subreport);
   rRender.add(messages, 'list-headings', subreport);
 }
