@@ -1,5 +1,15 @@
 {
         "name": "Fernando Bochelli",
+        "email": "fernando@gmail.com",
+        "birthday": "1993-03-03T08:17:40.317Z",
+        "phone": "+1-707-303-303",
+        "education": "Has high school and/or college education",
+        "photo_count": 4,
+        "pos": {
+            "at": "Mon, 02 Apr 2018 05:22:59 GMT",
+            "lat": 33.2906529,
+            "lon": -124.6529058
+        },
         "num_likes": 5,
         "num_passes": 4,
         "num_matches": 3,

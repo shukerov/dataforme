@@ -67,6 +67,43 @@ function renderReportHeading(data) {
       tooltip: 'The date that you created a Tinder account'
     },
     {
+      icon: 'map-pin',
+      text: 'Location: ',
+      textBold: 'here',
+      link: `https://www.google.com/maps/search/?api=1&query=${data.pos.lat},${data.pos.lon}`,
+      tooltip: `Your location on ${data.pos.at}. NOTE: you need internet connection to view this link.`
+    },
+    {
+      icon: 'image',
+      text: 'Number of Pictures: ',
+      textBold: data.photo_count,
+      tooltip: 'The number of pictures you have on Tinder.'
+    },
+    {
+      icon: 'mail',
+      text: 'Email: ',
+      textBold: data.email,
+      tooltip: 'Your email address.'
+    },
+    {
+      icon: 'phone-call',
+      text: 'Phone: ',
+      textBold: data.phone,
+      tooltip: 'Your phone number.'
+    },
+    {
+      icon: 'book',
+      text: 'Education: ',
+      textBold: data.education,
+      tooltip: 'The education Tinder thinks you have.'
+    },
+    {
+      icon: 'cake',
+      text: 'Birthday: ',
+      textBold: formatDate(data.birthday),
+      tooltip: 'Your birthday.'
+    },
+    {
       icon: 'send',
       text: 'Number of Messages Sent: ',
       textBold: data.num_messages_sent,

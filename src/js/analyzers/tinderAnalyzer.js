@@ -41,11 +41,19 @@ class TinderAnalyzer extends BaseAnalyzer {
     // extracting data
     const username = this.get(['User', 'full_name'], allDataJSON);
     this.username = username;
+
+    // THIS IS PART OF GENERAL REPORT
     this.data.name = this.username;
     this.data.date_joined = this.get(['User', 'create_date'], allDataJSON);
+    this.data.email = this.get(['User', 'email'], allDataJSON);
+    this.data.birthday = this.get(['User', 'birth_date'], allDataJSON);
+    this.data.education = this.get(['User', 'education'], allDataJSON);
+    this.data.phone = this.get(['User', 'phone_id'], allDataJSON);
+    //TODO: this is not fully safe. each item in the pos object needs to be safely accessed...
+    this.data.pos = this.get(['User', 'pos'], allDataJSON);
+    this.data.photo_count = this.get(['Photos', 'length'], allDataJSON);
 
     // THIS IS PART OF MATCH REPORT
-    // TODO: this can all be one sum function ahhheemmm
     const matches = this.get(['Usage', 'matches'], allDataJSON);
     this.data.num_matches = sum(Object.values(matches));
 
@@ -60,6 +68,7 @@ class TinderAnalyzer extends BaseAnalyzer {
 
     const messages_received = this.get(['Usage', 'messages_received'], allDataJSON);
     this.data.num_messages_received = sum(Object.values(messages_received));
+    
 
     cbChain.call();
   }
