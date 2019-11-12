@@ -1,4 +1,5 @@
 import { BaseAnalyzer } from './baseAnalyzer.js';
+import { sum } from './analyzerHelpers.js';
 
 class TinderAnalyzer extends BaseAnalyzer {
 
@@ -46,34 +47,19 @@ class TinderAnalyzer extends BaseAnalyzer {
     // THIS IS PART OF MATCH REPORT
     // TODO: this can all be one sum function ahhheemmm
     const matches = this.get(['Usage', 'matches'], allDataJSON);
-    this.data.num_matches = Object.values(matches).reduce((acc, match_count) => {
-      acc += match_count;
-      return acc;
-    }, 0);
+    this.data.num_matches = sum(Object.values(matches));
 
     const passes = this.get(['Usage', 'swipes_passes'], allDataJSON);
-    this.data.num_passes = Object.values(passes).reduce((acc, pass_count) => {
-      acc += pass_count;
-      return acc;
-    }, 0);
+    this.data.num_passes = sum(Object.values(passes));
 
     const likes = this.get(['Usage', 'swipes_likes'], allDataJSON);
-    this.data.num_likes = Object.values(likes).reduce((acc, like_count) => {
-      acc += like_count;
-      return acc;
-    }, 0);
+    this.data.num_likes = sum(Object.values(likes));
 
     const messages_sent = this.get(['Usage', 'messages_sent'], allDataJSON);
-    this.data.num_messages_sent = Object.values(messages_sent).reduce((acc, msg_count) => {
-      acc += msg_count;
-      return acc;
-    }, 0);
+    this.data.num_messages_sent = sum(Object.values(messages_sent));
 
     const messages_received = this.get(['Usage', 'messages_received'], allDataJSON);
-    this.data.num_messages_received = Object.values(messages_received).reduce((acc, msg_count) => {
-      acc += msg_count;
-      return acc;
-    }, 0);
+    this.data.num_messages_received = sum(Object.values(messages_received));
 
     cbChain.call();
   }
