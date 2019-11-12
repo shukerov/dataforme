@@ -38,7 +38,16 @@ class TinderAnalyzer extends BaseAnalyzer {
 
   getAllData(cbChain, allData) {
     let allDataJSON = JSON.parse(allData);
+
     // extracting data
+    this.getUserData(allDataJSON);
+    this.getMatchData(allDataJSON);  
+    
+    // signal UI that things are ready to render
+    cbChain.call();
+  }
+
+  getUserData(allDataJSON) {
     const username = this.get(['User', 'full_name'], allDataJSON);
     this.username = username;
 
@@ -52,8 +61,9 @@ class TinderAnalyzer extends BaseAnalyzer {
     //TODO: this is not fully safe. each item in the pos object needs to be safely accessed...
     this.data.pos = this.get(['User', 'pos'], allDataJSON);
     this.data.photo_count = this.get(['Photos', 'length'], allDataJSON);
+  }
 
-    // THIS IS PART OF MATCH REPORT
+  getMatchData(allDataJSON) {
     const matches = this.get(['Usage', 'matches'], allDataJSON);
     this.data.num_matches = sum(Object.values(matches));
 
@@ -68,9 +78,6 @@ class TinderAnalyzer extends BaseAnalyzer {
 
     const messages_received = this.get(['Usage', 'messages_received'], allDataJSON);
     this.data.num_messages_received = sum(Object.values(messages_received));
-    
-
-    cbChain.call();
   }
 }
 

@@ -34,31 +34,11 @@ function kickStartReport() {
 function renderReport(fakeData) {
   //TODO: needs to scroll to report once done
   const data = analyzer.getData(fakeData);
-  renderReportHeading(data);
+  renderUserReport(data);
+  renderMatchReport(data);
 }
 
-function renderReportHeading(data) {
-  let swipeData = [
-    {
-      icon: 'thumbs-up',
-      text: 'Number of Likes: ',
-      textBold: data.num_likes,
-      tooltip: 'The number of likes(right swipes) you have on Tinder.'
-    },
-    {
-      icon: 'thumbs-down',
-      text: 'Number of Passes: ',
-      textBold: data.num_passes,
-      tooltip: 'The number of passes(left swipes) you have on Tinder.'
-    },
-    {
-      icon: 'heart',
-      text: 'Number of Matches: ',
-      textBold: data.num_matches,
-      tooltip: 'The number of matches you have on Tinder.'
-    }
-  ]
-
+function renderUserReport(data) {
   let reportItems = [
     {
       icon: 'calendar',
@@ -118,6 +98,31 @@ function renderReportHeading(data) {
   ]
 
   const subreport = rRender.getSubreport(data.name);
-  rRender.add(swipeData, 'big-icon-list', subreport);
   rRender.add(reportItems, 'icon-list', subreport);
+}
+
+function renderMatchReport(data) {
+  let swipeData = [
+    {
+      icon: 'thumbs-up',
+      text: 'Number of Likes: ',
+      textBold: data.num_likes,
+      tooltip: 'The number of likes(right swipes) you have on Tinder.'
+    },
+    {
+      icon: 'thumbs-down',
+      text: 'Number of Passes: ',
+      textBold: data.num_passes,
+      tooltip: 'The number of passes(left swipes) you have on Tinder.'
+    },
+    {
+      icon: 'heart',
+      text: 'Number of Matches: ',
+      textBold: data.num_matches,
+      tooltip: 'The number of matches you have on Tinder.'
+    }
+  ]
+  
+  const subreport = rRender.getSubreport('Match Report');
+  rRender.add(swipeData, 'big-icon-list', subreport);
 }
