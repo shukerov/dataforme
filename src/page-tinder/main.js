@@ -36,6 +36,7 @@ function renderReport(fakeData) {
   const data = analyzer.getData(fakeData);
   renderUserReport(data);
   renderMatchReport(data);
+  renderUsageReport(data);
 }
 
 function renderUserReport(data) {
@@ -95,7 +96,7 @@ function renderUserReport(data) {
       textBold: data.num_messages_received,
       tooltip: 'The number of messages you have received on Tinder.'
     },
-  ]
+  ];
 
   const subreport = rRender.getSubreport(data.name);
   rRender.add(reportItems, 'icon-list', subreport);
@@ -121,7 +122,7 @@ function renderMatchReport(data) {
       textBold: data.num_matches,
       tooltip: 'The number of matches you have on Tinder.'
     }
-  ]
+  ];
 
   const reportItems = [
     {
@@ -148,9 +149,23 @@ function renderMatchReport(data) {
       textBold: formatPercent(data.num_matches / data.num_likes),
       tooltip: 'Your chance to match with someone when you swipe right based on your swipe history.'
     },
-  ]
+  ];
   
   const subreport = rRender.getSubreport('Match Report');
   rRender.add(swipeData, 'big-icon-list', subreport);
+  rRender.add(reportItems, 'icon-list', subreport);
+}
+
+function renderUsageReport(data) {
+  const reportItems = [
+    {
+      icon: 'activity',
+      text: 'Number of app opens: ',
+      textBold: data.app_opens,
+      tooltip: 'The total number of times you have opened the app.'
+    }
+  ];
+
+  const subreport = rRender.getSubreport('Usage Report');
   rRender.add(reportItems, 'icon-list', subreport);
 }
