@@ -1,7 +1,7 @@
 import '../styles/tinder.scss';
 
 // JS imports:
-import { formatDate } from '../js/analyzers/analyzerHelpers.js';
+import { formatDate, formatPercent } from '../js/analyzers/analyzerHelpers.js';
 import { TinderAnalyzer } from '../js/analyzers/tinderAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
@@ -102,7 +102,7 @@ function renderUserReport(data) {
 }
 
 function renderMatchReport(data) {
-  let swipeData = [
+  const swipeData = [
     {
       icon: 'thumbs-up',
       text: 'Number of Likes: ',
@@ -122,7 +122,35 @@ function renderMatchReport(data) {
       tooltip: 'The number of matches you have on Tinder.'
     }
   ]
+
+  const reportItems = [
+    {
+      icon: 'maximize-2',
+      text: 'Age Range: ',
+      textBold: `${data.age_min} - ${data.age_max} years old`,
+      tooltip: 'The age range you have selected on Tinder.'
+    },
+    {
+      icon: 'thumbs-up',
+      text: 'Chance to like: ',
+      textBold: formatPercent(data.num_likes / (data.num_likes + data.num_passes)),
+      tooltip: 'Your chance to swipe right on someone based on your swipe history.'
+    },
+    {
+      icon: 'thumbs-down',
+      text: 'Chance to pass: ',
+      textBold: formatPercent(data.num_passes / (data.num_likes + data.num_passes)),
+      tooltip: 'Your chance to swipe left on someone based on your swipe history.'
+    },
+    {
+      icon: 'heart',
+      text: 'Chance to match: ',
+      textBold: formatPercent(data.num_matches / data.num_likes),
+      tooltip: 'Your chance to match with someone when you swipe right based on your swipe history.'
+    },
+  ]
   
   const subreport = rRender.getSubreport('Match Report');
   rRender.add(swipeData, 'big-icon-list', subreport);
+  rRender.add(reportItems, 'icon-list', subreport);
 }

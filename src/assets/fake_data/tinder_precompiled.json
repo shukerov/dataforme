@@ -5,6 +5,8 @@
         "phone": "+1-707-303-303",
         "education": "Has high school and/or college education",
         "photo_count": 4,
+        "age_min": 18,
+        "age_max": 1000,
         "pos": {
             "at": "Mon, 02 Apr 2018 05:22:59 GMT",
             "lat": 33.2906529,

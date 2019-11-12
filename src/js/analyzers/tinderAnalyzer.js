@@ -7,6 +7,7 @@ class TinderAnalyzer extends BaseAnalyzer {
     super(callback);
     this.username = 'unknown';
     this.fakeData = require('../../assets/fake_data/tinder_precompiled.json');
+    // TODO: add missing items so that stuff doesn't break? It wont really but good practice
     this.data = { 
       'name': null,
       'num_likes': null,
@@ -64,6 +65,14 @@ class TinderAnalyzer extends BaseAnalyzer {
   }
 
   getMatchData(allDataJSON) {
+    // general
+    const age_min = this.get(['User', 'age_filter_min'], allDataJSON);
+    this.data.age_min = age_min;
+
+    const age_max = this.get(['User', 'age_filter_max'], allDataJSON);
+    this.data.age_max = age_max;
+
+    // swipes
     const matches = this.get(['Usage', 'matches'], allDataJSON);
     this.data.num_matches = sum(Object.values(matches));
 
@@ -73,6 +82,7 @@ class TinderAnalyzer extends BaseAnalyzer {
     const likes = this.get(['Usage', 'swipes_likes'], allDataJSON);
     this.data.num_likes = sum(Object.values(likes));
 
+    // messages
     const messages_sent = this.get(['Usage', 'messages_sent'], allDataJSON);
     this.data.num_messages_sent = sum(Object.values(messages_sent));
 

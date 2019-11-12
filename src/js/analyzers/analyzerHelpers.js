@@ -27,12 +27,12 @@ export function getTopSearches(searches, n) {
   });
 
   topSearches.sort( (a, b) => { return a[0] - b[0]; } );
-  // return topSearches.slice(topSearches.length - n);
   let result = topSearches.slice(topSearches.length - n);
   result = result.reduce((acc, s) => { acc[s[1]] = s[0]; return acc;}, {});
   return result;
 }
 
+//TODO should those really be in analyzer helpers?
 // truncates a string and returns just the last two characters
 export function truncateYears(years) {
   let yearsTruncated = years.map((year) => {
@@ -62,4 +62,10 @@ export function formatDate(date) {
 // out: the result of ar1/arg2
 export function safeDivide(arg1, arg2) {
   return arg2 > 0 ? (arg1 / arg2) : 0;
+}
+
+// in:  a formatted percent. eg. '3%'
+// out: a number between 0 and 1
+export function formatPercent(ratio) {
+  return `${ratio.toFixed(2) * 100}%`;
 }
