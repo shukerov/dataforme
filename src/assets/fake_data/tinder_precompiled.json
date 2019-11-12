@@ -18,5 +18,27 @@
         "num_matches": 3,
         "num_messages_sent": 200,
         "num_messages_received": 100,
-        "date_joined": "2014-03-03T08:17:40.317Z"
+        "date_joined": "2014-03-03T08:17:40.317Z",
+        "messages": {
+                "Messages": [
+                        {
+                                "Match ID": 1,
+                                "First Message": "Hello Sam. You have the most beautiful cat I have ever seen 😍",
+                                "Date Messaged": "Mon, 02 Apr 2018 05:22:59 GMT",
+                                "Total Messages": 5
+                        },
+                        {
+                                "Match ID": 2,
+                                "First Message": "Do you have a bandaid?",
+                                "Date Messaged": "Sun, 01 Apr 2018 06:23:20 GMT",
+                                "Total Messages": 1
+                        },
+                        {
+                                "Match ID": 3,
+                                "First Message": "Are you a beaver?",
+                                "Date Messaged": "Tue, 03 Apr 2018 03:15:00 GMT",
+                                "Total Messages": 4
+                        }
+                ]
+        }
 }

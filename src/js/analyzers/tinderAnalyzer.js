@@ -13,6 +13,9 @@ class TinderAnalyzer extends BaseAnalyzer {
       'num_likes': null,
       'num_passes': null,
       'num_matches': null,
+      'messages': {
+        "Messages": []
+      }
     };
   }
 
@@ -44,6 +47,7 @@ class TinderAnalyzer extends BaseAnalyzer {
     this.getUserData(allDataJSON);
     this.getMatchData(allDataJSON);  
     this.getUsageData(allDataJSON);  
+    this.getMessageData(allDataJSON);  
     
     // signal UI that things are ready to render
     cbChain.call();
@@ -93,6 +97,33 @@ class TinderAnalyzer extends BaseAnalyzer {
   getUsageData(allDataJSON) {
     const app_opens = this.get(['Usage', 'app_opens'], allDataJSON);
     this.data.app_opens = sum(Object.values(app_opens));
+  }
+
+  getMessageData(allDataJSON) {
+    const messages = this.get(['Messages'], allDataJSON);
+
+    this.data.messages.Messages = messages.map((thread) => {
+      let result = {
+        "Match ID": null,
+        "First Message": null,
+        "Date Messaged": null,
+        "Total Messages": 0
+      };
+
+      result['Match ID'] = thread.match_id;
+      result['Total Messages'] = thread.messages.length;
+
+      if (result['Total Messages'] > 0) {
+        result['First Message'] = thread.messages[0].message;
+        result['Date Messaged'] = thread.messages[0].sent_date;
+      }
+      else {
+        result['First Message'] = 'You never sent one :(';
+        result['Date Messaged'] = 'Never :(';
+      }
+
+      return result;
+    });
   }
 }
 

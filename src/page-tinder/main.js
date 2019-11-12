@@ -37,6 +37,7 @@ function renderReport(fakeData) {
   renderUserReport(data);
   renderMatchReport(data);
   renderUsageReport(data);
+  renderMessageReport(data);
 }
 
 function renderUserReport(data) {
@@ -168,4 +169,16 @@ function renderUsageReport(data) {
 
   const subreport = rRender.getSubreport('Usage Report');
   rRender.add(reportItems, 'icon-list', subreport);
+}
+
+function renderMessageReport(data) {
+  const messages = {
+      icon: 'message-circle',
+      text: 'Messages: ',
+      listData: data.messages,
+      tooltip: 'For each match - your first message and when you sent it, total number of messages. Note that Tinder doesn\'t include the name of matches for privacy reasons.'
+  };
+
+  const subreport = rRender.getSubreport('Message Report');
+  rRender.add(messages, 'list-headings', subreport);
 }
