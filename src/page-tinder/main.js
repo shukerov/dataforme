@@ -143,6 +143,25 @@ function renderMatchReport(data) {
   const subreport = rRender.getSubreport('Match Report');
   rRender.add(swipeData, 'big-icon-list', subreport);
   rRender.add(reportItems, 'icon-list', subreport);
+
+  // render graphs
+  rRender.getSubreportGraphContainer('graphs-container-matches', subreport);
+
+  // usage graphs by year chart
+  Object.keys(data.matches_by_date).forEach((year) => {
+
+    // calculate the year
+    data.matches_by_date[year].start = new Date(year, 0, 1)
+    data.matches_by_date[year].end = new Date(year, 11, 31)
+
+    rRender.addGraph(subreport, {
+      type: 'heatmap',
+      data: data.matches_by_date[year],
+      title: `Tinder Matches ${year}`,
+      css_label: 'matches-graph',
+      size: 'medium'
+    });
+  });
 }
 
 function renderUsageReport(data) {

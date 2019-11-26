@@ -80,6 +80,26 @@ class TinderAnalyzer extends BaseAnalyzer {
     const matches = this.get(['Usage', 'matches'], allDataJSON);
     this.data.num_matches = sum(Object.values(matches));
 
+    // crunches data for matches report
+    const matches_by_date = Object.keys(matches).reduce((acc, date_key) => {
+      const date = new Date(date_key);
+      const year = date.getFullYear();
+
+      if (acc[year]) {
+        acc[year].dataPoints[date.valueOf() / 1000] = matches[date_key];
+      }
+      else {
+        acc[year] = {
+          dataPoints: {}
+        };
+        acc[year].dataPoints[date.valueOf() / 1000] = matches[date_key];
+      }
+
+      return acc;
+    }, {});
+
+    this.data.matches_by_date = matches_by_date;
+
     const passes = this.get(['Usage', 'swipes_passes'], allDataJSON);
     this.data.num_passes = sum(Object.values(passes));
 
