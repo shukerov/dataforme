@@ -147,6 +147,25 @@ function renderMatchReport(data) {
   // render graphs
   rRender.getSubreportGraphContainer('graphs-container-matches', subreport);
 
+  // some pie graphs
+  rRender.addGraph(subreport, {
+    type: 'pie',
+    data: [data.num_matches, data.num_likes - data.num_matches],
+    labels: ['Matches', 'Likes'],
+    title: `Matches versus Likes`,
+    css_label: 'matches-graph',
+    size: 'medium'
+  });
+
+  rRender.addGraph(subreport, {
+    type: 'pie',
+    data: [data.num_likes, data.num_passes],
+    labels: ['Likes', 'Passes'],
+    title: `Likes versus Passes`,
+    css_label: 'matches-graph',
+    size: 'medium'
+  });
+
   // usage graphs by year chart
   Object.keys(data.matches_by_date).forEach((year) => {
 
