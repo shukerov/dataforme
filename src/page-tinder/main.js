@@ -163,6 +163,11 @@ function renderUsageReport(data) {
 
   // usage graphs by year chart
   Object.keys(data.app_opens_by_date).forEach((year) => {
+
+    // calculate the year
+    data.app_opens_by_date[year].start = new Date(year, 0, 1)
+    data.app_opens_by_date[year].end = new Date(year, 11, 31)
+
     rRender.addGraph(subreport, {
       type: 'heatmap',
       data: data.app_opens_by_date[year],

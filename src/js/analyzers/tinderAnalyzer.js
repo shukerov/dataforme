@@ -98,7 +98,7 @@ class TinderAnalyzer extends BaseAnalyzer {
     const app_opens = this.get(['Usage', 'app_opens'], allDataJSON);
     this.data.app_opens = sum(Object.values(app_opens));
 
-    const test = Object.keys(app_opens).reduce((acc, date_key) => {
+    const app_opens_by_date = Object.keys(app_opens).reduce((acc, date_key) => {
       const date = new Date(date_key);
       const year = date.getFullYear();
 
@@ -106,15 +106,16 @@ class TinderAnalyzer extends BaseAnalyzer {
         acc[year].dataPoints[date.valueOf() / 1000] = app_opens[date_key];
       }
       else {
-        acc[year] = {dataPoints: {}, start: new Date(year, 0, 1),end: new Date(year, 11, 31)};
+        acc[year] = {
+          dataPoints: {}
+        };
         acc[year].dataPoints[date.valueOf() / 1000] = app_opens[date_key];
       }
 
       return acc;
     }, {});
-    console.log(test);
 
-    this.data.app_opens_by_date = test;
+    this.data.app_opens_by_date = app_opens_by_date;
   }
 
   getMessageData(allDataJSON) {
