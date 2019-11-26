@@ -85,12 +85,11 @@ class chartFactory {
     var data = this.prepData(args);
 
     if (/^(bar|heatmap|line|scatter|pie|percentage|axis-mixed)$/.test(args.type)) {
-      console.log('yes');
       var chart = document.createElement('div');
       chart.id = args.name;
       args.parent.appendChild(chart);
 
-      new Chart(`#${args.name}`, {  // or a DOM element,
+      const chartOptions = {  // or a DOM element,
         data: data,
         type: args.type,
         height: size,
@@ -104,7 +103,14 @@ class chartFactory {
           regionFill: 1
         },
         maxSlices: 24
-      })
+      }
+
+      // don't attempt to color heatmap graphs for now.
+      if (args.type == 'heatmap') {
+        delete chartOptions.colors;
+      }
+
+      new Chart(`#${args.name}`, chartOptions)
     }
     else if (args.type == 'clock') {
       let clckGraph =  new ClockChart(data, 300, args.parent, {
