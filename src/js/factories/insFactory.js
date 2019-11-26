@@ -37,6 +37,18 @@ const insns = {
     {
       image: './step1-web.jpg',
       ins: "Open your browser of choice, and enter 'tinder.com' in the address bar."
+    },
+    {
+      image: './step2-web.jpg',
+      ins: "Open your browser of choice, and enter 'tinder.com' in the address bar."
+    },
+    {
+      image: './step3-web.jpg',
+      ins: "Open your browser of choice, and enter 'tinder.com' in the address bar."
+    },
+    {
+      image: './step4-web.png',
+      ins: "Open your browser of choice, and enter 'tinder.com' in the address bar."
     }
   ]
 }
