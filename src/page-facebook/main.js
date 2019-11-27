@@ -4,7 +4,7 @@ import '../styles/facebook.scss';
 // JS imports:
 import { DAYS, MONTHS } from '../js/constants.js';
 import { formatNum, secondsToHms } from '../js/helpers.js';
-import { getTopMessagers, getTopSearches, truncateYears, getCurrentDate, getNumDays, formatDate } from '../js/analyzers/analyzerHelpers.js';
+import { getTopMessagers, getTopSearches, truncateYears, getCurrentDate, getNumDays, formatDate, safeDivide } from '../js/analyzers/analyzerHelpers.js';
 import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
@@ -146,11 +146,11 @@ function renderMsgReport(data) {
     totMsgReceived += data.regThreads[key].other;
   });
 
-  let avgWordsPerMsgSent = data.total_words.sent / totMsgSent;
-  let avgWordsPerMsgReceived = data.total_words.received / totMsgReceived;
-  let avgMsgPerDaySent =  totMsgSent / data.days_msged.sent;
-  let avgMsgPerDayReceived = totMsgReceived / data.days_msged.received;
-  let avgCallDuration = data.callStats.total_duration / (data.callStats.num_calls.initiated + data.callStats.num_calls.received);
+  let avgWordsPerMsgSent = safeDivide(data.total_words.sent, totMsgSent);
+  let avgWordsPerMsgReceived = safeDivide(data.total_words.received, totMsgReceived);
+  let avgMsgPerDaySent = safeDivide(totMsgSent, data.days_msged.sent);
+  let avgMsgPerDayReceived = safeDivide(totMsgReceived, data.days_msged.received);
+  let avgCallDuration = safeDivide(data.callStats.total_duration, (data.callStats.num_calls.initiated + data.callStats.num_calls.received));
 
   let msgData = [
     {

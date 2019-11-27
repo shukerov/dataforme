@@ -7,6 +7,8 @@ export function formatNum(x) {
 }
 
 export function secondsToHms(d) {
+  if (d <= 0) return 0;
+
   d = Number(d);
 
   var dd = Math.floor(d / 86400);

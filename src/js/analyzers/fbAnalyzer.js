@@ -77,7 +77,7 @@ class FBAnalyzer extends BaseAnalyzer {
             'initiated': 0,
             'received': 0
           },
-          'total_duration': 9000
+          'total_duration': 0
         },
         'timeStats': {
           'hourly': {

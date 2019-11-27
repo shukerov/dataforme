@@ -52,8 +52,14 @@ export function getNumDays(dateStart, dateEnd) {
   return Math.round((dateEnd - dateStart) / MS_IN_DAY);
 }
 
-// out: a formated date string.
 // in:  number of seconds since beginning of time 
+// out: a formated date string.
 export function formatDate(date) {
   return new Date(date).toDateString();
+}
+
+// in:  two numbers which will be divided
+// out: the result of ar1/arg2
+export function safeDivide(arg1, arg2) {
+  return arg2 > 0 ? (arg1 / arg2) : 0;
 }
