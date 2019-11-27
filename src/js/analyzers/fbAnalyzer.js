@@ -490,15 +490,9 @@ class FBAnalyzer extends BaseAnalyzer {
       // let curDay = null;
       // pull this function out and make sure you can reuse it in individual thread analysis
       msgJSON.messages.reduce(function(acc, msg) {
-        if (!group) {
-          if (msg.sender_name == this.username) {
-            acc.regThreads[participants[0].name].msgByUser++; 
-          }
-          else
-          {
-            acc.regThreads[participants[0].name].other++; 
-          }
-        }
+
+        // skip message counting for group chats
+        if (group) return acc;
 
         // initalize the day (0-6) that a message was sent
         // if (!curDay) {
@@ -507,6 +501,9 @@ class FBAnalyzer extends BaseAnalyzer {
         // }
 
         if (msg.sender_name == this.username && msg.content) {
+          // count sent messages
+          acc.regThreads[participants[0].name].msgByUser++; 
+
           // get time statistics
           let d = new Date(msg.timestamp_ms);
           let y = d.getFullYear(); // message years
@@ -518,7 +515,7 @@ class FBAnalyzer extends BaseAnalyzer {
           }
           else {
             acc.timeStats.yearly[y] = {
-              'sent': 0,
+              'sent': 1,
               'received': 0
             }
           }
@@ -542,6 +539,9 @@ class FBAnalyzer extends BaseAnalyzer {
           }
         }
         else if (msg.sender_name == participants[0].name && msg.content) {
+          // count received messages
+          acc.regThreads[participants[0].name].other++; 
+
           let d = new Date(msg.timestamp_ms);
           let y = d.getFullYear(); // message years
           acc.timeStats.hourly.received[d.getHours()]++;
@@ -553,7 +553,7 @@ class FBAnalyzer extends BaseAnalyzer {
           else {
             acc.timeStats.yearly[y] = {
               'sent': 0,
-              'received': 0
+              'received': 1
             }
           }
 
