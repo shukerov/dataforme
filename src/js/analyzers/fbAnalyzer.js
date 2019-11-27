@@ -60,6 +60,7 @@ class FBAnalyzer extends BaseAnalyzer {
         }
       },
       'msgStats': {
+        'name': null,
         'groupChatThreads': [],
         'regThreads': {},
         'numPictures': {'gifs': 0, 'other': 0},
@@ -438,9 +439,9 @@ class FBAnalyzer extends BaseAnalyzer {
     let profInfoJSON = JSON.parse(profInfo);
     
     // extracting data
-    const username = this.get(['profile', 'name', 'full_name'], profInfoJSON);
-    this.username = username;
+    this.username = this.get(['profile', 'name', 'full_name'], profInfoJSON);
     this.data.name = this.username;
+    this.data.msgStats.name = this.username;
 
     const joined_date = this.get(['profile', 'registration_timestamp'], profInfoJSON);
     this.data.joined = joined_date * 1000;
