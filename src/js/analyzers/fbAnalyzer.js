@@ -33,8 +33,8 @@ class FBAnalyzer extends BaseAnalyzer {
         }
       },
       'postStats': {
-        'num_posts_sent': null,
-        'num_posts_received': null,
+        'num_posts_sent': 0,
+        'num_posts_received': 0,
         'timeStats': {
           'hourly': {
             'sent': Array(24).fill(0),
@@ -223,8 +223,6 @@ class FBAnalyzer extends BaseAnalyzer {
     let postInfoJSON = JSON.parse(postInfo);
 
     // extract data
-    this.data.postStats.num_posts_sent = this.get(['length'], postInfoJSON);
-
     postInfoJSON.reduce((acc, post) => {
       const post_date = this.get(['timestamp'], post);
 
@@ -232,6 +230,9 @@ class FBAnalyzer extends BaseAnalyzer {
       if (post_date == 'not found') {
         return acc;
       }
+
+      // count number of posts received
+      this.data.postStats.num_posts_sent++;
 
       let d = new Date(post_date * 1000);
       let y = d.getFullYear(); // message years
@@ -243,7 +244,7 @@ class FBAnalyzer extends BaseAnalyzer {
       }
       else {
         acc.timeStats.yearly[y] = {
-          'sent': 0,
+          'sent': 1,
           'received': 0
         }
       }
@@ -260,7 +261,6 @@ class FBAnalyzer extends BaseAnalyzer {
     const received_posts = this.get(['wall_posts_sent_to_you', 'activity_log_data'], postInfoJSON);
 
     if (received_posts != 'not found') {
-      this.data.postStats.num_posts_received = received_posts.length;
 
       received_posts.reduce((acc, post) => {
         const post_date = this.get(['timestamp'], post);
@@ -269,6 +269,9 @@ class FBAnalyzer extends BaseAnalyzer {
         if (post_date == 'not found') {
           return acc;
         }
+
+        // count number of posts received
+        this.data.postStats.num_posts_received++;
 
         let d = new Date(post_date * 1000);
         let y = d.getFullYear(); // message years
@@ -281,7 +284,7 @@ class FBAnalyzer extends BaseAnalyzer {
         else {
           acc.timeStats.yearly[y] = {
             'sent': 0,
-            'received': 0
+            'received': 1
           }
         }
 
