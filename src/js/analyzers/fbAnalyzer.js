@@ -487,7 +487,7 @@ class FBAnalyzer extends BaseAnalyzer {
     }
 
     if (msgJSON.messages && msgJSON.messages.length > 1) {
-      let curDay = null;
+      // let curDay = null;
       // pull this function out and make sure you can reuse it in individual thread analysis
       msgJSON.messages.reduce(function(acc, msg) {
         if (!group) {
@@ -501,10 +501,10 @@ class FBAnalyzer extends BaseAnalyzer {
         }
 
         // initalize the day (0-6) that a message was sent
-        if (!curDay) {
-          const firstDate = new Date(msg.timestamp_ms);
-          curDay = firstDate.getDay();
-        }
+        // if (!curDay) {
+        //   const firstDate = new Date(msg.timestamp_ms);
+        //   curDay = firstDate.getDay();
+        // }
 
         if (msg.sender_name == this.username && msg.content) {
           // get time statistics
@@ -530,10 +530,10 @@ class FBAnalyzer extends BaseAnalyzer {
             // gets number of days that messages happened
             // TODO: very broken would double count days as it is...
             // TODO: counts wrong since people can message a week apart from each other, you need to compare years and months too...
-            if (d.getDay() != curDay) {
-              acc.days_msged.sent += 1;
-              curDay = d.getDay();
-            }
+            // if (d.getDay() != curDay) {
+            //   acc.days_msged.sent += 1;
+            //   curDay = d.getDay();
+            // }
           }
           // get call statistics
           else if (msg.type == 'Call' && msg.call_duration > 0 && msg.call_duration < 18000) {
@@ -562,10 +562,10 @@ class FBAnalyzer extends BaseAnalyzer {
             acc.total_words.received += msg.content.split(' ').length;
 
             // gets number of days that messages happened
-            if (d.getDay() != curDay) {
-              acc.days_msged.received += 1;
-              curDay = d.getDay();
-            }
+            // if (d.getDay() != curDay) {
+            //   acc.days_msged.received += 1;
+            //   curDay = d.getDay();
+            // }
           }
           // get call statistics
           // NOTE: skipping calls longer than 5h cause Facebook data has some problems

@@ -148,8 +148,8 @@ function renderMsgReport(data) {
 
   let avgWordsPerMsgSent = safeDivide(data.total_words.sent, totMsgSent);
   let avgWordsPerMsgReceived = safeDivide(data.total_words.received, totMsgReceived);
-  let avgMsgPerDaySent = safeDivide(totMsgSent, data.days_msged.sent);
-  let avgMsgPerDayReceived = safeDivide(totMsgReceived, data.days_msged.received);
+  // let avgMsgPerDaySent = safeDivide(totMsgSent, data.days_msged.sent);
+  // let avgMsgPerDayReceived = safeDivide(totMsgReceived, data.days_msged.received);
   let avgCallDuration = safeDivide(data.callStats.total_duration, (data.callStats.num_calls.initiated + data.callStats.num_calls.received));
 
   let msgData = [
@@ -159,12 +159,12 @@ function renderMsgReport(data) {
       textBold:  formatNum(totMsgSent),
       tooltip: 'The total number of messages you have sent on Facebook.'
     },
-    {
-      icon: 'message-circle',
-      text: 'Sent messages per day',
-      textBold: avgMsgPerDaySent.toFixed(2),
-      tooltip: 'Average number of messages sent every day.'
-    },
+    // {
+    //   icon: 'message-circle',
+    //   text: 'Sent messages per day',
+    //   textBold: avgMsgPerDaySent.toFixed(2),
+    //   tooltip: 'Average number of messages sent every day.'
+    // },
     {
       icon: 'message-circle',
       text: 'Words per message sent',
@@ -177,12 +177,12 @@ function renderMsgReport(data) {
       textBold: formatNum(totMsgReceived),
       tooltip: 'The total number of messages you have received on Facebook.'
     },
-    {
-      icon: 'message-circle',
-      text: 'Received Messages per day',
-      textBold: avgMsgPerDayReceived.toFixed(2),
-      tooltip: 'Average number of messages received every day.'
-    },
+    // {
+    //   icon: 'message-circle',
+    //   text: 'Received Messages per day',
+    //   textBold: avgMsgPerDayReceived.toFixed(2),
+    //   tooltip: 'Average number of messages received every day.'
+    // },
     {
       icon: 'message-circle',
       text: 'Words per message received',
