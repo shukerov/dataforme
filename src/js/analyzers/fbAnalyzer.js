@@ -472,17 +472,21 @@ class FBAnalyzer extends BaseAnalyzer {
     let msgJSON = JSON.parse(msg);
     let participants = msgJSON.participants // all participants in the current chat thread
     let group = true;                       // remains true if the chat is a groupchat
+    let messager = participants[0].name;
 
     if (participants && participants.length > 2) {
       msgData.groupChatThreads.push(threadName);
     }
     else if(participants) {
       let participantStat = {
-        'dirName': threadName,
+        'messager': messager,
         'msgByUser': 0,
         'other': 0
       };
-      msgData.regThreads[participants[0].name] = participantStat; 
+
+      // people can have the same name? so you cant just use the name...
+      // use the dirname for the keys
+      msgData.regThreads[threadName] = participantStat; 
       group = false;
     }
 
@@ -502,7 +506,7 @@ class FBAnalyzer extends BaseAnalyzer {
 
         if (msg.sender_name == this.username && msg.content) {
           // count sent messages
-          acc.regThreads[participants[0].name].msgByUser++; 
+          acc.regThreads[threadName].msgByUser++; 
 
           // get time statistics
           let d = new Date(msg.timestamp_ms);
@@ -538,9 +542,9 @@ class FBAnalyzer extends BaseAnalyzer {
             acc.callStats.total_duration += msg.call_duration;
           }
         }
-        else if (msg.sender_name == participants[0].name && msg.content) {
+        else if (msg.sender_name == messager && msg.content) {
           // count received messages
-          acc.regThreads[participants[0].name].other++; 
+          acc.regThreads[threadName].other++; 
 
           let d = new Date(msg.timestamp_ms);
           let y = d.getFullYear(); // message years

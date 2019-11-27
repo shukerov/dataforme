@@ -332,11 +332,17 @@ function renderMsgGraphs(data, subreport) {
     return acc;
   }, []);
 
+  // get top messagers names
+  let topMessagersNames = topMessagers.reduce((acc, thread) => {
+    acc.push(data.regThreads[thread].messager);
+    return acc;
+  }, []);
+
   rRender.addGraph(subreport, {
     type: 'axis-mixed',
     title: 'Top Messagers',
     data: [msgSent, msgReceived, [`${data.name}`, 'Friend']],
-    labels: topMessagers,
+    labels: topMessagersNames,
     css_label: 'msg-graph',
     size: 'medium'
   });
