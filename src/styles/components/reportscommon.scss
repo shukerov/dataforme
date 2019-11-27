@@ -217,8 +217,9 @@ $report-bg-color: white;
    color: black;
 }
 
-
+// **************
 // graph css
+// **************
 .graph-wrapper {
   max-width: 100%;
   height: 100%;
@@ -235,4 +236,9 @@ $report-bg-color: white;
 .graph-conclusion {
   font-size: 14px;
   text-align: center;
+}
+
+.heatmap-graph {
+  overflow-x: auto;
+  overflow-y: hidden;
 }

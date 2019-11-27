@@ -1,5 +1,3 @@
-import '../styles/tinder.scss';
-
 // JS imports:
 import { formatDate, formatPercent } from '../js/analyzers/analyzerHelpers.js';
 import { TinderAnalyzer } from '../js/analyzers/tinderAnalyzer.js';
@@ -7,6 +5,9 @@ import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
 import { reportFactory } from '../js/factories/reportFactory.js';
 import { insFactory } from '../js/factories/insFactory.js';
+
+// CSS imports:
+import '../styles/tinder.scss';
 
 let test = new insFactory('tinder', document.getElementById('instructions-container'));
 let rRender = new reportFactory('red');
@@ -178,7 +179,7 @@ function renderMatchReport(data) {
       data: data.matches_by_date[year],
       title: `Tinder Matches ${year}`,
       css_label: 'matches-graph',
-      size: 'medium'
+      size: 'huge'
     });
   });
 }
@@ -211,7 +212,7 @@ function renderUsageReport(data) {
       data: data.app_opens_by_date[year],
       title: `Tinder Usage ${year}`,
       css_label: 'usage-graph',
-      size: 'medium'
+      size: 'huge'
     });
   });
 }

@@ -35,6 +35,7 @@ class chartFactory {
       return 250;
     }
     else {
+      if (size === 'huge') return 200;
       if (size === 'medium') return 300;
       if (size === 'small')  return 350;
     }
@@ -87,6 +88,8 @@ class chartFactory {
     if (/^(bar|heatmap|line|scatter|pie|percentage|axis-mixed)$/.test(args.type)) {
       var chart = document.createElement('div');
       chart.id = args.name;
+
+
       args.parent.appendChild(chart);
 
       const chartOptions = {  // or a DOM element,
@@ -108,6 +111,8 @@ class chartFactory {
       // don't attempt to color heatmap graphs for now.
       if (args.type == 'heatmap') {
         delete chartOptions.colors;
+        // Forces heatmaps to be responsive with scrolling
+        chart.classList.add('heatmap-graph');
       }
 
       new Chart(`#${args.name}`, chartOptions)

@@ -82,7 +82,7 @@ export class reportFactory {
     // create chart
     let chartFactArgs = {
       parent: gContainer,
-      name: `${graphArgs.css_label}-${subreport.graph_num}`,
+      name: `${graphArgs.css_label}-${subreport.graph_num}-sub`,
     }
 
     Object.keys(graphArgs).forEach((ga_key) => {
