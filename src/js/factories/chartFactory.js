@@ -35,6 +35,7 @@ class chartFactory {
       return 250;
     }
     else {
+      if (size === 'huge') return 200;
       if (size === 'medium') return 300;
       if (size === 'small')  return 350;
     }
@@ -84,12 +85,14 @@ class chartFactory {
     const size = this.getSize(args.size);
     var data = this.prepData(args);
 
-    if (/^(bar|line|scatter|pie|percentage|axis-mixed)$/.test(args.type)) {
+    if (/^(bar|heatmap|line|scatter|pie|percentage|axis-mixed)$/.test(args.type)) {
       var chart = document.createElement('div');
       chart.id = args.name;
+
+
       args.parent.appendChild(chart);
 
-      new Chart(`#${args.name}`, {  // or a DOM element,
+      const chartOptions = {  // or a DOM element,
         data: data,
         type: args.type,
         height: size,
@@ -103,7 +106,16 @@ class chartFactory {
           regionFill: 1
         },
         maxSlices: 24
-      })
+      }
+
+      // don't attempt to color heatmap graphs for now.
+      if (args.type == 'heatmap') {
+        delete chartOptions.colors;
+        // Forces heatmaps to be responsive with scrolling
+        chart.classList.add('heatmap-graph');
+      }
+
+      new Chart(`#${args.name}`, chartOptions)
     }
     else if (args.type == 'clock') {
       let clckGraph =  new ClockChart(data, 300, args.parent, {

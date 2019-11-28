@@ -1,2 +1,41 @@
 @import './_globalvariables.scss';
 @import './main.scss';
+
+#graphs-container-matches {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  // forces heatgraphs to take up full width... (move to JS?)
+  .graph-wrapper:nth-child(n+3) {
+    grid-column: 1/-1;
+
+    .chart-container {
+      margin: 0 auto;
+    }
+        
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+#graphs-container-usage {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  // .graph-wrapper {
+  //   overflow: auto;
+  // }
+
+  .chart-container {
+    margin: 0 auto;
+  }
+}
+
+.report-item-big-icon-list {
+  @media screen and (min-width: $screen-lg-min) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
