@@ -36,19 +36,37 @@ const insns = {
   'tinder': [ 
     {
       image: './step1-web.jpg',
-      ins: "Open your browser of choice, and enter 'tinder.com' in the address bar."
+      ins: "Open your browser of choice, and enter <a href='https://account.gotinder.com/' target=blank>https://account.gotinder.com</a> in the address bar. Login to your tinder account"
     },
     {
       image: './step2-web.jpg',
-      ins: "Open your browser of choice, and enter 'tinder.com' in the address bar."
+      ins: "Click on the 'Download my data' button."
     },
     {
       image: './step3-web.jpg',
-      ins: "Open your browser of choice, and enter 'tinder.com' in the address bar."
+      ins: "Enter the email address where you would like to receive the download link."
     },
     {
       image: './step4-web.png',
-      ins: "Open your browser of choice, and enter 'tinder.com' in the address bar."
+      ins: "Wait to receive the download link in your email. This can take up to a month."
+    }
+  ],
+  'spotify': [ 
+    {
+      image: './step1-web.jpg',
+      ins: "Open your browser of choice, and enter <a href='https://spotify.com/us/account' target=blank>https://spotify.com/us/account</a> in the address bar."
+    },
+    {
+      image: './step2-web.jpg',
+      ins: "Log into your spotify account."
+    },
+    {
+      image: './step3-web.jpg',
+      ins: "Scroll down and click on 'Privacy Settings' in the left sidebar."
+    },
+    {
+      image: './step4-web.jpg',
+      ins: "Scroll down and click on the 'Request' button."
     }
   ]
 }
@@ -70,6 +88,10 @@ class insFactory {
     else if (website === 'tinder') {
       this.imagesPath = require.context('../../images/tinder-instructions', true);
       this.instructions = insns['tinder'];
+    }
+    else if (website === 'spotify') {
+      this.imagesPath = require.context('../../images/spotify-instructions', true);
+      this.instructions = insns['spotify'];
     }
 
     // sets the correct path for each image

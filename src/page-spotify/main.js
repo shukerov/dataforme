@@ -8,7 +8,7 @@ import { insFactory } from '../js/factories/insFactory.js';
 import '../styles/spotify.scss';
 import website_icon from '../images/icons/spotify_inline.svg';
 
-let instructions = new insFactory('tinder', document.getElementById('instructions-container'));
+let instructions = new insFactory('spotify', document.getElementById('instructions-container'));
 let rRender = new reportFactory('red');
 let nBar = new NavBar();
 let fPicker = new FilePicker(rRender.reportContainer);
