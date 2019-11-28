@@ -1,6 +1,10 @@
 @import './_globalvariables.scss';
 @import './main.scss';
 
+#site {
+  background: $tinder;
+}
+
 #graphs-container-matches {
   display: grid;
   grid-template-columns: 1fr;

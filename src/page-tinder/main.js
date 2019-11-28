@@ -8,12 +8,16 @@ import { insFactory } from '../js/factories/insFactory.js';
 
 // CSS imports:
 import '../styles/tinder.scss';
+import website_icon from '../images/icons/tinder_inline.svg';
 
-let test = new insFactory('tinder', document.getElementById('instructions-container'));
+let instructions = new insFactory('tinder', document.getElementById('instructions-container'));
 let rRender = new reportFactory('red');
 let nBar = new NavBar();
 let fPicker = new FilePicker(rRender.reportContainer);
 let analyzer = new TinderAnalyzer(renderReport);
+
+let websiteIcon = document.getElementById('website-icon');
+websiteIcon.innerHTML = website_icon;
 
 // TODO: refactor as helper
 let previewBtn = document.getElementById('nav-preview-item');

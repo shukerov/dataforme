@@ -1,12 +1,12 @@
 @import './_globalvariables.scss';
 @import './main.scss';
 
-#report {
-   min-height: 100vh;
+#site {
+  background: $facebook;
 }
 
-#nav-preview-item {
-  background: $facebook;
+#report {
+   min-height: 100vh;
 }
 
 #instructions-container {

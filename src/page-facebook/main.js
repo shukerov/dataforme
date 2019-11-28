@@ -1,6 +1,3 @@
-// Style imports:
-import '../styles/facebook.scss';
-
 // JS imports:
 import { DAYS, MONTHS } from '../js/constants.js';
 import { formatNum, secondsToHms } from '../js/helpers.js';
@@ -11,12 +8,19 @@ import { FilePicker } from '../js/components/filePicker.js';
 import { reportFactory } from '../js/factories/reportFactory.js';
 import { insFactory } from '../js/factories/insFactory.js';
 
+// CSS imports:
+import '../styles/facebook.scss';
+import website_icon from '../images/icons/facebook_inline.svg';
+
 // this is instructions loading. Should stay here only temporarily during development
-let test = new insFactory('facebook', document.getElementById('instructions-container'));
+let instructions = new insFactory('facebook', document.getElementById('instructions-container'));
 let rRender = new reportFactory('blue');
 let nBar = new NavBar();
 let fPicker = new FilePicker(rRender.reportContainer);
 let analyzer = new FBAnalyzer(renderReport);
+let websiteIcon = document.getElementById('website-icon');
+websiteIcon.innerHTML = website_icon;
+
 
 // TODO: refactor as helper
 let previewBtn = document.getElementById('nav-preview-item');

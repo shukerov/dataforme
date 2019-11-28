@@ -87,3 +87,12 @@ a, a:visited {
     border-bottom: 2rem solid $bg-color;
   }
 }
+
+#website-icon {
+  margin: 0 auto;
+  max-width: 200px;
+  svg {
+    fill: white;
+    height: 200px;
+  }
+}
