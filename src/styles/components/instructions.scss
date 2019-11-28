@@ -1,4 +1,5 @@
 @import '../globalvariables';
+@import '../abstracts/_mixins.scss';
 
 .instruction-wrapper {
   display: flex;
@@ -14,10 +15,7 @@
 }
 
 .slide-card-container {
-   // this repeats many places. Might be smart to refactor - MAKE A MIXIN!!
-   box-shadow: 0 0 3px #ccc;
-   -moz-box-shadow: 0 0 3px #ccc;
-   -webkit-box-shadow: 0 0 3px #ccc;
+   @include box-shadow(#ccc, 4px);
 
    width: 100%;
 

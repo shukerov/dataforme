@@ -1,0 +1,6 @@
+// adds a nice box-shadow to elements. Used in report cards
+@mixin box-shadow($color, $size) {
+  box-shadow: 0 0 $size $color;
+  -moz-box-shadow: 0 0 $size $color;
+  -webkit-box-shadow: 0 0 $size $color;
+}

@@ -1,14 +1,12 @@
 @import '../_globalvariables.scss';
+@import '../abstracts/_mixins.scss';
 
 .subreport {
    width: 90%;
    margin: 5vh auto;
    background: $card-bg-color;
-   // make a mixin
-   box-shadow: 0 0 3px #ccc;
-   -moz-box-shadow: 0 0 3px #ccc;
-   -webkit-box-shadow: 0 0 3px #ccc;
    display: grid;
+   @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
    grid-template-areas: 
     'heading heading'
     'content content'
@@ -91,9 +89,7 @@
 .report-list-item {
   background: darken($card-bg-color, 5);
   padding: 0.2em;
-  box-shadow: 0 0 3px #ccc;
-  -moz-box-shadow: 0 0 3px #ccc;
-  -webkit-box-shadow: 0 0 3px #ccc;
+  @include box-shadow(#ccc, 3px);
 }
 
 .report-list-subitem-label {
