@@ -878,6 +878,10 @@ input[type='file'] {
   font-size: 14px;
   text-align: center; }
 
+.heatmap-graph {
+  overflow-x: auto;
+  overflow-y: hidden; }
+
 .tooltip {
   position: absolute;
   background: rgba(0, 0, 0, 0.8);
