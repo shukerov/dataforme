@@ -2,9 +2,9 @@
 @import './abstracts/_mixins.scss';
 @import './globalvariables';
 
-// * {
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 //   -webkit-box-sizing: border-box;
 //   -moz-box-sizing: border-box;
 //   box-sizing: border-box;
@@ -12,7 +12,7 @@
 //   a, a:visited {
 //     text-decoration: none;
 //   }
-// }
+}
 
 html {
    height: 100%;
@@ -96,10 +96,14 @@ a, a:visited {
 }
 
 .card {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
   width: 90%;
   margin: 20vh auto;
   background: $card-bg-color;
+  padding: 1em;
   @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
 }
 
