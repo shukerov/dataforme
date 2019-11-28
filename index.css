@@ -364,6 +364,10 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 html {
   height: 100%;
   font-size: 1.1em;
@@ -480,25 +484,53 @@ nav {
   height: 5vh;
   background: #050404; }
 
-.service-content {
-  max-width: 95%;
-  margin: 0 auto; }
-
 .card-heading {
   margin: 0 0.5em;
   padding: 1em 0;
   text-align: center; }
 
+.card::before {
+  position: absolute;
+  top: -2.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: whitesmoke;
+  padding: 1em 1em 0.5em 1em;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px 1px 0px 1px; }
+
+#step-1::before {
+  content: "Step 1"; }
+
+#step-2::before {
+  content: "Step 2"; }
+
+#step-3::before {
+  content: "Step 3"; }
+
 .card {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
   width: 90%;
-  margin: 5vh auto;
-  background: white; }
+  margin: 20vh auto;
+  background: white;
+  padding: 1em;
+  box-shadow: 0 0 4px black;
+  -moz-box-shadow: 0 0 4px black;
+  -webkit-box-shadow: 0 0 4px black; }
 
 .card-text {
   margin: 0 1rem; }
 
 #website-icon {
-  margin: 1em auto;
+  margin: 1.5em auto 5em auto;
   max-width: 200px; }
   #website-icon svg {
     fill: white;
