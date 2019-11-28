@@ -28,8 +28,11 @@
 .subreport-content {
   grid-area: content;
   margin-bottom: 3vh;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding: 0 1rem;
+
+  @media screen and (min-width: $screen-md-min) {
+    padding: 0 3rem;
+  }
 }
 
 .report-item-text {
@@ -130,8 +133,12 @@
 
 .report-item-grid {
   display: grid;
-  grid-template-columns: auto 0.5fr auto 1fr;
+  grid-template-columns: auto 0.5fr auto 0.5fr;
   align-items: center;
+
+  @media screen and (min-width: $screen-lg-min) {
+    grid-template-columns: auto 0.5fr auto 1fr;
+  }
 }
 
 .report-item-big-icon-list {
