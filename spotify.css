@@ -64,8 +64,10 @@ input[type='file'] {
 .subreport-content {
   grid-area: content;
   margin-bottom: 3vh;
-  padding-left: 3rem;
-  padding-right: 3rem; }
+  padding: 0 1rem; }
+  @media screen and (min-width: 768px) {
+    .subreport-content {
+      padding: 0 3rem; } }
 
 .report-item-text {
   font-weight: 700; }
@@ -149,8 +151,11 @@ input[type='file'] {
 
 .report-item-grid {
   display: grid;
-  grid-template-columns: auto 0.5fr auto 1fr;
+  grid-template-columns: auto 0.5fr auto 0.5fr;
   align-items: center; }
+  @media screen and (min-width: 992px) {
+    .report-item-grid {
+      grid-template-columns: auto 0.5fr auto 1fr; } }
 
 .report-item-big-icon-list {
   display: grid;
