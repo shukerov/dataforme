@@ -43,56 +43,32 @@ a, a:visited {
   margin: 0 auto;
 }
 
-.service-heading {
-  display: inline-block;
-  background: $bg-color;
-  color: white;
-  text-align: left;
-  font-family: 'BigNoodleTitling';
-
-  margin: 4em 0 2em 0;
-  padding-left: 10%;
-  padding-right: 1em;
-  height: 2.6rem;
-  font-size: 1.3em;
-
-  // pseduo element
-  position: relative;
+.card-heading {
+  margin: 1em 0.5em;
+  text-align: center;
 
   @media only screen and (min-width: $screen-md-min) {
-    // max-width: 30%;
-    padding-left: 15%;
+    // text-align: left;
   }
 
-  @media only screen and (min-width: $screen-lg-min) {
-    padding-left: 20%;
-    height: 4rem;
-    font-size: 2em;
-  }
 }
 
-.service-heading::after {
-  position: absolute;
-  bottom: 0;
-  content: "";
-  right: -0.5rem;
-  border-right: 0.5rem solid transparent;
-  border-top: 1.3rem solid $bg-color;
-  border-bottom: 1.3rem solid $bg-color;
+.card {
+   width: 90%;
+   margin: 5vh auto;
+   background: $card-bg-color;
+}
 
-  @media only screen and (min-width: $screen-lg-min) {
-    right: -0.9rem;
-    border-right: 1rem solid transparent;
-    border-top: 2rem solid $bg-color;
-    border-bottom: 2rem solid $bg-color;
-  }
+.card-text {
+   margin: 0 1rem;
 }
 
 #website-icon {
-  margin: 0 auto;
+  margin: 1em auto;
   max-width: 200px;
   svg {
     fill: white;
     height: 200px;
   }
 }
+
