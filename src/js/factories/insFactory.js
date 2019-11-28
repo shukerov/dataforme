@@ -202,6 +202,8 @@ class insFactory {
     let nextBtnSym = new Image();
     prevBtnSym.src = ileft;
     nextBtnSym.src = iright;
+    nextBtnSym.classList.add('ins-btn-image');
+    prevBtnSym.classList.add('ins-btn-image');
     prevBtn.appendChild(prevBtnSym);
     nextBtn.appendChild(nextBtnSym);
     prevBtn.classList.add('prev-btn');
