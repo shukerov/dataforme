@@ -13,7 +13,8 @@ import website_icon from '../images/icons/tinder_inline.svg';
 let instructions = new insFactory('tinder', document.getElementById('instructions-container'));
 let rRender = new reportFactory('red');
 let nBar = new NavBar();
-let fPicker = new FilePicker(rRender.reportContainer);
+let step3Card = document.getElementById('step-3');
+let fPicker = new FilePicker(step3Card);
 let analyzer = new TinderAnalyzer(renderReport);
 
 let websiteIcon = document.getElementById('website-icon');

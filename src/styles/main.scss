@@ -91,6 +91,10 @@ a, a:visited {
   content: "Step 2";
 }
 
+#step-3::before {
+  content: "Step 3";
+}
+
 .card {
   position: relative;
   width: 90%;
