@@ -1,4 +1,7 @@
 // JS imports:
+import { formatNum, secondsToHms } from '../js/helpers.js';
+import { formatDate, formatPercent } from '../js/analyzers/analyzerHelpers.js';
+import { SpotifyAnalyzer } from '../js/analyzers/spotifyAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
 import { reportFactory } from '../js/factories/reportFactory.js';
@@ -12,7 +15,7 @@ let instructions = new insFactory('spotify', document.getElementById('instructio
 let rRender = new reportFactory('red');
 let nBar = new NavBar();
 let fPicker = new FilePicker(document.getElementById('filepicker'));
-// let analyzer = new TinderAnalyzer(renderReport);
+let analyzer = new SpotifyAnalyzer(renderReport);
 
 let websiteIcon = document.getElementById('website-icon');
 websiteIcon.innerHTML = website_icon;
@@ -35,4 +38,59 @@ function kickStartReport() {
 }
 
 function renderReport(fakeData) {
+  //TODO: needs to scroll to report once done
+  const data = analyzer.getData(fakeData);
+  renderUserReport(data);
+  renderStreamingReport(data);
+}
+
+function renderStreamingReport(data) {
+  let reportItems = [
+    {
+      icon: 'calendar',
+      text: 'Total Playtime: ',
+      textBold: secondsToHms(data.streaming_data.ms_played),
+      tooltip: 'Total time spent listening to songs.'
+    },
+    {
+      icon: 'calendar',
+      text: 'Skipped Songs: ',
+      textBold: data.streaming_data.skipped_songs,
+      tooltip: 'Number of songs you have skipped'
+    }
+  ]
+  const subreport = rRender.getSubreport('Streaming History Report');
+  rRender.add(reportItems, 'icon-list', subreport);
+}
+
+function renderUserReport(data) {
+  let reportItems = [
+    {
+      icon: 'calendar',
+      text: 'Date Joined: ',
+      textBold: formatDate(data.date_joined),
+      tooltip: 'The date that you created a Spotify account'
+    },
+    {
+      icon: 'mail',
+      text: 'Email: ',
+      textBold: data.email,
+      tooltip: 'Your email address.'
+    },
+    {
+      icon: 'cake',
+      text: 'Birthday: ',
+      textBold: formatDate(data.birthday),
+      tooltip: 'Your birthday.'
+    },
+    {
+      icon: 'phone-call',
+      text: 'Phone: ',
+      textBold: data.phone,
+      tooltip: 'Your phone number.'
+    },
+  ];
+
+  const subreport = rRender.getSubreport(data.username);
+  rRender.add(reportItems, 'icon-list', subreport);
 }

@@ -11,7 +11,7 @@ class WebserviceAnalyzer extends BaseAnalyzer {
       'sructure': null,
       'your': null,
       'data': null,
-      'here': null,
+      'here': null
     };
   }
 
