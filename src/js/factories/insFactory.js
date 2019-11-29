@@ -10,7 +10,7 @@ const insns = {
   'facebook': [
     {
       image: './step1-web.jpg',
-      ins: "Open your browser of choice, and enter 'facebook.com' in the address bar."
+      ins: "Open your browser of choice.<br>Enter <a href='https://facebook.com' target=blank>https://facebook.com</a> in the address bar."
     },
     {
       image: './step2-web.jpg',
