@@ -41,6 +41,8 @@ a, a:visited {
    // height: auto;
    background: #f9f9f9;
    overflow: auto;
+   position: relative;
+   z-index: 0; // enable stack context
 }
 
 // spacer
@@ -73,15 +75,14 @@ a, a:visited {
   top: -2.5em;
   left: 50%;
   transform: translateX(-50%);
-  background: darken($card-bg-color, 4);
+  background: $card-bg-color;
   padding: 1em 1em 0.5em 1em;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
   line-height: 1;
-  border-style: solid;
-  border-color: darken($card-bg-color, 50);
-  border-width: 1px 1px 0px 1px;
+  text-transform: uppercase;
+  @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
 }
 
 #step-1::before {
@@ -101,7 +102,6 @@ a, a:visited {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
-  z-index: 1;
   width: 90%;
   margin: 20vh auto;
   background: $card-bg-color;
