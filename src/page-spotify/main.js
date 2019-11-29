@@ -11,15 +11,14 @@ import website_icon from '../images/icons/spotify_inline.svg';
 let instructions = new insFactory('spotify', document.getElementById('instructions-container'));
 let rRender = new reportFactory('red');
 let nBar = new NavBar();
-let step3Card = document.getElementById('step-3');
-let fPicker = new FilePicker(step3Card);
+let fPicker = new FilePicker(document.getElementById('filepicker'));
 // let analyzer = new TinderAnalyzer(renderReport);
 
 let websiteIcon = document.getElementById('website-icon');
 websiteIcon.innerHTML = website_icon;
 
-// TODO: refactor as helper
-let previewBtn = document.getElementById('nav-preview-item');
+
+let previewBtn = document.getElementById('preview-btn');
 previewBtn.onclick = () => {
   renderReport(true);
 };

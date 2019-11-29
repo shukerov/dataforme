@@ -4,3 +4,13 @@
 #site {
   background: $spotify;
 }
+
+#preview-btn {
+  background: $spotify;
+}
+
+#preview-btn:hover {
+  color: $spotify;
+  background: $off-white;
+  border: 1px solid $spotify;
+}

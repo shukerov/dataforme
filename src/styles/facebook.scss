@@ -5,20 +5,14 @@
   background: $facebook;
 }
 
-#report {
-   min-height: 100vh;
+#preview-btn {
+  background: $facebook;
 }
 
-#instructions-container {
-  //  display: flex;
-  //  flex-direction: column;
-  //  margin: 0 auto;
-  //  max-width: 60%;
-  //  min-height: 100vh;
-}
-
-#instructions-text {
-   // min-height: 90vh;
+#preview-btn:hover {
+  color: $facebook;
+  background: $off-white;
+  border: 1px solid $facebook;
 }
 
 #report {
