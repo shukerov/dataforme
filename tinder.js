@@ -142,83 +142,6 @@ eval("module.exports = __webpack_require__.p + \"db548ab58440f97b249c72b91b9fae9
 
 /***/ }),
 
-/***/ "./src/images/fb-instructions sync recursive ^\\.\\/.*$":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions sync ^\.\/.*$ ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var map = {\n\t\"./step1-web.jpg\": \"./src/images/fb-instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/images/fb-instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/images/fb-instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/images/fb-instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/images/fb-instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/images/fb-instructions/step6-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/images/fb-instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions_sync_^\\.\\/.*$?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step1-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step1-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"5c2c14f9808a07b01e54ba4ac60b44e2.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step1-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step2-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step2-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"c52927af834cebd9f999a43562733edc.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step2-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step3-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step3-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"ade9013cbf5d1f9111ef91305432fb12.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step3-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step4-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step4-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"8c8a88f1d67c05e3b5bf7a0717f13d92.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step4-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step5-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step5-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"fb556c0bc721f16c941334a9c36df100.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step5-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step6-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step6-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"c44c5706d25bde00683f548037531fb2.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step6-web.jpg?");
-
-/***/ }),
-
 /***/ "./src/images/icons/tinder_inline.svg":
 /*!********************************************!*\
   !*** ./src/images/icons/tinder_inline.svg ***!
@@ -626,116 +549,6 @@ eval("module.exports = __webpack_require__.p + \"fcd0300a6e89e7151566af47b69128d
 
 /***/ }),
 
-/***/ "./src/images/spotify-instructions sync recursive ^\\.\\/.*$":
-/*!*******************************************************!*\
-  !*** ./src/images/spotify-instructions sync ^\.\/.*$ ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var map = {\n\t\"./step1-web.jpg\": \"./src/images/spotify-instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/images/spotify-instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/images/spotify-instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/images/spotify-instructions/step4-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/images/spotify-instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/images/spotify-instructions_sync_^\\.\\/.*$?");
-
-/***/ }),
-
-/***/ "./src/images/spotify-instructions/step1-web.jpg":
-/*!*******************************************************!*\
-  !*** ./src/images/spotify-instructions/step1-web.jpg ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"fb24f8e1c25796afadc3965ff40c2313.jpg\";\n\n//# sourceURL=webpack:///./src/images/spotify-instructions/step1-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/spotify-instructions/step2-web.jpg":
-/*!*******************************************************!*\
-  !*** ./src/images/spotify-instructions/step2-web.jpg ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"267e5514b194149ef395c375c15abb3b.jpg\";\n\n//# sourceURL=webpack:///./src/images/spotify-instructions/step2-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/spotify-instructions/step3-web.jpg":
-/*!*******************************************************!*\
-  !*** ./src/images/spotify-instructions/step3-web.jpg ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"da14fa70420003e4845820cf46b33e5c.jpg\";\n\n//# sourceURL=webpack:///./src/images/spotify-instructions/step3-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/spotify-instructions/step4-web.jpg":
-/*!*******************************************************!*\
-  !*** ./src/images/spotify-instructions/step4-web.jpg ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"e58e0a089c9ddc6cd950984b9e89668e.jpg\";\n\n//# sourceURL=webpack:///./src/images/spotify-instructions/step4-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/tinder-instructions sync recursive ^\\.\\/.*$":
-/*!******************************************************!*\
-  !*** ./src/images/tinder-instructions sync ^\.\/.*$ ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var map = {\n\t\"./step1-web.jpg\": \"./src/images/tinder-instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/images/tinder-instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/images/tinder-instructions/step3-web.jpg\",\n\t\"./step4-web.png\": \"./src/images/tinder-instructions/step4-web.png\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/images/tinder-instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/images/tinder-instructions_sync_^\\.\\/.*$?");
-
-/***/ }),
-
-/***/ "./src/images/tinder-instructions/step1-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/images/tinder-instructions/step1-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"01a3edd599ce65624d381b601d5f46c8.jpg\";\n\n//# sourceURL=webpack:///./src/images/tinder-instructions/step1-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/tinder-instructions/step2-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/images/tinder-instructions/step2-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"b92dc0f21950ab6d98018e944eefeaef.jpg\";\n\n//# sourceURL=webpack:///./src/images/tinder-instructions/step2-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/tinder-instructions/step3-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/images/tinder-instructions/step3-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"11b81c17245254ee61566167c027c4db.jpg\";\n\n//# sourceURL=webpack:///./src/images/tinder-instructions/step3-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/tinder-instructions/step4-web.png":
-/*!******************************************************!*\
-  !*** ./src/images/tinder-instructions/step4-web.png ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"bbd24f0f4a1f03b0a224c58d5eeab38a.png\";\n\n//# sourceURL=webpack:///./src/images/tinder-instructions/step4-web.png?");
-
-/***/ }),
-
 /***/ "./src/js/analyzers/analyzerHelpers.js":
 /*!*********************************************!*\
   !*** ./src/js/analyzers/analyzerHelpers.js ***!
@@ -887,7 +700,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"MONTHS\", function() { return MONTHS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"DAYS\", function() { return DAYS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"WEBSITES\", function() { return WEBSITES; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"MS_IN_DAY\", function() { return MS_IN_DAY; });\n// CONSTANTS\nvar MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\nvar DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];\nvar WEBSITES = ['facebook', 'spotify'];\nvar MS_IN_DAY = 1000 * 60 * 60 * 24;\n\n\n//# sourceURL=webpack:///./src/js/constants.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"MONTHS\", function() { return MONTHS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"DAYS\", function() { return DAYS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"WEBSITES\", function() { return WEBSITES; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"MS_IN_DAY\", function() { return MS_IN_DAY; });\n// CONSTANTS\nvar MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\nvar DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];\nvar WEBSITES = ['facebook', 'spotify', 'tinder'];\nvar MS_IN_DAY = 1000 * 60 * 60 * 24;\n\n\n//# sourceURL=webpack:///./src/js/constants.js?");
 
 /***/ }),
 
@@ -911,7 +724,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"insFactory\", function() { return insFactory; });\n/* harmony import */ var _styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/components/instructions.scss */ \"./src/styles/components/instructions.scss\");\n/* harmony import */ var _styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants.js */ \"./src/js/constants.js\");\n/* harmony import */ var _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/components/chevron-left.svg */ \"./src/images/components/chevron-left.svg\");\n/* harmony import */ var _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/components/chevron-right.svg */ \"./src/images/components/chevron-right.svg\");\n/* harmony import */ var _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n // Import assets\n\n\n // locations and data for the instructions\n\nvar insns = {\n  'facebook': [{\n    image: './step1-web.jpg',\n    ins: \"Open your browser of choice, and enter 'facebook.com' in the address bar.\"\n  }, {\n    image: './step2-web.jpg',\n    ins: 'Click in the upper right corner, and open settings.'\n  }, {\n    image: './step3-web.jpg',\n    ins: \"Click on 'Your Facebook information' in the side bar menu.\"\n  }, {\n    image: './step4-web.jpg',\n    ins: \"Click on 'View' under the 'Download your information' tab.\"\n  }, {\n    image: './step5-web.jpg',\n    ins: \"1. Select JSON for data format.<br> 2. Select media quality (recommended low if you want a small filesize).<br> 3. Finally click 'Create File'.\"\n  }, {\n    image: './step6-web.jpg',\n    ins: \"In a couple of hours check your Facebook notifications, and save your file. Store it somewhere safe.\"\n  }],\n  'tinder': [{\n    image: './step1-web.jpg',\n    ins: \"Open your browser of choice, and enter <a href='https://account.gotinder.com/' target=blank>https://account.gotinder.com</a> in the address bar. Login to your tinder account\"\n  }, {\n    image: './step2-web.jpg',\n    ins: \"Click on the 'Download my data' button.\"\n  }, {\n    image: './step3-web.jpg',\n    ins: \"Enter the email address where you would like to receive the download link.\"\n  }, {\n    image: './step4-web.png',\n    ins: \"Wait to receive the download link in your email. This can take up to a month.\"\n  }],\n  'spotify': [{\n    image: './step1-web.jpg',\n    ins: \"Open your browser of choice, and enter <a href='https://spotify.com/us/account' target=blank>https://spotify.com/us/account</a> in the address bar.\"\n  }, {\n    image: './step2-web.jpg',\n    ins: \"Log into your spotify account.\"\n  }, {\n    image: './step3-web.jpg',\n    ins: \"Scroll down and click on 'Privacy Settings' in the left sidebar.\"\n  }, {\n    image: './step4-web.jpg',\n    ins: \"Scroll down and click on the 'Request' button.\"\n  }]\n};\n\nvar insFactory =\n/*#__PURE__*/\nfunction () {\n  function insFactory(website, parent) {\n    var _this = this;\n\n    _classCallCheck(this, insFactory);\n\n    // TODO: do you really need this?\n    this.parent = parent; // contains all the instructions\n\n    this.insContainer = document.createElement('div');\n    this.insContainer.classList.add('instruction-wrapper'); //TODO: need a check if website is the the websites constants!\n    // figure out which instructions to load\n\n    if (website === 'facebook') {\n      this.imagesPath = __webpack_require__(\"./src/images/fb-instructions sync recursive ^\\\\.\\\\/.*$\");\n      this.instructions = insns['facebook'];\n    } else if (website === 'tinder') {\n      this.imagesPath = __webpack_require__(\"./src/images/tinder-instructions sync recursive ^\\\\.\\\\/.*$\");\n      this.instructions = insns['tinder'];\n    } else if (website === 'spotify') {\n      this.imagesPath = __webpack_require__(\"./src/images/spotify-instructions sync recursive ^\\\\.\\\\/.*$\");\n      this.instructions = insns['spotify'];\n    } // sets the correct path for each image\n\n\n    this.instructions.map(function (ins) {\n      ins.image = _this.imagePath(ins.image);\n      return ins;\n    }); // current slide\n\n    this.currentSlide = 0;\n    this.maxSlide = this.instructions.length - 1;\n    this.slides = [];\n    this.dots = [];\n    this.createInstructions();\n    this.createDots(); // makes the first instruction visible\n\n    this.renderSlide(0);\n    parent.appendChild(this.insContainer);\n  } // TODO: get rid of this function and just call imagesPath when creating slides\n\n\n  _createClass(insFactory, [{\n    key: \"imagePath\",\n    value: function imagePath(name) {\n      return this.imagesPath(name, true);\n    }\n  }, {\n    key: \"renderSlide\",\n    value: function renderSlide(action) {\n      this.slides[this.currentSlide].style.display = 'none';\n      this.dots[this.currentSlide].classList.remove('slide-dot-active');\n\n      if (action == 'prev') {\n        this.currentSlide--;\n      } else if (action == 'next') {\n        this.currentSlide++;\n      } else if (!isNaN(action) && action <= this.maxSlide && action >= 0) {\n        this.currentSlide = action;\n        this.slides[this.currentSlide].style.display = 'block';\n        this.dots[this.currentSlide].classList.add('slide-dot-active');\n        return;\n      } else {\n        throw \"Action '\".concat(action, \"' unknown. Could not render slide\");\n      }\n\n      if (this.currentSlide < 0) {\n        this.currentSlide = this.maxSlide;\n      } else if (this.currentSlide > this.maxSlide) {\n        this.currentSlide = 0;\n      }\n\n      this.slides[this.currentSlide].style.display = 'block';\n      this.dots[this.currentSlide].classList.add('slide-dot-active');\n    }\n  }, {\n    key: \"createInstructions\",\n    value: function createInstructions() {\n      var insWrapper = document.createElement('div');\n      insWrapper.classList.add('slideshow-wrapper');\n      var cardContainer = document.createElement('div');\n      cardContainer.classList.add('slide-card-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        // create instruction step and add style\n        var slide = document.createElement('div');\n        slide.classList.add('slide-card');\n        this.slides.push(slide); // create the image\n\n        var slideImg = new Image();\n        var slideText = this.createInstructionsText(i);\n        slideImg.src = this.instructions[i].image;\n        slide.appendChild(slideImg);\n        slide.appendChild(slideText);\n        cardContainer.appendChild(slide);\n      }\n\n      var buttons = this.createSliderButtons();\n      insWrapper.appendChild(buttons[0]);\n      insWrapper.appendChild(cardContainer);\n      insWrapper.appendChild(buttons[1]);\n      this.insContainer.appendChild(insWrapper);\n    }\n  }, {\n    key: \"createInstructionsText\",\n    value: function createInstructionsText(insNum) {\n      var textContainer = document.createElement('div');\n      textContainer.classList.add('slide-card-text');\n      var insStepIndicator = document.createElement('div');\n      insStepIndicator.classList.add('step-indicator');\n      insStepIndicator.innerHTML = \"Step \".concat(insNum + 1, \"/\").concat(this.instructions.length);\n      var insText = document.createElement('p');\n      insText.innerHTML = this.instructions[insNum].ins;\n      textContainer.appendChild(insStepIndicator);\n      textContainer.appendChild(insText);\n      return textContainer;\n    } // creates the buttons for next and previous buttons\n\n  }, {\n    key: \"createSliderButtons\",\n    value: function createSliderButtons() {\n      var nextBtn = document.createElement('a');\n      var prevBtn = document.createElement('a');\n      var prevBtnSym = new Image();\n      var nextBtnSym = new Image();\n      prevBtnSym.src = _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default.a;\n      nextBtnSym.src = _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default.a;\n      nextBtnSym.classList.add('ins-btn-image');\n      prevBtnSym.classList.add('ins-btn-image');\n      prevBtn.appendChild(prevBtnSym);\n      nextBtn.appendChild(nextBtnSym);\n      prevBtn.classList.add('prev-btn');\n      nextBtn.classList.add('next-btn');\n      prevBtn.onclick = this.renderSlide.bind(this, 'prev');\n      nextBtn.onclick = this.renderSlide.bind(this, 'next'); // arrow left and right should switch between slides\n\n      document.addEventListener('keydown', this.arrowKeyHandler.bind(this));\n      return [prevBtn, nextBtn];\n    }\n  }, {\n    key: \"arrowKeyHandler\",\n    value: function arrowKeyHandler(event) {\n      // set true if the event was handled\n      var eventHandled = false;\n\n      if (event.defaultPrevented) {\n        return; // Do nothing if the event was already processed\n      }\n\n      switch (event.key) {\n        case 'ArrowLeft':\n          this.renderSlide.call(this, 'prev');\n          eventHandled = true;\n          break;\n\n        case 'ArrowRight':\n          this.renderSlide.call(this, 'next');\n          eventHandled = true;\n          break;\n\n        default:\n          return;\n      } // Cancel the default action to avoid it being handled twice\n\n\n      if (eventHandled) {\n        event.preventDefault();\n      }\n    }\n  }, {\n    key: \"createDots\",\n    value: function createDots() {\n      var dotContainer = document.createElement('div');\n      dotContainer.classList.add('dot-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        var dot = document.createElement('span');\n        dot.classList.add('slide-dot');\n        dot.onclick = this.renderSlide.bind(this, i);\n        this.dots.push(dot);\n        dotContainer.appendChild(dot);\n      } // add to the instructions container\n\n\n      this.insContainer.appendChild(dotContainer);\n    }\n  }]);\n\n  return insFactory;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/factories/insFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"insFactory\", function() { return insFactory; });\n/* harmony import */ var _styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/components/instructions.scss */ \"./src/styles/components/instructions.scss\");\n/* harmony import */ var _styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants.js */ \"./src/js/constants.js\");\n/* harmony import */ var _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/components/chevron-left.svg */ \"./src/images/components/chevron-left.svg\");\n/* harmony import */ var _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/components/chevron-right.svg */ \"./src/images/components/chevron-right.svg\");\n/* harmony import */ var _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n // Import assets\n\n\n\n\nvar insFactory =\n/*#__PURE__*/\nfunction () {\n  function insFactory(website, parent) {\n    _classCallCheck(this, insFactory);\n\n    // TODO: do you really need this?\n    this.parent = parent; // contains all the instructions\n\n    this.insContainer = document.createElement('div');\n    this.insContainer.classList.add('instruction-wrapper'); //TODO: need a check if website is the the websites constants!\n    // figure out which instructions to load\n\n    var ins_context = null;\n\n    if (!_constants_js__WEBPACK_IMPORTED_MODULE_1__[\"WEBSITES\"].includes(website)) {\n      throw \"Please add '\".concat(website, \"' to WEBSITES constant in /src/js/constants.js\");\n    }\n\n    if (website === 'facebook') {\n      ins_context = __webpack_require__(\"./src/page-facebook/instructions sync recursive ^\\\\.\\\\/.*$\");\n    } else if (website === 'tinder') {\n      ins_context = __webpack_require__(\"./src/page-tinder/instructions sync recursive ^\\\\.\\\\/.*$\");\n    } else if (website === 'spotify') {\n      ins_context = __webpack_require__(\"./src/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\");\n    }\n\n    this.instructions = ins_context('./instructions.json');\n    this.instructions.map(function (ins) {\n      ins.image = ins_context(ins.image, true);\n    }); // current slide\n\n    this.currentSlide = 0;\n    this.maxSlide = this.instructions.length - 1;\n    this.slides = [];\n    this.dots = [];\n    this.createInstructions();\n    this.createDots(); // makes the first instruction visible\n\n    this.renderSlide(0);\n    parent.appendChild(this.insContainer);\n  }\n\n  _createClass(insFactory, [{\n    key: \"renderSlide\",\n    value: function renderSlide(action) {\n      this.slides[this.currentSlide].style.display = 'none';\n      this.dots[this.currentSlide].classList.remove('slide-dot-active');\n\n      if (action == 'prev') {\n        this.currentSlide--;\n      } else if (action == 'next') {\n        this.currentSlide++;\n      } else if (!isNaN(action) && action <= this.maxSlide && action >= 0) {\n        this.currentSlide = action;\n        this.slides[this.currentSlide].style.display = 'block';\n        this.dots[this.currentSlide].classList.add('slide-dot-active');\n        return;\n      } else {\n        throw \"Action '\".concat(action, \"' unknown. Could not render slide\");\n      }\n\n      if (this.currentSlide < 0) {\n        this.currentSlide = this.maxSlide;\n      } else if (this.currentSlide > this.maxSlide) {\n        this.currentSlide = 0;\n      }\n\n      this.slides[this.currentSlide].style.display = 'block';\n      this.dots[this.currentSlide].classList.add('slide-dot-active');\n    }\n  }, {\n    key: \"createInstructions\",\n    value: function createInstructions() {\n      var insWrapper = document.createElement('div');\n      insWrapper.classList.add('slideshow-wrapper');\n      var cardContainer = document.createElement('div');\n      cardContainer.classList.add('slide-card-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        // create instruction step and add style\n        var slide = document.createElement('div');\n        slide.classList.add('slide-card');\n        this.slides.push(slide); // create the image\n\n        var slideImg = new Image();\n        var slideText = this.createInstructionsText(i);\n        slideImg.src = this.instructions[i].image;\n        slide.appendChild(slideImg);\n        slide.appendChild(slideText);\n        cardContainer.appendChild(slide);\n      }\n\n      var buttons = this.createSliderButtons();\n      insWrapper.appendChild(buttons[0]);\n      insWrapper.appendChild(cardContainer);\n      insWrapper.appendChild(buttons[1]);\n      this.insContainer.appendChild(insWrapper);\n    }\n  }, {\n    key: \"createInstructionsText\",\n    value: function createInstructionsText(insNum) {\n      var textContainer = document.createElement('div');\n      textContainer.classList.add('slide-card-text');\n      var insStepIndicator = document.createElement('div');\n      insStepIndicator.classList.add('step-indicator');\n      insStepIndicator.innerHTML = \"Step \".concat(insNum + 1, \"/\").concat(this.instructions.length);\n      var insText = document.createElement('p');\n      insText.innerHTML = this.instructions[insNum].ins;\n      textContainer.appendChild(insStepIndicator);\n      textContainer.appendChild(insText);\n      return textContainer;\n    } // creates the buttons for next and previous buttons\n\n  }, {\n    key: \"createSliderButtons\",\n    value: function createSliderButtons() {\n      var nextBtn = document.createElement('a');\n      var prevBtn = document.createElement('a');\n      var prevBtnSym = new Image();\n      var nextBtnSym = new Image();\n      prevBtnSym.src = _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default.a;\n      nextBtnSym.src = _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default.a;\n      nextBtnSym.classList.add('ins-btn-image');\n      prevBtnSym.classList.add('ins-btn-image');\n      prevBtn.appendChild(prevBtnSym);\n      nextBtn.appendChild(nextBtnSym);\n      prevBtn.classList.add('prev-btn');\n      nextBtn.classList.add('next-btn');\n      prevBtn.onclick = this.renderSlide.bind(this, 'prev');\n      nextBtn.onclick = this.renderSlide.bind(this, 'next'); // arrow left and right should switch between slides\n\n      document.addEventListener('keydown', this.arrowKeyHandler.bind(this));\n      return [prevBtn, nextBtn];\n    }\n  }, {\n    key: \"arrowKeyHandler\",\n    value: function arrowKeyHandler(event) {\n      // set true if the event was handled\n      var eventHandled = false;\n\n      if (event.defaultPrevented) {\n        return; // Do nothing if the event was already processed\n      }\n\n      switch (event.key) {\n        case 'ArrowLeft':\n          this.renderSlide.call(this, 'prev');\n          eventHandled = true;\n          break;\n\n        case 'ArrowRight':\n          this.renderSlide.call(this, 'next');\n          eventHandled = true;\n          break;\n\n        default:\n          return;\n      } // Cancel the default action to avoid it being handled twice\n\n\n      if (eventHandled) {\n        event.preventDefault();\n      }\n    }\n  }, {\n    key: \"createDots\",\n    value: function createDots() {\n      var dotContainer = document.createElement('div');\n      dotContainer.classList.add('dot-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        var dot = document.createElement('span');\n        dot.classList.add('slide-dot');\n        dot.onclick = this.renderSlide.bind(this, i);\n        this.dots.push(dot);\n        dotContainer.appendChild(dot);\n      } // add to the instructions container\n\n\n      this.insContainer.appendChild(dotContainer);\n    }\n  }]);\n\n  return insFactory;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/factories/insFactory.js?");
 
 /***/ }),
 
@@ -1005,6 +818,226 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Zip\", function() { return Zip; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\n/*\n Copyright (c) 2013 Gildas Lormeau. All rights reserved.\n\n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions are met:\n\n 1. Redistributions of source code must retain the above copyright notice,\n this list of conditions and the following disclaimer.\n\n 2. Redistributions in binary form must reproduce the above copyright\n notice, this list of conditions and the following disclaimer in\n the documentation and/or other materials provided with the distribution.\n\n 3. The names of the authors may not be used to endorse or promote products\n derived from this software without specific prior written permission.\n\n THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES,\n INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND\n FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL JCRAFT,\n INC. OR ANY CONTRIBUTORS TO THIS SOFTWARE BE LIABLE FOR ANY DIRECT, INDIRECT,\n INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,\n OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\n LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,\n EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n */\nvar Zip = function Zip(obj) {\n  _classCallCheck(this, Zip);\n\n  return testZip(obj);\n};\n\nfunction testZip(obj) {\n  // (function(obj) {\n  \"use strict\";\n\n  var ERR_BAD_FORMAT = \"File format is not recognized.\";\n  var ERR_CRC = \"CRC failed.\";\n  var ERR_ENCRYPTED = \"File contains encrypted entry.\";\n  var ERR_ZIP64 = \"File is using Zip64 (4gb+ file size).\";\n  var ERR_READ = \"Error while reading zip file.\";\n  var ERR_WRITE = \"Error while writing zip file.\";\n  var ERR_WRITE_DATA = \"Error while writing file data.\";\n  var ERR_READ_DATA = \"Error while reading file data.\";\n  var ERR_DUPLICATED_NAME = \"File already exists.\";\n  var CHUNK_SIZE = 512 * 1024;\n  var TEXT_PLAIN = \"text/plain\";\n  var appendABViewSupported;\n\n  try {\n    appendABViewSupported = new Blob([new DataView(new ArrayBuffer(0))]).size === 0;\n  } catch (e) {}\n\n  function Crc32() {\n    this.crc = -1;\n  }\n\n  Crc32.prototype.append = function append(data) {\n    var crc = this.crc | 0,\n        table = this.table;\n\n    for (var offset = 0, len = data.length | 0; offset < len; offset++) {\n      crc = crc >>> 8 ^ table[(crc ^ data[offset]) & 0xFF];\n    }\n\n    this.crc = crc;\n  };\n\n  Crc32.prototype.get = function get() {\n    return ~this.crc;\n  };\n\n  Crc32.prototype.table = function () {\n    var i,\n        j,\n        t,\n        table = []; // Uint32Array is actually slower than []\n\n    for (i = 0; i < 256; i++) {\n      t = i;\n\n      for (j = 0; j < 8; j++) {\n        if (t & 1) t = t >>> 1 ^ 0xEDB88320;else t = t >>> 1;\n      }\n\n      table[i] = t;\n    }\n\n    return table;\n  }(); // \"no-op\" codec\n\n\n  function NOOP() {}\n\n  NOOP.prototype.append = function append(bytes, onprogress) {\n    return bytes;\n  };\n\n  NOOP.prototype.flush = function flush() {};\n\n  function blobSlice(blob, index, length) {\n    if (index < 0 || length < 0 || index + length > blob.size) throw new RangeError('offset:' + index + ', length:' + length + ', size:' + blob.size);\n    if (blob.slice) return blob.slice(index, index + length);else if (blob.webkitSlice) return blob.webkitSlice(index, index + length);else if (blob.mozSlice) return blob.mozSlice(index, index + length);else if (blob.msSlice) return blob.msSlice(index, index + length);\n  }\n\n  function getDataHelper(byteLength, bytes) {\n    var dataBuffer, dataArray;\n    dataBuffer = new ArrayBuffer(byteLength);\n    dataArray = new Uint8Array(dataBuffer);\n    if (bytes) dataArray.set(bytes, 0);\n    return {\n      buffer: dataBuffer,\n      array: dataArray,\n      view: new DataView(dataBuffer)\n    };\n  } // Readers\n\n\n  function Reader() {}\n\n  function TextReader(text) {\n    var that = this,\n        blobReader;\n\n    function init(callback, onerror) {\n      var blob = new Blob([text], {\n        type: TEXT_PLAIN\n      });\n      blobReader = new BlobReader(blob);\n      blobReader.init(function () {\n        that.size = blobReader.size;\n        callback();\n      }, onerror);\n    }\n\n    function readUint8Array(index, length, callback, onerror) {\n      blobReader.readUint8Array(index, length, callback, onerror);\n    }\n\n    that.size = 0;\n    that.init = init;\n    that.readUint8Array = readUint8Array;\n  }\n\n  TextReader.prototype = new Reader();\n  TextReader.prototype.constructor = TextReader;\n\n  function Data64URIReader(dataURI) {\n    var that = this,\n        dataStart;\n\n    function init(callback) {\n      var dataEnd = dataURI.length;\n\n      while (dataURI.charAt(dataEnd - 1) == \"=\") {\n        dataEnd--;\n      }\n\n      dataStart = dataURI.indexOf(\",\") + 1;\n      that.size = Math.floor((dataEnd - dataStart) * 0.75);\n      callback();\n    }\n\n    function readUint8Array(index, length, callback) {\n      var i,\n          data = getDataHelper(length);\n      var start = Math.floor(index / 3) * 4;\n      var end = Math.ceil((index + length) / 3) * 4;\n      var bytes = obj.atob(dataURI.substring(start + dataStart, end + dataStart));\n      var delta = index - Math.floor(start / 4) * 3;\n\n      for (i = delta; i < delta + length; i++) {\n        data.array[i - delta] = bytes.charCodeAt(i);\n      }\n\n      callback(data.array);\n    }\n\n    that.size = 0;\n    that.init = init;\n    that.readUint8Array = readUint8Array;\n  }\n\n  Data64URIReader.prototype = new Reader();\n  Data64URIReader.prototype.constructor = Data64URIReader;\n\n  function BlobReader(blob) {\n    var that = this;\n\n    function init(callback) {\n      that.size = blob.size;\n      callback();\n    }\n\n    function readUint8Array(index, length, callback, onerror) {\n      var reader = new FileReader();\n\n      reader.onload = function (e) {\n        callback(new Uint8Array(e.target.result));\n      };\n\n      reader.onerror = onerror;\n\n      try {\n        reader.readAsArrayBuffer(blobSlice(blob, index, length));\n      } catch (e) {\n        onerror(e);\n      }\n    }\n\n    that.size = 0;\n    that.init = init;\n    that.readUint8Array = readUint8Array;\n  }\n\n  BlobReader.prototype = new Reader();\n  BlobReader.prototype.constructor = BlobReader; // Writers\n\n  function Writer() {}\n\n  Writer.prototype.getData = function (callback) {\n    callback(this.data);\n  };\n\n  function TextWriter(encoding) {\n    var that = this,\n        blob;\n\n    function init(callback) {\n      blob = new Blob([], {\n        type: TEXT_PLAIN\n      });\n      callback();\n    }\n\n    function writeUint8Array(array, callback) {\n      blob = new Blob([blob, appendABViewSupported ? array : array.buffer], {\n        type: TEXT_PLAIN\n      });\n      callback();\n    }\n\n    function getData(callback, onerror) {\n      var reader = new FileReader();\n\n      reader.onload = function (e) {\n        callback(e.target.result);\n      };\n\n      reader.onerror = onerror;\n      reader.readAsText(blob, encoding);\n    }\n\n    that.init = init;\n    that.writeUint8Array = writeUint8Array;\n    that.getData = getData;\n  }\n\n  TextWriter.prototype = new Writer();\n  TextWriter.prototype.constructor = TextWriter;\n\n  function Data64URIWriter(contentType) {\n    var that = this,\n        data = \"\",\n        pending = \"\";\n\n    function init(callback) {\n      data += \"data:\" + (contentType || \"\") + \";base64,\";\n      callback();\n    }\n\n    function writeUint8Array(array, callback) {\n      var i,\n          delta = pending.length,\n          dataString = pending;\n      pending = \"\";\n\n      for (i = 0; i < Math.floor((delta + array.length) / 3) * 3 - delta; i++) {\n        dataString += String.fromCharCode(array[i]);\n      }\n\n      for (; i < array.length; i++) {\n        pending += String.fromCharCode(array[i]);\n      }\n\n      if (dataString.length > 2) data += obj.btoa(dataString);else pending = dataString;\n      callback();\n    }\n\n    function getData(callback) {\n      callback(data + obj.btoa(pending));\n    }\n\n    that.init = init;\n    that.writeUint8Array = writeUint8Array;\n    that.getData = getData;\n  }\n\n  Data64URIWriter.prototype = new Writer();\n  Data64URIWriter.prototype.constructor = Data64URIWriter;\n\n  function BlobWriter(contentType) {\n    var blob,\n        that = this;\n\n    function init(callback) {\n      blob = new Blob([], {\n        type: contentType\n      });\n      callback();\n    }\n\n    function writeUint8Array(array, callback) {\n      blob = new Blob([blob, appendABViewSupported ? array : array.buffer], {\n        type: contentType\n      });\n      callback();\n    }\n\n    function getData(callback) {\n      callback(blob);\n    }\n\n    that.init = init;\n    that.writeUint8Array = writeUint8Array;\n    that.getData = getData;\n  }\n\n  BlobWriter.prototype = new Writer();\n  BlobWriter.prototype.constructor = BlobWriter;\n  /** \n   * inflate/deflate core functions\n   * @param worker {Worker} web worker for the task.\n   * @param initialMessage {Object} initial message to be sent to the worker. should contain\n   *   sn(serial number for distinguishing multiple tasks sent to the worker), and codecClass.\n   *   This function may add more properties before sending.\n   */\n\n  function launchWorkerProcess(worker, initialMessage, reader, writer, offset, size, onprogress, onend, onreaderror, onwriteerror) {\n    var chunkIndex = 0,\n        index,\n        outputSize,\n        sn = initialMessage.sn,\n        crc;\n\n    function onflush() {\n      worker.removeEventListener('message', onmessage, false);\n      onend(outputSize, crc);\n    }\n\n    function onmessage(event) {\n      var message = event.data,\n          data = message.data,\n          err = message.error;\n\n      if (err) {\n        err.toString = function () {\n          return 'Error: ' + this.message;\n        };\n\n        onreaderror(err);\n        return;\n      }\n\n      if (message.sn !== sn) return;\n      if (typeof message.codecTime === 'number') worker.codecTime += message.codecTime; // should be before onflush()\n\n      if (typeof message.crcTime === 'number') worker.crcTime += message.crcTime;\n\n      switch (message.type) {\n        case 'append':\n          if (data) {\n            outputSize += data.length;\n            writer.writeUint8Array(data, function () {\n              step();\n            }, onwriteerror);\n          } else step();\n\n          break;\n\n        case 'flush':\n          crc = message.crc;\n\n          if (data) {\n            outputSize += data.length;\n            writer.writeUint8Array(data, function () {\n              onflush();\n            }, onwriteerror);\n          } else onflush();\n\n          break;\n\n        case 'progress':\n          if (onprogress) onprogress(index + message.loaded, size);\n          break;\n\n        case 'importScripts': //no need to handle here\n\n        case 'newTask':\n        case 'echo':\n          break;\n\n        default:\n          console.warn('zip.js:launchWorkerProcess: unknown message: ', message);\n      }\n    }\n\n    function step() {\n      index = chunkIndex * CHUNK_SIZE; // use `<=` instead of `<`, because `size` may be 0.\n\n      if (index <= size) {\n        reader.readUint8Array(offset + index, Math.min(CHUNK_SIZE, size - index), function (array) {\n          if (onprogress) onprogress(index, size);\n          var msg = index === 0 ? initialMessage : {\n            sn: sn\n          };\n          msg.type = 'append';\n          msg.data = array; // posting a message with transferables will fail on IE10\n\n          try {\n            worker.postMessage(msg, [array.buffer]);\n          } catch (ex) {\n            worker.postMessage(msg); // retry without transferables\n          }\n\n          chunkIndex++;\n        }, onreaderror);\n      } else {\n        worker.postMessage({\n          sn: sn,\n          type: 'flush'\n        });\n      }\n    }\n\n    outputSize = 0;\n    worker.addEventListener('message', onmessage, false);\n    step();\n  }\n\n  function launchProcess(process, reader, writer, offset, size, crcType, onprogress, onend, onreaderror, onwriteerror) {\n    var chunkIndex = 0,\n        index,\n        outputSize = 0,\n        crcInput = crcType === 'input',\n        crcOutput = crcType === 'output',\n        crc = new Crc32();\n\n    function step() {\n      var outputData;\n      index = chunkIndex * CHUNK_SIZE;\n      if (index < size) reader.readUint8Array(offset + index, Math.min(CHUNK_SIZE, size - index), function (inputData) {\n        var outputData;\n\n        try {\n          outputData = process.append(inputData, function (loaded) {\n            if (onprogress) onprogress(index + loaded, size);\n          });\n        } catch (e) {\n          onreaderror(e);\n          return;\n        }\n\n        if (outputData) {\n          outputSize += outputData.length;\n          writer.writeUint8Array(outputData, function () {\n            chunkIndex++;\n            setTimeout(step, 1);\n          }, onwriteerror);\n          if (crcOutput) crc.append(outputData);\n        } else {\n          chunkIndex++;\n          setTimeout(step, 1);\n        }\n\n        if (crcInput) crc.append(inputData);\n        if (onprogress) onprogress(index, size);\n      }, onreaderror);else {\n        try {\n          outputData = process.flush();\n        } catch (e) {\n          onreaderror(e);\n          return;\n        }\n\n        if (outputData) {\n          if (crcOutput) crc.append(outputData);\n          outputSize += outputData.length;\n          writer.writeUint8Array(outputData, function () {\n            onend(outputSize, crc.get());\n          }, onwriteerror);\n        } else onend(outputSize, crc.get());\n      }\n    }\n\n    step();\n  }\n\n  function inflate(worker, sn, reader, writer, offset, size, computeCrc32, onend, onprogress, onreaderror, onwriteerror) {\n    var crcType = computeCrc32 ? 'output' : 'none';\n\n    if (obj.zip.useWebWorkers) {\n      var initialMessage = {\n        sn: sn,\n        codecClass: 'Inflater',\n        crcType: crcType\n      };\n      launchWorkerProcess(worker, initialMessage, reader, writer, offset, size, onprogress, onend, onreaderror, onwriteerror);\n    } else launchProcess(new obj.zip.Inflater(), reader, writer, offset, size, crcType, onprogress, onend, onreaderror, onwriteerror);\n  }\n\n  function deflate(worker, sn, reader, writer, level, onend, onprogress, onreaderror, onwriteerror) {\n    var crcType = 'input';\n\n    if (obj.zip.useWebWorkers) {\n      var initialMessage = {\n        sn: sn,\n        options: {\n          level: level\n        },\n        codecClass: 'Deflater',\n        crcType: crcType\n      };\n      launchWorkerProcess(worker, initialMessage, reader, writer, 0, reader.size, onprogress, onend, onreaderror, onwriteerror);\n    } else launchProcess(new obj.zip.Deflater(), reader, writer, 0, reader.size, crcType, onprogress, onend, onreaderror, onwriteerror);\n  }\n\n  function copy(worker, sn, reader, writer, offset, size, computeCrc32, onend, onprogress, onreaderror, onwriteerror) {\n    var crcType = 'input';\n\n    if (obj.zip.useWebWorkers && computeCrc32) {\n      var initialMessage = {\n        sn: sn,\n        codecClass: 'NOOP',\n        crcType: crcType\n      };\n      launchWorkerProcess(worker, initialMessage, reader, writer, offset, size, onprogress, onend, onreaderror, onwriteerror);\n    } else launchProcess(new NOOP(), reader, writer, offset, size, crcType, onprogress, onend, onreaderror, onwriteerror);\n  } // ZipReader\n\n\n  function decodeASCII(str) {\n    var i,\n        out = \"\",\n        charCode,\n        extendedASCII = [\"\\xC7\", \"\\xFC\", \"\\xE9\", \"\\xE2\", \"\\xE4\", \"\\xE0\", \"\\xE5\", \"\\xE7\", \"\\xEA\", \"\\xEB\", \"\\xE8\", \"\\xEF\", \"\\xEE\", \"\\xEC\", \"\\xC4\", \"\\xC5\", \"\\xC9\", \"\\xE6\", \"\\xC6\", \"\\xF4\", \"\\xF6\", \"\\xF2\", \"\\xFB\", \"\\xF9\", \"\\xFF\", \"\\xD6\", \"\\xDC\", \"\\xF8\", \"\\xA3\", \"\\xD8\", \"\\xD7\", \"\\u0192\", \"\\xE1\", \"\\xED\", \"\\xF3\", \"\\xFA\", \"\\xF1\", \"\\xD1\", \"\\xAA\", \"\\xBA\", \"\\xBF\", \"\\xAE\", \"\\xAC\", \"\\xBD\", \"\\xBC\", \"\\xA1\", \"\\xAB\", \"\\xBB\", '_', '_', '_', \"\\xA6\", \"\\xA6\", \"\\xC1\", \"\\xC2\", \"\\xC0\", \"\\xA9\", \"\\xA6\", \"\\xA6\", '+', '+', \"\\xA2\", \"\\xA5\", '+', '+', '-', '-', '+', '-', '+', \"\\xE3\", \"\\xC3\", '+', '+', '-', '-', \"\\xA6\", '-', '+', \"\\xA4\", \"\\xF0\", \"\\xD0\", \"\\xCA\", \"\\xCB\", \"\\xC8\", 'i', \"\\xCD\", \"\\xCE\", \"\\xCF\", '+', '+', '_', '_', \"\\xA6\", \"\\xCC\", '_', \"\\xD3\", \"\\xDF\", \"\\xD4\", \"\\xD2\", \"\\xF5\", \"\\xD5\", \"\\xB5\", \"\\xFE\", \"\\xDE\", \"\\xDA\", \"\\xDB\", \"\\xD9\", \"\\xFD\", \"\\xDD\", \"\\xAF\", \"\\xB4\", \"\\xAD\", \"\\xB1\", '_', \"\\xBE\", \"\\xB6\", \"\\xA7\", \"\\xF7\", \"\\xB8\", \"\\xB0\", \"\\xA8\", \"\\xB7\", \"\\xB9\", \"\\xB3\", \"\\xB2\", '_', ' '];\n\n    for (i = 0; i < str.length; i++) {\n      charCode = str.charCodeAt(i) & 0xFF;\n      if (charCode > 127) out += extendedASCII[charCode - 128];else out += String.fromCharCode(charCode);\n    }\n\n    return out;\n  }\n\n  function decodeUTF8(string) {\n    return decodeURIComponent(escape(string));\n  }\n\n  function getString(bytes) {\n    var i,\n        str = \"\";\n\n    for (i = 0; i < bytes.length; i++) {\n      str += String.fromCharCode(bytes[i]);\n    }\n\n    return str;\n  }\n\n  function getDate(timeRaw) {\n    var date = (timeRaw & 0xffff0000) >> 16,\n        time = timeRaw & 0x0000ffff;\n\n    try {\n      return new Date(1980 + ((date & 0xFE00) >> 9), ((date & 0x01E0) >> 5) - 1, date & 0x001F, (time & 0xF800) >> 11, (time & 0x07E0) >> 5, (time & 0x001F) * 2, 0);\n    } catch (e) {}\n  }\n\n  function readCommonHeader(entry, data, index, centralDirectory, onerror) {\n    entry.version = data.view.getUint16(index, true);\n    entry.bitFlag = data.view.getUint16(index + 2, true);\n    entry.compressionMethod = data.view.getUint16(index + 4, true);\n    entry.lastModDateRaw = data.view.getUint32(index + 6, true);\n    entry.lastModDate = getDate(entry.lastModDateRaw);\n\n    if ((entry.bitFlag & 0x01) === 0x01) {\n      onerror(ERR_ENCRYPTED);\n      return;\n    }\n\n    if (centralDirectory || (entry.bitFlag & 0x0008) != 0x0008) {\n      entry.crc32 = data.view.getUint32(index + 10, true);\n      entry.compressedSize = data.view.getUint32(index + 14, true);\n      entry.uncompressedSize = data.view.getUint32(index + 18, true);\n    }\n\n    if (entry.compressedSize === 0xFFFFFFFF || entry.uncompressedSize === 0xFFFFFFFF) {\n      onerror(ERR_ZIP64);\n      return;\n    }\n\n    entry.filenameLength = data.view.getUint16(index + 22, true);\n    entry.extraFieldLength = data.view.getUint16(index + 24, true);\n  }\n\n  function createZipReader(reader, callback, onerror) {\n    var inflateSN = 0;\n\n    function Entry() {}\n\n    Entry.prototype.getData = function (writer, onend, onprogress, checkCrc32) {\n      var that = this;\n\n      function testCrc32(crc32) {\n        var dataCrc32 = getDataHelper(4);\n        dataCrc32.view.setUint32(0, crc32);\n        return that.crc32 == dataCrc32.view.getUint32(0);\n      }\n\n      function getWriterData(uncompressedSize, crc32) {\n        if (checkCrc32 && !testCrc32(crc32)) onerror(ERR_CRC);else writer.getData(function (data) {\n          onend(data);\n        });\n      }\n\n      function onreaderror(err) {\n        onerror(err || ERR_READ_DATA);\n      }\n\n      function onwriteerror(err) {\n        onerror(err || ERR_WRITE_DATA);\n      }\n\n      reader.readUint8Array(that.offset, 30, function (bytes) {\n        var data = getDataHelper(bytes.length, bytes),\n            dataOffset;\n\n        if (data.view.getUint32(0) != 0x504b0304) {\n          onerror(ERR_BAD_FORMAT);\n          return;\n        }\n\n        readCommonHeader(that, data, 4, false, onerror);\n        dataOffset = that.offset + 30 + that.filenameLength + that.extraFieldLength;\n        writer.init(function () {\n          if (that.compressionMethod === 0) copy(that._worker, inflateSN++, reader, writer, dataOffset, that.compressedSize, checkCrc32, getWriterData, onprogress, onreaderror, onwriteerror);else inflate(that._worker, inflateSN++, reader, writer, dataOffset, that.compressedSize, checkCrc32, getWriterData, onprogress, onreaderror, onwriteerror);\n        }, onwriteerror);\n      }, onreaderror);\n    };\n\n    function seekEOCDR(eocdrCallback) {\n      // \"End of central directory record\" is the last part of a zip archive, and is at least 22 bytes long.\n      // Zip file comment is the last part of EOCDR and has max length of 64KB,\n      // so we only have to search the last 64K + 22 bytes of a archive for EOCDR signature (0x06054b50).\n      var EOCDR_MIN = 22;\n\n      if (reader.size < EOCDR_MIN) {\n        onerror(ERR_BAD_FORMAT);\n        return;\n      }\n\n      var ZIP_COMMENT_MAX = 256 * 256,\n          EOCDR_MAX = EOCDR_MIN + ZIP_COMMENT_MAX; // In most cases, the EOCDR is EOCDR_MIN bytes long\n\n      doSeek(EOCDR_MIN, function () {\n        // If not found, try within EOCDR_MAX bytes\n        doSeek(Math.min(EOCDR_MAX, reader.size), function () {\n          onerror(ERR_BAD_FORMAT);\n        });\n      }); // seek last length bytes of file for EOCDR\n\n      function doSeek(length, eocdrNotFoundCallback) {\n        reader.readUint8Array(reader.size - length, length, function (bytes) {\n          for (var i = bytes.length - EOCDR_MIN; i >= 0; i--) {\n            if (bytes[i] === 0x50 && bytes[i + 1] === 0x4b && bytes[i + 2] === 0x05 && bytes[i + 3] === 0x06) {\n              eocdrCallback(new DataView(bytes.buffer, i, EOCDR_MIN));\n              return;\n            }\n          }\n\n          eocdrNotFoundCallback();\n        }, function () {\n          onerror(ERR_READ);\n        });\n      }\n    }\n\n    var zipReader = {\n      getEntries: function getEntries(callback) {\n        var worker = this._worker; // look for End of central directory record\n\n        seekEOCDR(function (dataView) {\n          var datalength, fileslength;\n          datalength = dataView.getUint32(16, true);\n          fileslength = dataView.getUint16(8, true);\n\n          if (datalength < 0 || datalength >= reader.size) {\n            onerror(ERR_BAD_FORMAT);\n            return;\n          }\n\n          reader.readUint8Array(datalength, reader.size - datalength, function (bytes) {\n            var i,\n                index = 0,\n                entries = [],\n                entry,\n                filename,\n                comment,\n                data = getDataHelper(bytes.length, bytes);\n\n            for (i = 0; i < fileslength; i++) {\n              entry = new Entry();\n              entry._worker = worker;\n\n              if (data.view.getUint32(index) != 0x504b0102) {\n                onerror(ERR_BAD_FORMAT);\n                return;\n              }\n\n              readCommonHeader(entry, data, index + 6, true, onerror);\n              entry.commentLength = data.view.getUint16(index + 32, true);\n              entry.directory = (data.view.getUint8(index + 38) & 0x10) == 0x10;\n              entry.offset = data.view.getUint32(index + 42, true);\n              filename = getString(data.array.subarray(index + 46, index + 46 + entry.filenameLength));\n              entry.filename = (entry.bitFlag & 0x0800) === 0x0800 ? decodeUTF8(filename) : decodeASCII(filename);\n              if (!entry.directory && entry.filename.charAt(entry.filename.length - 1) == \"/\") entry.directory = true;\n              comment = getString(data.array.subarray(index + 46 + entry.filenameLength + entry.extraFieldLength, index + 46 + entry.filenameLength + entry.extraFieldLength + entry.commentLength));\n              entry.comment = (entry.bitFlag & 0x0800) === 0x0800 ? decodeUTF8(comment) : decodeASCII(comment);\n              entries.push(entry);\n              index += 46 + entry.filenameLength + entry.extraFieldLength + entry.commentLength;\n            }\n\n            callback(entries);\n          }, function () {\n            onerror(ERR_READ);\n          });\n        });\n      },\n      close: function close(callback) {\n        if (this._worker) {\n          this._worker.terminate();\n\n          this._worker = null;\n        }\n\n        if (callback) callback();\n      },\n      _worker: null\n    };\n    if (!obj.zip.useWebWorkers) callback(zipReader);else {\n      createWorker('inflater', function (worker) {\n        zipReader._worker = worker;\n        callback(zipReader);\n      }, function (err) {\n        onerror(err);\n      });\n    }\n  } // ZipWriter\n\n\n  function encodeUTF8(string) {\n    return unescape(encodeURIComponent(string));\n  }\n\n  function getBytes(str) {\n    var i,\n        array = [];\n\n    for (i = 0; i < str.length; i++) {\n      array.push(str.charCodeAt(i));\n    }\n\n    return array;\n  }\n\n  function createZipWriter(writer, callback, onerror, dontDeflate) {\n    var files = {},\n        filenames = [],\n        datalength = 0;\n    var deflateSN = 0;\n\n    function onwriteerror(err) {\n      onerror(err || ERR_WRITE);\n    }\n\n    function onreaderror(err) {\n      onerror(err || ERR_READ_DATA);\n    }\n\n    var zipWriter = {\n      add: function add(name, reader, onend, onprogress, options) {\n        var header, filename, date;\n        var worker = this._worker;\n\n        function writeHeader(callback) {\n          var data;\n          date = options.lastModDate || new Date();\n          header = getDataHelper(26);\n          files[name] = {\n            headerArray: header.array,\n            directory: options.directory,\n            filename: filename,\n            offset: datalength,\n            comment: getBytes(encodeUTF8(options.comment || \"\"))\n          };\n          header.view.setUint32(0, 0x14000808);\n          if (options.version) header.view.setUint8(0, options.version);\n          if (!dontDeflate && options.level !== 0 && !options.directory) header.view.setUint16(4, 0x0800);\n          header.view.setUint16(6, (date.getHours() << 6 | date.getMinutes()) << 5 | date.getSeconds() / 2, true);\n          header.view.setUint16(8, (date.getFullYear() - 1980 << 4 | date.getMonth() + 1) << 5 | date.getDate(), true);\n          header.view.setUint16(22, filename.length, true);\n          data = getDataHelper(30 + filename.length);\n          data.view.setUint32(0, 0x504b0304);\n          data.array.set(header.array, 4);\n          data.array.set(filename, 30);\n          datalength += data.array.length;\n          writer.writeUint8Array(data.array, callback, onwriteerror);\n        }\n\n        function writeFooter(compressedLength, crc32) {\n          var footer = getDataHelper(16);\n          datalength += compressedLength || 0;\n          footer.view.setUint32(0, 0x504b0708);\n\n          if (typeof crc32 != \"undefined\") {\n            header.view.setUint32(10, crc32, true);\n            footer.view.setUint32(4, crc32, true);\n          }\n\n          if (reader) {\n            footer.view.setUint32(8, compressedLength, true);\n            header.view.setUint32(14, compressedLength, true);\n            footer.view.setUint32(12, reader.size, true);\n            header.view.setUint32(18, reader.size, true);\n          }\n\n          writer.writeUint8Array(footer.array, function () {\n            datalength += 16;\n            onend();\n          }, onwriteerror);\n        }\n\n        function writeFile() {\n          options = options || {};\n          name = name.trim();\n          if (options.directory && name.charAt(name.length - 1) != \"/\") name += \"/\";\n\n          if (files.hasOwnProperty(name)) {\n            onerror(ERR_DUPLICATED_NAME);\n            return;\n          }\n\n          filename = getBytes(encodeUTF8(name));\n          filenames.push(name);\n          writeHeader(function () {\n            if (reader) {\n              if (dontDeflate || options.level === 0) copy(worker, deflateSN++, reader, writer, 0, reader.size, true, writeFooter, onprogress, onreaderror, onwriteerror);else deflate(worker, deflateSN++, reader, writer, options.level, writeFooter, onprogress, onreaderror, onwriteerror);\n            } else writeFooter();\n          }, onwriteerror);\n        }\n\n        if (reader) reader.init(writeFile, onreaderror);else writeFile();\n      },\n      close: function close(callback) {\n        if (this._worker) {\n          this._worker.terminate();\n\n          this._worker = null;\n        }\n\n        var data,\n            length = 0,\n            index = 0,\n            indexFilename,\n            file;\n\n        for (indexFilename = 0; indexFilename < filenames.length; indexFilename++) {\n          file = files[filenames[indexFilename]];\n          length += 46 + file.filename.length + file.comment.length;\n        }\n\n        data = getDataHelper(length + 22);\n\n        for (indexFilename = 0; indexFilename < filenames.length; indexFilename++) {\n          file = files[filenames[indexFilename]];\n          data.view.setUint32(index, 0x504b0102);\n          data.view.setUint16(index + 4, 0x1400);\n          data.array.set(file.headerArray, index + 6);\n          data.view.setUint16(index + 32, file.comment.length, true);\n          if (file.directory) data.view.setUint8(index + 38, 0x10);\n          data.view.setUint32(index + 42, file.offset, true);\n          data.array.set(file.filename, index + 46);\n          data.array.set(file.comment, index + 46 + file.filename.length);\n          index += 46 + file.filename.length + file.comment.length;\n        }\n\n        data.view.setUint32(index, 0x504b0506);\n        data.view.setUint16(index + 8, filenames.length, true);\n        data.view.setUint16(index + 10, filenames.length, true);\n        data.view.setUint32(index + 12, length, true);\n        data.view.setUint32(index + 16, datalength, true);\n        writer.writeUint8Array(data.array, function () {\n          writer.getData(callback);\n        }, onwriteerror);\n      },\n      _worker: null\n    };\n    if (!obj.zip.useWebWorkers) callback(zipWriter);else {\n      createWorker('deflater', function (worker) {\n        zipWriter._worker = worker;\n        callback(zipWriter);\n      }, function (err) {\n        onerror(err);\n      });\n    }\n  }\n\n  function resolveURLs(urls) {\n    var a = document.createElement('a');\n    return urls.map(function (url) {\n      a.href = url;\n      return a.href;\n    });\n  } // commented\n  // var DEFAULT_WORKER_SCRIPTS = {\n  // \tdeflater: ['z-worker.js', 'deflate.js'],\n  // \tinflater: ['z-worker.js', 'inflate.js']\n  // };\n  // new\n\n\n  var sources = {\n    inflater: __webpack_require__(/*! ./inflate */ \"./src/js/zip-js-modified/inflate.js\"),\n    deflater: __webpack_require__(/*! ./deflate */ \"./src/js/zip-js-modified/deflate.js\")\n  }; // end new\n\n  function createWorker(type, callback, onerror) {\n    if (obj.zip.workerScripts !== null && obj.zip.workerScriptsPath !== null) {\n      onerror(new Error('Either zip.workerScripts or zip.workerScriptsPath may be set, not both.'));\n      return;\n    } // commented\n    // var scripts;\n    // if (obj.zip.workerScripts) {\n    // \tscripts = obj.zip.workerScripts[type];\n    // \tif (!Array.isArray(scripts)) {\n    // \t\tonerror(new Error('zip.workerScripts.' + type + ' is not an array!'));\n    // \t\treturn;\n    // \t}\n    // \tscripts = resolveURLs(scripts);\n    // } else {\n    // \tscripts = DEFAULT_WORKER_SCRIPTS[type].slice(0);\n    // \tscripts[0] = (obj.zip.workerScriptsPath || '') + scripts[0];\n    // }\n    // var worker = new Worker(scripts[0]);\n    // new\n\n\n    var injectBlob = new Blob([__webpack_require__(/*! ./z-worker */ \"./src/js/zip-js-modified/z-worker.js\")], {\n      type: 'application/javascript'\n    });\n    var workerURL = URL.createObjectURL(injectBlob);\n    var worker = new Worker(workerURL);\n    URL.revokeObjectURL(workerURL);\n    var injectBlob = new Blob([sources[type]], {\n      type: 'application/javascript'\n    });\n    var injectURL = URL.createObjectURL(injectBlob); // end new\n    // record total consumed time by inflater/deflater/crc32 in this worker\n\n    worker.codecTime = worker.crcTime = 0;\n    worker.postMessage({\n      type: 'importScripts',\n      scripts: [injectURL]\n    });\n    worker.addEventListener('message', onmessage);\n\n    function onmessage(ev) {\n      var msg = ev.data;\n\n      if (msg.error) {\n        worker.terminate(); // should before onerror(), because onerror() may throw.\n\n        onerror(msg.error);\n        return;\n      }\n\n      if (msg.type === 'importScripts') {\n        worker.removeEventListener('message', onmessage);\n        worker.removeEventListener('error', errorHandler);\n        callback(worker);\n      }\n    } // catch entry script loading error and other unhandled errors\n\n\n    worker.addEventListener('error', errorHandler);\n\n    function errorHandler(err) {\n      worker.terminate();\n      onerror(err);\n    }\n  }\n\n  function onerror_default(error) {\n    console.error(error);\n  }\n\n  obj.zip = {\n    Reader: Reader,\n    Writer: Writer,\n    BlobReader: BlobReader,\n    Data64URIReader: Data64URIReader,\n    TextReader: TextReader,\n    BlobWriter: BlobWriter,\n    Data64URIWriter: Data64URIWriter,\n    TextWriter: TextWriter,\n    createReader: function createReader(reader, callback, onerror) {\n      onerror = onerror || onerror_default;\n      reader.init(function () {\n        createZipReader(reader, callback, onerror);\n      }, onerror);\n    },\n    createWriter: function createWriter(writer, callback, onerror, dontDeflate) {\n      onerror = onerror || onerror_default;\n      dontDeflate = !!dontDeflate;\n      writer.init(function () {\n        createZipWriter(writer, callback, onerror, dontDeflate);\n      }, onerror);\n    } // commented\n    // useWebWorkers : true,\n    // /**\n    //  * Directory containing the default worker scripts (z-worker.js, deflate.js, and inflate.js), relative to current base url.\n    //  * E.g.: zip.workerScripts = './';\n    //  */\n    // workerScriptsPath : null,\n    // /**\n    //  * Advanced option to control which scripts are loaded in the Web worker. If this option is specified, then workerScriptsPath must not be set.\n    //  * workerScripts.deflater/workerScripts.inflater should be arrays of urls to scripts for deflater/inflater, respectively.\n    //  * Scripts in the array are executed in order, and the first one should be z-worker.js, which is used to start the worker.\n    //  * All urls are relative to current base url.\n    //  * E.g.:\n    //  * zip.workerScripts = {\n    //  *   deflater: ['z-worker.js', 'deflate.js'],\n    //  *   inflater: ['z-worker.js', 'inflate.js']\n    //  * };\n    //  */\n    // workerScripts : null,\n\n  };\n}\n\n // })(this);\n\n//# sourceURL=webpack:///./src/js/zip-js-modified/zip.js?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions sync recursive ^\\.\\/.*$":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions sync ^\.\/.*$ ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var map = {\n\t\"./instructions\": \"./src/page-facebook/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/page-facebook/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/page-facebook/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/page-facebook/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/page-facebook/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/page-facebook/instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/page-facebook/instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/page-facebook/instructions/step6-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/page-facebook/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions_sync_^\\.\\/.*$?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/instructions.json":
+/*!**********************************************************!*\
+  !*** ./src/page-facebook/instructions/instructions.json ***!
+  \**********************************************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, default */
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.<br>Enter <a href='https://facebook.com' target=blank>https://facebook.com</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click in the upper right corner, and open settings.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Click on 'Your Facebook information' in the side bar menu.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Click on 'View' under the 'Download your information' tab.\\\"},{\\\"image\\\":\\\"./step5-web.jpg\\\",\\\"ins\\\":\\\"1. Select JSON for data format.<br> 2. Select media quality (recommended low if you want a small filesize).<br> 3. Finally click 'Create File'.\\\"},{\\\"image\\\":\\\"./step6-web.jpg\\\",\\\"ins\\\":\\\"In a couple of hours check your Facebook notifications, and save your file. Store it somewhere safe.\\\"}]\");\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/instructions.json?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step1-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step1-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"5c2c14f9808a07b01e54ba4ac60b44e2.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step1-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step2-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step2-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"c52927af834cebd9f999a43562733edc.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step2-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step3-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step3-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"ade9013cbf5d1f9111ef91305432fb12.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step3-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step4-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step4-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"8c8a88f1d67c05e3b5bf7a0717f13d92.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step4-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step5-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step5-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"fb556c0bc721f16c941334a9c36df100.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step5-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step6-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step6-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"c44c5706d25bde00683f548037531fb2.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step6-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions sync recursive ^\\.\\/.*$":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions sync ^\.\/.*$ ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var map = {\n\t\"./instructions\": \"./src/page-spotify/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/page-spotify/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/page-spotify/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/page-spotify/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/page-spotify/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/page-spotify/instructions/step4-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions_sync_^\\.\\/.*$?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/instructions.json":
+/*!*********************************************************!*\
+  !*** ./src/page-spotify/instructions/instructions.json ***!
+  \*********************************************************/
+/*! exports provided: 0, 1, 2, 3, default */
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://spotify.com/us/account' target=blank>spotify.com/us/account</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Log into your spotify account.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on 'Privacy Settings' in the left sidebar.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on the 'Request' button.\\\"}]\");\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/instructions.json?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/step1-web.jpg":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions/step1-web.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"fb24f8e1c25796afadc3965ff40c2313.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step1-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/step2-web.jpg":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions/step2-web.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"267e5514b194149ef395c375c15abb3b.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step2-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/step3-web.jpg":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions/step3-web.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"da14fa70420003e4845820cf46b33e5c.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step3-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/step4-web.jpg":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions/step4-web.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"e58e0a089c9ddc6cd950984b9e89668e.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step4-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions sync recursive ^\\.\\/.*$":
+/*!****************************************************!*\
+  !*** ./src/page-tinder/instructions sync ^\.\/.*$ ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var map = {\n\t\"./instructions\": \"./src/page-tinder/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/page-tinder/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/page-tinder/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/page-tinder/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/page-tinder/instructions/step3-web.jpg\",\n\t\"./step4-web.png\": \"./src/page-tinder/instructions/step4-web.png\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/page-tinder/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions_sync_^\\.\\/.*$?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions/instructions.json":
+/*!********************************************************!*\
+  !*** ./src/page-tinder/instructions/instructions.json ***!
+  \********************************************************/
+/*! exports provided: 0, 1, 2, 3, default */
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://account.gotinder.com/' target=blank>account.gotinder.com</a> in the address bar.</br>Login to your tinder account\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click on the 'Download my data' button.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Enter the email address where you would like to receive the download link.\\\"},{\\\"image\\\":\\\"./step4-web.png\\\",\\\"ins\\\":\\\"Wait to receive the download link in your email. This can take up to a month.\\\"}]\");\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/instructions.json?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions/step1-web.jpg":
+/*!****************************************************!*\
+  !*** ./src/page-tinder/instructions/step1-web.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"01a3edd599ce65624d381b601d5f46c8.jpg\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step1-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions/step2-web.jpg":
+/*!****************************************************!*\
+  !*** ./src/page-tinder/instructions/step2-web.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"b92dc0f21950ab6d98018e944eefeaef.jpg\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step2-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions/step3-web.jpg":
+/*!****************************************************!*\
+  !*** ./src/page-tinder/instructions/step3-web.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"11b81c17245254ee61566167c027c4db.jpg\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step3-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions/step4-web.png":
+/*!****************************************************!*\
+  !*** ./src/page-tinder/instructions/step4-web.png ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"bbd24f0f4a1f03b0a224c58d5eeab38a.png\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step4-web.png?");
 
 /***/ }),
 

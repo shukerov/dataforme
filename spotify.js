@@ -131,83 +131,6 @@ eval("module.exports = __webpack_require__.p + \"db548ab58440f97b249c72b91b9fae9
 
 /***/ }),
 
-/***/ "./src/images/fb-instructions sync recursive ^\\.\\/.*$":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions sync ^\.\/.*$ ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var map = {\n\t\"./step1-web.jpg\": \"./src/images/fb-instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/images/fb-instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/images/fb-instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/images/fb-instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/images/fb-instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/images/fb-instructions/step6-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/images/fb-instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions_sync_^\\.\\/.*$?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step1-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step1-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"5c2c14f9808a07b01e54ba4ac60b44e2.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step1-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step2-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step2-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"c52927af834cebd9f999a43562733edc.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step2-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step3-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step3-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"ade9013cbf5d1f9111ef91305432fb12.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step3-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step4-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step4-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"8c8a88f1d67c05e3b5bf7a0717f13d92.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step4-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step5-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step5-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"fb556c0bc721f16c941334a9c36df100.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step5-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/fb-instructions/step6-web.jpg":
-/*!**************************************************!*\
-  !*** ./src/images/fb-instructions/step6-web.jpg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"c44c5706d25bde00683f548037531fb2.jpg\";\n\n//# sourceURL=webpack:///./src/images/fb-instructions/step6-web.jpg?");
-
-/***/ }),
-
 /***/ "./src/images/icons/spotify_inline.svg":
 /*!*********************************************!*\
   !*** ./src/images/icons/spotify_inline.svg ***!
@@ -615,116 +538,6 @@ eval("module.exports = __webpack_require__.p + \"fcd0300a6e89e7151566af47b69128d
 
 /***/ }),
 
-/***/ "./src/images/spotify-instructions sync recursive ^\\.\\/.*$":
-/*!*******************************************************!*\
-  !*** ./src/images/spotify-instructions sync ^\.\/.*$ ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var map = {\n\t\"./step1-web.jpg\": \"./src/images/spotify-instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/images/spotify-instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/images/spotify-instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/images/spotify-instructions/step4-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/images/spotify-instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/images/spotify-instructions_sync_^\\.\\/.*$?");
-
-/***/ }),
-
-/***/ "./src/images/spotify-instructions/step1-web.jpg":
-/*!*******************************************************!*\
-  !*** ./src/images/spotify-instructions/step1-web.jpg ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"fb24f8e1c25796afadc3965ff40c2313.jpg\";\n\n//# sourceURL=webpack:///./src/images/spotify-instructions/step1-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/spotify-instructions/step2-web.jpg":
-/*!*******************************************************!*\
-  !*** ./src/images/spotify-instructions/step2-web.jpg ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"267e5514b194149ef395c375c15abb3b.jpg\";\n\n//# sourceURL=webpack:///./src/images/spotify-instructions/step2-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/spotify-instructions/step3-web.jpg":
-/*!*******************************************************!*\
-  !*** ./src/images/spotify-instructions/step3-web.jpg ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"da14fa70420003e4845820cf46b33e5c.jpg\";\n\n//# sourceURL=webpack:///./src/images/spotify-instructions/step3-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/spotify-instructions/step4-web.jpg":
-/*!*******************************************************!*\
-  !*** ./src/images/spotify-instructions/step4-web.jpg ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"e58e0a089c9ddc6cd950984b9e89668e.jpg\";\n\n//# sourceURL=webpack:///./src/images/spotify-instructions/step4-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/tinder-instructions sync recursive ^\\.\\/.*$":
-/*!******************************************************!*\
-  !*** ./src/images/tinder-instructions sync ^\.\/.*$ ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var map = {\n\t\"./step1-web.jpg\": \"./src/images/tinder-instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/images/tinder-instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/images/tinder-instructions/step3-web.jpg\",\n\t\"./step4-web.png\": \"./src/images/tinder-instructions/step4-web.png\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/images/tinder-instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/images/tinder-instructions_sync_^\\.\\/.*$?");
-
-/***/ }),
-
-/***/ "./src/images/tinder-instructions/step1-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/images/tinder-instructions/step1-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"01a3edd599ce65624d381b601d5f46c8.jpg\";\n\n//# sourceURL=webpack:///./src/images/tinder-instructions/step1-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/tinder-instructions/step2-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/images/tinder-instructions/step2-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"b92dc0f21950ab6d98018e944eefeaef.jpg\";\n\n//# sourceURL=webpack:///./src/images/tinder-instructions/step2-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/tinder-instructions/step3-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/images/tinder-instructions/step3-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"11b81c17245254ee61566167c027c4db.jpg\";\n\n//# sourceURL=webpack:///./src/images/tinder-instructions/step3-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/tinder-instructions/step4-web.png":
-/*!******************************************************!*\
-  !*** ./src/images/tinder-instructions/step4-web.png ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"bbd24f0f4a1f03b0a224c58d5eeab38a.png\";\n\n//# sourceURL=webpack:///./src/images/tinder-instructions/step4-web.png?");
-
-/***/ }),
-
 /***/ "./src/js/clock-chart/clock_graph.js":
 /*!*******************************************!*\
   !*** ./src/js/clock-chart/clock_graph.js ***!
@@ -816,7 +629,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"MONTHS\", function() { return MONTHS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"DAYS\", function() { return DAYS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"WEBSITES\", function() { return WEBSITES; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"MS_IN_DAY\", function() { return MS_IN_DAY; });\n// CONSTANTS\nvar MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\nvar DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];\nvar WEBSITES = ['facebook', 'spotify'];\nvar MS_IN_DAY = 1000 * 60 * 60 * 24;\n\n\n//# sourceURL=webpack:///./src/js/constants.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"MONTHS\", function() { return MONTHS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"DAYS\", function() { return DAYS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"WEBSITES\", function() { return WEBSITES; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"MS_IN_DAY\", function() { return MS_IN_DAY; });\n// CONSTANTS\nvar MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\nvar DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];\nvar WEBSITES = ['facebook', 'spotify', 'tinder'];\nvar MS_IN_DAY = 1000 * 60 * 60 * 24;\n\n\n//# sourceURL=webpack:///./src/js/constants.js?");
 
 /***/ }),
 
@@ -840,7 +653,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"insFactory\", function() { return insFactory; });\n/* harmony import */ var _styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/components/instructions.scss */ \"./src/styles/components/instructions.scss\");\n/* harmony import */ var _styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants.js */ \"./src/js/constants.js\");\n/* harmony import */ var _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/components/chevron-left.svg */ \"./src/images/components/chevron-left.svg\");\n/* harmony import */ var _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/components/chevron-right.svg */ \"./src/images/components/chevron-right.svg\");\n/* harmony import */ var _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n // Import assets\n\n\n // locations and data for the instructions\n\nvar insns = {\n  'facebook': [{\n    image: './step1-web.jpg',\n    ins: \"Open your browser of choice, and enter 'facebook.com' in the address bar.\"\n  }, {\n    image: './step2-web.jpg',\n    ins: 'Click in the upper right corner, and open settings.'\n  }, {\n    image: './step3-web.jpg',\n    ins: \"Click on 'Your Facebook information' in the side bar menu.\"\n  }, {\n    image: './step4-web.jpg',\n    ins: \"Click on 'View' under the 'Download your information' tab.\"\n  }, {\n    image: './step5-web.jpg',\n    ins: \"1. Select JSON for data format.<br> 2. Select media quality (recommended low if you want a small filesize).<br> 3. Finally click 'Create File'.\"\n  }, {\n    image: './step6-web.jpg',\n    ins: \"In a couple of hours check your Facebook notifications, and save your file. Store it somewhere safe.\"\n  }],\n  'tinder': [{\n    image: './step1-web.jpg',\n    ins: \"Open your browser of choice, and enter <a href='https://account.gotinder.com/' target=blank>https://account.gotinder.com</a> in the address bar. Login to your tinder account\"\n  }, {\n    image: './step2-web.jpg',\n    ins: \"Click on the 'Download my data' button.\"\n  }, {\n    image: './step3-web.jpg',\n    ins: \"Enter the email address where you would like to receive the download link.\"\n  }, {\n    image: './step4-web.png',\n    ins: \"Wait to receive the download link in your email. This can take up to a month.\"\n  }],\n  'spotify': [{\n    image: './step1-web.jpg',\n    ins: \"Open your browser of choice, and enter <a href='https://spotify.com/us/account' target=blank>https://spotify.com/us/account</a> in the address bar.\"\n  }, {\n    image: './step2-web.jpg',\n    ins: \"Log into your spotify account.\"\n  }, {\n    image: './step3-web.jpg',\n    ins: \"Scroll down and click on 'Privacy Settings' in the left sidebar.\"\n  }, {\n    image: './step4-web.jpg',\n    ins: \"Scroll down and click on the 'Request' button.\"\n  }]\n};\n\nvar insFactory =\n/*#__PURE__*/\nfunction () {\n  function insFactory(website, parent) {\n    var _this = this;\n\n    _classCallCheck(this, insFactory);\n\n    // TODO: do you really need this?\n    this.parent = parent; // contains all the instructions\n\n    this.insContainer = document.createElement('div');\n    this.insContainer.classList.add('instruction-wrapper'); //TODO: need a check if website is the the websites constants!\n    // figure out which instructions to load\n\n    if (website === 'facebook') {\n      this.imagesPath = __webpack_require__(\"./src/images/fb-instructions sync recursive ^\\\\.\\\\/.*$\");\n      this.instructions = insns['facebook'];\n    } else if (website === 'tinder') {\n      this.imagesPath = __webpack_require__(\"./src/images/tinder-instructions sync recursive ^\\\\.\\\\/.*$\");\n      this.instructions = insns['tinder'];\n    } else if (website === 'spotify') {\n      this.imagesPath = __webpack_require__(\"./src/images/spotify-instructions sync recursive ^\\\\.\\\\/.*$\");\n      this.instructions = insns['spotify'];\n    } // sets the correct path for each image\n\n\n    this.instructions.map(function (ins) {\n      ins.image = _this.imagePath(ins.image);\n      return ins;\n    }); // current slide\n\n    this.currentSlide = 0;\n    this.maxSlide = this.instructions.length - 1;\n    this.slides = [];\n    this.dots = [];\n    this.createInstructions();\n    this.createDots(); // makes the first instruction visible\n\n    this.renderSlide(0);\n    parent.appendChild(this.insContainer);\n  } // TODO: get rid of this function and just call imagesPath when creating slides\n\n\n  _createClass(insFactory, [{\n    key: \"imagePath\",\n    value: function imagePath(name) {\n      return this.imagesPath(name, true);\n    }\n  }, {\n    key: \"renderSlide\",\n    value: function renderSlide(action) {\n      this.slides[this.currentSlide].style.display = 'none';\n      this.dots[this.currentSlide].classList.remove('slide-dot-active');\n\n      if (action == 'prev') {\n        this.currentSlide--;\n      } else if (action == 'next') {\n        this.currentSlide++;\n      } else if (!isNaN(action) && action <= this.maxSlide && action >= 0) {\n        this.currentSlide = action;\n        this.slides[this.currentSlide].style.display = 'block';\n        this.dots[this.currentSlide].classList.add('slide-dot-active');\n        return;\n      } else {\n        throw \"Action '\".concat(action, \"' unknown. Could not render slide\");\n      }\n\n      if (this.currentSlide < 0) {\n        this.currentSlide = this.maxSlide;\n      } else if (this.currentSlide > this.maxSlide) {\n        this.currentSlide = 0;\n      }\n\n      this.slides[this.currentSlide].style.display = 'block';\n      this.dots[this.currentSlide].classList.add('slide-dot-active');\n    }\n  }, {\n    key: \"createInstructions\",\n    value: function createInstructions() {\n      var insWrapper = document.createElement('div');\n      insWrapper.classList.add('slideshow-wrapper');\n      var cardContainer = document.createElement('div');\n      cardContainer.classList.add('slide-card-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        // create instruction step and add style\n        var slide = document.createElement('div');\n        slide.classList.add('slide-card');\n        this.slides.push(slide); // create the image\n\n        var slideImg = new Image();\n        var slideText = this.createInstructionsText(i);\n        slideImg.src = this.instructions[i].image;\n        slide.appendChild(slideImg);\n        slide.appendChild(slideText);\n        cardContainer.appendChild(slide);\n      }\n\n      var buttons = this.createSliderButtons();\n      insWrapper.appendChild(buttons[0]);\n      insWrapper.appendChild(cardContainer);\n      insWrapper.appendChild(buttons[1]);\n      this.insContainer.appendChild(insWrapper);\n    }\n  }, {\n    key: \"createInstructionsText\",\n    value: function createInstructionsText(insNum) {\n      var textContainer = document.createElement('div');\n      textContainer.classList.add('slide-card-text');\n      var insStepIndicator = document.createElement('div');\n      insStepIndicator.classList.add('step-indicator');\n      insStepIndicator.innerHTML = \"Step \".concat(insNum + 1, \"/\").concat(this.instructions.length);\n      var insText = document.createElement('p');\n      insText.innerHTML = this.instructions[insNum].ins;\n      textContainer.appendChild(insStepIndicator);\n      textContainer.appendChild(insText);\n      return textContainer;\n    } // creates the buttons for next and previous buttons\n\n  }, {\n    key: \"createSliderButtons\",\n    value: function createSliderButtons() {\n      var nextBtn = document.createElement('a');\n      var prevBtn = document.createElement('a');\n      var prevBtnSym = new Image();\n      var nextBtnSym = new Image();\n      prevBtnSym.src = _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default.a;\n      nextBtnSym.src = _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default.a;\n      nextBtnSym.classList.add('ins-btn-image');\n      prevBtnSym.classList.add('ins-btn-image');\n      prevBtn.appendChild(prevBtnSym);\n      nextBtn.appendChild(nextBtnSym);\n      prevBtn.classList.add('prev-btn');\n      nextBtn.classList.add('next-btn');\n      prevBtn.onclick = this.renderSlide.bind(this, 'prev');\n      nextBtn.onclick = this.renderSlide.bind(this, 'next'); // arrow left and right should switch between slides\n\n      document.addEventListener('keydown', this.arrowKeyHandler.bind(this));\n      return [prevBtn, nextBtn];\n    }\n  }, {\n    key: \"arrowKeyHandler\",\n    value: function arrowKeyHandler(event) {\n      // set true if the event was handled\n      var eventHandled = false;\n\n      if (event.defaultPrevented) {\n        return; // Do nothing if the event was already processed\n      }\n\n      switch (event.key) {\n        case 'ArrowLeft':\n          this.renderSlide.call(this, 'prev');\n          eventHandled = true;\n          break;\n\n        case 'ArrowRight':\n          this.renderSlide.call(this, 'next');\n          eventHandled = true;\n          break;\n\n        default:\n          return;\n      } // Cancel the default action to avoid it being handled twice\n\n\n      if (eventHandled) {\n        event.preventDefault();\n      }\n    }\n  }, {\n    key: \"createDots\",\n    value: function createDots() {\n      var dotContainer = document.createElement('div');\n      dotContainer.classList.add('dot-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        var dot = document.createElement('span');\n        dot.classList.add('slide-dot');\n        dot.onclick = this.renderSlide.bind(this, i);\n        this.dots.push(dot);\n        dotContainer.appendChild(dot);\n      } // add to the instructions container\n\n\n      this.insContainer.appendChild(dotContainer);\n    }\n  }]);\n\n  return insFactory;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/factories/insFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"insFactory\", function() { return insFactory; });\n/* harmony import */ var _styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/components/instructions.scss */ \"./src/styles/components/instructions.scss\");\n/* harmony import */ var _styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants.js */ \"./src/js/constants.js\");\n/* harmony import */ var _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/components/chevron-left.svg */ \"./src/images/components/chevron-left.svg\");\n/* harmony import */ var _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/components/chevron-right.svg */ \"./src/images/components/chevron-right.svg\");\n/* harmony import */ var _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n // Import assets\n\n\n\n\nvar insFactory =\n/*#__PURE__*/\nfunction () {\n  function insFactory(website, parent) {\n    _classCallCheck(this, insFactory);\n\n    // TODO: do you really need this?\n    this.parent = parent; // contains all the instructions\n\n    this.insContainer = document.createElement('div');\n    this.insContainer.classList.add('instruction-wrapper'); //TODO: need a check if website is the the websites constants!\n    // figure out which instructions to load\n\n    var ins_context = null;\n\n    if (!_constants_js__WEBPACK_IMPORTED_MODULE_1__[\"WEBSITES\"].includes(website)) {\n      throw \"Please add '\".concat(website, \"' to WEBSITES constant in /src/js/constants.js\");\n    }\n\n    if (website === 'facebook') {\n      ins_context = __webpack_require__(\"./src/page-facebook/instructions sync recursive ^\\\\.\\\\/.*$\");\n    } else if (website === 'tinder') {\n      ins_context = __webpack_require__(\"./src/page-tinder/instructions sync recursive ^\\\\.\\\\/.*$\");\n    } else if (website === 'spotify') {\n      ins_context = __webpack_require__(\"./src/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\");\n    }\n\n    this.instructions = ins_context('./instructions.json');\n    this.instructions.map(function (ins) {\n      ins.image = ins_context(ins.image, true);\n    }); // current slide\n\n    this.currentSlide = 0;\n    this.maxSlide = this.instructions.length - 1;\n    this.slides = [];\n    this.dots = [];\n    this.createInstructions();\n    this.createDots(); // makes the first instruction visible\n\n    this.renderSlide(0);\n    parent.appendChild(this.insContainer);\n  }\n\n  _createClass(insFactory, [{\n    key: \"renderSlide\",\n    value: function renderSlide(action) {\n      this.slides[this.currentSlide].style.display = 'none';\n      this.dots[this.currentSlide].classList.remove('slide-dot-active');\n\n      if (action == 'prev') {\n        this.currentSlide--;\n      } else if (action == 'next') {\n        this.currentSlide++;\n      } else if (!isNaN(action) && action <= this.maxSlide && action >= 0) {\n        this.currentSlide = action;\n        this.slides[this.currentSlide].style.display = 'block';\n        this.dots[this.currentSlide].classList.add('slide-dot-active');\n        return;\n      } else {\n        throw \"Action '\".concat(action, \"' unknown. Could not render slide\");\n      }\n\n      if (this.currentSlide < 0) {\n        this.currentSlide = this.maxSlide;\n      } else if (this.currentSlide > this.maxSlide) {\n        this.currentSlide = 0;\n      }\n\n      this.slides[this.currentSlide].style.display = 'block';\n      this.dots[this.currentSlide].classList.add('slide-dot-active');\n    }\n  }, {\n    key: \"createInstructions\",\n    value: function createInstructions() {\n      var insWrapper = document.createElement('div');\n      insWrapper.classList.add('slideshow-wrapper');\n      var cardContainer = document.createElement('div');\n      cardContainer.classList.add('slide-card-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        // create instruction step and add style\n        var slide = document.createElement('div');\n        slide.classList.add('slide-card');\n        this.slides.push(slide); // create the image\n\n        var slideImg = new Image();\n        var slideText = this.createInstructionsText(i);\n        slideImg.src = this.instructions[i].image;\n        slide.appendChild(slideImg);\n        slide.appendChild(slideText);\n        cardContainer.appendChild(slide);\n      }\n\n      var buttons = this.createSliderButtons();\n      insWrapper.appendChild(buttons[0]);\n      insWrapper.appendChild(cardContainer);\n      insWrapper.appendChild(buttons[1]);\n      this.insContainer.appendChild(insWrapper);\n    }\n  }, {\n    key: \"createInstructionsText\",\n    value: function createInstructionsText(insNum) {\n      var textContainer = document.createElement('div');\n      textContainer.classList.add('slide-card-text');\n      var insStepIndicator = document.createElement('div');\n      insStepIndicator.classList.add('step-indicator');\n      insStepIndicator.innerHTML = \"Step \".concat(insNum + 1, \"/\").concat(this.instructions.length);\n      var insText = document.createElement('p');\n      insText.innerHTML = this.instructions[insNum].ins;\n      textContainer.appendChild(insStepIndicator);\n      textContainer.appendChild(insText);\n      return textContainer;\n    } // creates the buttons for next and previous buttons\n\n  }, {\n    key: \"createSliderButtons\",\n    value: function createSliderButtons() {\n      var nextBtn = document.createElement('a');\n      var prevBtn = document.createElement('a');\n      var prevBtnSym = new Image();\n      var nextBtnSym = new Image();\n      prevBtnSym.src = _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default.a;\n      nextBtnSym.src = _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default.a;\n      nextBtnSym.classList.add('ins-btn-image');\n      prevBtnSym.classList.add('ins-btn-image');\n      prevBtn.appendChild(prevBtnSym);\n      nextBtn.appendChild(nextBtnSym);\n      prevBtn.classList.add('prev-btn');\n      nextBtn.classList.add('next-btn');\n      prevBtn.onclick = this.renderSlide.bind(this, 'prev');\n      nextBtn.onclick = this.renderSlide.bind(this, 'next'); // arrow left and right should switch between slides\n\n      document.addEventListener('keydown', this.arrowKeyHandler.bind(this));\n      return [prevBtn, nextBtn];\n    }\n  }, {\n    key: \"arrowKeyHandler\",\n    value: function arrowKeyHandler(event) {\n      // set true if the event was handled\n      var eventHandled = false;\n\n      if (event.defaultPrevented) {\n        return; // Do nothing if the event was already processed\n      }\n\n      switch (event.key) {\n        case 'ArrowLeft':\n          this.renderSlide.call(this, 'prev');\n          eventHandled = true;\n          break;\n\n        case 'ArrowRight':\n          this.renderSlide.call(this, 'next');\n          eventHandled = true;\n          break;\n\n        default:\n          return;\n      } // Cancel the default action to avoid it being handled twice\n\n\n      if (eventHandled) {\n        event.preventDefault();\n      }\n    }\n  }, {\n    key: \"createDots\",\n    value: function createDots() {\n      var dotContainer = document.createElement('div');\n      dotContainer.classList.add('dot-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        var dot = document.createElement('span');\n        dot.classList.add('slide-dot');\n        dot.onclick = this.renderSlide.bind(this, i);\n        this.dots.push(dot);\n        dotContainer.appendChild(dot);\n      } // add to the instructions container\n\n\n      this.insContainer.appendChild(dotContainer);\n    }\n  }]);\n\n  return insFactory;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/factories/insFactory.js?");
 
 /***/ }),
 
@@ -879,6 +692,160 @@ eval("var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbo
 
 /***/ }),
 
+/***/ "./src/page-facebook/instructions sync recursive ^\\.\\/.*$":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions sync ^\.\/.*$ ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var map = {\n\t\"./instructions\": \"./src/page-facebook/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/page-facebook/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/page-facebook/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/page-facebook/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/page-facebook/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/page-facebook/instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/page-facebook/instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/page-facebook/instructions/step6-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/page-facebook/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions_sync_^\\.\\/.*$?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/instructions.json":
+/*!**********************************************************!*\
+  !*** ./src/page-facebook/instructions/instructions.json ***!
+  \**********************************************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, default */
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.<br>Enter <a href='https://facebook.com' target=blank>https://facebook.com</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click in the upper right corner, and open settings.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Click on 'Your Facebook information' in the side bar menu.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Click on 'View' under the 'Download your information' tab.\\\"},{\\\"image\\\":\\\"./step5-web.jpg\\\",\\\"ins\\\":\\\"1. Select JSON for data format.<br> 2. Select media quality (recommended low if you want a small filesize).<br> 3. Finally click 'Create File'.\\\"},{\\\"image\\\":\\\"./step6-web.jpg\\\",\\\"ins\\\":\\\"In a couple of hours check your Facebook notifications, and save your file. Store it somewhere safe.\\\"}]\");\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/instructions.json?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step1-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step1-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"5c2c14f9808a07b01e54ba4ac60b44e2.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step1-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step2-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step2-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"c52927af834cebd9f999a43562733edc.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step2-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step3-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step3-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"ade9013cbf5d1f9111ef91305432fb12.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step3-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step4-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step4-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"8c8a88f1d67c05e3b5bf7a0717f13d92.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step4-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step5-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step5-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"fb556c0bc721f16c941334a9c36df100.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step5-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-facebook/instructions/step6-web.jpg":
+/*!******************************************************!*\
+  !*** ./src/page-facebook/instructions/step6-web.jpg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"c44c5706d25bde00683f548037531fb2.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step6-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions sync recursive ^\\.\\/.*$":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions sync ^\.\/.*$ ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var map = {\n\t\"./instructions\": \"./src/page-spotify/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/page-spotify/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/page-spotify/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/page-spotify/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/page-spotify/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/page-spotify/instructions/step4-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions_sync_^\\.\\/.*$?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/instructions.json":
+/*!*********************************************************!*\
+  !*** ./src/page-spotify/instructions/instructions.json ***!
+  \*********************************************************/
+/*! exports provided: 0, 1, 2, 3, default */
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://spotify.com/us/account' target=blank>spotify.com/us/account</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Log into your spotify account.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on 'Privacy Settings' in the left sidebar.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on the 'Request' button.\\\"}]\");\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/instructions.json?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/step1-web.jpg":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions/step1-web.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"fb24f8e1c25796afadc3965ff40c2313.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step1-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/step2-web.jpg":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions/step2-web.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"267e5514b194149ef395c375c15abb3b.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step2-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/step3-web.jpg":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions/step3-web.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"da14fa70420003e4845820cf46b33e5c.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step3-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/step4-web.jpg":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions/step4-web.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"e58e0a089c9ddc6cd950984b9e89668e.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step4-web.jpg?");
+
+/***/ }),
+
 /***/ "./src/page-spotify/main.js":
 /*!**********************************!*\
   !*** ./src/page-spotify/main.js ***!
@@ -888,6 +855,72 @@ eval("var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbo
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_components_navBar_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../js/components/navBar.js */ \"./src/js/components/navBar.js\");\n/* harmony import */ var _js_components_filePicker_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../js/components/filePicker.js */ \"./src/js/components/filePicker.js\");\n/* harmony import */ var _js_factories_reportFactory_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../js/factories/reportFactory.js */ \"./src/js/factories/reportFactory.js\");\n/* harmony import */ var _js_factories_insFactory_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../js/factories/insFactory.js */ \"./src/js/factories/insFactory.js\");\n/* harmony import */ var _styles_spotify_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/spotify.scss */ \"./src/styles/spotify.scss\");\n/* harmony import */ var _styles_spotify_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_spotify_scss__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _images_icons_spotify_inline_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../images/icons/spotify_inline.svg */ \"./src/images/icons/spotify_inline.svg\");\n/* harmony import */ var _images_icons_spotify_inline_svg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_icons_spotify_inline_svg__WEBPACK_IMPORTED_MODULE_5__);\n// JS imports:\n\n\n\n // CSS imports:\n\n\n\nvar instructions = new _js_factories_insFactory_js__WEBPACK_IMPORTED_MODULE_3__[\"insFactory\"]('spotify', document.getElementById('instructions-container'));\nvar rRender = new _js_factories_reportFactory_js__WEBPACK_IMPORTED_MODULE_2__[\"reportFactory\"]('red');\nvar nBar = new _js_components_navBar_js__WEBPACK_IMPORTED_MODULE_0__[\"NavBar\"]();\nvar fPicker = new _js_components_filePicker_js__WEBPACK_IMPORTED_MODULE_1__[\"FilePicker\"](document.getElementById('filepicker')); // let analyzer = new TinderAnalyzer(renderReport);\n\nvar websiteIcon = document.getElementById('website-icon');\nwebsiteIcon.innerHTML = _images_icons_spotify_inline_svg__WEBPACK_IMPORTED_MODULE_5___default.a;\nvar previewBtn = document.getElementById('preview-btn');\n\npreviewBtn.onclick = function () {\n  renderReport(true);\n};\n\nkickStartReport();\n\nfunction kickStartReport() {\n  if (true) {\n    fPicker.onUpload(function (file) {\n      analyzer.init(file);\n    });\n  } else {}\n}\n\nfunction renderReport(fakeData) {}\n\n//# sourceURL=webpack:///./src/page-spotify/main.js?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions sync recursive ^\\.\\/.*$":
+/*!****************************************************!*\
+  !*** ./src/page-tinder/instructions sync ^\.\/.*$ ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var map = {\n\t\"./instructions\": \"./src/page-tinder/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/page-tinder/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/page-tinder/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/page-tinder/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/page-tinder/instructions/step3-web.jpg\",\n\t\"./step4-web.png\": \"./src/page-tinder/instructions/step4-web.png\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/page-tinder/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions_sync_^\\.\\/.*$?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions/instructions.json":
+/*!********************************************************!*\
+  !*** ./src/page-tinder/instructions/instructions.json ***!
+  \********************************************************/
+/*! exports provided: 0, 1, 2, 3, default */
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://account.gotinder.com/' target=blank>account.gotinder.com</a> in the address bar.</br>Login to your tinder account\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click on the 'Download my data' button.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Enter the email address where you would like to receive the download link.\\\"},{\\\"image\\\":\\\"./step4-web.png\\\",\\\"ins\\\":\\\"Wait to receive the download link in your email. This can take up to a month.\\\"}]\");\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/instructions.json?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions/step1-web.jpg":
+/*!****************************************************!*\
+  !*** ./src/page-tinder/instructions/step1-web.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"01a3edd599ce65624d381b601d5f46c8.jpg\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step1-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions/step2-web.jpg":
+/*!****************************************************!*\
+  !*** ./src/page-tinder/instructions/step2-web.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"b92dc0f21950ab6d98018e944eefeaef.jpg\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step2-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions/step3-web.jpg":
+/*!****************************************************!*\
+  !*** ./src/page-tinder/instructions/step3-web.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"11b81c17245254ee61566167c027c4db.jpg\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step3-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-tinder/instructions/step4-web.png":
+/*!****************************************************!*\
+  !*** ./src/page-tinder/instructions/step4-web.png ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"bbd24f0f4a1f03b0a224c58d5eeab38a.png\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step4-web.png?");
 
 /***/ }),
 

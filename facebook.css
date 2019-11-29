@@ -334,8 +334,8 @@ input[type='file'] {
   background: #f2f2f2; }
 
 .slide-card-text {
-  width: 100%;
   height: 10%;
+  text-align: left;
   padding: 0 0.5em 1em 0.5em; }
 
 .step-indicator {
@@ -783,7 +783,8 @@ header {
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
-  top: 0; }
+  top: 0;
+  z-index: 5; }
 
 nav {
   display: flex;
@@ -830,11 +831,12 @@ nav {
   display: flex;
   fill: white; }
 
-.nav-item:hover {
-  background: rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 3px #000;
-  -webkit-box-shadow: 0 0 3px #000;
-  box-shadow: 0 0 3px #000; }
+@media screen and (min-width: 576px) {
+  .nav-item:hover {
+    background: rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 3px #000;
+    -webkit-box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 3px #000; } }
 
 .nav-discrete {
   transform: translateX(167px); }
