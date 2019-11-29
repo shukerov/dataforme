@@ -338,8 +338,9 @@ input[type='file'] {
 .ins-btn-image {
   min-width: 50px; }
 
-.prev-btn:hover img, .next-btn:hover img {
-  transform: scale(1.5); }
+@media screen and (min-width: 992px) {
+  .prev-btn:hover img, .next-btn:hover img {
+    transform: scale(1.5); } }
 
 .slide-dot {
   cursor: pointer;
@@ -835,7 +836,11 @@ nav {
   /* Height of the footer */
   width: 100%;
   text-align: center;
-  margin-top: 10vh; }
+  margin-top: 10vh;
+  background: #151515;
+  color: white; }
+  #footer a, #footer a:visited {
+    color: white; }
 
 #site {
   min-height: 100vh;
@@ -854,6 +859,7 @@ nav {
 
 .card::before {
   position: absolute;
+  z-index: -1;
   top: -2.5em;
   left: 50%;
   transform: translateX(-50%);
@@ -881,16 +887,49 @@ nav {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
+  z-index: 1;
   width: 90%;
   margin: 20vh auto;
   background: white;
   padding: 1em;
+  text-align: center;
   box-shadow: 0 0 4px black;
   -moz-box-shadow: 0 0 4px black;
   -webkit-box-shadow: 0 0 4px black; }
 
-.card-text {
-  margin: 0 1rem; }
+.card-text, .card-label, .card-highlight, .card-list {
+  margin: 0.5rem 1rem;
+  text-align: left; }
+  @media screen and (min-width: 768px) {
+    .card-text, .card-label, .card-highlight, .card-list {
+      margin-left: 3rem; } }
+  @media screen and (min-width: 992px) {
+    .card-text, .card-label, .card-highlight, .card-list {
+      margin-left: 5rem; } }
+
+.card-label {
+  font-weight: 600;
+  margin: 2rem 1rem 1rem 1rem; }
+  @media screen and (min-width: 768px) {
+    .card-label {
+      margin-left: 3rem; } }
+  @media screen and (min-width: 992px) {
+    .card-label {
+      margin-left: 5rem; } }
+
+.card-hint-desktop {
+  display: none; }
+  @media screen and (min-width: 768px) {
+    .card-hint-desktop {
+      display: block; } }
+
+.card-hint {
+  font-size: 0.8em;
+  font-weight: 350; }
+
+.card-hint::before {
+  content: "Hint: ";
+  font-weight: 700; }
 
 #website-icon {
   margin: 1.5em auto 5em auto;
@@ -899,6 +938,33 @@ nav {
     fill: white;
     height: 200px; }
 
+.preview-btns {
+  text-align: center;
+  display: inline-block;
+  padding: 0.75em 1em;
+  margin: 1em 1em 0 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: white;
+  background: #151515;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
 #site {
   background: #1cd95e; }
+
+#preview-btn {
+  background: #1cd95e; }
+
+#preview-btn:hover {
+  color: #1cd95e;
+  background: white;
+  border: 1px solid #1cd95e; }
 
