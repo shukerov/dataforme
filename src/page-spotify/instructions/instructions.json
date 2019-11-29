@@ -1,0 +1,18 @@
+[
+  {
+    "image": "./step1-web.jpg",
+    "ins": "Open your browser of choice, and enter <a href='https://spotify.com/us/account' target=blank>https://spotify.com/us/account</a> in the address bar."
+  },
+  {
+    "image": "./step2-web.jpg",
+    "ins": "Log into your spotify account."
+  },
+  {
+    "image": "./step3-web.jpg",
+    "ins": "Scroll down and click on 'Privacy Settings' in the left sidebar."
+  },
+  {
+    "image": "./step4-web.jpg",
+    "ins": "Scroll down and click on the 'Request' button."
+  }
+]

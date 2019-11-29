@@ -1,75 +1,9 @@
 import '../../styles/components/instructions.scss';
-import WEBSITES from '../constants.js';
+import { WEBSITES } from '../constants.js';
 
 // Import assets
 import ileft from '../../images/components/chevron-left.svg';
 import iright from '../../images/components/chevron-right.svg';
-
-// locations and data for the instructions
-const insns = {
-  'facebook': [
-    {
-      image: './step1-web.jpg',
-      ins: "Open your browser of choice.<br>Enter <a href='https://facebook.com' target=blank>https://facebook.com</a> in the address bar."
-    },
-    {
-      image: './step2-web.jpg',
-      ins: 'Click in the upper right corner, and open settings.'
-    },
-    {
-      image: './step3-web.jpg',
-      ins: "Click on 'Your Facebook information' in the side bar menu."
-    },
-    {
-      image: './step4-web.jpg',
-      ins: "Click on 'View' under the 'Download your information' tab."
-    },
-    {
-      image: './step5-web.jpg',
-      ins: "1. Select JSON for data format.<br> 2. Select media quality (recommended low if you want a small filesize).<br> 3. Finally click 'Create File'."
-    },
-    {
-      image: './step6-web.jpg',
-      ins: "In a couple of hours check your Facebook notifications, and save your file. Store it somewhere safe."
-    }
-  ],
-  'tinder': [ 
-    {
-      image: './step1-web.jpg',
-      ins: "Open your browser of choice, and enter <a href='https://account.gotinder.com/' target=blank>https://account.gotinder.com</a> in the address bar. Login to your tinder account"
-    },
-    {
-      image: './step2-web.jpg',
-      ins: "Click on the 'Download my data' button."
-    },
-    {
-      image: './step3-web.jpg',
-      ins: "Enter the email address where you would like to receive the download link."
-    },
-    {
-      image: './step4-web.png',
-      ins: "Wait to receive the download link in your email. This can take up to a month."
-    }
-  ],
-  'spotify': [ 
-    {
-      image: './step1-web.jpg',
-      ins: "Open your browser of choice, and enter <a href='https://spotify.com/us/account' target=blank>https://spotify.com/us/account</a> in the address bar."
-    },
-    {
-      image: './step2-web.jpg',
-      ins: "Log into your spotify account."
-    },
-    {
-      image: './step3-web.jpg',
-      ins: "Scroll down and click on 'Privacy Settings' in the left sidebar."
-    },
-    {
-      image: './step4-web.jpg',
-      ins: "Scroll down and click on the 'Request' button."
-    }
-  ]
-}
 
 class insFactory {
   constructor(website, parent) {
@@ -81,23 +15,24 @@ class insFactory {
 
     //TODO: need a check if website is the the websites constants!
     // figure out which instructions to load
-    if (website === 'facebook') {
-      this.imagesPath = require.context('../../images/fb-instructions', true);
-      this.instructions = insns['facebook'];
-    }
-    else if (website === 'tinder') {
-      this.imagesPath = require.context('../../images/tinder-instructions', true);
-      this.instructions = insns['tinder'];
-    }
-    else if (website === 'spotify') {
-      this.imagesPath = require.context('../../images/spotify-instructions', true);
-      this.instructions = insns['spotify'];
+    let ins_context = null;
+    if (!WEBSITES.includes(website)) {
+      throw `Please add '${website}' to WEBSITES constant in /src/js/constants.js`
     }
 
-    // sets the correct path for each image
+    if (website === 'facebook') {
+      ins_context = require.context('../../page-facebook/instructions', true);
+    }
+    else if (website === 'tinder') {
+      ins_context = require.context('../../page-tinder/instructions', true);
+    }
+    else if (website === 'spotify') {
+      ins_context = require.context('../../page-spotify/instructions', true);
+    }
+
+    this.instructions = ins_context('./instructions.json');
     this.instructions.map((ins) => {
-      ins.image = this.imagePath(ins.image);
-      return ins;
+      ins.image = ins_context(ins.image, true);
     });
 
     // current slide
@@ -111,11 +46,6 @@ class insFactory {
     // makes the first instruction visible
     this.renderSlide(0);
     parent.appendChild(this.insContainer);
-  }
-
-  // TODO: get rid of this function and just call imagesPath when creating slides
-  imagePath(name) {
-    return this.imagesPath(name, true)
   }
 
   renderSlide(action) {
