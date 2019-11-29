@@ -5,6 +5,16 @@
   background: $tinder;
 }
 
+#preview-btn {
+  background: $tinder;
+}
+
+#preview-btn:hover {
+  color: $tinder-static;
+  background: $off-white;
+  border: 1px solid $tinder-static;
+}
+
 #graphs-container-matches {
   display: grid;
   grid-template-columns: 1fr;

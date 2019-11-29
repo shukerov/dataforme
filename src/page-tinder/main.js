@@ -13,15 +13,14 @@ import website_icon from '../images/icons/tinder_inline.svg';
 let instructions = new insFactory('tinder', document.getElementById('instructions-container'));
 let rRender = new reportFactory('red');
 let nBar = new NavBar();
-let step3Card = document.getElementById('step-3');
+let step3Card = document.getElementById('filepicker');
 let fPicker = new FilePicker(step3Card);
 let analyzer = new TinderAnalyzer(renderReport);
 
 let websiteIcon = document.getElementById('website-icon');
 websiteIcon.innerHTML = website_icon;
 
-// TODO: refactor as helper
-let previewBtn = document.getElementById('nav-preview-item');
+let previewBtn = document.getElementById('preview-btn');
 previewBtn.onclick = () => {
   renderReport(true);
 };

@@ -59,8 +59,10 @@
 }
 
 .prev-btn:hover, .next-btn:hover {
-  img {
-    transform: scale(1.5);
+  @media screen and (min-width: $screen-lg-min) {
+    img {
+      transform: scale(1.5);
+    }
   }
 }
 

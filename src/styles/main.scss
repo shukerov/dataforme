@@ -69,6 +69,7 @@ a, a:visited {
 
 .card::before {
   position: absolute;
+  z-index: -1;
   top: -2.5em;
   left: 50%;
   transform: translateX(-50%);
@@ -100,16 +101,73 @@ a, a:visited {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
+  z-index: 1;
   width: 90%;
   margin: 20vh auto;
   background: $card-bg-color;
   padding: 1em;
+  text-align: center;
   @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
 }
 
-.card-text {
-   margin: 0 1rem;
+.card-text, .card-label, .card-highlight, .card-list {
+   margin: 0.5rem 1rem;
+   text-align: left;
+
+   @media screen and (min-width: $screen-md-min) {
+     margin-left: 3rem;
+   }
+
+   @media screen and (min-width: $screen-lg-min) {
+     margin-left: 5rem;
+   }
 }
+
+.card-label {
+  font-weight: 600;
+  margin: 2rem 1rem 1rem 1rem;
+   @media screen and (min-width: $screen-md-min) {
+     margin-left: 3rem;
+   }
+
+   @media screen and (min-width: $screen-lg-min) {
+     margin-left: 5rem;
+   }
+}
+
+// .card-highlight {
+//   margin: 0.5rem 1rem;
+//   text-align: left;
+//   @media screen and (min-width: $screen-md-min) {
+//     margin-left: 3rem;
+//   }
+// }
+
+.card-hint-desktop {
+  display: none;
+
+  @media screen and (min-width: $screen-md-min) {
+    display: block;
+  }
+}
+
+.card-hint {
+  font-size: 0.8em;
+  font-weight: 350;
+}
+
+.card-hint::before {
+  content: "Hint: ";
+  font-weight: 700;
+}
+
+// .card-list {
+//    text-align: left;
+
+//    @media screen and (min-width: $screen-md-min) {
+//      margin: 0.5em 3em;
+//    }
+// }
 
 #website-icon {
   margin: 1.5em auto 5em auto;
@@ -120,3 +178,23 @@ a, a:visited {
   }
 }
 
+.preview-btns {
+  text-align: center;
+  display:inline-block;
+  padding: 0.75em 1em;
+  margin: 1em 1em 0 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: $off-white;
+  background: $off-black;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}

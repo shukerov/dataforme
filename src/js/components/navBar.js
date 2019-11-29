@@ -42,18 +42,18 @@ class NavBar {
     this.navbar = document.getElementById('nav');
 
     // create buttons
-    if (!this.index) {
-      this.createNavButton('preview', '#report', {
-        subitem: true,
-        navbtn: true,
-        preview: true
-      });
+    // if (!this.index) {
+    //   this.createNavButton('preview', '#report', {
+    //     subitem: true,
+    //     navbtn: true,
+    //     preview: true
+    //   });
 
-      this.createNavButton('analyze', '#report', {
-        subitem: true,
-        navbtn: true
-      });
-    }
+    //   this.createNavButton('analyze', '#report', {
+    //     subitem: true,
+    //     navbtn: true
+    //   });
+    // }
 
     // setup class variables
     this.navbarHeight = this.navbar.scrollHeight;
