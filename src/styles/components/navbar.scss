@@ -76,11 +76,13 @@ nav {
 }
 
 .nav-item:hover {
+  @media screen and (min-width: $screen-sm-min) {
+    background: fade-out($color: #000000, $amount: 0.5);
+    -moz-box-shadow: 0 0 3px #000;
+    -webkit-box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 3px #000;
+  }
   // background: lighten($bg-color, 20%);
-  background: fade-out($color: #000000, $amount: 0.5);
-  -moz-box-shadow: 0 0 3px #000;
-  -webkit-box-shadow: 0 0 3px #000;
-  box-shadow: 0 0 3px #000;
   //  color: $bg-color;
   //  box-shadow: -5px 0px $tinder-static, -10px 0px $spotify, -15px 0px $facebook;
 }
