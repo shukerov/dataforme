@@ -124,13 +124,13 @@ class chartFactory {
     }
     else if (args.type == 'clock') {
       let clckGraph =  new ClockChart(data, 300, args.parent, {
-        units: args.clock_labels + 'es'
+        units: args.clock_labels[0]
       });
 
       // add conclusion?
       let gConclusion = document.createElement('h2');
       gConclusion.classList.add('graph-conclusion');
-      gConclusion.innerHTML = clckGraph.getConclusion(data, args.clock_labels + 'ed');
+      gConclusion.innerHTML = clckGraph.getConclusion(data, args.clock_labels[1]);
       args.parent.appendChild(gConclusion);
     }
   }

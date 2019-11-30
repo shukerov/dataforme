@@ -244,7 +244,7 @@ function renderMsgGraphs(data, subreport) {
     title: 'Messages by Hour of Day - Sent',
     data: data.timeStats.hourly.sent,
     css_label: 'msg-graph',
-    clock_labels: 'messag',
+    clock_labels: ['messages', 'messaged'],
     size: 'medium'
   });
 
@@ -253,7 +253,7 @@ function renderMsgGraphs(data, subreport) {
     title: 'Messages by Hour of Day - Received',
     data: data.timeStats.hourly.received,
     css_label: 'msg-graph',
-    clock_labels: 'messag',
+    clock_labels: ['messages', 'messaged'],
     size: 'medium'
   });
 
@@ -385,7 +385,7 @@ function renderSearchReport(data, parent) {
     type: 'clock',
     data: data.timeStats.hourly,
     title: 'Searches by Hour of Day',
-    clock_labels: 'search',
+    clock_labels: ['searches', 'searched'],
     css_label: 'search-graph',
     size: 'medium'
   });
@@ -433,7 +433,7 @@ function renderPostGraphs(data, subreport) {
     type: 'clock',
     title: 'Posts by Hour of Day - Sent',
     data: data.timeStats.hourly.sent,
-    clock_labels: 'post',
+    clock_labels: ['posts', 'posted'],
     css_label: 'post-graph',
     size: 'medium'
   });
@@ -442,7 +442,7 @@ function renderPostGraphs(data, subreport) {
     type: 'clock',
     data: data.timeStats.hourly.received,
     title: 'Posts by Hour of Day - Received',
-    clock_labels: 'post',
+    clock_labels: ['posts', 'posted'],
     css_label: 'post-graph',
     size: 'medium'
   });
@@ -563,7 +563,7 @@ function renderReactionReport(data) {
     type: 'clock',
     data: data.timeStats.hourly,
     title: 'Reactions by Hour of Day',
-    clock_labels: 'reaction',
+    clock_labels: ['reactions', 'reacted'],
     css_label: 'reaction-graph',
     size: 'medium'
   });

@@ -117,7 +117,7 @@ function renderStreamingReport(data) {
     type: 'clock',
     title: 'Listens by Hour of Day',
     data: data.streaming_data.time.hourly,
-    clock_labels: 'song',
+    clock_labels: ['listens', 'listened'],
     css_label: 'stream-graph',
     size: 'medium'
   });
