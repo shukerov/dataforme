@@ -1,6 +1,6 @@
 // JS imports:
-import { formatDate, formatPercent } from '../js/analyzers/analyzerHelpers.js';
-import { TinderAnalyzer } from '../js/analyzers/tinderAnalyzer.js';
+import { formatDate, formatPercent } from '../js/analysis/analyzerHelpers.js';
+import { TinderAnalyzer } from './tinderAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
 import { reportFactory } from '../js/factories/reportFactory.js';

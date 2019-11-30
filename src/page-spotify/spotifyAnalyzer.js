@@ -1,12 +1,11 @@
-import { BaseAnalyzer } from './baseAnalyzer.js';
-import { sum } from './analyzerHelpers.js';
+import { BaseAnalyzer } from '../js/analysis/baseAnalyzer.js';
 
 class SpotifyAnalyzer extends BaseAnalyzer {
 
   constructor(callback) {
     super(callback);
     this.username = 'unknown';
-    this.fakeData = require('../../page-spotify/spotify_precompiled.json');
+    this.fakeData = require('./fake_data.json');
     this.data = { 
       'username': null,
       'gender': null,

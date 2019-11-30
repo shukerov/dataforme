@@ -1,12 +1,12 @@
-import { BaseAnalyzer } from './baseAnalyzer.js';
-import { sum } from './analyzerHelpers.js';
+import { BaseAnalyzer } from '../js/analysis/baseAnalyzer.js';
+import { sum } from '../js/analysis/analyzerHelpers.js';
 
 class TinderAnalyzer extends BaseAnalyzer {
 
   constructor(callback) {
     super(callback);
     this.username = 'unknown';
-    this.fakeData = require('../../assets/fake_data/tinder_precompiled.json');
+    this.fakeData = require('./fake_data.json');
     // TODO: add missing items so that stuff doesn't break? It wont really but good practice
     this.data = { 
       'name': null,

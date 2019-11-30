@@ -1,10 +1,10 @@
-import { BaseAnalyzer } from './baseAnalyzer.js';
+import { BaseAnalyzer } from '../js/analysis/baseAnalyzer.js';
 
-class FBAnalyzer extends BaseAnalyzer {
+class FacebookAnalyzer extends BaseAnalyzer {
   constructor(callback) {
     super(callback);
     this.username = 'unknown';
-    this.fakeData = require('../../assets/fake_data/fb_precompiled.json');
+    this.fakeData = require('./fake_data.json');
     this.data = {
       'name': null,
       'joined': null,
@@ -594,4 +594,4 @@ class FBAnalyzer extends BaseAnalyzer {
   }
 }
 
-export { FBAnalyzer };
+export { FacebookAnalyzer };

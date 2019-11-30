@@ -1,8 +1,8 @@
 // JS imports:
 import { DAYS, MONTHS } from '../js/constants.js';
 import { formatNum, secondsToHms } from '../js/helpers.js';
-import { getTopMessagers, getTopSearches, truncateYears, getCurrentDate, getNumDays, formatDate, safeDivide } from '../js/analyzers/analyzerHelpers.js';
-import { FBAnalyzer } from '../js/analyzers/fbAnalyzer.js';
+import { getTopMessagers, getTopSearches, truncateYears, getCurrentDate, getNumDays, formatDate, safeDivide } from '../js/analysis/analyzerHelpers.js';
+import { FacebookAnalyzer } from './facebookAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
 import { reportFactory } from '../js/factories/reportFactory.js';
@@ -17,7 +17,7 @@ let instructions = new insFactory('facebook', document.getElementById('instructi
 let rRender = new reportFactory('facebook');
 let nBar = new NavBar();
 let fPicker = new FilePicker(document.getElementById('filepicker'));
-let analyzer = new FBAnalyzer(renderReport);
+let analyzer = new FacebookAnalyzer(renderReport);
 let websiteIcon = document.getElementById('website-icon');
 websiteIcon.innerHTML = website_icon;
 

@@ -1,9 +1,9 @@
 // JS imports:
 import { DAYS, MONTHS } from '../js/constants.js';
 import { formatNum, secondsToHms } from '../js/helpers.js';
-import { getTopObjects } from '../js/analyzers/analyzerHelpers.js';
-import { formatDate, formatPercent } from '../js/analyzers/analyzerHelpers.js';
-import { SpotifyAnalyzer } from '../js/analyzers/spotifyAnalyzer.js';
+import { getTopObjects } from '../js/analysis/analyzerHelpers.js';
+import { formatDate, formatPercent } from '../js/analysis/analyzerHelpers.js';
+import { SpotifyAnalyzer } from './spotifyAnalyzer.js';
 import { NavBar } from '../js/components/navBar.js';
 import { FilePicker } from '../js/components/filePicker.js';
 import { reportFactory } from '../js/factories/reportFactory.js';
