@@ -160,7 +160,7 @@ eval("module.exports = \"<svg version=\\\"1.1\\\" id=\\\"Tinder\\\" xmlns=\\\"ht
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var map = {\n\t\"./activity.svg\": \"./src/images/report-icons/activity.svg\",\n\t\"./angry-fa.svg\": \"./src/images/report-icons/angry-fa.svg\",\n\t\"./book.svg\": \"./src/images/report-icons/book.svg\",\n\t\"./cake.svg\": \"./src/images/report-icons/cake.svg\",\n\t\"./calendar.svg\": \"./src/images/report-icons/calendar.svg\",\n\t\"./camera.svg\": \"./src/images/report-icons/camera.svg\",\n\t\"./cry-fa.svg\": \"./src/images/report-icons/cry-fa.svg\",\n\t\"./file-plus_inline.svg\": \"./src/images/report-icons/file-plus_inline.svg\",\n\t\"./file-text.svg\": \"./src/images/report-icons/file-text.svg\",\n\t\"./heart-solid-fa.svg\": \"./src/images/report-icons/heart-solid-fa.svg\",\n\t\"./heart.svg\": \"./src/images/report-icons/heart.svg\",\n\t\"./image.svg\": \"./src/images/report-icons/image.svg\",\n\t\"./inbox.svg\": \"./src/images/report-icons/inbox.svg\",\n\t\"./laugh-fa.svg\": \"./src/images/report-icons/laugh-fa.svg\",\n\t\"./loader.svg\": \"./src/images/report-icons/loader.svg\",\n\t\"./mail.svg\": \"./src/images/report-icons/mail.svg\",\n\t\"./map-pin.svg\": \"./src/images/report-icons/map-pin.svg\",\n\t\"./maximize-2.svg\": \"./src/images/report-icons/maximize-2.svg\",\n\t\"./message-circle.svg\": \"./src/images/report-icons/message-circle.svg\",\n\t\"./message-square.svg\": \"./src/images/report-icons/message-square.svg\",\n\t\"./mouse-pointer.svg\": \"./src/images/report-icons/mouse-pointer.svg\",\n\t\"./phone-call.svg\": \"./src/images/report-icons/phone-call.svg\",\n\t\"./search.svg\": \"./src/images/report-icons/search.svg\",\n\t\"./send.svg\": \"./src/images/report-icons/send.svg\",\n\t\"./settings.svg\": \"./src/images/report-icons/settings.svg\",\n\t\"./shopping-bag.svg\": \"./src/images/report-icons/shopping-bag.svg\",\n\t\"./smile-fa.svg\": \"./src/images/report-icons/smile-fa.svg\",\n\t\"./smile.svg\": \"./src/images/report-icons/smile.svg\",\n\t\"./target.svg\": \"./src/images/report-icons/target.svg\",\n\t\"./thumbs-down.svg\": \"./src/images/report-icons/thumbs-down.svg\",\n\t\"./thumbs-up-fa.svg\": \"./src/images/report-icons/thumbs-up-fa.svg\",\n\t\"./thumbs-up.svg\": \"./src/images/report-icons/thumbs-up.svg\",\n\t\"./upload.svg\": \"./src/images/report-icons/upload.svg\",\n\t\"./user.svg\": \"./src/images/report-icons/user.svg\",\n\t\"./users.svg\": \"./src/images/report-icons/users.svg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/images/report-icons sync \\\\.svg$\";\n\n//# sourceURL=webpack:///./src/images/report-icons_sync_nonrecursive_\\.svg$?");
+eval("var map = {\n\t\"./activity.svg\": \"./src/images/report-icons/activity.svg\",\n\t\"./angry-fa.svg\": \"./src/images/report-icons/angry-fa.svg\",\n\t\"./book.svg\": \"./src/images/report-icons/book.svg\",\n\t\"./cake.svg\": \"./src/images/report-icons/cake.svg\",\n\t\"./calendar.svg\": \"./src/images/report-icons/calendar.svg\",\n\t\"./camera.svg\": \"./src/images/report-icons/camera.svg\",\n\t\"./cry-fa.svg\": \"./src/images/report-icons/cry-fa.svg\",\n\t\"./disc.svg\": \"./src/images/report-icons/disc.svg\",\n\t\"./file-plus_inline.svg\": \"./src/images/report-icons/file-plus_inline.svg\",\n\t\"./file-text.svg\": \"./src/images/report-icons/file-text.svg\",\n\t\"./headphones.svg\": \"./src/images/report-icons/headphones.svg\",\n\t\"./heart-solid-fa.svg\": \"./src/images/report-icons/heart-solid-fa.svg\",\n\t\"./heart.svg\": \"./src/images/report-icons/heart.svg\",\n\t\"./hexagon.svg\": \"./src/images/report-icons/hexagon.svg\",\n\t\"./image.svg\": \"./src/images/report-icons/image.svg\",\n\t\"./inbox.svg\": \"./src/images/report-icons/inbox.svg\",\n\t\"./laugh-fa.svg\": \"./src/images/report-icons/laugh-fa.svg\",\n\t\"./loader.svg\": \"./src/images/report-icons/loader.svg\",\n\t\"./mail.svg\": \"./src/images/report-icons/mail.svg\",\n\t\"./map-pin.svg\": \"./src/images/report-icons/map-pin.svg\",\n\t\"./maximize-2.svg\": \"./src/images/report-icons/maximize-2.svg\",\n\t\"./message-circle.svg\": \"./src/images/report-icons/message-circle.svg\",\n\t\"./message-square.svg\": \"./src/images/report-icons/message-square.svg\",\n\t\"./mouse-pointer.svg\": \"./src/images/report-icons/mouse-pointer.svg\",\n\t\"./music.svg\": \"./src/images/report-icons/music.svg\",\n\t\"./phone-call.svg\": \"./src/images/report-icons/phone-call.svg\",\n\t\"./play.svg\": \"./src/images/report-icons/play.svg\",\n\t\"./search.svg\": \"./src/images/report-icons/search.svg\",\n\t\"./send.svg\": \"./src/images/report-icons/send.svg\",\n\t\"./settings.svg\": \"./src/images/report-icons/settings.svg\",\n\t\"./shopping-bag.svg\": \"./src/images/report-icons/shopping-bag.svg\",\n\t\"./skip-forward.svg\": \"./src/images/report-icons/skip-forward.svg\",\n\t\"./smartphone.svg\": \"./src/images/report-icons/smartphone.svg\",\n\t\"./smile-fa.svg\": \"./src/images/report-icons/smile-fa.svg\",\n\t\"./smile.svg\": \"./src/images/report-icons/smile.svg\",\n\t\"./target.svg\": \"./src/images/report-icons/target.svg\",\n\t\"./thumbs-down.svg\": \"./src/images/report-icons/thumbs-down.svg\",\n\t\"./thumbs-up-fa.svg\": \"./src/images/report-icons/thumbs-up-fa.svg\",\n\t\"./thumbs-up.svg\": \"./src/images/report-icons/thumbs-up.svg\",\n\t\"./upload.svg\": \"./src/images/report-icons/upload.svg\",\n\t\"./user.svg\": \"./src/images/report-icons/user.svg\",\n\t\"./users.svg\": \"./src/images/report-icons/users.svg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/images/report-icons sync \\\\.svg$\";\n\n//# sourceURL=webpack:///./src/images/report-icons_sync_nonrecursive_\\.svg$?");
 
 /***/ }),
 
@@ -241,6 +241,17 @@ eval("module.exports = __webpack_require__.p + \"bee545a8d4b2a34ab25d61d23f37fca
 
 /***/ }),
 
+/***/ "./src/images/report-icons/disc.svg":
+/*!******************************************!*\
+  !*** ./src/images/report-icons/disc.svg ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"ffaee5053d0d4913e3791d18c2924328.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/disc.svg?");
+
+/***/ }),
+
 /***/ "./src/images/report-icons/file-plus_inline.svg":
 /*!******************************************************!*\
   !*** ./src/images/report-icons/file-plus_inline.svg ***!
@@ -263,6 +274,17 @@ eval("module.exports = __webpack_require__.p + \"09f0201e92b42591f3c447f7cd8704a
 
 /***/ }),
 
+/***/ "./src/images/report-icons/headphones.svg":
+/*!************************************************!*\
+  !*** ./src/images/report-icons/headphones.svg ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"e3f2c527e5ecb7c55c96a7e708e91a4d.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/headphones.svg?");
+
+/***/ }),
+
 /***/ "./src/images/report-icons/heart-solid-fa.svg":
 /*!****************************************************!*\
   !*** ./src/images/report-icons/heart-solid-fa.svg ***!
@@ -282,6 +304,17 @@ eval("module.exports = __webpack_require__.p + \"5dbbbe23e97832071f574844062f111
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("module.exports = __webpack_require__.p + \"502189aef3b96acbcddedbb54a043638.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/heart.svg?");
+
+/***/ }),
+
+/***/ "./src/images/report-icons/hexagon.svg":
+/*!*********************************************!*\
+  !*** ./src/images/report-icons/hexagon.svg ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"2d95a138ebf8804321d33a398dedf3a5.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/hexagon.svg?");
 
 /***/ }),
 
@@ -395,6 +428,17 @@ eval("module.exports = __webpack_require__.p + \"4af98ea7f8ec35d4b2f2ac7e22f2ccb
 
 /***/ }),
 
+/***/ "./src/images/report-icons/music.svg":
+/*!*******************************************!*\
+  !*** ./src/images/report-icons/music.svg ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"0cc5337b595655a684bdf060e07e790a.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/music.svg?");
+
+/***/ }),
+
 /***/ "./src/images/report-icons/phone-call.svg":
 /*!************************************************!*\
   !*** ./src/images/report-icons/phone-call.svg ***!
@@ -403,6 +447,17 @@ eval("module.exports = __webpack_require__.p + \"4af98ea7f8ec35d4b2f2ac7e22f2ccb
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("module.exports = __webpack_require__.p + \"b5e84d6112ed3df82e9cd769d95a22ac.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/phone-call.svg?");
+
+/***/ }),
+
+/***/ "./src/images/report-icons/play.svg":
+/*!******************************************!*\
+  !*** ./src/images/report-icons/play.svg ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"34df31112e5959a1e5c0abf66851818d.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/play.svg?");
 
 /***/ }),
 
@@ -447,6 +502,28 @@ eval("module.exports = __webpack_require__.p + \"a2376801c4706998fe2373aa2dcd677
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("module.exports = __webpack_require__.p + \"dd75d8007592eb3928c3691e2d251294.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/shopping-bag.svg?");
+
+/***/ }),
+
+/***/ "./src/images/report-icons/skip-forward.svg":
+/*!**************************************************!*\
+  !*** ./src/images/report-icons/skip-forward.svg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"51fefddf37541d721b0f541fa7f5e3fe.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/skip-forward.svg?");
+
+/***/ }),
+
+/***/ "./src/images/report-icons/smartphone.svg":
+/*!************************************************!*\
+  !*** ./src/images/report-icons/smartphone.svg ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"2b9903504f576446fc7c2bc64d64790f.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/smartphone.svg?");
 
 /***/ }),
 
@@ -553,11 +630,11 @@ eval("module.exports = __webpack_require__.p + \"fcd0300a6e89e7151566af47b69128d
 /*!*********************************************!*\
   !*** ./src/js/analyzers/analyzerHelpers.js ***!
   \*********************************************/
-/*! exports provided: sum, getTopMessagers, getTopSearches, truncateYears, getCurrentDate, getNumDays, formatDate, safeDivide, formatPercent */
+/*! exports provided: sum, getTopMessagers, getTopObjects, getTopSearches, truncateYears, getCurrentDate, getNumDays, formatDate, safeDivide, formatPercent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sum\", function() { return sum; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getTopMessagers\", function() { return getTopMessagers; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getTopSearches\", function() { return getTopSearches; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"truncateYears\", function() { return truncateYears; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getCurrentDate\", function() { return getCurrentDate; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getNumDays\", function() { return getNumDays; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"formatDate\", function() { return formatDate; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"safeDivide\", function() { return safeDivide; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"formatPercent\", function() { return formatPercent; });\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants.js */ \"./src/js/constants.js\");\n\nfunction sum(array) {\n  return array.reduce(function (acc, item) {\n    acc += item;\n    return acc;\n  }, 0);\n} // returns the names of the top n messagers\n\nfunction getTopMessagers(threads, n) {\n  var topMessagers = [];\n  Object.keys(threads).forEach(function (p) {\n    var cnt = threads[p].msgByUser + threads[p].other;\n    topMessagers.push([cnt, p]);\n  }); // sort the results\n\n  topMessagers.sort(function (a, b) {\n    return a[0] - b[0];\n  });\n  return topMessagers.slice(topMessagers.length - n).map(function (t) {\n    return t[1];\n  });\n  ;\n}\nfunction getTopSearches(searches, n) {\n  var topSearches = [];\n  Object.keys(searches).forEach(function (s) {\n    topSearches.push([searches[s], s]);\n  });\n  topSearches.sort(function (a, b) {\n    return a[0] - b[0];\n  });\n  var result = topSearches.slice(topSearches.length - n);\n  result = result.reduce(function (acc, s) {\n    acc[s[1]] = s[0];\n    return acc;\n  }, {});\n  return result;\n} //TODO should those really be in analyzer helpers?\n// truncates a string and returns just the last two characters\n\nfunction truncateYears(years) {\n  var yearsTruncated = years.map(function (year) {\n    return year.slice(-2);\n  });\n  return yearsTruncated;\n} // gets current date\n\nfunction getCurrentDate() {\n  return new Date(Date.now());\n} // gets number of days between two dates\n\nfunction getNumDays(dateStart, dateEnd) {\n  return Math.round((dateEnd - dateStart) / _constants_js__WEBPACK_IMPORTED_MODULE_0__[\"MS_IN_DAY\"]);\n} // in:  number of seconds since beginning of time \n// out: a formated date string.\n\nfunction formatDate(date) {\n  return new Date(date).toDateString();\n} // in:  two numbers which will be divided\n// out: the result of ar1/arg2\n\nfunction safeDivide(arg1, arg2) {\n  return arg2 > 0 ? arg1 / arg2 : 0;\n} // in:  a formatted percent. eg. '3%'\n// out: a number between 0 and 1\n\nfunction formatPercent(ratio) {\n  return \"\".concat(ratio.toFixed(2) * 100, \"%\");\n}\n\n//# sourceURL=webpack:///./src/js/analyzers/analyzerHelpers.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sum\", function() { return sum; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getTopMessagers\", function() { return getTopMessagers; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getTopObjects\", function() { return getTopObjects; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getTopSearches\", function() { return getTopSearches; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"truncateYears\", function() { return truncateYears; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getCurrentDate\", function() { return getCurrentDate; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getNumDays\", function() { return getNumDays; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"formatDate\", function() { return formatDate; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"safeDivide\", function() { return safeDivide; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"formatPercent\", function() { return formatPercent; });\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants.js */ \"./src/js/constants.js\");\n\nfunction sum(array) {\n  return array.reduce(function (acc, item) {\n    acc += item;\n    return acc;\n  }, 0);\n} // returns the names of the top n messagers\n\nfunction getTopMessagers(threads, n) {\n  var topMessagers = [];\n  Object.keys(threads).forEach(function (p) {\n    var cnt = threads[p].msgByUser + threads[p].other;\n    topMessagers.push([cnt, p]);\n  }); // sort the results\n\n  topMessagers.sort(function (a, b) {\n    return a[0] - b[0];\n  });\n  return topMessagers.slice(topMessagers.length - n).map(function (t) {\n    return t[1];\n  });\n  ;\n} // gets the top n from a javascript object\n\nfunction getTopObjects(objects, n) {\n  var topObjects = [];\n  Object.keys(objects).forEach(function (o) {\n    topObjects.push([objects[o], o]);\n  });\n  topObjects.sort(function (a, b) {\n    return a[0] - b[0];\n  });\n  return topObjects.slice(topObjects.length - n);\n}\nfunction getTopSearches(searches, n) {\n  // let topSearches = [];\n  // Object.keys(searches).forEach((s) => {\n  //   topSearches.push([searches[s], s]);\n  // });\n  // topSearches.sort( (a, b) => { return a[0] - b[0]; } );\n  // let result = topSearches.slice(topSearches.length - n);\n  var result = getTopObjects(searches, n);\n  result = result.reduce(function (acc, s) {\n    acc[s[1]] = s[0];\n    return acc;\n  }, {});\n  return result;\n} //TODO should those really be in analyzer helpers?\n// truncates a string and returns just the last two characters\n\nfunction truncateYears(years) {\n  var yearsTruncated = years.map(function (year) {\n    return year.slice(-2);\n  });\n  return yearsTruncated;\n} // gets current date\n\nfunction getCurrentDate() {\n  return new Date(Date.now());\n} // gets number of days between two dates\n\nfunction getNumDays(dateStart, dateEnd) {\n  return Math.round((dateEnd - dateStart) / _constants_js__WEBPACK_IMPORTED_MODULE_0__[\"MS_IN_DAY\"]);\n} // in:  number of seconds since beginning of time \n// out: a formated date string.\n\nfunction formatDate(date) {\n  return new Date(date).toDateString();\n} // in:  two numbers which will be divided\n// out: the result of ar1/arg2\n\nfunction safeDivide(arg1, arg2) {\n  return arg2 > 0 ? arg1 / arg2 : 0;\n} // in:  a formatted percent. eg. '3%'\n// out: a number between 0 and 1\n\nfunction formatPercent(ratio) {\n  return \"\".concat(ratio.toFixed(2) * 100, \"%\");\n}\n\n//# sourceURL=webpack:///./src/js/analyzers/analyzerHelpers.js?");
 
 /***/ }),
 
@@ -916,7 +993,7 @@ eval("module.exports = __webpack_require__.p + \"c44c5706d25bde00683f548037531fb
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var map = {\n\t\"./instructions\": \"./src/page-spotify/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/page-spotify/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/page-spotify/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/page-spotify/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/page-spotify/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/page-spotify/instructions/step4-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions_sync_^\\.\\/.*$?");
+eval("var map = {\n\t\"./instructions\": \"./src/page-spotify/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/page-spotify/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/page-spotify/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/page-spotify/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/page-spotify/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/page-spotify/instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/page-spotify/instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/page-spotify/instructions/step6-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions_sync_^\\.\\/.*$?");
 
 /***/ }),
 
@@ -924,10 +1001,10 @@ eval("var map = {\n\t\"./instructions\": \"./src/page-spotify/instructions/instr
 /*!*********************************************************!*\
   !*** ./src/page-spotify/instructions/instructions.json ***!
   \*********************************************************/
-/*! exports provided: 0, 1, 2, 3, default */
+/*! exports provided: 0, 1, 2, 3, 4, 5, default */
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://spotify.com/us/account' target=blank>spotify.com/us/account</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Log into your spotify account.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on 'Privacy Settings' in the left sidebar.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on the 'Request' button.\\\"}]\");\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/instructions.json?");
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://spotify.com/us/account' target=blank>spotify.com/us/account</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Log into your spotify account.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on 'Privacy Settings' in the left sidebar.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on the 'Request' button.\\\"},{\\\"image\\\":\\\"./step5-web.jpg\\\",\\\"ins\\\":\\\"Once your data copy is prepared you will get an email.</br>Open your email client and click on download.\\\"},{\\\"image\\\":\\\"./step6-web.jpg\\\",\\\"ins\\\":\\\"You should be redirected to your Spotify account.</br>Enter your password, and click verify.</br>Choose where to save your file, and remember to keep it safe!\\\"}]\");\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/instructions.json?");
 
 /***/ }),
 
@@ -972,6 +1049,28 @@ eval("module.exports = __webpack_require__.p + \"da14fa70420003e4845820cf46b33e5
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("module.exports = __webpack_require__.p + \"e58e0a089c9ddc6cd950984b9e89668e.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step4-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/step5-web.jpg":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions/step5-web.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"9e15e5f19dd1b07da597fbd8f803e459.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step5-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/page-spotify/instructions/step6-web.jpg":
+/*!*****************************************************!*\
+  !*** ./src/page-spotify/instructions/step6-web.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"affb2283841b2aaa7116c370ad3faed2.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step6-web.jpg?");
 
 /***/ }),
 
