@@ -14,7 +14,7 @@ import website_icon from '../images/icons/facebook_inline.svg';
 
 // this is instructions loading. Should stay here only temporarily during development
 let instructions = new insFactory('facebook', document.getElementById('instructions-container'));
-let rRender = new reportFactory('blue');
+let rRender = new reportFactory('facebook');
 let nBar = new NavBar();
 let fPicker = new FilePicker(document.getElementById('filepicker'));
 let analyzer = new FBAnalyzer(renderReport);

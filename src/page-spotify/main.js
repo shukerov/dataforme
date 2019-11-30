@@ -14,7 +14,7 @@ import '../styles/spotify.scss';
 import website_icon from '../images/icons/spotify_inline.svg';
 
 let instructions = new insFactory('spotify', document.getElementById('instructions-container'));
-let rRender = new reportFactory('red');
+let rRender = new reportFactory('spotify');
 let nBar = new NavBar();
 let fPicker = new FilePicker(document.getElementById('filepicker'));
 let analyzer = new SpotifyAnalyzer(renderReport);
@@ -80,7 +80,6 @@ function renderStreamingReport(data) {
   });
 
   let skippedSongsList = getTopObjects(data.streaming_data.skipped_songs, 25)
-  console.log(skippedSongsList);
   skippedSongsList = skippedSongsList.reverse().map((s) => {
     return `${s[1]}  <strong>${s[0]}</strong>`;
   });
@@ -142,6 +141,16 @@ function renderStreamingReport(data) {
     css_label: 'stream-graph',
     size: 'medium'
   });
+
+  // cumulative monthly listens
+  // rRender.addGraph(subreport, {
+  //   type: 'bar',
+  //   title: 'Cumulative Listens by Month',
+  //   data: data.streaming_data.time.monthly,
+  //   labels: MONTHS,
+  //   css_label: 'stream-graph',
+  //   size: 'medium'
+  // });
 }
 
 function renderUserReport(data) {

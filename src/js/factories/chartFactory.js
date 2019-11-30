@@ -4,27 +4,34 @@ import { isMobile } from '../helpers.js';
 
 class chartFactory {
 
-  constructor(colorscheme) {
+  constructor(colorscheme_key) {
     // constants
     this.DEFAULT_CHART_SIZE = 600;
-    this.cscheme = this.setColorScheme(colorscheme);
+    this.color_key = colorscheme_key;
+    this.color_schemes = {
+      'facebook': {
+        'bar': ['light-blue', 'blue', 'violet', '#41B3A3', '#85DCB'],
+        'line': [ 'violet' ]
+      },
+      'tinder': {
+        'bar': [ 'red'],
+        'pie': [ '#9b2020', 'red' ],
+        'heatmap': ['#ffd6d3', '#ffa7a0', '#ff877e', '#ff584b', '#ff3929']
+      },
+      'spotify': {
+        'bar': [ '#90f285' ]
+      },
+      'default': ['light-blue', 'blue', 'violet', '#41B3A3', '#85DCB']
+    };
   }
 
-  setColorScheme(cscheme) {
-    const schemes = {
-      blue: ['light-blue', 'blue', 'violet', '#41B3A3', '#85DCB'],
-      red: ['#1A1A1D', '#4E4E50', '#6F2232', '#950740', '#C3073F']
+  getColor(chart_type) {
+    if (this.color_key) {
+      return this.color_schemes[this.color_key][chart_type];
     }
 
-    return schemes[cscheme];
-  }
-
-  // TODO: need to make sure that unique colors are chosen
-  getColor(n=1) {
-    n = this.numDatasets;
-    let randomIndex = Math.floor(Math.random() * (this.cscheme.length - n));
-
-    return this.cscheme.slice(randomIndex, randomIndex + n);
+    // so one can work on a report before worrying about colors
+    return this.color_schemes['default'];
   }
 
   getSize(size) {
@@ -96,7 +103,7 @@ class chartFactory {
         data: data,
         type: args.type,
         height: size,
-        colors: this.getColor(),
+        colors: this.getColor(args.type),
         valuesOverPoints: 0,
         barOptions: {
           spaceRatio: 0.3,
@@ -108,9 +115,7 @@ class chartFactory {
         maxSlices: 24
       }
 
-      // don't attempt to color heatmap graphs for now.
       if (args.type == 'heatmap') {
-        delete chartOptions.colors;
         // Forces heatmaps to be responsive with scrolling
         chart.classList.add('heatmap-graph');
       }

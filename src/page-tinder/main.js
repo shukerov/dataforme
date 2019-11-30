@@ -11,7 +11,7 @@ import '../styles/tinder.scss';
 import website_icon from '../images/icons/tinder_inline.svg';
 
 let instructions = new insFactory('tinder', document.getElementById('instructions-container'));
-let rRender = new reportFactory('red');
+let rRender = new reportFactory('tinder');
 let nBar = new NavBar();
 let fPicker = new FilePicker(document.getElementById('filepicker'));
 let analyzer = new TinderAnalyzer(renderReport);
