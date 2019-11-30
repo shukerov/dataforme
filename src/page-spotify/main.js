@@ -73,7 +73,7 @@ function renderStreamingReport(data) {
     return `${s[1]}  <strong>${s[0]}</strong>`;
   });
 
-  let topArtistsList = getTopObjects(data.streaming_data.songs, 25)
+  let topArtistsList = getTopObjects(data.streaming_data.artists, 25)
   topArtistsList = topArtistsList.reverse().map((s) => {
     return `${s[1]}  <strong>${s[0]}</strong>`;
   });

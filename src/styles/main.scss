@@ -45,13 +45,6 @@ a, a:visited {
    z-index: 0; // enable stack context
 }
 
-// spacer
-.spacer {
-   width: 100%;
-   height: 5vh;
-   background: $bg-color;
-}
-
 // maybe a different file for web-service common elements
 // .service-content {
 //   max-width: 95%;
