@@ -14,3 +14,30 @@
   background: $off-white;
   border: 1px solid $spotify;
 }
+
+#graphs-container-streaming {
+  display: grid;
+
+  @media screen and (min-width: $screen-md-min) {
+    grid-template-areas:
+      'hourly hourly'
+      'weekly monthly'
+  }
+
+  grid-template-areas:
+   'hourly'
+   'weekly'
+   'monthly'
+}
+
+#stream-graph1 {
+  grid-area: hourly;
+}
+
+#stream-graph2 {
+  grid-area: weekly;
+}
+
+#stream-graph3 {
+  grid-area: monthly;
+}
