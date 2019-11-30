@@ -14,5 +14,13 @@
   {
     "image": "./step4-web.jpg",
     "ins": "Scroll down and click on the 'Request' button."
+  },
+  {
+    "image": "./step5-web.jpg",
+    "ins": "Once your data copy is prepared you will get an email.</br>Open your email client and click on download."
+  },
+  {
+    "image": "./step6-web.jpg",
+    "ins": "You should be redirected to your Spotify account.</br>Enter your password, and click verify.</br>Choose where to save your file, and remember to keep it safe!"
   }
 ]
