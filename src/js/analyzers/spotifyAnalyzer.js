@@ -23,18 +23,33 @@ class SpotifyAnalyzer extends BaseAnalyzer {
     this.showLoadScreen();
 
     this.fs.importBlob(file, () => { 
+
       let fns = [
         {
-          path: 'Userdata.json',
+          path: 'MyData/Userdata.json',
           name: 'fetching user data',
           func: this.getUserData
-        },
-        {
-          path: 'StreamingHistory.json',
-          name: 'fetching streaming history',
-          func: this.getStreamingData
         }
       ]
+
+      // contains all files in the my data directory
+      let files = this.getDirChildren('MyData');
+
+      // get all streaming history files
+      files.reduce((acc, f) => {
+
+        if (f.name.includes("StreamingHistory")) {
+          let fn = {
+            path: 'MyData/' + f.name,
+            name: 'fetching streaming history',
+            func: this.getStreamingData
+          };
+
+          acc.push(fn);
+        }
+        return acc;
+      }, fns);
+
 
       // execute functions
       for(let i = 0; i < fns.length; i++) {
@@ -67,8 +82,8 @@ class SpotifyAnalyzer extends BaseAnalyzer {
       return acc;
     }, streamingStats);
 
-    this.data.streaming_data.ms_played = streamingStats.ms_played / 1000;
-    this.data.streaming_data.skipped_songs = streamingStats.skipped_songs;
+    this.data.streaming_data.ms_played += streamingStats.ms_played / 1000;
+    this.data.streaming_data.skipped_songs += streamingStats.skipped_songs;
     // signal UI that things are ready to render
     cbChain.call();
   }
