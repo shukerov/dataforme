@@ -19,7 +19,8 @@ class chartFactory {
         'heatmap': ['#ffd6d3', '#ffa7a0', '#ff877e', '#ff584b', '#ff3929']
       },
       'spotify': {
-        'bar': [ '#90f285' ]
+        'bar': [ '#90f285' ],
+        'clock': [ '#18bb51', '#18bb51', '#baf6cf']
       },
       'default': ['light-blue', 'blue', 'violet', '#41B3A3', '#85DCB']
     };
@@ -124,7 +125,8 @@ class chartFactory {
     }
     else if (args.type == 'clock') {
       let clckGraph =  new ClockChart(data, 300, args.parent, {
-        units: args.clock_labels[0]
+        units: args.clock_labels[0],
+        colors: this.getColor(args.type)
       });
 
       // add conclusion?

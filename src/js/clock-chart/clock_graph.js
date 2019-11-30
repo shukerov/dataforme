@@ -48,6 +48,13 @@ class ClockChart {
     if (options.units) {
       this.units = options.units;
     }
+
+    if (options.colors) {
+      if (options.colors.length < 3) throw 'Minimum of three colours required';
+      this.clockFaceColor = options.colors[0];
+      this.barColor = options.colors[1];
+      this.backgroundCircleColor = options.colors[2];
+    }
   }
 
   // trying out resizing
