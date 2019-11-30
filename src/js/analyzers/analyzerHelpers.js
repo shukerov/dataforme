@@ -20,14 +20,26 @@ export function getTopMessagers(threads, n) {
     return topMessagers.slice(topMessagers.length - n).map((t) => { return t[1]; });;
 }
 
-export function getTopSearches(searches, n) {
-  let topSearches = [];
-  Object.keys(searches).forEach((s) => {
-    topSearches.push([searches[s], s]);
+// gets the top n from a javascript object
+export function getTopObjects(objects, n) {
+  let topObjects = [];
+  Object.keys(objects).forEach((o) => {
+    topObjects.push([objects[o], o]);
   });
 
-  topSearches.sort( (a, b) => { return a[0] - b[0]; } );
-  let result = topSearches.slice(topSearches.length - n);
+  topObjects.sort( (a, b) => { return a[0] - b[0]; } );
+  return topObjects.slice(topObjects.length - n);
+}
+
+export function getTopSearches(searches, n) {
+  // let topSearches = [];
+  // Object.keys(searches).forEach((s) => {
+  //   topSearches.push([searches[s], s]);
+  // });
+
+  // topSearches.sort( (a, b) => { return a[0] - b[0]; } );
+  // let result = topSearches.slice(topSearches.length - n);
+  let result = getTopObjects(searches, n);
   result = result.reduce((acc, s) => { acc[s[1]] = s[0]; return acc;}, {});
   return result;
 }
