@@ -9,9 +9,15 @@ class SpotifyAnalyzer extends BaseAnalyzer {
     this.fakeData = require('../../page-spotify/spotify_precompiled.json');
     this.data = { 
       'username': null,
+      'gender': null,
       'date_joined': null,
       'email': null,
       'birthday': null,
+      'country': null,
+      'postalCode': null,
+      'phone': null,
+      'mobileOperator': null,
+      'mobileBrand': null,
       "streaming_data": {
         'ms_played': 0,
         'skipped_songs': 0
@@ -98,6 +104,12 @@ class SpotifyAnalyzer extends BaseAnalyzer {
     this.data.email = this.get(['email'], userDataJSON);
     this.data.birthday = this.get(['birthdate'], userDataJSON);
     this.data.phone = this.get(['mobileNumber'], userDataJSON);
+
+    this.data.country = this.get(['country'], userDataJSON);
+    this.data.postalCode = this.get(['postalCode'], userDataJSON);
+    this.data.gender = this.get(['gender'], userDataJSON);
+    this.data.mobileOperator = this.get(['mobileOperator'], userDataJSON);
+    this.data.mobileBrand = this.get(['mobileBrand'], userDataJSON);
 
     // signal UI that things are ready to render
     cbChain.call();

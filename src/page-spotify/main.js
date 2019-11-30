@@ -47,13 +47,13 @@ function renderReport(fakeData) {
 function renderStreamingReport(data) {
   let reportItems = [
     {
-      icon: 'calendar',
+      icon: 'headphones',
       text: 'Total Playtime: ',
       textBold: secondsToHms(data.streaming_data.ms_played),
       tooltip: 'Total time spent listening to songs.'
     },
     {
-      icon: 'calendar',
+      icon: 'skip-forward',
       text: 'Skipped Songs: ',
       textBold: data.streaming_data.skipped_songs,
       tooltip: 'Number of songs you have skipped'
@@ -84,10 +84,40 @@ function renderUserReport(data) {
       tooltip: 'Your birthday.'
     },
     {
+      icon: 'hexagon',
+      text: 'Gender: ',
+      textBold: data.gender,
+      tooltip: 'Your gender.'
+    },
+    {
       icon: 'phone-call',
       text: 'Phone: ',
       textBold: data.phone,
       tooltip: 'Your phone number.'
+    },
+    {
+      icon: 'phone-call',
+      text: 'Mobile Operator: ',
+      textBold: data.mobileOperator,
+      tooltip: 'Your phone service provider.'
+    },
+    {
+      icon: 'phone-call',
+      text: 'Mobile Brand: ',
+      textBold: data.mobileBrand,
+      tooltip: 'Your phone type.'
+    },
+    {
+      icon: 'map-pin',
+      text: 'Country: ',
+      textBold: data.country,
+      tooltip: 'The country where your spotify account is registered at.'
+    },
+    {
+      icon: 'map-pin',
+      text: 'Postal Code: ',
+      textBold: data.postalCode,
+      tooltip: 'Your postal code.'
     },
   ];
 
