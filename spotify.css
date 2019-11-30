@@ -986,3 +986,19 @@ nav {
   background: white;
   border: 1px solid #1cd95e; }
 
+#graphs-container-streaming {
+  display: grid;
+  grid-template-areas: 'hourly' 'weekly' 'monthly'; }
+  @media screen and (min-width: 768px) {
+    #graphs-container-streaming {
+      grid-template-areas: 'hourly hourly' 'weekly monthly'; } }
+
+#stream-graph1 {
+  grid-area: hourly; }
+
+#stream-graph2 {
+  grid-area: weekly; }
+
+#stream-graph3 {
+  grid-area: monthly; }
+
