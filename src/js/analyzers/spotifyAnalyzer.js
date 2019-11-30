@@ -20,7 +20,15 @@ class SpotifyAnalyzer extends BaseAnalyzer {
       'mobileBrand': null,
       "streaming_data": {
         'ms_played': 0,
-        'skipped_songs': 0
+        'skipped_songs': 0,
+        'artists': {},
+        'songs': {},
+        'time': {
+          'hourly': Array(24).fill(0),
+          'weekly': Array(7).fill(0),
+          'monthly': Array(12).fill(0),
+          'yearly': {}
+        }
       }
     };
   }
@@ -68,28 +76,55 @@ class SpotifyAnalyzer extends BaseAnalyzer {
 
   getStreamingData(cbChain, streamingData) {
     let streamingDataJSON = JSON.parse(streamingData);
-    let skippedLimit = 20;
+    let skippedLimit = 20 * 1000; // the first number represents seconds
 
-    let streamingStats = {
-      ms_played: 0,
-      skipped_songs: 0
-    };
-
+    // TODO: use safeget pleaaase
     streamingDataJSON.reduce((acc, song) => {
-      acc.ms_played += song.msPlayed;
+      acc.ms_played += song.msPlayed / 1000;
 
-      if (song.msPlayed > skippedLimit * 1000) {
+      // song was skipped
+      if (song.msPlayed > skippedLimit) {
+        // count song plays
+        const songKey = `${song.artistName} - ${song.trackName}`;
 
+        const listenDate = new Date(`${song.endTime}`);
+        const listenYear = listenDate.getFullYear();
+
+        // count time stats
+        acc.time.hourly[listenDate.getHours()]++;
+        acc.time.weekly[listenDate.getDay()]++;
+        acc.time.monthly[listenDate.getMonth()]++;
+
+        if (acc.time.yearly[listenYear]) {
+          acc.time.yearly[listenYear]++;
+        }
+        else {
+          acc.time.yearly[listenYear] = 1;
+        }
+
+        if (acc.songs[songKey]) {
+          acc.songs[songKey] += 1;
+        }
+        else {
+          acc.songs[songKey] = 1;
+        }
+            
+        // count artist plays
+        if (acc.artists[song.artistName]) {
+          acc.artists[song.artistName] += 1;
+        }
+        else {
+          acc.artists[song.artistName] = 1;
+        }
       }
       else {
         acc.skipped_songs += 1;
+        //TODO: most skipped songs?
       }
 
       return acc;
-    }, streamingStats);
+    }, this.data.streaming_data);
 
-    this.data.streaming_data.ms_played += streamingStats.ms_played / 1000;
-    this.data.streaming_data.skipped_songs += streamingStats.skipped_songs;
     // signal UI that things are ready to render
     cbChain.call();
   }
