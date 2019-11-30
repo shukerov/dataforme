@@ -11,7 +11,33 @@
   "postalCode": "95403",
   "streaming_data": {
     "ms_played": "15000",
-    "skipped_songs": 200,
+    "skipped_songs": {
+      "Capre - Give": 28,
+      "Julia Michaels - Anxiety (with Selena Gomez)": 27,
+      "Kyson - Have My Back": 27,
+      "Selah Sue - Together (feat. Childish Gambino)": 26,
+      "Aretha Franklin - (You Make Me Feel Like) A Natural Woman": 26,
+      "Cailin Russo - Bad Things": 25,
+      "Lukas Graham - 7 Years": 24,
+      "Yeah Yeah Yeahs - Maps": 24,
+      "Gorillaz - Fire Flies": 24,
+      "Wosh Mc - Momiche": 24,
+      "Ingrid Michaelson - You and I": 23,
+      "Flume - Holdin On": 23,
+      "Unknown Artist - Unknown Track": 22,
+      "Gorillaz - Humility (feat. George Benson)": 22,
+      "Maggie Rogers - Give A Little": 20,
+      "Queen - Don't Stop Me Now - Remastered": 20,
+      "Twenty One Pilots - Jumpsuit": 20,
+      "Night Riots - Contagious": 20,
+      "RADWIMPS - Nandemonaiya - movie ver.": 19,
+      "Yellow Ostrich - Mary (Alternate)": 19,
+      "Taylor John Williams - Quite Like You": 19,
+      "Nilüfer Yanya - Sliding Doors": 19,
+      "Madeon - All My Friends": 18,
+      "Litche - Voyage": 18,
+      "Klangstof - The Lows Will Keep You High Enough": 18
+    },
     "artists": {
       "Billie Eilish": 265,
       "Bob Moses": 473,
@@ -77,3 +103,4 @@
     }        
   }
 }
+

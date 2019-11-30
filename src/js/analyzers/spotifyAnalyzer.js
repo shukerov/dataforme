@@ -20,7 +20,7 @@ class SpotifyAnalyzer extends BaseAnalyzer {
       'mobileBrand': null,
       "streaming_data": {
         'ms_played': 0,
-        'skipped_songs': 0,
+        'skipped_songs': {},
         'artists': {},
         'songs': {},
         'time': {
@@ -82,10 +82,11 @@ class SpotifyAnalyzer extends BaseAnalyzer {
     streamingDataJSON.reduce((acc, song) => {
       acc.ms_played += song.msPlayed / 1000;
 
+      const songKey = `${song.artistName} - ${song.trackName}`;
+
       // song was skipped
       if (song.msPlayed > skippedLimit) {
         // count song plays
-        const songKey = `${song.artistName} - ${song.trackName}`;
 
         const listenDate = new Date(`${song.endTime}`);
         const listenYear = listenDate.getFullYear();
@@ -118,8 +119,12 @@ class SpotifyAnalyzer extends BaseAnalyzer {
         }
       }
       else {
-        acc.skipped_songs += 1;
-        //TODO: most skipped songs?
+        if (acc.skipped_songs[songKey]) {
+          acc.skipped_songs[songKey] += 1;
+        }
+        else {
+          acc.skipped_songs[songKey] = 1;
+        }
       }
 
       return acc;
