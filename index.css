@@ -487,11 +487,6 @@ nav {
   position: relative;
   z-index: 0; }
 
-.spacer {
-  width: 100%;
-  height: 5vh;
-  background: #050404; }
-
 .card-heading {
   margin: 0 0.5em;
   padding: 1em 0;
@@ -606,14 +601,33 @@ nav {
   src: url(fonts/BigNoodleTitling.ttf) format("truetype"); }
 
 #website-cnt {
-  height: 100vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  @media only screen and (min-width: 768px) {
+    #website-cnt {
+      height: 87.5vh; } }
   @media only screen and (min-width: 992px) {
     #website-cnt {
       flex-direction: row; } }
+
+.spacer {
+  height: 15vh;
+  width: 100%;
+  background: #050404;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-family: 'BigNoodleTitling';
+  padding-top: 0.5em;
+  line-height: 1; }
+  @media only screen and (min-width: 768px) {
+    .spacer {
+      font-size: 3em;
+      height: 12.5vh; } }
 
 .website-item {
   flex: 1;

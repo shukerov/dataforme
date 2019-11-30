@@ -870,11 +870,6 @@ nav {
   position: relative;
   z-index: 0; }
 
-.spacer {
-  width: 100%;
-  height: 5vh;
-  background: #050404; }
-
 .card-heading {
   margin: 0 0.5em;
   padding: 1em 0;
