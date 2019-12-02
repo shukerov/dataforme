@@ -1,4 +1,4 @@
-import itooltip from '../../images/components/help-circle.svg';
+import itooltip from '../../assets/images/components/help-circle.svg';
 import '../../styles/components/toolTip.scss';
 
 export class ToolTip {

@@ -2,8 +2,8 @@ import '../../styles/components/instructions.scss';
 import { WEBSITES } from '../constants.js';
 
 // Import assets
-import ileft from '../../images/components/chevron-left.svg';
-import iright from '../../images/components/chevron-right.svg';
+import ileft from '../../assets/images/components/chevron-left.svg';
+import iright from '../../assets/images/components/chevron-right.svg';
 
 class insFactory {
   constructor(website, parent) {

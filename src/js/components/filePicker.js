@@ -3,7 +3,7 @@
 import '../../styles/components/filePicker.scss';
 
 // Icon imports TODO: DOES THIS DOUBLE IMPORT?
-import iupload from '../../images/report-icons/file-plus_inline.svg';
+import iupload from '../../assets/images/report-icons/file-plus_inline.svg';
 
 export class FilePicker {
   constructor(parent) {

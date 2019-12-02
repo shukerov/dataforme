@@ -6,7 +6,7 @@ import { ToolTip } from '../components/toolTip.js';
 import { importAll } from '../helpers.js';
 import { chartFactory } from './chartFactory.js';
 
-const icons = importAll(require.context('../../images/report-icons', false, /\.svg$/));
+const icons = importAll(require.context('../../assets/images/report-icons', false, /\.svg$/));
 
 export class reportFactory {
   constructor(color) {

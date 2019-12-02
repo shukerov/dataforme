@@ -2,9 +2,9 @@
 import '../styles/index.scss';
 
 // Assets:
-import facebook from '../images/icons/facebook_inline.svg';
-import spotify from '../images/icons/spotify_inline.svg';
-import tinder from '../images/icons/tinder_inline.svg';
+import facebook from '../assets/images/icons/facebook_inline.svg';
+import spotify from '../assets/images/icons/spotify_inline.svg';
+import tinder from '../assets/images/icons/tinder_inline.svg';
 
 // JS imports:
 import { NavBar } from '../js/components/navBar.js';
