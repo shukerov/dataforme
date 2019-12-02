@@ -7,7 +7,7 @@ import { reportFactory } from '../js/factories/reportFactory.js';
 import { insFactory } from '../js/factories/insFactory.js';
 
 // CSS imports:
-import '../styles/tinder.scss';
+import './tinder.scss';
 import website_icon from '../assets/images/icons/tinder_inline.svg';
 
 let instructions = new insFactory('tinder', document.getElementById('instructions-container'));

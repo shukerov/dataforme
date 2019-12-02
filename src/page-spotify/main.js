@@ -10,7 +10,7 @@ import { reportFactory } from '../js/factories/reportFactory.js';
 import { insFactory } from '../js/factories/insFactory.js';
 
 // CSS imports:
-import '../styles/spotify.scss';
+import './spotify.scss';
 import website_icon from '../assets/images/icons/spotify_inline.svg';
 
 let instructions = new insFactory('spotify', document.getElementById('instructions-container'));

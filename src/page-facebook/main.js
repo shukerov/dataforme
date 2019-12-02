@@ -9,7 +9,7 @@ import { reportFactory } from '../js/factories/reportFactory.js';
 import { insFactory } from '../js/factories/insFactory.js';
 
 // CSS imports:
-import '../styles/facebook.scss';
+import './facebook.scss';
 import website_icon from '../assets/images/icons/facebook_inline.svg';
 
 // this is instructions loading. Should stay here only temporarily during development

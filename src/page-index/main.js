@@ -1,5 +1,5 @@
 // Style imports:
-import '../styles/index.scss';
+import './index.scss';
 
 // Assets:
 import facebook from '../assets/images/icons/facebook_inline.svg';
