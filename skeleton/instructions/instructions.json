@@ -1,0 +1,10 @@
+[
+  {
+    "image": "./step1-web.jpg",
+    "ins": "Written instruction for step1"
+  },
+  {
+    "image": "./step2-web.jpg",
+    "ins": "Written instruction for step2"
+  }
+]

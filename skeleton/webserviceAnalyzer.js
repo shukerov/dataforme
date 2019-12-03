@@ -1,17 +1,13 @@
-import { BaseAnalyzer } from './baseAnalyzer.js';
-import { sum } from './analyzerHelpers.js';
+import { BaseAnalyzer } from '../js/analysis/baseAnalyzer.js';
 
 class WebserviceAnalyzer extends BaseAnalyzer {
 
   constructor(callback) {
     super(callback);
     this.username = 'unknown';
-    this.fakeData = require('../../assets/fake_data/webservice_precompiled.json');
+    this.fakeData = require('./fake_data.json');
     this.data = { 
-      'sructure': null,
-      'your': null,
-      'data': null,
-      'here': null
+      // define your data here
     };
   }
 
@@ -23,7 +19,12 @@ class WebserviceAnalyzer extends BaseAnalyzer {
         {
           path: '<path_to_the_json_file_in_zip>.json',
           name: 'displayed during data analysis load screen',
-          func: this.getAllData
+          func: this.getData
+        },
+        {
+          path: '<path_to_another_json_file_in_zip>.json',
+          name: 'displayed during data analysis load screen',
+          func: this.getOtherData
         }
       ]
 
@@ -36,8 +37,18 @@ class WebserviceAnalyzer extends BaseAnalyzer {
     });
   }
 
-    getAllData(cbChain, allData) {
-      let allDataJSON = JSON.parse(allData);
+    getData(cbChain, data) {
+      let dataJSON = JSON.parse(data);
+
+      // extracting data
+      // WRITE FUNCTIONS HERE
+
+      // signal UI that things are ready to render
+      cbChain.call();
+    }
+
+    getOtherData(cbChain, data) {
+      let dataJSON = JSON.parse(data);
 
       // extracting data
       // WRITE FUNCTIONS HERE

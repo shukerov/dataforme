@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+  ${require('../partials/head.html')}
+  <body>
+    <header>
+      ${require('../partials/nav.html')}
+    </header>
+    <div id='site' data-page='webservice'>
+      <div id='website-icon'></div>
+      <div class='card' id='step-1'>
+        <h1 class='card-heading'>Request Your Webservice Data</h1>
+        <div class='card-content'>
+          <p class='card-hint card-hint-desktop'>Use arrow keys to navigate instructions faster</p>
+          <div id='instructions-container'></div>
+          <p class='card-text'>For official webservice instructions click
+          <a href='https://linkToOfficialInstructions.com'>here</a>.
+          </p>
+        </div>
+      </div>
+      <div class='card' id='step-2'>
+        <h1 class='card-heading'>Wait for Your Webservice Data Copy</h1>
+        <div class='card-content'>
+          <p class='card-label'>Wait time: </p>
+          <p class='card-text'>between <strong>1</strong> and <strong>30</strong> days until you receive a copy of your data.</p>
+          <p class='card-label'>Summary of what Webservice data you will get:</p>
+          <ul class='card-list'>
+            <li>FILL OUT</li>
+            <li>FILL OUT</li>
+            <li>FILL OUT</li>
+          </ul>
+          <h2 class='card-highlight'>Can't Wait?</h2>
+          <p class='card-text'>Click on the button below to preview your report.</p>
+          <a href='#report' class='preview-btns' id='preview-btn'>preview report</a>
+          <p class='card-hint'>This is fictitious data, but it shows how your report will be structured.</p>
+        </div>
+      </div>
+      <div class='card' id='step-3'>
+        <h1 class='card-heading'>Discover Your Webservice Data</h1>
+        <div class='card-content'>
+          <p class='card-label'>Generate your report! </p>
+          <p class='card-text'>Attach you zip file in the file picker below to get started.</p>
+          <p class='card-label'>Unzip the file and look through your data afterwards.</p>
+          <p class='card-text'>There might be interesting information in there that is not present in the report.</p>
+          <div id='filepicker'></div>
+          <p class='card-hint'>Your data is analyzed locally in your browser. Disconnect from the internet if you want a piece of mind.</p>
+        </div>
+      </div>
+      <div id='report'></div>
+      ${require('../partials/footer.html')}
+    </div>
+  </body>
+</html>
+

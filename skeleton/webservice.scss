@@ -1,0 +1,16 @@
+@import '../assets/styles/_globalvariables.scss';
+@import '../assets/styles/main.scss';
+
+#site {
+  background: $webservice;
+}
+
+#preview-btn {
+  background: $webservice;
+}
+
+#preview-btn:hover {
+  color: $webservice-static;
+  background: $off-white;
+  border: 1px solid $webservice-static;
+}
