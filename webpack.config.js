@@ -14,7 +14,8 @@ module.exports = env => {
       index: './src/page-index/main.js',
       facebook: './src/page-facebook/main.js',
       spotify: './src/page-spotify/main.js',
-      tinder: './src/page-tinder/main.js'
+      tinder: './src/page-tinder/main.js',
+      instagram: './src/page-instagram/main.js'
     },
     mode: 'development',
     module: {
@@ -112,6 +113,11 @@ module.exports = env => {
         template: "./src/page-tinder/tinder.html",
         chunks: ['tinder'],
         filename: "./tinder.html"
+      }),
+      new HtmlWebPackPlugin({
+        template: "./src/page-instagram/instagram.html",
+        chunks: ['instagram'],
+        filename: "./instagram.html"
       }),
       new MiniCssExtractPlugin({
         filename: "[name].css",

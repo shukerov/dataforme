@@ -113,6 +113,17 @@ $tranSpeed: 0.75s;
    }
 }
 
+#instagram {
+   background: $instagram;
+}
+
+#instagram:hover {
+
+   svg {
+       fill: white;
+   }
+}
+
 // about page
 #about {
    overflow: auto;

@@ -29,6 +29,9 @@ class insFactory {
     else if (website === 'spotify') {
       ins_context = require.context('../../page-spotify/instructions', true);
     }
+    else if (website === 'instagram') {
+      ins_context = require.context('../../page-instagram/instructions', true);
+    }
 
     this.instructions = ins_context('./instructions.json');
     this.instructions.map((ins) => {

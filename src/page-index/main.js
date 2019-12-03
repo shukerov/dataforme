@@ -5,6 +5,7 @@ import './index.scss';
 import facebook from '../assets/images/icons/facebook_inline.svg';
 import spotify from '../assets/images/icons/spotify_inline.svg';
 import tinder from '../assets/images/icons/tinder_inline.svg';
+import instagram from '../assets/images/icons/instagram_inline.svg';
 
 // JS imports:
 import { NavBar } from '../js/components/navBar.js';
@@ -21,8 +22,10 @@ function renderContent() {
 }
 
 function loadWebsites(globalContainer) {
+  // TODO: this can be done from WEBSITE CONSTANTS
   let routes = {
     'facebook': facebook,
+    'instagram': instagram,
     'spotify': spotify,
     'tinder': tinder
   };

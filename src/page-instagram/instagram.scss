@@ -1,0 +1,16 @@
+@import '../assets/styles/_globalvariables.scss';
+@import '../assets/styles/main.scss';
+
+#site {
+  background: $instagram;
+}
+
+#preview-btn {
+  background: $instagram;
+}
+
+#preview-btn:hover {
+  color: $instagram-static;
+  background: $off-white;
+  border: 1px solid $instagram-static;
+}

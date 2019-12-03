@@ -1,0 +1,38 @@
+[
+  {
+    "image": "./step1-web.jpg",
+    "ins": "Written instruction for step1"
+  },
+  {
+    "image": "./step2-web.jpg",
+    "ins": "Written instruction for step2"
+  },
+  {
+    "image": "./step3-web.jpg",
+    "ins": "Written instruction for step3"
+  },
+  {
+    "image": "./step4-web.jpg",
+    "ins": "Written instruction for step4"
+  },
+  {
+    "image": "./step5-web.jpg",
+    "ins": "Written instruction for step5"
+  },
+  {
+    "image": "./step6-web.jpg",
+    "ins": "Written instruction for step6"
+  },
+  {
+    "image": "./step7-web.jpg",
+    "ins": "Written instruction for step7"
+  },
+  {
+    "image": "./step8-web.jpg",
+    "ins": "Written instruction for step8"
+  },
+  {
+    "image": "./step9-web.jpg",
+    "ins": "Written instruction for step9"
+  }
+]
