@@ -1,4 +1,4 @@
-import '../../styles/components/loadBar.scss';
+import '../../assets/styles/components/loadBar.scss';
 
 class LoadBar {
   constructor(max = null) {

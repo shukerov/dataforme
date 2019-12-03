@@ -1,5 +1,5 @@
 import itooltip from '../../assets/images/components/help-circle.svg';
-import '../../styles/components/toolTip.scss';
+import '../../assets/styles/components/toolTip.scss';
 
 export class ToolTip {
   constructor(title) {

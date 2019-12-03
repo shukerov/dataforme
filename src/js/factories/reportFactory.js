@@ -1,5 +1,5 @@
 // Style imports:
-import '../../styles/components/reportscommon.scss';
+import '../../assets/styles/components/reportscommon.scss';
 
 // Import js
 import { ToolTip } from '../components/toolTip.js';

@@ -1,4 +1,4 @@
-import '../../styles/components/instructions.scss';
+import '../../assets/styles/components/instructions.scss';
 import { WEBSITES } from '../constants.js';
 
 // Import assets

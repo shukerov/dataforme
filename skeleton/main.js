@@ -13,7 +13,7 @@ let instructions = new insFactory('webservice', document.getElementById('instruc
 let rRender = new reportFactory('webservice');
 let nBar = new NavBar();
 let fPicker = new FilePicker(document.getElementById('filepicker'));
-let analyzer = new TinderAnalyzer(renderReport);
+let analyzer = new WebserviceAnalyzer(renderReport);
 
 let websiteIcon = document.getElementById('website-icon');
 websiteIcon.innerHTML = website_icon;

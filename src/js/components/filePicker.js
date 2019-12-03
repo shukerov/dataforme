@@ -1,6 +1,6 @@
 // TODO: needs to change style once zipfile is uploaded.
 // Style imports:
-import '../../styles/components/filePicker.scss';
+import '../../assets/styles/components/filePicker.scss';
 
 // Icon imports TODO: DOES THIS DOUBLE IMPORT?
 import iupload from '../../assets/images/report-icons/file-plus_inline.svg';
