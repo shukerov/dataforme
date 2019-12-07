@@ -35,7 +35,7 @@
     "dev_looks": "webpack-dev-server --env.DEBUG=true",
     "preview": "npm run build && http-server dist",
     "deploy": "yarn run webpack --env && cd dist && git add . && git commit -m \"Deploy at $(date)\" && git push origin gh-pages",
-    "new_webservice": "cp -r ./skeleton/ src/page-webservice",
+    "new_webservice": "cp -r ./skeleton/ src/pages/page-webservice",
     "build": "webpack --env"
   },
   "babel": {

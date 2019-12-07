@@ -1,5 +1,5 @@
-import { BaseAnalyzer } from '../js/analysis/baseAnalyzer.js';
-import { sum } from '../js/analysis/analyzerHelpers.js';
+import { BaseAnalyzer } from '../../js/analysis/baseAnalyzer.js';
+import { sum } from '../../js/analysis/analyzerHelpers.js';
 
 class TinderAnalyzer extends BaseAnalyzer {
 

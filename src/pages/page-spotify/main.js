@@ -1,17 +1,17 @@
 // JS imports:
-import { DAYS, MONTHS } from '../js/constants.js';
-import { formatNum, secondsToHms } from '../js/helpers.js';
-import { getTopObjects } from '../js/analysis/analyzerHelpers.js';
-import { formatDate, formatPercent } from '../js/analysis/analyzerHelpers.js';
+import { DAYS, MONTHS } from '../../js/constants.js';
+import { formatNum, secondsToHms } from '../../js/helpers.js';
+import { getTopObjects } from '../../js/analysis/analyzerHelpers.js';
+import { formatDate, formatPercent } from '../../js/analysis/analyzerHelpers.js';
+import { NavBar } from '../../js/components/navBar.js';
+import { FilePicker } from '../../js/components/filePicker.js';
+import { reportFactory } from '../../js/factories/reportFactory.js';
+import { insFactory } from '../../js/factories/insFactory.js';
 import { SpotifyAnalyzer } from './spotifyAnalyzer.js';
-import { NavBar } from '../js/components/navBar.js';
-import { FilePicker } from '../js/components/filePicker.js';
-import { reportFactory } from '../js/factories/reportFactory.js';
-import { insFactory } from '../js/factories/insFactory.js';
 
 // CSS imports:
 import './spotify.scss';
-import website_icon from '../assets/images/icons/spotify_inline.svg';
+import website_icon from '../../assets/images/icons/spotify_inline.svg';
 
 let instructions = new insFactory('spotify', document.getElementById('instructions-container'));
 let rRender = new reportFactory('spotify');

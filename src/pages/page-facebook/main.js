@@ -1,16 +1,16 @@
 // JS imports:
-import { DAYS, MONTHS } from '../js/constants.js';
-import { formatNum, secondsToHms } from '../js/helpers.js';
-import { getTopMessagers, getTopSearches, truncateYears, getCurrentDate, getNumDays, formatDate, safeDivide } from '../js/analysis/analyzerHelpers.js';
+import { DAYS, MONTHS } from '../../js/constants.js';
+import { formatNum, secondsToHms } from '../../js/helpers.js';
+import { getTopMessagers, getTopSearches, truncateYears, getCurrentDate, getNumDays, formatDate, safeDivide } from '../../js/analysis/analyzerHelpers.js';
+import { NavBar } from '../../js/components/navBar.js';
+import { FilePicker } from '../../js/components/filePicker.js';
+import { reportFactory } from '../../js/factories/reportFactory.js';
+import { insFactory } from '../../js/factories/insFactory.js';
 import { FacebookAnalyzer } from './facebookAnalyzer.js';
-import { NavBar } from '../js/components/navBar.js';
-import { FilePicker } from '../js/components/filePicker.js';
-import { reportFactory } from '../js/factories/reportFactory.js';
-import { insFactory } from '../js/factories/insFactory.js';
 
 // CSS imports:
 import './facebook.scss';
-import website_icon from '../assets/images/icons/facebook_inline.svg';
+import website_icon from '../../assets/images/icons/facebook_inline.svg';
 
 // this is instructions loading. Should stay here only temporarily during development
 let instructions = new insFactory('facebook', document.getElementById('instructions-container'));

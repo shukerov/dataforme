@@ -1,4 +1,4 @@
-import { BaseAnalyzer } from '../js/analysis/baseAnalyzer.js';
+import { BaseAnalyzer } from '../../js/analysis/baseAnalyzer.js';
 
 class SpotifyAnalyzer extends BaseAnalyzer {
 

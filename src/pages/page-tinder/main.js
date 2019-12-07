@@ -1,14 +1,14 @@
 // JS imports:
-import { formatDate, formatPercent } from '../js/analysis/analyzerHelpers.js';
+import { formatDate, formatPercent } from '../../js/analysis/analyzerHelpers.js';
+import { NavBar } from '../../js/components/navBar.js';
+import { FilePicker } from '../../js/components/filePicker.js';
+import { reportFactory } from '../../js/factories/reportFactory.js';
+import { insFactory } from '../../js/factories/insFactory.js';
 import { TinderAnalyzer } from './tinderAnalyzer.js';
-import { NavBar } from '../js/components/navBar.js';
-import { FilePicker } from '../js/components/filePicker.js';
-import { reportFactory } from '../js/factories/reportFactory.js';
-import { insFactory } from '../js/factories/insFactory.js';
 
 // CSS imports:
 import './tinder.scss';
-import website_icon from '../assets/images/icons/tinder_inline.svg';
+import website_icon from '../../assets/images/icons/tinder_inline.svg';
 
 let instructions = new insFactory('tinder', document.getElementById('instructions-container'));
 let rRender = new reportFactory('tinder');

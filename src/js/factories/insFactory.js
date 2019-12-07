@@ -21,13 +21,13 @@ class insFactory {
     }
 
     if (website === 'facebook') {
-      ins_context = require.context('../../page-facebook/instructions', true);
+      ins_context = require.context('../../pages/page-facebook/instructions', true);
     }
     else if (website === 'tinder') {
-      ins_context = require.context('../../page-tinder/instructions', true);
+      ins_context = require.context('../../pages/page-tinder/instructions', true);
     }
     else if (website === 'spotify') {
-      ins_context = require.context('../../page-spotify/instructions', true);
+      ins_context = require.context('../../pages/page-spotify/instructions', true);
     }
 
     this.instructions = ins_context('./instructions.json');

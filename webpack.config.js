@@ -11,10 +11,10 @@ module.exports = env => {
 
   return {
     entry: {
-      index: './src/page-index/main.js',
-      facebook: './src/page-facebook/main.js',
-      spotify: './src/page-spotify/main.js',
-      tinder: './src/page-tinder/main.js'
+      index: './src/pages/page-index/main.js',
+      facebook: './src/pages/page-facebook/main.js',
+      spotify: './src/pages/page-spotify/main.js',
+      tinder: './src/pages/page-tinder/main.js'
     },
     mode: 'development',
     module: {
@@ -94,22 +94,22 @@ module.exports = env => {
         { from: './src/assets/animations', to: '.' }
       ]),
       new HtmlWebPackPlugin({
-        template: "./src/page-index/index.html",
+        template: "./src/pages/page-index/index.html",
         chunks: ['index'],
         filename: "./index.html"
       }),
       new HtmlWebPackPlugin({
-        template: "./src/page-facebook/facebook.html",
+        template: "./src/pages/page-facebook/facebook.html",
         chunks: ['facebook'],
         filename: "./facebook.html"
       }),
       new HtmlWebPackPlugin({
-        template: "./src/page-spotify/spotify.html",
+        template: "./src/pages/page-spotify/spotify.html",
         chunks: ['spotify'],
         filename: "./spotify.html"
       }),
       new HtmlWebPackPlugin({
-        template: "./src/page-tinder/tinder.html",
+        template: "./src/pages/page-tinder/tinder.html",
         chunks: ['tinder'],
         filename: "./tinder.html"
       }),
