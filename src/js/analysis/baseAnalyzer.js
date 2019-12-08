@@ -1,7 +1,7 @@
 import { InflaterJS } from '../zip-js-modified/inflate.js';
 import { Zip } from '../zip-js-modified/zip.js';
 import { ZipFS } from '../zip-js-modified/zip-fs.js';
-import { CbChain, cbRootChain } from '../cbChain.js';
+import { CbChain, cbRootChain } from './cbChain.js';
 
 class BaseAnalyzer {
   constructor(callback) {
@@ -31,6 +31,7 @@ class BaseAnalyzer {
     this.cbChain.setLoopCount(); // increment the callbackloop count
     const internalCallback = new CbChain(`${file_data.func.name}`, this.cbChain.call.bind(this.cbChain), 1);
 
+    // TODO: fix up the mess below
     try {
       let why = document.createElement('div');
       why.innerHTML = file_data.name;
@@ -78,6 +79,7 @@ class BaseAnalyzer {
     });
   }
 
+  // TODO:
   // why json in the name..?
   getJSONFile(path) {
     var pathSplit = path.split('/');

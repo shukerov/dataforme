@@ -1,4 +1,4 @@
-import { LoadBar } from './components/loadBar.js';
+import { LoadBar } from '../components/loadBar.js';
 
 export class CbChain {
   constructor(name, finalCallback, numCallbacks) {
