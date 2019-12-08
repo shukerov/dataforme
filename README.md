@@ -18,12 +18,13 @@ Live link of the unfinished website - https://dataforme.xyz.
 1. Make sure you have `nodejs` installed. Installation instructions [here](https://nodejs.org/en/download/).
 2. Make sure you have `yarn` installed. Instructions [here](https://yarnpkg.com/lang/en/docs/install/#debian-stable).
 3. Clone the repo - `git clone git@github.com:shukerov/dataforme.git`
-4. Run the dev server with:
+4. Run `yarn install` to fetch all packages.
+5. Run the dev server with:
 ```
 yarn run dev        // runs the regular development site
-yarn run dev-looks  // runs the development site with a preview (use this when working on styles)
+yarn run dev_looks  // runs the development site with a preview (use this when working on styles)
 ```
-5. Go to `localhost:8080` to view the website
+6. Go to `localhost:8080` to view the website
 
 # Usage
 
