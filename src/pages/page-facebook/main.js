@@ -10,7 +10,7 @@ import { FacebookAnalyzer } from './facebookAnalyzer.js';
 
 // CSS imports:
 import './facebook.scss';
-import website_icon from '../../assets/images/icons/facebook_inline.svg';
+import website_icon from '../../assets/images/logos/facebook_inline.svg';
 
 // this is instructions loading. Should stay here only temporarily during development
 let instructions = new insFactory('facebook', document.getElementById('instructions-container'));

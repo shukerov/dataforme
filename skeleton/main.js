@@ -7,7 +7,7 @@ import { WebserviceAnalyzer } from './webserviceAnalyzer.js';
 
 // CSS imports:
 import './webservice.scss';
-import website_icon from '../../assets/images/icons/webservice_inline.svg';
+import website_icon from '../../assets/images/logos/webservice_inline.svg';
 
 let instructions = new insFactory('webservice', document.getElementById('instructions-container'));
 let rRender = new reportFactory('webservice');

@@ -8,7 +8,7 @@ import { TinderAnalyzer } from './tinderAnalyzer.js';
 
 // CSS imports:
 import './tinder.scss';
-import website_icon from '../../assets/images/icons/tinder_inline.svg';
+import website_icon from '../../assets/images/logos/tinder_inline.svg';
 
 let instructions = new insFactory('tinder', document.getElementById('instructions-container'));
 let rRender = new reportFactory('tinder');
