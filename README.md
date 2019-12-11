@@ -38,7 +38,13 @@ yarn run dev_looks  // runs the development site with a preview (use this when w
 Read the wiki on how to contribute, and add additional web services.
 
 # Credits
-* https://feathericons.com/
-* https://frappe.io/charts
-* https://gildas-lormeau.github.io/zip.js/
-* https://fontawesome.com Link to their license [https://fontawesome.com/license](here)
+
+DataForMe exists thanks to these open-source libraries:
+
+* [`webpack`](https://webpack.js.org/) - an open-source module bundler for JavaScript files
+* [`frappe-charts`](https://frappe.io/charts) - open-source svg graphing library
+* [`zip.js`](https://gildas-lormeau.github.io/zip.js/) - open-source library for manipulating `zip` files in the browser
+* [`lottie`](https://airbnb.io/lottie/#/) - airbnb animation library used just for nav (probably not needed...)
+* [`feather-icons`](https://feathericons.com/) - simply beautiful open-source icons
+
+A few icons come from [`fontawesome`](https://fontawesome.com). A link to their license can be found [https://fontawesome.com/license](here).
