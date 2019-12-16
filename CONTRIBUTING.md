@@ -8,12 +8,12 @@ When you file a bug please include a description, and a copy of the crash from y
 # Development
 
 * Make sure you read the [wiki](https://github.com/shukerov/dataforme/wiki).
-* Source hosted at [GitHub](https://github.com/shukerov/dataforme/issues).
-* Development and installation instruction can be found in the README.
+* Source hosted at [GitHub](https://github.com/shukerov/dataforme).
+* Development and installation instruction can be found in the [README][https://github.com/shukerov/dataforme/blob/master/README.md].
 
 *Currently pull requests won't be accepted.* I am working on setting up the following things first:
 
 * Travis CI running tests.
-* Working SonarCloud.
+* ~Working SonarCloud.~
 * Beefing up the current tests, and writing documentation about how to add more.
 * Setting up an eslintrc or something similar.
