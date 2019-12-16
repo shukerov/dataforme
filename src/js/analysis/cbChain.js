@@ -1,4 +1,4 @@
-import { LoadBar } from '../components/loadBar.js';
+import { LoadScreen } from '../components/loadScreen.js';
 
 export class CbChain {
   constructor(name, finalCallback, numCallbacks) {
@@ -47,7 +47,8 @@ export class CbChain {
 
   initialized() {
     this.populated = true;
-    console.log(`${this.name} was initialized`);
+    // DEBUG
+    // console.log(`${this.name} was initialized`);
   }
 }
 
@@ -57,12 +58,12 @@ export class cbRootChain extends CbChain {
 
   constructor(name, finalCallback, numCallbacks) {
     super(name, finalCallback, numCallbacks);
-    this.progress = new LoadBar();
+    this.progress = new LoadScreen();
   }
 
   call() {
     this.cbChainCount -= 1;
-    this.progress.updatePercentage();
+    this.progress.updateProgress();
 
     // DEBUG
     // console.log(`${this.name} chain status: C:${this.cbChainCount} | I:${this.populated}`);
@@ -71,7 +72,6 @@ export class cbRootChain extends CbChain {
 
       // DEBUG
       // console.log(`Main callback chain exited`);
-
       this.callback();
       this.progress.hide();
     }
@@ -79,6 +79,7 @@ export class cbRootChain extends CbChain {
 
   initialized() {
     this.progress.setMax(this.cbChainCount);
+    this.progress.setStatus('analyse');
     this.populated = true;
 
     // DEBUG

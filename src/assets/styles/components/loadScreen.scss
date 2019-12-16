@@ -1,0 +1,46 @@
+.progress-overlay {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: rgba(46, 49, 49, 0.70);
+   z-index: 20;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.progress-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 325px;
+  padding: 5px;
+  background: white;
+}
+
+.progress-animation {
+  width: 150px; 
+  height: 150px;
+}
+
+.progress-files {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 5px;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 90%;
+  height: 10px;
+  border: 0.5px grey solid;
+}
+
+.progress-bar-inner {
+  background: #8e4785;
+  width: 1%;
+  height: 100%;
+}

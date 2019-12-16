@@ -33,21 +33,19 @@ class BaseAnalyzer {
 
     // TODO: fix up the mess below
     try {
-      let why = document.createElement('div');
-      why.innerHTML = file_data.name;
-      this.cbChain.progress.add(why);
+      // add process name
+      this.cbChain.progress.addFilename(file_data.name);
+
       const file = this.getJSONFile(file_data.path); 
       file.getText(file_data.func.bind(this, internalCallback)); 
-      let why1 = document.createElement('div');
-      why1.innerHTML = 'V';
-      this.cbChain.progress.add(why1);
+
+      // process was successfuly started
+      this.cbChain.progress.addFilenameStatus(true);
     }
     catch(e) {
       // TODO: error prevention bad bad
       console.error(e);
-      let why = document.createElement('div');
-      why.innerHTML = 'X';
-      this.cbChain.progress.add(why);
+      this.cbChain.progress.addFilenameStatus(false);
       internalCallback.call();
     }
   }
@@ -69,7 +67,6 @@ class BaseAnalyzer {
       // pattern was not found in the given directory
       if (!file) {
         internalCbChain.call();
-        // this.progress.updatePercentage(); 
         return;
       }
 
@@ -121,8 +118,6 @@ class BaseAnalyzer {
   getData(fakeData) {
     return fakeData ? this.fakeData : this.data;
   }
-
-
 }
 
 export { BaseAnalyzer };
