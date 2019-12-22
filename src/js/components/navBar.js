@@ -34,11 +34,10 @@ class NavBar {
         };
 
     this.direction = 1;
-    this.navState = 'discrete';
-    this.logoAnim = bodymovin.loadAnimation(animationData);
-    this.logoBtn = document.getElementById('nav-logoo');
-    this.logoBtn.onclick= this.logoClickHandler.bind(this);
 
+    this.logoAnim = bodymovin.loadAnimation(animationData);
+    this.logoBtn = document.getElementById('nav-home-item');
+    this.logoBtn.onclick = this.logoClickHandler.bind(this);
     this.navbar = document.getElementById('nav');
 
     // create buttons
@@ -58,6 +57,14 @@ class NavBar {
     // setup class variables
     this.navbarHeight = this.navbar.scrollHeight;
     this.navBtns = document.getElementsByClassName('nav-item');
+
+    // open or close the navBar
+    if (!this.index) {
+      this.navState = 'discrete';
+    }
+    else {
+      this.showNavBtns();
+    }
   }
 
   logoClickHandler() {
@@ -108,6 +115,7 @@ class NavBar {
 
   showNavBtns() {
     this.navState = 'open';
+    this.logoAnim.play();
 
     for (let i = 0; i < this.navBtns.length; i++) {
       this.navBtns[i].classList.remove('nav-discrete');
