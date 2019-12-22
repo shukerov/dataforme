@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/page-facebook/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/pages/page-facebook/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -98,579 +98,633 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./src/assets/fake_data/fb_precompiled.json":
-/*!**************************************************!*\
-  !*** ./src/assets/fake_data/fb_precompiled.json ***!
-  \**************************************************/
-/*! exports provided: msgStats, postStats, searchStats, reactionStats, adStats, name, birthday, joined, relationship_count, relationship_status, last_profile_update, number_profile_updates, face_example_count, my_face, friend_peer_group, default */
-/***/ (function(module) {
-
-eval("module.exports = JSON.parse(\"{\\\"msgStats\\\":{\\\"name\\\":\\\"Your Name Here\\\",\\\"groupChatThreads\\\":[\\\"p1_p2\\\",\\\"p1_p3\\\",\\\"p1_p4\\\",\\\"p1_p5\\\",\\\"p1_p6\\\",\\\"p1_p7\\\",\\\"p1_p8\\\",\\\"p1_p9\\\",\\\"p1_p10\\\",\\\"p1_p11\\\",\\\"p1_p12\\\",\\\"p1_p13\\\",\\\"p1_p14\\\",\\\"p1_p15\\\",\\\"p1_p16\\\",\\\"p1_p17\\\",\\\"p1_p18\\\",\\\"p1_p19\\\",\\\"p1_p20\\\",\\\"p1_p21\\\",\\\"p1_p22\\\",\\\"p1_p23\\\",\\\"p1_p24\\\",\\\"p1_p25\\\",\\\"p1_p26\\\",\\\"p1_p27\\\",\\\"p1_p28\\\",\\\"p1_p29\\\",\\\"p1_p30\\\",\\\"p1_p31\\\",\\\"p1_p32\\\",\\\"p1_p33\\\",\\\"p1_p34\\\",\\\"p1_p35\\\",\\\"p1_p36\\\",\\\"p1_p37\\\",\\\"p1_p38\\\",\\\"p1_p39\\\",\\\"p1_p40\\\",\\\"p1_p41\\\",\\\"p1_p42\\\",\\\"p1_p43\\\",\\\"p1_p44\\\",\\\"p1_p45\\\",\\\"p1_p46\\\",\\\"p1_p47\\\",\\\"p1_p48\\\",\\\"p1_p49\\\",\\\"p1_p50\\\",\\\"p1_p51\\\",\\\"p1_p52\\\",\\\"p1_p53\\\",\\\"p1_p54\\\",\\\"p1_p55\\\",\\\"p1_p56\\\",\\\"p1_p57\\\",\\\"p1_p58\\\",\\\"p1_p59\\\"],\\\"numPictures\\\":{\\\"gifs\\\":0,\\\"other\\\":0},\\\"regThreads\\\":{\\\"12_thread\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":86,\\\"other\\\":40},\\\"11_thread34\\\":{\\\"messager\\\":\\\"Little Morty\\\",\\\"msgByUser\\\":9106,\\\"other\\\":8526},\\\"11_thread35\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":2,\\\"other\\\":1},\\\"11_thread36\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread37\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":67,\\\"other\\\":71},\\\"11_thread38\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":4},\\\"11_thread39\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":38,\\\"other\\\":35},\\\"11_thread40\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":3},\\\"11_thread41\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":16},\\\"11_thread42\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":2},\\\"11_thread43\\\":{\\\"messager\\\":\\\"Harry Potter\\\",\\\"msgByUser\\\":516,\\\"other\\\":407},\\\"11_thread44\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":2},\\\"11_thread45\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":193,\\\"other\\\":103},\\\"11_thread46\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread47\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":3,\\\"other\\\":2},\\\"11_thread48\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":32,\\\"other\\\":39},\\\"11_thread49\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":170,\\\"other\\\":179},\\\"11_thread50\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":63,\\\"other\\\":31},\\\"11_thread51\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":1,\\\"other\\\":0},\\\"11_thread52\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":47,\\\"other\\\":18},\\\"11_thread53\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":9,\\\"other\\\":8},\\\"11_thread54\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread55\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread56\\\":{\\\"messager\\\":\\\"Hydro Homie\\\",\\\"msgByUser\\\":2426,\\\"other\\\":2550},\\\"11_thread57\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":19,\\\"other\\\":9},\\\"11_thread58\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread59\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":8,\\\"other\\\":7},\\\"11_thread60\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":14,\\\"other\\\":5},\\\"11_thread61\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":3},\\\"11_thread62\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":56,\\\"other\\\":37},\\\"11_thread63\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread64\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":103,\\\"other\\\":114},\\\"11_thread65\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread66\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":14,\\\"other\\\":22},\\\"11_thread67\\\":{\\\"messager\\\":\\\"Stoyan Shukerov\\\",\\\"msgByUser\\\":17909,\\\"other\\\":17730},\\\"11_thread68\\\":{\\\"messager\\\":\\\"Kool Name\\\",\\\"msgByUser\\\":18,\\\"other\\\":47},\\\"11_thread69\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":25,\\\"other\\\":22},\\\"11_thread70\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":2,\\\"other\\\":0},\\\"11_thread71\\\":{\\\"messager\\\":\\\"Albert Einstein\\\",\\\"msgByUser\\\":834,\\\"other\\\":903},\\\"11_thread72\\\":{\\\"messager\\\":\\\"Heisenberg\\\",\\\"msgByUser\\\":6268,\\\"other\\\":6765},\\\"22_thread08\\\":{\\\"messager\\\":\\\"Michael Scott\\\",\\\"msgByUser\\\":10598,\\\"other\\\":8326},\\\"22_thread11\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":2,\\\"other\\\":0},\\\"22_thread12\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":1,\\\"other\\\":2},\\\"22_thread13\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":2},\\\"22_thread15\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":49,\\\"other\\\":70},\\\"22_thread17\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":5,\\\"other\\\":7},\\\"22_thread21\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":7,\\\"other\\\":3},\\\"22_thread22\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":24,\\\"other\\\":66},\\\"22_thread24\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":5,\\\"other\\\":1},\\\"22_thread25\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":37,\\\"other\\\":36},\\\"22_thread26\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":11,\\\"other\\\":17},\\\"22_thread27\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":20,\\\"other\\\":9},\\\"22_thread28\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":70,\\\"other\\\":60},\\\"22_thread29\\\":{\\\"messager\\\":\\\"Didn't Killhimself\\\",\\\"msgByUser\\\":329,\\\"other\\\":296},\\\"22_thread30\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":5,\\\"other\\\":2},\\\"22_thread31\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":1,\\\"other\\\":3},\\\"22_thread32\\\":{\\\"messager\\\":\\\"Elon Tusk\\\",\\\"msgByUser\\\":572,\\\"other\\\":499},\\\"22_thread33\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":2,\\\"other\\\":4},\\\"22_thread34\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":2,\\\"other\\\":0},\\\"22_thread35\\\":{\\\"messager\\\":\\\"Jeffrey Epstein\\\",\\\"msgByUser\\\":270,\\\"other\\\":425},\\\"22_thread36\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":18,\\\"other\\\":14},\\\"22_thread38\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":123,\\\"other\\\":106},\\\"22_thread39\\\":{\\\"messager\\\":\\\"Gandalf\\\",\\\"msgByUser\\\":545,\\\"other\\\":273},\\\"22_thread40\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":8,\\\"other\\\":17},\\\"22_thread41\\\":{\\\"messager\\\":\\\"Isaac Asimov\\\",\\\"msgByUser\\\":1638,\\\"other\\\":1621},\\\"22_thread42\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":28,\\\"other\\\":14},\\\"22_thread43\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":31,\\\"other\\\":28},\\\"22_thread44\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"22_thread45\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":44,\\\"other\\\":45},\\\"22_thread46\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"22_thread48\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":2},\\\"22_thread49\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"22_thread50\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":2},\\\"22_thread52\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":11,\\\"other\\\":8},\\\"22_thread53\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":280,\\\"other\\\":191},\\\"22_thread54\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":17,\\\"other\\\":9},\\\"22_thread55\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":17,\\\"other\\\":9},\\\"22_thread58\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":9,\\\"other\\\":15},\\\"22_thread59\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":8},\\\"22_thread60\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":9,\\\"other\\\":16},\\\"22_thread61\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":12,\\\"other\\\":25},\\\"22_thread62\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":1,\\\"other\\\":2},\\\"22_thread63\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":55,\\\"other\\\":30},\\\"22_thread64\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":32,\\\"other\\\":30},\\\"22_thread65\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":27,\\\"other\\\":44},\\\"22_thread66\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":3,\\\"other\\\":3},\\\"22_thread68\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":15,\\\"other\\\":16},\\\"22_thread69\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":20,\\\"other\\\":11},\\\"22_thread71\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":116,\\\"other\\\":145},\\\"22_thread73\\\":{\\\"messager\\\":\\\"Han Solo\\\",\\\"msgByUser\\\":550,\\\"other\\\":419},\\\"22_thread74\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":8,\\\"other\\\":5},\\\"22_thread75\\\":{\\\"messager\\\":\\\"Dr. Stone\\\",\\\"msgByUser\\\":1185,\\\"other\\\":858},\\\"22_thread76\\\":{\\\"messager\\\":\\\"Rick Sanchez\\\",\\\"msgByUser\\\":1920,\\\"other\\\":1836},\\\"22_thread93\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":14,\\\"other\\\":11}},\\\"timeStats\\\":{\\\"hourly\\\":{\\\"received\\\":[4791,3937,2842,1837,1710,1577,2057,3188,5803,8251,9812,9577,7719,7322,6702,5703,5029,3681,3040,3706,3488,4025,4388,4625],\\\"sent\\\":[5702,4703,3209,1739,1474,1492,2087,3493,6463,9452,10590,10098,8321,7944,7752,7095,5746,4152,3663,4725,4664,5078,5522,5748]},\\\"monthly\\\":{\\\"received\\\":[12442,8667,7269,6476,11434,9094,6004,11179,10500,11807,9011,10927],\\\"sent\\\":[14897,10034,8082,7725,12229,9814,6533,13182,11193,13747,10430,13046]},\\\"weekly\\\":{\\\"received\\\":[16759,16620,17255,16155,16708,15402,15911],\\\"sent\\\":[19353,19124,19164,18454,18832,18157,17828]},\\\"yearly\\\":{\\\"2009\\\":{\\\"received\\\":5,\\\"sent\\\":5},\\\"2010\\\":{\\\"received\\\":132,\\\"sent\\\":122},\\\"2011\\\":{\\\"received\\\":4700,\\\"sent\\\":3632},\\\"2012\\\":{\\\"received\\\":1905,\\\"sent\\\":1666},\\\"2013\\\":{\\\"received\\\":10018,\\\"sent\\\":9676},\\\"2014\\\":{\\\"received\\\":15481,\\\"sent\\\":16050},\\\"2015\\\":{\\\"received\\\":5775,\\\"sent\\\":5802},\\\"2016\\\":{\\\"received\\\":24546,\\\"sent\\\":29973},\\\"2017\\\":{\\\"received\\\":32871,\\\"sent\\\":40016},\\\"2018\\\":{\\\"received\\\":15307,\\\"sent\\\":19109},\\\"2019\\\":{\\\"received\\\":4065,\\\"sent\\\":4855}}},\\\"callStats\\\":{\\\"num_calls\\\":{\\\"initiated\\\":15,\\\"received\\\":3},\\\"total_duration\\\":0},\\\"days_msged\\\":{\\\"sent\\\":2003,\\\"received\\\":2000},\\\"total_words\\\":{\\\"sent\\\":550000,\\\"received\\\":550000}},\\\"postStats\\\":{\\\"timeStats\\\":{\\\"hourly\\\":{\\\"received\\\":[4791,3937,2842,1837,1710,1577,2057,3188,5803,8251,9812,9577,7719,7322,6702,5703,5029,3681,3040,3706,3488,4025,4388,4625],\\\"sent\\\":[5702,4703,3209,1739,1474,1492,2087,3493,6463,9452,10590,10098,8321,7944,7752,7095,5746,4152,3663,4725,4664,5078,5522,5748]},\\\"monthly\\\":{\\\"received\\\":[12442,8667,7269,6476,11434,9094,6004,11179,10500,11807,9011,10927],\\\"sent\\\":[14897,10034,8082,7725,12229,9814,6533,13182,11193,13747,10430,13046]},\\\"weekly\\\":{\\\"received\\\":[16759,16620,17255,16155,16708,15402,15911],\\\"sent\\\":[19353,19124,19164,18454,18832,18157,17828]},\\\"yearly\\\":{\\\"2009\\\":{\\\"received\\\":5,\\\"sent\\\":5},\\\"2010\\\":{\\\"received\\\":132,\\\"sent\\\":122},\\\"2011\\\":{\\\"received\\\":4700,\\\"sent\\\":3632},\\\"2012\\\":{\\\"received\\\":1905,\\\"sent\\\":1666},\\\"2013\\\":{\\\"received\\\":10018,\\\"sent\\\":9676},\\\"2014\\\":{\\\"received\\\":15481,\\\"sent\\\":16050},\\\"2015\\\":{\\\"received\\\":5775,\\\"sent\\\":5802},\\\"2016\\\":{\\\"received\\\":24546,\\\"sent\\\":29973},\\\"2017\\\":{\\\"received\\\":32871,\\\"sent\\\":40016},\\\"2018\\\":{\\\"received\\\":15307,\\\"sent\\\":19109},\\\"2019\\\":{\\\"received\\\":4065,\\\"sent\\\":4855}}},\\\"num_posts_sent\\\":353,\\\"num_posts_received\\\":3},\\\"searchStats\\\":{\\\"num_searches\\\":450,\\\"searches\\\":{\\\"one\\\":3,\\\"girls\\\":5,\\\"videogames\\\":6,\\\"Koko Mate\\\":3,\\\"por\\\":23},\\\"timeStats\\\":{\\\"hourly\\\":[48,30,25,9,10,8,31,37,49,80,71,86,62,59,63,53,44,73,57,67,64,131,82,67],\\\"yearly\\\":{\\\"2012\\\":54,\\\"2013\\\":282,\\\"2014\\\":236,\\\"2015\\\":207,\\\"2016\\\":99,\\\"2017\\\":154,\\\"2018\\\":147,\\\"2019\\\":127}}},\\\"reactionStats\\\":{\\\"reactions\\\":{\\\"HAHA\\\":10,\\\"WOW\\\":2,\\\"LIKE\\\":320,\\\"SORRY\\\":50,\\\"ANGER\\\":1,\\\"LOVE\\\":100},\\\"timeStats\\\":{\\\"hourly\\\":[48,30,25,9,10,8,31,37,49,80,71,86,62,59,63,53,44,73,57,67,64,131,82,67],\\\"yearly\\\":{\\\"2012\\\":54,\\\"2013\\\":282,\\\"2014\\\":236,\\\"2015\\\":207,\\\"2016\\\":99,\\\"2017\\\":154,\\\"2018\\\":147,\\\"2019\\\":127}}},\\\"adStats\\\":{\\\"topics\\\":[\\\"cats\\\",\\\"cats\\\",\\\"cat.\\\",\\\"kittens\\\",\\\"cats\\\",\\\"cats\\\",\\\"cat.\\\",\\\"kittens\\\"],\\\"interactions\\\":{\\\"Clicked ad\\\":[{\\\"Ad\\\":\\\"Are you ready for Robots to Deliver Your Packages and Food?\\\",\\\"When\\\":\\\"Sun Sep 08 2019\\\"},{\\\"Ad\\\":\\\"Hardt Hyperloop Plans To Unite European Travel\\\",\\\"When\\\":\\\"Wed Aug 21 2019\\\"},{\\\"Ad\\\":\\\"pacific jogger\\\",\\\"When\\\":\\\"Mon Aug 19 2019\\\"},{\\\"Ad\\\":\\\"Can you solve these 3 programming questions?\\\",\\\"When\\\":\\\"Wed Aug 07 2019\\\"},{\\\"Ad\\\":\\\"The Ultimate Device Made To Break Bad Habits â¡ï¸\\\",\\\"When\\\":\\\"Mon Aug 05 2019\\\"}],\\\"Closed ad\\\":[{\\\"Ad\\\":\\\"Epic idle RPG\\\",\\\"When\\\":\\\"Thu Aug 08 2019\\\"}]}},\\\"name\\\":\\\"Your Name Here\\\",\\\"birthday\\\":798609800000,\\\"joined\\\":1242379050000,\\\"relationship_count\\\":2,\\\"relationship_status\\\":\\\"Single\\\",\\\"last_profile_update\\\":1514499039,\\\"number_profile_updates\\\":15,\\\"face_example_count\\\":54,\\\"my_face\\\":\\\"Fvam6LMNGIAEgjQ0N-03eq2Hr7YwoqswtHAvcbJlNCQ1XLivrYI0XLjoNpmvAzHMMsO0aawMrqg43rXvNdY2cbA8LJE5KbQdthEowjE7NOKvVLaNNsOp4zjNq5AmVLber7Otiqf4Ote1ZbIZNQWzebI3ME2pQjAbJbYxu67Qsuyc9Soatwk1Ri58NR01wasPNQm2zbV9tPiqTbPXuOO73zcvHVg3ADg6KOCuyrTHNdGwCbNOqsG3RamMt041Y66ZsRY1urFMrTy03jIvmuWzdbTYL7QziCyJtQgyQTRpMjUny7\\\",\\\"friend_peer_group\\\":\\\"Starting Adult Life\\\"}\");\n\n//# sourceURL=webpack:///./src/assets/fake_data/fb_precompiled.json?");
-
-/***/ }),
-
-/***/ "./src/images/components/chevron-left.svg":
+/***/ "./src/assets/images/components/check.svg":
 /*!************************************************!*\
-  !*** ./src/images/components/chevron-left.svg ***!
+  !*** ./src/assets/images/components/check.svg ***!
   \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"5727f869509c87f4d25c2225f0968573.svg\";\n\n//# sourceURL=webpack:///./src/images/components/chevron-left.svg?");
+eval("module.exports = __webpack_require__.p + \"1d7b2f0fcfdc628a65ddaca81b0cf862.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/components/check.svg?");
 
 /***/ }),
 
-/***/ "./src/images/components/chevron-right.svg":
+/***/ "./src/assets/images/components/chevron-left.svg":
+/*!*******************************************************!*\
+  !*** ./src/assets/images/components/chevron-left.svg ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"5727f869509c87f4d25c2225f0968573.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/components/chevron-left.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/components/chevron-right.svg":
+/*!********************************************************!*\
+  !*** ./src/assets/images/components/chevron-right.svg ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"9c59704b1de34c9fbb54c100b907ac85.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/components/chevron-right.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/components/help-circle.svg":
+/*!******************************************************!*\
+  !*** ./src/assets/images/components/help-circle.svg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"db548ab58440f97b249c72b91b9fae93.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/components/help-circle.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/components/x.svg":
+/*!********************************************!*\
+  !*** ./src/assets/images/components/x.svg ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"63678a7cf6c767465769c22ed4e3d30b.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/components/x.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/logos/facebook_inline.svg":
+/*!*****************************************************!*\
+  !*** ./src/assets/images/logos/facebook_inline.svg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<svg version=\\\"1.1\\\" id=\\\"Capa_1\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" xmlns:xlink=\\\"http://www.w3.org/1999/xlink\\\" x=\\\"0px\\\" y=\\\"0px\\\" viewBox=\\\"0 0 112.196 112.196\\\" xml:space=\\\"preserve\\\"><g><path d=\\\"M70.201,58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34 c0-5.964,2.833-15.303,15.301-15.303L71.56,21.81v12.51h-8.151c-1.337,0-3.217,0.668-3.217,3.513v7.585h11.334L70.201,58.294z\\\"></path></g></svg>\"\n\n//# sourceURL=webpack:///./src/assets/images/logos/facebook_inline.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons sync \\.svg$":
+/*!*****************************************************************!*\
+  !*** ./src/assets/images/report-icons sync nonrecursive \.svg$ ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var map = {\n\t\"./activity.svg\": \"./src/assets/images/report-icons/activity.svg\",\n\t\"./angry-fa.svg\": \"./src/assets/images/report-icons/angry-fa.svg\",\n\t\"./book.svg\": \"./src/assets/images/report-icons/book.svg\",\n\t\"./cake.svg\": \"./src/assets/images/report-icons/cake.svg\",\n\t\"./calendar.svg\": \"./src/assets/images/report-icons/calendar.svg\",\n\t\"./camera.svg\": \"./src/assets/images/report-icons/camera.svg\",\n\t\"./cry-fa.svg\": \"./src/assets/images/report-icons/cry-fa.svg\",\n\t\"./disc.svg\": \"./src/assets/images/report-icons/disc.svg\",\n\t\"./file-plus_inline.svg\": \"./src/assets/images/report-icons/file-plus_inline.svg\",\n\t\"./file-text.svg\": \"./src/assets/images/report-icons/file-text.svg\",\n\t\"./headphones.svg\": \"./src/assets/images/report-icons/headphones.svg\",\n\t\"./heart-solid-fa.svg\": \"./src/assets/images/report-icons/heart-solid-fa.svg\",\n\t\"./heart.svg\": \"./src/assets/images/report-icons/heart.svg\",\n\t\"./hexagon.svg\": \"./src/assets/images/report-icons/hexagon.svg\",\n\t\"./image.svg\": \"./src/assets/images/report-icons/image.svg\",\n\t\"./inbox.svg\": \"./src/assets/images/report-icons/inbox.svg\",\n\t\"./laugh-fa.svg\": \"./src/assets/images/report-icons/laugh-fa.svg\",\n\t\"./loader.svg\": \"./src/assets/images/report-icons/loader.svg\",\n\t\"./mail.svg\": \"./src/assets/images/report-icons/mail.svg\",\n\t\"./map-pin.svg\": \"./src/assets/images/report-icons/map-pin.svg\",\n\t\"./maximize-2.svg\": \"./src/assets/images/report-icons/maximize-2.svg\",\n\t\"./message-circle.svg\": \"./src/assets/images/report-icons/message-circle.svg\",\n\t\"./message-square.svg\": \"./src/assets/images/report-icons/message-square.svg\",\n\t\"./mouse-pointer.svg\": \"./src/assets/images/report-icons/mouse-pointer.svg\",\n\t\"./music.svg\": \"./src/assets/images/report-icons/music.svg\",\n\t\"./phone-call.svg\": \"./src/assets/images/report-icons/phone-call.svg\",\n\t\"./play.svg\": \"./src/assets/images/report-icons/play.svg\",\n\t\"./search.svg\": \"./src/assets/images/report-icons/search.svg\",\n\t\"./send.svg\": \"./src/assets/images/report-icons/send.svg\",\n\t\"./settings.svg\": \"./src/assets/images/report-icons/settings.svg\",\n\t\"./shopping-bag.svg\": \"./src/assets/images/report-icons/shopping-bag.svg\",\n\t\"./skip-forward.svg\": \"./src/assets/images/report-icons/skip-forward.svg\",\n\t\"./smartphone.svg\": \"./src/assets/images/report-icons/smartphone.svg\",\n\t\"./smile-fa.svg\": \"./src/assets/images/report-icons/smile-fa.svg\",\n\t\"./smile.svg\": \"./src/assets/images/report-icons/smile.svg\",\n\t\"./target.svg\": \"./src/assets/images/report-icons/target.svg\",\n\t\"./thumbs-down.svg\": \"./src/assets/images/report-icons/thumbs-down.svg\",\n\t\"./thumbs-up-fa.svg\": \"./src/assets/images/report-icons/thumbs-up-fa.svg\",\n\t\"./thumbs-up.svg\": \"./src/assets/images/report-icons/thumbs-up.svg\",\n\t\"./upload.svg\": \"./src/assets/images/report-icons/upload.svg\",\n\t\"./user.svg\": \"./src/assets/images/report-icons/user.svg\",\n\t\"./users.svg\": \"./src/assets/images/report-icons/users.svg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/assets/images/report-icons sync \\\\.svg$\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons_sync_nonrecursive_\\.svg$?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/activity.svg":
+/*!*****************************************************!*\
+  !*** ./src/assets/images/report-icons/activity.svg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"ec2ea5c1a9894b6bef25afd1c555e627.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/activity.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/angry-fa.svg":
+/*!*****************************************************!*\
+  !*** ./src/assets/images/report-icons/angry-fa.svg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"66e9a47be9cf891e71bbfdc20fa33a62.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/angry-fa.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/book.svg":
 /*!*************************************************!*\
-  !*** ./src/images/components/chevron-right.svg ***!
+  !*** ./src/assets/images/report-icons/book.svg ***!
   \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"9c59704b1de34c9fbb54c100b907ac85.svg\";\n\n//# sourceURL=webpack:///./src/images/components/chevron-right.svg?");
+eval("module.exports = __webpack_require__.p + \"b40767c758a19c9bfe3b3313897c82d2.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/book.svg?");
 
 /***/ }),
 
-/***/ "./src/images/components/help-circle.svg":
-/*!***********************************************!*\
-  !*** ./src/images/components/help-circle.svg ***!
-  \***********************************************/
+/***/ "./src/assets/images/report-icons/cake.svg":
+/*!*************************************************!*\
+  !*** ./src/assets/images/report-icons/cake.svg ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"db548ab58440f97b249c72b91b9fae93.svg\";\n\n//# sourceURL=webpack:///./src/images/components/help-circle.svg?");
+eval("module.exports = __webpack_require__.p + \"1eb57a43f392826039dc0885b7565499.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/cake.svg?");
 
 /***/ }),
 
-/***/ "./src/images/icons/facebook_inline.svg":
-/*!**********************************************!*\
-  !*** ./src/images/icons/facebook_inline.svg ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = \"<svg version=\\\"1.1\\\" id=\\\"Capa_1\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" xmlns:xlink=\\\"http://www.w3.org/1999/xlink\\\" x=\\\"0px\\\" y=\\\"0px\\\" viewBox=\\\"0 0 112.196 112.196\\\" xml:space=\\\"preserve\\\"><g><path d=\\\"M70.201,58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34 c0-5.964,2.833-15.303,15.301-15.303L71.56,21.81v12.51h-8.151c-1.337,0-3.217,0.668-3.217,3.513v7.585h11.334L70.201,58.294z\\\"></path></g></svg>\"\n\n//# sourceURL=webpack:///./src/images/icons/facebook_inline.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons sync \\.svg$":
-/*!**********************************************************!*\
-  !*** ./src/images/report-icons sync nonrecursive \.svg$ ***!
-  \**********************************************************/
+/***/ "./src/assets/images/report-icons/calendar.svg":
+/*!*****************************************************!*\
+  !*** ./src/assets/images/report-icons/calendar.svg ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var map = {\n\t\"./activity.svg\": \"./src/images/report-icons/activity.svg\",\n\t\"./angry-fa.svg\": \"./src/images/report-icons/angry-fa.svg\",\n\t\"./book.svg\": \"./src/images/report-icons/book.svg\",\n\t\"./cake.svg\": \"./src/images/report-icons/cake.svg\",\n\t\"./calendar.svg\": \"./src/images/report-icons/calendar.svg\",\n\t\"./camera.svg\": \"./src/images/report-icons/camera.svg\",\n\t\"./cry-fa.svg\": \"./src/images/report-icons/cry-fa.svg\",\n\t\"./disc.svg\": \"./src/images/report-icons/disc.svg\",\n\t\"./file-plus_inline.svg\": \"./src/images/report-icons/file-plus_inline.svg\",\n\t\"./file-text.svg\": \"./src/images/report-icons/file-text.svg\",\n\t\"./headphones.svg\": \"./src/images/report-icons/headphones.svg\",\n\t\"./heart-solid-fa.svg\": \"./src/images/report-icons/heart-solid-fa.svg\",\n\t\"./heart.svg\": \"./src/images/report-icons/heart.svg\",\n\t\"./hexagon.svg\": \"./src/images/report-icons/hexagon.svg\",\n\t\"./image.svg\": \"./src/images/report-icons/image.svg\",\n\t\"./inbox.svg\": \"./src/images/report-icons/inbox.svg\",\n\t\"./laugh-fa.svg\": \"./src/images/report-icons/laugh-fa.svg\",\n\t\"./loader.svg\": \"./src/images/report-icons/loader.svg\",\n\t\"./mail.svg\": \"./src/images/report-icons/mail.svg\",\n\t\"./map-pin.svg\": \"./src/images/report-icons/map-pin.svg\",\n\t\"./maximize-2.svg\": \"./src/images/report-icons/maximize-2.svg\",\n\t\"./message-circle.svg\": \"./src/images/report-icons/message-circle.svg\",\n\t\"./message-square.svg\": \"./src/images/report-icons/message-square.svg\",\n\t\"./mouse-pointer.svg\": \"./src/images/report-icons/mouse-pointer.svg\",\n\t\"./music.svg\": \"./src/images/report-icons/music.svg\",\n\t\"./phone-call.svg\": \"./src/images/report-icons/phone-call.svg\",\n\t\"./play.svg\": \"./src/images/report-icons/play.svg\",\n\t\"./search.svg\": \"./src/images/report-icons/search.svg\",\n\t\"./send.svg\": \"./src/images/report-icons/send.svg\",\n\t\"./settings.svg\": \"./src/images/report-icons/settings.svg\",\n\t\"./shopping-bag.svg\": \"./src/images/report-icons/shopping-bag.svg\",\n\t\"./skip-forward.svg\": \"./src/images/report-icons/skip-forward.svg\",\n\t\"./smartphone.svg\": \"./src/images/report-icons/smartphone.svg\",\n\t\"./smile-fa.svg\": \"./src/images/report-icons/smile-fa.svg\",\n\t\"./smile.svg\": \"./src/images/report-icons/smile.svg\",\n\t\"./target.svg\": \"./src/images/report-icons/target.svg\",\n\t\"./thumbs-down.svg\": \"./src/images/report-icons/thumbs-down.svg\",\n\t\"./thumbs-up-fa.svg\": \"./src/images/report-icons/thumbs-up-fa.svg\",\n\t\"./thumbs-up.svg\": \"./src/images/report-icons/thumbs-up.svg\",\n\t\"./upload.svg\": \"./src/images/report-icons/upload.svg\",\n\t\"./user.svg\": \"./src/images/report-icons/user.svg\",\n\t\"./users.svg\": \"./src/images/report-icons/users.svg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/images/report-icons sync \\\\.svg$\";\n\n//# sourceURL=webpack:///./src/images/report-icons_sync_nonrecursive_\\.svg$?");
+eval("module.exports = __webpack_require__.p + \"b3d6e64c582711b7961aee4c427535dd.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/calendar.svg?");
 
 /***/ }),
 
-/***/ "./src/images/report-icons/activity.svg":
-/*!**********************************************!*\
-  !*** ./src/images/report-icons/activity.svg ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"ec2ea5c1a9894b6bef25afd1c555e627.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/activity.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/angry-fa.svg":
-/*!**********************************************!*\
-  !*** ./src/images/report-icons/angry-fa.svg ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"66e9a47be9cf891e71bbfdc20fa33a62.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/angry-fa.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/book.svg":
-/*!******************************************!*\
-  !*** ./src/images/report-icons/book.svg ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"b40767c758a19c9bfe3b3313897c82d2.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/book.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/cake.svg":
-/*!******************************************!*\
-  !*** ./src/images/report-icons/cake.svg ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"1eb57a43f392826039dc0885b7565499.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/cake.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/calendar.svg":
-/*!**********************************************!*\
-  !*** ./src/images/report-icons/calendar.svg ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"b3d6e64c582711b7961aee4c427535dd.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/calendar.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/camera.svg":
-/*!********************************************!*\
-  !*** ./src/images/report-icons/camera.svg ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"19a54509f12a3b28cbdbcbfe8fc6846f.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/camera.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/cry-fa.svg":
-/*!********************************************!*\
-  !*** ./src/images/report-icons/cry-fa.svg ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"bee545a8d4b2a34ab25d61d23f37fca4.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/cry-fa.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/disc.svg":
-/*!******************************************!*\
-  !*** ./src/images/report-icons/disc.svg ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"ffaee5053d0d4913e3791d18c2924328.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/disc.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/file-plus_inline.svg":
-/*!******************************************************!*\
-  !*** ./src/images/report-icons/file-plus_inline.svg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = \"<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"0 0 24 24\\\" fill=\\\"none\\\" stroke=\\\"currentColor\\\" stroke-width=\\\"2\\\" stroke-linecap=\\\"round\\\" stroke-linejoin=\\\"round\\\" class=\\\"feather feather-file-plus\\\"><path d=\\\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\\\"></path><polyline points=\\\"14 2 14 8 20 8\\\"></polyline><line x1=\\\"12\\\" y1=\\\"18\\\" x2=\\\"12\\\" y2=\\\"12\\\"></line><line x1=\\\"9\\\" y1=\\\"15\\\" x2=\\\"15\\\" y2=\\\"15\\\"></line></svg>\"\n\n//# sourceURL=webpack:///./src/images/report-icons/file-plus_inline.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/file-text.svg":
-/*!***********************************************!*\
-  !*** ./src/images/report-icons/file-text.svg ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"09f0201e92b42591f3c447f7cd8704aa.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/file-text.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/headphones.svg":
-/*!************************************************!*\
-  !*** ./src/images/report-icons/headphones.svg ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"e3f2c527e5ecb7c55c96a7e708e91a4d.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/headphones.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/heart-solid-fa.svg":
-/*!****************************************************!*\
-  !*** ./src/images/report-icons/heart-solid-fa.svg ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"5dbbbe23e97832071f574844062f1117.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/heart-solid-fa.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/heart.svg":
-/*!*******************************************!*\
-  !*** ./src/images/report-icons/heart.svg ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"502189aef3b96acbcddedbb54a043638.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/heart.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/hexagon.svg":
-/*!*********************************************!*\
-  !*** ./src/images/report-icons/hexagon.svg ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"2d95a138ebf8804321d33a398dedf3a5.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/hexagon.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/image.svg":
-/*!*******************************************!*\
-  !*** ./src/images/report-icons/image.svg ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"117a6d3e229a96ad0e0d0876352566e2.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/image.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/inbox.svg":
-/*!*******************************************!*\
-  !*** ./src/images/report-icons/inbox.svg ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"8c292cbc3a2a63d64ef7b660cc335a83.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/inbox.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/laugh-fa.svg":
-/*!**********************************************!*\
-  !*** ./src/images/report-icons/laugh-fa.svg ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"1280f9bededdcf6a3fbb3f4ec621a8c6.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/laugh-fa.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/loader.svg":
-/*!********************************************!*\
-  !*** ./src/images/report-icons/loader.svg ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"d4857d8daf2d8c2823bb48cae80908e7.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/loader.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/mail.svg":
-/*!******************************************!*\
-  !*** ./src/images/report-icons/mail.svg ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"20e8982ec7e03638afe27f5c3e897681.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/mail.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/map-pin.svg":
-/*!*********************************************!*\
-  !*** ./src/images/report-icons/map-pin.svg ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"b2f804bda31dee415fc2b1ff7ba9315f.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/map-pin.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/maximize-2.svg":
-/*!************************************************!*\
-  !*** ./src/images/report-icons/maximize-2.svg ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"8ccdd199b5c03e5938b3690fa836f77b.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/maximize-2.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/message-circle.svg":
-/*!****************************************************!*\
-  !*** ./src/images/report-icons/message-circle.svg ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"ebbe6d9aff08b5bab2e86f719d8ae329.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/message-circle.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/message-square.svg":
-/*!****************************************************!*\
-  !*** ./src/images/report-icons/message-square.svg ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"42f61b6cfe834007f261ed563b6d3ad3.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/message-square.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/mouse-pointer.svg":
+/***/ "./src/assets/images/report-icons/camera.svg":
 /*!***************************************************!*\
-  !*** ./src/images/report-icons/mouse-pointer.svg ***!
+  !*** ./src/assets/images/report-icons/camera.svg ***!
   \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"4af98ea7f8ec35d4b2f2ac7e22f2ccb4.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/mouse-pointer.svg?");
+eval("module.exports = __webpack_require__.p + \"19a54509f12a3b28cbdbcbfe8fc6846f.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/camera.svg?");
 
 /***/ }),
 
-/***/ "./src/images/report-icons/music.svg":
-/*!*******************************************!*\
-  !*** ./src/images/report-icons/music.svg ***!
-  \*******************************************/
+/***/ "./src/assets/images/report-icons/cry-fa.svg":
+/*!***************************************************!*\
+  !*** ./src/assets/images/report-icons/cry-fa.svg ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"0cc5337b595655a684bdf060e07e790a.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/music.svg?");
+eval("module.exports = __webpack_require__.p + \"bee545a8d4b2a34ab25d61d23f37fca4.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/cry-fa.svg?");
 
 /***/ }),
 
-/***/ "./src/images/report-icons/phone-call.svg":
-/*!************************************************!*\
-  !*** ./src/images/report-icons/phone-call.svg ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"b5e84d6112ed3df82e9cd769d95a22ac.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/phone-call.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/play.svg":
-/*!******************************************!*\
-  !*** ./src/images/report-icons/play.svg ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"34df31112e5959a1e5c0abf66851818d.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/play.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/search.svg":
-/*!********************************************!*\
-  !*** ./src/images/report-icons/search.svg ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"5437e5214c32dc0a8b1e3e3749edd831.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/search.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/send.svg":
-/*!******************************************!*\
-  !*** ./src/images/report-icons/send.svg ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"d9f34237336fcf5138cd42bdc0bbd10a.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/send.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/settings.svg":
-/*!**********************************************!*\
-  !*** ./src/images/report-icons/settings.svg ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"a2376801c4706998fe2373aa2dcd6770.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/settings.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/shopping-bag.svg":
-/*!**************************************************!*\
-  !*** ./src/images/report-icons/shopping-bag.svg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"dd75d8007592eb3928c3691e2d251294.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/shopping-bag.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/skip-forward.svg":
-/*!**************************************************!*\
-  !*** ./src/images/report-icons/skip-forward.svg ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"51fefddf37541d721b0f541fa7f5e3fe.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/skip-forward.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/smartphone.svg":
-/*!************************************************!*\
-  !*** ./src/images/report-icons/smartphone.svg ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"2b9903504f576446fc7c2bc64d64790f.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/smartphone.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/smile-fa.svg":
-/*!**********************************************!*\
-  !*** ./src/images/report-icons/smile-fa.svg ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"aca9471f38f6bd5c3455f179a87e00b9.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/smile-fa.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/smile.svg":
-/*!*******************************************!*\
-  !*** ./src/images/report-icons/smile.svg ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"985edeb58320676fe52b2799f2d48e4f.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/smile.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/target.svg":
-/*!********************************************!*\
-  !*** ./src/images/report-icons/target.svg ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"10c63764b97be3a2d64ce8491b9d96c1.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/target.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/thumbs-down.svg":
+/***/ "./src/assets/images/report-icons/disc.svg":
 /*!*************************************************!*\
-  !*** ./src/images/report-icons/thumbs-down.svg ***!
+  !*** ./src/assets/images/report-icons/disc.svg ***!
   \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"76c1523f30c09d63f7bd992d36e1923f.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/thumbs-down.svg?");
+eval("module.exports = __webpack_require__.p + \"ffaee5053d0d4913e3791d18c2924328.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/disc.svg?");
 
 /***/ }),
 
-/***/ "./src/images/report-icons/thumbs-up-fa.svg":
+/***/ "./src/assets/images/report-icons/file-plus_inline.svg":
+/*!*************************************************************!*\
+  !*** ./src/assets/images/report-icons/file-plus_inline.svg ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"0 0 24 24\\\" fill=\\\"none\\\" stroke=\\\"currentColor\\\" stroke-width=\\\"2\\\" stroke-linecap=\\\"round\\\" stroke-linejoin=\\\"round\\\" class=\\\"feather feather-file-plus\\\"><path d=\\\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\\\"></path><polyline points=\\\"14 2 14 8 20 8\\\"></polyline><line x1=\\\"12\\\" y1=\\\"18\\\" x2=\\\"12\\\" y2=\\\"12\\\"></line><line x1=\\\"9\\\" y1=\\\"15\\\" x2=\\\"15\\\" y2=\\\"15\\\"></line></svg>\"\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/file-plus_inline.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/file-text.svg":
+/*!******************************************************!*\
+  !*** ./src/assets/images/report-icons/file-text.svg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"09f0201e92b42591f3c447f7cd8704aa.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/file-text.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/headphones.svg":
+/*!*******************************************************!*\
+  !*** ./src/assets/images/report-icons/headphones.svg ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"e3f2c527e5ecb7c55c96a7e708e91a4d.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/headphones.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/heart-solid-fa.svg":
+/*!***********************************************************!*\
+  !*** ./src/assets/images/report-icons/heart-solid-fa.svg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"5dbbbe23e97832071f574844062f1117.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/heart-solid-fa.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/heart.svg":
 /*!**************************************************!*\
-  !*** ./src/images/report-icons/thumbs-up-fa.svg ***!
+  !*** ./src/assets/images/report-icons/heart.svg ***!
   \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"0a8686bff71bfdaf747b3944053c1087.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/thumbs-up-fa.svg?");
+eval("module.exports = __webpack_require__.p + \"502189aef3b96acbcddedbb54a043638.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/heart.svg?");
 
 /***/ }),
 
-/***/ "./src/images/report-icons/thumbs-up.svg":
-/*!***********************************************!*\
-  !*** ./src/images/report-icons/thumbs-up.svg ***!
-  \***********************************************/
+/***/ "./src/assets/images/report-icons/hexagon.svg":
+/*!****************************************************!*\
+  !*** ./src/assets/images/report-icons/hexagon.svg ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"7c39be07c180256876c1916dd658f9c1.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/thumbs-up.svg?");
+eval("module.exports = __webpack_require__.p + \"2d95a138ebf8804321d33a398dedf3a5.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/hexagon.svg?");
 
 /***/ }),
 
-/***/ "./src/images/report-icons/upload.svg":
+/***/ "./src/assets/images/report-icons/image.svg":
+/*!**************************************************!*\
+  !*** ./src/assets/images/report-icons/image.svg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"117a6d3e229a96ad0e0d0876352566e2.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/image.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/inbox.svg":
+/*!**************************************************!*\
+  !*** ./src/assets/images/report-icons/inbox.svg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"8c292cbc3a2a63d64ef7b660cc335a83.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/inbox.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/laugh-fa.svg":
+/*!*****************************************************!*\
+  !*** ./src/assets/images/report-icons/laugh-fa.svg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"1280f9bededdcf6a3fbb3f4ec621a8c6.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/laugh-fa.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/loader.svg":
+/*!***************************************************!*\
+  !*** ./src/assets/images/report-icons/loader.svg ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"d4857d8daf2d8c2823bb48cae80908e7.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/loader.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/mail.svg":
+/*!*************************************************!*\
+  !*** ./src/assets/images/report-icons/mail.svg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"20e8982ec7e03638afe27f5c3e897681.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/mail.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/map-pin.svg":
+/*!****************************************************!*\
+  !*** ./src/assets/images/report-icons/map-pin.svg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"b2f804bda31dee415fc2b1ff7ba9315f.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/map-pin.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/maximize-2.svg":
+/*!*******************************************************!*\
+  !*** ./src/assets/images/report-icons/maximize-2.svg ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"8ccdd199b5c03e5938b3690fa836f77b.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/maximize-2.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/message-circle.svg":
+/*!***********************************************************!*\
+  !*** ./src/assets/images/report-icons/message-circle.svg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"ebbe6d9aff08b5bab2e86f719d8ae329.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/message-circle.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/message-square.svg":
+/*!***********************************************************!*\
+  !*** ./src/assets/images/report-icons/message-square.svg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"42f61b6cfe834007f261ed563b6d3ad3.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/message-square.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/mouse-pointer.svg":
+/*!**********************************************************!*\
+  !*** ./src/assets/images/report-icons/mouse-pointer.svg ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"4af98ea7f8ec35d4b2f2ac7e22f2ccb4.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/mouse-pointer.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/music.svg":
+/*!**************************************************!*\
+  !*** ./src/assets/images/report-icons/music.svg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"0cc5337b595655a684bdf060e07e790a.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/music.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/phone-call.svg":
+/*!*******************************************************!*\
+  !*** ./src/assets/images/report-icons/phone-call.svg ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"b5e84d6112ed3df82e9cd769d95a22ac.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/phone-call.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/play.svg":
+/*!*************************************************!*\
+  !*** ./src/assets/images/report-icons/play.svg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"34df31112e5959a1e5c0abf66851818d.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/play.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/search.svg":
+/*!***************************************************!*\
+  !*** ./src/assets/images/report-icons/search.svg ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"5437e5214c32dc0a8b1e3e3749edd831.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/search.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/send.svg":
+/*!*************************************************!*\
+  !*** ./src/assets/images/report-icons/send.svg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"d9f34237336fcf5138cd42bdc0bbd10a.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/send.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/settings.svg":
+/*!*****************************************************!*\
+  !*** ./src/assets/images/report-icons/settings.svg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"a2376801c4706998fe2373aa2dcd6770.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/settings.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/shopping-bag.svg":
+/*!*********************************************************!*\
+  !*** ./src/assets/images/report-icons/shopping-bag.svg ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"dd75d8007592eb3928c3691e2d251294.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/shopping-bag.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/skip-forward.svg":
+/*!*********************************************************!*\
+  !*** ./src/assets/images/report-icons/skip-forward.svg ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"51fefddf37541d721b0f541fa7f5e3fe.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/skip-forward.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/smartphone.svg":
+/*!*******************************************************!*\
+  !*** ./src/assets/images/report-icons/smartphone.svg ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"2b9903504f576446fc7c2bc64d64790f.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/smartphone.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/smile-fa.svg":
+/*!*****************************************************!*\
+  !*** ./src/assets/images/report-icons/smile-fa.svg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"aca9471f38f6bd5c3455f179a87e00b9.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/smile-fa.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/smile.svg":
+/*!**************************************************!*\
+  !*** ./src/assets/images/report-icons/smile.svg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"985edeb58320676fe52b2799f2d48e4f.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/smile.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/target.svg":
+/*!***************************************************!*\
+  !*** ./src/assets/images/report-icons/target.svg ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"10c63764b97be3a2d64ce8491b9d96c1.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/target.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/thumbs-down.svg":
+/*!********************************************************!*\
+  !*** ./src/assets/images/report-icons/thumbs-down.svg ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"76c1523f30c09d63f7bd992d36e1923f.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/thumbs-down.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/thumbs-up-fa.svg":
+/*!*********************************************************!*\
+  !*** ./src/assets/images/report-icons/thumbs-up-fa.svg ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"0a8686bff71bfdaf747b3944053c1087.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/thumbs-up-fa.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/thumbs-up.svg":
+/*!******************************************************!*\
+  !*** ./src/assets/images/report-icons/thumbs-up.svg ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"7c39be07c180256876c1916dd658f9c1.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/thumbs-up.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/upload.svg":
+/*!***************************************************!*\
+  !*** ./src/assets/images/report-icons/upload.svg ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"14dd1331c8efa5f93a329e56662a60f1.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/upload.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/user.svg":
+/*!*************************************************!*\
+  !*** ./src/assets/images/report-icons/user.svg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"ed52f187b2c4aad7fd02765c9cdc2f92.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/user.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/report-icons/users.svg":
+/*!**************************************************!*\
+  !*** ./src/assets/images/report-icons/users.svg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"fcd0300a6e89e7151566af47b69128d6.svg\";\n\n//# sourceURL=webpack:///./src/assets/images/report-icons/users.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/styles/components/filePicker.scss":
+/*!******************************************************!*\
+  !*** ./src/assets/styles/components/filePicker.scss ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/assets/styles/components/filePicker.scss?");
+
+/***/ }),
+
+/***/ "./src/assets/styles/components/instructions.scss":
+/*!********************************************************!*\
+  !*** ./src/assets/styles/components/instructions.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/assets/styles/components/instructions.scss?");
+
+/***/ }),
+
+/***/ "./src/assets/styles/components/loadScreen.scss":
+/*!******************************************************!*\
+  !*** ./src/assets/styles/components/loadScreen.scss ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/assets/styles/components/loadScreen.scss?");
+
+/***/ }),
+
+/***/ "./src/assets/styles/components/reportscommon.scss":
+/*!*********************************************************!*\
+  !*** ./src/assets/styles/components/reportscommon.scss ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/assets/styles/components/reportscommon.scss?");
+
+/***/ }),
+
+/***/ "./src/assets/styles/components/toolTip.scss":
+/*!***************************************************!*\
+  !*** ./src/assets/styles/components/toolTip.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/assets/styles/components/toolTip.scss?");
+
+/***/ }),
+
+/***/ "./src/js/analysis/analyzerHelpers.js":
 /*!********************************************!*\
-  !*** ./src/images/report-icons/upload.svg ***!
+  !*** ./src/js/analysis/analyzerHelpers.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"14dd1331c8efa5f93a329e56662a60f1.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/upload.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/user.svg":
-/*!******************************************!*\
-  !*** ./src/images/report-icons/user.svg ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"ed52f187b2c4aad7fd02765c9cdc2f92.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/user.svg?");
-
-/***/ }),
-
-/***/ "./src/images/report-icons/users.svg":
-/*!*******************************************!*\
-  !*** ./src/images/report-icons/users.svg ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"fcd0300a6e89e7151566af47b69128d6.svg\";\n\n//# sourceURL=webpack:///./src/images/report-icons/users.svg?");
-
-/***/ }),
-
-/***/ "./src/js/analyzers/analyzerHelpers.js":
-/*!*********************************************!*\
-  !*** ./src/js/analyzers/analyzerHelpers.js ***!
-  \*********************************************/
 /*! exports provided: sum, getTopMessagers, getTopObjects, getTopSearches, truncateYears, getCurrentDate, getNumDays, formatDate, safeDivide, formatPercent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sum\", function() { return sum; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getTopMessagers\", function() { return getTopMessagers; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getTopObjects\", function() { return getTopObjects; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getTopSearches\", function() { return getTopSearches; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"truncateYears\", function() { return truncateYears; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getCurrentDate\", function() { return getCurrentDate; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getNumDays\", function() { return getNumDays; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"formatDate\", function() { return formatDate; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"safeDivide\", function() { return safeDivide; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"formatPercent\", function() { return formatPercent; });\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants.js */ \"./src/js/constants.js\");\n\nfunction sum(array) {\n  return array.reduce(function (acc, item) {\n    acc += item;\n    return acc;\n  }, 0);\n} // returns the names of the top n messagers\n\nfunction getTopMessagers(threads, n) {\n  var topMessagers = [];\n  Object.keys(threads).forEach(function (p) {\n    var cnt = threads[p].msgByUser + threads[p].other;\n    topMessagers.push([cnt, p]);\n  }); // sort the results\n\n  topMessagers.sort(function (a, b) {\n    return a[0] - b[0];\n  });\n  return topMessagers.slice(topMessagers.length - n).map(function (t) {\n    return t[1];\n  });\n  ;\n} // gets the top n from a javascript object\n\nfunction getTopObjects(objects, n) {\n  var topObjects = [];\n  Object.keys(objects).forEach(function (o) {\n    topObjects.push([objects[o], o]);\n  });\n  topObjects.sort(function (a, b) {\n    return a[0] - b[0];\n  });\n  return topObjects.slice(topObjects.length - n);\n}\nfunction getTopSearches(searches, n) {\n  // let topSearches = [];\n  // Object.keys(searches).forEach((s) => {\n  //   topSearches.push([searches[s], s]);\n  // });\n  // topSearches.sort( (a, b) => { return a[0] - b[0]; } );\n  // let result = topSearches.slice(topSearches.length - n);\n  var result = getTopObjects(searches, n);\n  result = result.reduce(function (acc, s) {\n    acc[s[1]] = s[0];\n    return acc;\n  }, {});\n  return result;\n} //TODO should those really be in analyzer helpers?\n// truncates a string and returns just the last two characters\n\nfunction truncateYears(years) {\n  var yearsTruncated = years.map(function (year) {\n    return year.slice(-2);\n  });\n  return yearsTruncated;\n} // gets current date\n\nfunction getCurrentDate() {\n  return new Date(Date.now());\n} // gets number of days between two dates\n\nfunction getNumDays(dateStart, dateEnd) {\n  return Math.round((dateEnd - dateStart) / _constants_js__WEBPACK_IMPORTED_MODULE_0__[\"MS_IN_DAY\"]);\n} // in:  number of seconds since beginning of time \n// out: a formated date string.\n\nfunction formatDate(date) {\n  return new Date(date).toDateString();\n} // in:  two numbers which will be divided\n// out: the result of ar1/arg2\n\nfunction safeDivide(arg1, arg2) {\n  return arg2 > 0 ? arg1 / arg2 : 0;\n} // in:  a formatted percent. eg. '3%'\n// out: a number between 0 and 1\n\nfunction formatPercent(ratio) {\n  return \"\".concat(ratio.toFixed(2) * 100, \"%\");\n}\n\n//# sourceURL=webpack:///./src/js/analyzers/analyzerHelpers.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sum\", function() { return sum; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getTopMessagers\", function() { return getTopMessagers; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getTopObjects\", function() { return getTopObjects; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getTopSearches\", function() { return getTopSearches; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"truncateYears\", function() { return truncateYears; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getCurrentDate\", function() { return getCurrentDate; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getNumDays\", function() { return getNumDays; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"formatDate\", function() { return formatDate; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"safeDivide\", function() { return safeDivide; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"formatPercent\", function() { return formatPercent; });\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants.js */ \"./src/js/constants.js\");\n\nfunction sum(array) {\n  return array.reduce(function (acc, item) {\n    acc += item;\n    return acc;\n  }, 0);\n} // returns the names of the top n messagers\n\nfunction getTopMessagers(threads, n) {\n  var topMessagers = [];\n  Object.keys(threads).forEach(function (p) {\n    var cnt = threads[p].msgByUser + threads[p].other;\n    topMessagers.push([cnt, p]);\n  }); // sort the results\n\n  topMessagers.sort(function (a, b) {\n    return a[0] - b[0];\n  });\n  return topMessagers.slice(topMessagers.length - n).map(function (t) {\n    return t[1];\n  });\n  ;\n} // gets the top n from a javascript object\n\nfunction getTopObjects(objects, n) {\n  var topObjects = [];\n  Object.keys(objects).forEach(function (o) {\n    topObjects.push([objects[o], o]);\n  });\n  topObjects.sort(function (a, b) {\n    return a[0] - b[0];\n  });\n  return topObjects.slice(topObjects.length - n);\n}\nfunction getTopSearches(searches, n) {\n  // let topSearches = [];\n  // Object.keys(searches).forEach((s) => {\n  //   topSearches.push([searches[s], s]);\n  // });\n  // topSearches.sort( (a, b) => { return a[0] - b[0]; } );\n  // let result = topSearches.slice(topSearches.length - n);\n  var result = getTopObjects(searches, n);\n  result = result.reduce(function (acc, s) {\n    acc[s[1]] = s[0];\n    return acc;\n  }, {});\n  return result;\n} //TODO should those really be in analyzer helpers?\n// truncates a string and returns just the last two characters\n\nfunction truncateYears(years) {\n  var yearsTruncated = years.map(function (year) {\n    return year.slice(-2);\n  });\n  return yearsTruncated;\n} // gets current date\n\nfunction getCurrentDate() {\n  return new Date(Date.now());\n} // gets number of days between two dates\n\nfunction getNumDays(dateStart, dateEnd) {\n  return Math.round((dateEnd - dateStart) / _constants_js__WEBPACK_IMPORTED_MODULE_0__[\"MS_IN_DAY\"]);\n} // in:  number of seconds since beginning of time \n// out: a formated date string.\n\nfunction formatDate(date) {\n  return new Date(date).toDateString();\n} // in:  two numbers which will be divided\n// out: the result of ar1/arg2\n\nfunction safeDivide(arg1, arg2) {\n  return arg2 > 0 ? arg1 / arg2 : 0;\n} // in:  a formatted percent. eg. '3%'\n// out: a number between 0 and 1\n\nfunction formatPercent(ratio) {\n  return \"\".concat(ratio.toFixed(2) * 100, \"%\");\n}\n\n//# sourceURL=webpack:///./src/js/analysis/analyzerHelpers.js?");
 
 /***/ }),
 
-/***/ "./src/js/analyzers/baseAnalyzer.js":
-/*!******************************************!*\
-  !*** ./src/js/analyzers/baseAnalyzer.js ***!
-  \******************************************/
+/***/ "./src/js/analysis/baseAnalyzer.js":
+/*!*****************************************!*\
+  !*** ./src/js/analysis/baseAnalyzer.js ***!
+  \*****************************************/
 /*! exports provided: BaseAnalyzer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"BaseAnalyzer\", function() { return BaseAnalyzer; });\n/* harmony import */ var _zip_js_modified_inflate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../zip-js-modified/inflate.js */ \"./src/js/zip-js-modified/inflate.js\");\n/* harmony import */ var _zip_js_modified_zip_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../zip-js-modified/zip.js */ \"./src/js/zip-js-modified/zip.js\");\n/* harmony import */ var _zip_js_modified_zip_fs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../zip-js-modified/zip-fs.js */ \"./src/js/zip-js-modified/zip-fs.js\");\n/* harmony import */ var _cbChain_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../cbChain.js */ \"./src/js/cbChain.js\");\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n\n\n\n\nvar BaseAnalyzer =\n/*#__PURE__*/\nfunction () {\n  function BaseAnalyzer(callback) {\n    _classCallCheck(this, BaseAnalyzer);\n\n    this.callback = null;\n    this.zip = new _zip_js_modified_zip_js__WEBPACK_IMPORTED_MODULE_1__[\"Zip\"](window);\n    this.fs = new _zip_js_modified_zip_fs_js__WEBPACK_IMPORTED_MODULE_2__[\"ZipFS\"](window.zip);\n    this.cbChain = new _cbChain_js__WEBPACK_IMPORTED_MODULE_3__[\"cbRootChain\"](callback.name, callback); // need to end up in the global object for things to work\n\n    this.inflate = new _zip_js_modified_inflate_js__WEBPACK_IMPORTED_MODULE_0__[\"InflaterJS\"](window);\n    this.fs = window.zip.fs.FS();\n  }\n\n  _createClass(BaseAnalyzer, [{\n    key: \"showLoadScreen\",\n    value: function showLoadScreen() {\n      this.cbChain.progress.show();\n    } // input\n    // accepts a js object in the form of\n    // {\n    //   path: <path to file to be analyzed in zip>,\n    //   name: <user message to be displayed>,\n    //   func: <function to be executed>\n    // }\n\n  }, {\n    key: \"analyzeFile\",\n    value: function analyzeFile(file_data) {\n      this.cbChain.setLoopCount(); // increment the callbackloop count\n\n      var internalCallback = new _cbChain_js__WEBPACK_IMPORTED_MODULE_3__[\"CbChain\"](\"\".concat(file_data.func.name), this.cbChain.call.bind(this.cbChain), 1);\n\n      try {\n        var why = document.createElement('div');\n        why.innerHTML = file_data.name;\n        this.cbChain.progress.add(why);\n        var file = this.getJSONFile(file_data.path);\n        file.getText(file_data.func.bind(this, internalCallback));\n        var why1 = document.createElement('div');\n        why1.innerHTML = 'V';\n        this.cbChain.progress.add(why1);\n      } catch (e) {\n        // TODO: error prevention bad bad\n        console.error(e);\n\n        var _why = document.createElement('div');\n\n        _why.innerHTML = 'X';\n        this.cbChain.progress.add(_why);\n        internalCallback.call();\n      }\n    }\n  }, {\n    key: \"analyzeDir\",\n    value: function analyzeDir(dirName, filePattern, analyzerFunction) {\n      var _this = this;\n\n      var directories = this.getDirChildren(dirName);\n      var numDirs = directories.length; // increments callbackloop count\n\n      this.cbChain.setLoopCount();\n      var internalCbChain = new _cbChain_js__WEBPACK_IMPORTED_MODULE_3__[\"CbChain\"]('display messages', this.cbChain.call.bind(this.cbChain), numDirs); // loop through directories\n\n      directories.map(function (dir) {\n        var file = dir.getChildByName(filePattern); // pattern was not found in the given directory\n\n        if (!file) {\n          internalCbChain.call(); // this.progress.updatePercentage(); \n\n          return;\n        }\n\n        file.getText(analyzerFunction.bind(_this, dir.name, internalCbChain));\n      });\n    } // why json in the name..?\n\n  }, {\n    key: \"getJSONFile\",\n    value: function getJSONFile(path) {\n      var pathSplit = path.split('/');\n      var curDir = this.fs.root;\n\n      for (var i = 0, len = pathSplit.length; i < len; i++) {\n        curDir = curDir.getChildByName(pathSplit[i]);\n\n        if (!curDir) {\n          throw \"Directory \".concat(pathSplit[i], \" doesn't exists in path \").concat(path);\n        }\n      }\n\n      return curDir;\n    }\n  }, {\n    key: \"getDirChildren\",\n    value: function getDirChildren(path) {\n      var pathSplit = path.split('/');\n      var curDir = this.fs.root;\n\n      for (var i = 0, len = pathSplit.length; i < len; i++) {\n        curDir = curDir.getChildByName(pathSplit[i]);\n\n        if (!curDir) {\n          throw \"Directory \".concat(pathSplit[i], \" doesn't exists in path \").concat(path);\n        }\n      }\n\n      return curDir.children;\n    } // safely gets the attribute of an object\n    // TODO: in debug mode it should report to console what wasn't found...\n\n  }, {\n    key: \"get\",\n    value: function get(path, object) {\n      return path.reduce(function (xs, x) {\n        return xs && xs[x] ? xs[x] : 'not found';\n      }, object);\n    } // returns the data object holding all facebook gathered info\n    // if the fake data flag is present the fake data is returned\n\n  }, {\n    key: \"getData\",\n    value: function getData(fakeData) {\n      return fakeData ? this.fakeData : this.data;\n    }\n  }]);\n\n  return BaseAnalyzer;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/analyzers/baseAnalyzer.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"BaseAnalyzer\", function() { return BaseAnalyzer; });\n/* harmony import */ var _zip_js_modified_inflate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../zip-js-modified/inflate.js */ \"./src/js/zip-js-modified/inflate.js\");\n/* harmony import */ var _zip_js_modified_zip_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../zip-js-modified/zip.js */ \"./src/js/zip-js-modified/zip.js\");\n/* harmony import */ var _zip_js_modified_zip_fs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../zip-js-modified/zip-fs.js */ \"./src/js/zip-js-modified/zip-fs.js\");\n/* harmony import */ var _cbChain_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cbChain.js */ \"./src/js/analysis/cbChain.js\");\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n\n\n\n\nvar BaseAnalyzer =\n/*#__PURE__*/\nfunction () {\n  function BaseAnalyzer(callback) {\n    _classCallCheck(this, BaseAnalyzer);\n\n    this.callback = null;\n    this.zip = new _zip_js_modified_zip_js__WEBPACK_IMPORTED_MODULE_1__[\"Zip\"](window);\n    this.fs = new _zip_js_modified_zip_fs_js__WEBPACK_IMPORTED_MODULE_2__[\"ZipFS\"](window.zip);\n    this.cbChain = new _cbChain_js__WEBPACK_IMPORTED_MODULE_3__[\"cbRootChain\"](callback.name, callback); // need to end up in the global object for things to work\n\n    this.inflate = new _zip_js_modified_inflate_js__WEBPACK_IMPORTED_MODULE_0__[\"InflaterJS\"](window);\n    this.fs = window.zip.fs.FS();\n  }\n\n  _createClass(BaseAnalyzer, [{\n    key: \"showLoadScreen\",\n    value: function showLoadScreen() {\n      this.cbChain.progress.show();\n    } // input\n    // accepts a js object in the form of\n    // {\n    //   path: <path to file to be analyzed in zip>,\n    //   name: <user message to be displayed>,\n    //   func: <function to be executed>\n    // }\n\n  }, {\n    key: \"analyzeFile\",\n    value: function analyzeFile(file_data) {\n      this.cbChain.setLoopCount(); // increment the callbackloop count\n\n      var internalCallback = new _cbChain_js__WEBPACK_IMPORTED_MODULE_3__[\"CbChain\"](\"\".concat(file_data.func.name), this.cbChain.call.bind(this.cbChain), 1); // TODO: fix up the mess below\n\n      try {\n        // add process name\n        this.cbChain.progress.addFilename(file_data.name);\n        var file = this.getJSONFile(file_data.path);\n        file.getText(file_data.func.bind(this, internalCallback)); // process was successfuly started\n\n        this.cbChain.progress.addFilenameStatus(true);\n      } catch (e) {\n        // TODO: error prevention bad bad\n        console.error(e);\n        this.cbChain.progress.addFilenameStatus(false);\n        internalCallback.call();\n      }\n    }\n  }, {\n    key: \"analyzeDir\",\n    value: function analyzeDir(dirName, filePattern, analyzerFunction) {\n      var _this = this;\n\n      var directories = this.getDirChildren(dirName);\n      var numDirs = directories.length; // increments callbackloop count\n\n      this.cbChain.setLoopCount();\n      var internalCbChain = new _cbChain_js__WEBPACK_IMPORTED_MODULE_3__[\"CbChain\"]('display messages', this.cbChain.call.bind(this.cbChain), numDirs); // loop through directories\n\n      directories.map(function (dir) {\n        var file = dir.getChildByName(filePattern); // pattern was not found in the given directory\n\n        if (!file) {\n          internalCbChain.call();\n          return;\n        }\n\n        file.getText(analyzerFunction.bind(_this, dir.name, internalCbChain));\n      });\n    } // TODO:\n    // why json in the name..?\n\n  }, {\n    key: \"getJSONFile\",\n    value: function getJSONFile(path) {\n      var pathSplit = path.split('/');\n      var curDir = this.fs.root;\n\n      for (var i = 0, len = pathSplit.length; i < len; i++) {\n        curDir = curDir.getChildByName(pathSplit[i]);\n\n        if (!curDir) {\n          throw \"Directory \".concat(pathSplit[i], \" doesn't exists in path \").concat(path);\n        }\n      }\n\n      return curDir;\n    }\n  }, {\n    key: \"getDirChildren\",\n    value: function getDirChildren(path) {\n      var pathSplit = path.split('/');\n      var curDir = this.fs.root;\n\n      for (var i = 0, len = pathSplit.length; i < len; i++) {\n        curDir = curDir.getChildByName(pathSplit[i]);\n\n        if (!curDir) {\n          throw \"Directory \".concat(pathSplit[i], \" doesn't exists in path \").concat(path);\n        }\n      }\n\n      return curDir.children;\n    } // safely gets the attribute of an object\n    // TODO: in debug mode it should report to console what wasn't found...\n\n  }, {\n    key: \"get\",\n    value: function get(path, object) {\n      return path.reduce(function (xs, x) {\n        return xs && xs[x] ? xs[x] : 'not found';\n      }, object);\n    } // returns the data object holding all facebook gathered info\n    // if the fake data flag is present the fake data is returned\n\n  }, {\n    key: \"getData\",\n    value: function getData(fakeData) {\n      return fakeData ? this.fakeData : this.data;\n    }\n  }]);\n\n  return BaseAnalyzer;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/analysis/baseAnalyzer.js?");
 
 /***/ }),
 
-/***/ "./src/js/analyzers/fbAnalyzer.js":
-/*!****************************************!*\
-  !*** ./src/js/analyzers/fbAnalyzer.js ***!
-  \****************************************/
-/*! exports provided: FBAnalyzer */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"FBAnalyzer\", function() { return FBAnalyzer; });\n/* harmony import */ var _baseAnalyzer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./baseAnalyzer.js */ \"./src/js/analyzers/baseAnalyzer.js\");\nfunction _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\n\n\nvar FBAnalyzer =\n/*#__PURE__*/\nfunction (_BaseAnalyzer) {\n  _inherits(FBAnalyzer, _BaseAnalyzer);\n\n  function FBAnalyzer(callback) {\n    var _this;\n\n    _classCallCheck(this, FBAnalyzer);\n\n    _this = _possibleConstructorReturn(this, _getPrototypeOf(FBAnalyzer).call(this, callback));\n    _this.username = 'unknown';\n    _this.fakeData = __webpack_require__(/*! ../../assets/fake_data/fb_precompiled.json */ \"./src/assets/fake_data/fb_precompiled.json\");\n    _this.data = {\n      'name': null,\n      'joined': null,\n      'brithday': null,\n      'relationship_count': null,\n      'relationship_status': null,\n      'last_profile_update': null,\n      'number_profile_updates': null,\n      'friend_peer_group': null,\n      'adStats': {\n        'topics': [],\n        'interactions': []\n      },\n      'reactionStats': {\n        'reactions': {\n          'HAHA': 0,\n          'WOW': 0,\n          'LIKE': 0,\n          'SORRY': 0,\n          'ANGER': 0,\n          'LOVE': 0\n        },\n        'timeStats': {\n          'yearly': {},\n          'hourly': Array(24).fill(0)\n        }\n      },\n      'postStats': {\n        'num_posts_sent': 0,\n        'num_posts_received': 0,\n        'timeStats': {\n          'hourly': {\n            'sent': Array(24).fill(0),\n            'received': Array(24).fill(0)\n          },\n          'weekly': {\n            'sent': Array(7).fill(0),\n            'received': Array(7).fill(0)\n          },\n          'monthly': {\n            'sent': Array(12).fill(0),\n            'received': Array(12).fill(0)\n          },\n          'yearly': {}\n        }\n      },\n      'searchStats': {\n        'num_searches': null,\n        'searches': {},\n        'timeStats': {\n          'yearly': {},\n          'hourly': Array(24).fill(0)\n        }\n      },\n      'msgStats': {\n        'name': null,\n        'groupChatThreads': [],\n        'regThreads': {},\n        'numPictures': {\n          'gifs': 0,\n          'other': 0\n        },\n        'days_msged': {\n          \"sent\": 0,\n          \"received\": 0\n        },\n        'total_words': {\n          'sent': 0,\n          'received': 0\n        },\n        'callStats': {\n          'num_calls': {\n            'initiated': 0,\n            'received': 0\n          },\n          'total_duration': 0\n        },\n        'timeStats': {\n          'hourly': {\n            'sent': Array(24).fill(0),\n            'received': Array(24).fill(0)\n          },\n          'weekly': {\n            'sent': Array(7).fill(0),\n            'received': Array(7).fill(0)\n          },\n          'monthly': {\n            'sent': Array(12).fill(0),\n            'received': Array(12).fill(0)\n          },\n          'yearly': {}\n        }\n      }\n    };\n    return _this;\n  }\n\n  _createClass(FBAnalyzer, [{\n    key: \"init\",\n    value: function init(file) {\n      var _this2 = this;\n\n      this.showLoadScreen();\n      this.fs.importBlob(file, function () {\n        var fns = [{\n          path: 'profile_information/profile_information.json',\n          name: 'fetching profile information',\n          func: _this2.getBaseData\n        }, {\n          path: 'about_you/friend_peer_group.json',\n          name: 'fetching who your friends are',\n          func: _this2.getFriendPeerGroup\n        }, {\n          path: 'about_you/face_recognition.json',\n          name: 'fetching face data',\n          func: _this2.getFaceRecognitionData\n        }, {\n          path: 'profile_information/profile_update_history.json',\n          name: 'fetching profile updates data',\n          func: _this2.getProfileUpdateData\n        }, {\n          path: 'posts/your_posts_1.json',\n          name: 'fetching outgoing post data',\n          func: _this2.getPostDataSent\n        }, {\n          path: 'posts/other_people\\'s_posts_to_your_timeline.json',\n          name: 'fetching incoming post data',\n          func: _this2.getPostDataReceived\n        }, {\n          path: 'likes_and_reactions/posts_and_comments.json',\n          name: 'fetching reaction data',\n          func: _this2.getReactionData\n        }, {\n          path: 'search_history/your_search_history.json',\n          name: 'fetching search data',\n          func: _this2.getSearchData\n        }, {\n          path: 'ads/ads_interests.json',\n          name: 'fetching ad data',\n          func: _this2.getAdData\n        }, {\n          path: 'ads/advertisers_you\\'ve_interacted_with.json',\n          name: 'fetching interaction data',\n          func: _this2.getAdInteractionData\n        }]; // execute functions\n\n        for (var i = 0; i < fns.length; i++) {\n          _this2.analyzeFile(fns[i]);\n        } // analyze each message thread\n\n\n        _this2.analyzeDir.call(_this2, 'messages/inbox', 'message_1.json', _this2.analyzeMessageThread);\n\n        _this2.cbChain.initialized();\n      });\n    }\n  }, {\n    key: \"getAdInteractionData\",\n    value: function getAdInteractionData(cbChain, adInteractionInfo) {\n      var _this3 = this;\n\n      var adInteractionInfoJSON = JSON.parse(adInteractionInfo);\n      var interactions = {}; // extract data\n\n      var ad_history = this.get(['history'], adInteractionInfoJSON);\n\n      if (ad_history != 'not found') {\n        ad_history.reduce(function (acc, interaction) {\n          var action = _this3.get(['action'], interaction);\n\n          var title = _this3.get(['title'], interaction);\n\n          var timestamp = _this3.get(['timestamp'], interaction);\n\n          if (timestamp == 'not found' || action == 'not found' || title == 'not found') return acc;\n          var date = new Date(timestamp * 1000);\n\n          if (acc[action]) {\n            acc[action].push({\n              'Ad': title,\n              'Interaction Date': date.toDateString()\n            });\n          } else {\n            acc[action] = [];\n          }\n\n          return acc;\n        }, interactions);\n      }\n\n      this.data.adStats.interactions = interactions;\n      cbChain.call();\n    }\n  }, {\n    key: \"getAdData\",\n    value: function getAdData(cbChain, adInfo) {\n      var adInfoJSON = JSON.parse(adInfo); // extract data\n\n      var ad_interests = this.get(['topics'], adInfoJSON);\n\n      if (ad_interests != 'not found') {\n        this.data.adStats.topics = ad_interests;\n      }\n\n      cbChain.call();\n    }\n  }, {\n    key: \"getPostDataSent\",\n    value: function getPostDataSent(cbChain, postInfo) {\n      var _this4 = this;\n\n      var postInfoJSON = JSON.parse(postInfo); // extract data\n\n      postInfoJSON.reduce(function (acc, post) {\n        var post_date = _this4.get(['timestamp'], post); // no post_date found :(\n\n\n        if (post_date == 'not found') {\n          return acc;\n        } // count number of posts received\n\n\n        _this4.data.postStats.num_posts_sent++;\n        var d = new Date(post_date * 1000);\n        var y = d.getFullYear(); // message years\n\n        acc.timeStats.hourly.sent[d.getHours()]++;\n        acc.timeStats.weekly.sent[d.getDay()]++;\n        acc.timeStats.monthly.sent[d.getMonth()]++;\n\n        if (acc.timeStats.yearly[y]) {\n          acc.timeStats.yearly[y].sent++;\n        } else {\n          acc.timeStats.yearly[y] = {\n            'sent': 1,\n            'received': 0\n          };\n        }\n\n        return acc;\n      }, this.data.postStats);\n      cbChain.call();\n    }\n  }, {\n    key: \"getPostDataReceived\",\n    value: function getPostDataReceived(cbChain, postInfo) {\n      var _this5 = this;\n\n      var postInfoJSON = JSON.parse(postInfo); // extract data\n\n      var received_posts = this.get(['wall_posts_sent_to_you', 'activity_log_data'], postInfoJSON);\n\n      if (received_posts != 'not found') {\n        received_posts.reduce(function (acc, post) {\n          var post_date = _this5.get(['timestamp'], post); // no post_date found :(\n\n\n          if (post_date == 'not found') {\n            return acc;\n          } // count number of posts received\n\n\n          _this5.data.postStats.num_posts_received++;\n          var d = new Date(post_date * 1000);\n          var y = d.getFullYear(); // message years\n\n          acc.timeStats.hourly.received[d.getHours()]++;\n          acc.timeStats.weekly.received[d.getDay()]++;\n          acc.timeStats.monthly.received[d.getMonth()]++;\n\n          if (acc.timeStats.yearly[y]) {\n            acc.timeStats.yearly[y].received++;\n          } else {\n            acc.timeStats.yearly[y] = {\n              'sent': 0,\n              'received': 1\n            };\n          }\n\n          return acc;\n        }, this.data.postStats);\n      }\n\n      cbChain.call();\n    }\n  }, {\n    key: \"getProfileUpdateData\",\n    value: function getProfileUpdateData(cbChain, profileUpdateInfo) {\n      var profileUpdateJSON = JSON.parse(profileUpdateInfo); // extract data\n\n      var profile_updates = this.get(['profile_updates'], profileUpdateJSON);\n\n      if (profile_updates != 'not found' && profile_updates.length > 0) {\n        this.data.last_profile_update = profile_updates[0].timestamp * 1000;\n        this.data.number_profile_updates = profile_updates.length;\n      } else {\n        this.data.last_profile_update = 'not found';\n        this.data.number_profile_updates = 'not found';\n      }\n\n      cbChain.call();\n    }\n  }, {\n    key: \"getFriendPeerGroup\",\n    value: function getFriendPeerGroup(cbChain, friendPeerInfo) {\n      var friendPeerInfoJSON = JSON.parse(friendPeerInfo); // extract data\n\n      var friend_peer_group = this.get(['friend_peer_group'], friendPeerInfoJSON);\n      this.data.friend_peer_group = friend_peer_group;\n      cbChain.call();\n    }\n  }, {\n    key: \"getFaceRecognitionData\",\n    value: function getFaceRecognitionData(cbChain, faceRecInfo) {\n      var faceRecInfoJSON = JSON.parse(faceRecInfo); // extract data\n\n      var facial_data = this.get(['facial_data'], faceRecInfoJSON);\n      this.data.face_example_count = this.get(['example_count'], facial_data);\n      this.data.my_face = this.get(['raw_data'], facial_data);\n      cbChain.call();\n    }\n  }, {\n    key: \"getSearchData\",\n    value: function getSearchData(cbChain, searchInfo) {\n      var searchInfoJSON = JSON.parse(searchInfo); // extract data\n\n      var searches = this.get(['searches'], searchInfoJSON);\n      this.data.searchStats.num_searches = searches.length;\n\n      if (searches != 'not found') {\n        searches.reduce(function (acc, search) {\n          // skip empty searches\n          if (!search.data || !search.data[0]) {\n            return acc;\n          } // gets all of the searches you made with a count next to them\n\n\n          var search_text = this.get(['text'], search.data[0]);\n          var search_key = search_text.toLowerCase();\n          if (search_key == 'not found') return acc;\n\n          if (acc.searches[search_key]) {\n            acc.searches[search_key] += 1;\n          } else {\n            acc.searches[search_key] = 1;\n          } // gets time statistics\n\n\n          var timestamp = this.get(['timestamp'], search);\n          if (timestamp == 'not found') return acc;\n          var d = new Date(search.timestamp * 1000);\n          var y = d.getFullYear(); // hourly stats\n\n          acc.timeStats.hourly[d.getHours()]++; // yearly stats\n\n          if (acc.timeStats.yearly[y]) {\n            acc.timeStats.yearly[y] += 1;\n          } else {\n            acc.timeStats.yearly[y] = 1;\n          }\n\n          return acc;\n        }.bind(this), this.data.searchStats);\n      }\n\n      cbChain.call();\n    }\n  }, {\n    key: \"getReactionData\",\n    value: function getReactionData(cbChain, reactionInfo) {\n      var reactionInfoJSON = JSON.parse(reactionInfo); // extract data\n\n      var reactions = this.get(['reactions'], reactionInfoJSON);\n      this.data.reactionStats.num_reactions = this.get(['length'], reactions);\n\n      if (reactions != 'not found') {\n        reactions.reduce(function (acc, reaction) {\n          // skip empty reactions\n          if (!reaction.data || !reaction.data[0]) {\n            return acc;\n          } // gets all of the count for every type of reaction the user made\n\n\n          var reaction_key = this.get(['reaction', 'reaction'], reaction.data[0]);\n          if (reaction_key == 'not found') return acc;\n\n          if (acc.reactions[reaction_key]) {\n            acc.reactions[reaction_key] += 1;\n          } else {\n            acc.reactions[reaction_key] = 1;\n          } // gets time statistics\n\n\n          var timestamp = this.get(['timestamp'], reaction);\n          if (timestamp == 'not found') return acc;\n          var d = new Date(timestamp * 1000);\n          var y = d.getFullYear(); // hourly stats\n\n          acc.timeStats.hourly[d.getHours()]++; // yearly stats\n\n          if (acc.timeStats.yearly[y]) {\n            acc.timeStats.yearly[y] += 1;\n          } else {\n            acc.timeStats.yearly[y] = 1;\n          }\n\n          return acc;\n        }.bind(this), this.data.reactionStats);\n      }\n\n      cbChain.call();\n    }\n  }, {\n    key: \"getBaseData\",\n    value: function getBaseData(cbChain, profInfo) {\n      var profInfoJSON = JSON.parse(profInfo); // extracting data\n\n      this.username = this.get(['profile', 'name', 'full_name'], profInfoJSON);\n      this.data.name = this.username;\n      this.data.msgStats.name = this.username;\n      var joined_date = this.get(['profile', 'registration_timestamp'], profInfoJSON);\n      this.data.joined = joined_date * 1000;\n      var birthday = this.get(['profile', 'birthday'], profInfoJSON);\n\n      if (birthday != 'not found' && birthday.year && birthday.month && birthday.day) {\n        this.data.birthday = new Date(birthday.year, birthday.month - 1, // months start at 0\n        birthday.day);\n      } else {\n        this.data.brithday = 'not found';\n      }\n\n      var previous_relationships = this.get(['profile', 'previous_relationships'], profInfoJSON);\n      var relationship_status = this.get(['profile', 'relationship', 'status'], profInfoJSON);\n      this.data.relationship_count = previous_relationships.length;\n      this.data.relationship_status = relationship_status;\n      cbChain.call();\n    }\n  }, {\n    key: \"analyzeMessageThread\",\n    value: function analyzeMessageThread(threadName, callback, msg) {\n      var msgData = this.data.msgStats;\n      var msgJSON = JSON.parse(msg);\n      var participants = msgJSON.participants; // all participants in the current chat thread\n\n      var group = true; // remains true if the chat is a groupchat\n\n      var messager = participants[0].name;\n\n      if (participants && participants.length > 2) {\n        msgData.groupChatThreads.push(threadName);\n      } else if (participants) {\n        var participantStat = {\n          'messager': messager,\n          'msgByUser': 0,\n          'other': 0\n        }; // people can have the same name? so you cant just use the name...\n        // use the dirname for the keys\n\n        msgData.regThreads[threadName] = participantStat;\n        group = false;\n      }\n\n      if (msgJSON.messages && msgJSON.messages.length > 1) {\n        // let curDay = null;\n        // pull this function out and make sure you can reuse it in individual thread analysis\n        msgJSON.messages.reduce(function (acc, msg) {\n          // skip message counting for group chats\n          if (group) return acc; // initalize the day (0-6) that a message was sent\n          // if (!curDay) {\n          //   const firstDate = new Date(msg.timestamp_ms);\n          //   curDay = firstDate.getDay();\n          // }\n\n          if (msg.sender_name == this.username && msg.content) {\n            // count sent messages\n            acc.regThreads[threadName].msgByUser++; // get time statistics\n\n            var d = new Date(msg.timestamp_ms);\n            var y = d.getFullYear(); // message years\n\n            acc.timeStats.hourly.sent[d.getHours()]++;\n            acc.timeStats.weekly.sent[d.getDay()]++;\n            acc.timeStats.monthly.sent[d.getMonth()]++;\n\n            if (acc.timeStats.yearly[y]) {\n              acc.timeStats.yearly[y].sent++;\n            } else {\n              acc.timeStats.yearly[y] = {\n                'sent': 1,\n                'received': 0\n              };\n            } // get msg statistics\n\n\n            if (msg.content && msg.type != 'Call') {\n              acc.total_words.sent += msg.content.split(' ').length; // gets number of days that messages happened\n              // TODO: very broken would double count days as it is...\n              // TODO: counts wrong since people can message a week apart from each other, you need to compare years and months too...\n              // if (d.getDay() != curDay) {\n              //   acc.days_msged.sent += 1;\n              //   curDay = d.getDay();\n              // }\n            } // get call statistics\n            else if (msg.type == 'Call' && msg.call_duration > 0 && msg.call_duration < 18000) {\n                acc.callStats.num_calls.initiated += 1;\n                acc.callStats.total_duration += msg.call_duration;\n              }\n          } else if (msg.sender_name == messager && msg.content) {\n            // count received messages\n            acc.regThreads[threadName].other++;\n\n            var _d = new Date(msg.timestamp_ms);\n\n            var _y = _d.getFullYear(); // message years\n\n\n            acc.timeStats.hourly.received[_d.getHours()]++;\n            acc.timeStats.weekly.received[_d.getDay()]++;\n            acc.timeStats.monthly.received[_d.getMonth()]++;\n\n            if (acc.timeStats.yearly[_y]) {\n              acc.timeStats.yearly[_y].received++;\n            } else {\n              acc.timeStats.yearly[_y] = {\n                'sent': 0,\n                'received': 1\n              };\n            } // get msg statistics\n\n\n            if (msg.content && msg.type != 'Call') {\n              acc.total_words.received += msg.content.split(' ').length; // gets number of days that messages happened\n              // if (d.getDay() != curDay) {\n              //   acc.days_msged.received += 1;\n              //   curDay = d.getDay();\n              // }\n            } // get call statistics\n            // NOTE: skipping calls longer than 5h cause Facebook data has some problems\n            else if (msg.type == 'Call' && msg.call_duration > 0 && msg.call_duration < 18000) {\n                acc.callStats.num_calls.received += 1;\n                acc.callStats.total_duration += msg.call_duration;\n              }\n          }\n\n          return acc;\n        }.bind(this), msgData);\n      }\n\n      callback.call();\n\n      if (callback.cbChainCount == 0) {\n        callback.call();\n      }\n    }\n  }]);\n\n  return FBAnalyzer;\n}(_baseAnalyzer_js__WEBPACK_IMPORTED_MODULE_0__[\"BaseAnalyzer\"]);\n\n\n\n//# sourceURL=webpack:///./src/js/analyzers/fbAnalyzer.js?");
-
-/***/ }),
-
-/***/ "./src/js/cbChain.js":
-/*!***************************!*\
-  !*** ./src/js/cbChain.js ***!
-  \***************************/
+/***/ "./src/js/analysis/cbChain.js":
+/*!************************************!*\
+  !*** ./src/js/analysis/cbChain.js ***!
+  \************************************/
 /*! exports provided: CbChain, cbRootChain */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"CbChain\", function() { return CbChain; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"cbRootChain\", function() { return cbRootChain; });\n/* harmony import */ var _components_loadBar_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/loadBar.js */ \"./src/js/components/loadBar.js\");\nfunction _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\nvar CbChain =\n/*#__PURE__*/\nfunction () {\n  function CbChain(name, finalCallback, numCallbacks) {\n    _classCallCheck(this, CbChain);\n\n    this.name = name;\n    this.populated = false;\n    this.cbChainCount = 0;\n\n    if (numCallbacks) {\n      this.cbChainCount = numCallbacks;\n      this.populated = true;\n    }\n\n    this.callback = finalCallback; // DEBUG\n    // console.log(`Init ${this.name}: \n    //    callback cnt: ${this.cbChainCount},\n    //    callback fn: ${this.callback.toString()}\n    // `);\n  }\n\n  _createClass(CbChain, [{\n    key: \"setLoopCount\",\n    value: function setLoopCount() {\n      var n = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;\n\n      if (n > 1) {\n        this.cbChainCount = n;\n      } else {\n        this.cbChainCount += 1;\n      } // DEBUG\n      // console.log(`${this.name}: callback cnt is now ${this.cbChainCount}`);\n\n    }\n  }, {\n    key: \"call\",\n    value: function call() {\n      this.cbChainCount -= 1; // DEBUG\n      // console.log(`${this.name} chain status: C:${this.cbChainCount} | I:${this.populated}`);\n\n      if (this.cbChainCount == 0 && this.populated) {\n        // DEBUG\n        // console.log(`${this.name} callback chain exited`);\n        this.callback();\n      }\n    }\n  }, {\n    key: \"initialized\",\n    value: function initialized() {\n      this.populated = true;\n      console.log(\"\".concat(this.name, \" was initialized\"));\n    }\n  }]);\n\n  return CbChain;\n}(); // callback root chain\n// this is primarily used to update the progress bar\n\nvar cbRootChain =\n/*#__PURE__*/\nfunction (_CbChain) {\n  _inherits(cbRootChain, _CbChain);\n\n  function cbRootChain(name, finalCallback, numCallbacks) {\n    var _this;\n\n    _classCallCheck(this, cbRootChain);\n\n    _this = _possibleConstructorReturn(this, _getPrototypeOf(cbRootChain).call(this, name, finalCallback, numCallbacks));\n    _this.progress = new _components_loadBar_js__WEBPACK_IMPORTED_MODULE_0__[\"LoadBar\"]();\n    return _this;\n  }\n\n  _createClass(cbRootChain, [{\n    key: \"call\",\n    value: function call() {\n      this.cbChainCount -= 1;\n      this.progress.updatePercentage(); // DEBUG\n      // console.log(`${this.name} chain status: C:${this.cbChainCount} | I:${this.populated}`);\n\n      if (this.cbChainCount == 0 && this.populated) {\n        // DEBUG\n        // console.log(`Main callback chain exited`);\n        this.callback();\n        this.progress.hide();\n      }\n    }\n  }, {\n    key: \"initialized\",\n    value: function initialized() {\n      this.progress.setMax(this.cbChainCount);\n      this.populated = true; // DEBUG\n      // console.log(\"Main CallBack Chain initialized.\");\n    }\n  }]);\n\n  return cbRootChain;\n}(CbChain);\n\n//# sourceURL=webpack:///./src/js/cbChain.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"CbChain\", function() { return CbChain; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"cbRootChain\", function() { return cbRootChain; });\n/* harmony import */ var _components_loadScreen_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/loadScreen.js */ \"./src/js/components/loadScreen.js\");\nfunction _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\nvar CbChain =\n/*#__PURE__*/\nfunction () {\n  function CbChain(name, finalCallback, numCallbacks) {\n    _classCallCheck(this, CbChain);\n\n    this.name = name;\n    this.populated = false;\n    this.cbChainCount = 0;\n\n    if (numCallbacks) {\n      this.cbChainCount = numCallbacks;\n      this.populated = true;\n    }\n\n    this.callback = finalCallback; // DEBUG\n    // console.log(`Init ${this.name}: \n    //    callback cnt: ${this.cbChainCount},\n    //    callback fn: ${this.callback.toString()}\n    // `);\n  }\n\n  _createClass(CbChain, [{\n    key: \"setLoopCount\",\n    value: function setLoopCount() {\n      var n = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;\n\n      if (n > 1) {\n        this.cbChainCount = n;\n      } else {\n        this.cbChainCount += 1;\n      } // DEBUG\n      // console.log(`${this.name}: callback cnt is now ${this.cbChainCount}`);\n\n    }\n  }, {\n    key: \"call\",\n    value: function call() {\n      this.cbChainCount -= 1; // DEBUG\n      // console.log(`${this.name} chain status: C:${this.cbChainCount} | I:${this.populated}`);\n\n      if (this.cbChainCount == 0 && this.populated) {\n        // DEBUG\n        // console.log(`${this.name} callback chain exited`);\n        this.callback();\n      }\n    }\n  }, {\n    key: \"initialized\",\n    value: function initialized() {\n      this.populated = true; // DEBUG\n      // console.log(`${this.name} was initialized`);\n    }\n  }]);\n\n  return CbChain;\n}(); // callback root chain\n// this is primarily used to update the progress bar\n\nvar cbRootChain =\n/*#__PURE__*/\nfunction (_CbChain) {\n  _inherits(cbRootChain, _CbChain);\n\n  function cbRootChain(name, finalCallback, numCallbacks) {\n    var _this;\n\n    _classCallCheck(this, cbRootChain);\n\n    _this = _possibleConstructorReturn(this, _getPrototypeOf(cbRootChain).call(this, name, finalCallback, numCallbacks));\n    _this.progress = new _components_loadScreen_js__WEBPACK_IMPORTED_MODULE_0__[\"LoadScreen\"]();\n    return _this;\n  }\n\n  _createClass(cbRootChain, [{\n    key: \"call\",\n    value: function call() {\n      this.cbChainCount -= 1;\n      this.progress.updateProgress(); // DEBUG\n      // console.log(`${this.name} chain status: C:${this.cbChainCount} | I:${this.populated}`);\n\n      if (this.cbChainCount == 0 && this.populated) {\n        // DEBUG\n        // console.log(`Main callback chain exited`);\n        this.callback();\n        this.progress.hide();\n      }\n    }\n  }, {\n    key: \"initialized\",\n    value: function initialized() {\n      this.progress.setMax(this.cbChainCount);\n      this.progress.setStatus('analyse');\n      this.populated = true; // DEBUG\n      // console.log(\"Main CallBack Chain initialized.\");\n    }\n  }]);\n\n  return cbRootChain;\n}(CbChain);\n\n//# sourceURL=webpack:///./src/js/analysis/cbChain.js?");
 
 /***/ }),
 
@@ -729,19 +783,19 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"FilePicker\", function() { return FilePicker; });\n/* harmony import */ var _styles_components_filePicker_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/components/filePicker.scss */ \"./src/styles/components/filePicker.scss\");\n/* harmony import */ var _styles_components_filePicker_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_components_filePicker_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _images_report_icons_file_plus_inline_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../images/report-icons/file-plus_inline.svg */ \"./src/images/report-icons/file-plus_inline.svg\");\n/* harmony import */ var _images_report_icons_file_plus_inline_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_images_report_icons_file_plus_inline_svg__WEBPACK_IMPORTED_MODULE_1__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n// TODO: needs to change style once zipfile is uploaded.\n// Style imports:\n // Icon imports TODO: DOES THIS DOUBLE IMPORT?\n\n\nvar FilePicker =\n/*#__PURE__*/\nfunction () {\n  function FilePicker(parent) {\n    _classCallCheck(this, FilePicker);\n\n    this.self = document.createElement('div');\n    this.self.classList.add('filepicker-wrapper');\n    this.self.innerHTML = \"          <label for='file-upload' id='visual' class='file-upload-field'>              <div id='report-upload-icon'></div>              <p class='fp-text fp-strong'>Select Files</p>              <p class='fp-text'>or Drag and Drop</p>          </label>          <input id='file-upload' type='file'/>          \"; // get icon from the above html\n\n    this.selfVisual = this.self.children[0];\n    var iconContainer = this.selfVisual.children[0];\n    iconContainer.innerHTML = _images_report_icons_file_plus_inline_svg__WEBPACK_IMPORTED_MODULE_1___default.a;\n    parent.appendChild(this.self); // eventlisteners for styling\n\n    this.selfVisual.addEventListener('mouseenter', this.fileDragHover, false);\n    this.selfVisual.addEventListener('mouseleave', this.fileDragHover, false);\n    this.selfVisual.addEventListener('dragover', this.fileDragHover, false);\n    this.selfVisual.addEventListener('dragleave', this.fileDragHover, false);\n  }\n\n  _createClass(FilePicker, [{\n    key: \"onUpload\",\n    value: function onUpload(callback) {\n      // to attach an action \n      this.input = this.self.children[1];\n      var fileSelectHandler = this.getFileSafe.bind(this, callback);\n      this.input.addEventListener('change', fileSelectHandler, false);\n      this.selfVisual.addEventListener('drop', fileSelectHandler, false);\n    } //TODO: maybe a helper if used elsewhere\n    // callback and event\n\n  }, {\n    key: \"getFileSafe\",\n    value: function getFileSafe(callback, e) {\n      e.stopPropagation();\n      e.preventDefault();\n      var files = e.target.files || e.dataTransfer.files; // file isn't a zip file.\n      // TODO should also check for file size\n      // once the limitations of the script are more clear\n\n      if (files.length == 1 && files[0].name.endsWith('.zip')) {\n        callback(files[0]);\n      } else {\n        alert('Please upload a zip file');\n      }\n    } // changes style on drag events in the file picker\n\n  }, {\n    key: \"fileDragHover\",\n    value: function fileDragHover(e) {\n      e.stopPropagation();\n      e.preventDefault();\n\n      if (e.target.id == 'visual') {\n        if (e.type == 'dragover' || e.type == 'mouseenter') {\n          e.target.classList.add('file-upload-field-hover');\n        } else {\n          e.target.classList.remove('file-upload-field-hover');\n        }\n      }\n    }\n  }]);\n\n  return FilePicker;\n}();\n\n//# sourceURL=webpack:///./src/js/components/filePicker.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"FilePicker\", function() { return FilePicker; });\n/* harmony import */ var _assets_styles_components_filePicker_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../assets/styles/components/filePicker.scss */ \"./src/assets/styles/components/filePicker.scss\");\n/* harmony import */ var _assets_styles_components_filePicker_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_assets_styles_components_filePicker_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_images_report_icons_file_plus_inline_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/images/report-icons/file-plus_inline.svg */ \"./src/assets/images/report-icons/file-plus_inline.svg\");\n/* harmony import */ var _assets_images_report_icons_file_plus_inline_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_images_report_icons_file_plus_inline_svg__WEBPACK_IMPORTED_MODULE_1__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n// TODO: needs to change style once zipfile is uploaded.\n// Style imports:\n // Icon imports TODO: DOES THIS DOUBLE IMPORT?\n\n\nvar FilePicker =\n/*#__PURE__*/\nfunction () {\n  function FilePicker(parent) {\n    _classCallCheck(this, FilePicker);\n\n    this.self = document.createElement('div');\n    this.self.classList.add('filepicker-wrapper');\n    this.self.innerHTML = \"          <label for='file-upload' id='visual' class='file-upload-field'>              <div id='report-upload-icon'></div>              <p class='fp-text fp-strong'>Select Files</p>              <p class='fp-text'>or Drag and Drop</p>          </label>          <input id='file-upload' type='file'/>          \"; // get icon from the above html\n\n    this.selfVisual = this.self.children[0];\n    var iconContainer = this.selfVisual.children[0];\n    iconContainer.innerHTML = _assets_images_report_icons_file_plus_inline_svg__WEBPACK_IMPORTED_MODULE_1___default.a;\n    parent.appendChild(this.self); // eventlisteners for styling\n\n    this.selfVisual.addEventListener('mouseenter', this.fileDragHover, false);\n    this.selfVisual.addEventListener('mouseleave', this.fileDragHover, false);\n    this.selfVisual.addEventListener('dragover', this.fileDragHover, false);\n    this.selfVisual.addEventListener('dragleave', this.fileDragHover, false);\n  }\n\n  _createClass(FilePicker, [{\n    key: \"onUpload\",\n    value: function onUpload(callback) {\n      // to attach an action \n      this.input = this.self.children[1];\n      var fileSelectHandler = this.getFileSafe.bind(this, callback);\n      this.input.addEventListener('change', fileSelectHandler, false);\n      this.selfVisual.addEventListener('drop', fileSelectHandler, false);\n    } //TODO: maybe a helper if used elsewhere\n    // callback and event\n\n  }, {\n    key: \"getFileSafe\",\n    value: function getFileSafe(callback, e) {\n      e.stopPropagation();\n      e.preventDefault();\n      var files = e.target.files || e.dataTransfer.files; // file isn't a zip file.\n      // TODO should also check for file size\n      // once the limitations of the script are more clear\n\n      if (files.length == 1 && files[0].name.endsWith('.zip')) {\n        callback(files[0]);\n      } else {\n        alert('Please upload a zip file');\n      }\n    } // changes style on drag events in the file picker\n\n  }, {\n    key: \"fileDragHover\",\n    value: function fileDragHover(e) {\n      e.stopPropagation();\n      e.preventDefault();\n\n      if (e.target.id == 'visual') {\n        if (e.type == 'dragover' || e.type == 'mouseenter') {\n          e.target.classList.add('file-upload-field-hover');\n        } else {\n          e.target.classList.remove('file-upload-field-hover');\n        }\n      }\n    }\n  }]);\n\n  return FilePicker;\n}();\n\n//# sourceURL=webpack:///./src/js/components/filePicker.js?");
 
 /***/ }),
 
-/***/ "./src/js/components/loadBar.js":
-/*!**************************************!*\
-  !*** ./src/js/components/loadBar.js ***!
-  \**************************************/
-/*! exports provided: LoadBar */
+/***/ "./src/js/components/loadScreen.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/loadScreen.js ***!
+  \*****************************************/
+/*! exports provided: LoadScreen */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"LoadBar\", function() { return LoadBar; });\n/* harmony import */ var _styles_components_loadBar_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/components/loadBar.scss */ \"./src/styles/components/loadBar.scss\");\n/* harmony import */ var _styles_components_loadBar_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_components_loadBar_scss__WEBPACK_IMPORTED_MODULE_0__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n\nvar LoadBar =\n/*#__PURE__*/\nfunction () {\n  function LoadBar() {\n    var max = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;\n\n    _classCallCheck(this, LoadBar);\n\n    this.current = 0; // current value of the progress\n\n    this.max = max; // maximum value that the progress can reach\n    // the html elements\n\n    this.text = document.createElement('p');\n    this.progress = document.createElement('div');\n    this.text.innerHTML = 'Initializing...';\n    this.text.className = 'progress-text';\n    this.progress.className = 'progress';\n    this.progress.appendChild(this.text);\n  } // updates progress bar\n\n\n  _createClass(LoadBar, [{\n    key: \"updatePercentage\",\n    value: function updatePercentage() {\n      if (this.max == null) {\n        this.text.innerHTML = 'Initializing...';\n      } else {\n        this.current++;\n        this.text.innerHTML = this.toPercent();\n      }\n    } // returns current progress as a string\n\n  }, {\n    key: \"toPercent\",\n    value: function toPercent() {\n      return \"\".concat(Math.round(this.current / this.max * 100), \"%\");\n    } // add random things\n\n  }, {\n    key: \"add\",\n    value: function add(text) {\n      this.progress.appendChild(text);\n    } // show progress bar\n\n  }, {\n    key: \"show\",\n    value: function show() {\n      document.body.appendChild(this.progress);\n    } // hides progresss bar\n\n  }, {\n    key: \"hide\",\n    value: function hide() {\n      document.body.removeChild(this.progress);\n    } // set maximum value the loadbar can reach\n\n  }, {\n    key: \"setMax\",\n    value: function setMax(max) {\n      this.max = max;\n    }\n  }]);\n\n  return LoadBar;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/components/loadBar.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"LoadScreen\", function() { return LoadScreen; });\n/* harmony import */ var _assets_styles_components_loadScreen_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../assets/styles/components/loadScreen.scss */ \"./src/assets/styles/components/loadScreen.scss\");\n/* harmony import */ var _assets_styles_components_loadScreen_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_assets_styles_components_loadScreen_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_images_components_check_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/images/components/check.svg */ \"./src/assets/images/components/check.svg\");\n/* harmony import */ var _assets_images_components_check_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_images_components_check_svg__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _assets_images_components_x_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/images/components/x.svg */ \"./src/assets/images/components/x.svg\");\n/* harmony import */ var _assets_images_components_x_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_images_components_x_svg__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _lottie_min_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lottie.min.js */ \"./src/js/lottie.min.js\");\n/* harmony import */ var _lottie_min_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lottie_min_js__WEBPACK_IMPORTED_MODULE_3__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n\n\n\n\nvar LoadScreen =\n/*#__PURE__*/\nfunction () {\n  function LoadScreen() {\n    var max = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;\n\n    _classCallCheck(this, LoadScreen);\n\n    this.current = 0; // current value of the progress\n\n    this.max = max; // maximum value that the progress can reach\n    // Create html elements\n\n    this.buildLoadScreen(); // set loadScreen Status\n\n    this.setStatus('init'); // setup animation\n\n    var animationData = {\n      container: this.progressDelight,\n      renderer: 'svg',\n      loop: true,\n      autoplay: true,\n      path: './hourglass-animation.json'\n    }; // starts animation\n\n    _lottie_min_js__WEBPACK_IMPORTED_MODULE_3___default.a.loadAnimation(animationData);\n  } // builds the loadScreen html elements and adds styles\n\n\n  _createClass(LoadScreen, [{\n    key: \"buildLoadScreen\",\n    value: function buildLoadScreen() {\n      // covers entire screen\n      this.progressOverlay = document.createElement('div'); // modal containing progress bar components\n\n      this.progress = document.createElement('div'); // container containing loading animation\n\n      this.progressDelight = document.createElement('div'); // bar showing progress\n\n      this.progressBar = document.createElement('div');\n      this.progressBarInner = document.createElement('div'); // shows the current status (switches b/w analysis and initializing)\n\n      this.progressStatus = document.createElement('p'); // shows which files were found and which werent\n\n      this.progressFiles = document.createElement('div'); // Add style to html elements\n\n      this.progressOverlay.className = 'progress-overlay';\n      this.progress.className = 'progress-modal';\n      this.progressDelight.className = 'progress-animation';\n      this.progressFiles.className = 'progress-files';\n      this.progressBar.className = 'progress-bar';\n      this.progressBarInner.className = 'progress-bar-inner'; // append children\n\n      this.progress.appendChild(this.progressDelight);\n      this.progressBar.appendChild(this.progressBarInner);\n      this.progress.appendChild(this.progressBar);\n      this.progress.appendChild(this.progressStatus);\n      this.progress.appendChild(this.progressFiles);\n      this.progressOverlay.appendChild(this.progress);\n    } // updates progress bar\n\n  }, {\n    key: \"updateProgress\",\n    value: function updateProgress() {\n      // the maximum value of the progress bar needs to be set\n      if (this.max) {\n        this.current++;\n        this.progressBarInner.style.width = \"\".concat(Math.round(this.current / this.max * 100), \"%\");\n      }\n    }\n  }, {\n    key: \"setStatus\",\n    value: function setStatus(status) {\n      if (status == 'init') {\n        this.progressStatus.innerHTML = 'Initializing';\n      } else {\n        this.progressStatus.innerHTML = 'Analysing';\n      }\n    } // add filename fetched from zipfile\n\n  }, {\n    key: \"addFilename\",\n    value: function addFilename(fileName) {\n      var fileNameContainer = document.createElement('div');\n      fileNameContainer.innerHTML = fileName;\n      this.progressFiles.appendChild(fileNameContainer);\n    } // add success or failure icon to filename\n\n  }, {\n    key: \"addFilenameStatus\",\n    value: function addFilenameStatus(status) {\n      var icon = new Image();\n      icon.src = status ? _assets_images_components_check_svg__WEBPACK_IMPORTED_MODULE_1___default.a : _assets_images_components_x_svg__WEBPACK_IMPORTED_MODULE_2___default.a;\n      this.progressFiles.appendChild(icon);\n    } // shows progress bar\n\n  }, {\n    key: \"show\",\n    value: function show() {\n      // prevent scrolling when loadScreen is showing.\n      document.body.style.overflow = 'hidden';\n      document.body.appendChild(this.progressOverlay);\n    } // hides progresss bar\n\n  }, {\n    key: \"hide\",\n    value: function hide() {\n      // enable scrolling when loadScreen is hidden.\n      document.body.style.overflow = '';\n      document.body.removeChild(this.progressOverlay);\n    } // set maximum value the loadbar can reach\n\n  }, {\n    key: \"setMax\",\n    value: function setMax(max) {\n      this.max = max;\n    }\n  }]);\n\n  return LoadScreen;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/components/loadScreen.js?");
 
 /***/ }),
 
@@ -753,7 +807,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"NavBar\", function() { return NavBar; });\n/* harmony import */ var _lottie_min_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lottie.min.js */ \"./src/js/lottie.min.js\");\n/* harmony import */ var _lottie_min_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lottie_min_js__WEBPACK_IMPORTED_MODULE_0__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n\nvar NavBar =\n/*#__PURE__*/\nfunction () {\n  function NavBar() {\n    var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;\n\n    _classCallCheck(this, NavBar);\n\n    // boolean that determines if navbar is loaded on index page\n    this.index = index; // contains the button elements in the navbar\n\n    this.navbarBtns = []; // gets website html element, needed for setting up scrolling event\n\n    this.website = document.getElementById('site'); // boolean, true when user scrolls\n\n    this.scrolled = false;\n    this.lastScroll = 0;\n    this.delta = 5; // create nav\n\n    this.self = document.getElementById('nav');\n    this.setup();\n    this.setScrolling();\n  }\n\n  _createClass(NavBar, [{\n    key: \"setup\",\n    value: function setup() {\n      // TODO: refactor in a function\n      var logoContainer = document.getElementById('logo');\n      var animationData = {\n        container: logoContainer,\n        renderer: 'svg',\n        loop: false,\n        autoplay: false,\n        path: './logo-animation.json'\n      };\n      this.direction = 1;\n      this.navState = 'discrete';\n      this.logoAnim = _lottie_min_js__WEBPACK_IMPORTED_MODULE_0___default.a.loadAnimation(animationData);\n      this.logoBtn = document.getElementById('nav-logoo');\n      this.logoBtn.onclick = this.logoClickHandler.bind(this);\n      this.navbar = document.getElementById('nav'); // create buttons\n      // if (!this.index) {\n      //   this.createNavButton('preview', '#report', {\n      //     subitem: true,\n      //     navbtn: true,\n      //     preview: true\n      //   });\n      //   this.createNavButton('analyze', '#report', {\n      //     subitem: true,\n      //     navbtn: true\n      //   });\n      // }\n      // setup class variables\n\n      this.navbarHeight = this.navbar.scrollHeight;\n      this.navBtns = document.getElementsByClassName('nav-item');\n    }\n  }, {\n    key: \"logoClickHandler\",\n    value: function logoClickHandler() {\n      if (this.navState == 'discrete') {\n        this.logoAnim.setDirection(1);\n        this.logoAnim.play();\n        this.showNavBtns();\n        this.navState = 'open';\n      } else {\n        this.hideNavBtns();\n\n        if (this.index) {\n          document.querySelector(this.logoBtn.getAttribute('data-scroll')).scrollIntoView({\n            behavior: 'smooth'\n          });\n        } else {\n          window.location = '/';\n        }\n      }\n    }\n  }, {\n    key: \"setScrolling\",\n    value: function setScrolling() {\n      setInterval(function () {\n        if (this.scrolled) {\n          this.scrollingEvent();\n          this.scrolled = false;\n        }\n      }.bind(this), 250);\n      window.addEventListener('scroll', function (e) {\n        this.scrolled = true;\n      }.bind(this));\n    }\n  }, {\n    key: \"hideNavBtns\",\n    value: function hideNavBtns() {\n      if (this.navState == 'open') {\n        this.logoAnim.setDirection(-1);\n        this.logoAnim.play();\n        this.navState = 'discrete';\n\n        for (var i = 0; i < this.navBtns.length; i++) {\n          this.navBtns[i].classList.add('nav-discrete');\n        }\n      }\n    }\n  }, {\n    key: \"showNavBtns\",\n    value: function showNavBtns() {\n      this.navState = 'open';\n\n      for (var i = 0; i < this.navBtns.length; i++) {\n        this.navBtns[i].classList.remove('nav-discrete');\n      }\n    } // navScrlUp() {\n    //   this.navState = 'discrete';\n    //   this.logoAnim.setDirection(-1);\n    //   this.logoAnim.play();\n    //   for (let i = 0; i < this.navBtns.length; i++) {\n    //     this.navBtns[i].classList.add('nav-discrete');\n    //   }\n    // }\n\n  }, {\n    key: \"scrollingEvent\",\n    value: function scrollingEvent() {\n      var curPos = pageYOffset;\n      if (Math.abs(this.lastScroll - curPos) <= this.delta) return; // If they scrolled down and are past the navbar, add class .nav-up.\n\n      if (curPos > this.lastScroll && curPos > this.navbarHeight) {\n        // Scroll Down\n        this.hideNavBtns();\n      } else {\n        // Scroll Up\n        this.hideNavBtns();\n      }\n\n      this.lastScroll = curPos;\n    }\n  }, {\n    key: \"createNavButton\",\n    value: function createNavButton(text, link, options) {\n      var item = document.createElement('a');\n      item.classList.add('nav-item');\n      item.innerHTML = text;\n      item.href = link;\n\n      if (options) {\n        if (options.subitem) item.classList.add('nav-sub-item');\n        if (options.preview) item.id = 'nav-preview-item';\n      }\n\n      item.classList.add('nav-discrete');\n      this.self.appendChild(item);\n    }\n  }]);\n\n  return NavBar;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/components/navBar.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"NavBar\", function() { return NavBar; });\n/* harmony import */ var _lottie_min_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lottie.min.js */ \"./src/js/lottie.min.js\");\n/* harmony import */ var _lottie_min_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lottie_min_js__WEBPACK_IMPORTED_MODULE_0__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n\nvar NavBar =\n/*#__PURE__*/\nfunction () {\n  function NavBar() {\n    var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;\n\n    _classCallCheck(this, NavBar);\n\n    // boolean that determines if navbar is loaded on index page\n    this.index = index; // contains the button elements in the navbar\n\n    this.navbarBtns = []; // gets website html element, needed for setting up scrolling event\n\n    this.website = document.getElementById('site'); // boolean, true when user scrolls\n\n    this.scrolled = false;\n    this.lastScroll = 0;\n    this.delta = 5; // create nav\n\n    this.self = document.getElementById('nav');\n    this.setup();\n    this.setScrolling();\n  }\n\n  _createClass(NavBar, [{\n    key: \"setup\",\n    value: function setup() {\n      // TODO: refactor in a function\n      var logoContainer = document.getElementById('logo');\n      var animationData = {\n        container: logoContainer,\n        renderer: 'svg',\n        loop: false,\n        autoplay: false,\n        path: './logo-animation.json'\n      };\n      this.direction = 1;\n      this.logoAnim = _lottie_min_js__WEBPACK_IMPORTED_MODULE_0___default.a.loadAnimation(animationData);\n      this.logoBtn = document.getElementById('nav-logoo');\n      this.logoBtn.onclick = this.logoClickHandler.bind(this);\n      this.navbar = document.getElementById('nav'); // create buttons\n      // if (!this.index) {\n      //   this.createNavButton('preview', '#report', {\n      //     subitem: true,\n      //     navbtn: true,\n      //     preview: true\n      //   });\n      //   this.createNavButton('analyze', '#report', {\n      //     subitem: true,\n      //     navbtn: true\n      //   });\n      // }\n      // setup class variables\n\n      this.navbarHeight = this.navbar.scrollHeight;\n      this.navBtns = document.getElementsByClassName('nav-item'); // open or close the navBar\n\n      if (!this.index) {\n        this.navState = 'discrete';\n      } else {\n        this.showNavBtns();\n      }\n    }\n  }, {\n    key: \"logoClickHandler\",\n    value: function logoClickHandler() {\n      if (this.navState == 'discrete') {\n        this.logoAnim.setDirection(1);\n        this.logoAnim.play();\n        this.showNavBtns();\n        this.navState = 'open';\n      } else {\n        this.hideNavBtns();\n\n        if (this.index) {\n          document.querySelector(this.logoBtn.getAttribute('data-scroll')).scrollIntoView({\n            behavior: 'smooth'\n          });\n        } else {\n          window.location = '/';\n        }\n      }\n    }\n  }, {\n    key: \"setScrolling\",\n    value: function setScrolling() {\n      setInterval(function () {\n        if (this.scrolled) {\n          this.scrollingEvent();\n          this.scrolled = false;\n        }\n      }.bind(this), 250);\n      window.addEventListener('scroll', function (e) {\n        this.scrolled = true;\n      }.bind(this));\n    }\n  }, {\n    key: \"hideNavBtns\",\n    value: function hideNavBtns() {\n      if (this.navState == 'open') {\n        this.logoAnim.setDirection(-1);\n        this.logoAnim.play();\n        this.navState = 'discrete';\n\n        for (var i = 0; i < this.navBtns.length; i++) {\n          this.navBtns[i].classList.add('nav-discrete');\n        }\n      }\n    }\n  }, {\n    key: \"showNavBtns\",\n    value: function showNavBtns() {\n      this.navState = 'open';\n      this.logoAnim.play();\n\n      for (var i = 0; i < this.navBtns.length; i++) {\n        this.navBtns[i].classList.remove('nav-discrete');\n      }\n    } // navScrlUp() {\n    //   this.navState = 'discrete';\n    //   this.logoAnim.setDirection(-1);\n    //   this.logoAnim.play();\n    //   for (let i = 0; i < this.navBtns.length; i++) {\n    //     this.navBtns[i].classList.add('nav-discrete');\n    //   }\n    // }\n\n  }, {\n    key: \"scrollingEvent\",\n    value: function scrollingEvent() {\n      var curPos = pageYOffset;\n      if (Math.abs(this.lastScroll - curPos) <= this.delta) return; // If they scrolled down and are past the navbar, add class .nav-up.\n\n      if (curPos > this.lastScroll && curPos > this.navbarHeight) {\n        // Scroll Down\n        this.hideNavBtns();\n      } else {\n        // Scroll Up\n        this.hideNavBtns();\n      }\n\n      this.lastScroll = curPos;\n    }\n  }, {\n    key: \"createNavButton\",\n    value: function createNavButton(text, link, options) {\n      var item = document.createElement('a');\n      item.classList.add('nav-item');\n      item.innerHTML = text;\n      item.href = link;\n\n      if (options) {\n        if (options.subitem) item.classList.add('nav-sub-item');\n        if (options.preview) item.id = 'nav-preview-item';\n      }\n\n      item.classList.add('nav-discrete');\n      this.self.appendChild(item);\n    }\n  }]);\n\n  return NavBar;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/components/navBar.js?");
 
 /***/ }),
 
@@ -765,7 +819,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ToolTip\", function() { return ToolTip; });\n/* harmony import */ var _images_components_help_circle_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../images/components/help-circle.svg */ \"./src/images/components/help-circle.svg\");\n/* harmony import */ var _images_components_help_circle_svg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_images_components_help_circle_svg__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_components_toolTip_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../styles/components/toolTip.scss */ \"./src/styles/components/toolTip.scss\");\n/* harmony import */ var _styles_components_toolTip_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_components_toolTip_scss__WEBPACK_IMPORTED_MODULE_1__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n\nvar ToolTip =\n/*#__PURE__*/\nfunction () {\n  function ToolTip(title) {\n    _classCallCheck(this, ToolTip);\n\n    this.title = title; // the tooltip text\n\n    this.self = null; // the tooltip div\n\n    this.toolTipIcon = new Image(); // the tooltip icon\n    // add the image and css class to tooltip icon\n\n    this.toolTipIcon.classList.add('tooltip-icon');\n    this.toolTipIcon.src = _images_components_help_circle_svg__WEBPACK_IMPORTED_MODULE_0___default.a; // add events that trigger showing/hiding tooltip\n\n    this.toolTipIcon.addEventListener('mouseover', this.showTip.bind(this));\n    this.toolTipIcon.addEventListener('mouseout', this.hideTip.bind(this));\n    return this.toolTipIcon;\n  }\n\n  _createClass(ToolTip, [{\n    key: \"showTip\",\n    value: function showTip() {\n      this.self = document.createElement('div');\n      this.self.classList.add('tooltip');\n      this.self.appendChild(document.createTextNode(this.title));\n      this.toolTipIcon.parentNode.insertBefore(this.self, this.toolTipIcon); // calculate the and add the position of the tip\n\n      var padding = 10;\n      var iconTop = this.toolTipIcon.offsetTop;\n      var iconLeft = this.toolTipIcon.offsetLeft;\n      var toolTipProps = this.self.getBoundingClientRect(); // top position of the tooltip bubble\n\n      var topPos = iconTop - (toolTipProps.height + padding);\n      this.self.setAttribute('style', \"top: \".concat(topPos, \"px; left: \").concat(iconLeft, \"px;\"));\n    }\n  }, {\n    key: \"hideTip\",\n    value: function hideTip() {\n      this.self.remove();\n    }\n  }]);\n\n  return ToolTip;\n}();\n\n//# sourceURL=webpack:///./src/js/components/toolTip.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ToolTip\", function() { return ToolTip; });\n/* harmony import */ var _assets_images_components_help_circle_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../assets/images/components/help-circle.svg */ \"./src/assets/images/components/help-circle.svg\");\n/* harmony import */ var _assets_images_components_help_circle_svg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_assets_images_components_help_circle_svg__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_styles_components_toolTip_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/styles/components/toolTip.scss */ \"./src/assets/styles/components/toolTip.scss\");\n/* harmony import */ var _assets_styles_components_toolTip_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_styles_components_toolTip_scss__WEBPACK_IMPORTED_MODULE_1__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n\nvar ToolTip =\n/*#__PURE__*/\nfunction () {\n  function ToolTip(title) {\n    _classCallCheck(this, ToolTip);\n\n    this.title = title; // the tooltip text\n\n    this.self = null; // the tooltip div\n\n    this.toolTipIcon = new Image(); // the tooltip icon\n    // add the image and css class to tooltip icon\n\n    this.toolTipIcon.classList.add('tooltip-icon');\n    this.toolTipIcon.src = _assets_images_components_help_circle_svg__WEBPACK_IMPORTED_MODULE_0___default.a; // add events that trigger showing/hiding tooltip\n\n    this.toolTipIcon.addEventListener('mouseover', this.showTip.bind(this));\n    this.toolTipIcon.addEventListener('mouseout', this.hideTip.bind(this));\n    return this.toolTipIcon;\n  }\n\n  _createClass(ToolTip, [{\n    key: \"showTip\",\n    value: function showTip() {\n      this.self = document.createElement('div');\n      this.self.classList.add('tooltip');\n      this.self.appendChild(document.createTextNode(this.title));\n      this.toolTipIcon.parentNode.insertBefore(this.self, this.toolTipIcon); // calculate the and add the position of the tip\n\n      var padding = 10;\n      var iconTop = this.toolTipIcon.offsetTop;\n      var iconLeft = this.toolTipIcon.offsetLeft;\n      var toolTipProps = this.self.getBoundingClientRect(); // top position of the tooltip bubble\n\n      var topPos = iconTop - (toolTipProps.height + padding);\n      this.self.setAttribute('style', \"top: \".concat(topPos, \"px; left: \").concat(iconLeft, \"px;\"));\n    }\n  }, {\n    key: \"hideTip\",\n    value: function hideTip() {\n      this.self.remove();\n    }\n  }]);\n\n  return ToolTip;\n}();\n\n//# sourceURL=webpack:///./src/js/components/toolTip.js?");
 
 /***/ }),
 
@@ -801,7 +855,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"insFactory\", function() { return insFactory; });\n/* harmony import */ var _styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/components/instructions.scss */ \"./src/styles/components/instructions.scss\");\n/* harmony import */ var _styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants.js */ \"./src/js/constants.js\");\n/* harmony import */ var _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/components/chevron-left.svg */ \"./src/images/components/chevron-left.svg\");\n/* harmony import */ var _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../images/components/chevron-right.svg */ \"./src/images/components/chevron-right.svg\");\n/* harmony import */ var _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n // Import assets\n\n\n\n\nvar insFactory =\n/*#__PURE__*/\nfunction () {\n  function insFactory(website, parent) {\n    _classCallCheck(this, insFactory);\n\n    // TODO: do you really need this?\n    this.parent = parent; // contains all the instructions\n\n    this.insContainer = document.createElement('div');\n    this.insContainer.classList.add('instruction-wrapper'); //TODO: need a check if website is the the websites constants!\n    // figure out which instructions to load\n\n    var ins_context = null;\n\n    if (!_constants_js__WEBPACK_IMPORTED_MODULE_1__[\"WEBSITES\"].includes(website)) {\n      throw \"Please add '\".concat(website, \"' to WEBSITES constant in /src/js/constants.js\");\n    }\n\n    if (website === 'facebook') {\n      ins_context = __webpack_require__(\"./src/page-facebook/instructions sync recursive ^\\\\.\\\\/.*$\");\n    } else if (website === 'tinder') {\n      ins_context = __webpack_require__(\"./src/page-tinder/instructions sync recursive ^\\\\.\\\\/.*$\");\n    } else if (website === 'spotify') {\n      ins_context = __webpack_require__(\"./src/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\");\n    }\n\n    this.instructions = ins_context('./instructions.json');\n    this.instructions.map(function (ins) {\n      ins.image = ins_context(ins.image, true);\n    }); // current slide\n\n    this.currentSlide = 0;\n    this.maxSlide = this.instructions.length - 1;\n    this.slides = [];\n    this.dots = [];\n    this.createInstructions();\n    this.createDots(); // makes the first instruction visible\n\n    this.renderSlide(0);\n    parent.appendChild(this.insContainer);\n  }\n\n  _createClass(insFactory, [{\n    key: \"renderSlide\",\n    value: function renderSlide(action) {\n      this.slides[this.currentSlide].style.display = 'none';\n      this.dots[this.currentSlide].classList.remove('slide-dot-active');\n\n      if (action == 'prev') {\n        this.currentSlide--;\n      } else if (action == 'next') {\n        this.currentSlide++;\n      } else if (!isNaN(action) && action <= this.maxSlide && action >= 0) {\n        this.currentSlide = action;\n        this.slides[this.currentSlide].style.display = 'block';\n        this.dots[this.currentSlide].classList.add('slide-dot-active');\n        return;\n      } else {\n        throw \"Action '\".concat(action, \"' unknown. Could not render slide\");\n      }\n\n      if (this.currentSlide < 0) {\n        this.currentSlide = this.maxSlide;\n      } else if (this.currentSlide > this.maxSlide) {\n        this.currentSlide = 0;\n      }\n\n      this.slides[this.currentSlide].style.display = 'block';\n      this.dots[this.currentSlide].classList.add('slide-dot-active');\n    }\n  }, {\n    key: \"createInstructions\",\n    value: function createInstructions() {\n      var insWrapper = document.createElement('div');\n      insWrapper.classList.add('slideshow-wrapper');\n      var cardContainer = document.createElement('div');\n      cardContainer.classList.add('slide-card-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        // create instruction step and add style\n        var slide = document.createElement('div');\n        slide.classList.add('slide-card');\n        this.slides.push(slide); // create the image\n\n        var slideImg = new Image();\n        var slideText = this.createInstructionsText(i);\n        slideImg.src = this.instructions[i].image;\n        slide.appendChild(slideImg);\n        slide.appendChild(slideText);\n        cardContainer.appendChild(slide);\n      }\n\n      var buttons = this.createSliderButtons();\n      insWrapper.appendChild(buttons[0]);\n      insWrapper.appendChild(cardContainer);\n      insWrapper.appendChild(buttons[1]);\n      this.insContainer.appendChild(insWrapper);\n    }\n  }, {\n    key: \"createInstructionsText\",\n    value: function createInstructionsText(insNum) {\n      var textContainer = document.createElement('div');\n      textContainer.classList.add('slide-card-text');\n      var insStepIndicator = document.createElement('div');\n      insStepIndicator.classList.add('step-indicator');\n      insStepIndicator.innerHTML = \"Step \".concat(insNum + 1, \"/\").concat(this.instructions.length);\n      var insText = document.createElement('p');\n      insText.innerHTML = this.instructions[insNum].ins;\n      textContainer.appendChild(insStepIndicator);\n      textContainer.appendChild(insText);\n      return textContainer;\n    } // creates the buttons for next and previous buttons\n\n  }, {\n    key: \"createSliderButtons\",\n    value: function createSliderButtons() {\n      var nextBtn = document.createElement('a');\n      var prevBtn = document.createElement('a');\n      var prevBtnSym = new Image();\n      var nextBtnSym = new Image();\n      prevBtnSym.src = _images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default.a;\n      nextBtnSym.src = _images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default.a;\n      nextBtnSym.classList.add('ins-btn-image');\n      prevBtnSym.classList.add('ins-btn-image');\n      prevBtn.appendChild(prevBtnSym);\n      nextBtn.appendChild(nextBtnSym);\n      prevBtn.classList.add('prev-btn');\n      nextBtn.classList.add('next-btn');\n      prevBtn.onclick = this.renderSlide.bind(this, 'prev');\n      nextBtn.onclick = this.renderSlide.bind(this, 'next'); // arrow left and right should switch between slides\n\n      document.addEventListener('keydown', this.arrowKeyHandler.bind(this));\n      return [prevBtn, nextBtn];\n    }\n  }, {\n    key: \"arrowKeyHandler\",\n    value: function arrowKeyHandler(event) {\n      // set true if the event was handled\n      var eventHandled = false;\n\n      if (event.defaultPrevented) {\n        return; // Do nothing if the event was already processed\n      }\n\n      switch (event.key) {\n        case 'ArrowLeft':\n          this.renderSlide.call(this, 'prev');\n          eventHandled = true;\n          break;\n\n        case 'ArrowRight':\n          this.renderSlide.call(this, 'next');\n          eventHandled = true;\n          break;\n\n        default:\n          return;\n      } // Cancel the default action to avoid it being handled twice\n\n\n      if (eventHandled) {\n        event.preventDefault();\n      }\n    }\n  }, {\n    key: \"createDots\",\n    value: function createDots() {\n      var dotContainer = document.createElement('div');\n      dotContainer.classList.add('dot-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        var dot = document.createElement('span');\n        dot.classList.add('slide-dot');\n        dot.onclick = this.renderSlide.bind(this, i);\n        this.dots.push(dot);\n        dotContainer.appendChild(dot);\n      } // add to the instructions container\n\n\n      this.insContainer.appendChild(dotContainer);\n    }\n  }]);\n\n  return insFactory;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/factories/insFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"insFactory\", function() { return insFactory; });\n/* harmony import */ var _assets_styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../assets/styles/components/instructions.scss */ \"./src/assets/styles/components/instructions.scss\");\n/* harmony import */ var _assets_styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_assets_styles_components_instructions_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants.js */ \"./src/js/constants.js\");\n/* harmony import */ var _assets_images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/images/components/chevron-left.svg */ \"./src/assets/images/components/chevron-left.svg\");\n/* harmony import */ var _assets_images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _assets_images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/images/components/chevron-right.svg */ \"./src/assets/images/components/chevron-right.svg\");\n/* harmony import */ var _assets_images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n // Import assets\n\n\n\n\nvar insFactory =\n/*#__PURE__*/\nfunction () {\n  function insFactory(website, parent) {\n    _classCallCheck(this, insFactory);\n\n    // TODO: do you really need this?\n    this.parent = parent; // contains all the instructions\n\n    this.insContainer = document.createElement('div');\n    this.insContainer.classList.add('instruction-wrapper'); //TODO: need a check if website is the the websites constants!\n    // figure out which instructions to load\n\n    var ins_context = null;\n\n    if (!_constants_js__WEBPACK_IMPORTED_MODULE_1__[\"WEBSITES\"].includes(website)) {\n      throw \"Please add '\".concat(website, \"' to WEBSITES constant in /src/js/constants.js\");\n    }\n\n    if (website === 'facebook') {\n      ins_context = __webpack_require__(\"./src/pages/page-facebook/instructions sync recursive ^\\\\.\\\\/.*$\");\n    } else if (website === 'tinder') {\n      ins_context = __webpack_require__(\"./src/pages/page-tinder/instructions sync recursive ^\\\\.\\\\/.*$\");\n    } else if (website === 'spotify') {\n      ins_context = __webpack_require__(\"./src/pages/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\");\n    }\n\n    this.instructions = ins_context('./instructions.json');\n    this.instructions.map(function (ins) {\n      ins.image = ins_context(ins.image, true);\n    }); // current slide\n\n    this.currentSlide = 0;\n    this.maxSlide = this.instructions.length - 1;\n    this.slides = [];\n    this.dots = [];\n    this.createInstructions();\n    this.createDots(); // makes the first instruction visible\n\n    this.renderSlide(0);\n    parent.appendChild(this.insContainer);\n  }\n\n  _createClass(insFactory, [{\n    key: \"renderSlide\",\n    value: function renderSlide(action) {\n      this.slides[this.currentSlide].style.display = 'none';\n      this.dots[this.currentSlide].classList.remove('slide-dot-active');\n\n      if (action == 'prev') {\n        this.currentSlide--;\n      } else if (action == 'next') {\n        this.currentSlide++;\n      } else if (!isNaN(action) && action <= this.maxSlide && action >= 0) {\n        this.currentSlide = action;\n        this.slides[this.currentSlide].style.display = 'block';\n        this.dots[this.currentSlide].classList.add('slide-dot-active');\n        return;\n      } else {\n        throw \"Action '\".concat(action, \"' unknown. Could not render slide\");\n      }\n\n      if (this.currentSlide < 0) {\n        this.currentSlide = this.maxSlide;\n      } else if (this.currentSlide > this.maxSlide) {\n        this.currentSlide = 0;\n      }\n\n      this.slides[this.currentSlide].style.display = 'block';\n      this.dots[this.currentSlide].classList.add('slide-dot-active');\n    }\n  }, {\n    key: \"createInstructions\",\n    value: function createInstructions() {\n      var insWrapper = document.createElement('div');\n      insWrapper.classList.add('slideshow-wrapper');\n      var cardContainer = document.createElement('div');\n      cardContainer.classList.add('slide-card-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        // create instruction step and add style\n        var slide = document.createElement('div');\n        slide.classList.add('slide-card');\n        this.slides.push(slide); // create the image\n\n        var slideImg = new Image();\n        var slideText = this.createInstructionsText(i);\n        slideImg.src = this.instructions[i].image;\n        slide.appendChild(slideImg);\n        slide.appendChild(slideText);\n        cardContainer.appendChild(slide);\n      }\n\n      var buttons = this.createSliderButtons();\n      insWrapper.appendChild(buttons[0]);\n      insWrapper.appendChild(cardContainer);\n      insWrapper.appendChild(buttons[1]);\n      this.insContainer.appendChild(insWrapper);\n    }\n  }, {\n    key: \"createInstructionsText\",\n    value: function createInstructionsText(insNum) {\n      var textContainer = document.createElement('div');\n      textContainer.classList.add('slide-card-text');\n      var insStepIndicator = document.createElement('div');\n      insStepIndicator.classList.add('step-indicator');\n      insStepIndicator.innerHTML = \"Step \".concat(insNum + 1, \"/\").concat(this.instructions.length);\n      var insText = document.createElement('p');\n      insText.innerHTML = this.instructions[insNum].ins;\n      textContainer.appendChild(insStepIndicator);\n      textContainer.appendChild(insText);\n      return textContainer;\n    } // creates the buttons for next and previous buttons\n\n  }, {\n    key: \"createSliderButtons\",\n    value: function createSliderButtons() {\n      var nextBtn = document.createElement('a');\n      var prevBtn = document.createElement('a');\n      var prevBtnSym = new Image();\n      var nextBtnSym = new Image();\n      prevBtnSym.src = _assets_images_components_chevron_left_svg__WEBPACK_IMPORTED_MODULE_2___default.a;\n      nextBtnSym.src = _assets_images_components_chevron_right_svg__WEBPACK_IMPORTED_MODULE_3___default.a;\n      nextBtnSym.classList.add('ins-btn-image');\n      prevBtnSym.classList.add('ins-btn-image');\n      prevBtn.appendChild(prevBtnSym);\n      nextBtn.appendChild(nextBtnSym);\n      prevBtn.classList.add('prev-btn');\n      nextBtn.classList.add('next-btn');\n      prevBtn.onclick = this.renderSlide.bind(this, 'prev');\n      nextBtn.onclick = this.renderSlide.bind(this, 'next'); // arrow left and right should switch between slides\n\n      document.addEventListener('keydown', this.arrowKeyHandler.bind(this));\n      return [prevBtn, nextBtn];\n    }\n  }, {\n    key: \"arrowKeyHandler\",\n    value: function arrowKeyHandler(event) {\n      // set true if the event was handled\n      var eventHandled = false;\n\n      if (event.defaultPrevented) {\n        return; // Do nothing if the event was already processed\n      }\n\n      switch (event.key) {\n        case 'ArrowLeft':\n          this.renderSlide.call(this, 'prev');\n          eventHandled = true;\n          break;\n\n        case 'ArrowRight':\n          this.renderSlide.call(this, 'next');\n          eventHandled = true;\n          break;\n\n        default:\n          return;\n      } // Cancel the default action to avoid it being handled twice\n\n\n      if (eventHandled) {\n        event.preventDefault();\n      }\n    }\n  }, {\n    key: \"createDots\",\n    value: function createDots() {\n      var dotContainer = document.createElement('div');\n      dotContainer.classList.add('dot-container');\n\n      for (var i = 0; i < this.instructions.length; i++) {\n        var dot = document.createElement('span');\n        dot.classList.add('slide-dot');\n        dot.onclick = this.renderSlide.bind(this, i);\n        this.dots.push(dot);\n        dotContainer.appendChild(dot);\n      } // add to the instructions container\n\n\n      this.insContainer.appendChild(dotContainer);\n    }\n  }]);\n\n  return insFactory;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/factories/insFactory.js?");
 
 /***/ }),
 
@@ -813,7 +867,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"reportFactory\", function() { return reportFactory; });\n/* harmony import */ var _styles_components_reportscommon_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/components/reportscommon.scss */ \"./src/styles/components/reportscommon.scss\");\n/* harmony import */ var _styles_components_reportscommon_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_components_reportscommon_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/toolTip.js */ \"./src/js/components/toolTip.js\");\n/* harmony import */ var _helpers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helpers.js */ \"./src/js/helpers.js\");\n/* harmony import */ var _chartFactory_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./chartFactory.js */ \"./src/js/factories/chartFactory.js\");\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n// Style imports:\n // Import js\n\n\n\n\nvar icons = Object(_helpers_js__WEBPACK_IMPORTED_MODULE_2__[\"importAll\"])(__webpack_require__(\"./src/images/report-icons sync \\\\.svg$\"));\nvar reportFactory =\n/*#__PURE__*/\nfunction () {\n  function reportFactory(color) {\n    _classCallCheck(this, reportFactory);\n\n    this.icons = icons;\n    this.subreports = {};\n    this.reportContainer = document.getElementById('report');\n    this.chartFactory = new _chartFactory_js__WEBPACK_IMPORTED_MODULE_3__[\"chartFactory\"](color);\n  } // renderItemsVerticall should append to the report a list of items\n  // renderComparison should render items side by side (eg. sent vs received)\n  // Descr: gets the number of subreports in the report\n\n\n  _createClass(reportFactory, [{\n    key: \"getNumberSubreports\",\n    value: function getNumberSubreports() {\n      return Object.keys(this.subreports).length;\n    } // Descr: fetches a subreport's graph container.\n    // If subreport graph container doesn't exist it creates one. \n    // --------------------------------------\n    // Input:\n    //   *  name - string representing the id of the graph container (used for styling)\n    //   *  subreport - the subreport the graph container belongs to\n\n  }, {\n    key: \"getSubreportGraphContainer\",\n    value: function getSubreportGraphContainer(name, subreport) {\n      if (subreport.graphs) {\n        return this.subreport.graphs;\n      }\n\n      var subreportGraphContainer = document.createElement('div');\n      subreportGraphContainer.id = name;\n      subreport.content.appendChild(subreportGraphContainer);\n      subreport.graphs = subreportGraphContainer;\n      subreport.graph_num = 0;\n      return subreport.graphs;\n    } // Descr: creates a graph wrapper, with heading and conclusion\n    // adds it to the subreport\n    // --------------------------------------\n    // Input:\n    //   *  subreport - subreport where graph should be added\n    //   *  graphArgs - the graph arguments needed to build the graph. Check Example.\n    // --------------------------------------\n    // Example:\n    // {\n    //   type: 'axis-mixed',\n    //   parent: graphCont[2],\n    //   name: 'chart3',\n    //   title: 'Messages by Day of the Week',\n    //   labels: DAYS,\n    //   data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],\n    //   size: 'medium'\n    // }\n\n  }, {\n    key: \"addGraph\",\n    value: function addGraph(subreport, graphArgs) {\n      subreport.graph_num += 1;\n      var gContainer = document.createElement('div');\n      gContainer.classList.add('graph-wrapper');\n      gContainer.id = \"\".concat(graphArgs.css_label).concat(subreport.graph_num);\n      subreport.graphs.appendChild(gContainer); // add title\n\n      if (graphArgs.title) {\n        var gTitle = document.createElement('h2');\n        gTitle.classList.add('graph-title');\n        gTitle.innerHTML = graphArgs.title;\n        gContainer.appendChild(gTitle);\n      } // create chart\n\n\n      var chartFactArgs = {\n        parent: gContainer,\n        name: \"\".concat(graphArgs.css_label, \"-\").concat(subreport.graph_num, \"-sub\")\n      };\n      Object.keys(graphArgs).forEach(function (ga_key) {\n        chartFactArgs[ga_key] = graphArgs[ga_key];\n      });\n      this.chartFactory.getChart(chartFactArgs); // add conclusion\n      // ???\n    } // Descr: fetches a subreport given a title. If subreport doesn't exist it creates one. \n    // --------------------------------------\n    // Input:\n    //   *  title - string representing the title of the subreport\n\n  }, {\n    key: \"getSubreport\",\n    value: function getSubreport(title) {\n      if (this.subreports[title]) {\n        return this.subreports[title];\n      }\n\n      var subreport = document.createElement('div');\n      var titleContainer = document.createElement('div');\n      var titleText = document.createElement('h2');\n      var subreportContent = document.createElement('div'); // add style\n\n      var id = \"subreport-\".concat(this.getNumberSubreports());\n      subreport.id = id;\n      subreport.classList.add('subreport');\n      subreportContent.classList.add('subreport-content');\n      titleContainer.classList.add('subreport-title');\n      titleText.classList.add('subreport-title-text'); // add content\n\n      titleText.innerHTML = title;\n      titleContainer.appendChild(titleText);\n      subreport.appendChild(titleContainer);\n      subreport.appendChild(subreportContent); // add to subreports\n\n      var result = {\n        top: subreport,\n        content: subreportContent\n      }; // append to report\n\n      this.reportContainer.appendChild(subreport);\n      this.subreports[title] = result;\n      return result;\n    } // Descr: adds a report item to a subreport\n    // --------------------------------------\n    // Input:\n    //   *  reportItems - array of report items. For DS look at report below.\n    //   *  type - a string representing the type of report item to be rendered\n    //   *  subreport - the DOM element that will contain the report item/items\n\n  }, {\n    key: \"add\",\n    value: function add(reportItems, type, subreport) {\n      // vertical items, with an individual icon\n      if (type == 'icon-list') {\n        this.addIconList(reportItems, subreport);\n      } // one icon big list of items\n      else if (type == 'list') {\n          this.addList(reportItems, subreport);\n        } // one icon big list of items separated by heading\n        else if (type == 'list-headings') {\n            this.addListHeading(reportItems, subreport);\n          } // big icons smaller numbers\n          else if (type == 'big-icon-list') {\n              this.addBigIconList(reportItems, subreport);\n            } // display raw data\n            else if (type == 'raw') {\n                this.addRaw(reportItems, subreport);\n              }\n    } // Descr: adds a report item/s to a subreport that have big icons and a smal text underneath\n    // --------------------------------------\n    // Input:\n    //   *  reportItems - array of report items. DS example below\n    //   *  subreport - the DOM element that will contain the report item/items\n    // --------------------------------------\n    // Data Structure example of a list item:\n    // {\n    //   icon: 'thumbs-up',\n    //   text: 'Num Likes: ',\n    //   textBold: 32,\n    //   tooltip: 'Text that will display in tooltip'\n    // },\n\n  }, {\n    key: \"addBigIconList\",\n    value: function addBigIconList(reportItems, subreport) {\n      var _this = this;\n\n      var reportItemContainer = document.createElement('div');\n      reportItemContainer.classList.add('report-item-big-icon-list'); // loop through report Items, create and append them to subreport\n\n      reportItems.forEach(function (item) {\n        // element creation\n        var itemIcon = new Image();\n        var reportItem = document.createElement('div');\n\n        var reportItemText = _this.renderText(item.textBold);\n\n        var itemToolTip = new _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__[\"ToolTip\"](item.tooltip); // appending elements\n\n        reportItem.appendChild(itemIcon);\n        reportItem.appendChild(reportItemText);\n        reportItem.appendChild(itemToolTip); // adding content\n\n        itemIcon.src = _this.getIcon(item.icon); // styles\n\n        itemIcon.classList.add('report-item-icon-big');\n        itemToolTip.classList.add('tooltip-start');\n        reportItemText.classList.add('report-item-text-icon-big');\n        reportItem.classList.add('report-item-big-icon');\n        reportItemContainer.appendChild(reportItem);\n      });\n      subreport.content.appendChild(reportItemContainer);\n    } // Descr: adds a report item to a subreport\n    // It is a list with headings for individual items \n    // --------------------------------------\n    // Input:\n    //   *  reportItem - an object in the example shown below:\n    //   *  subreport - the DOM element that will contain the report item/items\n    // --------------------------------------\n    // Example:\n    // {\n    //   icon: 'shopping-bag',\n    //   text: 'Ad Interests: ',\n    //   type: 'list',\n    //   listData: {\n    //             \"interactions\": {\n    //                \"Clicked ad\": [\n    //                  {\n    //                    \"title\": \"Are you read?\",\n    //                    \"date\": \"Sun Sep 08 2019\"\n    //                  },\n    //                ],\n    //                  \"Closed ad\": [\n    //                    {\n    //                      \"title\": \"Epic idle RPG\",\n    //                      \"date\": \"Thu Aug 08 2019\"\n    //                    }\n    //                  ]\n    //                },\n    //   tooltip: 'Text that will display in tooltip'\n    // }\n\n  }, {\n    key: \"addListHeading\",\n    value: function addListHeading(reportItem, subreport) {\n      var itemIcon = new Image();\n      var item = document.createElement('div');\n      var itemLabel = document.createElement('p');\n      var itemToolTip = new _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__[\"ToolTip\"](reportItem.tooltip); // adding content\n\n      itemIcon.src = this.getIcon(reportItem.icon);\n      itemLabel.innerHTML = reportItem.text; // add styles\n\n      itemIcon.classList.add('report-item-icon');\n      itemLabel.classList.add('report-item-label');\n      item.classList.add('report-item-above'); // appending elements\n\n      item.appendChild(itemIcon);\n      item.appendChild(itemLabel);\n      item.appendChild(itemToolTip); // loop through lists and create all list report items\n\n      Object.keys(reportItem.listData).forEach(function (item_key) {\n        // create and append subheading and ul element\n        var reportListSubheading = document.createElement('h4');\n        var reportHeadingList = document.createElement('div');\n        reportListSubheading.innerHTML = item_key; // styles\n\n        reportHeadingList.classList.add('report-list-with-headings');\n        reportListSubheading.classList.add('report-list-heading');\n        item.appendChild(reportListSubheading);\n        item.appendChild(reportHeadingList); // create individual list items\n\n        reportItem.listData[item_key].forEach(function (subitem) {\n          var subitemElementContainer = document.createElement('div');\n          subitemElementContainer.classList.add('report-list-item');\n          Object.keys(subitem).forEach(function (subitem_key) {\n            var subitemElement = document.createElement('div');\n            var subitemLabel = document.createElement('div');\n            var subitemText = document.createElement('div');\n            subitemElement.classList.add('report-list-subitem');\n            subitemLabel.classList.add('report-list-subitem-label');\n            subitemText.classList.add('report-list-subitem-text');\n            subitemLabel.innerHTML = subitem_key;\n            subitemText.innerHTML = subitem[subitem_key];\n            subitemElement.appendChild(subitemLabel);\n            subitemElement.appendChild(subitemText);\n            subitemElementContainer.appendChild(subitemElement);\n          });\n          reportHeadingList.appendChild(subitemElementContainer);\n        }); // append to subreport\n\n        subreport.content.appendChild(item);\n      });\n    } // Descr: adds a report item/s to a subreport that look like a list.\n    //        think typical ul HTML elements. \n    // --------------------------------------\n    // Input:\n    //   *  lists - array of report items. DS example below\n    //   *  subreport - the DOM element that will contain the report item/items\n    // --------------------------------------\n    // Data Structure example of a list item:\n    // {\n    //   icon: 'shopping-bag',\n    //   text: 'Ad Interests: ',\n    //   type: 'list',\n    //   listData: ['some item', 'another item', 'more items'],\n    //   tooltip: 'Text that will display in tooltip'\n    // }\n\n  }, {\n    key: \"addList\",\n    value: function addList(lists, subreport) {\n      var _this2 = this;\n\n      // loop through lists and create all list report items\n      lists.forEach(function (item) {\n        // element creation\n        var itemIcon = new Image();\n        var reportItem = document.createElement('div');\n        var itemLabel = document.createElement('p');\n        var reportList = document.createElement('ul');\n        var itemToolTip = new _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__[\"ToolTip\"](item.tooltip); // create individual list items\n\n        item.listData.forEach(function (listItemText) {\n          var listItem = document.createElement('li');\n          listItem.innerHTML = listItemText;\n          reportList.appendChild(listItem);\n        }); // adding content\n\n        itemIcon.src = _this2.getIcon(item.icon);\n        itemLabel.innerHTML = item.text; // add styles\n\n        reportList.classList.add('report-list');\n        itemIcon.classList.add('report-item-icon');\n        itemLabel.classList.add('report-item-label');\n        reportItem.classList.add('report-item-above'); // appending elements\n\n        reportItem.appendChild(itemIcon);\n        reportItem.appendChild(itemLabel);\n        reportItem.appendChild(itemToolTip);\n        reportItem.appendChild(reportList); // append to subreport\n\n        subreport.content.appendChild(reportItem);\n      });\n    } // Descr: adds a report item/s to a subreport that has raw data\n    //        Think a long json file. Content is wrapped in a pre tag \n    // --------------------------------------\n    // Input:\n    //   *  rawItems - array of raw report items. DS example below\n    //   *  subreport - the DOM element that will contain the report item/items\n    // --------------------------------------\n    // Data Structure example of a list item:\n    // {\n    //   icon: 'smile',\n    //   text: 'Face: ',\n    //   rawData: 'slkdajsldkjiewjlksajdlkjsldknaslkdlqkjeqwkejlansd',\n    //   tooltip: 'Text that will display in tooltip.'\n    // }\n\n  }, {\n    key: \"addRaw\",\n    value: function addRaw(rawItems, subreport) {\n      var _this3 = this;\n\n      // loop through rawItems and create all raw report items\n      rawItems.forEach(function (item) {\n        // element creation\n        var itemIcon = new Image();\n        var reportItem = document.createElement('div');\n        var itemLabel = document.createElement('p');\n        var itemRaw = document.createElement('pre');\n        var itemToolTip = new _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__[\"ToolTip\"](item.tooltip); // adding content\n\n        itemIcon.src = _this3.getIcon(item.icon);\n        itemLabel.innerHTML = item.text;\n        itemRaw.innerHTML = item.rawData; // add styles\n\n        itemRaw.classList.add('report-raw');\n        itemIcon.classList.add('report-item-icon');\n        itemLabel.classList.add('report-item-label');\n        reportItem.classList.add('report-item-above'); // appending elements\n\n        reportItem.appendChild(itemIcon);\n        reportItem.appendChild(itemLabel);\n        reportItem.appendChild(itemToolTip);\n        reportItem.appendChild(itemRaw); // append to subreport\n\n        subreport.content.appendChild(reportItem);\n      });\n    } // Descr: adds a report item/s to a subreport. Every item will have\n    //        an individual icon, tooltip and label. All items are displayed in a row.\n    // --------------------------------------\n    // Input:\n    //   *  reportItems - array of report items. DS example below\n    //   *  subreport - the DOM element that will contain the report item/items\n    // --------------------------------------\n    // Data Structure example of a list item:\n    // {\n    //   icon: 'smile',\n    //   text: 'Face Count: ',\n    //   textBold: 15,\n    //   tooltip: 'This text will be displayed in the tooltip.'\n    // }\n\n  }, {\n    key: \"addIconList\",\n    value: function addIconList(reportItems, subreport) {\n      var _this4 = this;\n\n      // loop through reportItems and create each report item\n      reportItems.forEach(function (item) {\n        // element creation\n        var itemIcon = new Image();\n        var reportItem = document.createElement('div');\n        var itemLabel = document.createElement('p');\n        var itemToolTip = new _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__[\"ToolTip\"](item.tooltip); // create the report item text\n\n        var itemText = null;\n\n        if (item.link) {\n          itemText = document.createElement('a');\n          itemText.innerHTML = item.textBold;\n          itemText.target = 'blank';\n          itemText.href = item.link;\n        } else {\n          itemText = _this4.renderText(item.textBold);\n        } // appending elements\n\n\n        reportItem.appendChild(itemIcon);\n        reportItem.appendChild(itemLabel);\n        reportItem.appendChild(itemText);\n        reportItem.appendChild(itemToolTip); // adding content\n\n        itemIcon.src = _this4.getIcon(item.icon);\n        itemLabel.innerHTML = item.text; // styles\n\n        itemIcon.classList.add('report-item-icon');\n        itemLabel.classList.add('report-item-label');\n        reportItem.classList.add('report-item-grid'); // add to subreport\n\n        subreport.content.appendChild(reportItem);\n      });\n    } // Descr: fetches an icon path given an icon name\n    // --------------------------------------\n    // Input:\n    //   *  iconString - string representing the name of the icon\n    // Return:\n    //   *  the icon path of the searched icon. \n    //   *  throws an error if icon doesn't exist? TODO: Maybe should default to an icon?\n\n  }, {\n    key: \"getIcon\",\n    value: function getIcon(iconString) {\n      var icon = this.icons[iconString];\n\n      if (icon) {\n        return icon;\n      } else {\n        throw \"Invalid icon '\".concat(iconString, \"'\");\n      }\n    } // Descr:  creates a paragraph element\n    // --------------------------------------\n    // Input:\n    //   *  text - string which is the innerHTML of the p tag\n    // Return:\n    //   * the p tag element\n\n  }, {\n    key: \"renderText\",\n    value: function renderText(text) {\n      var container = document.createElement('p');\n      container.classList.add('report-item-text');\n      container.innerHTML = text;\n      return container;\n    }\n  }]);\n\n  return reportFactory;\n}();\n\n//# sourceURL=webpack:///./src/js/factories/reportFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"reportFactory\", function() { return reportFactory; });\n/* harmony import */ var _assets_styles_components_reportscommon_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../assets/styles/components/reportscommon.scss */ \"./src/assets/styles/components/reportscommon.scss\");\n/* harmony import */ var _assets_styles_components_reportscommon_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_assets_styles_components_reportscommon_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/toolTip.js */ \"./src/js/components/toolTip.js\");\n/* harmony import */ var _helpers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helpers.js */ \"./src/js/helpers.js\");\n/* harmony import */ var _chartFactory_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./chartFactory.js */ \"./src/js/factories/chartFactory.js\");\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n// Style imports:\n // Import js\n\n\n\n\nvar icons = Object(_helpers_js__WEBPACK_IMPORTED_MODULE_2__[\"importAll\"])(__webpack_require__(\"./src/assets/images/report-icons sync \\\\.svg$\"));\nvar reportFactory =\n/*#__PURE__*/\nfunction () {\n  function reportFactory(color) {\n    _classCallCheck(this, reportFactory);\n\n    this.icons = icons;\n    this.subreports = {};\n    this.reportContainer = document.getElementById('report');\n    this.chartFactory = new _chartFactory_js__WEBPACK_IMPORTED_MODULE_3__[\"chartFactory\"](color);\n  } // renderItemsVerticall should append to the report a list of items\n  // renderComparison should render items side by side (eg. sent vs received)\n  // Descr: gets the number of subreports in the report\n\n\n  _createClass(reportFactory, [{\n    key: \"getNumberSubreports\",\n    value: function getNumberSubreports() {\n      return Object.keys(this.subreports).length;\n    } // Descr: fetches a subreport's graph container.\n    // If subreport graph container doesn't exist it creates one. \n    // --------------------------------------\n    // Input:\n    //   *  name - string representing the id of the graph container (used for styling)\n    //   *  subreport - the subreport the graph container belongs to\n\n  }, {\n    key: \"getSubreportGraphContainer\",\n    value: function getSubreportGraphContainer(name, subreport) {\n      if (subreport.graphs) {\n        return this.subreport.graphs;\n      }\n\n      var subreportGraphContainer = document.createElement('div');\n      subreportGraphContainer.id = name;\n      subreport.content.appendChild(subreportGraphContainer);\n      subreport.graphs = subreportGraphContainer;\n      subreport.graph_num = 0;\n      return subreport.graphs;\n    } // Descr: creates a graph wrapper, with heading and conclusion\n    // adds it to the subreport\n    // --------------------------------------\n    // Input:\n    //   *  subreport - subreport where graph should be added\n    //   *  graphArgs - the graph arguments needed to build the graph. Check Example.\n    // --------------------------------------\n    // Example:\n    // {\n    //   type: 'axis-mixed',\n    //   parent: graphCont[2],\n    //   name: 'chart3',\n    //   title: 'Messages by Day of the Week',\n    //   labels: DAYS,\n    //   data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],\n    //   size: 'medium'\n    // }\n\n  }, {\n    key: \"addGraph\",\n    value: function addGraph(subreport, graphArgs) {\n      subreport.graph_num += 1;\n      var gContainer = document.createElement('div');\n      gContainer.classList.add('graph-wrapper');\n      gContainer.id = \"\".concat(graphArgs.css_label).concat(subreport.graph_num);\n      subreport.graphs.appendChild(gContainer); // add title\n\n      if (graphArgs.title) {\n        var gTitle = document.createElement('h2');\n        gTitle.classList.add('graph-title');\n        gTitle.innerHTML = graphArgs.title;\n        gContainer.appendChild(gTitle);\n      } // create chart\n\n\n      var chartFactArgs = {\n        parent: gContainer,\n        name: \"\".concat(graphArgs.css_label, \"-\").concat(subreport.graph_num, \"-sub\")\n      };\n      Object.keys(graphArgs).forEach(function (ga_key) {\n        chartFactArgs[ga_key] = graphArgs[ga_key];\n      });\n      this.chartFactory.getChart(chartFactArgs); // add conclusion\n      // ???\n    } // Descr: fetches a subreport given a title. If subreport doesn't exist it creates one. \n    // --------------------------------------\n    // Input:\n    //   *  title - string representing the title of the subreport\n\n  }, {\n    key: \"getSubreport\",\n    value: function getSubreport(title) {\n      if (this.subreports[title]) {\n        return this.subreports[title];\n      }\n\n      var subreport = document.createElement('div');\n      var titleContainer = document.createElement('div');\n      var titleText = document.createElement('h2');\n      var subreportContent = document.createElement('div'); // add style\n\n      var id = \"subreport-\".concat(this.getNumberSubreports());\n      subreport.id = id;\n      subreport.classList.add('subreport');\n      subreportContent.classList.add('subreport-content');\n      titleContainer.classList.add('subreport-title');\n      titleText.classList.add('subreport-title-text'); // add content\n\n      titleText.innerHTML = title;\n      titleContainer.appendChild(titleText);\n      subreport.appendChild(titleContainer);\n      subreport.appendChild(subreportContent); // add to subreports\n\n      var result = {\n        top: subreport,\n        content: subreportContent\n      }; // append to report\n\n      this.reportContainer.appendChild(subreport);\n      this.subreports[title] = result;\n      return result;\n    } // Descr: adds a report item to a subreport\n    // --------------------------------------\n    // Input:\n    //   *  reportItems - array of report items. For DS look at report below.\n    //   *  type - a string representing the type of report item to be rendered\n    //   *  subreport - the DOM element that will contain the report item/items\n\n  }, {\n    key: \"add\",\n    value: function add(reportItems, type, subreport) {\n      // vertical items, with an individual icon\n      if (type == 'icon-list') {\n        this.addIconList(reportItems, subreport);\n      } // one icon big list of items\n      else if (type == 'list') {\n          this.addList(reportItems, subreport);\n        } // one icon big list of items separated by heading\n        else if (type == 'list-headings') {\n            this.addListHeading(reportItems, subreport);\n          } // big icons smaller numbers\n          else if (type == 'big-icon-list') {\n              this.addBigIconList(reportItems, subreport);\n            } // display raw data\n            else if (type == 'raw') {\n                this.addRaw(reportItems, subreport);\n              }\n    } // Descr: adds a report item/s to a subreport that have big icons and a smal text underneath\n    // --------------------------------------\n    // Input:\n    //   *  reportItems - array of report items. DS example below\n    //   *  subreport - the DOM element that will contain the report item/items\n    // --------------------------------------\n    // Data Structure example of a list item:\n    // {\n    //   icon: 'thumbs-up',\n    //   text: 'Num Likes: ',\n    //   textBold: 32,\n    //   tooltip: 'Text that will display in tooltip'\n    // },\n\n  }, {\n    key: \"addBigIconList\",\n    value: function addBigIconList(reportItems, subreport) {\n      var _this = this;\n\n      var reportItemContainer = document.createElement('div');\n      reportItemContainer.classList.add('report-item-big-icon-list'); // loop through report Items, create and append them to subreport\n\n      reportItems.forEach(function (item) {\n        // element creation\n        var itemIcon = new Image();\n        var reportItem = document.createElement('div');\n\n        var reportItemText = _this.renderText(item.textBold);\n\n        var itemToolTip = new _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__[\"ToolTip\"](item.tooltip); // appending elements\n\n        reportItem.appendChild(itemIcon);\n        reportItem.appendChild(reportItemText);\n        reportItem.appendChild(itemToolTip); // adding content\n\n        itemIcon.src = _this.getIcon(item.icon); // styles\n\n        itemIcon.classList.add('report-item-icon-big');\n        itemToolTip.classList.add('tooltip-start');\n        reportItemText.classList.add('report-item-text-icon-big');\n        reportItem.classList.add('report-item-big-icon');\n        reportItemContainer.appendChild(reportItem);\n      });\n      subreport.content.appendChild(reportItemContainer);\n    } // Descr: adds a report item to a subreport\n    // It is a list with headings for individual items \n    // --------------------------------------\n    // Input:\n    //   *  reportItem - an object in the example shown below:\n    //   *  subreport - the DOM element that will contain the report item/items\n    // --------------------------------------\n    // Example:\n    // {\n    //   icon: 'shopping-bag',\n    //   text: 'Ad Interests: ',\n    //   type: 'list',\n    //   listData: {\n    //             \"interactions\": {\n    //                \"Clicked ad\": [\n    //                  {\n    //                    \"title\": \"Are you read?\",\n    //                    \"date\": \"Sun Sep 08 2019\"\n    //                  },\n    //                ],\n    //                  \"Closed ad\": [\n    //                    {\n    //                      \"title\": \"Epic idle RPG\",\n    //                      \"date\": \"Thu Aug 08 2019\"\n    //                    }\n    //                  ]\n    //                },\n    //   tooltip: 'Text that will display in tooltip'\n    // }\n\n  }, {\n    key: \"addListHeading\",\n    value: function addListHeading(reportItem, subreport) {\n      var itemIcon = new Image();\n      var item = document.createElement('div');\n      var itemLabel = document.createElement('p');\n      var itemToolTip = new _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__[\"ToolTip\"](reportItem.tooltip); // adding content\n\n      itemIcon.src = this.getIcon(reportItem.icon);\n      itemLabel.innerHTML = reportItem.text; // add styles\n\n      itemIcon.classList.add('report-item-icon');\n      itemLabel.classList.add('report-item-label');\n      item.classList.add('report-item-above'); // appending elements\n\n      item.appendChild(itemIcon);\n      item.appendChild(itemLabel);\n      item.appendChild(itemToolTip); // loop through lists and create all list report items\n\n      Object.keys(reportItem.listData).forEach(function (item_key) {\n        // create and append subheading and ul element\n        var reportListSubheading = document.createElement('h4');\n        var reportHeadingList = document.createElement('div');\n        reportListSubheading.innerHTML = item_key; // styles\n\n        reportHeadingList.classList.add('report-list-with-headings');\n        reportListSubheading.classList.add('report-list-heading');\n        item.appendChild(reportListSubheading);\n        item.appendChild(reportHeadingList); // create individual list items\n\n        reportItem.listData[item_key].forEach(function (subitem) {\n          var subitemElementContainer = document.createElement('div');\n          subitemElementContainer.classList.add('report-list-item');\n          Object.keys(subitem).forEach(function (subitem_key) {\n            var subitemElement = document.createElement('div');\n            var subitemLabel = document.createElement('div');\n            var subitemText = document.createElement('div');\n            subitemElement.classList.add('report-list-subitem');\n            subitemLabel.classList.add('report-list-subitem-label');\n            subitemText.classList.add('report-list-subitem-text');\n            subitemLabel.innerHTML = subitem_key;\n            subitemText.innerHTML = subitem[subitem_key];\n            subitemElement.appendChild(subitemLabel);\n            subitemElement.appendChild(subitemText);\n            subitemElementContainer.appendChild(subitemElement);\n          });\n          reportHeadingList.appendChild(subitemElementContainer);\n        }); // append to subreport\n\n        subreport.content.appendChild(item);\n      });\n    } // Descr: adds a report item/s to a subreport that look like a list.\n    //        think typical ul HTML elements. \n    // --------------------------------------\n    // Input:\n    //   *  lists - array of report items. DS example below\n    //   *  subreport - the DOM element that will contain the report item/items\n    // --------------------------------------\n    // Data Structure example of a list item:\n    // {\n    //   icon: 'shopping-bag',\n    //   text: 'Ad Interests: ',\n    //   type: 'list',\n    //   listData: ['some item', 'another item', 'more items'],\n    //   tooltip: 'Text that will display in tooltip'\n    // }\n\n  }, {\n    key: \"addList\",\n    value: function addList(lists, subreport) {\n      var _this2 = this;\n\n      // loop through lists and create all list report items\n      lists.forEach(function (item) {\n        // element creation\n        var itemIcon = new Image();\n        var reportItem = document.createElement('div');\n        var itemLabel = document.createElement('p');\n        var reportList = document.createElement('ul');\n        var itemToolTip = new _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__[\"ToolTip\"](item.tooltip); // create individual list items\n\n        item.listData.forEach(function (listItemText) {\n          var listItem = document.createElement('li');\n          listItem.innerHTML = listItemText;\n          reportList.appendChild(listItem);\n        }); // adding content\n\n        itemIcon.src = _this2.getIcon(item.icon);\n        itemLabel.innerHTML = item.text; // add styles\n\n        reportList.classList.add('report-list');\n        itemIcon.classList.add('report-item-icon');\n        itemLabel.classList.add('report-item-label');\n        reportItem.classList.add('report-item-above'); // appending elements\n\n        reportItem.appendChild(itemIcon);\n        reportItem.appendChild(itemLabel);\n        reportItem.appendChild(itemToolTip);\n        reportItem.appendChild(reportList); // append to subreport\n\n        subreport.content.appendChild(reportItem);\n      });\n    } // Descr: adds a report item/s to a subreport that has raw data\n    //        Think a long json file. Content is wrapped in a pre tag \n    // --------------------------------------\n    // Input:\n    //   *  rawItems - array of raw report items. DS example below\n    //   *  subreport - the DOM element that will contain the report item/items\n    // --------------------------------------\n    // Data Structure example of a list item:\n    // {\n    //   icon: 'smile',\n    //   text: 'Face: ',\n    //   rawData: 'slkdajsldkjiewjlksajdlkjsldknaslkdlqkjeqwkejlansd',\n    //   tooltip: 'Text that will display in tooltip.'\n    // }\n\n  }, {\n    key: \"addRaw\",\n    value: function addRaw(rawItems, subreport) {\n      var _this3 = this;\n\n      // loop through rawItems and create all raw report items\n      rawItems.forEach(function (item) {\n        // element creation\n        var itemIcon = new Image();\n        var reportItem = document.createElement('div');\n        var itemLabel = document.createElement('p');\n        var itemRaw = document.createElement('pre');\n        var itemToolTip = new _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__[\"ToolTip\"](item.tooltip); // adding content\n\n        itemIcon.src = _this3.getIcon(item.icon);\n        itemLabel.innerHTML = item.text;\n        itemRaw.innerHTML = item.rawData; // add styles\n\n        itemRaw.classList.add('report-raw');\n        itemIcon.classList.add('report-item-icon');\n        itemLabel.classList.add('report-item-label');\n        reportItem.classList.add('report-item-above'); // appending elements\n\n        reportItem.appendChild(itemIcon);\n        reportItem.appendChild(itemLabel);\n        reportItem.appendChild(itemToolTip);\n        reportItem.appendChild(itemRaw); // append to subreport\n\n        subreport.content.appendChild(reportItem);\n      });\n    } // Descr: adds a report item/s to a subreport. Every item will have\n    //        an individual icon, tooltip and label. All items are displayed in a row.\n    // --------------------------------------\n    // Input:\n    //   *  reportItems - array of report items. DS example below\n    //   *  subreport - the DOM element that will contain the report item/items\n    // --------------------------------------\n    // Data Structure example of a list item:\n    // {\n    //   icon: 'smile',\n    //   text: 'Face Count: ',\n    //   textBold: 15,\n    //   tooltip: 'This text will be displayed in the tooltip.'\n    // }\n\n  }, {\n    key: \"addIconList\",\n    value: function addIconList(reportItems, subreport) {\n      var _this4 = this;\n\n      // loop through reportItems and create each report item\n      reportItems.forEach(function (item) {\n        // element creation\n        var itemIcon = new Image();\n        var reportItem = document.createElement('div');\n        var itemLabel = document.createElement('p');\n        var itemToolTip = new _components_toolTip_js__WEBPACK_IMPORTED_MODULE_1__[\"ToolTip\"](item.tooltip); // create the report item text\n\n        var itemText = null;\n\n        if (item.link) {\n          itemText = document.createElement('a');\n          itemText.innerHTML = item.textBold;\n          itemText.target = 'blank';\n          itemText.href = item.link;\n        } else {\n          itemText = _this4.renderText(item.textBold);\n        } // appending elements\n\n\n        reportItem.appendChild(itemIcon);\n        reportItem.appendChild(itemLabel);\n        reportItem.appendChild(itemText);\n        reportItem.appendChild(itemToolTip); // adding content\n\n        itemIcon.src = _this4.getIcon(item.icon);\n        itemLabel.innerHTML = item.text; // styles\n\n        itemIcon.classList.add('report-item-icon');\n        itemLabel.classList.add('report-item-label');\n        reportItem.classList.add('report-item-grid'); // add to subreport\n\n        subreport.content.appendChild(reportItem);\n      });\n    } // Descr: fetches an icon path given an icon name\n    // --------------------------------------\n    // Input:\n    //   *  iconString - string representing the name of the icon\n    // Return:\n    //   *  the icon path of the searched icon. \n    //   *  throws an error if icon doesn't exist? TODO: Maybe should default to an icon?\n\n  }, {\n    key: \"getIcon\",\n    value: function getIcon(iconString) {\n      var icon = this.icons[iconString];\n\n      if (icon) {\n        return icon;\n      } else {\n        throw \"Invalid icon '\".concat(iconString, \"'\");\n      }\n    } // Descr:  creates a paragraph element\n    // --------------------------------------\n    // Input:\n    //   *  text - string which is the innerHTML of the p tag\n    // Return:\n    //   * the p tag element\n\n  }, {\n    key: \"renderText\",\n    value: function renderText(text) {\n      var container = document.createElement('p');\n      container.classList.add('report-item-text');\n      container.innerHTML = text;\n      return container;\n    }\n  }]);\n\n  return reportFactory;\n}();\n\n//# sourceURL=webpack:///./src/js/factories/reportFactory.js?");
 
 /***/ }),
 
@@ -898,323 +952,291 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./src/page-facebook/instructions sync recursive ^\\.\\/.*$":
-/*!******************************************************!*\
-  !*** ./src/page-facebook/instructions sync ^\.\/.*$ ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var map = {\n\t\"./instructions\": \"./src/page-facebook/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/page-facebook/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/page-facebook/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/page-facebook/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/page-facebook/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/page-facebook/instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/page-facebook/instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/page-facebook/instructions/step6-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/page-facebook/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions_sync_^\\.\\/.*$?");
-
-/***/ }),
-
-/***/ "./src/page-facebook/instructions/instructions.json":
-/*!**********************************************************!*\
-  !*** ./src/page-facebook/instructions/instructions.json ***!
-  \**********************************************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, default */
-/***/ (function(module) {
-
-eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.<br>Enter <a href='https://facebook.com' target=blank>https://facebook.com</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click in the upper right corner, and open settings.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Click on 'Your Facebook information' in the side bar menu.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Click on 'View' under the 'Download your information' tab.\\\"},{\\\"image\\\":\\\"./step5-web.jpg\\\",\\\"ins\\\":\\\"1. Select JSON for data format.<br> 2. Select media quality (recommended low if you want a small filesize).<br> 3. Finally click 'Create File'.\\\"},{\\\"image\\\":\\\"./step6-web.jpg\\\",\\\"ins\\\":\\\"In a couple of hours check your Facebook notifications, and save your file. Store it somewhere safe.\\\"}]\");\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/instructions.json?");
-
-/***/ }),
-
-/***/ "./src/page-facebook/instructions/step1-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/page-facebook/instructions/step1-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"5c2c14f9808a07b01e54ba4ac60b44e2.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step1-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-facebook/instructions/step2-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/page-facebook/instructions/step2-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"c52927af834cebd9f999a43562733edc.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step2-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-facebook/instructions/step3-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/page-facebook/instructions/step3-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"ade9013cbf5d1f9111ef91305432fb12.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step3-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-facebook/instructions/step4-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/page-facebook/instructions/step4-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"8c8a88f1d67c05e3b5bf7a0717f13d92.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step4-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-facebook/instructions/step5-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/page-facebook/instructions/step5-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"fb556c0bc721f16c941334a9c36df100.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step5-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-facebook/instructions/step6-web.jpg":
-/*!******************************************************!*\
-  !*** ./src/page-facebook/instructions/step6-web.jpg ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"c44c5706d25bde00683f548037531fb2.jpg\";\n\n//# sourceURL=webpack:///./src/page-facebook/instructions/step6-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-facebook/main.js":
-/*!***********************************!*\
-  !*** ./src/page-facebook/main.js ***!
-  \***********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../js/constants.js */ \"./src/js/constants.js\");\n/* harmony import */ var _js_helpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../js/helpers.js */ \"./src/js/helpers.js\");\n/* harmony import */ var _js_analyzers_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../js/analyzers/analyzerHelpers.js */ \"./src/js/analyzers/analyzerHelpers.js\");\n/* harmony import */ var _js_analyzers_fbAnalyzer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../js/analyzers/fbAnalyzer.js */ \"./src/js/analyzers/fbAnalyzer.js\");\n/* harmony import */ var _js_components_navBar_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../js/components/navBar.js */ \"./src/js/components/navBar.js\");\n/* harmony import */ var _js_components_filePicker_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../js/components/filePicker.js */ \"./src/js/components/filePicker.js\");\n/* harmony import */ var _js_factories_reportFactory_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../js/factories/reportFactory.js */ \"./src/js/factories/reportFactory.js\");\n/* harmony import */ var _js_factories_insFactory_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../js/factories/insFactory.js */ \"./src/js/factories/insFactory.js\");\n/* harmony import */ var _styles_facebook_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../styles/facebook.scss */ \"./src/styles/facebook.scss\");\n/* harmony import */ var _styles_facebook_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styles_facebook_scss__WEBPACK_IMPORTED_MODULE_8__);\n/* harmony import */ var _images_icons_facebook_inline_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../images/icons/facebook_inline.svg */ \"./src/images/icons/facebook_inline.svg\");\n/* harmony import */ var _images_icons_facebook_inline_svg__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_images_icons_facebook_inline_svg__WEBPACK_IMPORTED_MODULE_9__);\n// JS imports:\n\n\n\n\n\n\n\n // CSS imports:\n\n\n // this is instructions loading. Should stay here only temporarily during development\n\nvar instructions = new _js_factories_insFactory_js__WEBPACK_IMPORTED_MODULE_7__[\"insFactory\"]('facebook', document.getElementById('instructions-container'));\nvar rRender = new _js_factories_reportFactory_js__WEBPACK_IMPORTED_MODULE_6__[\"reportFactory\"]('facebook');\nvar nBar = new _js_components_navBar_js__WEBPACK_IMPORTED_MODULE_4__[\"NavBar\"]();\nvar fPicker = new _js_components_filePicker_js__WEBPACK_IMPORTED_MODULE_5__[\"FilePicker\"](document.getElementById('filepicker'));\nvar analyzer = new _js_analyzers_fbAnalyzer_js__WEBPACK_IMPORTED_MODULE_3__[\"FBAnalyzer\"](renderReport);\nvar websiteIcon = document.getElementById('website-icon');\nwebsiteIcon.innerHTML = _images_icons_facebook_inline_svg__WEBPACK_IMPORTED_MODULE_9___default.a;\nvar previewBtn = document.getElementById('preview-btn');\n\npreviewBtn.onclick = function () {\n  renderReport(true);\n};\n\nkickStartReport();\n\nfunction kickStartReport() {\n  if (true) {\n    fPicker.onUpload(function (file) {\n      analyzer.init(file);\n    });\n  } else {}\n}\n\nfunction renderReport(fakeData) {\n  //TODO: needs to scroll to report once done\n  var data = analyzer.getData(fakeData);\n  renderReportHeading(data); // renders ad report\n\n  var adReport = renderAdReport(data.adStats); // renders search report\n\n  var searchReport = renderSearchReport(data.searchStats); // renders message report\n\n  var msgReport = renderMsgReport(data.msgStats); // renders reaction report\n\n  var reactionReport = renderReactionReport(data.reactionStats); // renders post report\n\n  var postReport = renderPostReport(data.postStats);\n}\n\nfunction renderReportHeading(data) {\n  // data crunching\n  var dateRange = Object(_js_analyzers_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"getCurrentDate\"])();\n  var dateStart = new Date(data.joined);\n  var numDays = Object(_js_analyzers_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"getNumDays\"])(dateStart, dateRange);\n  var reportItems = [{\n    icon: 'calendar',\n    text: 'Date Joined: ',\n    textBold: dateStart.toDateString(),\n    tooltip: 'Date when you started your Facebook account.'\n  }, {\n    icon: 'activity',\n    text: 'Data Range: ',\n    textBold: \"\".concat(numDays, \" days\"),\n    tooltip: 'The number of days you have had your Facebook account for.'\n  }, {\n    icon: 'heart',\n    text: 'Relationship Count: ',\n    textBold: data.relationship_count,\n    tooltip: 'Number of Facebook relationships you have had.'\n  }, {\n    icon: 'heart',\n    text: 'Relationship Status: ',\n    textBold: data.relationship_status,\n    tooltip: 'Your Facebook relationship status.'\n  }, {\n    icon: 'cake',\n    text: 'Birthday: ',\n    textBold: Object(_js_analyzers_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"formatDate\"])(data.birthday),\n    tooltip: 'This one is pretty self-explanatory. (:'\n  }, {\n    icon: 'user',\n    text: 'Last Profile Update: ',\n    textBold: Object(_js_analyzers_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"formatDate\"])(data.last_profile_update),\n    tooltip: 'Last time you updated your Facebook profile.'\n  }, {\n    icon: 'user',\n    text: 'Profile Updates: ',\n    textBold: data.number_profile_updates,\n    tooltip: 'The number of times you have updated your Facebook profile.'\n  }, {\n    icon: 'users',\n    text: 'Friend Peer Group: ',\n    textBold: data.friend_peer_group,\n    tooltip: 'How Facebook classifies your friends.'\n  }, {\n    icon: 'smile',\n    text: 'Face Count: ',\n    textBold: data.face_example_count,\n    tooltip: 'Number of pictures of your face Facebook has.'\n  }];\n  var faceData = [{\n    icon: 'smile',\n    text: 'Face: ',\n    rawData: data.my_face,\n    tooltip: 'A code representation of your face.'\n  }];\n  var subreport = rRender.getSubreport(data.name);\n  rRender.add(reportItems, 'icon-list', subreport);\n  rRender.add(faceData, 'raw', subreport);\n}\n\nfunction renderMsgReport(data) {\n  // data crunching\n  var totMsgSent = 0;\n  var totMsgReceived = 0;\n  var numChats = Object.keys(data['regThreads']).length;\n  var numGrChats = data['groupChatThreads'].length;\n  Object.keys(data.regThreads).forEach(function (key) {\n    totMsgSent += data.regThreads[key].msgByUser;\n  });\n  Object.keys(data.regThreads).forEach(function (key) {\n    totMsgReceived += data.regThreads[key].other;\n  });\n  var avgWordsPerMsgSent = Object(_js_analyzers_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"safeDivide\"])(data.total_words.sent, totMsgSent);\n  var avgWordsPerMsgReceived = Object(_js_analyzers_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"safeDivide\"])(data.total_words.received, totMsgReceived); // let avgMsgPerDaySent = safeDivide(totMsgSent, data.days_msged.sent);\n  // let avgMsgPerDayReceived = safeDivide(totMsgReceived, data.days_msged.received);\n\n  var avgCallDuration = Object(_js_analyzers_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"safeDivide\"])(data.callStats.total_duration, data.callStats.num_calls.initiated + data.callStats.num_calls.received);\n  var msgData = [{\n    icon: 'send',\n    text: 'Messages sent:',\n    textBold: Object(_js_helpers_js__WEBPACK_IMPORTED_MODULE_1__[\"formatNum\"])(totMsgSent),\n    tooltip: 'The total number of messages you have sent on Facebook.'\n  }, // {\n  //   icon: 'message-circle',\n  //   text: 'Sent messages per day',\n  //   textBold: avgMsgPerDaySent.toFixed(2),\n  //   tooltip: 'Average number of messages sent every day.'\n  // },\n  {\n    icon: 'message-circle',\n    text: 'Words per message sent',\n    textBold: avgWordsPerMsgSent.toFixed(2),\n    tooltip: 'The average number of words in your messages.'\n  }, {\n    icon: 'inbox',\n    text: 'Messages received:',\n    textBold: Object(_js_helpers_js__WEBPACK_IMPORTED_MODULE_1__[\"formatNum\"])(totMsgReceived),\n    tooltip: 'The total number of messages you have received on Facebook.'\n  }, // {\n  //   icon: 'message-circle',\n  //   text: 'Received Messages per day',\n  //   textBold: avgMsgPerDayReceived.toFixed(2),\n  //   tooltip: 'Average number of messages received every day.'\n  // },\n  {\n    icon: 'message-circle',\n    text: 'Words per message received',\n    textBold: avgWordsPerMsgReceived.toFixed(2),\n    tooltip: 'The average number of words in messages you have received.'\n  }, {\n    icon: 'message-square',\n    text: 'People messaged:',\n    textBold: numChats,\n    tooltip: 'The total number of people you have messaged on Facebook.'\n  }, {\n    icon: 'message-circle',\n    text: 'Group chats:',\n    textBold: numGrChats,\n    tooltip: 'The total number of group chats you have participated in.'\n  }, {\n    icon: 'message-square',\n    text: 'Calls started:',\n    textBold: data.callStats.num_calls.initiated,\n    tooltip: 'The total number of calls you have started on Facebook.'\n  }, {\n    icon: 'message-square',\n    text: 'Calls received:',\n    textBold: data.callStats.num_calls.received,\n    tooltip: 'The total number of calls you have received on Facebook.'\n  }, {\n    icon: 'message-square',\n    text: 'Time spent in calls:',\n    textBold: Object(_js_helpers_js__WEBPACK_IMPORTED_MODULE_1__[\"secondsToHms\"])(data.callStats.total_duration),\n    tooltip: 'The total time you have spent on a Facebook call'\n  }, {\n    icon: 'message-square',\n    text: 'Call duration:',\n    textBold: Object(_js_helpers_js__WEBPACK_IMPORTED_MODULE_1__[\"secondsToHms\"])(avgCallDuration),\n    tooltip: 'The average duration of your calls.'\n  }];\n  var subreport = rRender.getSubreport('Message Report');\n  rRender.add(msgData, 'icon-list', subreport);\n  renderMsgGraphs(data, subreport);\n}\n\nfunction renderMsgGraphs(data, subreport) {\n  rRender.getSubreportGraphContainer('graphs-container-messages', subreport);\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    title: 'Messages by Hour of Day - Sent',\n    data: data.timeStats.hourly.sent,\n    css_label: 'msg-graph',\n    clock_labels: ['messages', 'messaged'],\n    size: 'medium'\n  });\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    title: 'Messages by Hour of Day - Received',\n    data: data.timeStats.hourly.received,\n    css_label: 'msg-graph',\n    clock_labels: ['messages', 'messaged'],\n    size: 'medium'\n  }); // daily messages chart\n\n  var msgSentDaily = data.timeStats.weekly.sent;\n  var msgReceivedDaily = data.timeStats.weekly.received; // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  msgSentDaily.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Messages by Day of the Week',\n    data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],\n    labels: _js_constants_js__WEBPACK_IMPORTED_MODULE_0__[\"DAYS\"],\n    css_label: 'msg-graph',\n    size: 'medium'\n  }); // monthly messages chart\n\n  var msgSentMonthly = data.timeStats.monthly.sent;\n  var msgReceivedMonthly = data.timeStats.monthly.received; // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  msgSentMonthly.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Messages by Month',\n    data: [msgSentMonthly, msgReceivedMonthly, ['Sent', 'Received']],\n    labels: _js_constants_js__WEBPACK_IMPORTED_MODULE_0__[\"MONTHS\"],\n    css_label: 'msg-graph',\n    size: 'medium'\n  }); // yearly messagages chart\n\n  var msgSentYearly = Object.keys(data.timeStats.yearly).map(function (y) {\n    return data.timeStats.yearly[y].sent;\n  });\n  var msgReceivedYearly = Object.keys(data.timeStats.yearly).map(function (y) {\n    return data.timeStats.yearly[y].received;\n  }); // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  msgSentYearly.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Messages by Year',\n    data: [msgSentYearly, msgReceivedYearly, ['Sent', 'Received']],\n    labels: Object.keys(data.timeStats.yearly),\n    css_label: 'msg-graph',\n    size: 'medium'\n  }); // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED\n  // THIS IS NOT FUNCTIONAL?\n\n  var sum = 0;\n  var msgCumulative = Object.keys(data.timeStats.yearly).reduce(function (acc, dp) {\n    sum += data.timeStats.yearly[dp].sent + data.timeStats.yearly[dp].received;\n    acc[dp] = sum;\n    return acc;\n  }, {});\n  rRender.addGraph(subreport, {\n    type: 'line',\n    title: 'Cumulative Messages over Years',\n    data: Object.values(msgCumulative),\n    labels: Object.keys(msgCumulative),\n    css_label: 'msg-graph',\n    size: 'medium'\n  }); // top messegers chart \n\n  var topMessagers = Object(_js_analyzers_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"getTopMessagers\"])(data.regThreads, 15);\n  var msgSent = topMessagers.reduce(function (acc, msger) {\n    var cnt1 = data.regThreads[msger][\"msgByUser\"];\n    acc.push(cnt1);\n    return acc;\n  }, []);\n  var msgReceived = topMessagers.reduce(function (acc, msger) {\n    var cnt1 = data.regThreads[msger][\"other\"];\n    acc.push(cnt1);\n    return acc;\n  }, []); // get top messagers names\n\n  var topMessagersNames = topMessagers.reduce(function (acc, thread) {\n    acc.push(data.regThreads[thread].messager);\n    return acc;\n  }, []);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Top Messagers',\n    data: [msgSent, msgReceived, [\"\".concat(data.name), 'Friend']],\n    labels: topMessagersNames,\n    css_label: 'msg-graph',\n    size: 'medium'\n  });\n}\n\nfunction renderSearchReport(data, parent) {\n  var searchData = [{\n    icon: 'search',\n    text: 'Num Searches: ',\n    textBold: data.num_searches,\n    tooltip: 'The number of searches in the Facebook search bar.'\n  }];\n  var subreport = rRender.getSubreport('Search Report');\n  rRender.add(searchData, 'icon-list', subreport); // render graphs\n\n  rRender.getSubreportGraphContainer('graphs-container-searches', subreport);\n  var topSearches = Object(_js_analyzers_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"getTopSearches\"])(data.searches, 20);\n  rRender.addGraph(subreport, {\n    type: 'bar',\n    title: 'Top Searches',\n    data: Object.values(topSearches),\n    labels: Object.keys(topSearches),\n    css_label: 'search-graph',\n    size: 'medium'\n  }); // hourly searches chart\n\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    data: data.timeStats.hourly,\n    title: 'Searches by Hour of Day',\n    clock_labels: ['searches', 'searched'],\n    css_label: 'search-graph',\n    size: 'medium'\n  }); // yearly searches chart\n\n  rRender.addGraph(subreport, {\n    type: 'bar',\n    title: 'Searches by Year',\n    data: Object.values(data.timeStats.yearly),\n    labels: Object.keys(data.timeStats.yearly),\n    css_label: 'search-graph',\n    size: 'medium'\n  });\n}\n\nfunction renderPostReport(data, parent) {\n  var postData = [{\n    icon: 'file-text',\n    text: 'Number of posts: ',\n    textBold: data.num_posts_sent,\n    tooltip: 'The number of posts you have made on Facebook. This includes Groups and Pages posts'\n  }, {\n    icon: 'file-text',\n    text: 'Num Posts on your Timeline: ',\n    textBold: data.num_posts_received,\n    tooltip: 'The number of posts people and entities have made on your Facebook timeline.'\n  }];\n  var subreport = rRender.getSubreport('Post Report');\n  rRender.add(postData, 'icon-list', subreport);\n  renderPostGraphs(data, subreport);\n}\n\nfunction renderPostGraphs(data, subreport) {\n  rRender.getSubreportGraphContainer('graphs-container-posts', subreport); // hourly posts chart\n\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    title: 'Posts by Hour of Day - Sent',\n    data: data.timeStats.hourly.sent,\n    clock_labels: ['posts', 'posted'],\n    css_label: 'post-graph',\n    size: 'medium'\n  });\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    data: data.timeStats.hourly.received,\n    title: 'Posts by Hour of Day - Received',\n    clock_labels: ['posts', 'posted'],\n    css_label: 'post-graph',\n    size: 'medium'\n  }); // daily posts chart\n\n  var postSentDaily = data.timeStats.weekly.sent;\n  var postReceivedDaily = data.timeStats.weekly.received; // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  postSentDaily.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Posts by Day of the Week',\n    data: [postSentDaily, postReceivedDaily, ['Posted', 'Posted by others on Timeline']],\n    labels: _js_constants_js__WEBPACK_IMPORTED_MODULE_0__[\"DAYS\"],\n    css_label: 'post-graph',\n    size: 'medium'\n  }); // monthly posts chart\n\n  var postSentMonthly = data.timeStats.monthly.sent;\n  var postReceivedMonthly = data.timeStats.monthly.received; // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  postSentMonthly.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Posts by Month',\n    data: [postSentMonthly, postReceivedMonthly, ['Posted', 'Posted by others on Timeline']],\n    labels: _js_constants_js__WEBPACK_IMPORTED_MODULE_0__[\"MONTHS\"],\n    css_label: 'post-graph',\n    size: 'medium'\n  }); // yearly messagages chart\n\n  var postSentYearly = Object.keys(data.timeStats.yearly).map(function (y) {\n    return data.timeStats.yearly[y].sent;\n  });\n  var postReceivedYearly = Object.keys(data.timeStats.yearly).map(function (y) {\n    return data.timeStats.yearly[y].received;\n  }); // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  postSentYearly.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Posts by Year',\n    labels: Object.keys(data.timeStats.yearly),\n    data: [postSentYearly, postReceivedYearly, ['Posted', 'Posted by others on Timeline']],\n    css_label: 'post-graph',\n    size: 'medium'\n  }); // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED\n  // THIS IS NOT FUNCTIONAL?\n\n  var sum = 0;\n  var postCumulative = Object.keys(data.timeStats.yearly).reduce(function (acc, dp) {\n    sum += data.timeStats.yearly[dp].sent + data.timeStats.yearly[dp].received;\n    acc[dp] = sum;\n    return acc;\n  }, {});\n  rRender.addGraph(subreport, {\n    type: 'line',\n    data: Object.values(postCumulative),\n    title: 'Cumulative Posts over Years',\n    labels: Object.keys(postCumulative),\n    css_label: 'post-graph',\n    size: 'medium'\n  });\n}\n\nfunction renderReactionReport(data) {\n  var reactionData = [{\n    icon: 'thumbs-up-fa',\n    text: 'Num Likes: ',\n    textBold: data.reactions.LIKE,\n    tooltip: 'The number of Like reactions you have gifted people on Facebook.'\n  }, {\n    icon: 'heart-solid-fa',\n    textBold: data.reactions.LOVE,\n    tooltip: 'The number of Love reactions you have gifted people on Facebook.'\n  }, {\n    icon: 'cry-fa',\n    text: 'Num Sorries: ',\n    textBold: data.reactions.SORRY,\n    tooltip: 'The number of Sorry reactions you have gifted people on Facebook.'\n  }, {\n    icon: 'smile-fa',\n    text: 'Num WOWs: ',\n    textBold: data.reactions.WOW,\n    tooltip: 'The number of WOW reactions you have gifted people on Facebook.'\n  }, {\n    icon: 'angry-fa',\n    text: 'Num Angers: ',\n    textBold: data.reactions.ANGER,\n    tooltip: 'The number of Anger reactions you have gifted people on Facebook.'\n  }, {\n    icon: 'laugh-fa',\n    textBold: data.reactions.HAHA,\n    tooltip: 'The number of HaHa reactions you have gifted people on Facebook.'\n  }];\n  var subreport = rRender.getSubreport('Reaction Report');\n  rRender.add(reactionData, 'big-icon-list', subreport); // render graphs\n\n  rRender.getSubreportGraphContainer('graphs-container-reactions', subreport); // hourly reactions chart\n\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    data: data.timeStats.hourly,\n    title: 'Reactions by Hour of Day',\n    clock_labels: ['reactions', 'reacted'],\n    css_label: 'reaction-graph',\n    size: 'medium'\n  }); // yearly reactions chart\n\n  rRender.addGraph(subreport, {\n    type: 'bar',\n    title: 'Reactions by Year',\n    labels: Object.keys(data.timeStats.yearly),\n    data: Object.values(data.timeStats.yearly),\n    css_label: 'reaction-graph',\n    size: 'medium'\n  });\n}\n\nfunction renderAdReport(data) {\n  var reportItems = [{\n    icon: 'target',\n    text: 'Ad Interests Num: ',\n    textBold: data.topics.length,\n    tooltip: 'How many interests you have according to Facebook.'\n  }];\n  var adInterests = [{\n    icon: 'shopping-bag',\n    text: 'Ad Interests: ',\n    type: 'list',\n    listData: data.topics,\n    tooltip: 'What Facebook thinks you are interested in.'\n  }];\n  var adInteractions = {\n    icon: 'mouse-pointer',\n    text: 'Ad Interactions: ',\n    listData: data.interactions,\n    tooltip: 'Ads you have interacted with on Facebook'\n  };\n  var subreport = rRender.getSubreport('Ad Report');\n  rRender.add(reportItems, 'icon-list', subreport);\n  rRender.add(adInterests, 'list', subreport);\n  rRender.add(adInteractions, 'list-headings', subreport);\n}\n\n//# sourceURL=webpack:///./src/page-facebook/main.js?");
-
-/***/ }),
-
-/***/ "./src/page-spotify/instructions sync recursive ^\\.\\/.*$":
-/*!*****************************************************!*\
-  !*** ./src/page-spotify/instructions sync ^\.\/.*$ ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var map = {\n\t\"./instructions\": \"./src/page-spotify/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/page-spotify/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/page-spotify/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/page-spotify/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/page-spotify/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/page-spotify/instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/page-spotify/instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/page-spotify/instructions/step6-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions_sync_^\\.\\/.*$?");
-
-/***/ }),
-
-/***/ "./src/page-spotify/instructions/instructions.json":
-/*!*********************************************************!*\
-  !*** ./src/page-spotify/instructions/instructions.json ***!
-  \*********************************************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, default */
-/***/ (function(module) {
-
-eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://spotify.com/us/account' target=blank>spotify.com/us/account</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Log into your spotify account.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on 'Privacy Settings' in the left sidebar.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on the 'Request' button.\\\"},{\\\"image\\\":\\\"./step5-web.jpg\\\",\\\"ins\\\":\\\"Once your data copy is prepared you will get an email.</br>Open your email client and click on download.\\\"},{\\\"image\\\":\\\"./step6-web.jpg\\\",\\\"ins\\\":\\\"You should be redirected to your Spotify account.</br>Enter your password, and click verify.</br>Choose where to save your file, and remember to keep it safe!\\\"}]\");\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/instructions.json?");
-
-/***/ }),
-
-/***/ "./src/page-spotify/instructions/step1-web.jpg":
-/*!*****************************************************!*\
-  !*** ./src/page-spotify/instructions/step1-web.jpg ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"fb24f8e1c25796afadc3965ff40c2313.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step1-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-spotify/instructions/step2-web.jpg":
-/*!*****************************************************!*\
-  !*** ./src/page-spotify/instructions/step2-web.jpg ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"267e5514b194149ef395c375c15abb3b.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step2-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-spotify/instructions/step3-web.jpg":
-/*!*****************************************************!*\
-  !*** ./src/page-spotify/instructions/step3-web.jpg ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"da14fa70420003e4845820cf46b33e5c.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step3-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-spotify/instructions/step4-web.jpg":
-/*!*****************************************************!*\
-  !*** ./src/page-spotify/instructions/step4-web.jpg ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"e58e0a089c9ddc6cd950984b9e89668e.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step4-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-spotify/instructions/step5-web.jpg":
-/*!*****************************************************!*\
-  !*** ./src/page-spotify/instructions/step5-web.jpg ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"9e15e5f19dd1b07da597fbd8f803e459.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step5-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-spotify/instructions/step6-web.jpg":
-/*!*****************************************************!*\
-  !*** ./src/page-spotify/instructions/step6-web.jpg ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"affb2283841b2aaa7116c370ad3faed2.jpg\";\n\n//# sourceURL=webpack:///./src/page-spotify/instructions/step6-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-tinder/instructions sync recursive ^\\.\\/.*$":
-/*!****************************************************!*\
-  !*** ./src/page-tinder/instructions sync ^\.\/.*$ ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var map = {\n\t\"./instructions\": \"./src/page-tinder/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/page-tinder/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/page-tinder/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/page-tinder/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/page-tinder/instructions/step3-web.jpg\",\n\t\"./step4-web.png\": \"./src/page-tinder/instructions/step4-web.png\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/page-tinder/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions_sync_^\\.\\/.*$?");
-
-/***/ }),
-
-/***/ "./src/page-tinder/instructions/instructions.json":
-/*!********************************************************!*\
-  !*** ./src/page-tinder/instructions/instructions.json ***!
-  \********************************************************/
-/*! exports provided: 0, 1, 2, 3, default */
-/***/ (function(module) {
-
-eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://account.gotinder.com/' target=blank>account.gotinder.com</a> in the address bar.</br>Login to your tinder account\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click on the 'Download my data' button.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Enter the email address where you would like to receive the download link.\\\"},{\\\"image\\\":\\\"./step4-web.png\\\",\\\"ins\\\":\\\"Wait to receive the download link in your email. This can take up to a month.\\\"}]\");\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/instructions.json?");
-
-/***/ }),
-
-/***/ "./src/page-tinder/instructions/step1-web.jpg":
-/*!****************************************************!*\
-  !*** ./src/page-tinder/instructions/step1-web.jpg ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"01a3edd599ce65624d381b601d5f46c8.jpg\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step1-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-tinder/instructions/step2-web.jpg":
-/*!****************************************************!*\
-  !*** ./src/page-tinder/instructions/step2-web.jpg ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"b92dc0f21950ab6d98018e944eefeaef.jpg\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step2-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-tinder/instructions/step3-web.jpg":
-/*!****************************************************!*\
-  !*** ./src/page-tinder/instructions/step3-web.jpg ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"11b81c17245254ee61566167c027c4db.jpg\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step3-web.jpg?");
-
-/***/ }),
-
-/***/ "./src/page-tinder/instructions/step4-web.png":
-/*!****************************************************!*\
-  !*** ./src/page-tinder/instructions/step4-web.png ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"bbd24f0f4a1f03b0a224c58d5eeab38a.png\";\n\n//# sourceURL=webpack:///./src/page-tinder/instructions/step4-web.png?");
-
-/***/ }),
-
-/***/ "./src/styles/components/filePicker.scss":
+/***/ "./src/pages/page-facebook/facebook.scss":
 /*!***********************************************!*\
-  !*** ./src/styles/components/filePicker.scss ***!
+  !*** ./src/pages/page-facebook/facebook.scss ***!
   \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/styles/components/filePicker.scss?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/pages/page-facebook/facebook.scss?");
 
 /***/ }),
 
-/***/ "./src/styles/components/instructions.scss":
-/*!*************************************************!*\
-  !*** ./src/styles/components/instructions.scss ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/pages/page-facebook/facebookAnalyzer.js":
+/*!*****************************************************!*\
+  !*** ./src/pages/page-facebook/facebookAnalyzer.js ***!
+  \*****************************************************/
+/*! exports provided: FacebookAnalyzer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/styles/components/instructions.scss?");
-
-/***/ }),
-
-/***/ "./src/styles/components/loadBar.scss":
-/*!********************************************!*\
-  !*** ./src/styles/components/loadBar.scss ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/styles/components/loadBar.scss?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"FacebookAnalyzer\", function() { return FacebookAnalyzer; });\n/* harmony import */ var _js_analysis_baseAnalyzer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../js/analysis/baseAnalyzer.js */ \"./src/js/analysis/baseAnalyzer.js\");\nfunction _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\n\n\nvar FacebookAnalyzer =\n/*#__PURE__*/\nfunction (_BaseAnalyzer) {\n  _inherits(FacebookAnalyzer, _BaseAnalyzer);\n\n  function FacebookAnalyzer(callback) {\n    var _this;\n\n    _classCallCheck(this, FacebookAnalyzer);\n\n    _this = _possibleConstructorReturn(this, _getPrototypeOf(FacebookAnalyzer).call(this, callback));\n    _this.username = 'unknown';\n    _this.fakeData = __webpack_require__(/*! ./fake_data.json */ \"./src/pages/page-facebook/fake_data.json\");\n    _this.data = {\n      'name': null,\n      'joined': null,\n      'brithday': null,\n      'relationship_count': null,\n      'relationship_status': null,\n      'last_profile_update': null,\n      'number_profile_updates': null,\n      'friend_peer_group': null,\n      'adStats': {\n        'topics': [],\n        'interactions': []\n      },\n      'reactionStats': {\n        'reactions': {\n          'HAHA': 0,\n          'WOW': 0,\n          'LIKE': 0,\n          'SORRY': 0,\n          'ANGER': 0,\n          'LOVE': 0\n        },\n        'timeStats': {\n          'yearly': {},\n          'hourly': Array(24).fill(0)\n        }\n      },\n      'postStats': {\n        'num_posts_sent': 0,\n        'num_posts_received': 0,\n        'timeStats': {\n          'hourly': {\n            'sent': Array(24).fill(0),\n            'received': Array(24).fill(0)\n          },\n          'weekly': {\n            'sent': Array(7).fill(0),\n            'received': Array(7).fill(0)\n          },\n          'monthly': {\n            'sent': Array(12).fill(0),\n            'received': Array(12).fill(0)\n          },\n          'yearly': {}\n        }\n      },\n      'searchStats': {\n        'num_searches': null,\n        'searches': {},\n        'timeStats': {\n          'yearly': {},\n          'hourly': Array(24).fill(0)\n        }\n      },\n      'msgStats': {\n        'name': null,\n        'groupChatThreads': [],\n        'regThreads': {},\n        'numPictures': {\n          'gifs': 0,\n          'other': 0\n        },\n        'days_msged': {\n          \"sent\": 0,\n          \"received\": 0\n        },\n        'total_words': {\n          'sent': 0,\n          'received': 0\n        },\n        'callStats': {\n          'num_calls': {\n            'initiated': 0,\n            'received': 0\n          },\n          'total_duration': 0\n        },\n        'timeStats': {\n          'hourly': {\n            'sent': Array(24).fill(0),\n            'received': Array(24).fill(0)\n          },\n          'weekly': {\n            'sent': Array(7).fill(0),\n            'received': Array(7).fill(0)\n          },\n          'monthly': {\n            'sent': Array(12).fill(0),\n            'received': Array(12).fill(0)\n          },\n          'yearly': {}\n        }\n      }\n    };\n    return _this;\n  }\n\n  _createClass(FacebookAnalyzer, [{\n    key: \"init\",\n    value: function init(file) {\n      var _this2 = this;\n\n      this.showLoadScreen();\n      this.fs.importBlob(file, function () {\n        var fns = [{\n          path: 'profile_information/profile_information.json',\n          name: 'fetching profile information',\n          func: _this2.getBaseData\n        }, {\n          path: 'about_you/friend_peer_group.json',\n          name: 'fetching who your friends are',\n          func: _this2.getFriendPeerGroup\n        }, {\n          path: 'about_you/face_recognition.json',\n          name: 'fetching face data',\n          func: _this2.getFaceRecognitionData\n        }, {\n          path: 'profile_information/profile_update_history.json',\n          name: 'fetching profile updates data',\n          func: _this2.getProfileUpdateData\n        }, {\n          path: 'posts/your_posts_1.json',\n          name: 'fetching outgoing post data',\n          func: _this2.getPostDataSent\n        }, {\n          path: 'posts/other_people\\'s_posts_to_your_timeline.json',\n          name: 'fetching incoming post data',\n          func: _this2.getPostDataReceived\n        }, {\n          path: 'likes_and_reactions/posts_and_comments.json',\n          name: 'fetching reaction data',\n          func: _this2.getReactionData\n        }, {\n          path: 'search_history/your_search_history.json',\n          name: 'fetching search data',\n          func: _this2.getSearchData\n        }, {\n          path: 'ads/ads_interests.json',\n          name: 'fetching ad data',\n          func: _this2.getAdData\n        }, {\n          path: 'ads/advertisers_you\\'ve_interacted_with.json',\n          name: 'fetching interaction data',\n          func: _this2.getAdInteractionData\n        }]; // execute functions\n\n        for (var i = 0; i < fns.length; i++) {\n          _this2.analyzeFile(fns[i]);\n        } // analyze each message thread\n\n\n        _this2.analyzeDir.call(_this2, 'messages/inbox', 'message_1.json', _this2.analyzeMessageThread);\n\n        _this2.cbChain.initialized();\n      });\n    }\n  }, {\n    key: \"getAdInteractionData\",\n    value: function getAdInteractionData(cbChain, adInteractionInfo) {\n      var _this3 = this;\n\n      var adInteractionInfoJSON = JSON.parse(adInteractionInfo);\n      var interactions = {}; // extract data\n\n      var ad_history = this.get(['history'], adInteractionInfoJSON);\n\n      if (ad_history != 'not found') {\n        ad_history.reduce(function (acc, interaction) {\n          var action = _this3.get(['action'], interaction);\n\n          var title = _this3.get(['title'], interaction);\n\n          var timestamp = _this3.get(['timestamp'], interaction);\n\n          if (timestamp == 'not found' || action == 'not found' || title == 'not found') return acc;\n          var date = new Date(timestamp * 1000);\n\n          if (acc[action]) {\n            acc[action].push({\n              'Ad': title,\n              'Interaction Date': date.toDateString()\n            });\n          } else {\n            acc[action] = [];\n          }\n\n          return acc;\n        }, interactions);\n      }\n\n      this.data.adStats.interactions = interactions;\n      cbChain.call();\n    }\n  }, {\n    key: \"getAdData\",\n    value: function getAdData(cbChain, adInfo) {\n      var adInfoJSON = JSON.parse(adInfo); // extract data\n\n      var ad_interests = this.get(['topics'], adInfoJSON);\n\n      if (ad_interests != 'not found') {\n        this.data.adStats.topics = ad_interests;\n      }\n\n      cbChain.call();\n    }\n  }, {\n    key: \"getPostDataSent\",\n    value: function getPostDataSent(cbChain, postInfo) {\n      var _this4 = this;\n\n      var postInfoJSON = JSON.parse(postInfo); // extract data\n\n      postInfoJSON.reduce(function (acc, post) {\n        var post_date = _this4.get(['timestamp'], post); // no post_date found :(\n\n\n        if (post_date == 'not found') {\n          return acc;\n        } // count number of posts received\n\n\n        _this4.data.postStats.num_posts_sent++;\n        var d = new Date(post_date * 1000);\n        var y = d.getFullYear(); // message years\n\n        acc.timeStats.hourly.sent[d.getHours()]++;\n        acc.timeStats.weekly.sent[d.getDay()]++;\n        acc.timeStats.monthly.sent[d.getMonth()]++;\n\n        if (acc.timeStats.yearly[y]) {\n          acc.timeStats.yearly[y].sent++;\n        } else {\n          acc.timeStats.yearly[y] = {\n            'sent': 1,\n            'received': 0\n          };\n        }\n\n        return acc;\n      }, this.data.postStats);\n      cbChain.call();\n    }\n  }, {\n    key: \"getPostDataReceived\",\n    value: function getPostDataReceived(cbChain, postInfo) {\n      var _this5 = this;\n\n      var postInfoJSON = JSON.parse(postInfo); // extract data\n\n      var received_posts = this.get(['wall_posts_sent_to_you', 'activity_log_data'], postInfoJSON);\n\n      if (received_posts != 'not found') {\n        received_posts.reduce(function (acc, post) {\n          var post_date = _this5.get(['timestamp'], post); // no post_date found :(\n\n\n          if (post_date == 'not found') {\n            return acc;\n          } // count number of posts received\n\n\n          _this5.data.postStats.num_posts_received++;\n          var d = new Date(post_date * 1000);\n          var y = d.getFullYear(); // message years\n\n          acc.timeStats.hourly.received[d.getHours()]++;\n          acc.timeStats.weekly.received[d.getDay()]++;\n          acc.timeStats.monthly.received[d.getMonth()]++;\n\n          if (acc.timeStats.yearly[y]) {\n            acc.timeStats.yearly[y].received++;\n          } else {\n            acc.timeStats.yearly[y] = {\n              'sent': 0,\n              'received': 1\n            };\n          }\n\n          return acc;\n        }, this.data.postStats);\n      }\n\n      cbChain.call();\n    }\n  }, {\n    key: \"getProfileUpdateData\",\n    value: function getProfileUpdateData(cbChain, profileUpdateInfo) {\n      var profileUpdateJSON = JSON.parse(profileUpdateInfo); // extract data\n\n      var profile_updates = this.get(['profile_updates'], profileUpdateJSON);\n\n      if (profile_updates != 'not found' && profile_updates.length > 0) {\n        this.data.last_profile_update = profile_updates[0].timestamp * 1000;\n        this.data.number_profile_updates = profile_updates.length;\n      } else {\n        this.data.last_profile_update = 'not found';\n        this.data.number_profile_updates = 'not found';\n      }\n\n      cbChain.call();\n    }\n  }, {\n    key: \"getFriendPeerGroup\",\n    value: function getFriendPeerGroup(cbChain, friendPeerInfo) {\n      var friendPeerInfoJSON = JSON.parse(friendPeerInfo); // extract data\n\n      var friend_peer_group = this.get(['friend_peer_group'], friendPeerInfoJSON);\n      this.data.friend_peer_group = friend_peer_group;\n      cbChain.call();\n    }\n  }, {\n    key: \"getFaceRecognitionData\",\n    value: function getFaceRecognitionData(cbChain, faceRecInfo) {\n      var faceRecInfoJSON = JSON.parse(faceRecInfo); // extract data\n\n      var facial_data = this.get(['facial_data'], faceRecInfoJSON);\n      this.data.face_example_count = this.get(['example_count'], facial_data);\n      this.data.my_face = this.get(['raw_data'], facial_data);\n      cbChain.call();\n    }\n  }, {\n    key: \"getSearchData\",\n    value: function getSearchData(cbChain, searchInfo) {\n      var searchInfoJSON = JSON.parse(searchInfo); // extract data\n\n      var searches = this.get(['searches'], searchInfoJSON);\n      this.data.searchStats.num_searches = searches.length;\n\n      if (searches != 'not found') {\n        searches.reduce(function (acc, search) {\n          // skip empty searches\n          if (!search.data || !search.data[0]) {\n            return acc;\n          } // gets all of the searches you made with a count next to them\n\n\n          var search_text = this.get(['text'], search.data[0]);\n          var search_key = search_text.toLowerCase();\n          if (search_key == 'not found') return acc;\n\n          if (acc.searches[search_key]) {\n            acc.searches[search_key] += 1;\n          } else {\n            acc.searches[search_key] = 1;\n          } // gets time statistics\n\n\n          var timestamp = this.get(['timestamp'], search);\n          if (timestamp == 'not found') return acc;\n          var d = new Date(search.timestamp * 1000);\n          var y = d.getFullYear(); // hourly stats\n\n          acc.timeStats.hourly[d.getHours()]++; // yearly stats\n\n          if (acc.timeStats.yearly[y]) {\n            acc.timeStats.yearly[y] += 1;\n          } else {\n            acc.timeStats.yearly[y] = 1;\n          }\n\n          return acc;\n        }.bind(this), this.data.searchStats);\n      }\n\n      cbChain.call();\n    }\n  }, {\n    key: \"getReactionData\",\n    value: function getReactionData(cbChain, reactionInfo) {\n      var reactionInfoJSON = JSON.parse(reactionInfo); // extract data\n\n      var reactions = this.get(['reactions'], reactionInfoJSON);\n      this.data.reactionStats.num_reactions = this.get(['length'], reactions);\n\n      if (reactions != 'not found') {\n        reactions.reduce(function (acc, reaction) {\n          // skip empty reactions\n          if (!reaction.data || !reaction.data[0]) {\n            return acc;\n          } // gets all of the count for every type of reaction the user made\n\n\n          var reaction_key = this.get(['reaction', 'reaction'], reaction.data[0]);\n          if (reaction_key == 'not found') return acc;\n\n          if (acc.reactions[reaction_key]) {\n            acc.reactions[reaction_key] += 1;\n          } else {\n            acc.reactions[reaction_key] = 1;\n          } // gets time statistics\n\n\n          var timestamp = this.get(['timestamp'], reaction);\n          if (timestamp == 'not found') return acc;\n          var d = new Date(timestamp * 1000);\n          var y = d.getFullYear(); // hourly stats\n\n          acc.timeStats.hourly[d.getHours()]++; // yearly stats\n\n          if (acc.timeStats.yearly[y]) {\n            acc.timeStats.yearly[y] += 1;\n          } else {\n            acc.timeStats.yearly[y] = 1;\n          }\n\n          return acc;\n        }.bind(this), this.data.reactionStats);\n      }\n\n      cbChain.call();\n    }\n  }, {\n    key: \"getBaseData\",\n    value: function getBaseData(cbChain, profInfo) {\n      var profInfoJSON = JSON.parse(profInfo); // extracting data\n\n      this.username = this.get(['profile', 'name', 'full_name'], profInfoJSON);\n      this.data.name = this.username;\n      this.data.msgStats.name = this.username;\n      var joined_date = this.get(['profile', 'registration_timestamp'], profInfoJSON);\n      this.data.joined = joined_date * 1000;\n      var birthday = this.get(['profile', 'birthday'], profInfoJSON);\n\n      if (birthday != 'not found' && birthday.year && birthday.month && birthday.day) {\n        this.data.birthday = new Date(birthday.year, birthday.month - 1, // months start at 0\n        birthday.day);\n      } else {\n        this.data.brithday = 'not found';\n      }\n\n      var previous_relationships = this.get(['profile', 'previous_relationships'], profInfoJSON);\n      var relationship_status = this.get(['profile', 'relationship', 'status'], profInfoJSON);\n      this.data.relationship_count = previous_relationships.length;\n      this.data.relationship_status = relationship_status;\n      cbChain.call();\n    }\n  }, {\n    key: \"analyzeMessageThread\",\n    value: function analyzeMessageThread(threadName, callback, msg) {\n      var msgData = this.data.msgStats;\n      var msgJSON = JSON.parse(msg);\n      var participants = msgJSON.participants; // all participants in the current chat thread\n\n      var group = true; // remains true if the chat is a groupchat\n\n      var messager = participants[0].name;\n\n      if (participants && participants.length > 2) {\n        msgData.groupChatThreads.push(threadName);\n      } else if (participants) {\n        var participantStat = {\n          'messager': messager,\n          'msgByUser': 0,\n          'other': 0\n        }; // people can have the same name? so you cant just use the name...\n        // use the dirname for the keys\n\n        msgData.regThreads[threadName] = participantStat;\n        group = false;\n      }\n\n      if (msgJSON.messages && msgJSON.messages.length > 1) {\n        // let curDay = null;\n        // pull this function out and make sure you can reuse it in individual thread analysis\n        msgJSON.messages.reduce(function (acc, msg) {\n          // skip message counting for group chats\n          if (group) return acc; // initalize the day (0-6) that a message was sent\n          // if (!curDay) {\n          //   const firstDate = new Date(msg.timestamp_ms);\n          //   curDay = firstDate.getDay();\n          // }\n\n          if (msg.sender_name == this.username && msg.content) {\n            // count sent messages\n            acc.regThreads[threadName].msgByUser++; // get time statistics\n\n            var d = new Date(msg.timestamp_ms);\n            var y = d.getFullYear(); // message years\n\n            acc.timeStats.hourly.sent[d.getHours()]++;\n            acc.timeStats.weekly.sent[d.getDay()]++;\n            acc.timeStats.monthly.sent[d.getMonth()]++;\n\n            if (acc.timeStats.yearly[y]) {\n              acc.timeStats.yearly[y].sent++;\n            } else {\n              acc.timeStats.yearly[y] = {\n                'sent': 1,\n                'received': 0\n              };\n            } // get msg statistics\n\n\n            if (msg.content && msg.type != 'Call') {\n              acc.total_words.sent += msg.content.split(' ').length; // gets number of days that messages happened\n              // TODO: very broken would double count days as it is...\n              // TODO: counts wrong since people can message a week apart from each other, you need to compare years and months too...\n              // if (d.getDay() != curDay) {\n              //   acc.days_msged.sent += 1;\n              //   curDay = d.getDay();\n              // }\n            } // get call statistics\n            else if (msg.type == 'Call' && msg.call_duration > 0 && msg.call_duration < 18000) {\n                acc.callStats.num_calls.initiated += 1;\n                acc.callStats.total_duration += msg.call_duration;\n              }\n          } else if (msg.sender_name == messager && msg.content) {\n            // count received messages\n            acc.regThreads[threadName].other++;\n\n            var _d = new Date(msg.timestamp_ms);\n\n            var _y = _d.getFullYear(); // message years\n\n\n            acc.timeStats.hourly.received[_d.getHours()]++;\n            acc.timeStats.weekly.received[_d.getDay()]++;\n            acc.timeStats.monthly.received[_d.getMonth()]++;\n\n            if (acc.timeStats.yearly[_y]) {\n              acc.timeStats.yearly[_y].received++;\n            } else {\n              acc.timeStats.yearly[_y] = {\n                'sent': 0,\n                'received': 1\n              };\n            } // get msg statistics\n\n\n            if (msg.content && msg.type != 'Call') {\n              acc.total_words.received += msg.content.split(' ').length; // gets number of days that messages happened\n              // if (d.getDay() != curDay) {\n              //   acc.days_msged.received += 1;\n              //   curDay = d.getDay();\n              // }\n            } // get call statistics\n            // NOTE: skipping calls longer than 5h cause Facebook data has some problems\n            else if (msg.type == 'Call' && msg.call_duration > 0 && msg.call_duration < 18000) {\n                acc.callStats.num_calls.received += 1;\n                acc.callStats.total_duration += msg.call_duration;\n              }\n          }\n\n          return acc;\n        }.bind(this), msgData);\n      }\n\n      callback.call();\n\n      if (callback.cbChainCount == 0) {\n        callback.call();\n      }\n    }\n  }]);\n\n  return FacebookAnalyzer;\n}(_js_analysis_baseAnalyzer_js__WEBPACK_IMPORTED_MODULE_0__[\"BaseAnalyzer\"]);\n\n\n\n//# sourceURL=webpack:///./src/pages/page-facebook/facebookAnalyzer.js?");
 
 /***/ }),
 
-/***/ "./src/styles/components/reportscommon.scss":
-/*!**************************************************!*\
-  !*** ./src/styles/components/reportscommon.scss ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/pages/page-facebook/fake_data.json":
+/*!************************************************!*\
+  !*** ./src/pages/page-facebook/fake_data.json ***!
+  \************************************************/
+/*! exports provided: msgStats, postStats, searchStats, reactionStats, adStats, name, birthday, joined, relationship_count, relationship_status, last_profile_update, number_profile_updates, face_example_count, my_face, friend_peer_group, default */
+/***/ (function(module) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/styles/components/reportscommon.scss?");
-
-/***/ }),
-
-/***/ "./src/styles/components/toolTip.scss":
-/*!********************************************!*\
-  !*** ./src/styles/components/toolTip.scss ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/styles/components/toolTip.scss?");
+eval("module.exports = JSON.parse(\"{\\\"msgStats\\\":{\\\"name\\\":\\\"Your Name Here\\\",\\\"groupChatThreads\\\":[\\\"p1_p2\\\",\\\"p1_p3\\\",\\\"p1_p4\\\",\\\"p1_p5\\\",\\\"p1_p6\\\",\\\"p1_p7\\\",\\\"p1_p8\\\",\\\"p1_p9\\\",\\\"p1_p10\\\",\\\"p1_p11\\\",\\\"p1_p12\\\",\\\"p1_p13\\\",\\\"p1_p14\\\",\\\"p1_p15\\\",\\\"p1_p16\\\",\\\"p1_p17\\\",\\\"p1_p18\\\",\\\"p1_p19\\\",\\\"p1_p20\\\",\\\"p1_p21\\\",\\\"p1_p22\\\",\\\"p1_p23\\\",\\\"p1_p24\\\",\\\"p1_p25\\\",\\\"p1_p26\\\",\\\"p1_p27\\\",\\\"p1_p28\\\",\\\"p1_p29\\\",\\\"p1_p30\\\",\\\"p1_p31\\\",\\\"p1_p32\\\",\\\"p1_p33\\\",\\\"p1_p34\\\",\\\"p1_p35\\\",\\\"p1_p36\\\",\\\"p1_p37\\\",\\\"p1_p38\\\",\\\"p1_p39\\\",\\\"p1_p40\\\",\\\"p1_p41\\\",\\\"p1_p42\\\",\\\"p1_p43\\\",\\\"p1_p44\\\",\\\"p1_p45\\\",\\\"p1_p46\\\",\\\"p1_p47\\\",\\\"p1_p48\\\",\\\"p1_p49\\\",\\\"p1_p50\\\",\\\"p1_p51\\\",\\\"p1_p52\\\",\\\"p1_p53\\\",\\\"p1_p54\\\",\\\"p1_p55\\\",\\\"p1_p56\\\",\\\"p1_p57\\\",\\\"p1_p58\\\",\\\"p1_p59\\\"],\\\"numPictures\\\":{\\\"gifs\\\":0,\\\"other\\\":0},\\\"regThreads\\\":{\\\"12_thread\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":86,\\\"other\\\":40},\\\"11_thread34\\\":{\\\"messager\\\":\\\"Little Morty\\\",\\\"msgByUser\\\":9106,\\\"other\\\":8526},\\\"11_thread35\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":2,\\\"other\\\":1},\\\"11_thread36\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread37\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":67,\\\"other\\\":71},\\\"11_thread38\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":4},\\\"11_thread39\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":38,\\\"other\\\":35},\\\"11_thread40\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":3},\\\"11_thread41\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":16},\\\"11_thread42\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":2},\\\"11_thread43\\\":{\\\"messager\\\":\\\"Harry Potter\\\",\\\"msgByUser\\\":516,\\\"other\\\":407},\\\"11_thread44\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":2},\\\"11_thread45\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":193,\\\"other\\\":103},\\\"11_thread46\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread47\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":3,\\\"other\\\":2},\\\"11_thread48\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":32,\\\"other\\\":39},\\\"11_thread49\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":170,\\\"other\\\":179},\\\"11_thread50\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":63,\\\"other\\\":31},\\\"11_thread51\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":1,\\\"other\\\":0},\\\"11_thread52\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":47,\\\"other\\\":18},\\\"11_thread53\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":9,\\\"other\\\":8},\\\"11_thread54\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread55\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread56\\\":{\\\"messager\\\":\\\"Hydro Homie\\\",\\\"msgByUser\\\":2426,\\\"other\\\":2550},\\\"11_thread57\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":19,\\\"other\\\":9},\\\"11_thread58\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread59\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":8,\\\"other\\\":7},\\\"11_thread60\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":14,\\\"other\\\":5},\\\"11_thread61\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":3},\\\"11_thread62\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":56,\\\"other\\\":37},\\\"11_thread63\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread64\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":103,\\\"other\\\":114},\\\"11_thread65\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"11_thread66\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":14,\\\"other\\\":22},\\\"11_thread67\\\":{\\\"messager\\\":\\\"Stoyan Shukerov\\\",\\\"msgByUser\\\":17909,\\\"other\\\":17730},\\\"11_thread68\\\":{\\\"messager\\\":\\\"Kool Name\\\",\\\"msgByUser\\\":18,\\\"other\\\":47},\\\"11_thread69\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":25,\\\"other\\\":22},\\\"11_thread70\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":2,\\\"other\\\":0},\\\"11_thread71\\\":{\\\"messager\\\":\\\"Albert Einstein\\\",\\\"msgByUser\\\":834,\\\"other\\\":903},\\\"11_thread72\\\":{\\\"messager\\\":\\\"Heisenberg\\\",\\\"msgByUser\\\":6268,\\\"other\\\":6765},\\\"22_thread08\\\":{\\\"messager\\\":\\\"Michael Scott\\\",\\\"msgByUser\\\":10598,\\\"other\\\":8326},\\\"22_thread11\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":2,\\\"other\\\":0},\\\"22_thread12\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":1,\\\"other\\\":2},\\\"22_thread13\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":2},\\\"22_thread15\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":49,\\\"other\\\":70},\\\"22_thread17\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":5,\\\"other\\\":7},\\\"22_thread21\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":7,\\\"other\\\":3},\\\"22_thread22\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":24,\\\"other\\\":66},\\\"22_thread24\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":5,\\\"other\\\":1},\\\"22_thread25\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":37,\\\"other\\\":36},\\\"22_thread26\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":11,\\\"other\\\":17},\\\"22_thread27\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":20,\\\"other\\\":9},\\\"22_thread28\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":70,\\\"other\\\":60},\\\"22_thread29\\\":{\\\"messager\\\":\\\"Didn't Killhimself\\\",\\\"msgByUser\\\":329,\\\"other\\\":296},\\\"22_thread30\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":5,\\\"other\\\":2},\\\"22_thread31\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":1,\\\"other\\\":3},\\\"22_thread32\\\":{\\\"messager\\\":\\\"Elon Tusk\\\",\\\"msgByUser\\\":572,\\\"other\\\":499},\\\"22_thread33\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":2,\\\"other\\\":4},\\\"22_thread34\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":2,\\\"other\\\":0},\\\"22_thread35\\\":{\\\"messager\\\":\\\"Jeffrey Epstein\\\",\\\"msgByUser\\\":270,\\\"other\\\":425},\\\"22_thread36\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":18,\\\"other\\\":14},\\\"22_thread38\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":123,\\\"other\\\":106},\\\"22_thread39\\\":{\\\"messager\\\":\\\"Gandalf\\\",\\\"msgByUser\\\":545,\\\"other\\\":273},\\\"22_thread40\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":8,\\\"other\\\":17},\\\"22_thread41\\\":{\\\"messager\\\":\\\"Isaac Asimov\\\",\\\"msgByUser\\\":1638,\\\"other\\\":1621},\\\"22_thread42\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":28,\\\"other\\\":14},\\\"22_thread43\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":31,\\\"other\\\":28},\\\"22_thread44\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"22_thread45\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":44,\\\"other\\\":45},\\\"22_thread46\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"22_thread48\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":2},\\\"22_thread49\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":0},\\\"22_thread50\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":0,\\\"other\\\":2},\\\"22_thread52\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":11,\\\"other\\\":8},\\\"22_thread53\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":280,\\\"other\\\":191},\\\"22_thread54\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":17,\\\"other\\\":9},\\\"22_thread55\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":17,\\\"other\\\":9},\\\"22_thread58\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":9,\\\"other\\\":15},\\\"22_thread59\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":4,\\\"other\\\":8},\\\"22_thread60\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":9,\\\"other\\\":16},\\\"22_thread61\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":12,\\\"other\\\":25},\\\"22_thread62\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":1,\\\"other\\\":2},\\\"22_thread63\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":55,\\\"other\\\":30},\\\"22_thread64\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":32,\\\"other\\\":30},\\\"22_thread65\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":27,\\\"other\\\":44},\\\"22_thread66\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":3,\\\"other\\\":3},\\\"22_thread68\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":15,\\\"other\\\":16},\\\"22_thread69\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":20,\\\"other\\\":11},\\\"22_thread71\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":116,\\\"other\\\":145},\\\"22_thread73\\\":{\\\"messager\\\":\\\"Han Solo\\\",\\\"msgByUser\\\":550,\\\"other\\\":419},\\\"22_thread74\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":8,\\\"other\\\":5},\\\"22_thread75\\\":{\\\"messager\\\":\\\"Dr. Stone\\\",\\\"msgByUser\\\":1185,\\\"other\\\":858},\\\"22_thread76\\\":{\\\"messager\\\":\\\"Rick Sanchez\\\",\\\"msgByUser\\\":1920,\\\"other\\\":1836},\\\"22_thread93\\\":{\\\"messager\\\":\\\"name\\\",\\\"msgByUser\\\":14,\\\"other\\\":11}},\\\"timeStats\\\":{\\\"hourly\\\":{\\\"received\\\":[4791,3937,2842,1837,1710,1577,2057,3188,5803,8251,9812,9577,7719,7322,6702,5703,5029,3681,3040,3706,3488,4025,4388,4625],\\\"sent\\\":[5702,4703,3209,1739,1474,1492,2087,3493,6463,9452,10590,10098,8321,7944,7752,7095,5746,4152,3663,4725,4664,5078,5522,5748]},\\\"monthly\\\":{\\\"received\\\":[12442,8667,7269,6476,11434,9094,6004,11179,10500,11807,9011,10927],\\\"sent\\\":[14897,10034,8082,7725,12229,9814,6533,13182,11193,13747,10430,13046]},\\\"weekly\\\":{\\\"received\\\":[16759,16620,17255,16155,16708,15402,15911],\\\"sent\\\":[19353,19124,19164,18454,18832,18157,17828]},\\\"yearly\\\":{\\\"2009\\\":{\\\"received\\\":5,\\\"sent\\\":5},\\\"2010\\\":{\\\"received\\\":132,\\\"sent\\\":122},\\\"2011\\\":{\\\"received\\\":4700,\\\"sent\\\":3632},\\\"2012\\\":{\\\"received\\\":1905,\\\"sent\\\":1666},\\\"2013\\\":{\\\"received\\\":10018,\\\"sent\\\":9676},\\\"2014\\\":{\\\"received\\\":15481,\\\"sent\\\":16050},\\\"2015\\\":{\\\"received\\\":5775,\\\"sent\\\":5802},\\\"2016\\\":{\\\"received\\\":24546,\\\"sent\\\":29973},\\\"2017\\\":{\\\"received\\\":32871,\\\"sent\\\":40016},\\\"2018\\\":{\\\"received\\\":15307,\\\"sent\\\":19109},\\\"2019\\\":{\\\"received\\\":4065,\\\"sent\\\":4855}}},\\\"callStats\\\":{\\\"num_calls\\\":{\\\"initiated\\\":15,\\\"received\\\":3},\\\"total_duration\\\":0},\\\"days_msged\\\":{\\\"sent\\\":2003,\\\"received\\\":2000},\\\"total_words\\\":{\\\"sent\\\":550000,\\\"received\\\":550000}},\\\"postStats\\\":{\\\"timeStats\\\":{\\\"hourly\\\":{\\\"received\\\":[4791,3937,2842,1837,1710,1577,2057,3188,5803,8251,9812,9577,7719,7322,6702,5703,5029,3681,3040,3706,3488,4025,4388,4625],\\\"sent\\\":[5702,4703,3209,1739,1474,1492,2087,3493,6463,9452,10590,10098,8321,7944,7752,7095,5746,4152,3663,4725,4664,5078,5522,5748]},\\\"monthly\\\":{\\\"received\\\":[12442,8667,7269,6476,11434,9094,6004,11179,10500,11807,9011,10927],\\\"sent\\\":[14897,10034,8082,7725,12229,9814,6533,13182,11193,13747,10430,13046]},\\\"weekly\\\":{\\\"received\\\":[16759,16620,17255,16155,16708,15402,15911],\\\"sent\\\":[19353,19124,19164,18454,18832,18157,17828]},\\\"yearly\\\":{\\\"2009\\\":{\\\"received\\\":5,\\\"sent\\\":5},\\\"2010\\\":{\\\"received\\\":132,\\\"sent\\\":122},\\\"2011\\\":{\\\"received\\\":4700,\\\"sent\\\":3632},\\\"2012\\\":{\\\"received\\\":1905,\\\"sent\\\":1666},\\\"2013\\\":{\\\"received\\\":10018,\\\"sent\\\":9676},\\\"2014\\\":{\\\"received\\\":15481,\\\"sent\\\":16050},\\\"2015\\\":{\\\"received\\\":5775,\\\"sent\\\":5802},\\\"2016\\\":{\\\"received\\\":24546,\\\"sent\\\":29973},\\\"2017\\\":{\\\"received\\\":32871,\\\"sent\\\":40016},\\\"2018\\\":{\\\"received\\\":15307,\\\"sent\\\":19109},\\\"2019\\\":{\\\"received\\\":4065,\\\"sent\\\":4855}}},\\\"num_posts_sent\\\":353,\\\"num_posts_received\\\":3},\\\"searchStats\\\":{\\\"num_searches\\\":450,\\\"searches\\\":{\\\"one\\\":3,\\\"girls\\\":5,\\\"videogames\\\":6,\\\"Koko Mate\\\":3,\\\"por\\\":23},\\\"timeStats\\\":{\\\"hourly\\\":[48,30,25,9,10,8,31,37,49,80,71,86,62,59,63,53,44,73,57,67,64,131,82,67],\\\"yearly\\\":{\\\"2012\\\":54,\\\"2013\\\":282,\\\"2014\\\":236,\\\"2015\\\":207,\\\"2016\\\":99,\\\"2017\\\":154,\\\"2018\\\":147,\\\"2019\\\":127}}},\\\"reactionStats\\\":{\\\"reactions\\\":{\\\"HAHA\\\":10,\\\"WOW\\\":2,\\\"LIKE\\\":320,\\\"SORRY\\\":50,\\\"ANGER\\\":1,\\\"LOVE\\\":100},\\\"timeStats\\\":{\\\"hourly\\\":[48,30,25,9,10,8,31,37,49,80,71,86,62,59,63,53,44,73,57,67,64,131,82,67],\\\"yearly\\\":{\\\"2012\\\":54,\\\"2013\\\":282,\\\"2014\\\":236,\\\"2015\\\":207,\\\"2016\\\":99,\\\"2017\\\":154,\\\"2018\\\":147,\\\"2019\\\":127}}},\\\"adStats\\\":{\\\"topics\\\":[\\\"cats\\\",\\\"cats\\\",\\\"cat.\\\",\\\"kittens\\\",\\\"cats\\\",\\\"cats\\\",\\\"cat.\\\",\\\"kittens\\\"],\\\"interactions\\\":{\\\"Clicked ad\\\":[{\\\"Ad\\\":\\\"Are you ready for Robots to Deliver Your Packages and Food?\\\",\\\"When\\\":\\\"Sun Sep 08 2019\\\"},{\\\"Ad\\\":\\\"Hardt Hyperloop Plans To Unite European Travel\\\",\\\"When\\\":\\\"Wed Aug 21 2019\\\"},{\\\"Ad\\\":\\\"pacific jogger\\\",\\\"When\\\":\\\"Mon Aug 19 2019\\\"},{\\\"Ad\\\":\\\"Can you solve these 3 programming questions?\\\",\\\"When\\\":\\\"Wed Aug 07 2019\\\"},{\\\"Ad\\\":\\\"The Ultimate Device Made To Break Bad Habits â¡ï¸\\\",\\\"When\\\":\\\"Mon Aug 05 2019\\\"}],\\\"Closed ad\\\":[{\\\"Ad\\\":\\\"Epic idle RPG\\\",\\\"When\\\":\\\"Thu Aug 08 2019\\\"}]}},\\\"name\\\":\\\"Your Name Here\\\",\\\"birthday\\\":798609800000,\\\"joined\\\":1242379050000,\\\"relationship_count\\\":2,\\\"relationship_status\\\":\\\"Single\\\",\\\"last_profile_update\\\":1514499039,\\\"number_profile_updates\\\":15,\\\"face_example_count\\\":54,\\\"my_face\\\":\\\"Fvam6LMNGIAEgjQ0N-03eq2Hr7YwoqswtHAvcbJlNCQ1XLivrYI0XLjoNpmvAzHMMsO0aawMrqg43rXvNdY2cbA8LJE5KbQdthEowjE7NOKvVLaNNsOp4zjNq5AmVLber7Otiqf4Ote1ZbIZNQWzebI3ME2pQjAbJbYxu67Qsuyc9Soatwk1Ri58NR01wasPNQm2zbV9tPiqTbPXuOO73zcvHVg3ADg6KOCuyrTHNdGwCbNOqsG3RamMt041Y66ZsRY1urFMrTy03jIvmuWzdbTYL7QziCyJtQgyQTRpMjUny7\\\",\\\"friend_peer_group\\\":\\\"Starting Adult Life\\\"}\");\n\n//# sourceURL=webpack:///./src/pages/page-facebook/fake_data.json?");
 
 /***/ }),
 
-/***/ "./src/styles/facebook.scss":
-/*!**********************************!*\
-  !*** ./src/styles/facebook.scss ***!
-  \**********************************/
+/***/ "./src/pages/page-facebook/instructions sync recursive ^\\.\\/.*$":
+/*!************************************************************!*\
+  !*** ./src/pages/page-facebook/instructions sync ^\.\/.*$ ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/styles/facebook.scss?");
+eval("var map = {\n\t\"./instructions\": \"./src/pages/page-facebook/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/pages/page-facebook/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/pages/page-facebook/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/pages/page-facebook/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/pages/page-facebook/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/pages/page-facebook/instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/pages/page-facebook/instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/pages/page-facebook/instructions/step6-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/pages/page-facebook/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions_sync_^\\.\\/.*$?");
+
+/***/ }),
+
+/***/ "./src/pages/page-facebook/instructions/instructions.json":
+/*!****************************************************************!*\
+  !*** ./src/pages/page-facebook/instructions/instructions.json ***!
+  \****************************************************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, default */
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.<br>Enter <a href='https://facebook.com' target=blank>https://facebook.com</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click in the upper right corner, and open settings.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Click on 'Your Facebook information' in the side bar menu.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Click on 'View' under the 'Download your information' tab.\\\"},{\\\"image\\\":\\\"./step5-web.jpg\\\",\\\"ins\\\":\\\"1. Select JSON for data format.<br> 2. Select media quality (recommended low if you want a small filesize).<br> 3. Finally click 'Create File'.\\\"},{\\\"image\\\":\\\"./step6-web.jpg\\\",\\\"ins\\\":\\\"In a couple of hours check your Facebook notifications, and save your file. Store it somewhere safe.\\\"}]\");\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/instructions.json?");
+
+/***/ }),
+
+/***/ "./src/pages/page-facebook/instructions/step1-web.jpg":
+/*!************************************************************!*\
+  !*** ./src/pages/page-facebook/instructions/step1-web.jpg ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"5c2c14f9808a07b01e54ba4ac60b44e2.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step1-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-facebook/instructions/step2-web.jpg":
+/*!************************************************************!*\
+  !*** ./src/pages/page-facebook/instructions/step2-web.jpg ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"c52927af834cebd9f999a43562733edc.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step2-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-facebook/instructions/step3-web.jpg":
+/*!************************************************************!*\
+  !*** ./src/pages/page-facebook/instructions/step3-web.jpg ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"ade9013cbf5d1f9111ef91305432fb12.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step3-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-facebook/instructions/step4-web.jpg":
+/*!************************************************************!*\
+  !*** ./src/pages/page-facebook/instructions/step4-web.jpg ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"8c8a88f1d67c05e3b5bf7a0717f13d92.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step4-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-facebook/instructions/step5-web.jpg":
+/*!************************************************************!*\
+  !*** ./src/pages/page-facebook/instructions/step5-web.jpg ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"fb556c0bc721f16c941334a9c36df100.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step5-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-facebook/instructions/step6-web.jpg":
+/*!************************************************************!*\
+  !*** ./src/pages/page-facebook/instructions/step6-web.jpg ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"c44c5706d25bde00683f548037531fb2.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step6-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-facebook/main.js":
+/*!*****************************************!*\
+  !*** ./src/pages/page-facebook/main.js ***!
+  \*****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../js/constants.js */ \"./src/js/constants.js\");\n/* harmony import */ var _js_helpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../js/helpers.js */ \"./src/js/helpers.js\");\n/* harmony import */ var _js_analysis_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../js/analysis/analyzerHelpers.js */ \"./src/js/analysis/analyzerHelpers.js\");\n/* harmony import */ var _js_components_navBar_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../js/components/navBar.js */ \"./src/js/components/navBar.js\");\n/* harmony import */ var _js_components_filePicker_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../js/components/filePicker.js */ \"./src/js/components/filePicker.js\");\n/* harmony import */ var _js_factories_reportFactory_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../js/factories/reportFactory.js */ \"./src/js/factories/reportFactory.js\");\n/* harmony import */ var _js_factories_insFactory_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../js/factories/insFactory.js */ \"./src/js/factories/insFactory.js\");\n/* harmony import */ var _facebookAnalyzer_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./facebookAnalyzer.js */ \"./src/pages/page-facebook/facebookAnalyzer.js\");\n/* harmony import */ var _facebook_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./facebook.scss */ \"./src/pages/page-facebook/facebook.scss\");\n/* harmony import */ var _facebook_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_facebook_scss__WEBPACK_IMPORTED_MODULE_8__);\n/* harmony import */ var _assets_images_logos_facebook_inline_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../assets/images/logos/facebook_inline.svg */ \"./src/assets/images/logos/facebook_inline.svg\");\n/* harmony import */ var _assets_images_logos_facebook_inline_svg__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_assets_images_logos_facebook_inline_svg__WEBPACK_IMPORTED_MODULE_9__);\n// JS imports:\n\n\n\n\n\n\n\n // CSS imports:\n\n\n // this is instructions loading. Should stay here only temporarily during development\n\nvar instructions = new _js_factories_insFactory_js__WEBPACK_IMPORTED_MODULE_6__[\"insFactory\"]('facebook', document.getElementById('instructions-container'));\nvar rRender = new _js_factories_reportFactory_js__WEBPACK_IMPORTED_MODULE_5__[\"reportFactory\"]('facebook');\nvar nBar = new _js_components_navBar_js__WEBPACK_IMPORTED_MODULE_3__[\"NavBar\"]();\nvar fPicker = new _js_components_filePicker_js__WEBPACK_IMPORTED_MODULE_4__[\"FilePicker\"](document.getElementById('filepicker'));\nvar analyzer = new _facebookAnalyzer_js__WEBPACK_IMPORTED_MODULE_7__[\"FacebookAnalyzer\"](renderReport);\nvar websiteIcon = document.getElementById('website-icon');\nwebsiteIcon.innerHTML = _assets_images_logos_facebook_inline_svg__WEBPACK_IMPORTED_MODULE_9___default.a;\nvar previewBtn = document.getElementById('preview-btn');\n\npreviewBtn.onclick = function () {\n  renderReport(true);\n};\n\nkickStartReport();\n\nfunction kickStartReport() {\n  if (true) {\n    fPicker.onUpload(function (file) {\n      analyzer.init(file);\n    });\n  } else {}\n}\n\nfunction renderReport(fakeData) {\n  //TODO: needs to scroll to report once done\n  var data = analyzer.getData(fakeData);\n  renderReportHeading(data); // renders ad report\n\n  var adReport = renderAdReport(data.adStats); // renders search report\n\n  var searchReport = renderSearchReport(data.searchStats); // renders message report\n\n  var msgReport = renderMsgReport(data.msgStats); // renders reaction report\n\n  var reactionReport = renderReactionReport(data.reactionStats); // renders post report\n\n  var postReport = renderPostReport(data.postStats);\n}\n\nfunction renderReportHeading(data) {\n  // data crunching\n  var dateRange = Object(_js_analysis_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"getCurrentDate\"])();\n  var dateStart = new Date(data.joined);\n  var numDays = Object(_js_analysis_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"getNumDays\"])(dateStart, dateRange);\n  var reportItems = [{\n    icon: 'calendar',\n    text: 'Date Joined: ',\n    textBold: dateStart.toDateString(),\n    tooltip: 'Date when you started your Facebook account.'\n  }, {\n    icon: 'activity',\n    text: 'Data Range: ',\n    textBold: \"\".concat(numDays, \" days\"),\n    tooltip: 'The number of days you have had your Facebook account for.'\n  }, {\n    icon: 'heart',\n    text: 'Relationship Count: ',\n    textBold: data.relationship_count,\n    tooltip: 'Number of Facebook relationships you have had.'\n  }, {\n    icon: 'heart',\n    text: 'Relationship Status: ',\n    textBold: data.relationship_status,\n    tooltip: 'Your Facebook relationship status.'\n  }, {\n    icon: 'cake',\n    text: 'Birthday: ',\n    textBold: Object(_js_analysis_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"formatDate\"])(data.birthday),\n    tooltip: 'This one is pretty self-explanatory. (:'\n  }, {\n    icon: 'user',\n    text: 'Last Profile Update: ',\n    textBold: Object(_js_analysis_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"formatDate\"])(data.last_profile_update),\n    tooltip: 'Last time you updated your Facebook profile.'\n  }, {\n    icon: 'user',\n    text: 'Profile Updates: ',\n    textBold: data.number_profile_updates,\n    tooltip: 'The number of times you have updated your Facebook profile.'\n  }, {\n    icon: 'users',\n    text: 'Friend Peer Group: ',\n    textBold: data.friend_peer_group,\n    tooltip: 'How Facebook classifies your friends.'\n  }, {\n    icon: 'smile',\n    text: 'Face Count: ',\n    textBold: data.face_example_count,\n    tooltip: 'Number of pictures of your face Facebook has.'\n  }];\n  var faceData = [{\n    icon: 'smile',\n    text: 'Face: ',\n    rawData: data.my_face,\n    tooltip: 'A code representation of your face.'\n  }];\n  var subreport = rRender.getSubreport(data.name);\n  rRender.add(reportItems, 'icon-list', subreport);\n  rRender.add(faceData, 'raw', subreport);\n}\n\nfunction renderMsgReport(data) {\n  // data crunching\n  var totMsgSent = 0;\n  var totMsgReceived = 0;\n  var numChats = Object.keys(data['regThreads']).length;\n  var numGrChats = data['groupChatThreads'].length;\n  Object.keys(data.regThreads).forEach(function (key) {\n    totMsgSent += data.regThreads[key].msgByUser;\n  });\n  Object.keys(data.regThreads).forEach(function (key) {\n    totMsgReceived += data.regThreads[key].other;\n  });\n  var avgWordsPerMsgSent = Object(_js_analysis_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"safeDivide\"])(data.total_words.sent, totMsgSent);\n  var avgWordsPerMsgReceived = Object(_js_analysis_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"safeDivide\"])(data.total_words.received, totMsgReceived); // let avgMsgPerDaySent = safeDivide(totMsgSent, data.days_msged.sent);\n  // let avgMsgPerDayReceived = safeDivide(totMsgReceived, data.days_msged.received);\n\n  var avgCallDuration = Object(_js_analysis_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"safeDivide\"])(data.callStats.total_duration, data.callStats.num_calls.initiated + data.callStats.num_calls.received);\n  var msgData = [{\n    icon: 'send',\n    text: 'Messages sent:',\n    textBold: Object(_js_helpers_js__WEBPACK_IMPORTED_MODULE_1__[\"formatNum\"])(totMsgSent),\n    tooltip: 'The total number of messages you have sent on Facebook.'\n  }, // {\n  //   icon: 'message-circle',\n  //   text: 'Sent messages per day',\n  //   textBold: avgMsgPerDaySent.toFixed(2),\n  //   tooltip: 'Average number of messages sent every day.'\n  // },\n  {\n    icon: 'message-circle',\n    text: 'Words per message sent',\n    textBold: avgWordsPerMsgSent.toFixed(2),\n    tooltip: 'The average number of words in your messages.'\n  }, {\n    icon: 'inbox',\n    text: 'Messages received:',\n    textBold: Object(_js_helpers_js__WEBPACK_IMPORTED_MODULE_1__[\"formatNum\"])(totMsgReceived),\n    tooltip: 'The total number of messages you have received on Facebook.'\n  }, // {\n  //   icon: 'message-circle',\n  //   text: 'Received Messages per day',\n  //   textBold: avgMsgPerDayReceived.toFixed(2),\n  //   tooltip: 'Average number of messages received every day.'\n  // },\n  {\n    icon: 'message-circle',\n    text: 'Words per message received',\n    textBold: avgWordsPerMsgReceived.toFixed(2),\n    tooltip: 'The average number of words in messages you have received.'\n  }, {\n    icon: 'message-square',\n    text: 'People messaged:',\n    textBold: numChats,\n    tooltip: 'The total number of people you have messaged on Facebook.'\n  }, {\n    icon: 'message-circle',\n    text: 'Group chats:',\n    textBold: numGrChats,\n    tooltip: 'The total number of group chats you have participated in.'\n  }, {\n    icon: 'message-square',\n    text: 'Calls started:',\n    textBold: data.callStats.num_calls.initiated,\n    tooltip: 'The total number of calls you have started on Facebook.'\n  }, {\n    icon: 'message-square',\n    text: 'Calls received:',\n    textBold: data.callStats.num_calls.received,\n    tooltip: 'The total number of calls you have received on Facebook.'\n  }, {\n    icon: 'message-square',\n    text: 'Time spent in calls:',\n    textBold: Object(_js_helpers_js__WEBPACK_IMPORTED_MODULE_1__[\"secondsToHms\"])(data.callStats.total_duration),\n    tooltip: 'The total time you have spent on a Facebook call'\n  }, {\n    icon: 'message-square',\n    text: 'Call duration:',\n    textBold: Object(_js_helpers_js__WEBPACK_IMPORTED_MODULE_1__[\"secondsToHms\"])(avgCallDuration),\n    tooltip: 'The average duration of your calls.'\n  }];\n  var subreport = rRender.getSubreport('Message Report');\n  rRender.add(msgData, 'icon-list', subreport);\n  renderMsgGraphs(data, subreport);\n}\n\nfunction renderMsgGraphs(data, subreport) {\n  rRender.getSubreportGraphContainer('graphs-container-messages', subreport);\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    title: 'Messages by Hour of Day - Sent',\n    data: data.timeStats.hourly.sent,\n    css_label: 'msg-graph',\n    clock_labels: ['messages', 'messaged'],\n    size: 'medium'\n  });\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    title: 'Messages by Hour of Day - Received',\n    data: data.timeStats.hourly.received,\n    css_label: 'msg-graph',\n    clock_labels: ['messages', 'messaged'],\n    size: 'medium'\n  }); // daily messages chart\n\n  var msgSentDaily = data.timeStats.weekly.sent;\n  var msgReceivedDaily = data.timeStats.weekly.received; // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  msgSentDaily.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Messages by Day of the Week',\n    data: [msgSentDaily, msgReceivedDaily, ['Sent', 'Received']],\n    labels: _js_constants_js__WEBPACK_IMPORTED_MODULE_0__[\"DAYS\"],\n    css_label: 'msg-graph',\n    size: 'medium'\n  }); // monthly messages chart\n\n  var msgSentMonthly = data.timeStats.monthly.sent;\n  var msgReceivedMonthly = data.timeStats.monthly.received; // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  msgSentMonthly.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Messages by Month',\n    data: [msgSentMonthly, msgReceivedMonthly, ['Sent', 'Received']],\n    labels: _js_constants_js__WEBPACK_IMPORTED_MODULE_0__[\"MONTHS\"],\n    css_label: 'msg-graph',\n    size: 'medium'\n  }); // yearly messagages chart\n\n  var msgSentYearly = Object.keys(data.timeStats.yearly).map(function (y) {\n    return data.timeStats.yearly[y].sent;\n  });\n  var msgReceivedYearly = Object.keys(data.timeStats.yearly).map(function (y) {\n    return data.timeStats.yearly[y].received;\n  }); // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  msgSentYearly.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Messages by Year',\n    data: [msgSentYearly, msgReceivedYearly, ['Sent', 'Received']],\n    labels: Object.keys(data.timeStats.yearly),\n    css_label: 'msg-graph',\n    size: 'medium'\n  }); // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED\n  // THIS IS NOT FUNCTIONAL?\n\n  var sum = 0;\n  var msgCumulative = Object.keys(data.timeStats.yearly).reduce(function (acc, dp) {\n    sum += data.timeStats.yearly[dp].sent + data.timeStats.yearly[dp].received;\n    acc[dp] = sum;\n    return acc;\n  }, {});\n  rRender.addGraph(subreport, {\n    type: 'line',\n    title: 'Cumulative Messages over Years',\n    data: Object.values(msgCumulative),\n    labels: Object.keys(msgCumulative),\n    css_label: 'msg-graph',\n    size: 'medium'\n  }); // top messegers chart \n\n  var topMessagers = Object(_js_analysis_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"getTopMessagers\"])(data.regThreads, 15);\n  var msgSent = topMessagers.reduce(function (acc, msger) {\n    var cnt1 = data.regThreads[msger][\"msgByUser\"];\n    acc.push(cnt1);\n    return acc;\n  }, []);\n  var msgReceived = topMessagers.reduce(function (acc, msger) {\n    var cnt1 = data.regThreads[msger][\"other\"];\n    acc.push(cnt1);\n    return acc;\n  }, []); // get top messagers names\n\n  var topMessagersNames = topMessagers.reduce(function (acc, thread) {\n    acc.push(data.regThreads[thread].messager);\n    return acc;\n  }, []);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Top Messagers',\n    data: [msgSent, msgReceived, [\"\".concat(data.name), 'Friend']],\n    labels: topMessagersNames,\n    css_label: 'msg-graph',\n    size: 'medium'\n  });\n}\n\nfunction renderSearchReport(data, parent) {\n  var searchData = [{\n    icon: 'search',\n    text: 'Num Searches: ',\n    textBold: data.num_searches,\n    tooltip: 'The number of searches in the Facebook search bar.'\n  }];\n  var subreport = rRender.getSubreport('Search Report');\n  rRender.add(searchData, 'icon-list', subreport); // render graphs\n\n  rRender.getSubreportGraphContainer('graphs-container-searches', subreport);\n  var topSearches = Object(_js_analysis_analyzerHelpers_js__WEBPACK_IMPORTED_MODULE_2__[\"getTopSearches\"])(data.searches, 20);\n  rRender.addGraph(subreport, {\n    type: 'bar',\n    title: 'Top Searches',\n    data: Object.values(topSearches),\n    labels: Object.keys(topSearches),\n    css_label: 'search-graph',\n    size: 'medium'\n  }); // hourly searches chart\n\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    data: data.timeStats.hourly,\n    title: 'Searches by Hour of Day',\n    clock_labels: ['searches', 'searched'],\n    css_label: 'search-graph',\n    size: 'medium'\n  }); // yearly searches chart\n\n  rRender.addGraph(subreport, {\n    type: 'bar',\n    title: 'Searches by Year',\n    data: Object.values(data.timeStats.yearly),\n    labels: Object.keys(data.timeStats.yearly),\n    css_label: 'search-graph',\n    size: 'medium'\n  });\n}\n\nfunction renderPostReport(data, parent) {\n  var postData = [{\n    icon: 'file-text',\n    text: 'Number of posts: ',\n    textBold: data.num_posts_sent,\n    tooltip: 'The number of posts you have made on Facebook. This includes Groups and Pages posts'\n  }, {\n    icon: 'file-text',\n    text: 'Num Posts on your Timeline: ',\n    textBold: data.num_posts_received,\n    tooltip: 'The number of posts people and entities have made on your Facebook timeline.'\n  }];\n  var subreport = rRender.getSubreport('Post Report');\n  rRender.add(postData, 'icon-list', subreport);\n  renderPostGraphs(data, subreport);\n}\n\nfunction renderPostGraphs(data, subreport) {\n  rRender.getSubreportGraphContainer('graphs-container-posts', subreport); // hourly posts chart\n\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    title: 'Posts by Hour of Day - Sent',\n    data: data.timeStats.hourly.sent,\n    clock_labels: ['posts', 'posted'],\n    css_label: 'post-graph',\n    size: 'medium'\n  });\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    data: data.timeStats.hourly.received,\n    title: 'Posts by Hour of Day - Received',\n    clock_labels: ['posts', 'posted'],\n    css_label: 'post-graph',\n    size: 'medium'\n  }); // daily posts chart\n\n  var postSentDaily = data.timeStats.weekly.sent;\n  var postReceivedDaily = data.timeStats.weekly.received; // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  postSentDaily.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Posts by Day of the Week',\n    data: [postSentDaily, postReceivedDaily, ['Posted', 'Posted by others on Timeline']],\n    labels: _js_constants_js__WEBPACK_IMPORTED_MODULE_0__[\"DAYS\"],\n    css_label: 'post-graph',\n    size: 'medium'\n  }); // monthly posts chart\n\n  var postSentMonthly = data.timeStats.monthly.sent;\n  var postReceivedMonthly = data.timeStats.monthly.received; // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  postSentMonthly.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Posts by Month',\n    data: [postSentMonthly, postReceivedMonthly, ['Posted', 'Posted by others on Timeline']],\n    labels: _js_constants_js__WEBPACK_IMPORTED_MODULE_0__[\"MONTHS\"],\n    css_label: 'post-graph',\n    size: 'medium'\n  }); // yearly messagages chart\n\n  var postSentYearly = Object.keys(data.timeStats.yearly).map(function (y) {\n    return data.timeStats.yearly[y].sent;\n  });\n  var postReceivedYearly = Object.keys(data.timeStats.yearly).map(function (y) {\n    return data.timeStats.yearly[y].received;\n  }); // HACK BECAUSE FRAPPE CHARTS ARE BROKEN :(((((\n\n  postSentYearly.push(0);\n  rRender.addGraph(subreport, {\n    type: 'axis-mixed',\n    title: 'Posts by Year',\n    labels: Object.keys(data.timeStats.yearly),\n    data: [postSentYearly, postReceivedYearly, ['Posted', 'Posted by others on Timeline']],\n    css_label: 'post-graph',\n    size: 'medium'\n  }); // this is just having fun. THINK ABOUT HOW DATA NEEDS TO BE STRUCTURED\n  // THIS IS NOT FUNCTIONAL?\n\n  var sum = 0;\n  var postCumulative = Object.keys(data.timeStats.yearly).reduce(function (acc, dp) {\n    sum += data.timeStats.yearly[dp].sent + data.timeStats.yearly[dp].received;\n    acc[dp] = sum;\n    return acc;\n  }, {});\n  rRender.addGraph(subreport, {\n    type: 'line',\n    data: Object.values(postCumulative),\n    title: 'Cumulative Posts over Years',\n    labels: Object.keys(postCumulative),\n    css_label: 'post-graph',\n    size: 'medium'\n  });\n}\n\nfunction renderReactionReport(data) {\n  var reactionData = [{\n    icon: 'thumbs-up-fa',\n    text: 'Num Likes: ',\n    textBold: data.reactions.LIKE,\n    tooltip: 'The number of Like reactions you have gifted people on Facebook.'\n  }, {\n    icon: 'heart-solid-fa',\n    textBold: data.reactions.LOVE,\n    tooltip: 'The number of Love reactions you have gifted people on Facebook.'\n  }, {\n    icon: 'cry-fa',\n    text: 'Num Sorries: ',\n    textBold: data.reactions.SORRY,\n    tooltip: 'The number of Sorry reactions you have gifted people on Facebook.'\n  }, {\n    icon: 'smile-fa',\n    text: 'Num WOWs: ',\n    textBold: data.reactions.WOW,\n    tooltip: 'The number of WOW reactions you have gifted people on Facebook.'\n  }, {\n    icon: 'angry-fa',\n    text: 'Num Angers: ',\n    textBold: data.reactions.ANGER,\n    tooltip: 'The number of Anger reactions you have gifted people on Facebook.'\n  }, {\n    icon: 'laugh-fa',\n    textBold: data.reactions.HAHA,\n    tooltip: 'The number of HaHa reactions you have gifted people on Facebook.'\n  }];\n  var subreport = rRender.getSubreport('Reaction Report');\n  rRender.add(reactionData, 'big-icon-list', subreport); // render graphs\n\n  rRender.getSubreportGraphContainer('graphs-container-reactions', subreport); // hourly reactions chart\n\n  rRender.addGraph(subreport, {\n    type: 'clock',\n    data: data.timeStats.hourly,\n    title: 'Reactions by Hour of Day',\n    clock_labels: ['reactions', 'reacted'],\n    css_label: 'reaction-graph',\n    size: 'medium'\n  }); // yearly reactions chart\n\n  rRender.addGraph(subreport, {\n    type: 'bar',\n    title: 'Reactions by Year',\n    labels: Object.keys(data.timeStats.yearly),\n    data: Object.values(data.timeStats.yearly),\n    css_label: 'reaction-graph',\n    size: 'medium'\n  });\n}\n\nfunction renderAdReport(data) {\n  var reportItems = [{\n    icon: 'target',\n    text: 'Ad Interests Num: ',\n    textBold: data.topics.length,\n    tooltip: 'How many interests you have according to Facebook.'\n  }];\n  var adInterests = [{\n    icon: 'shopping-bag',\n    text: 'Ad Interests: ',\n    type: 'list',\n    listData: data.topics,\n    tooltip: 'What Facebook thinks you are interested in.'\n  }];\n  var adInteractions = {\n    icon: 'mouse-pointer',\n    text: 'Ad Interactions: ',\n    listData: data.interactions,\n    tooltip: 'Ads you have interacted with on Facebook'\n  };\n  var subreport = rRender.getSubreport('Ad Report');\n  rRender.add(reportItems, 'icon-list', subreport);\n  rRender.add(adInterests, 'list', subreport);\n  rRender.add(adInteractions, 'list-headings', subreport);\n}\n\n//# sourceURL=webpack:///./src/pages/page-facebook/main.js?");
+
+/***/ }),
+
+/***/ "./src/pages/page-spotify/instructions sync recursive ^\\.\\/.*$":
+/*!***********************************************************!*\
+  !*** ./src/pages/page-spotify/instructions sync ^\.\/.*$ ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var map = {\n\t\"./instructions\": \"./src/pages/page-spotify/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/pages/page-spotify/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/pages/page-spotify/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/pages/page-spotify/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/pages/page-spotify/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/pages/page-spotify/instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/pages/page-spotify/instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/pages/page-spotify/instructions/step6-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/pages/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions_sync_^\\.\\/.*$?");
+
+/***/ }),
+
+/***/ "./src/pages/page-spotify/instructions/instructions.json":
+/*!***************************************************************!*\
+  !*** ./src/pages/page-spotify/instructions/instructions.json ***!
+  \***************************************************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, default */
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://spotify.com/us/account' target=blank>spotify.com/us/account</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Log into your spotify account.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on 'Privacy Settings' in the left sidebar.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on the 'Request' button.\\\"},{\\\"image\\\":\\\"./step5-web.jpg\\\",\\\"ins\\\":\\\"Once your data copy is prepared you will get an email.</br>Open your email client and click on download.\\\"},{\\\"image\\\":\\\"./step6-web.jpg\\\",\\\"ins\\\":\\\"You should be redirected to your Spotify account.</br>Enter your password, and click verify.</br>Choose where to save your file, and remember to keep it safe!\\\"}]\");\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/instructions.json?");
+
+/***/ }),
+
+/***/ "./src/pages/page-spotify/instructions/step1-web.jpg":
+/*!***********************************************************!*\
+  !*** ./src/pages/page-spotify/instructions/step1-web.jpg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"fb24f8e1c25796afadc3965ff40c2313.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step1-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-spotify/instructions/step2-web.jpg":
+/*!***********************************************************!*\
+  !*** ./src/pages/page-spotify/instructions/step2-web.jpg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"267e5514b194149ef395c375c15abb3b.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step2-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-spotify/instructions/step3-web.jpg":
+/*!***********************************************************!*\
+  !*** ./src/pages/page-spotify/instructions/step3-web.jpg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"da14fa70420003e4845820cf46b33e5c.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step3-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-spotify/instructions/step4-web.jpg":
+/*!***********************************************************!*\
+  !*** ./src/pages/page-spotify/instructions/step4-web.jpg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"e58e0a089c9ddc6cd950984b9e89668e.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step4-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-spotify/instructions/step5-web.jpg":
+/*!***********************************************************!*\
+  !*** ./src/pages/page-spotify/instructions/step5-web.jpg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"9e15e5f19dd1b07da597fbd8f803e459.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step5-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-spotify/instructions/step6-web.jpg":
+/*!***********************************************************!*\
+  !*** ./src/pages/page-spotify/instructions/step6-web.jpg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"affb2283841b2aaa7116c370ad3faed2.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step6-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-tinder/instructions sync recursive ^\\.\\/.*$":
+/*!**********************************************************!*\
+  !*** ./src/pages/page-tinder/instructions sync ^\.\/.*$ ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var map = {\n\t\"./instructions\": \"./src/pages/page-tinder/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/pages/page-tinder/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/pages/page-tinder/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/pages/page-tinder/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/pages/page-tinder/instructions/step3-web.jpg\",\n\t\"./step4-web.png\": \"./src/pages/page-tinder/instructions/step4-web.png\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/pages/page-tinder/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions_sync_^\\.\\/.*$?");
+
+/***/ }),
+
+/***/ "./src/pages/page-tinder/instructions/instructions.json":
+/*!**************************************************************!*\
+  !*** ./src/pages/page-tinder/instructions/instructions.json ***!
+  \**************************************************************/
+/*! exports provided: 0, 1, 2, 3, default */
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://account.gotinder.com/' target=blank>account.gotinder.com</a> in the address bar.</br>Login to your tinder account\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click on the 'Download my data' button.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Enter the email address where you would like to receive the download link.\\\"},{\\\"image\\\":\\\"./step4-web.png\\\",\\\"ins\\\":\\\"Wait to receive the download link in your email. This can take up to a month.\\\"}]\");\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/instructions.json?");
+
+/***/ }),
+
+/***/ "./src/pages/page-tinder/instructions/step1-web.jpg":
+/*!**********************************************************!*\
+  !*** ./src/pages/page-tinder/instructions/step1-web.jpg ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"01a3edd599ce65624d381b601d5f46c8.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step1-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-tinder/instructions/step2-web.jpg":
+/*!**********************************************************!*\
+  !*** ./src/pages/page-tinder/instructions/step2-web.jpg ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"b92dc0f21950ab6d98018e944eefeaef.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step2-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-tinder/instructions/step3-web.jpg":
+/*!**********************************************************!*\
+  !*** ./src/pages/page-tinder/instructions/step3-web.jpg ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"11b81c17245254ee61566167c027c4db.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step3-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-tinder/instructions/step4-web.png":
+/*!**********************************************************!*\
+  !*** ./src/pages/page-tinder/instructions/step4-web.png ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"bbd24f0f4a1f03b0a224c58d5eeab38a.png\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step4-web.png?");
 
 /***/ })
 
