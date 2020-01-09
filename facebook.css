@@ -780,6 +780,9 @@ html {
   font-family: 'Fira', Camphor, Open Sans, Segoe UI, sans-serif;
   scroll-behavior: smooth; }
 
+body {
+  height: 100%; }
+
 a, a:visited {
   text-decoration: none; }
 
