@@ -46,3 +46,18 @@ function createLink(to) {
 
   return linkWrap;
 }
+
+// the functions below make the sure that 100vh is taken by the index page on mobile
+// TODO: this should only be ran on mobile devices...
+// TODO: it should be placed in a helper function
+function setViewPortHeightVar() {
+  // set the viewport height and multiply it by 1% to get a value for a vh unit
+  let vh = window.innerHeight * 0.01;
+  // set the value in the --vh custom property to the root of the document
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setViewPortHeightVar();
+window.addEventListener('resize', () => {
+  setViewPortHeightVar();
+});
