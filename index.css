@@ -599,33 +599,20 @@ nav {
   src: url(fonts/BigNoodleTitling.ttf) format("truetype"); }
 
 #website-cnt {
-  height: 85vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
-  @media only screen and (min-width: 768px) {
-    #website-cnt {
-      height: 87.5vh; } }
+  align-items: center;
+  position: relative; }
   @media only screen and (min-width: 992px) {
     #website-cnt {
       flex-direction: row; } }
 
 .spacer {
-  height: 15vh;
+  height: 2vh;
   width: 100%;
-  background: #050404;
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 2em;
-  font-family: 'BigNoodleTitling';
-  padding-top: 0.5em;
-  line-height: 1; }
-  @media only screen and (min-width: 768px) {
-    .spacer {
-      font-size: 3em;
-      height: 12.5vh; } }
+  background: #050404; }
 
 .website-item {
   flex: 1;
@@ -737,4 +724,61 @@ nav {
 em {
   text-transform: uppercase;
   font-style: normal; }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); }
+  33% {
+    opacity: 1;
+    transform: translateY(0%); }
+  90% {
+    opacity: 1; }
+  95% {
+    opacity: 0.5; }
+  100% {
+    opacity: 0; } }
+
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 0; }
+
+.scroll-down-icon {
+  background-image: url(8fb439d03b83c59aadd1ae74ad1dda9e.svg);
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+  margin: auto;
+  animation: fadeInOut 0.75s ease-in-out;
+  animation-iteration-count: 4;
+  animation-direction: alternate;
+  animation-fill-mode: both; }
+  @media only screen and (min-width: 768px) {
+    .scroll-down-icon {
+      height: 50px;
+      width: 50px; } }
+  @media only screen and (min-width: 992px) {
+    .scroll-down-icon {
+      height: 60px;
+      width: 60px; } }
+
+.scroll-down-text {
+  animation: popIn 3s ease-in-out;
+  animation-fill-mode: both;
+  margin: 0;
+  color: white;
+  font-size: 0.75em;
+  font-weight: 500; }
+  @media only screen and (min-width: 768px) {
+    .scroll-down-text {
+      font-size: 1.0em; } }
+  @media only screen and (min-width: 992px) {
+    .scroll-down-text {
+      font-size: 1.5em; } }
 
