@@ -599,8 +599,12 @@ nav {
 
 #website-cnt {
   position: relative;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  height: 100vh;
+  height: -moz-available;
+  /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available;
+  /* Mozilla-based browsers will ignore this. */
+  height: fill-available;
   display: flex;
   flex-direction: column;
   justify-content: center;
