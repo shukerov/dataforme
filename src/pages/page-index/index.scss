@@ -6,13 +6,15 @@ $tranSpeed: 0.75s;
 
 // upper half of the page
 #website-cnt {
-  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
+  position: relative;
+  height: 100vh;
+  height: -moz-available;          /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  height: fill-available;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 
   @media only screen and (min-width: $screen-lg-min) {
     flex-direction: row;
