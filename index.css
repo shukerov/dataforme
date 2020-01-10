@@ -408,18 +408,19 @@ nav {
   position: absolute;
   overflow: hidden;
   pointer-events: none;
-  left: 0;
+  left: -5px;
   top: 1em;
   padding-right: 1em; }
 
 .nav-item {
+  border-radius: 5px;
   pointer-events: all;
   background: #050404;
   color: white;
   width: auto;
   text-align: right;
   font-family: 'BigNoodleTitling';
-  padding-left: 50px;
+  padding-left: 55px;
   padding-right: 20px;
   transition: all .5s ease-in-out; }
   @media screen and (min-width: 992px) {
@@ -458,9 +459,6 @@ nav {
     .nav-discrete {
       transform: translateX(-310px); } }
 
-.nav-expanded {
-  transform: translateX(0vw); }
-
 .nav-hidden {
   transform: translateX(-100%); }
 
@@ -496,15 +494,15 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   background: white;
-  padding: 1em 1em 0.5em 1em;
+  padding: 1em 1em 1.5em 1em;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   line-height: 1;
   text-transform: uppercase;
-  box-shadow: 0 0 4px black;
-  -moz-box-shadow: 0 0 4px black;
-  -webkit-box-shadow: 0 0 4px black; }
+  border-radius: 5px;
+  -webkit-box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3); }
 
 #step-1::before {
   content: "Step 1"; }
@@ -525,9 +523,9 @@ nav {
   background: white;
   padding: 1em;
   text-align: center;
-  box-shadow: 0 0 4px black;
-  -moz-box-shadow: 0 0 4px black;
-  -webkit-box-shadow: 0 0 4px black; }
+  border-radius: 5px;
+  -webkit-box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3); }
 
 .card-text, .card-label, .card-highlight, .card-list {
   margin: 0.5rem 1rem;
@@ -675,6 +673,8 @@ nav {
   padding-right: 1em;
   height: 3rem;
   font-size: 1.5em;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   position: relative; }
   @media only screen and (min-width: 768px) {
     .about-content-heading {
@@ -684,21 +684,6 @@ nav {
       padding-left: 20%;
       height: 4rem;
       font-size: 2em; } }
-
-.about-content-heading::after {
-  position: absolute;
-  bottom: 0;
-  content: "";
-  right: -0.5rem;
-  border-right: 0.5rem solid transparent;
-  border-top: 1.5rem solid #050404;
-  border-bottom: 1.5rem solid #050404; }
-  @media only screen and (min-width: 992px) {
-    .about-content-heading::after {
-      right: -0.9rem;
-      border-right: 1rem solid transparent;
-      border-top: 2rem solid #050404;
-      border-bottom: 2rem solid #050404; } }
 
 .about-content {
   font-size: 19px;
