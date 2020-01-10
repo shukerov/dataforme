@@ -13,6 +13,7 @@ class TinderAnalyzer extends BaseAnalyzer {
       'num_likes': null,
       'num_passes': null,
       'num_matches': null,
+      'total_matches_messaged': 0,
       'messages': {
         "Messages": []
       }
@@ -153,6 +154,7 @@ class TinderAnalyzer extends BaseAnalyzer {
       result['Total Messages'] = thread.messages.length;
 
       if (result['Total Messages'] > 0) {
+        this.data.total_matches_messaged += 1;
         result['First Message'] = thread.messages[0].message;
         result['Date Messaged'] = thread.messages[0].sent_date;
       }

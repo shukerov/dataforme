@@ -16,7 +16,7 @@ class chartFactory {
       'tinder': {
         'bar': [ 'red'],
         'pie': [ '#9b2020', 'red' ],
-        'heatmap': ['#ffd6d3', '#ffa7a0', '#ff877e', '#ff584b', '#ff3929']
+        'heatmap': ['#ececec', '#ffa7a0', '#ff877e', '#ff584b', '#ff3929']
       },
       'spotify': {
         'bar': [ '#90f285' ],

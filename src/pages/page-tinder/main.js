@@ -1,5 +1,5 @@
 // JS imports:
-import { formatDate, formatPercent } from '../../js/analysis/analyzerHelpers.js';
+import { formatDate, formatPercent, safeDivide } from '../../js/analysis/analyzerHelpers.js';
 import { NavBar } from '../../js/components/navBar.js';
 import { FilePicker } from '../../js/components/filePicker.js';
 import { reportFactory } from '../../js/factories/reportFactory.js';
@@ -127,19 +127,19 @@ function renderMatchReport(data) {
     {
       icon: 'thumbs-up',
       text: 'Chance to like: ',
-      textBold: formatPercent(data.num_likes / (data.num_likes + data.num_passes)),
+      textBold: formatPercent(safeDivide(data.num_likes, (data.num_likes + data.num_passes))),
       tooltip: 'Your chance to swipe right on someone based on your swipe history.'
     },
     {
       icon: 'thumbs-down',
       text: 'Chance to pass: ',
-      textBold: formatPercent(data.num_passes / (data.num_likes + data.num_passes)),
+      textBold: formatPercent(safeDivide(data.num_passes, (data.num_likes + data.num_passes))),
       tooltip: 'Your chance to swipe left on someone based on your swipe history.'
     },
     {
       icon: 'heart',
       text: 'Chance to match: ',
-      textBold: formatPercent(data.num_matches / data.num_likes),
+      textBold: formatPercent(safeDivide(data.num_matches, data.num_likes)),
       tooltip: 'Your chance to match with someone when you swipe right based on your swipe history.'
     },
   ];
@@ -223,16 +223,34 @@ function renderUsageReport(data) {
 function renderMessageReport(data) {
   const messageStats = [ 
     {
+      icon: 'target',
+      text: 'Number of Matches Messaged: ',
+      textBold: `${data.total_matches_messaged} of ${data.num_matches} total`,
+      tooltip: 'How many of your matches you actually messaged.'
+    },
+    {
       icon: 'send',
       text: 'Number of Messages Sent: ',
       textBold: data.num_messages_sent,
       tooltip: 'The number of messages you have sent on Tinder.'
     },
     {
+      icon: 'message-square',
+      text: 'Number of Messages Sent per Match: ',
+      textBold: safeDivide(data.num_messages_sent, data.total_matches_messaged).toFixed(2),
+      tooltip: 'How many messages you sent on average to a person you match with.'
+    },
+    {
       icon: 'inbox',
       text: 'Number of Messages Received: ',
       textBold: data.num_messages_received,
       tooltip: 'The number of messages you have received on Tinder.'
+    },
+    {
+      icon: 'message-square',
+      text: 'Number of Messages Received per Match: ',
+      textBold: safeDivide(data.num_messages_received, data.total_matches_messaged).toFixed(2),
+      tooltip: 'How many messages you receive on average by a person you match with.'
     }
   ];
 

@@ -79,5 +79,5 @@ export function safeDivide(arg1, arg2) {
 // in:  a formatted percent. eg. '3%'
 // out: a number between 0 and 1
 export function formatPercent(ratio) {
-  return `${ratio.toFixed(2) * 100}%`;
+  return `${(ratio * 100).toFixed(2)}%`;
 }
