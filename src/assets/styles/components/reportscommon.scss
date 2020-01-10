@@ -3,9 +3,10 @@
 
 .subreport {
    width: 90%;
-   margin: 5vh auto;
+   margin: 10vh auto;
    background: $card-bg-color;
    display: grid;
+   border-radius: 5px;
    @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
    grid-template-areas: 
     'heading heading'
