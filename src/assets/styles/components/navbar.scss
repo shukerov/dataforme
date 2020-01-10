@@ -27,19 +27,20 @@ nav {
   position: absolute;
   overflow: hidden;
   pointer-events: none;
-  left: 0;
+  left: -5px;
   top: 1em;
   padding-right: 1em;
 }
 
 .nav-item {
+  border-radius: 5px;
   pointer-events: all;
   background: $bg-color;
   color: white;
   width: auto;
   text-align: right;
   font-family: 'BigNoodleTitling';
-  padding-left: 50px;
+  padding-left: 55px;
   padding-right: 20px;
   transition: all .5s ease-in-out;
   // font-size: 1em;
@@ -91,9 +92,9 @@ nav {
 }
 
 // all of nav is opened, triggered by click
-.nav-expanded {
-  transform: translateX(0vw);
-}
+// .nav-expanded {
+//   transform: translateX(-5vw);
+// }
 
 // whole nav bar is off to the side
 .nav-hidden {

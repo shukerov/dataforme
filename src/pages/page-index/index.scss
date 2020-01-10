@@ -107,7 +107,6 @@ $tranSpeed: 0.75s;
    // height: 100vh;
 }
 
-// TODO: make this global as you are reusing it on facebook page
 .about-content-heading {
   display: inline-block;
   background: $bg-color;
@@ -120,6 +119,8 @@ $tranSpeed: 0.75s;
   padding-right: 1em;
   height: 3rem;
   font-size: 1.5em;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 
   // pseduo element
   position: relative;
@@ -133,23 +134,6 @@ $tranSpeed: 0.75s;
     padding-left: 20%;
     height: 4rem;
     font-size: 2em;
-  }
-}
-
-.about-content-heading::after {
-  position: absolute;
-  bottom: 0;
-  content: "";
-  right: -0.5rem;
-  border-right: 0.5rem solid transparent;
-  border-top: 1.5rem solid $bg-color;
-  border-bottom: 1.5rem solid $bg-color;
-
-  @media only screen and (min-width: $screen-lg-min) {
-    right: -0.9rem;
-    border-right: 1rem solid transparent;
-    border-top: 2rem solid $bg-color;
-    border-bottom: 2rem solid $bg-color;
   }
 }
 

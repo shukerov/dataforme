@@ -1,6 +1,8 @@
 // adds a nice box-shadow to elements. Used in report cards
 @mixin box-shadow($color, $size) {
-  box-shadow: 0 0 $size $color;
-  -moz-box-shadow: 0 0 $size $color;
-  -webkit-box-shadow: 0 0 $size $color;
+  // box-shadow: 0 0 $size $color;
+  // -moz-box-shadow: 0 0 $size $color;
+  // -webkit-box-shadow: 0 0 $size $color;
+  -webkit-box-shadow: 0 6px 12px -2px rgba(50,50,93,.25), 0 3px 7px -3px rgba(0,0,0,.3);
+  box-shadow: 0 6px 12px -2px rgba(50,50,93,.25), 0 3px 7px -3px rgba(0,0,0,.3);
 }

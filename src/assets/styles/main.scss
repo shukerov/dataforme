@@ -70,12 +70,13 @@ a, a:visited {
   left: 50%;
   transform: translateX(-50%);
   background: $card-bg-color;
-  padding: 1em 1em 0.5em 1em;
+  padding: 1em 1em 1.5em 1em;
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
   line-height: 1;
   text-transform: uppercase;
+  border-radius: 5px;
   @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
 }
 
