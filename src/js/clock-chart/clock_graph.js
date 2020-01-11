@@ -282,7 +282,7 @@ class ClockChart {
       }
     }
 
-    return `You have ${verb} the most from\
+    return `You ${verb} the most from\
       ${getTime(maxIndex)} to ${getTime(maxIndex + 1)}.`;
   }
 }

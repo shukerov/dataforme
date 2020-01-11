@@ -130,7 +130,7 @@ class chartFactory {
       });
 
       // add conclusion?
-      let gConclusion = document.createElement('h2');
+      let gConclusion = document.createElement('p');
       gConclusion.classList.add('graph-conclusion');
       gConclusion.innerHTML = clckGraph.getConclusion(data, args.clock_labels[1]);
       args.parent.appendChild(gConclusion);
