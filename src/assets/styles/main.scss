@@ -174,7 +174,7 @@ a, a:visited {
   }
 }
 
-.preview-btns {
+.preview-btn {
   text-align: center;
   display:inline-block;
   padding: 0.75em 1em;
@@ -184,6 +184,8 @@ a, a:visited {
   font-size: 1.5em;
   color: $off-white;
   background: $off-black;
+  border: 1px solid $off-white;
+  border-radius: 5px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
