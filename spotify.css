@@ -242,7 +242,8 @@ input[type='file'] {
 
 .graph-conclusion {
   font-size: 14px;
-  text-align: center; }
+  text-align: center;
+  font-weight: 450; }
 
 .heatmap-graph {
   overflow-x: auto;
@@ -270,8 +271,10 @@ input[type='file'] {
   left: 5px; }
 
 .tooltip-icon {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  margin-left: 0.3vw; }
+  margin-left: 5px; }
 
 .clock-graph-container {
   text-align: center;
@@ -972,7 +975,7 @@ nav {
     fill: white;
     height: 200px; }
 
-.preview-btns {
+.preview-btn {
   text-align: center;
   display: inline-block;
   padding: 0.75em 1em;
@@ -982,6 +985,8 @@ nav {
   font-size: 1.5em;
   color: white;
   background: #151515;
+  border: 1px solid white;
+  border-radius: 5px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

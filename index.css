@@ -568,7 +568,7 @@ nav {
     fill: white;
     height: 200px; }
 
-.preview-btns {
+.preview-btn {
   text-align: center;
   display: inline-block;
   padding: 0.75em 1em;
@@ -578,6 +578,8 @@ nav {
   font-size: 1.5em;
   color: white;
   background: #151515;
+  border: 1px solid white;
+  border-radius: 5px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
