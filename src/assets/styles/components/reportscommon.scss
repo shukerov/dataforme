@@ -8,6 +8,9 @@
    display: grid;
    border-radius: 5px;
    @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
+   @media screen and (min-width: $screen-lg-min) {
+     width: 80%;
+   }
    grid-template-areas: 
     'heading heading'
     'content content'

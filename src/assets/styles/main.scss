@@ -63,21 +63,44 @@ a, a:visited {
 
 }
 
+.card::after {
+  @media only screen and (min-width: $screen-md-min) {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    border: 30px solid #171414;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    // padding: 1px;
+    top: 40px;
+    left: -20px;
+  }
+}
+
 .card::before {
   position: absolute;
-  z-index: -1;
-  top: -2.5em;
-  left: 50%;
-  transform: translateX(-50%);
-  background: $card-bg-color;
-  padding: 1em 1em 1.5em 1em;
+  background: black;
+  color: white;
+  z-index: 1;
+  font-size: 35px;
+  font-family: 'BigNoodleTitling';
+  width: 100%;
   text-align: center;
-  font-size: 1.5em;
-  font-weight: bold;
-  line-height: 1;
-  text-transform: uppercase;
-  border-radius: 5px;
-  @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
+  top: -35px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  left: 0;
+
+  @media only screen and (min-width: $screen-md-min) {
+    width: auto;
+    top: -35px;
+    left: -20px;
+    padding: 20px 20px 20px 160px;
+    text-align: right;
+    line-height: 1;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+  }
 }
 
 #step-1::before {
@@ -103,6 +126,9 @@ a, a:visited {
   padding: 1em;
   text-align: center;
   border-radius: 5px;
+  @media screen and (min-width: $screen-lg-min) {
+    width: 80%;
+  }
   @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
 }
 
@@ -131,13 +157,6 @@ a, a:visited {
    }
 }
 
-// .card-highlight {
-//   margin: 0.5rem 1rem;
-//   text-align: left;
-//   @media screen and (min-width: $screen-md-min) {
-//     margin-left: 3rem;
-//   }
-// }
 
 .card-hint-desktop {
   display: none;
