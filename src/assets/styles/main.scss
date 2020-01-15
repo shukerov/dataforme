@@ -53,9 +53,11 @@ a, a:visited {
 // }
 
 .card-heading {
-  margin: 0 0.5em;
+  margin: 0 auto;
+  width: 75%;
   padding: 1em 0;
-  text-align: center;
+  text-align: left;
+  
 
   @media only screen and (min-width: $screen-md-min) {
     // text-align: left;
@@ -126,37 +128,24 @@ a, a:visited {
   padding: 1em;
   text-align: center;
   border-radius: 5px;
+  @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
   @media screen and (min-width: $screen-lg-min) {
     width: 80%;
   }
-  @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
 }
 
-.card-text, .card-label, .card-highlight, .card-list {
-   margin: 0.5rem 1rem;
-   text-align: left;
-
-   @media screen and (min-width: $screen-md-min) {
-     margin-left: 3rem;
-   }
-
-   @media screen and (min-width: $screen-lg-min) {
-     margin-left: 5rem;
-   }
+.card-content {
+  text-align: center;
+}
+.card-content-left {
+  width: 70%;
+  text-align: left;
+  margin: 0 auto;
 }
 
 .card-label {
   font-weight: 600;
-  margin: 2rem 1rem 1rem 1rem;
-   @media screen and (min-width: $screen-md-min) {
-     margin-left: 3rem;
-   }
-
-   @media screen and (min-width: $screen-lg-min) {
-     margin-left: 5rem;
-   }
 }
-
 
 .card-hint-desktop {
   display: none;
@@ -168,6 +157,7 @@ a, a:visited {
 
 .card-hint {
   font-size: 0.8em;
+  text-align: center;
   font-weight: 350;
 }
 
@@ -176,13 +166,32 @@ a, a:visited {
   font-weight: 700;
 }
 
-// .card-list {
-//    text-align: left;
+.details {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  align-items: flex-start;
+  padding: 10px 10px 0;
+  margin: 1em 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
 
-//    @media screen and (min-width: $screen-md-min) {
-//      margin: 0.5em 3em;
-//    }
-// }
+.details > :last-child {
+  margin-bottom: 0;
+}
+
+.details[open] {
+  padding: 10px;
+}
+
+
+.summary {
+  display: list-item;
+  padding: 10px;
+  margin: -10px -10px 0;
+  background-color: darken(#f2f2f2, 3%);
+}
 
 #website-icon {
   margin: 1.5em auto 5em auto;
@@ -197,7 +206,6 @@ a, a:visited {
   text-align: center;
   display:inline-block;
   padding: 0.75em 1em;
-  margin: 1em 1em 0 1em;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.5em;
