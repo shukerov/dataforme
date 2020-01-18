@@ -1061,3 +1061,8 @@ nav {
 #stream-graph3 {
   grid-area: monthly; }
 
+.graph-wrapper:nth-child(n+3) {
+  grid-column: 1 / -1; }
+  .graph-wrapper:nth-child(n+3) .chart-container {
+    margin: 0 auto; }
+
