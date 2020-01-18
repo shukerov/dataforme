@@ -83,7 +83,9 @@ class TinderAnalyzer extends BaseAnalyzer {
 
     // crunches data for matches report
     const matches_by_date = Object.keys(matches).reduce((acc, date_key) => {
-      const date = new Date(date_key);
+      // TODO: Not sure what timezone this date is in, assuming UTC
+      const dateISO = date_key + 'T00:00:00.000Z';
+      const date = new Date(dateISO);
       const year = date.getFullYear();
 
       if (acc[year]) {
@@ -120,7 +122,9 @@ class TinderAnalyzer extends BaseAnalyzer {
     this.data.app_opens = sum(Object.values(app_opens));
 
     const app_opens_by_date = Object.keys(app_opens).reduce((acc, date_key) => {
-      const date = new Date(date_key);
+      // TODO: Not sure what timezone this date is in, assuming UTC
+      const dateISO = date_key + 'T00:00:00.000Z';
+      const date = new Date(dateISO);
       const year = date.getFullYear();
 
       if (acc[year]) {

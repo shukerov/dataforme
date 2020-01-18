@@ -86,9 +86,10 @@ class SpotifyAnalyzer extends BaseAnalyzer {
 
       // song was skipped
       if (song.msPlayed > skippedLimit) {
-        // count song plays
 
-        const listenDate = new Date(`${song.endTime} UTC`);
+        // convert time to ISO
+        const endTime = song.endTime.replace(' ', 'T') + ":00.000Z";
+        const listenDate = new Date(endTime);
         const listenYear = listenDate.getFullYear();
 
         // count time stats
