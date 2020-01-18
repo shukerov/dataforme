@@ -20,7 +20,8 @@ class chartFactory {
       },
       'spotify': {
         'bar': [ '#90f285' ],
-        'clock': [ '#18bb51', '#18bb51', '#baf6cf']
+        'clock': [ '#18bb51', '#18bb51', '#baf6cf'],
+        'heatmap': ['#ececec', '#abf4c4', '#5feb90', '#32e571', '#18bb51']
       },
       'default': ['light-blue', 'blue', 'violet', '#41B3A3', '#85DCB']
     };

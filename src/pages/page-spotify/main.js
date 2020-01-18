@@ -151,6 +151,23 @@ function renderStreamingReport(data) {
   //   css_label: 'stream-graph',
   //   size: 'medium'
   // });
+
+  // stream heatmap graph
+  Object.keys(data.streaming_data.time.heatmap).forEach((year) => {
+
+    // calculate the year
+    data.streaming_data.time.heatmap[year].start = new Date(year, 0, 1)
+    data.streaming_data.time.heatmap[year].end = new Date(year, 11, 31)
+
+    rRender.addGraph(subreport, {
+      type: 'heatmap',
+      data: data.streaming_data.time.heatmap[year],
+      title: `Streaming ${year}`,
+      css_label: 'stream-graph',
+      size: 'huge'
+    });
+  });
+
 }
 
 function renderUserReport(data) {

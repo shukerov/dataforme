@@ -26,7 +26,8 @@ class SpotifyAnalyzer extends BaseAnalyzer {
           'hourly': Array(24).fill(0),
           'weekly': Array(7).fill(0),
           'monthly': Array(12).fill(0),
-          'yearly': {}
+          'yearly': {},
+          'heatmap': {}
         }
       }
     };
@@ -100,6 +101,23 @@ class SpotifyAnalyzer extends BaseAnalyzer {
         }
         else {
           acc.time.yearly[listenYear] = 1;
+        }
+
+        // count for heatmap
+        listenDate.setHours(0,0,0,0); // set to beginning of day dates
+        let heatmapKey = listenDate.valueOf() / 1000;
+        
+        if (acc.time.heatmap[listenYear]) {
+          if (acc.time.heatmap[listenYear].dataPoints[heatmapKey]) {
+            acc.time.heatmap[listenYear].dataPoints[heatmapKey] += 1;
+          }
+          else {
+            acc.time.heatmap[listenYear].dataPoints[heatmapKey] = 1;
+          }
+        }
+        else {
+          acc.time.heatmap[listenYear] = {'dataPoints': {} };
+          acc.time.heatmap[listenYear].dataPoints[heatmapKey] = 1;
         }
 
         if (acc.songs[songKey]) {
