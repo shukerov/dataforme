@@ -38,52 +38,16 @@ a, a:visited {
 
 #site {
    min-height: 100vh;
-   // height: 100vh;
-   // height: auto;
    background: #f9f9f9;
    overflow: auto;
    position: relative;
    z-index: 0; // enable stack context
 }
 
-// maybe a different file for web-service common elements
-// .service-content {
-//   max-width: 95%;
-//   margin: 0 auto;
-// }
-
 .card-heading {
-  margin: 0 auto;
-  width: 75%;
-  padding: 1em 0;
-  text-align: left;
-  
-
-  @media only screen and (min-width: $screen-md-min) {
-    // text-align: left;
-  }
-
-}
-
-.card::after {
-  @media only screen and (min-width: $screen-md-min) {
-    position: absolute;
-    z-index: -1;
-    content: "";
-    border: 30px solid #171414;
-    border-left-color: transparent;
-    border-bottom-color: transparent;
-    // padding: 1px;
-    top: 40px;
-    left: -20px;
-  }
-}
-
-.card::before {
   position: absolute;
   background: black;
   color: white;
-  z-index: 1;
   font-size: 35px;
   font-family: 'BigNoodleTitling';
   width: 100%;
@@ -97,7 +61,7 @@ a, a:visited {
     width: auto;
     top: -35px;
     left: -20px;
-    padding: 20px 20px 20px 160px;
+    padding: 20px 20px 20px 100px;
     text-align: right;
     line-height: 1;
     border-radius: 5px;
@@ -105,19 +69,25 @@ a, a:visited {
   }
 }
 
-#step-1::before {
-  content: "Step 1";
+.card-heading::after {
+  @media only screen and (min-width: $screen-md-min) {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    border: 30px solid #171414;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    top: 75px;
+    left: 0px;
+  }
 }
 
-#step-2::before {
-  content: "Step 2";
-}
-
-#step-3::before {
-  content: "Step 3";
+.step {
+  margin-right: 0.5em;
 }
 
 .card {
+  position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -126,9 +96,11 @@ a, a:visited {
   margin: 20vh auto;
   background: $card-bg-color;
   padding: 1em;
+  padding-top: 100px;
   text-align: center;
   border-radius: 5px;
   @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
+
   @media screen and (min-width: $screen-lg-min) {
     width: 80%;
   }
@@ -167,10 +139,7 @@ a, a:visited {
 }
 
 .details {
-  display: flex;
-  flex-direction: column;
   background-color: #f2f2f2;
-  align-items: flex-start;
   padding: 10px 10px 0;
   margin: 1em 0;
   border-radius: 6px;
