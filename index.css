@@ -483,27 +483,9 @@ nav {
   z-index: 0; }
 
 .card-heading {
-  margin: 0 auto;
-  width: 75%;
-  padding: 1em 0;
-  text-align: left; }
-
-@media only screen and (min-width: 768px) {
-  .card::after {
-    position: absolute;
-    z-index: -1;
-    content: "";
-    border: 30px solid #171414;
-    border-left-color: transparent;
-    border-bottom-color: transparent;
-    top: 40px;
-    left: -20px; } }
-
-.card::before {
   position: absolute;
   background: black;
   color: white;
-  z-index: 1;
   font-size: 35px;
   font-family: 'BigNoodleTitling';
   width: 100%;
@@ -513,26 +495,32 @@ nav {
   border-top-right-radius: 5px;
   left: 0; }
   @media only screen and (min-width: 768px) {
-    .card::before {
+    .card-heading {
       width: auto;
       top: -35px;
       left: -20px;
-      padding: 20px 20px 20px 160px;
+      padding: 20px 20px 20px 100px;
       text-align: right;
       line-height: 1;
       border-radius: 5px;
       border-bottom-left-radius: 0px; } }
 
-#step-1::before {
-  content: "Step 1"; }
+@media only screen and (min-width: 768px) {
+  .card-heading::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    border: 30px solid #171414;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    top: 75px;
+    left: 0px; } }
 
-#step-2::before {
-  content: "Step 2"; }
-
-#step-3::before {
-  content: "Step 3"; }
+.step {
+  margin-right: 0.5em; }
 
 .card {
+  position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -541,6 +529,7 @@ nav {
   margin: 20vh auto;
   background: white;
   padding: 1em;
+  padding-top: 100px;
   text-align: center;
   border-radius: 5px;
   -webkit-box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
@@ -576,10 +565,7 @@ nav {
   font-weight: 700; }
 
 .details {
-  display: flex;
-  flex-direction: column;
   background-color: #f2f2f2;
-  align-items: flex-start;
   padding: 10px 10px 0;
   margin: 1em 0;
   border-radius: 6px;
