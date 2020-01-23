@@ -56,6 +56,8 @@ a, a:visited {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   left: 0;
+  padding: 10px 0;
+  line-height: 1;
 
   @media only screen and (min-width: $screen-md-min) {
     width: auto;
@@ -83,7 +85,18 @@ a, a:visited {
 }
 
 .step {
-  margin-right: 0.5em;
+  margin-bottom: 5px;
+  display: block;
+
+
+  @media only screen and (min-width: $screen-md-min) {
+    margin-bottom: 0;
+    margin-right: 0.5em;
+    display: inline-block;
+    &:after {
+      content: ":";
+    }
+  }
 }
 
 .card {
@@ -96,13 +109,14 @@ a, a:visited {
   margin: 20vh auto;
   background: $card-bg-color;
   padding: 1em;
-  padding-top: 100px;
+  padding-top: 150px;
   text-align: center;
   border-radius: 5px;
   @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
 
   @media screen and (min-width: $screen-lg-min) {
     width: 80%;
+    padding-top: 80px;
   }
 }
 
