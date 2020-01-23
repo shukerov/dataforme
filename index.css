@@ -493,7 +493,9 @@ nav {
   top: -35px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  left: 0; }
+  left: 0;
+  padding: 10px 0;
+  line-height: 1; }
   @media only screen and (min-width: 768px) {
     .card-heading {
       width: auto;
@@ -517,10 +519,12 @@ nav {
     left: 0px; } }
 
 .step {
-  margin-right: 0.5em;
+  margin-bottom: 5px;
   display: block; }
   @media only screen and (min-width: 768px) {
     .step {
+      margin-bottom: 0;
+      margin-right: 0.5em;
       display: inline-block; }
       .step:after {
         content: ":"; } }
@@ -533,7 +537,7 @@ nav {
   position: relative;
   width: 90%;
   margin: 20vh auto;
-  background: white;
+  background: #fafafa;
   padding: 1em;
   padding-top: 150px;
   text-align: center;

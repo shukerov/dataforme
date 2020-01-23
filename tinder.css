@@ -11,7 +11,7 @@ input[type='file'] {
   cursor: pointer;
   border: 1px dashed #BDBDBD;
   transition: all .2s ease-in-out;
-  background: #f2f2f2; }
+  background: #ededed; }
   .file-upload-field svg {
     height: 60px; }
   .file-upload-field p {
@@ -52,7 +52,8 @@ input[type='file'] {
 .subreport {
   width: 90%;
   margin: 10vh auto;
-  background: white;
+  background: #fafafa;
+  color: #111111;
   display: grid;
   border-radius: 5px;
   -webkit-box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
@@ -123,7 +124,8 @@ input[type='file'] {
   border-bottom: 1px solid black; }
 
 .report-list-item {
-  background: #f2f2f2;
+  background: #efefef;
+  border-radius: 5px;
   padding: 10px;
   -webkit-box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
   box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3); }
@@ -208,6 +210,7 @@ input[type='file'] {
 
 .heading-item-raw {
   overflow: auto;
+  border-radius: 5px;
   max-width: 50%; }
 
 .report-controls {
@@ -216,12 +219,16 @@ input[type='file'] {
   flex-basis: 40%; }
 
 .report-table {
-  grid-column: 1 / 2;
+  background: white;
+  background: #efefef;
   border-radius: 5px;
-  width: 40%;
-  margin: 30px auto;
+  width: 100%;
+  margin: 40px auto;
   -webkit-box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
   box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3); }
+  @media screen and (min-width: 992px) {
+    .report-table {
+      width: 80%; } }
   .report-table-description {
     display: flex;
     justify-content: space-between;
@@ -341,7 +348,7 @@ input[type='file'] {
 
 .slide-card {
   display: none;
-  background: #f2f2f2; }
+  background: #ededed; }
 
 .slide-card-text {
   height: 10%;
@@ -349,7 +356,7 @@ input[type='file'] {
   padding: 0 0.5em 1em 0.5em; }
 
 .step-indicator {
-  color: gray;
+  color: #919191;
   width: 95%;
   text-align: center;
   font-size: 0.85em;
@@ -928,7 +935,9 @@ nav {
   top: -35px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  left: 0; }
+  left: 0;
+  padding: 10px 0;
+  line-height: 1; }
   @media only screen and (min-width: 768px) {
     .card-heading {
       width: auto;
@@ -952,10 +961,12 @@ nav {
     left: 0px; } }
 
 .step {
-  margin-right: 0.5em;
+  margin-bottom: 5px;
   display: block; }
   @media only screen and (min-width: 768px) {
     .step {
+      margin-bottom: 0;
+      margin-right: 0.5em;
       display: inline-block; }
       .step:after {
         content: ":"; } }
@@ -968,7 +979,7 @@ nav {
   position: relative;
   width: 90%;
   margin: 20vh auto;
-  background: white;
+  background: #fafafa;
   padding: 1em;
   padding-top: 150px;
   text-align: center;
