@@ -24,10 +24,10 @@ export function getTopMessagers(threads, n) {
 export function getTopObjects(objects, n) {
   let topObjects = [];
   Object.keys(objects).forEach((o) => {
-    topObjects.push([objects[o], o]);
+    topObjects.push([o, objects[o]]);
   });
 
-  topObjects.sort( (a, b) => { return a[0] - b[0]; } );
+  topObjects.sort( (a, b) => { return a[1] - b[1]; } );
   return topObjects.slice(topObjects.length - n);
 }
 

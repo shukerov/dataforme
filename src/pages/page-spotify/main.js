@@ -69,47 +69,41 @@ function renderStreamingReport(data) {
   ]
 
   // sort top songs TODO: should probably e in spotifyAnalyzer
-  let topSongsList = getTopObjects(data.streaming_data.songs, 25)
-  topSongsList = topSongsList.reverse().map((s) => {
-    return `${s[1]}  <strong>${s[0]}</strong>`;
-  });
+  let topSongsList = getTopObjects(data.streaming_data.songs, 25).reverse();
+  let topArtistsList = getTopObjects(data.streaming_data.artists, 25).reverse();
+  let skippedSongsList = getTopObjects(data.streaming_data.skipped_songs, 25).reverse();
 
-  let topArtistsList = getTopObjects(data.streaming_data.artists, 25)
-  topArtistsList = topArtistsList.reverse().map((s) => {
-    return `${s[1]}  <strong>${s[0]}</strong>`;
-  });
 
-  let skippedSongsList = getTopObjects(data.streaming_data.skipped_songs, 25)
-  skippedSongsList = skippedSongsList.reverse().map((s) => {
-    return `${s[1]}  <strong>${s[0]}</strong>`;
-  });
-
-  let topSongs = [{
+  let tablesData = [{
       icon: 'music',
-      text: 'Most Played Songs: ',
-      type: 'list',
-      listData: topSongsList,
+      text: 'Most Played Songs',
+      type: 'table',
+      tableHeadings: ['Song', 'Plays'],
+      tableData: topSongsList,
       tooltip: 'These are your top played songs for the last year.'
     },
     {
       icon: 'disc',
       text: 'Most Played Artists: ',
-      type: 'list',
-      listData: topArtistsList,
+      type: 'table',
+      tableHeadings: ['Artist', 'Plays'],
+      tableData: topArtistsList,
       tooltip: 'These are your top played artists for the last year.'
     },
     {
       icon: 'skip-forward',
       text: 'Most Skipped Songs: ',
-      type: 'list',
-      listData: skippedSongsList,
+      type: 'table',
+      tableHeadings: ['Song', 'Skips'],
+      tableData: skippedSongsList,
       tooltip: 'These are the songs you skipped the most for the last year.'
     }
   ]
 
   const subreport = rRender.getSubreport('Streaming History Report');
   rRender.add(reportItems, 'icon-list', subreport);
-  rRender.add(topSongs, 'list', subreport);
+  // rRender.add(topSongs, 'list', subreport);
+  rRender.add(tablesData, 'table', subreport);
   rRender.getSubreportGraphContainer('graphs-container-streaming', subreport);
 
   // hourly posts chart

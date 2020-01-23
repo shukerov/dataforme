@@ -162,6 +162,10 @@ export class reportFactory {
     else if (type == 'big-icon-list') {
       this.addBigIconList(reportItems, subreport);
     }
+    // table data
+    else if (type == 'table') {
+      this.addTable(reportItems, subreport);
+    }
     // display raw data
     else if (type == 'raw') {
       this.addRaw(reportItems, subreport);
@@ -406,6 +410,84 @@ export class reportFactory {
     });
   }
 
+  // Descr: adds a report table/s to a subreport. Every table will have
+  //        an individual icon, short table description and the table itself.
+  // --------------------------------------
+  // Input:
+  //   *  reportItems - array of report items. DS example below
+  //   *  subreport - the DOM element that will contain the report item/items
+  // --------------------------------------
+  // Data Structure example of a list item:
+  // {
+  //   icon: 'music',
+  //   text: 'Most Played Songs',
+  //   type: 'table',
+  //   tableHeadings: ['Song', 'Plays'],
+  //   tableData: topSongsList,
+  //   tooltip: 'These are your top played songs for the last year.'
+  // }
+  addTable(reportItems, subreport) {
+    // loop through reportItems and create each report item
+    reportItems.forEach((item) => {
+
+      // element creation
+      let tableIcon = new Image();
+      let reportItem = document.createElement('div');
+      let tableDescription = document.createElement('div');
+      let tableLabel = document.createElement('p');
+      let tableElement = document.createElement('table');
+      let tableToolTip = new ToolTip(item.tooltip);
+
+      // appending elements
+      tableDescription.appendChild(tableIcon);
+      tableDescription.appendChild(tableLabel);
+      tableDescription.appendChild(tableToolTip);
+      reportItem.appendChild(tableDescription);
+      reportItem.appendChild(tableElement);
+
+      // adding content
+      tableIcon.src = this.getIcon(item.icon);
+      tableLabel.innerHTML = item.text;
+
+      // build table
+
+      // build table heading
+      let tableHeading = document.createElement('thead');
+      let tableHeadingRow = document.createElement('tr');
+      item.tableHeadings.forEach((heading) => {
+        let headingElement = document.createElement('th');
+        headingElement.innerHTML = heading;
+        tableHeadingRow.appendChild(headingElement);
+      });
+      tableHeading.appendChild(tableHeadingRow);
+      tableElement.appendChild(tableHeading);
+
+      // build table body
+      let tableBody = document.createElement('tbody');
+
+      item.tableData.forEach((rowElements) => {
+        let tableBodyRow = document.createElement('tr');
+
+        rowElements.forEach((rowElement) => {
+          let tableData = document.createElement('td');
+          tableData.innerHTML = rowElement;
+          tableBodyRow.appendChild(tableData);
+        });
+
+        tableBody.appendChild(tableBodyRow);
+      });
+
+      tableElement.appendChild(tableBody);
+
+      // styles
+      tableElement.classList.add('report-table-table');
+      tableDescription.classList.add('report-table-description');
+      reportItem.classList.add('report-table');
+
+      // add to subreport
+      subreport.content.appendChild(reportItem);
+    });
+  }
 
   // Descr: adds a report item/s to a subreport. Every item will have
   //        an individual icon, tooltip and label. All items are displayed in a row.

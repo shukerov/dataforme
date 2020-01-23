@@ -17,6 +17,7 @@
 
 #graphs-container-streaming {
   display: grid;
+  grid-template-columns: 1fr 1fr;
 
   @media screen and (min-width: $screen-md-min) {
     grid-template-areas:

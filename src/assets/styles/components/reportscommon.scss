@@ -5,6 +5,7 @@
    width: 90%;
    margin: 10vh auto;
    background: $card-bg-color;
+   color: $text-color;
    display: grid;
    border-radius: 5px;
    @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
@@ -91,8 +92,9 @@
 }
 
 .report-list-item {
-  background: darken($card-bg-color, 5);
-  padding: 0.2em;
+  background: $card-on-card-bg-color;
+  border-radius: 5px;
+  padding: 10px;
   @include box-shadow(#ccc, 3px);
 }
 
@@ -195,6 +197,7 @@
 
 .heading-item-raw {
   overflow: auto;
+  border-radius: 5px;
   max-width: 50%;
 }
 
@@ -203,6 +206,47 @@
    flex-direction: row;
    flex-basis: 40%;
 }
+
+.report-table {
+  background: white;
+  background: $card-on-card-bg-color;
+  // padding: 30px;
+  border-radius: 5px;
+  width: 100%;
+  margin: 40px auto;
+  @include box-shadow($card-boxshadow-color, $card-boxshadow-size);
+
+  @media screen and (min-width: $screen-lg-min) {
+    width: 80%
+  }
+
+  &-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid grey;
+  }
+
+  &-table {
+    width: 100%;
+    thead {
+      font-size: 1em;
+      text-align: left;
+      color: grey;
+      tr > * { 
+        padding: 8px 20px;
+        font-weight: 450;
+      }
+    }
+    
+    tbody {
+      tr > * {
+        padding: 8px 20px;
+      }
+    }
+  }
+ }
 
 .report-button {
    flex: 1;
@@ -232,6 +276,12 @@
   display: grid;
   grid-template-rows: 0.1fr 0.9fr;
   grid-template-columns: 1fr;
+
+   > :nth-child(2) {
+    // max-width: 100%;
+    // width: 100%;
+    // background: red;
+  }
 }
 
 .graph-title {
