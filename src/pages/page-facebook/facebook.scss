@@ -24,7 +24,7 @@
 // TODO: needs to be mobile first
 #graphs-container-searches {
    @media only screen and (max-width: 900px) {
-       grid-template-columns: 1fr;
+       grid-template-columns: minmax(0, 1fr);
        grid-template-areas:
        'top-searches'
        'hourly'
@@ -36,7 +36,7 @@
    grid-gap: 10px;
    grid-area: graphs;
    grid-template-rows: repeat(2, 1fr);
-   grid-template-columns: repeat(2, minmax(150px, 1fr));
+   grid-template-columns: repeat(2, minmax(0, 1fr));
    grid-template-areas:
      'top-searches top-searches'
      'hourly yearly'
@@ -44,7 +44,7 @@
 
 #graphs-container-reactions {
    @media only screen and (max-width: 900px) {
-       grid-template-columns: 1fr;
+       grid-template-columns: minmax(0, 1fr);
        grid-template-areas:
        'hourly'
        'yearly'
@@ -54,7 +54,7 @@
    display: grid;
    grid-gap: 10px;
    grid-area: graphs;
-   grid-template-columns: repeat(2, minmax(150px, 1fr));
+   grid-template-columns: repeat(2, minmax(0, 1fr));
    grid-template-areas:
      'hourly yearly'
 }
@@ -81,17 +81,17 @@
 
 #graphs-container-messages, #graphs-container-posts {
   @media only screen and (max-width: 1224px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   @media only screen and (max-width: 900px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   margin-top: 2em;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 // TODO: needs to be mobile first
