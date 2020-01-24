@@ -1,60 +1,75 @@
-// TODO: needs to change style once zipfile is uploaded.
 // Style imports:
 import '../../assets/styles/components/filePicker.scss';
-
-// Icon imports TODO: DOES THIS DOUBLE IMPORT?
 import iupload from '../../assets/images/report-icons/file-plus_inline.svg';
 
 export class FilePicker {
   constructor(parent) {
     this.self = document.createElement('div');
     this.self.classList.add('filepicker-wrapper');
-    this.self.innerHTML = `\
-          <label for='file-upload' id='visual' class='file-upload-field'>\
-              <div id='report-upload-icon'></div>\
-              <p class='fp-text fp-strong'>Select Files</p>\
-              <p class='fp-text'>or Drag and Drop</p>\
-          </label>\
-          <input id='file-upload' type='file'/>\
-          `;
 
-    // get icon from the above html
-    this.selfVisual = this.self.children[0];
-    let iconContainer = this.selfVisual.children[0];
-    iconContainer.innerHTML = iupload;
+    this.label = document.createElement('label');
+    this.label.htmlFor = 'file-upload';
+    this.label.id = 'visual';
+    this.label.classList.add('file-upload-field');
+
+    this.input = document.createElement('input');
+    this.input.type = 'file';
+    this.input.id = 'file-upload';
+
+    this.iconContainer = document.createElement('div');
+    this.iconContainer.innerHTML = iupload;
+    this.iconContainer.classList.add('fpicker-upload-icon');
+
+    this.textBig = document.createElement('p');
+    this.textBig.innerHTML = 'Select Files';
+    this.textBig.classList.add('fp-text', 'fp-strong');
+
+    this.textSmall = document.createElement('p');
+    this.textSmall.innerHTML = 'or Drag and Drop';
+    this.textBig.classList.add('fp-text');
+
+
+    // append things
+    this.label.appendChild(this.iconContainer);
+    this.label.appendChild(this.textBig);
+    this.label.appendChild(this.textSmall);
+    this.self.appendChild(this.label);
+    this.self.appendChild(this.input);
     parent.appendChild(this.self);
 
     // eventlisteners for styling
-    this.selfVisual.addEventListener('mouseenter', this.fileDragHover, false);
-    this.selfVisual.addEventListener('mouseleave', this.fileDragHover, false);
-    this.selfVisual.addEventListener('dragover', this.fileDragHover, false);
-    this.selfVisual.addEventListener('dragleave', this.fileDragHover, false);
+    this.label.addEventListener('mouseenter', this.fileDragHover, false);
+    this.label.addEventListener('mouseleave', this.fileDragHover, false);
+    this.label.addEventListener('dragover', this.fileDragHover, false);
+    this.label.addEventListener('dragleave', this.fileDragHover, false);
   }
 
   onUpload(callback) {
     // to attach an action 
-    this.input = this.self.children[1];
     let fileSelectHandler = this.getFileSafe.bind(this, callback); 
 
     this.input.addEventListener('change', fileSelectHandler, false); 
-    this.selfVisual.addEventListener('drop', fileSelectHandler, false);
+    this.label.addEventListener('drop', fileSelectHandler, false);
   }
 
-  //TODO: maybe a helper if used elsewhere
   // callback and event
   getFileSafe(callback, e) {
     e.stopPropagation();
     e.preventDefault();
 
-    var files = e.target.files || e.dataTransfer.files;
-    // file isn't a zip file.
-    // TODO should also check for file size
-    // once the limitations of the script are more clear
-    if (files.length == 1 && files[0].name.endsWith('.zip')) {
-      callback(files[0]);
+    const maxFileSize = 4 * 1024 * 1024 * 1024;
+    let files = e.target.files || e.dataTransfer.files;
+
+    if (files.length == 1 && !files[0].name.endsWith('.zip')) {
+      alert('Please upload a zip file');
+    }
+    else if (files.length == 1 && files[0].size > maxFileSize) {
+      alert('Your file is too big. Delete some media and try again.');
     }
     else {
-      alert('Please upload a zip file');
+      this.textBig.innerHTML = files[0].name;
+      this.textSmall.innerHTML = `${files[0].size} bytes`;
+      callback(files[0]);
     }
   }
 
