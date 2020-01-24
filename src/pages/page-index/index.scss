@@ -104,6 +104,14 @@ $tranSpeed: 0.75s;
 #about {
    overflow: auto;
    height: auto;
+
+   a  {
+     color: $text-important;
+   }
+
+   a:visited {
+     color: darken($text-important, 5%);
+   }
    // height: 100vh;
 }
 
@@ -139,7 +147,6 @@ $tranSpeed: 0.75s;
 
 .about-content {
   font-size: 19px; // TODO: possibly global?
-  max-width: 80%;
   margin: 0 auto;
 
   @media only screen and (min-width: $screen-md-min) {
@@ -167,8 +174,9 @@ $tranSpeed: 0.75s;
 }
 
 em {
-  text-transform: uppercase;
   font-style: normal;
+  font-weight: 600;
+  font-size: 1.1em;
 }
 
 // scroll down CTA
@@ -249,3 +257,76 @@ em {
   }
 }
 
+
+// for the insruction steps
+$step-table-bg-color: #8c0a39;
+$step-table-header-bg-color: #d81159;
+$step-table-content-bg-color: #9e0e42;
+
+.steps-table { 
+  // width: 80%;
+  display: grid;
+  grid-gap: 10px;
+
+  @media only screen and (min-width: $screen-lg-min) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  background: $step-table-bg-color;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  position: relative;
+  
+  &-item:nth-child(-n + 2) {
+   .steps-table-header:after {
+      z-index: 1;
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      transform: rotate(45deg);
+      border-top-right-radius: 3px;
+      background-color: $step-table-header-bg-color;
+      top: calc(50% - 10px);
+      right: -9px;
+    }
+  }
+
+  &-item:nth-child(n + 2) {
+   .steps-table-header:before {
+      z-index: 0;
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      transform: rotate(45deg);
+      border-top-right-radius: 3px;
+      background-color: $step-table-bg-color;
+      top: calc(50% - 10px);
+      left: -10px;
+    }
+  }
+
+  &-header {
+    padding: 10px 0;
+    position: relative;
+    background-color: $step-table-header-bg-color;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.11), 0 1px 3px rgba(0,0,0,.1);
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &-content {
+    border-radius: 4px;
+    padding: 10px 40px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2), 0 1px 0 rgba(0,0,0,.04);
+    background: $step-table-content-bg-color;
+    font-size: 0.9em;
+  }
+      
+}
