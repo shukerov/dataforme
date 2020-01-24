@@ -695,6 +695,10 @@ nav {
 #about {
   overflow: auto;
   height: auto; }
+  #about a {
+    color: #D81159; }
+  #about a:visited {
+    color: #c00f4f; }
 
 .about-content-heading {
   display: inline-block;
@@ -742,8 +746,9 @@ nav {
       font-size: 1.75em; } }
 
 em {
-  text-transform: uppercase;
-  font-style: normal; }
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.1em; }
 
 @keyframes fadeInOut {
   0% {
