@@ -32,15 +32,8 @@ export function getTopObjects(objects, n) {
 }
 
 export function getTopSearches(searches, n) {
-  // let topSearches = [];
-  // Object.keys(searches).forEach((s) => {
-  //   topSearches.push([searches[s], s]);
-  // });
-
-  // topSearches.sort( (a, b) => { return a[0] - b[0]; } );
-  // let result = topSearches.slice(topSearches.length - n);
   let result = getTopObjects(searches, n);
-  result = result.reduce((acc, s) => { acc[s[1]] = s[0]; return acc;}, {});
+  result = result.reduce((acc, s) => { acc[s[0]] = s[1]; return acc;}, {});
   return result;
 }
 
