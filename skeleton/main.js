@@ -35,11 +35,17 @@ function kickStartReport() {
 }
 
 function renderReport(fakeData) {
+  // make sure report container is empty
+  rRender.emptyReportElement();
+
   // const data = analyzer.getData(fakeData);
   // renderUserReport(data);
 
   // scrolls down to the report
   rRender.reportContainer.scrollIntoView();
+
+  // set report container to full
+  rRender.setReportElementFull();
 }
 
 function renderUserReport(data) {

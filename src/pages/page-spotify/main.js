@@ -31,6 +31,7 @@ previewBtn.onclick = () => {
 kickStartReport();
 
 function kickStartReport() {
+
   if (!DEBUG_MODE) {
     fPicker.onUpload((file) => { analyzer.init(file) });
   }
@@ -40,12 +41,18 @@ function kickStartReport() {
 }
 
 function renderReport(fakeData) {
+  // make sure report container is empty
+  rRender.emptyReportElement();
+
   const data = analyzer.getData(fakeData);
   renderUserReport(data);
   renderStreamingReport(data);
 
   // scrolls down to the report
   rRender.reportContainer.scrollIntoView();
+
+  // set report container to full
+  rRender.setReportElementFull();
 }
 
 function renderStreamingReport(data) {
@@ -104,7 +111,6 @@ function renderStreamingReport(data) {
 
   const subreport = rRender.getSubreport('Streaming History Report');
   rRender.add(reportItems, 'icon-list', subreport);
-  // rRender.add(topSongs, 'list', subreport);
   rRender.add(tablesData, 'table', subreport);
   rRender.getSubreportGraphContainer('graphs-container-streaming', subreport);
 

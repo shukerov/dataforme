@@ -14,10 +14,24 @@ export class reportFactory {
     this.subreports = {};
     this.reportContainer = document.getElementById('report');
     this.chartFactory = new chartFactory(color);
+    this.reportRendered = false;
   }
 
-  // renderItemsVerticall should append to the report a list of items
-  // renderComparison should render items side by side (eg. sent vs received)
+  emptyReportElement() {
+    // first time the report is being rendered. Nothing to be done
+    if (!this.reportRendered) return;
+
+    // remove all children from report container
+    while (this.reportContainer.lastChild) {
+      this.reportContainer.removeChild(this.reportContainer.lastChild);
+    } 
+
+    this.subreports = [];
+  }
+
+  setReportElementFull() {
+    this.reportRendered = true;
+  }
 
   // Descr: gets the number of subreports in the report
   getNumberSubreports() {
