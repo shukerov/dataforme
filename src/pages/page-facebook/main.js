@@ -40,7 +40,6 @@ function kickStartReport() {
 }
 
 function renderReport(fakeData) {
-  //TODO: needs to scroll to report once done
   const data = analyzer.getData(fakeData);
   renderReportHeading(data);
 
@@ -58,6 +57,9 @@ function renderReport(fakeData) {
 
   // renders post report
   let postReport = renderPostReport(data.postStats);
+
+  // scrolls down to the report
+  rRender.reportContainer.scrollIntoView();
 }
 
 function renderReportHeading(data) {

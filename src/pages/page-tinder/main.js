@@ -36,12 +36,14 @@ function kickStartReport() {
 }
 
 function renderReport(fakeData) {
-  //TODO: needs to scroll to report once done
   const data = analyzer.getData(fakeData);
   renderUserReport(data);
   renderMatchReport(data);
   renderUsageReport(data);
   renderMessageReport(data);
+
+  // scrolls down to the report
+  rRender.reportContainer.scrollIntoView();
 }
 
 function renderUserReport(data) {

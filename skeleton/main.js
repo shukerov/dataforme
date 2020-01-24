@@ -37,6 +37,9 @@ function kickStartReport() {
 function renderReport(fakeData) {
   // const data = analyzer.getData(fakeData);
   // renderUserReport(data);
+
+  // scrolls down to the report
+  rRender.reportContainer.scrollIntoView();
 }
 
 function renderUserReport(data) {
