@@ -725,7 +725,8 @@ nav {
 
 .about-content {
   font-size: 19px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 2%; }
   @media only screen and (min-width: 768px) {
     .about-content {
       max-width: 70%; } }
