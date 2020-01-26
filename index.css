@@ -725,7 +725,6 @@ nav {
 
 .about-content {
   font-size: 19px;
-  max-width: 80%;
   margin: 0 auto; }
   @media only screen and (min-width: 768px) {
     .about-content {
@@ -806,4 +805,55 @@ em {
   @media only screen and (min-width: 992px) {
     .scroll-down-text {
       font-size: 1.5em; } }
+
+.steps-table {
+  display: grid;
+  grid-gap: 10px;
+  background: #8c0a39;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  position: relative; }
+  @media only screen and (min-width: 992px) {
+    .steps-table {
+      grid-template-columns: repeat(3, 1fr); } }
+  .steps-table-item:nth-child(-n + 2) .steps-table-header:after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    border-top-right-radius: 3px;
+    background-color: #d81159;
+    top: calc(50% - 10px);
+    right: -9px; }
+  .steps-table-item:nth-child(n + 2) .steps-table-header:before {
+    z-index: 0;
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    border-top-right-radius: 3px;
+    background-color: #8c0a39;
+    top: calc(50% - 10px);
+    left: -10px; }
+  .steps-table-header {
+    padding: 10px 0;
+    position: relative;
+    background-color: #d81159;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.11), 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold; }
+  .steps-table-content {
+    border-radius: 4px;
+    padding: 10px 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.04);
+    background: #9e0e42;
+    font-size: 0.9em; }
 
