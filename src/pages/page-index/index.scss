@@ -4,7 +4,8 @@
 
 $tranSpeed: 0.75s;
 
-// upper half of the page
+// UPPER HALF OF THE PAGE
+// ---------------------------------------------------------------------------
 #website-cnt {
   position: relative;
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
@@ -100,86 +101,8 @@ $tranSpeed: 0.75s;
    }
 }
 
-// about page
-#about {
-   overflow: auto;
-   height: auto;
-
-   a  {
-     color: $text-important;
-   }
-
-   a:visited {
-     color: darken($text-important, 5%);
-   }
-   // height: 100vh;
-}
-
-.about-content-heading {
-  display: inline-block;
-  background: $bg-color;
-  color: white;
-  text-align: left;
-  font-family: 'BigNoodleTitling';
-
-  margin: 4em 0 2em 0;
-  padding-left: 10%;
-  padding-right: 1em;
-  height: 3rem;
-  font-size: 1.5em;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-
-  // pseduo element
-  position: relative;
-
-  @media only screen and (min-width: $screen-md-min) {
-    // max-width: 30%;
-    padding-left: 15%;
-  }
-
-  @media only screen and (min-width: $screen-lg-min) {
-    padding-left: 20%;
-    height: 4rem;
-    font-size: 2em;
-  }
-}
-
-.about-content {
-  font-size: 19px; // TODO: possibly global?
-  margin: 0 auto;
-
-  @media only screen and (min-width: $screen-md-min) {
-    max-width: 70%;
-  }
-
-  @media only screen and (min-width: $screen-lg-min) {
-    max-width: 60%;
-  }
-}
-
-.index-important {
-  font-size: 1.2em;
-  color: $text-important;
-  font-weight: bold;
-
-  // TODO: should not be media queries... just em and then change the font-size globally with a media query
-  @media only screen and (min-width: $screen-md-min) {
-    font-size: 1.5em;
-  }
-
-  @media only screen and (min-width: $screen-lg-min) {
-    font-size: 1.75em;
-  }
-}
-
-em {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.1em;
-}
-
-// scroll down CTA
+// SCROLL DOWN CTA
+// ---------------------------------------------------------------------------
 @keyframes fadeInOut {
   0% {
     opacity: 0;
@@ -257,6 +180,105 @@ em {
   }
 }
 
+// LOWER HALF OF THE PAGE
+// ---------------------------------------------------------------------------
+$header-bg-color: black;
+$header-color: white;
+$about-bg-color: $site-bg-color;
+
+#lottie-index-animation {
+  height: 300px;
+  background: red;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+
+  background: $about-bg-color;
+  font-size: 19px; 
+
+   a  {
+     color: $text-important;
+   }
+
+   a:visited {
+     color: darken($text-important, 5%);
+   }
+
+  &-heading {
+    background: $header-bg-color;
+    color: $header-color;
+    text-align: left;
+    font-family: 'BigNoodleTitling';
+    margin: 45px 0 20px 0;
+    font-size: 2em;
+
+    &:nth-of-type(odd) {
+      align-self: flex-start;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding: 0 15px 0 10%;
+
+      @media only screen and (min-width: $screen-md-min) {
+        padding: 0 15px 0 15%;
+      }
+
+      @media only screen and (min-width: $screen-lg-min) {
+        padding: 0 15px 0 20%;
+      }
+    }
+
+    &:nth-of-type(even) {
+      align-self: flex-end;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      padding: 0 10% 0 15px;
+
+      @media only screen and (min-width: $screen-md-min) {
+        padding: 0 15% 0 15px;
+      }
+
+      @media only screen and (min-width: $screen-lg-min) {
+        padding: 0 20% 0 15px;
+      }
+    }
+  }
+
+
+  &-content {
+    margin: 0 auto;
+    max-width: 80%;
+
+    @media only screen and (min-width: $screen-md-min) {
+      max-width: 70%;
+    }
+
+    @media only screen and (min-width: $screen-lg-min) {
+      max-width: 60%;
+    }
+  }
+}
+
+.index-important {
+  font-size: 1.2em;
+  color: $text-important;
+  font-weight: bold;
+
+  // TODO: should not be media queries... just em and then change the font-size globally with a media query
+  @media only screen and (min-width: $screen-md-min) {
+    font-size: 1.5em;
+  }
+
+  @media only screen and (min-width: $screen-lg-min) {
+    font-size: 1.75em;
+  }
+}
+
+em {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.1em;
+}
 
 // for the insruction steps
 $step-table-bg-color: #8c0a39;
@@ -264,7 +286,6 @@ $step-table-header-bg-color: #d81159;
 $step-table-content-bg-color: #9e0e42;
 
 .steps-table { 
-  // width: 80%;
   display: grid;
   grid-gap: 10px;
 
@@ -273,6 +294,7 @@ $step-table-content-bg-color: #9e0e42;
   }
 
   background: $step-table-bg-color;
+  margin-top: 50px;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
