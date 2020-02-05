@@ -692,64 +692,6 @@ nav {
 #tinder:hover svg {
   fill: white; }
 
-#about {
-  overflow: auto;
-  height: auto; }
-  #about a {
-    color: #D81159; }
-  #about a:visited {
-    color: #c00f4f; }
-
-.about-content-heading {
-  display: inline-block;
-  background: #050404;
-  color: white;
-  text-align: left;
-  font-family: 'BigNoodleTitling';
-  margin: 4em 0 2em 0;
-  padding-left: 10%;
-  padding-right: 1em;
-  height: 3rem;
-  font-size: 1.5em;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  position: relative; }
-  @media only screen and (min-width: 768px) {
-    .about-content-heading {
-      padding-left: 15%; } }
-  @media only screen and (min-width: 992px) {
-    .about-content-heading {
-      padding-left: 20%;
-      height: 4rem;
-      font-size: 2em; } }
-
-.about-content {
-  font-size: 19px;
-  margin: 0 auto;
-  padding: 2%; }
-  @media only screen and (min-width: 768px) {
-    .about-content {
-      max-width: 70%; } }
-  @media only screen and (min-width: 992px) {
-    .about-content {
-      max-width: 60%; } }
-
-.index-important {
-  font-size: 1.2em;
-  color: #D81159;
-  font-weight: bold; }
-  @media only screen and (min-width: 768px) {
-    .index-important {
-      font-size: 1.5em; } }
-  @media only screen and (min-width: 992px) {
-    .index-important {
-      font-size: 1.75em; } }
-
-em {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.1em; }
-
 @keyframes fadeInOut {
   0% {
     opacity: 0; }
@@ -807,10 +749,85 @@ em {
     .scroll-down-text {
       font-size: 1.5em; } }
 
+#lottie-index-animation {
+  width: 100%; }
+
+.about {
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  font-size: 19px; }
+  .about a {
+    color: #D81159; }
+  .about a:visited {
+    color: #c00f4f; }
+  .about-heading {
+    background: black;
+    color: white;
+    text-align: left;
+    font-family: 'BigNoodleTitling';
+    margin: 45px 0 20px 0;
+    font-size: 2em; }
+    .about-heading:nth-of-type(odd) {
+      align-self: flex-start;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding: 0 15px 0 10%; }
+      @media only screen and (min-width: 992px) {
+        .about-heading:nth-of-type(odd) {
+          padding: 0 15px 0 15%; } }
+    .about-heading:nth-of-type(even) {
+      align-self: flex-end;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      padding: 0 10% 0 15px; }
+      @media only screen and (min-width: 992px) {
+        .about-heading:nth-of-type(even) {
+          padding: 0 15% 0 15px; } }
+  .about-content {
+    display: grid;
+    align-items: center;
+    margin: 75px auto;
+    width: 80%; }
+    .about-content img {
+      width: 100%; }
+    @media only screen and (min-width: 992px) {
+      .about-content {
+        width: 70%;
+        grid-column-gap: 100px;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .about-text-full {
+    grid-column: 1 / -1; }
+
+.index-important {
+  font-size: 1.2em;
+  color: #D81159;
+  font-weight: bold;
+  grid-column: 1 / -1; }
+  @media only screen and (min-width: 768px) {
+    .index-important {
+      font-size: 1.5em; } }
+  @media only screen and (min-width: 992px) {
+    .index-important {
+      font-size: 1.75em; } }
+
+@media only screen and (min-width: 768px) {
+  .three-parts div:nth-child(2) {
+    margin-left: 10%; }
+  .three-parts div:nth-child(3) {
+    margin-left: 20%; } }
+
+em {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.1em; }
+
 .steps-table {
+  grid-column: 1 / -1;
   display: grid;
   grid-gap: 10px;
   background: #8c0a39;
+  margin-top: 50px;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
@@ -819,6 +836,11 @@ em {
   @media only screen and (min-width: 992px) {
     .steps-table {
       grid-template-columns: repeat(3, 1fr); } }
+  .steps-table:before {
+    position: absolute;
+    top: -35px;
+    color: black;
+    content: "A quick overview of the process."; }
   .steps-table-item:nth-child(-n + 2) .steps-table-header:after {
     z-index: 1;
     content: "";
@@ -853,8 +875,13 @@ em {
     font-weight: bold; }
   .steps-table-content {
     border-radius: 4px;
-    padding: 10px 40px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.04);
     background: #9e0e42;
     font-size: 0.9em; }
+    .steps-table-content-top {
+      padding: 10px 40px;
+      font-weight: 600;
+      border-bottom: 2px solid #8c0a39; }
+    .steps-table-content-bottom {
+      padding: 10px 40px; }
 
