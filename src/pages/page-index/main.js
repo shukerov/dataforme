@@ -9,8 +9,10 @@ import tinder from '../../assets/images/logos/tinder_inline.svg';
 // JS imports:
 import { NavBar } from '../../js/components/navBar.js';
 import { isMobile} from '../../js/helpers.js'
+import bodymovin from '../../js/lottie.min.js';
 
 renderContent();
+playIndexAnimations();
 
 function renderContent() {
   let globalContainer = document.getElementById('site');
@@ -46,6 +48,19 @@ function createLink(to) {
   linkWrap.href = `./${to}.html`;
 
   return linkWrap;
+}
+
+function playIndexAnimations() {
+    let animationContainer = document.getElementById('lottie-index-animation');
+    let animationData = {
+            container: animationContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: './multi-tasking.json'
+        };
+
+    bodymovin.loadAnimation(animationData);
 }
 
 if (isMobile) {

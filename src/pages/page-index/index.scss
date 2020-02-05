@@ -187,9 +187,10 @@ $header-color: white;
 $about-bg-color: $site-bg-color;
 
 #lottie-index-animation {
-  height: 300px;
-  background: red;
+  // height: 100%;
+  width: 100%;
 }
+
 .about {
   display: flex;
   flex-direction: column;
@@ -219,13 +220,13 @@ $about-bg-color: $site-bg-color;
       border-bottom-right-radius: 5px;
       padding: 0 15px 0 10%;
 
-      @media only screen and (min-width: $screen-md-min) {
+      @media only screen and (min-width: $screen-lg-min) {
         padding: 0 15px 0 15%;
       }
 
-      @media only screen and (min-width: $screen-lg-min) {
-        padding: 0 15px 0 20%;
-      }
+      // @media only screen and (min-width: $screen-lg-min) {
+      //   padding: 0 15px 0 20%;
+      // }
     }
 
     &:nth-of-type(even) {
@@ -234,35 +235,47 @@ $about-bg-color: $site-bg-color;
       border-bottom-left-radius: 5px;
       padding: 0 10% 0 15px;
 
-      @media only screen and (min-width: $screen-md-min) {
+      @media only screen and (min-width: $screen-lg-min) {
         padding: 0 15% 0 15px;
       }
 
-      @media only screen and (min-width: $screen-lg-min) {
-        padding: 0 20% 0 15px;
-      }
+      // @media only screen and (min-width: $screen-lg-min) {
+      //   padding: 0 20% 0 15px;
+      // }
     }
   }
 
-
   &-content {
-    margin: 0 auto;
-    max-width: 80%;
+    display: grid;
+    align-items: center;
+    margin: 75px auto;
+    width: 80%;
 
-    @media only screen and (min-width: $screen-md-min) {
-      max-width: 70%;
+    // TODO: use a class here..
+    img {
+      width: 100%;
     }
 
     @media only screen and (min-width: $screen-lg-min) {
-      max-width: 60%;
+      width: 70%;
+      grid-column-gap: 100px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      // grid-template-rows: repeat(2, minmax(0, 1fr));
     }
   }
+
+  &-text-full {
+    grid-column: 1 / -1;
+  }
+      
 }
 
+// TODO: should be under about and renamed
 .index-important {
   font-size: 1.2em;
   color: $text-important;
   font-weight: bold;
+  grid-column: 1 / -1;
 
   // TODO: should not be media queries... just em and then change the font-size globally with a media query
   @media only screen and (min-width: $screen-md-min) {
@@ -274,6 +287,18 @@ $about-bg-color: $site-bg-color;
   }
 }
 
+.three-parts {
+
+  @media only screen and (min-width: $screen-md-min) {
+    div:nth-child(2) {
+      margin-left: 10%;
+    }
+
+    div:nth-child(3) {
+      margin-left: 20%;
+    }
+  }
+}
 em {
   font-style: normal;
   font-weight: 600;
@@ -286,6 +311,7 @@ $step-table-header-bg-color: #d81159;
 $step-table-content-bg-color: #9e0e42;
 
 .steps-table { 
+  grid-column: 1 / -1;
   display: grid;
   grid-gap: 10px;
 
@@ -300,6 +326,13 @@ $step-table-content-bg-color: #9e0e42;
   text-align: center;
   color: white;
   position: relative;
+
+  &:before {
+    position: absolute;
+    top: -35px;
+    color: black;
+    content: "A quick overview of the process.";
+  }
   
   &-item:nth-child(-n + 2) {
    .steps-table-header:after {
@@ -345,10 +378,18 @@ $step-table-content-bg-color: #9e0e42;
 
   &-content {
     border-radius: 4px;
-    padding: 10px 40px;
     box-shadow: 0 1px 3px rgba(0,0,0,.2), 0 1px 0 rgba(0,0,0,.04);
     background: $step-table-content-bg-color;
     font-size: 0.9em;
+
+    &-top {
+      padding: 10px 40px;
+      font-weight: 600;
+      border-bottom: 2px solid $step-table-bg-color;
+    }
+
+    &-bottom {
+      padding: 10px 40px;
+    }
   }
-      
 }
