@@ -1,18 +1,95 @@
 @import '../abstracts/_globalvariables.scss';
 
-#footer {
-   // position: absolute;
-   // bottom: 0;
-   border-top: 1px solid fade-out($bg-color, 0.9);
-   padding-top: 1em;
-   height: 60px; /* Height of the footer */
-   width: 100%;
-   text-align: center;
-   margin-top: 10vh;
+$cool-grey: #7F7F7F;
+.footer {
    background: $off-black;
    color: $off-white;
+   padding-top: 75px;
 
-   a, a:visited {
-     color: $off-white;
+   &-top {
+   }
+
+   &-menus {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     margin: 0 50px;
+     font-size: 1em;
+
+     @media screen and (min-width: $screen-lg-min) {
+       max-width: 75%;
+       margin: 0 auto;
+     }
+
+     // TODO: might not be needed
+     &-menu {
+      margin-right: 30px;
+      &-heading {
+        color: $cool-grey;
+        font-family: 'BigNoodleTitling';
+        font-size: 30px;
+      }
+
+      &-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+     }
+
+     a, a:visited { 
+       color: $off-white; 
+     }
+   }
+
+   &-social-icons {
+     display: flex;
+     margin-top: 15px;
+   }
+
+   &-icon {
+    width: 33px;
+    height: 33px;
+    background-size: 100% 100%;
+    margin-right: 15px;
+   }
+
+   #github {
+     background-image: url('../../assets/images/logos/github.svg');
+   }
+
+   #reddit {
+     background-image: url('../../assets/images/logos/reddit.svg');
+   }
+
+   &-middle {
+      display: flex;
+      flex-direction: column;
+      margin: 50px 0;
+   }
+
+   &-logo {
+     align-self: flex-end;
+     padding: 0 150px 0 15px;
+     border-top-left-radius: 5px;
+     border-bottom-left-radius: 5px;
+     color: black;
+     background-color: white;
+     line-height: 1;
+     font-family: 'BigNoodleTitling';
+     font-size: 55px;
+   }
+
+   &-bottom {
+    border-top: solid 0.2px $cool-grey;
+    padding: 10px;
+    color: $cool-grey;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+   }
+
+   &-highlight, highlight:visited {
+    color: $text-important; 
    }
 }
