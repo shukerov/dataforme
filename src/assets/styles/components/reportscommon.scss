@@ -42,7 +42,6 @@
 .report-raw {
     grid-column: 1 / -1;
     align-self: start;
-    width: 90%;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     white-space: -pre-wrap;
@@ -51,16 +50,12 @@
     padding: 1em;
     background: #eff0f1;
     border-radius: 3px;
-
-    @media screen and (min-width: $screen-md-min) {
-      width: 80%;
-    }
 }
 
 .report-item-above {
   display: grid;
-  grid-template-columns: auto 0.5fr 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-columns: 24px minmax(0, 0.5fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
   align-items: center;
 }
 
@@ -132,11 +127,11 @@
 
 .report-item-grid {
   display: grid;
-  grid-template-columns: auto 0.5fr auto 0.5fr;
+  grid-template-columns: 24px 0.5fr auto 0.5fr;
   align-items: center;
 
   @media screen and (min-width: $screen-lg-min) {
-    grid-template-columns: auto 0.5fr auto 1fr;
+    grid-template-columns: 24px 0.5fr auto 1fr;
   }
 }
 
