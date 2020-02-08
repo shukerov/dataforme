@@ -20,43 +20,41 @@
    width: 100%;
 }
 
-// new graph experiments
-// TODO: needs to be mobile first
 #graphs-container-searches {
-   @media only screen and (max-width: 900px) {
-       grid-template-columns: minmax(0, 1fr);
-       grid-template-areas:
-       'top-searches'
-       'hourly'
-       'yearly'
-   }
-
    margin-top: 2em;
    display: grid;
    grid-gap: 10px;
    grid-area: graphs;
-   grid-template-rows: repeat(2, 1fr);
-   grid-template-columns: repeat(2, minmax(0, 1fr));
+   grid-template-columns: minmax(0, 1fr);
    grid-template-areas:
-     'top-searches top-searches'
-     'hourly yearly'
+     'top-searches'
+     'hourly'
+     'yearly';
+
+   @media only screen and (min-width: $screen-lg-min) {
+     grid-template-rows: repeat(2, 1fr);
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+     grid-template-areas:
+       'top-searches top-searches'
+       'hourly yearly';
+   }
 }
 
 #graphs-container-reactions {
-   @media only screen and (max-width: 900px) {
-       grid-template-columns: minmax(0, 1fr);
-       grid-template-areas:
-       'hourly'
-       'yearly'
-   }
-
    margin-top: 2em;
    display: grid;
    grid-gap: 10px;
    grid-area: graphs;
-   grid-template-columns: repeat(2, minmax(0, 1fr));
+   grid-template-columns: minmax(0, 1fr);
    grid-template-areas:
-     'hourly yearly'
+     'hourly'
+     'yearly';
+
+   @media only screen and (min-width: $screen-lg-min) {
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+     grid-template-areas:
+       'hourly yearly';
+   }
 }
 
 #search-graph1 {
@@ -80,74 +78,72 @@
 }
 
 #graphs-container-messages, #graphs-container-posts {
-  @media only screen and (max-width: 1224px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media only screen and (max-width: 900px) {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   margin-top: 2em;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
+
+  @media only screen and (min-width: $screen-lg-min) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media only screen and (min-width: $screen-xl-min) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
-// TODO: needs to be mobile first
 #graphs-container-posts  {
-  @media only screen and (max-width: 1224px) {
-    grid-template-areas:
-      'clk-sent clk-rec'
-      'weekly monthly'
-      'yearly cumulative'
-  }
-
-  @media only screen and (max-width: 900px) {
-    grid-template-areas:
-      'clk-sent'
-      'clk-rec'
-      'weekly'
-      'monthly'
-      'yearly'
-      'cumulative'
-  }
-
-  grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
-    'weekly monthly yearly'
-    'clk-sent cumulative clk-rec'
+    'clk-post-sent'
+    'clk-post-rec'
+    'post-weekly'
+    'post-monthly'
+    'post-yearly'
+    'post-cumulative';
+
+  @media only screen and (min-width: $screen-lg-min) {
+    grid-template-areas:
+      'clk-post-sent clk-post-rec'
+      'post-weekly post-monthly'
+      'post-yearly post-cumulative';
+  }
+
+  @media only screen and (min-width: $screen-xl-min) {
+    grid-template-areas:
+      'post-weekly post-monthly post-yearly'
+      'clk-post-sent post-cumulative clk-post-rec';
+  }
 }
 
-// TODO: needs to be mobile first
 #graphs-container-messages {
-  @media only screen and (max-width: 1224px) {
+  grid-template-areas:
+    'clk-sent'
+    'clk-rec'
+    'weekly'
+    'monthly'
+    'yearly'
+    'cumulative'
+    'top-msgers';
+
+  @media only screen and (min-width: $screen-lg-min) {
     grid-template-areas:
       'clk-sent clk-rec'
       'weekly monthly'
       'yearly cumulative'
-      'top-msgers top-msgers'
+      'top-msgers top-msgers';
   }
 
-  @media only screen and (max-width: 900px) {
+  // grid-template-rows: repeat(3, 1fr);
+  @media only screen and (min-width: $screen-xl-min) {
     grid-template-areas:
-      'clk-sent'
-      'clk-rec'
-      'weekly'
-      'monthly'
-      'yearly'
-      'cumulative'
-      'top-msgers'
+      'weekly monthly yearly'
+      'clk-sent cumulative clk-rec'
+      'top-msgers top-msgers top-msgers';
   }
-
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-areas:
-    'weekly monthly yearly'
-    'clk-sent cumulative clk-rec'
-    'top-msgers top-msgers top-msgers'
 }
 
 
+// naming grid areas of message graphs.
 #msg-graph1 {
   grid-area: clk-sent;
 }
@@ -174,4 +170,29 @@
 
 #msg-graph7 {
   grid-area: top-msgers;
+}
+
+// naming grid areas of post graphs.
+#post-graph1 {
+  grid-area: clk-post-sent;
+}
+
+#post-graph2 {
+  grid-area: clk-post-rec;
+}
+
+#post-graph3 {
+  grid-area: post-weekly;
+}
+
+#post-graph4 {
+  grid-area: post-monthly;
+}
+
+#post-graph5 {
+  grid-area: post-yearly;
+}
+
+#post-graph6 {
+  grid-area: post-cumulative;
 }
