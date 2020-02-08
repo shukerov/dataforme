@@ -101,8 +101,8 @@ input[type='file'] {
 
 .report-item-above {
   display: grid;
-  grid-template-columns: auto 0.5fr 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-columns: auto minmax(0, 0.5fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
   align-items: center; }
 
 .report-list-with-headings {
