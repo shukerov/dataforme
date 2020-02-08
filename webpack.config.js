@@ -92,7 +92,8 @@ module.exports = env => {
         DEBUG_MODE: DEBUG_MODE
       }),
       new CopyPlugin([
-        { from: './src/assets/animations', to: '.' }
+        { from: './src/assets/animations', to: '.' },
+        { from: './src/assets/favicons', to: './favicons' }
       ]),
       new HtmlWebPackPlugin({
         template: "./src/pages/page-index/index.html",
