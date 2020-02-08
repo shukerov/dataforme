@@ -5,13 +5,6 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-//   -webkit-box-sizing: border-box;
-//   -moz-box-sizing: border-box;
-//   box-sizing: border-box;
-
-//   a, a:visited {
-//     text-decoration: none;
-//   }
 }
 
 html {
@@ -22,9 +15,14 @@ html {
    scroll-behavior: smooth;
 }
 
-body {
-  // height: 100%;
-  // overflow: auto;
+::-moz-selection {
+  background: $text-important;
+  color: #ffffff;
+}
+
+::selection {
+  background: $text-important;
+  color: #ffffff;
 }
 
 a, a:visited {
@@ -167,7 +165,6 @@ a, a:visited {
 .details[open] {
   padding: 10px;
 }
-
 
 .summary {
   display: list-item;
