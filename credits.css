@@ -374,6 +374,14 @@ html {
   font-family: 'Fira', Camphor, Open Sans, Segoe UI, sans-serif;
   scroll-behavior: smooth; }
 
+::-moz-selection {
+  background: #D81159;
+  color: #ffffff; }
+
+::selection {
+  background: #D81159;
+  color: #ffffff; }
+
 a, a:visited {
   text-decoration: none; }
 
@@ -477,7 +485,7 @@ nav {
         max-width: 75%;
         margin: 0 auto; } }
     .footer-menus-menu {
-      margin-right: 30px; }
+      margin: 30px 30px 0 0; }
       .footer-menus-menu-heading {
         color: #7F7F7F;
         font-family: 'BigNoodleTitling';
@@ -508,7 +516,7 @@ nav {
     align-self: flex-end;
     display: flex;
     align-items: center;
-    padding: 0 150px 0 15px;
+    padding: 10px 75px 10px 15px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     color: black;
@@ -516,13 +524,18 @@ nav {
     line-height: 1;
     font-family: 'BigNoodleTitling';
     font-size: 55px; }
+    @media screen and (min-width: 768px) {
+      .footer-logo {
+        padding: 10px 100px 10px 15px; } }
+    @media screen and (min-width: 992px) {
+      .footer-logo {
+        padding: 10px 150px 10px 15px; } }
     .footer-logo-icon {
       background-size: 100% 100%;
       background-image: url(522b8c8bd5890a7e3f5cb0a835688738.svg);
       width: 40px;
-      height: 40px;
-      margin-left: 10px;
-      margin-bottom: 2px; }
+      height: 55px;
+      margin-left: 15px; }
   .footer-logo:hover .footer-logo-icon {
     animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
   .footer-bottom {
@@ -623,7 +636,7 @@ nav {
   text-align: center; }
 
 .card-content-left {
-  width: 70%;
+  width: 90%;
   text-align: left;
   margin: 0 auto; }
 
