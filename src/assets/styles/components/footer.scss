@@ -70,6 +70,8 @@ $cool-grey: #7F7F7F;
 
    &-logo {
      align-self: flex-end;
+     display: flex;
+     align-items: center;
      padding: 0 150px 0 15px;
      border-top-left-radius: 5px;
      border-bottom-left-radius: 5px;
@@ -78,8 +80,22 @@ $cool-grey: #7F7F7F;
      line-height: 1;
      font-family: 'BigNoodleTitling';
      font-size: 55px;
-   }
 
+     &-icon {
+       background-size: 100% 100%;
+       background-image: url('../../assets/images/logos/logo-thick.svg');
+       width: 40px;
+       height: 40px;
+       margin-left: 10px;
+       margin-bottom: 2px;
+     }
+   }
+   &-logo:hover {
+
+     .footer-logo-icon {
+       animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+     }
+   }
    &-bottom {
     border-top: solid 0.2px $cool-grey;
     padding: 10px;
@@ -92,4 +108,22 @@ $cool-grey: #7F7F7F;
    &-highlight, highlight:visited {
     color: $text-important; 
    }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-3px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(3px, 0, 0);
+  }
 }
