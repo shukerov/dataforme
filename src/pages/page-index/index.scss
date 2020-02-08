@@ -2,7 +2,7 @@
 @import '../../assets/styles/main.scss';
 @import '../../assets/styles/fonts';
 
-$tranSpeed: 0.75s;
+$tranSpeed: 0.5s;
 
 // UPPER HALF OF THE PAGE
 // ---------------------------------------------------------------------------
@@ -34,7 +34,7 @@ $tranSpeed: 0.75s;
    display: flex;
    align-items: center;
    justify-content: center;
-   transition: all tranSpeed ease-in-out;
+   // transition: all tranSpeed ease-in-out;
    overflow: hidden;
 }
 
@@ -48,9 +48,10 @@ $tranSpeed: 0.75s;
    flex: 1 0 auto;
 
    svg {
-        width: 10vh;
-        height: 10vh;
-      fill: white;
+     width: 10vh;
+     height: 10vh;
+     fill: white;
+     transition: all $tranSpeed ease-in-out;
    }
 }
 
@@ -58,8 +59,8 @@ $tranSpeed: 0.75s;
    // flex-shrink: 1.1;
 
    svg {
-   transition: all $tranSpeed ease-in-out;
-      transform: scale(2);
+     transition: all $tranSpeed ease-in-out;
+     transform: scale(2);
    }
 }
 
@@ -288,6 +289,7 @@ $about-bg-color: $site-bg-color;
 }
 
 .three-parts {
+  margin-bottom: 20px;
 
   @media only screen and (min-width: $screen-md-min) {
     div:nth-child(2) {
