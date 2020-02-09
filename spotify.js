@@ -959,7 +959,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var map = {\n\t\"./instructions\": \"./src/pages/page-facebook/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/pages/page-facebook/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/pages/page-facebook/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/pages/page-facebook/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/pages/page-facebook/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/pages/page-facebook/instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/pages/page-facebook/instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/pages/page-facebook/instructions/step6-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/pages/page-facebook/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions_sync_^\\.\\/.*$?");
+eval("var map = {\n\t\"./instructions\": \"./src/pages/page-facebook/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/pages/page-facebook/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/pages/page-facebook/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/pages/page-facebook/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/pages/page-facebook/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/pages/page-facebook/instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/pages/page-facebook/instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/pages/page-facebook/instructions/step6-web.jpg\",\n\t\"./step7-web.jpg\": \"./src/pages/page-facebook/instructions/step7-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/pages/page-facebook/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions_sync_^\\.\\/.*$?");
 
 /***/ }),
 
@@ -967,10 +967,10 @@ eval("var map = {\n\t\"./instructions\": \"./src/pages/page-facebook/instruction
 /*!****************************************************************!*\
   !*** ./src/pages/page-facebook/instructions/instructions.json ***!
   \****************************************************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, default */
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, default */
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.<br>Enter <a href='https://facebook.com' target=blank>https://facebook.com</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click in the upper right corner, and open settings.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Click on 'Your Facebook information' in the side bar menu.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Click on 'View' under the 'Download your information' tab.\\\"},{\\\"image\\\":\\\"./step5-web.jpg\\\",\\\"ins\\\":\\\"1. Select JSON for data format.<br> 2. Select media quality (recommended low if you want a small filesize).<br> 3. Finally click 'Create File'.\\\"},{\\\"image\\\":\\\"./step6-web.jpg\\\",\\\"ins\\\":\\\"In a couple of hours check your Facebook notifications, and save your file. Store it somewhere safe.\\\"}]\");\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/instructions.json?");
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.<br>Enter <a href='https://facebook.com' target=blank>https://facebook.com</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click in the upper right corner, and open settings.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Click on 'Your Facebook information' in the side bar menu.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Click on 'View' under the 'Download your information' tab.\\\"},{\\\"image\\\":\\\"./step5-web.jpg\\\",\\\"ins\\\":\\\"1. Select JSON for data format.<br> 2. Select media quality (recommended low if you want a small filesize).<br> 3. Finally click 'Create File'.\\\"},{\\\"image\\\":\\\"./step6-web.jpg\\\",\\\"ins\\\":\\\"In a couple of hours check your Facebook notifications.</br> Click on the one saying \\\\\\\"Your Facebook information file is ready to download.\\\\\\\"\\\"},{\\\"image\\\":\\\"./step7-web.jpg\\\",\\\"ins\\\":\\\"Finally download your zip file by clicking on the \\\\\\\"Download\\\\\\\".</br> You will be prompted for your password.\\\"}]\");\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/instructions.json?");
 
 /***/ }),
 
@@ -981,7 +981,7 @@ eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"5c2c14f9808a07b01e54ba4ac60b44e2.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step1-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"d47a8697aec7b27dab0d843ef6420223.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step1-web.jpg?");
 
 /***/ }),
 
@@ -992,7 +992,7 @@ eval("module.exports = __webpack_require__.p + \"5c2c14f9808a07b01e54ba4ac60b44e
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"c52927af834cebd9f999a43562733edc.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step2-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"0525c7b0130ff7f4100059e659cdeb62.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step2-web.jpg?");
 
 /***/ }),
 
@@ -1003,7 +1003,7 @@ eval("module.exports = __webpack_require__.p + \"c52927af834cebd9f999a43562733ed
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"ade9013cbf5d1f9111ef91305432fb12.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step3-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"52acfb6a4a1d065034d118501489b2c3.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step3-web.jpg?");
 
 /***/ }),
 
@@ -1014,7 +1014,7 @@ eval("module.exports = __webpack_require__.p + \"ade9013cbf5d1f9111ef91305432fb1
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"8c8a88f1d67c05e3b5bf7a0717f13d92.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step4-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"4479892fbb3a03376b73c1cf39a181fe.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step4-web.jpg?");
 
 /***/ }),
 
@@ -1025,7 +1025,7 @@ eval("module.exports = __webpack_require__.p + \"8c8a88f1d67c05e3b5bf7a0717f13d9
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"fb556c0bc721f16c941334a9c36df100.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step5-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"c2861cb64110a8dd9a21e456d639dbaa.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step5-web.jpg?");
 
 /***/ }),
 
@@ -1036,7 +1036,18 @@ eval("module.exports = __webpack_require__.p + \"fb556c0bc721f16c941334a9c36df10
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"c44c5706d25bde00683f548037531fb2.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step6-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"b19f273b9357120fa2bc90d853ec44ce.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step6-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-facebook/instructions/step7-web.jpg":
+/*!************************************************************!*\
+  !*** ./src/pages/page-facebook/instructions/step7-web.jpg ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"919967d683505cbf3cdb2c34a010218b.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-facebook/instructions/step7-web.jpg?");
 
 /***/ }),
 
@@ -1058,7 +1069,7 @@ eval("module.exports = JSON.parse(\"{\\\"username\\\":\\\"Rick Sanchez\\\",\\\"g
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var map = {\n\t\"./instructions\": \"./src/pages/page-spotify/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/pages/page-spotify/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/pages/page-spotify/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/pages/page-spotify/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/pages/page-spotify/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/pages/page-spotify/instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/pages/page-spotify/instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/pages/page-spotify/instructions/step6-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/pages/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions_sync_^\\.\\/.*$?");
+eval("var map = {\n\t\"./instructions\": \"./src/pages/page-spotify/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/pages/page-spotify/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/pages/page-spotify/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/pages/page-spotify/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/pages/page-spotify/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/pages/page-spotify/instructions/step4-web.jpg\",\n\t\"./step5-web.jpg\": \"./src/pages/page-spotify/instructions/step5-web.jpg\",\n\t\"./step6-web.jpg\": \"./src/pages/page-spotify/instructions/step6-web.jpg\",\n\t\"./step7-web.jpg\": \"./src/pages/page-spotify/instructions/step7-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/pages/page-spotify/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions_sync_^\\.\\/.*$?");
 
 /***/ }),
 
@@ -1066,10 +1077,10 @@ eval("var map = {\n\t\"./instructions\": \"./src/pages/page-spotify/instructions
 /*!***************************************************************!*\
   !*** ./src/pages/page-spotify/instructions/instructions.json ***!
   \***************************************************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, default */
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, default */
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://spotify.com/us/account' target=blank>spotify.com/us/account</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Log into your spotify account.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on 'Privacy Settings' in the left sidebar.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on the 'Request' button.\\\"},{\\\"image\\\":\\\"./step5-web.jpg\\\",\\\"ins\\\":\\\"Once your data copy is prepared you will get an email.</br>Open your email client and click on download.\\\"},{\\\"image\\\":\\\"./step6-web.jpg\\\",\\\"ins\\\":\\\"You should be redirected to your Spotify account.</br>Enter your password, and click verify.</br>Choose where to save your file, and remember to keep it safe!\\\"}]\");\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/instructions.json?");
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://spotify.com/us/account' target=blank>spotify.com/us/account</a> in the address bar.\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Log into your spotify account.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on 'Privacy Settings' in the left sidebar.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Scroll down and click on the 'Request' button.\\\"},{\\\"image\\\":\\\"./step5-web.jpg\\\",\\\"ins\\\":\\\"You will need to confirm your data request.</br>Open your email client and click on \\\\\\\"Confirm\\\\\\\".\\\"},{\\\"image\\\":\\\"./step6-web.jpg\\\",\\\"ins\\\":\\\"Once your data copy is prepared you will get an email.</br>Open your email client and click on download.\\\"},{\\\"image\\\":\\\"./step7-web.jpg\\\",\\\"ins\\\":\\\"You should be redirected to your Spotify account.</br>Enter your password, and click verify.</br>Choose where to save your file, and remember to keep it safe!\\\"}]\");\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/instructions.json?");
 
 /***/ }),
 
@@ -1080,7 +1091,7 @@ eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"fb24f8e1c25796afadc3965ff40c2313.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step1-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"1f0a020baade92ca28df930c254b49e9.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step1-web.jpg?");
 
 /***/ }),
 
@@ -1091,7 +1102,7 @@ eval("module.exports = __webpack_require__.p + \"fb24f8e1c25796afadc3965ff40c231
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"267e5514b194149ef395c375c15abb3b.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step2-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"70ae2696d5f0574aee088db6b0247e38.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step2-web.jpg?");
 
 /***/ }),
 
@@ -1102,7 +1113,7 @@ eval("module.exports = __webpack_require__.p + \"267e5514b194149ef395c375c15abb3
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"da14fa70420003e4845820cf46b33e5c.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step3-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"0f8a45eeac8e7d684c3de43caf33d91c.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step3-web.jpg?");
 
 /***/ }),
 
@@ -1113,7 +1124,7 @@ eval("module.exports = __webpack_require__.p + \"da14fa70420003e4845820cf46b33e5
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"e58e0a089c9ddc6cd950984b9e89668e.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step4-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"3ee362e0789a8468b56a69fca6e2bf2d.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step4-web.jpg?");
 
 /***/ }),
 
@@ -1124,7 +1135,7 @@ eval("module.exports = __webpack_require__.p + \"e58e0a089c9ddc6cd950984b9e89668
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"9e15e5f19dd1b07da597fbd8f803e459.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step5-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"edb206baf6df613d8d855ae0ab9568f0.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step5-web.jpg?");
 
 /***/ }),
 
@@ -1135,7 +1146,18 @@ eval("module.exports = __webpack_require__.p + \"9e15e5f19dd1b07da597fbd8f803e45
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"affb2283841b2aaa7116c370ad3faed2.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step6-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"34b45b022172ecb75bc6bb9f80831989.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step6-web.jpg?");
+
+/***/ }),
+
+/***/ "./src/pages/page-spotify/instructions/step7-web.jpg":
+/*!***********************************************************!*\
+  !*** ./src/pages/page-spotify/instructions/step7-web.jpg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"197721c48f5f154a301b3e966119ed16.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-spotify/instructions/step7-web.jpg?");
 
 /***/ }),
 
@@ -1181,7 +1203,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var map = {\n\t\"./instructions\": \"./src/pages/page-tinder/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/pages/page-tinder/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/pages/page-tinder/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/pages/page-tinder/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/pages/page-tinder/instructions/step3-web.jpg\",\n\t\"./step4-web.png\": \"./src/pages/page-tinder/instructions/step4-web.png\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/pages/page-tinder/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions_sync_^\\.\\/.*$?");
+eval("var map = {\n\t\"./instructions\": \"./src/pages/page-tinder/instructions/instructions.json\",\n\t\"./instructions.json\": \"./src/pages/page-tinder/instructions/instructions.json\",\n\t\"./step1-web.jpg\": \"./src/pages/page-tinder/instructions/step1-web.jpg\",\n\t\"./step2-web.jpg\": \"./src/pages/page-tinder/instructions/step2-web.jpg\",\n\t\"./step3-web.jpg\": \"./src/pages/page-tinder/instructions/step3-web.jpg\",\n\t\"./step4-web.jpg\": \"./src/pages/page-tinder/instructions/step4-web.jpg\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src/pages/page-tinder/instructions sync recursive ^\\\\.\\\\/.*$\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions_sync_^\\.\\/.*$?");
 
 /***/ }),
 
@@ -1192,7 +1214,7 @@ eval("var map = {\n\t\"./instructions\": \"./src/pages/page-tinder/instructions/
 /*! exports provided: 0, 1, 2, 3, default */
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://account.gotinder.com/data' target=blank>https://account.gotinder.com/data</a> in the address bar.</br>Login to your tinder account\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click on the 'Download my data' button.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Enter the email address where you would like to receive the download link.\\\"},{\\\"image\\\":\\\"./step4-web.png\\\",\\\"ins\\\":\\\"Wait to receive the download link in your email. This can take up to a month.\\\"}]\");\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/instructions.json?");
+eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://account.gotinder.com/data' target=blank>https://account.gotinder.com/data</a> in the address bar.</br>Login to your tinder account\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click on the 'Download my data' button.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Enter the email address where you would like to receive the download link.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Once your data copy is prepared you will get an email.</br>Open your email client and click on download.\\\"}]\");\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/instructions.json?");
 
 /***/ }),
 
@@ -1203,7 +1225,7 @@ eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"01a3edd599ce65624d381b601d5f46c8.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step1-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"a9f92479592d029825c138e27c63367b.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step1-web.jpg?");
 
 /***/ }),
 
@@ -1214,7 +1236,7 @@ eval("module.exports = __webpack_require__.p + \"01a3edd599ce65624d381b601d5f46c
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"b92dc0f21950ab6d98018e944eefeaef.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step2-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"7a29c9153d54200d4de359ad700ee7eb.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step2-web.jpg?");
 
 /***/ }),
 
@@ -1225,18 +1247,18 @@ eval("module.exports = __webpack_require__.p + \"b92dc0f21950ab6d98018e944eefeae
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"11b81c17245254ee61566167c027c4db.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step3-web.jpg?");
+eval("module.exports = __webpack_require__.p + \"75aef619c781503b88b671bb5c6c2958.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step3-web.jpg?");
 
 /***/ }),
 
-/***/ "./src/pages/page-tinder/instructions/step4-web.png":
+/***/ "./src/pages/page-tinder/instructions/step4-web.jpg":
 /*!**********************************************************!*\
-  !*** ./src/pages/page-tinder/instructions/step4-web.png ***!
+  !*** ./src/pages/page-tinder/instructions/step4-web.jpg ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"bbd24f0f4a1f03b0a224c58d5eeab38a.png\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step4-web.png?");
+eval("module.exports = __webpack_require__.p + \"a9d1b0ce2df37ea5c232c99a47b32301.jpg\";\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/step4-web.jpg?");
 
 /***/ })
 

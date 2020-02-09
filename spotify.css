@@ -81,7 +81,8 @@ input[type='file'] {
       padding: 0 3rem; } }
 
 .report-item-text {
-  font-weight: 700; }
+  font-weight: 700;
+  align-items: end; }
 
 .report-raw {
   grid-column: 1 / -1;
@@ -97,7 +98,7 @@ input[type='file'] {
 
 .report-item-above {
   display: grid;
-  grid-template-columns: auto minmax(0, 0.5fr) minmax(0, 1fr);
+  grid-template-columns: 24px minmax(0, 0.5fr) minmax(0, 1fr);
   grid-template-rows: minmax(0, 1fr) auto;
   align-items: center; }
 
@@ -158,11 +159,11 @@ input[type='file'] {
 
 .report-item-grid {
   display: grid;
-  grid-template-columns: auto 0.5fr auto 0.5fr;
+  grid-template-columns: 24px 0.5fr 0.5fr auto;
   align-items: center; }
   @media screen and (min-width: 992px) {
     .report-item-grid {
-      grid-template-columns: auto 0.5fr auto 1fr; } }
+      grid-template-columns: 24px 0.5fr 200px 1fr; } }
 
 .report-item-big-icon-list {
   display: grid;
