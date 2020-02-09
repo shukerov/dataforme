@@ -179,7 +179,7 @@ function renderMsgReport(data) {
     // },
     {
       icon: 'message-circle',
-      text: 'Words per message sent',
+      text: 'Words per message sent:',
       textBold: avgWordsPerMsgSent.toFixed(2),
       tooltip: 'The average number of words in your messages.'
     },
@@ -197,7 +197,7 @@ function renderMsgReport(data) {
     // },
     {
       icon: 'message-circle',
-      text: 'Words per message received',
+      text: 'Words per message received:',
       textBold: avgWordsPerMsgReceived.toFixed(2),
       tooltip: 'The average number of words in messages you have received.'
     },

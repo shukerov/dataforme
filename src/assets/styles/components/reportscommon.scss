@@ -37,6 +37,7 @@
 
 .report-item-text {
   font-weight: 700;
+  align-items: end;
 }
 
 .report-raw {
@@ -127,11 +128,11 @@
 
 .report-item-grid {
   display: grid;
-  grid-template-columns: 24px 0.5fr auto 0.5fr;
+  grid-template-columns: 24px 0.5fr 0.5fr auto;
   align-items: center;
 
   @media screen and (min-width: $screen-lg-min) {
-    grid-template-columns: 24px 0.5fr auto 1fr;
+    grid-template-columns: 24px 0.5fr 200px 1fr;
   }
 }
 
@@ -179,8 +180,8 @@
 }
 
 .report-item-icon {
-   width: 24px;
-   height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .report-item-label {
