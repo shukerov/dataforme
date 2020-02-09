@@ -76,8 +76,7 @@ class BaseAnalyzer {
     });
   }
 
-  // TODO:
-  // why json in the name..?
+  // TODO: this function name makes 0 sense.
   getJSONFile(path) {
     var pathSplit = path.split('/');
     var curDir = this.fs.root;
