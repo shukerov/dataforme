@@ -24,3 +24,6 @@ $text-color: #111111;
 $text-important: #D81159;
 $card-bg-color: #fafafa;
 $card-on-card-bg-color: #efefef;
+
+$link-color: #D81159;
+$link-color-visited: darken($link-color, 15%);

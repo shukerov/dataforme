@@ -8,15 +8,6 @@
 
   &-section {
     margin: 100px auto;
-    
-    // TODO: make this global ffs
-    a {
-      color: $text-important;
-    }
-
-    a:visited {
-      color: darken($text-important, 5%);
-    }
   }
 
   &-heading {

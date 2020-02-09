@@ -27,7 +27,14 @@ html {
 
 a, a:visited {
   text-decoration: none;
-  // color: $text-color;
+}
+
+a {
+  color: $link-color;
+}
+
+a:visited {
+  color: $link-color-visited;
 }
 
 @import 'fonts';
