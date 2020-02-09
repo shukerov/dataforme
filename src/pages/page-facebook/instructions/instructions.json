@@ -21,6 +21,10 @@
   },
   {
     "image": "./step6-web.jpg",
-    "ins": "In a couple of hours check your Facebook notifications, and save your file. Store it somewhere safe."
+    "ins": "In a couple of hours check your Facebook notifications.</br> Click on the one saying \"Your Facebook information file is ready to download.\""
+  },
+  {
+    "image": "./step7-web.jpg",
+    "ins": "Finally download your zip file by clicking on the \"Download\".</br> You will be prompted for your password."
   }
 ]
