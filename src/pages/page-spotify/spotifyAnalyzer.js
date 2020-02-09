@@ -74,6 +74,8 @@ class SpotifyAnalyzer extends BaseAnalyzer {
     });
   }
 
+  // TODO: this function needs to be broken up into multiples.
+  //       the complexity is too high, and the if statements look disgusting
   getStreamingData(cbChain, streamingData) {
     let streamingDataJSON = JSON.parse(streamingData);
     let skippedLimit = 20 * 1000; // the first number represents seconds

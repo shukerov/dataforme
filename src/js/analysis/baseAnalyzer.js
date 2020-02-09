@@ -50,32 +50,6 @@ class BaseAnalyzer {
     }
   }
 
-  analyzeDir(dirName, filePattern, analyzerFunction) {
-    var directories = this.getDirChildren(dirName);
-    var numDirs = directories.length;
-    // increments callbackloop count
-    this.cbChain.setLoopCount();
-    let internalCbChain = new CbChain(
-      'display messages',
-      this.cbChain.call.bind(this.cbChain),
-      numDirs);
-
-    // loop through directories
-    directories.map((dir) => {
-      var file = dir.getChildByName(filePattern);
-
-      // pattern was not found in the given directory
-      if (!file) {
-        internalCbChain.call();
-        return;
-      }
-
-      file.getText(analyzerFunction.bind(this,
-        dir.name,
-        internalCbChain));
-    });
-  }
-
   // TODO: this function name makes 0 sense.
   getJSONFile(path) {
     var pathSplit = path.split('/');

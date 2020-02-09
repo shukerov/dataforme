@@ -1,4 +1,5 @@
 import { BaseAnalyzer } from '../../js/analysis/baseAnalyzer.js';
+import { CbChain } from '../../js/analysis/cbChain.js';
 
 class FacebookAnalyzer extends BaseAnalyzer {
   constructor(callback) {
@@ -144,12 +145,12 @@ class FacebookAnalyzer extends BaseAnalyzer {
           func: this.getSearchData
         },
         {
-          path: 'ads/ads_interests.json',
+          path: 'ads_and_businesses/ads_interests.json',
           name: 'fetching ad data',
           func: this.getAdData
         },
         {
-          path: 'ads/advertisers_you\'ve_interacted_with.json',
+          path: 'ads_and_businesses/advertisers_you\'ve_interacted_with.json',
           name: 'fetching interaction data',
           func: this.getAdInteractionData
         }
@@ -160,10 +161,33 @@ class FacebookAnalyzer extends BaseAnalyzer {
         this.analyzeFile(fns[i]);
       }
 
-      // analyze each message thread
-      this.analyzeDir.call(this, 'messages/inbox', 'message_1.json',
-         this.analyzeMessageThread); 
+      // ANALYZE MESSAGES
+      // ------------------------------
 
+      // get all subdirectories from messages
+      let msgDirectories = this.getDirChildren('messages/inbox');
+      let numDirs = msgDirectories.length;
+
+      // increments callbackloop count
+      this.cbChain.setLoopCount();
+      let msgCbChain = new CbChain('messages analysis',
+        this.cbChain.call.bind(this.cbChain));
+
+      // loop through message directories
+      msgDirectories.map((msgDir) => {
+
+        // loop through children of a potential message directory
+        msgDir.children.map((msgFile) => {
+          if (msgFile.name.includes("message_")) {
+            msgCbChain.setLoopCount();
+            msgFile.getText(this.analyzeMessageThread.bind(this, msgDir.name, msgCbChain));
+          }
+        });
+      });
+
+      msgCbChain.initialized();
+
+      // all was initialized
       this.cbChain.initialized();
     });
   }
@@ -487,25 +511,19 @@ class FacebookAnalyzer extends BaseAnalyzer {
         'other': 0
       };
 
-      // people can have the same name? so you cant just use the name...
-      // use the dirname for the keys
-      msgData.regThreads[threadName] = participantStat; 
+      // check if messageData was initialized for this message thread
+      if (!msgData.regThreads[threadName]) {
+        msgData.regThreads[threadName] = participantStat; 
+      }
       group = false;
     }
 
     if (msgJSON.messages && msgJSON.messages.length > 1) {
-      // let curDay = null;
       // pull this function out and make sure you can reuse it in individual thread analysis
       msgJSON.messages.reduce(function(acc, msg) {
 
         // skip message counting for group chats
         if (group) return acc;
-
-        // initalize the day (0-6) that a message was sent
-        // if (!curDay) {
-        //   const firstDate = new Date(msg.timestamp_ms);
-        //   curDay = firstDate.getDay();
-        // }
 
         if (msg.sender_name == this.username && msg.content) {
           // count sent messages
@@ -513,7 +531,8 @@ class FacebookAnalyzer extends BaseAnalyzer {
 
           // get time statistics
           let d = new Date(msg.timestamp_ms);
-          let y = d.getFullYear(); // message years
+          // message year
+          let y = d.getFullYear();
           acc.timeStats.hourly.sent[d.getHours()]++;
           acc.timeStats.weekly.sent[d.getDay()]++;
           acc.timeStats.monthly.sent[d.getMonth()]++;
@@ -530,15 +549,8 @@ class FacebookAnalyzer extends BaseAnalyzer {
           // get msg statistics
           if (msg.content && msg.type != 'Call') {
             acc.total_words.sent += msg.content.split(' ').length;
-
-            // gets number of days that messages happened
-            // TODO: very broken would double count days as it is...
-            // TODO: counts wrong since people can message a week apart from each other, you need to compare years and months too...
-            // if (d.getDay() != curDay) {
-            //   acc.days_msged.sent += 1;
-            //   curDay = d.getDay();
-            // }
           }
+
           // get call statistics
           else if (msg.type == 'Call' && msg.call_duration > 0 && msg.call_duration < 18000) {
             acc.callStats.num_calls.initiated += 1;
@@ -567,13 +579,8 @@ class FacebookAnalyzer extends BaseAnalyzer {
           // get msg statistics
           if (msg.content && msg.type != 'Call') {
             acc.total_words.received += msg.content.split(' ').length;
-
-            // gets number of days that messages happened
-            // if (d.getDay() != curDay) {
-            //   acc.days_msged.received += 1;
-            //   curDay = d.getDay();
-            // }
           }
+
           // get call statistics
           // NOTE: skipping calls longer than 5h cause Facebook data has some problems
           else if (msg.type == 'Call' && msg.call_duration > 0 && msg.call_duration < 18000) {
