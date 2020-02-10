@@ -1214,11 +1214,7 @@ eval("var map = {\n\t\"./instructions\": \"./src/pages/page-tinder/instructions/
 /*! exports provided: 0, 1, 2, 3, default */
 /***/ (function(module) {
 
-<<<<<<< HEAD
-eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Enter <a href='https://account.gotinder.com/data' target=blank>https://account.gotinder.com/data</a> in the address bar.</br>Login to your tinder account\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click on the 'Download my data' button.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Enter the email address where you would like to receive the download link.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Once your data copy is prepared you will get an email.</br>Open your email client and click on download.\\\"}]\");\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/instructions.json?");
-=======
 eval("module.exports = JSON.parse(\"[{\\\"image\\\":\\\"./step1-web.jpg\\\",\\\"ins\\\":\\\"Open your browser of choice.</br>Visit </br><a href='https://account.gotinder.com/data' target=blank>account.gotinder.com/data</a></br>Login to your tinder account\\\"},{\\\"image\\\":\\\"./step2-web.jpg\\\",\\\"ins\\\":\\\"Click on the 'Download my data' button.\\\"},{\\\"image\\\":\\\"./step3-web.jpg\\\",\\\"ins\\\":\\\"Enter the email address where you would like to receive the download link.\\\"},{\\\"image\\\":\\\"./step4-web.jpg\\\",\\\"ins\\\":\\\"Once your data copy is prepared you will get an email.</br>Open your email client and click on download.\\\"}]\");\n\n//# sourceURL=webpack:///./src/pages/page-tinder/instructions/instructions.json?");
->>>>>>> Deploy at Sun Feb  9 18:02:14 PST 2020
 
 /***/ }),
 
