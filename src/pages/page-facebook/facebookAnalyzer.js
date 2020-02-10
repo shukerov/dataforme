@@ -17,7 +17,8 @@ class FacebookAnalyzer extends BaseAnalyzer {
       'friend_peer_group': null,
       'adStats': {
         'topics': [],
-        'interactions': []
+        'interactions': [],
+        'off_facebook': {},
       },
       'reactionStats': {
         'reactions': {
@@ -153,6 +154,11 @@ class FacebookAnalyzer extends BaseAnalyzer {
           path: 'ads_and_businesses/advertisers_you\'ve_interacted_with.json',
           name: 'fetching interaction data',
           func: this.getAdInteractionData
+        },
+        {
+          path: 'ads_and_businesses/your_off-facebook_activity.json',
+          name: 'fetching off-facebook activity',
+          func: this.getOffFacebookActivity
         }
       ];
 
@@ -229,6 +235,27 @@ class FacebookAnalyzer extends BaseAnalyzer {
     cbChain.call();
   }
 
+
+  getOffFacebookActivity(cbChain, offFacebookActivityInfo) {
+    let offFbActivityInfoJSON = JSON.parse(offFacebookActivityInfo);
+    let interactions =  { activities: [] };
+
+    const offFacebookActivity = this.get(['off_facebook_activity'], offFbActivityInfoJSON);
+    offFacebookActivity.reduce((acc, activity) => {
+      const latestInteractionDate = new Date(activity.events[0].timestamp * 1000);
+      let activityCompiled = {
+        "Name": activity.name,
+        "Total Interactions": activity.events.length,
+        "Last Interaction": latestInteractionDate.toDateString(),
+      }
+
+      acc.push(activityCompiled)
+      return acc;
+    }, interactions.activities);
+
+    this.data.adStats.off_facebook = interactions;
+    cbChain.call();
+  }
 
   getAdData(cbChain, adInfo) {
     let adInfoJSON = JSON.parse(adInfo);

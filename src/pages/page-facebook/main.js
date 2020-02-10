@@ -613,8 +613,16 @@ function renderAdReport(data) {
       tooltip: 'Ads you have interacted with on Facebook'
   };
 
+  let offFbInteractions = {
+      icon: 'mouse-pointer',
+      text: 'Off Facebook Activity: ',
+      listData: data.off_facebook,
+      tooltip: 'Activity you have outside of Facebook.'
+  };
+
   const subreport = rRender.getSubreport('Ad Report');
   rRender.add(reportItems, 'icon-list', subreport);
   rRender.add(adInterests, 'list', subreport);
   rRender.add(adInteractions, 'list-headings', subreport);
+  rRender.add(offFbInteractions, 'list-headings', subreport);
 }
