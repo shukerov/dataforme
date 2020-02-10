@@ -414,8 +414,9 @@ input[type='file'] {
   justify-content: center;
   align-items: center;
   width: 325px;
-  padding: 5px;
-  background: white; }
+  padding: 10px 5px;
+  background: white;
+  border-radius: 5px; }
 
 .progress-animation {
   width: 150px;
@@ -824,6 +825,12 @@ html {
 a, a:visited {
   text-decoration: none; }
 
+a {
+  color: #D81159; }
+
+a:visited {
+  color: #910b3c; }
+
 @font-face {
   font-family: 'Fira';
   src: url(fonts/FiraSans-Regular.ttf) format("truetype"), url(fonts/FiraSans-Bold.ttf) format("truetype"); }
@@ -879,6 +886,9 @@ nav {
   min-width: 150px;
   max-width: 240px;
   margin-right: 75px;
+  color: white; }
+
+.nav-sub-item:visited {
   color: white; }
 
 .nav-logo {
