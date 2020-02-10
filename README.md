@@ -35,7 +35,7 @@ yarn run dev_looks  // runs the development site with a preview (use this when w
 
 # Contributing
 
-Read the wiki on how to contribute, and add additional web services.
+Read the [wiki](https://github.com/shukerov/dataforme/wiki) on how to contribute, and add additional web services.
 
 # Credits
 
