@@ -188,7 +188,6 @@ $header-color: white;
 $about-bg-color: $site-bg-color;
 
 #lottie-index-animation {
-  // height: 100%;
   width: 100%;
 }
 
@@ -199,11 +198,12 @@ $about-bg-color: $site-bg-color;
   background: $about-bg-color;
   font-size: 19px; 
 
-   a  {
+   &-link {
      color: $text-important;
+     @include hover_underline($text-important);
    }
 
-   a:visited {
+   &-link:visited {
      color: darken($text-important, 5%);
    }
 

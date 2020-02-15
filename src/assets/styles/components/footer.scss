@@ -1,4 +1,5 @@
 @import '../abstracts/_globalvariables.scss';
+@import '../abstracts/_mixins.scss';
 
 $cool-grey: #7F7F7F;
 .footer {
@@ -48,10 +49,15 @@ $cool-grey: #7F7F7F;
    }
 
    &-icon {
-    width: 33px;
-    height: 33px;
-    background-size: 100% 100%;
-    margin-right: 15px;
+     width: 33px;
+     height: 33px;
+     background-size: 100% 100%;
+     margin-right: 15px;
+     // transition: all 0.3 ease-in-out;
+   }
+
+   &-icon:hover { 
+    transform: scale(1.1);
    }
 
    #github {
@@ -115,6 +121,10 @@ $cool-grey: #7F7F7F;
 
    &-highlight, highlight:visited {
     color: $text-important; 
+   }
+        
+   &-link {
+     @include hover_underline($off-white);
    }
 }
 
