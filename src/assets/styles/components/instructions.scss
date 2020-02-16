@@ -15,14 +15,14 @@
 }
 
 .slide-card-container {
-   @include box-shadow(#ccc, 4px);
+  @include box-shadow(#ccc, 4px);
 
-   width: 100%;
+  width: 100%;
 
-   img {
-      width: 100%;
-      height: auto;
-   }
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .slide-card {

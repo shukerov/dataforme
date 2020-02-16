@@ -28,78 +28,69 @@ $tranSpeed: 0.5s;
 }
 
 .website-item {
-   flex: 1;
-   height: 100%;
-   width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   // transition: all tranSpeed ease-in-out;
-   overflow: hidden;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 /* Flex Children */
 .website-item > * {
-   margin: 0;
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex: 1 0 auto;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
 
-   svg {
-     width: 10vh;
-     height: 10vh;
-     fill: white;
-     transition: all $tranSpeed ease-in-out;
-   }
+  svg {
+    width: 10vh;
+    height: 10vh;
+    fill: white;
+    transition: all $tranSpeed ease-in-out;
+  }
 }
 
 .website-item:hover {
-   // flex-shrink: 1.1;
-
-   svg {
-     transition: all $tranSpeed ease-in-out;
-     transform: scale(2);
-   }
+  svg {
+    transition: all $tranSpeed ease-in-out;
+    transform: scale(2);
+  }
 }
 
 #facebook {
-   background: $facebook;
+  background: $facebook;
 }
 
 #facebook:hover {
-   // background: white;
-   svg {
-           // fill: $facebook;
-           fill: white;
-   }
+  svg {
+    fill: white;
+  }
 }
 
 #spotify {
-   background: $spotify;
+  background: $spotify;
 }
 
 #spotify:hover {
-   // background: white;
 
-   svg {
-           // fill: $spotify;
-           fill: white;
-   }
+  svg {
+    fill: white;
+  }
 }
 
 #tinder {
-   background: $tinder;
+  background: $tinder;
 }
 
 #tinder:hover {
-   // background: white;
 
-   svg {
-        // fill: $tinder-static;
-       fill: white;
-   }
+  svg {
+    fill: white;
+  }
 }
 
 // SCROLL DOWN CTA
@@ -198,14 +189,14 @@ $about-bg-color: $site-bg-color;
   background: $about-bg-color;
   font-size: 19px; 
 
-   &-link {
-     color: $text-important;
-     @include hover_underline($text-important);
-   }
+  &-link {
+    color: $text-important;
+    @include hover_underline($text-important);
+  }
 
-   &-link:visited {
-     color: darken($text-important, 5%);
-   }
+  &-link:visited {
+    color: darken($text-important, 5%);
+  }
 
   &-heading {
     background: $header-bg-color;
@@ -224,10 +215,6 @@ $about-bg-color: $site-bg-color;
       @media only screen and (min-width: $screen-lg-min) {
         padding: 0 15px 0 15%;
       }
-
-      // @media only screen and (min-width: $screen-lg-min) {
-      //   padding: 0 15px 0 20%;
-      // }
     }
 
     &:nth-of-type(even) {
@@ -239,10 +226,6 @@ $about-bg-color: $site-bg-color;
       @media only screen and (min-width: $screen-lg-min) {
         padding: 0 15% 0 15px;
       }
-
-      // @media only screen and (min-width: $screen-lg-min) {
-      //   padding: 0 20% 0 15px;
-      // }
     }
   }
 
@@ -261,14 +244,13 @@ $about-bg-color: $site-bg-color;
       width: 70%;
       grid-column-gap: 100px;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      // grid-template-rows: repeat(2, minmax(0, 1fr));
     }
   }
 
   &-text-full {
     grid-column: 1 / -1;
   }
-      
+
 }
 
 // TODO: should be under about and renamed
@@ -336,9 +318,9 @@ $step-table-content-bg-color: #9e0e42;
     color: black;
     content: "A quick overview of the process.";
   }
-  
+
   &-item:nth-child(-n + 2) {
-   .steps-table-header:after {
+    .steps-table-header:after {
       z-index: 1;
       content: "";
       position: absolute;
@@ -353,7 +335,7 @@ $step-table-content-bg-color: #9e0e42;
   }
 
   &-item:nth-child(n + 2) {
-   .steps-table-header:before {
+    .steps-table-header:before {
       z-index: 0;
       content: "";
       position: absolute;

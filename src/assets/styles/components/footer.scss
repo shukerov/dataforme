@@ -3,27 +3,27 @@
 
 $cool-grey: #7F7F7F;
 .footer {
-   background: $off-black;
-   color: $off-white;
-   padding-top: 75px;
+  background: $off-black;
+  color: $off-white;
+  padding-top: 75px;
 
-   &-top {
-   }
+  &-top {
+  }
 
-   &-menus {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: space-between;
-     margin: 0 50px;
-     font-size: 1em;
+  &-menus {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 50px;
+    font-size: 1em;
 
-     @media screen and (min-width: $screen-lg-min) {
-       max-width: 75%;
-       margin: 0 auto;
-     }
+    @media screen and (min-width: $screen-lg-min) {
+      max-width: 75%;
+      margin: 0 auto;
+    }
 
-     // TODO: might not be needed
-     &-menu {
+    // TODO: might not be needed
+    &-menu {
       margin: 30px 30px 0 0;
       &-heading {
         color: $cool-grey;
@@ -36,96 +36,95 @@ $cool-grey: #7F7F7F;
         padding: 0;
         margin: 0;
       }
-     }
+    }
 
-     a, a:visited { 
-       color: $off-white; 
-     }
-   }
+    a, a:visited { 
+      color: $off-white; 
+    }
+  }
 
-   &-social-icons {
-     display: flex;
-     margin-top: 15px;
-   }
+  &-social-icons {
+    display: flex;
+    margin-top: 15px;
+  }
 
-   &-icon {
-     width: 33px;
-     height: 33px;
-     background-size: 100% 100%;
-     margin-right: 15px;
-     // transition: all 0.3 ease-in-out;
-   }
+  &-icon {
+    width: 33px;
+    height: 33px;
+    background-size: 100% 100%;
+    margin-right: 15px;
+  }
 
-   &-icon:hover { 
+  &-icon:hover { 
     transform: scale(1.1);
-   }
+  }
 
-   #github {
-     background-image: url('../../assets/images/logos/github.svg');
-   }
+  #github {
+    background-image: url('../../assets/images/logos/github.svg');
+  }
 
-   #reddit {
-     background-image: url('../../assets/images/logos/reddit.svg');
-   }
+  #reddit {
+    background-image: url('../../assets/images/logos/reddit.svg');
+  }
 
-   &-middle {
-      display: flex;
-      flex-direction: column;
-      margin: 50px 0;
-   }
+  &-middle {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+  }
 
-   &-logo {
-     align-self: flex-end;
-     display: flex;
-     align-items: center;
-     padding: 10px 75px 10px 15px;
-     border-top-left-radius: 5px;
-     border-bottom-left-radius: 5px;
-     color: black;
-     background-color: white;
-     line-height: 1;
-     font-family: 'BigNoodleTitling';
-     font-size: 55px;
+  &-logo {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    padding: 10px 75px 10px 15px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: black;
+    background-color: white;
+    line-height: 1;
+    font-family: 'BigNoodleTitling';
+    font-size: 55px;
 
-     @media screen and (min-width: $screen-md-min) {
-       padding: 10px 100px 10px 15px;
-     }
+    @media screen and (min-width: $screen-md-min) {
+      padding: 10px 100px 10px 15px;
+    }
 
-     @media screen and (min-width: $screen-lg-min) {
-       padding: 10px 150px 10px 15px;
-     }
+    @media screen and (min-width: $screen-lg-min) {
+      padding: 10px 150px 10px 15px;
+    }
 
-     &-icon {
-       background-size: 100% 100%;
-       background-image: url('../../assets/images/logos/logo-thick.svg');
-       width: 40px;
-       height: 55px;
-       margin-left: 15px;
-     }
-   }
+    &-icon {
+      background-size: 100% 100%;
+      background-image: url('../../assets/images/logos/logo-thick.svg');
+      width: 40px;
+      height: 55px;
+      margin-left: 15px;
+    }
+  }
 
-   &-logo:hover {
+  &-logo:hover {
 
-     .footer-logo-icon {
-       animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-     }
-   }
-   &-bottom {
+    .footer-logo-icon {
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    }
+  }
+  &-bottom {
     border-top: solid 0.2px $cool-grey;
     padding: 10px;
     color: $cool-grey;
     display: flex;
     justify-content: space-between;
     font-size: 11px;
-   }
+  }
 
-   &-highlight, highlight:visited {
+  &-highlight, highlight:visited {
     color: $text-important; 
-   }
-        
-   &-link {
-     @include hover_underline($off-white);
-   }
+  }
+
+  &-link {
+    @include hover_underline($off-white);
+  }
 }
 
 @keyframes shake {

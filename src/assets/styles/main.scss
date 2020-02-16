@@ -8,11 +8,10 @@
 }
 
 html {
-   // height: 100%;
-   font-size: 1.1em;
-   line-height: 1.9;
-   font-family: 'Fira', Camphor, Open Sans, Segoe UI, sans-serif;
-   scroll-behavior: smooth;
+  font-size: 1.1em;
+  line-height: 1.9;
+  font-family: 'Fira', Camphor, Open Sans, Segoe UI, sans-serif;
+  scroll-behavior: smooth;
 }
 
 ::-moz-selection {
@@ -42,11 +41,11 @@ a:visited {
 @import 'components/footer.scss';
 
 #site {
-   min-height: 100vh;
-   background: $site-bg-color;
-   overflow: auto;
-   position: relative;
-   z-index: 0; // enable stack context
+  min-height: 100vh;
+  background: $site-bg-color;
+  overflow: auto;
+  position: relative;
+  z-index: 0; // enable stack context
 }
 
 .card-heading {

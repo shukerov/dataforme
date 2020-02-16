@@ -12,16 +12,6 @@ header {
 }
 
 nav {
-  // make nav unselectable. Not sure if needed
-  // -webkit-tap-highlight-color: transparent;
-  // -webkit-touch-callout: none;
-  // -webkit-user-select: none;
-  // -khtml-user-select: none;
-  // -moz-user-select: none;
-  // -ms-user-select: none;
-  // user-select: none;
-
-  // width: 20vw;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -43,7 +33,6 @@ nav {
   padding-left: 55px;
   padding-right: 20px;
   transition: all .5s ease-in-out;
-  // font-size: 1em;
 
   @media screen and (min-width: $screen-lg-min) {
     font-size: 2em;
@@ -94,11 +83,6 @@ nav {
     transform: translateX(-310px);
   }
 }
-
-// all of nav is opened, triggered by click
-// .nav-expanded {
-//   transform: translateX(-5vw);
-// }
 
 // whole nav bar is off to the side
 .nav-hidden {
