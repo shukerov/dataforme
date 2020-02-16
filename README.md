@@ -1,10 +1,16 @@
-# Data for me
+# Data For Me
 
-A tool for personal data analysis.
+*A tool for personal data analysis.*
 
-Live link of the unfinished website - https://dataforme.xyz.
+The goal of this project is to provide a minimal framework for personal data analysis.
 
-*This project is under heavy development.*
+Personal data requests usually result in a zip file containing multiple JSON and media files.
+This is an attempt to easily extract and analyze such zip files for the average user.
+
+I am new to JavaScript and the open source community, so any help and mentorship would be greatly appreciated!
+I hope this is useful to some of you.
+
+Live link of the BETA website - https://dataforme.xyz.
 
 ## Table of Contents
 
