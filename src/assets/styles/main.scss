@@ -32,10 +32,6 @@ a {
   color: $link-color;
 }
 
-a:visited {
-  color: $link-color-visited;
-}
-
 @import 'fonts';
 @import 'components/navbar.scss';
 @import 'components/footer.scss';
