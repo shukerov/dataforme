@@ -388,9 +388,6 @@ a, a:visited {
 a {
   color: #D81159; }
 
-a:visited {
-  color: #910b3c; }
-
 @font-face {
   font-family: 'Fira';
   src: url(fonts/FiraSans-Regular.ttf) format("truetype"), url(fonts/FiraSans-Bold.ttf) format("truetype"); }
@@ -513,6 +510,8 @@ nav {
     height: 33px;
     background-size: 100% 100%;
     margin-right: 15px; }
+  .footer-icon:hover {
+    transform: scale(1.1); }
   .footer #github {
     background-image: url(1ad94a78def038f1408368001e95d70f.svg); }
   .footer #reddit {
@@ -556,6 +555,25 @@ nav {
     font-size: 11px; }
   .footer-highlight, .footer highlight:visited {
     color: #D81159; }
+  .footer-link {
+    position: relative; }
+    .footer-link:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: white;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s; }
+    .footer-link:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1); }
 
 @keyframes shake {
   10%, 90% {
@@ -729,6 +747,25 @@ nav {
   .credits-heading {
     margin-bottom: 30px;
     font-size: 35px; }
+  .credits-link {
+    position: relative; }
+    .credits-link:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #D81159;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s; }
+    .credits-link:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1); }
 
 .contributor-list {
   display: flex;
