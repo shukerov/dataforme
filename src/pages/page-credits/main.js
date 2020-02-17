@@ -2,10 +2,15 @@
 import './credits.scss';
 
 // JS imports:
+import { consoleMessage } from '../../js/helpers.js'
 import { NavBar } from '../../js/components/navBar.js';
 
 new NavBar();
 
+// print a console log friendly message
+consoleMessage();
+
+// load contributors list
 loadContributors();
 
 // fetches all contributors form Github and displays them on the page

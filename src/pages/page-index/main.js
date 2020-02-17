@@ -8,9 +8,11 @@ import tinder from '../../assets/images/logos/tinder_inline.svg';
 
 // JS imports:
 import { NavBar } from '../../js/components/navBar.js';
-import { isMobile} from '../../js/helpers.js'
+import { isMobile, consoleMessage } from '../../js/helpers.js'
 import bodymovin from '../../js/lottie.min.js';
 
+// print a console log friendly message
+consoleMessage();
 renderContent();
 playIndexAnimations();
 

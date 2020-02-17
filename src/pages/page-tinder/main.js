@@ -1,4 +1,5 @@
 // JS imports:
+import { consoleMessage } from '../../js/helpers.js'
 import { formatDate, formatPercent, safeDivide } from '../../js/analysis/analyzerHelpers.js';
 import { NavBar } from '../../js/components/navBar.js';
 import { FilePicker } from '../../js/components/filePicker.js';
@@ -9,6 +10,9 @@ import { TinderAnalyzer } from './tinderAnalyzer.js';
 // CSS imports:
 import './tinder.scss';
 import website_icon from '../../assets/images/logos/tinder_inline.svg';
+
+// print a console log friendly message
+consoleMessage();
 
 let instructions = new insFactory('tinder', document.getElementById('instructions-container'));
 let rRender = new reportFactory('tinder');

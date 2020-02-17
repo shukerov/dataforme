@@ -33,3 +33,9 @@ export function importAll(r) {
     images[key] = r(item); });
   return images;
 }
+
+export function consoleMessage() {
+  console.log('%cHi 👋', 'font-size: 20px;');
+  console.log('%cIf you are peeking in here, the source code might be useful too:', 'font-size: 15px;');
+  console.log('%chttps://github.com/shukerov/dataforme', 'font-size: 15px;');
+}

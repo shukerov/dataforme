@@ -1,6 +1,6 @@
 // JS imports:
 import { DAYS, MONTHS } from '../../js/constants.js';
-import { formatNum, secondsToHms } from '../../js/helpers.js';
+import { formatNum, secondsToHms, consoleMessage } from '../../js/helpers.js';
 import { getTopObjects } from '../../js/analysis/analyzerHelpers.js';
 import { formatDate, formatPercent } from '../../js/analysis/analyzerHelpers.js';
 import { NavBar } from '../../js/components/navBar.js';
@@ -12,6 +12,9 @@ import { SpotifyAnalyzer } from './spotifyAnalyzer.js';
 // CSS imports:
 import './spotify.scss';
 import website_icon from '../../assets/images/logos/spotify_inline.svg';
+
+// print a console log friendly message
+consoleMessage();
 
 let instructions = new insFactory('spotify', document.getElementById('instructions-container'));
 let rRender = new reportFactory('spotify');

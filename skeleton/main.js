@@ -1,4 +1,5 @@
 // JS imports:
+import { consoleMessage } from '../../js/helpers.js'
 import { NavBar } from '../../js/components/navBar.js';
 import { FilePicker } from '../../js/components/filePicker.js';
 import { reportFactory } from '../../js/factories/reportFactory.js';
@@ -8,6 +9,9 @@ import { WebserviceAnalyzer } from './webserviceAnalyzer.js';
 // CSS imports:
 import './webservice.scss';
 import website_icon from '../../assets/images/logos/webservice_inline.svg';
+
+// print a console log friendly message
+consoleMessage();
 
 let instructions = new insFactory('webservice', document.getElementById('instructions-container'));
 let rRender = new reportFactory('webservice');
