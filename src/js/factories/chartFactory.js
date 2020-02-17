@@ -10,7 +10,7 @@ class chartFactory {
     this.color_key = colorscheme_key;
     this.color_schemes = {
       'facebook': {
-        'bar': ['light-blue', 'blue', 'violet', '#41B3A3', '#85DCB'],
+        'bar': ['light-blue', 'blue', 'violet', '#41B3A3', '#85DCBA'],
         'line': [ 'violet' ]
       },
       'tinder': {
@@ -23,7 +23,7 @@ class chartFactory {
         'clock': [ '#18bb51', '#18bb51', '#baf6cf'],
         'heatmap': ['#ececec', '#abf4c4', '#5feb90', '#32e571', '#18bb51']
       },
-      'default': ['light-blue', 'blue', 'violet', '#41B3A3', '#85DCB']
+      'default': ['light-blue', 'blue', 'violet', '#41B3A3', '#85DCBA']
     };
   }
 
