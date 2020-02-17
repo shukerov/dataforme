@@ -196,3 +196,9 @@
 #post-graph6 {
   grid-area: post-cumulative;
 }
+
+// overwriting common report styles
+.report-list-list-item {
+  color: $off-white;
+  background: #6f85f8;
+}

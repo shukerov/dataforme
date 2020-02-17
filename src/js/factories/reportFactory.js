@@ -352,6 +352,7 @@ export class reportFactory {
       item.listData.forEach((listItemText) => {
         const listItem = document.createElement('li');
         listItem.innerHTML = listItemText;
+        listItem.classList.add('report-list-list-item');
         reportList.appendChild(listItem);
       });
 
